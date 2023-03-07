@@ -1,0 +1,111 @@
+set nobackup
+set noswapfile
+set nowritebackup
+set undofile
+set undodir=$HOME/.vim/undo-dir
+set undolevels=9999
+set viminfo='100,n$HOME/.vim/files/info/viminfo
+set fileencoding="utf-8"
+
+set number
+set relativenumber
+set numberwidth=4
+set signcolumn="yes"
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+set nowrap
+set scrolloff=8
+set sidescrolloff=8
+
+set cmdheight=1
+set pumheight=10
+set conceallevel=0
+set showmode
+ 
+set hlsearch
+set incsearch
+set ignorecase
+set showmatch
+
+set completeopt=menu,menuone,noselect
+set timeoutlen=200
+set updatetime=100
+
+set showtabline=0
+set laststatus=2
+set term=xterm-256color
+set termguicolors
+colorscheme ghdark
+hi NonText ctermbg=none
+hi Normal guibg=NONE ctermbg=NONE
+
+if !has('nvim')
+    let &t_SI = "\<esc>[6 q"
+    let &t_EI = "\<esc>[2 q"
+    if exists('&t_SR')
+        let &t_SR = "\<esc>[4 q"
+    endif
+
+    set t_Co=256
+endif
+
+set smartcase  
+set smartindent
+set nocursorline
+
+set splitbelow
+set splitright
+
+set path+=**
+set backspace=indent,eol,start
+set clipboard+=unnamed
+set clipboard+=unnamedplus
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+set nocompatible
+syntax on
+filetype plugin indent on
+
+let g:netrw_banner=0
+let g:netrw_browse_split=0
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=",\(^\|\s\s\)\zs\.\S\+"
+
+let mapleader=" "
+let maplocalleader=" "
+nnoremap <Silent> <Leader> <Nop>
+
+nnoremap <silent> <leader>e :Explore<CR>
+
+nnoremap <silent> <leader>v :vsplit<CR>
+nnoremap <silent> <leader>h :split<CR>
+
+nnoremap <silent> <leader>a <C-w>h
+nnoremap <silent> <leader>w <C-w>k
+nnoremap <silent> <leader>s <C-w>j
+nnoremap <silent> <leader>d <C-w>l
+
+nnoremap <silent> <TAB> :bnext<CR>
+nnoremap <silent> <S-TAB> :bprevious<CR>
+nnoremap <silent> <leader>d :bdelete<CR>
+
+nnoremap <silent> <leader>w :wall<CR>
+nnoremap <silent> <leader>q :quit<CR>
+
+nnoremap <silent> <leader>a ggVG
+nnoremap <silent> <leader>y :%y<CR>
+nnoremap <silent> <leader>nh :noh<CR>
+
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+
+nnoremap <silent> + <C-a>
+nnoremap <silent> - <C-x>
+
