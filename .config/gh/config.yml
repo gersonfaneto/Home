@@ -1,0 +1,10 @@
+git_protocol: https
+editor: nvim
+prompt: enabled
+pager:
+aliases:
+    co: pr checkout
+    clone: repo clone
+    search: repo list
+http_unix_socket:
+browser:
