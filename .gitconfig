@@ -1,0 +1,49 @@
+[core]
+  excludesfile = ~/.gitignore
+  editor = nvim
+  ignorecase = false
+  autocrlf = input
+
+[user]
+  name = Gerson Ferreira
+  email = gersonfaneto.dev@gmail.com
+
+[init]
+  defaultBranch = main
+
+[github]
+  user = gersonfaneto
+
+[push]
+  default = simple
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
+
+[alias]
+  i = init
+  d = diff
+  l = log --graph --pretty=format:'%C(cyan)%h%C(reset) -%C(magenta)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit
+  la = log --graph --pretty=format:'%C(cyan)%h%C(reset) -%C(magenta)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --all
+  co = checkout
+  ci = commit
+  ca = commit -a
+  ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  psa = "!git push origin --mirror"
+  pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+  st = status
+  ss = status --short
+  br = branch
+  ba = branch -a
+  bm = branch --merged
+  bn = branch --no-merged
+  wa = worktree add
+  wr = worktree remove
+  wl = worktree list
+  wm = worktree move
+

@@ -1,0 +1,30 @@
+# MySetup
+~/.config/tmux/plugins/*
+~/.config/fish/fish_variables
+~/.config/fish/conf.d/*
+~/.config/fish/themes/*
+~/.config/fish/functions/*
+~/.config/fish/completions/*
+~/.config/nvim/lazy-lock.json
+~/.config/nvim/lua/.luarc.json
+
+# C / CPP (Testing/Debugging)
+[Bb]uild/
+Main
+Main.c
+Main.cpp
+In.txt
+Out.txt
+*.o
+*.a
+
+# Java (Testing/Debugging)
+bin/
+target/
+Flags.txt
+Files.txt
+
+# General
+TODO.md
+Run.sh
+Build.sh
