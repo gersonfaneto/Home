@@ -76,7 +76,16 @@ if type -q starship
   starship init fish | source
 end
 
-function hop -d "Create a directory and set CWD"
+if status is-interactive  
+  and not set -q TMUX
+    if tmux has-session -t Home
+      tmux attach-session -t Home
+    else
+      tmux new-session -s Home
+    end
+end
+
+function hop -d "Create a new directory and set it as the CWD"
   command mkdir $argv
     if test $status = 0
         switch $argv[(count $argv)]
@@ -87,4 +96,5 @@ function hop -d "Create a directory and set CWD"
         end
     end
 end
+
 
