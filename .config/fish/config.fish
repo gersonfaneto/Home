@@ -129,6 +129,12 @@ if status is-interactive
     end
 end
 
+# Prompt a TODO list.
+if test -f ~/Desktop/TODO.md
+  and type -q glow
+  glow ~/Desktop/TODO.md
+end
+
 #--------------------------------------------------------------------------------#
 #                                  Functions                                     #
 #--------------------------------------------------------------------------------#
