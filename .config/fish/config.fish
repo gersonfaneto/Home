@@ -2,13 +2,8 @@
 #                               Basic Configs                                    #
 #--------------------------------------------------------------------------------#
 
-# Change default "fish" greetings to a TODO list.
-function fish_greeting
-  if test -f ~/Desktop/TODO.md
-    and type -q glow
-    glow ~/Desktop/TODO.md
-  end
-end
+# Remove the default fish greeting.
+set fish_greeting ""
 
 # Set default color support and editor.
 set -gx TERM xterm-256color
@@ -146,5 +141,13 @@ function hop -d "Create a new directory and set it as the CWD"
             return
         end
     end
+end
+
+
+function todo -d "Display the contents of a TODO.md list on ~/Desktop"
+  if test -f ~/Desktop/TODO.md
+    and type -q glow
+    command glow ~/Desktop/TODO.md
+  end
 end
 
