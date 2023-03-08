@@ -26,8 +26,8 @@
   ui = auto
 
 [alias]
-  # Use 'peco' as a file selector for 'git add'
-  a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+  # Use 'fzf' as a file selector for 'git add'
+  a = "!git status --short | cut -c4- | fzf | xargs git add"
   # Quickly init a new git repo
   i = init
   # Quickly diff the currently changed files
@@ -62,8 +62,8 @@
   bm = branch --merged
   # Show all the non merged branches
   bn = branch --no-merged
-  # Use 'peco' as a commit selector and display the diff from selected commit
-  df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  # Use 'fzf' as a commit selector and display the diff from selected commit
+  df = "!git hist | fzf | awk '{print $2}' | xargs -I {} git diff {}^ {}"
   # Show the history of the commits in a minimal version (Message, date, author, ...) 
   hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all 
   # Show a more detailed version of the commit history (Complete message, date, author, files, ...)
