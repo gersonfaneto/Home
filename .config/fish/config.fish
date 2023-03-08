@@ -2,7 +2,7 @@
 #                               Basic Configs                                    #
 #--------------------------------------------------------------------------------#
 
-# Remove the default fish greeting.
+# Remove the default 'fish' greeting.
 set fish_greeting ""
 
 # Set default color support and editor.
@@ -23,7 +23,7 @@ alias refresh "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 #                               Especial Aliases                                 #
 #--------------------------------------------------------------------------------#
 
-# Use 'exa' instead os 'ls'
+# Use 'exa' instead of 'ls'
 if type -q exa
   alias ls "exa --icons"
   alias ll "exa --icons --long --header --group-directories-first"
@@ -31,12 +31,12 @@ if type -q exa
   alias tree "exa --icons --tree --level=6 --only-dirs"
 end
 
-# Quickly manipulate TMUX sessions
+# Quickly manipulate 'TMUX' sessions
 if type -q tmux
   alias tl "tmux list-sessions"
-  alias ta "tmux attach-session -t"
-  alias tn "tmux new-session -s (basename (pwd))"
-  alias tk "tmux kill-session -t"
+  alias ta "tmux attach-session"
+  alias tn "tmux new-session -s (basename (pwd)) -d"
+  alias tk "tmux kill-session"
 end
 
 # Quickly summon 'neofetch'
@@ -44,19 +44,19 @@ if type -q neofetch
   alias nf "neofetch"
 end
 
-# Quickly summon 'git' and use 'config' as an alias for the 'MySetup' repo.
+# Quickly summon 'git' and use 'config' as an alias for the 'MySetup' repository.
 if type -q git
   alias g git
   alias config "/usr/bin/git --git-dir=$HOME/Developer/GitHub/Personal/MySetup \
     --work-tree=$HOME/"
 end
 
-# Usa 'bat' as a substitute for 'cat'.
+# Use 'bat' as a substitute for 'cat'.
 if type -q batcat
   alias bat "batcat --theme=TwoDark"
 end
 
-# Quickly summon neovim (Default editor)
+# Quickly summon 'neovim' (Default editor)
 if type -q nvim
   alias v nvim
 end
@@ -68,7 +68,7 @@ end
 # 'ASDF': Multiple runtime and language version manager
 if test -d ~/.asdf
   source ~/.asdf/asdf.fish
-  if test -f ~/.asdf/plugins/java/set-java-home.fish # Add Java to $PATH
+  if test -f ~/.asdf/plugins/java/set-java-home.fish # Add 'Java' to $PATH
     source ~/.asdf/plugins/java/set-java-home.fish
   end
 end
@@ -82,12 +82,12 @@ if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
 end
 
-# Add '~/.cargo/bin' to the $PATH (Requires Rust)
+# Add '~/.cargo/bin' to the $PATH
 if test -d "$HOME/.cargo/bin/"
   export PATH="$PATH:$HOME/.cargo/bin"
 end
 
-# Add '~/.go/bin' to the $PATH (Requires Golang)
+# Add '~/.go/bin' to the $PATH
 if test -d "$HOME/.go/bin/"
   export PATH="$PATH:$HOME/.go/bin"
 end
@@ -96,7 +96,7 @@ end
 #                                 Common Tools                                   #
 #--------------------------------------------------------------------------------#
 
-# 'FZF': Fuzy file finder. Enable preview using 'batcat' and change default styling.
+# 'FZF': Fuzzy file finder. Enable preview using 'batcat' and change default styling.
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark --preview='bat \
@@ -117,7 +117,7 @@ end
 #                                  On Startup                                    #
 #--------------------------------------------------------------------------------#
 
-# Automatically create and/or attach to the 'Home' session on TMUX.
+# Automatically create and/or attach to the 'Home' session on 'TMUX'.
 if status is-interactive  
   and not set -q TMUX
     if tmux has-session -t Home
