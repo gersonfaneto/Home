@@ -1,12 +1,13 @@
-# MySetup
-~/.config/tmux/plugins/*
-~/.config/fish/fish_variables
-~/.config/fish/conf.d/*
-~/.config/fish/themes/*
-~/.config/fish/functions/*
-~/.config/fish/completions/*
-~/.config/nvim/lazy-lock.json
-~/.config/nvim/lua/.luarc.json
+# Logs
+[Ll]ogs/
+.log
+
+# Dependency Directories
+node_modules/
+
+# Enviroment Variables Files
+.env
+.env.test
 
 # C / CPP (Testing/Debugging)
 [Bb]uild/
