@@ -6,6 +6,9 @@ setOption.swapfile = false
 setOption.writebackup = false
 setOption.fileencoding = "utf-8"
 
+setOption.spell = true
+setOption.spelllang = { "en_us" }
+
 setOption.clipboard = "unnamedplus"
 setOption.mouse = "a"
 setOption.wrap = false

@@ -89,6 +89,7 @@ LazyPlugins.setup({
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-emoji",
 			"hrsh7th/cmp-path",
+      "f3fora/cmp-spell",
 			"saadparwaiz1/cmp_luasnip",
 			"lukas-reineke/cmp-under-comparator",
 		},
