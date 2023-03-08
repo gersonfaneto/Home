@@ -67,17 +67,15 @@ if type -q nvim
 end
 
 #--------------------------------------------------------------------------------#
-#                               Version Managers                                 #
+#                               Version Manager                                  #
 #--------------------------------------------------------------------------------#
 
-# 'Jabba': Manage Java versions and SDKs
-if type -q jabba
-  [ -s "$HOME/.jabba/jabba.fish" ]; and source "$HOME/.jabba/jabba.fish"
-end
-
-# 'NVM': Manage Node (and it's utilities) versions
-if type -q nvm
-  set --universal nvm_default_version lts
+# 'ASDF': Multiple runtime and language version manager
+if test -d ~/.asdf
+  source ~/.asdf/asdf.fish
+  if test -f ~/.asdf/plugins/java/set-java-home.fish # Add Java to $PATH
+    source ~/.asdf/plugins/java/set-java-home.fish
+  end
 end
 
 #--------------------------------------------------------------------------------#
