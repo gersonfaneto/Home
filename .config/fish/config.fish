@@ -101,9 +101,8 @@ end
 # 'FZF': Fuzy file finder. Enable preview using 'batcat' and change default styling.
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \ 
-    --preview='bat --theme=TwoDark --style=numbers --color=always \
-      --line-range :500 {}'"
+  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark --preview='bat \
+  --theme=TwoDark --style=numbers --color=always --line-range :500 {}'"
 end
 
 # 'Batcat': Use it as the pager for 'man'.
