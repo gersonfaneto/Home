@@ -2,8 +2,13 @@
 #                               Basic Configs                                    #
 #--------------------------------------------------------------------------------#
 
-# Remove greetings from startup.
-set fish_greeting ""
+# Change default "fish" greetings to a TODO list.
+function fish_greeting
+  if test -f ~/Desktop/TODO.md
+    and type -q glow
+    glow ~/Desktop/TODO.md
+  end
+end
 
 # Set default color support and editor.
 set -gx TERM xterm-256color
@@ -127,12 +132,6 @@ if status is-interactive
     else
       tmux new-session -s Home
     end
-end
-
-# Prompt a TODO list.
-if test -f ~/Desktop/TODO.md
-  and type -q glow
-  glow ~/Desktop/TODO.md
 end
 
 #--------------------------------------------------------------------------------#
