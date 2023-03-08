@@ -26,24 +26,57 @@
   ui = auto
 
 [alias]
+  # Use 'peco' as a file selector for 'git add'
+  a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+  # Quickly init a new git repo
   i = init
+  # Quickly diff the currently changed files
   d = diff
-  l = log --graph --pretty=format:'%C(cyan)%h%C(reset) -%C(magenta)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit
-  la = log --graph --pretty=format:'%C(cyan)%h%C(reset) -%C(magenta)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --all
+  # Quickly checkout a branch
   co = checkout
+  # Quickly checkout the 'main' branch
+  cm = checkout main
+  # Quickly checkout the 'dev' branch
+  cd = checkout dev
+  # Quickly checkout the 'build' branch
+  cb = checkout build
+  # Quickly commit the currently staged files
   ci = commit
-  ca = commit -a
+  # Quickly add and commit the currently changed files
+  ca = commit --all
+  # Push the changes on the current local branch to the remote
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-  psa = "!git push origin --mirror"
+  # Pull the changes from the remote to the current local branch
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+   # Show the status of the current branch
   st = status
-  ss = status --short
+  # A minimal version of 'st'
+  ss = status --short --branch
+  # Show the log for a specific commit, but only the file names are displayed
+  sf = show --name-only
+  # Quickly manipulate branches
   br = branch
-  ba = branch -a
+  # Show all the branchs
+  ba = branch --all
+  # Show all the merged branches
   bm = branch --merged
+  # Show all the non merged branches
   bn = branch --no-merged
-  wa = worktree add
-  wr = worktree remove
-  wl = worktree list
-  wm = worktree move
-
+  # Use 'peco' as a commit selector and display the diff from selected commit
+  df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  # Show the history of the commits in a minimal version (Message, date, author, ...) 
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all 
+  # Show a more detailed version of the commit history (Complete message, date, author, files, ...)
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  # Fetch the remote and show the commits ahead of the local branch
+  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+  # Fetch the remote and show the commits ahead of the remote
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  # Quickly clear the staging area
+  unstage = reset HEAD --
+  # Quickly undo the changes of a tracked file
+  undo = checkout --
+  # Reset to one commit behind
+  rollback = reset --soft HEAD~1
+  # List all the commiters/authors on a repo and rank them
+  committers = !(git log | grep Author | sort | uniq -c | sort -n -r)
