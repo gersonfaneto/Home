@@ -27,7 +27,7 @@
 
 [alias]
   # Use "fzf" as a file selector for "git add"
-  a = "!git status --short | cut -c4- | fzf | xargs git add"
+  a = "!git status --short | awk '{printf $2}' | fzf | xargs git add"
   # Quickly init a new git repo
   i = init
   # Quickly diff the currently changed files
@@ -75,8 +75,8 @@
   # Quickly clear the staging area
   unstage = reset HEAD --
   # Uses "fzf" to selecte modified (tracked) files and undo their changes
-  undo = "!git checkout -- | cut -c3- | fzf | xargs git restore"
+  undo = "!git checkout -- | awk '{printf $2}' | fzf | xargs git restore"
   # Reset to one commit behind
   rollback = reset --soft HEAD~1
   # List all the commiters/authors on a repo and rank them
-  committers = !(git log | grep Author | sort | uniq -c | sort -n -r)
+  committers = "!git log | grep Author | sort | uniq -c | sort -n -r"
