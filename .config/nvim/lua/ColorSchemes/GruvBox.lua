@@ -1,5 +1,5 @@
 if not "colorscheme gruvbox-material" then
-	return
+  return
 end
 
 vim.g.gruvbox_material_background = "hard"

@@ -1,6 +1,6 @@
 local keyMap = function(tMode, tKeys, tOutput, kDesc)
-	local genOpts = { noremap = true, silent = true, desc = kDesc or "" }
-	vim.keymap.set(tMode, tKeys, tOutput, genOpts)
+  local genOpts = { noremap = true, silent = true, desc = kDesc or "" }
+  vim.keymap.set(tMode, tKeys, tOutput, genOpts)
 end
 
 keyMap("", "<Space>", "<Nop>")

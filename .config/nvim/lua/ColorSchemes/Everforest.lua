@@ -1,5 +1,5 @@
 if not "colorscheme everforest" then
-	return
+  return
 end
 
 vim.g.everforest_background = "hard"

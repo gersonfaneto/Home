@@ -1,9 +1,9 @@
 local hadSuccess, IndentBlankline = pcall(require, "indent_blankline")
 if not hadSuccess then
-	return
+  return
 end
 
 IndentBlankline.setup({
-	show_trailing_blankline_indent = false,
-	char = "┊",
+  show_trailing_blankline_indent = false,
+  char = "┊",
 })

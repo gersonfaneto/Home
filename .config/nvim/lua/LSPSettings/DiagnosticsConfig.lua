@@ -2,15 +2,15 @@ local VimDiagnostic = vim.diagnostic.config
 local signDefine = vim.fn.sign_define
 
 VimDiagnostic({
-	virtual_text = true,
-	float = {
-		focusable = true,
-		style = "minimal",
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		source = "always",
-		header = "",
-		prefix = "",
-	},
+  virtual_text = true,
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    source = "always",
+    header = "",
+    prefix = "",
+  },
 })
 
 signDefine("DiagnosticSignError", { text = "✗", texthl = "DiagnosticSignError" })

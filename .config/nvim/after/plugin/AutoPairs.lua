@@ -1,18 +1,18 @@
 local hadSuccessI, AutoPairs = pcall(require, "nvim-autopairs")
 if not hadSuccessI then
-	return
+  return
 end
 
 AutoPairs.setup({
-	disable_filetype = {
-		"TelescopePrompt",
-		"vim",
-	},
+  disable_filetype = {
+    "TelescopePrompt",
+    "vim",
+  },
 })
 
 local hadSuccessII, AutoTag = pcall(require, "nvim-ts-autotag")
 if not hadSuccessII then
-	return
+  return
 end
 
 AutoTag.setup({})
