@@ -104,13 +104,11 @@ end
 #                                  On Startup                                    #
 #--------------------------------------------------------------------------------#
 
-# Automatically create and/or attach to the 'Home' session on 'TMUX'.
+# Automatically create the 'Home' session on 'TMUX'.
 if status is-interactive  
   and not set -q TMUX
-    if tmux has-session -t Home
-      tmux attach-session -t Home
-    else
-      tmux new-session -s Home
+    if not tmux has-session -t Home 2>/dev/null
+      tmux new-session -s Home -d 2>/dev/null
     end
 end
 
