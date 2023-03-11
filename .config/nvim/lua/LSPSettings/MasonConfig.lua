@@ -116,6 +116,13 @@ for _, lspServer in pairs(mainServers) do
     })
   end
 
+  if lspServer == "clangd" then
+    local customOpts = lspOpts
+    lspOpts.capabilities.offsetEncoding = { "utf-16" }
+    LSPConfig[lspServer].setup(customOpts)
+    return
+  end
+
   if lspServer == "jdtls" then
     goto continue
   end
