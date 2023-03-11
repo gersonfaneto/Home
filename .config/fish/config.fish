@@ -68,9 +68,6 @@ end
 # 'ASDF': Multiple runtime and language version manager
 if test -d ~/.asdf
   source ~/.asdf/asdf.fish
-  if test -f ~/.asdf/plugins/java/set-java-home.fish # Add 'Java' to $PATH
-    source ~/.asdf/plugins/java/set-java-home.fish
-  end
 end
 
 #--------------------------------------------------------------------------------#
@@ -80,16 +77,6 @@ end
 # Add '~/.local/bin' to the $PATH
 if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
-end
-
-# Add '~/.cargo/bin' to the $PATH
-if test -d "$HOME/.cargo/bin/"
-  export PATH="$PATH:$HOME/.cargo/bin"
-end
-
-# Add '~/.go/bin' to the $PATH
-if test -d "$HOME/.go/bin/"
-  export PATH="$PATH:$HOME/.go/bin"
 end
 
 #--------------------------------------------------------------------------------#
