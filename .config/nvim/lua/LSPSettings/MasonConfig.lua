@@ -120,7 +120,6 @@ for _, lspServer in pairs(mainServers) do
     local customOpts = lspOpts
     lspOpts.capabilities.offsetEncoding = { "utf-16" }
     LSPConfig[lspServer].setup(customOpts)
-    return
   end
 
   if lspServer == "jdtls" then
