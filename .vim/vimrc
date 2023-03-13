@@ -96,8 +96,8 @@ nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 nnoremap <silent> <leader>d :bdelete<CR>
 
-nnoremap <silent> C-w :wall<CR>
-nnoremap <silent> C-q :quit<CR>
+nnoremap <silent> <C-w> :wall<CR>
+nnoremap <silent> <C-q> :quit<CR>
 
 nnoremap <silent> <leader>a ggVG
 nnoremap <silent> <leader>y :%y<CR>
