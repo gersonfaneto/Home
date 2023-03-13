@@ -32,11 +32,6 @@ function KeyBindings.GitKeys(_)
   end, "Git = [D]iff [T]his")
 end
 
-function KeyBindings.DashboardKeys()
-  keyMap("n", "<leader>o", ":DashboardNewFile<CR>", "[O]pen New File")
-  keyMap("n", "<leader>m", ":Dashboard<CR>", "Main [M]enu")
-end
-
 function KeyBindings.NvimTreeKeys()
   keyMap("n", "<F2>", ":NvimTreeToggle<CR>", "NvimTree - Toggle")
   keyMap("n", "<F3>", ":NvimTreeFocus<CR>", "NvimTree - Focus")
@@ -68,20 +63,6 @@ function KeyBindings.LSPKeys(bufnr)
   keyMap("n", "[d", vim.diagnostic.goto_prev, "LSP - Previous [D]iagnostic", bufnr)
   keyMap("n", "of", vim.diagnostic.open_float, "LSP - Previous [D]iagnostic", bufnr)
   keyMap("n", "<leader>bs", ":Telescope lsp_document_symbols<CR>", "LSP - [B]rowse [S]ymbols", bufnr)
-end
-
-function KeyBindings.JavaKeys(bufnr)
-  KeyBindings.LSPKeys(bufnr)
-  keyMap("n", "<leader>oi", ":lua require('jdtls').organize_imports()<CR>", "Java - [O]rganize [I]mports", bufnr)
-  keyMap("n", "<leader>ev", ":lua require('jdtls').extract_variable()<CR>", "Java - [E]xtract [V]ariable", bufnr)
-  keyMap("n", "<leader>ec", ":lua require('jdtls').extract_constant()<CR>", "Java - [E]xtract [C]onstant", bufnr)
-  keyMap(
-    "v",
-    "<leader>em",
-    [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
-    "Java - [E]xtract [M]ethod",
-    bufnr
-  )
 end
 
 function KeyBindings.RustKeys(bufnr)

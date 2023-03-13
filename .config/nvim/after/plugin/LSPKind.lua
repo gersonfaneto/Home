@@ -1,4 +1,5 @@
 local hadSuccess, LSPKind = pcall(require, "lspkind")
+
 if not hadSuccess then
   return
 end

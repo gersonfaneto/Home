@@ -1,4 +1,5 @@
 local hadSuccess, Lualine = pcall(require, "lualine")
+
 if not hadSuccess then
   return
 end

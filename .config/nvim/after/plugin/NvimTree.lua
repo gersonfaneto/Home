@@ -1,5 +1,6 @@
-local hadSuccessI, NvimTree = pcall(require, "nvim-tree")
-if not hadSuccessI then
+local hadSuccess, NvimTree = pcall(require, "nvim-tree")
+
+if not hadSuccess then
   return
 end
 

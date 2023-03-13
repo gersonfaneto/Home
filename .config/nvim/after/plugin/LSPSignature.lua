@@ -1,4 +1,5 @@
 local hadSuccess, Signature = pcall(require, "lsp_signature")
+
 if not hadSuccess then
   return
 end

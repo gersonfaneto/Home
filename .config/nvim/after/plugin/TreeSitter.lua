@@ -1,27 +1,27 @@
 local hadSuccess, TreeSitter = pcall(require, "nvim-treesitter.configs")
+
 if not hadSuccess then
   return
 end
 
 TreeSitter.setup({
   ensure_installed = {
-    "lua",
     "c",
     "cpp",
     "c_sharp",
-    "java",
     "rust",
+    "lua",
     "python",
     "html",
     "css",
+    "tsx",
     "javascript",
     "typescript",
-    "tsx",
-    "json",
     "fish",
+    "json",
+    "toml",
     "gitcommit",
     "gitignore",
-    "verilog",
   },
   sync_install = false,
   auto_install = true,

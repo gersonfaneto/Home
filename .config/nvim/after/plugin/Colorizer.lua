@@ -1,4 +1,5 @@
 local hadSuccess, Colorizer = pcall(require, "colorizer")
+
 if not hadSuccess then
   return
 end

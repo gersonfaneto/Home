@@ -2,8 +2,9 @@ local hadSuccessI, MasonManager = pcall(require, "mason")
 local hadSuccessII, MasonConfig = pcall(require, "mason-lspconfig")
 local hadSuccessIII, LSPConfig = pcall(require, "lspconfig")
 local hadSuccessIV, CompletionConfig = pcall(require, "cmp_nvim_lsp")
+local allSet = hadSuccessI and hadSuccessII and hadSuccessIII and hadSuccessIV
 
-if not (hadSuccessI and hadSuccessII and hadSuccessIII and hadSuccessIV) then
+if not allSet then
   return
 end
 
@@ -16,21 +17,20 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 local mainServers = {
-  "cmake",
-  "clangd",
-  "csharp_ls",
-  "cssls",
-  "jdtls",
-  "tsserver",
-  "lua_ls",
-  "intelephense",
-  "pyright",
   "rust_analyzer",
-  "eslint",
+  "csharp_ls",
+  "clangd",
+  "cmake",
+  "pyright",
+  "lua_ls",
+  "tsserver",
   "emmet_ls",
+  "eslint",
+  "cssls",
   "html",
-  "jsonls",
   "tailwindcss",
+  "jsonls",
+  "taplo",
 }
 
 MasonManager.setup({

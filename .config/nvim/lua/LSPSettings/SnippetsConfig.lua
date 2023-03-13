@@ -1,6 +1,8 @@
 local hadSuccessI, LuaSnipVS = pcall(require, "luasnip/loaders/from_vscode")
 local hadSuccessII, LuaSnip = pcall(require, "luasnip")
-if not hadSuccessI or not hadSuccessII then
+local allSet = hadSuccessI and hadSuccessII
+
+if not allSet then
   return
 end
 

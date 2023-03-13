@@ -10,3 +10,4 @@ require("LSPSettings.MasonConfig")
 require("LSPSettings.SnippetsConfig")
 require("LSPSettings.CompletionConfig")
 require("LSPSettings.DiagnosticsConfig")
+

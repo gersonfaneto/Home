@@ -1,4 +1,5 @@
 local hadSuccess, Telescope = pcall(require, "telescope")
+
 if not hadSuccess then
   return
 end

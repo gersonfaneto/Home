@@ -1,8 +1,7 @@
 local hadSuccessI, CompletionConfig = pcall(require, "cmp")
 local hadSuccessII, LuaSnipConfig = pcall(require, "luasnip")
 local hadSuccessIII, LSPKindIcons = pcall(require, "lspkind")
-local hadSuccessIV, CompletionSorting = pcall(require, "cmp-under-comparator")
-local allSet = hadSuccessI and hadSuccessII and hadSuccessIII and hadSuccessIV
+local allSet = hadSuccessI and hadSuccessII and hadSuccessIII
 
 if not allSet then
   return
@@ -87,7 +86,6 @@ CompletionConfig.setup({
       CompletionConfig.config.compare.offset,
       CompletionConfig.config.compare.exact,
       CompletionConfig.config.compare.score,
-      CompletionSorting.under,
       CompletionConfig.config.compare.kind,
       CompletionConfig.config.compare.sort_text,
       CompletionConfig.config.compare.length,

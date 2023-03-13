@@ -1,4 +1,5 @@
 local hadSuccess, IndentBlankline = pcall(require, "indent_blankline")
+
 if not hadSuccess then
   return
 end

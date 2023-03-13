@@ -4,11 +4,10 @@ local LangMaps = {
   cpp = { build = "g++ % -o %:r", exec = "./%:r" },
   cs = { build = "dotnet build", exec = "dotnet run" },
   c = { build = "gcc % -o %:r", exec = "./%:r" },
-  java = { build = "javac %", exec = "java %:r" },
   python = { exec = "python %" },
-  sh = { exec = "./%" },
   typescript = { build = "tsc %", exec = "node %:r.js" },
   javascript = { exec = "node %" },
+  sh = { exec = "./%" },
 }
 
 for langType, langInfo in pairs(LangMaps) do
@@ -39,18 +38,16 @@ autoCMD("BufEnter", {
   pattern = "*",
 })
 
+autoCMD("VimEnter", {
+  command = "intro",
+  pattern = "*",
+})
+
 autoCMD("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
       higroup = "IncSearch",
       timeout = 300,
     })
-  end,
-})
-
-autoCMD("BufWritePost", {
-  pattern = { "*.java" },
-  callback = function()
-    local _, _ = pcall(vim.lsp.codelens.refresh)
   end,
 })

@@ -1,4 +1,5 @@
 local hadSuccess, LazyPlugins = pcall(require, "lazy")
+
 if not hadSuccess then
   return
 end
@@ -19,34 +20,12 @@ LazyPlugins.setup({
     "projekt0n/github-nvim-theme",
     lazy = false,
     config = function()
-      require("ColorSchemes.GitHub")
-    end,
-  },
-  {
-    "sainnhe/everforest",
-    config = function()
-      require("ColorSchemes.Everforest")
-    end,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    config = function()
-      require("ColorSchemes.GruvBox")
-    end,
-  },
-  {
-    "navarasu/onedark.nvim",
-    config = function()
-      require("ColorSchemes.OneDark")
+      require("MainSettings.ColorScheme")
     end,
   },
 
   "nvim-lualine/lualine.nvim",
   "stevearc/dressing.nvim",
-  {
-    "glepnir/dashboard-nvim",
-    commit = "e517188dab55493fb9034b4d4f1a508ccacfcd45",
-  },
   "lukas-reineke/indent-blankline.nvim",
 
   "nvim-tree/nvim-tree.lua",
@@ -65,16 +44,12 @@ LazyPlugins.setup({
       "williamboman/mason-lspconfig.nvim",
       "onsails/lspkind-nvim",
       "ray-x/lsp_signature.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
-      "j-hui/fidget.nvim",
-      "jose-elias-alvarez/typescript.nvim",
-      "simrat39/rust-tools.nvim",
-      {
-        "mfussenegger/nvim-jdtls",
-        ft = "java",
-      },
     },
   },
+
+  "jose-elias-alvarez/null-ls.nvim",
+  "jose-elias-alvarez/typescript.nvim",
+  "simrat39/rust-tools.nvim",
 
   {
     "L3MON4D3/LuaSnip",
@@ -92,7 +67,6 @@ LazyPlugins.setup({
       "hrsh7th/cmp-path",
       "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
-      "lukas-reineke/cmp-under-comparator",
     },
   },
 

@@ -1,13 +1,14 @@
 local hadSuccess, TODOComments = pcall(require, "todo-comments")
+
 if not hadSuccess then
   return
 end
 
-local Error_Red = "#F44747"
-local Warning_Orange = "#ff8800"
-local Hint_Blue = "#4FC1FF"
-local Perf_Purple = "#7C3AED"
-local Note_Green = "#10B981"
+local Error_Red = "#EA4A5A"
+local Warning_Orange = "#FFEA7F"
+local Hint_Blue = "#2188FF"
+local Perf_Purple = "#B392F0"
+local Note_Green = "#34D058"
 
 TODOComments.setup({
   signs = true,

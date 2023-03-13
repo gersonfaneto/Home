@@ -1,4 +1,5 @@
 local hadSuccess, GitHub_Theme = pcall(require, "github-theme")
+
 if not hadSuccess then
   return
 end

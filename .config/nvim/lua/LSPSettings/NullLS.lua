@@ -1,4 +1,5 @@
 local hadSuccess, NullLS = pcall(require, "null-ls")
+
 if not hadSuccess then
   return
 end

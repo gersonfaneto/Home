@@ -1,4 +1,5 @@
 local hadSuccess, DiscordPresence = pcall(require, "presence")
+
 if not hadSuccess then
   return
 end
