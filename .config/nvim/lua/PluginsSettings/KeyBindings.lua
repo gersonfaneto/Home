@@ -32,6 +32,11 @@ function KeyBindings.GitKeys(_)
   end, "Git = [D]iff [T]his")
 end
 
+function KeyBindings.DashboardKeys()
+  keyMap("n", "<leader>o", ":DashboardNewFile<CR>", "[O]pen New File")
+  keyMap("n", "<leader>m", ":Dashboard<CR>", "Main [M]enu")
+end
+
 function KeyBindings.NvimTreeKeys()
   keyMap("n", "<F2>", ":NvimTreeToggle<CR>", "NvimTree - Toggle")
   keyMap("n", "<F3>", ":NvimTreeFocus<CR>", "NvimTree - Focus")

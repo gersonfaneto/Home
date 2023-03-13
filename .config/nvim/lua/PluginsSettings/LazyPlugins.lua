@@ -24,6 +24,11 @@ LazyPlugins.setup({
     end,
   },
 
+  {
+    "glepnir/dashboard-nvim",
+    commit = "e517188dab55493fb9034b4d4f1a508ccacfcd45",
+  },
+
   "nvim-lualine/lualine.nvim",
   "stevearc/dressing.nvim",
   "lukas-reineke/indent-blankline.nvim",
