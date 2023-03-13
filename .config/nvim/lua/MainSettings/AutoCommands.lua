@@ -38,11 +38,6 @@ autoCMD("BufEnter", {
   pattern = "*",
 })
 
-autoCMD("VimEnter", {
-  command = "intro",
-  pattern = "*",
-})
-
 autoCMD("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
