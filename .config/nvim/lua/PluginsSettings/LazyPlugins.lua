@@ -86,6 +86,10 @@ LazyPlugins.setup({
     end,
     ft = "markdown",
   },
+  {
+    "manzeloth/live-server",
+    ft = "html",
+  },
 
   "andweeb/presence.nvim",
 

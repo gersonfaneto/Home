@@ -1,1 +1,0 @@
-require("PluginsSettings.KeyBindings").MarkdownPreview()

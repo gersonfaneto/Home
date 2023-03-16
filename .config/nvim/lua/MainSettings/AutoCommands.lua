@@ -38,6 +38,11 @@ autoCMD("BufEnter", {
   pattern = "*",
 })
 
+autoCMD("BufEnter", {
+  command = "lua require('PluginsSettings.KeyBindings').LiveServers()",
+  pattern = {"*.md", "*.html"},
+})
+
 autoCMD("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({

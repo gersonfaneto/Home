@@ -13,9 +13,13 @@ function KeyBindings.DiscordToggle()
   keyMap("n", "<leader>pd", ":lua DiscordStatus()<CR>", "Discord [P]resence [D]isable")
 end
 
-function KeyBindings.MarkdownPreview()
-  keyMap("n", "<leader>ms", ":MarkdownPreview<CR>", "Live Servers - [M]arkdown [S]tart")
-  keyMap("n", "<leader>me", ":MarkdownPreviewStop<CR>", "Live Servers - [M]arkdown [E]nd")
+function KeyBindings.LiveServers()
+  if vim.bo.filetype == "markdown" then
+    keyMap("n", "<leader>ls", ":MarkdownPreviewToggle<CR>", "Markdown - [L]ive [S]ervers")
+  elseif vim.bo.filetype == "html" then
+    keyMap("n", "<leader>ls", ":LiveServer start<CR>", "HTML - [L]ive [S]ervers - [S]tart")
+    keyMap("n", "<leader>lS", ":LiveServer stop<CR>", "HTML - [L]ive [S]ervers - [S]top")
+  end
 end
 
 function KeyBindings.GitKeys(_)
