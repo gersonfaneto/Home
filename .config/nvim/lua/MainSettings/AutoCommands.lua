@@ -40,7 +40,7 @@ autoCMD("BufEnter", {
 
 autoCMD("BufEnter", {
   command = "lua require('PluginsSettings.KeyBindings').LiveServers()",
-  pattern = {"*.md", "*.html"},
+  pattern = { "*.md", "*.html" },
 })
 
 autoCMD("TextYankPost", {

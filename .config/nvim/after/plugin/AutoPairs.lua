@@ -10,4 +10,3 @@ AutoPairs.setup({
     "vim",
   },
 })
-

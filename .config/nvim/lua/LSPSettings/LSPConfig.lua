@@ -91,6 +91,4 @@ for _, lspServer in pairs(mainServers) do
   end
 
   LSPConfig[lspServer].setup(lspOpts)
-
 end
-

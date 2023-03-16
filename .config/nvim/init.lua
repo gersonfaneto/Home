@@ -10,4 +10,3 @@ require("LSPSettings.LSPInstall")
 require("LSPSettings.LSPConfig")
 require("LSPSettings.Snippets")
 require("LSPSettings.NullLS")
-

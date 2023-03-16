@@ -57,4 +57,3 @@ MasonConfig.setup({
   ensure_installed = mainServers,
   automatic_installation = false,
 })
-
