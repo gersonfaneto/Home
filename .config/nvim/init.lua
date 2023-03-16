@@ -5,9 +5,9 @@ require("MainSettings.AutoCommands")
 require("PluginsSettings.LazyInstall")
 require("PluginsSettings.LazyPlugins")
 
+require("LSPSettings.Completion")
+require("LSPSettings.LSPInstall")
+require("LSPSettings.LSPConfig")
+require("LSPSettings.Snippets")
 require("LSPSettings.NullLS")
-require("LSPSettings.MasonConfig")
-require("LSPSettings.SnippetsConfig")
-require("LSPSettings.CompletionConfig")
-require("LSPSettings.DiagnosticsConfig")
 

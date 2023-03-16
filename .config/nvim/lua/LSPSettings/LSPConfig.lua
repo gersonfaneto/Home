@@ -1,64 +1,32 @@
-local hadSuccessI, MasonManager = pcall(require, "mason")
-local hadSuccessII, MasonConfig = pcall(require, "mason-lspconfig")
-local hadSuccessIII, LSPConfig = pcall(require, "lspconfig")
-local hadSuccessIV, CompletionConfig = pcall(require, "cmp_nvim_lsp")
-local allSet = hadSuccessI and hadSuccessII and hadSuccessIII and hadSuccessIV
+local hadSuccessI, LSPConfig = pcall(require, "lspconfig")
+local hadSuccessII, CompletionConfig = pcall(require, "cmp_nvim_lsp")
+local hadSuccessIII, InstalledServers = pcall(require, "mason-lspconfig")
+local allSet = hadSuccessI and hadSuccessII and hadSuccessIII
 
 if not allSet then
   return
 end
 
-local defaultLSPPreview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or "single"
-  opts.max_width = opts.max_width or 80
-  return defaultLSPPreview(contents, syntax, opts, ...)
-end
+local mainServers = InstalledServers.get_installed_servers()
+local VimDiagnostic = vim.diagnostic.config
+local signDefine = vim.fn.sign_define
 
-local mainServers = {
-  "rust_analyzer",
-  "csharp_ls",
-  "clangd",
-  "cmake",
-  "pyright",
-  "lua_ls",
-  "tsserver",
-  "emmet_ls",
-  "eslint",
-  "cssls",
-  "html",
-  "tailwindcss",
-  "jsonls",
-  "taplo",
-}
-
-MasonManager.setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗",
-    },
-    border = {
-      "╭",
-      "─",
-      "╮",
-      "│",
-      "╯",
-      "─",
-      "╰",
-      "│",
-    },
+VimDiagnostic({
+  virtual_text = true,
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    source = "always",
+    header = "",
+    prefix = "",
   },
-  log_level = vim.log.levels.INFO,
-  max_concurrent_installers = 4,
 })
 
-MasonConfig.setup({
-  ensure_installed = mainServers,
-  automatic_installation = false,
-})
+signDefine("DiagnosticSignError", { text = "✗", texthl = "DiagnosticSignError" })
+signDefine("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })
+signDefine("DiagnosticSignInformation", { text = "", texthl = "DiagnosticSignInfo" })
+signDefine("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 local lspOpts = {
   on_attach = function(_, bufnr)
@@ -122,11 +90,7 @@ for _, lspServer in pairs(mainServers) do
     LSPConfig[lspServer].setup(customOpts)
   end
 
-  if lspServer == "jdtls" then
-    goto continue
-  end
-
   LSPConfig[lspServer].setup(lspOpts)
 
-  ::continue::
 end
+
