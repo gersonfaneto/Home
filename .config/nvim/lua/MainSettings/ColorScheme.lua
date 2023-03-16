@@ -1,8 +1,6 @@
-local hadSuccess, GitHub_Theme = pcall(require, "github-theme")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local GitHub_Theme = pCall("github-theme")
 
 GitHub_Theme.setup({
   theme_style = "dark_default",

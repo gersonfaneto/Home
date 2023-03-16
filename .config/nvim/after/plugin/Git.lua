@@ -1,7 +1,6 @@
-local hadSuccess, GitSigns = pcall(require, "gitsigns")
-if not hadSuccess then
-  return
-end
+local pCall = require("Utils.ProtectedCall")
+
+local GitSigns = pCall("gitsigns")
 
 GitSigns.setup({
   on_attach = require("PluginsSettings.KeyBindings").GitKeys(),

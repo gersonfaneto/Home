@@ -1,8 +1,6 @@
-local hadSuccess, LazyPlugins = pcall(require, "lazy")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local LazyPlugins = pCall("lazy")
 
 LazyPlugins.setup({
   "wbthomason/packer.nvim",

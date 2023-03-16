@@ -1,4 +1,4 @@
-local autoCMD = vim.api.nvim_create_autocmd
+local autoCMD = require("Utils.Shorts").autoCMD
 
 local LangMaps = {
   cpp = { build = "g++ % -o %:r", exec = "./%:r" },

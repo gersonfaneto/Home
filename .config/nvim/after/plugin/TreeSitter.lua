@@ -1,8 +1,6 @@
-local hadSuccess, TreeSitter = pcall(require, "nvim-treesitter.configs")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local TreeSitter = pCall("nvim-treesitter.configs")
 
 TreeSitter.setup({
   ensure_installed = {

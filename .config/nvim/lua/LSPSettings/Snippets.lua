@@ -1,10 +1,7 @@
-local hadSuccessI, LuaSnipVS = pcall(require, "luasnip/loaders/from_vscode")
-local hadSuccessII, LuaSnip = pcall(require, "luasnip")
-local allSet = hadSuccessI and hadSuccessII
+local pCall = require("Utils.ProtectedCall")
 
-if not allSet then
-  return
-end
+local LuaSnipVS = pCall("luasnip/loaders/from_vscode")
+local LuaSnip = pCall("luasnip")
 
 LuaSnipVS.lazy_load()
 

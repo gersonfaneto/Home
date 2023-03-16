@@ -1,8 +1,6 @@
-local hadSuccess, Colorizer = pcall(require, "colorizer")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Colorizer = pCall("colorizer")
 
 Colorizer.setup({
   user_default_options = {

@@ -1,7 +1,5 @@
-local hadSuccess, Comment = pcall(require, "Comment")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Comment = pCall("Comment")
 
 Comment.setup()

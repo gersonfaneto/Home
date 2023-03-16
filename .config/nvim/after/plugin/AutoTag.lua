@@ -1,7 +1,5 @@
-local hadSuccess, AutoTag = pcall(require, "nvim-ts-autotag")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local AutoTag = pCall("nvim-ts-autotag")
 
 AutoTag.setup({})

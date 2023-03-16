@@ -1,8 +1,6 @@
-local hadSuccess, TODOComments = pcall(require, "todo-comments")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local TODOComments = pCall("todo-comments")
 
 local Error_Red = "#EA4A5A"
 local Warning_Orange = "#FFEA7F"

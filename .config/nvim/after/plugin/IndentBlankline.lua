@@ -1,8 +1,6 @@
-local hadSuccess, IndentBlankline = pcall(require, "indent_blankline")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local IndentBlankline = pCall("indent_blankline")
 
 IndentBlankline.setup({
   show_trailing_blankline_indent = false,

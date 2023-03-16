@@ -1,8 +1,6 @@
 local KeyBindings = {}
 
-local keyMap = function(tMode, tKeys, tOutput, kDesc, tBufnr)
-  vim.keymap.set(tMode, tKeys, tOutput, { noremap = true, silent = true, desc = kDesc or "", buffer = tBufnr })
-end
+local keyMap = require("Utils.KeyBindings")
 
 function DiscordStatus()
   package.loaded.presence:stop()

@@ -1,8 +1,6 @@
-local hadSuccess, DiscordPresence = pcall(require, "presence")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local DiscordPresence = pCall("presence")
 
 DiscordPresence:setup({
   auto_update = true,

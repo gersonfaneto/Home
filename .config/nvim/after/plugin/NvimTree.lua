@@ -1,8 +1,6 @@
-local hadSuccess, NvimTree = pcall(require, "nvim-tree")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local NvimTree = pCall("nvim-tree")
 
 NvimTree.setup({
   hijack_directories = {

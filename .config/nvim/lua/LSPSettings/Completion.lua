@@ -1,11 +1,8 @@
-local hadSuccessI, CompletionConfig = pcall(require, "cmp")
-local hadSuccessII, LuaSnipConfig = pcall(require, "luasnip")
-local hadSuccessIII, LSPKindIcons = pcall(require, "lspkind")
-local allSet = hadSuccessI and hadSuccessII and hadSuccessIII
+local pCall = require("Utils.ProtectedCall")
 
-if not allSet then
-  return
-end
+local CompletionConfig = pCall("cmp")
+local LuaSnipConfig = pCall("luasnip")
+local LSPKindIcons = pCall("lspkind")
 
 local CompMapping = CompletionConfig.mapping
 local CompConfig = CompletionConfig.config

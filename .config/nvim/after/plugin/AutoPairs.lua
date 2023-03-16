@@ -1,8 +1,6 @@
-local hadSuccess, AutoPairs = pcall(require, "nvim-autopairs")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local AutoPairs = pCall("nvim-autopairs")
 
 AutoPairs.setup({
   disable_filetype = {

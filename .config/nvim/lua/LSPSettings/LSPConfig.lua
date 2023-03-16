@@ -1,11 +1,8 @@
-local hadSuccessI, LSPConfig = pcall(require, "lspconfig")
-local hadSuccessII, CompletionConfig = pcall(require, "cmp_nvim_lsp")
-local hadSuccessIII, InstalledServers = pcall(require, "mason-lspconfig")
-local allSet = hadSuccessI and hadSuccessII and hadSuccessIII
+local pCall = require("Utils.ProtectedCall")
 
-if not allSet then
-  return
-end
+local LSPConfig = pCall("lspconfig")
+local CompletionConfig = pCall("cmp_nvim_lsp")
+local InstalledServers = pCall("mason-lspconfig")
 
 local mainServers = InstalledServers.get_installed_servers()
 local VimDiagnostic = vim.diagnostic.config

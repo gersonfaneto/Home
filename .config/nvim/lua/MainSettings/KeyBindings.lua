@@ -1,7 +1,4 @@
-local keyMap = function(tMode, tKeys, tOutput, kDesc)
-  local genOpts = { noremap = true, silent = true, desc = kDesc or "" }
-  vim.keymap.set(tMode, tKeys, tOutput, genOpts)
-end
+local keyMap = require("Utils.KeyBindings")
 
 keyMap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "

@@ -1,10 +1,7 @@
-local hadSuccessI, MasonManager = pcall(require, "mason")
-local hadSuccessII, MasonConfig = pcall(require, "mason-lspconfig")
-local allSet = hadSuccessI and hadSuccessII
+local pCall = require("Utils.ProtectedCall")
 
-if not allSet then
-  return
-end
+local MasonManager = pCall("mason")
+local MasonConfig = pCall("mason-lspconfig")
 
 local defaultLSPPreview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)

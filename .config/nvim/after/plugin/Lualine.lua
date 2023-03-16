@@ -1,8 +1,6 @@
-local hadSuccess, Lualine = pcall(require, "lualine")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Lualine = pCall("lualine")
 
 Lualine.setup({
   options = {

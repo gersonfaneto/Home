@@ -1,8 +1,6 @@
-local hadSuccess, Signature = pcall(require, "lsp_signature")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Signature = pCall("lsp_signature")
 
 local Config = {
   debug = false,

@@ -1,8 +1,6 @@
-local hadSuccess, Dressing = pcall(require, "dressing")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Dressing = pCall("dressing")
 
 Dressing.setup({
   input = {

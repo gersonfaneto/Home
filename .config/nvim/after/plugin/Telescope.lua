@@ -1,8 +1,6 @@
-local hadSuccess, Telescope = pcall(require, "telescope")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local Telescope = pCall("telescope")
 
 local Actions = require("telescope.actions")
 local Sorters = require("telescope.sorters")

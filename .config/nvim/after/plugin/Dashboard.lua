@@ -1,7 +1,6 @@
-local hadSuccess, Dashboard = pcall(require, "dashboard")
-if not hadSuccess then
-  return
-end
+local pCall = require("Utils.ProtectedCall")
+
+local Dashboard = pCall("dashboard")
 
 Dashboard.custom_header = {
   "                                                              ",

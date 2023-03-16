@@ -1,8 +1,6 @@
-local hadSuccess, LSPKind = pcall(require, "lspkind")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local LSPKind = pCall("lspkind")
 
 LSPKind.init({
   mode = "symbol_text",

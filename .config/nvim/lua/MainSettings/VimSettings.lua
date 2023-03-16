@@ -1,4 +1,4 @@
-local setOption = vim.opt
+local setOption = require("Utils.Shorts").setOption
 
 setOption.backup = false
 setOption.undofile = true

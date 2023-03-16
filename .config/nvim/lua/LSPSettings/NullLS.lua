@@ -1,8 +1,6 @@
-local hadSuccess, NullLS = pcall(require, "null-ls")
+local pCall = require("Utils.ProtectedCall")
 
-if not hadSuccess then
-  return
-end
+local NullLS = pCall("null-ls")
 
 local Formatting = NullLS.builtins.formatting
 local CodeActions = NullLS.builtins.code_actions
