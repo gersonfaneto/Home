@@ -47,7 +47,7 @@ end
 # Quickly summon 'git' and use 'config' as an alias for the 'MySetup' repository.
 if type -q git
   alias g git
-  alias config "/usr/bin/git --git-dir=$HOME/Developer/GitHub/Personal/MySetup \
+  alias config "/usr/bin/git --git-dir=$HOME/Developer/GitHub/MySetup \
     --work-tree=$HOME/"
 end
 
