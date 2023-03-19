@@ -94,13 +94,13 @@ nnoremap <silent> <leader>d <C-w>l
 
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
-nnoremap <silent> <leader>d :bdelete<CR>
+nnoremap <silent> <leader>D :bdelete<CR>
 
 nnoremap <silent> <C-w> :wall<CR>
 nnoremap <silent> <C-q> :quit<CR>
 
-nnoremap <silent> <leader>a ggVG
-nnoremap <silent> <leader>y :%y<CR>
+nnoremap <silent> <C-a> ggVG
+nnoremap <silent> <C-y> :%y<CR>
 nnoremap <silent> <leader>nh :noh<CR>
 
 vnoremap <silent> < <gv
