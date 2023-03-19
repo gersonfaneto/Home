@@ -1,3 +1,7 @@
+# Editors
+.vscode/
+.idea/
+
 # Logs
 [Ll]ogs/
 .log
@@ -26,6 +30,7 @@ Flags.txt
 Files.txt
 
 # General
+[Ee]xamples
 TODO.md
 Run.sh
 Build.sh
