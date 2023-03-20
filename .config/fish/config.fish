@@ -128,8 +128,13 @@ function hop -d "Create a new directory and set it as the CWD"
 end
 
 
-function todo -d "Display the contents of a TODO.md list on ~/Desktop"
-  if test -f ~/Desktop/TODO.md
+function todo -d "Display the contents of a TODO.md file on the current directory."
+  ls --oneline --no-icons | grep TODO.md | read line
+
+  if test $line 
+    and type -q glow
+    command glow $line
+  else if test -f ~/Desktop/TODO.md # If not file was found look for one at '$HOME/Desktop'
     and type -q glow
     command glow ~/Desktop/TODO.md
   end
