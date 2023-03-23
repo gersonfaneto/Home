@@ -125,6 +125,9 @@ end
 #                                  Functions                                     #
 #--------------------------------------------------------------------------------#
 
+# Function for creating a new directory and changing into at the same time.
+# Ex: hop Foo
+# Output: Creates a new folder called Foo and 'cd' into it.
 function hop -d "Create a new directory and set it as the CWD"
   command mkdir $argv
     if test $status = 0
@@ -138,48 +141,27 @@ function hop -d "Create a new directory and set it as the CWD"
 end
 
 
+# Function for creating a backup for a given file.
+# Ex: bak Foo.txt
+# Output: Copies file as Foo.txt.bak
+function bak --argument filename -d "Function for creating a backup for a given file."
+    cp $filename $filename.bak
+end
+
+
+# Function for displaying the contents of a TOOD.md file on the current working
+# directory. If no file is found, looks for one in the ~/Desktop.
+# Ex: todo 
+# Output: Display the contents of the found TODO.md using 'glow'.
 function todo -d "Display the contents of a TODO.md file on the current directory."
   ls --oneline --no-icons | grep TODO.md | read line
 
   if test $line 
     and type -q glow
     command glow $line
-  else if test -f ~/Desktop/TODO.md # If not file was found look for one at '$HOME/Desktop'
+  else if test -f ~/Desktop/TODO.md
     and type -q glow
     command glow ~/Desktop/TODO.md
   end
 end
 
-
-# Retrieves the previous executed command.
-function history_previous_command
-  switch (commandline -t)
-    case "!"
-      commandline -t $history[1]; commandline -f repaint
-    case "*"
-      commandline -i !
-  end
-end
-
-
-# Retrieves the arguments form the previous executed command.
-function history_previous_command_arguments
-  switch (commandline -t)
-    case "!"
-      commandline -t ""
-      commandline -f history-token-search-backward
-    case "*"
-      commandline -i '$'
-  end
-end
-
-
-# Bring bash's "!!" and "!$! to fish. Depends on the two functions above.
-# See: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/fish/config.fish
-if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
-  bind -Minsert ! history_previous_command
-  bind -Minsert '$' history_previous_command_arguments
-else
-  bind ! history_previous_command
-  bind '$' history_previous_command_arguments
-end
