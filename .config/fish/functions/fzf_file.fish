@@ -1,3 +1,5 @@
+# Uses 'fzf' and 'rg' to search for files on the current
+# working directory and open them on the '$EDITOR'.
 function fzf_file
   set -l fzf_flags --preview="batcat --theme=TwoDark --style=numbers --color=always --line-range :500 {}"
 
