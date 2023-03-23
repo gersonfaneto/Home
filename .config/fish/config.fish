@@ -140,3 +140,36 @@ function todo -d "Display the contents of a TODO.md file on the current director
   end
 end
 
+
+# Retrieves the previous executed command.
+function history_previous_command
+  switch (commandline -t)
+    case "!"
+      commandline -t $history[1]; commandline -f repaint
+    case "*"
+      commandline -i !
+  end
+end
+
+
+# Retrieves the arguments form the previous executed command.
+function history_previous_command_arguments
+  switch (commandline -t)
+    case "!"
+      commandline -t ""
+      commandline -f history-token-search-backward
+    case "*"
+      commandline -i '$'
+  end
+end
+
+
+# Bring bash's "!!" and "!$! to fish. Depends on the two functions above.
+# See: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/fish/config.fish
+if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
+  bind -Minsert ! history_previous_command
+  bind -Minsert '$' history_previous_command_arguments
+else
+  bind ! history_previous_command
+  bind '$' history_previous_command_arguments
+end
