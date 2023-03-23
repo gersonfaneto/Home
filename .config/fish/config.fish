@@ -12,12 +12,21 @@ set -gx EDITOR nvim
 # General Aliases.
 alias ex exit
 alias cl clear
-alias cp "cp -i"
-alias mv "mv -i"
-alias rm "rm -i"
 alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
 alias refresh "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+
+# Confirm before overwriting something.
+alias cp "cp -i"
+alias mv "mv -i"
+alias rm "rm -i"
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
 
 #--------------------------------------------------------------------------------#
 #                               Especial Aliases                                 #
@@ -25,10 +34,11 @@ alias refresh "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
 # Use 'exa' instead of 'ls'
 if type -q exa
-  alias ls "exa --icons"
-  alias ll "exa --icons --long --header --group-directories-first"
-  alias lla "exa --icons --long --all --header --group-directories-first"
-  alias tree "exa --icons --tree --level=6 --only-dirs"
+  alias ls "exa --icons --color=always"
+  alias ls "exa --icons --color=always --group-directories-first"
+  alias ll "exa --icons --color=always --long --header --group-directories-first"
+  alias lla "exa --all --long --icons --color=always--header --group-directories-first"
+  alias tree "exa --all --tree --icons --color=always --group-directories-first"
 end
 
 # Quickly manipulate 'TMUX' sessions
