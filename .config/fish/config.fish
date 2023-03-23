@@ -34,10 +34,10 @@ alias .5="cd ../../../../.."
 
 # Use 'exa' instead of 'ls'
 if type -q exa
-  alias ls "exa --icons --color=always"
   alias ls "exa --icons --color=always --group-directories-first"
+  alias la "exa --icons --color=always --group-directories-first"
   alias ll "exa --icons --color=always --long --header --group-directories-first"
-  alias lla "exa --all --long --icons --color=always--header --group-directories-first"
+  alias lla "exa --all --long --icons --color=always --header --group-directories-first"
   alias tree "exa --all --tree --icons --color=always --group-directories-first"
 end
 
