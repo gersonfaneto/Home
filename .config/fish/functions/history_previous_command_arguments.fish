@@ -1,9 +1,10 @@
-# Retrieves the previous executed command.
-function history_previous_command
+# Retrieves the arguments form the previous executed command.
+function history_previous_command_arguments
   switch (commandline -t)
     case "!"
-      commandline -t $history[1]; commandline -f repaint
+      commandline -t ""
+      commandline -f history-token-search-backward
     case "*"
-      commandline -i !
+      commandline -i '$'
   end
 end
