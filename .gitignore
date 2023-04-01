@@ -1,9 +1,12 @@
 # Fish
-fish/.config/completions/
-fish/.config/conf.d/
-fish/.config/fish_variables
-fish/.config/functions/__*
-fish/.config/functions/fisher
+fish/.config/fish/completions/
+fish/.config/fish/conf.d/
+fish/.config/fish/fish_variables
+fish/.config/fish/functions/__*
+fish/.config/fish/functions/fisher.fish
 
 # TMUX
 tmux/.config/tmux/plugins
+
+# GH
+gh/.config/gh/hosts.yml
