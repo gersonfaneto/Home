@@ -1,0 +1,6 @@
+# Fish
+fish/.config/completions/
+fish/.config/conf.d/
+fish/.config/fish_variables
+
+
