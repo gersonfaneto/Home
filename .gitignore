@@ -2,5 +2,8 @@
 fish/.config/completions/
 fish/.config/conf.d/
 fish/.config/fish_variables
+fish/.config/functions/__*
+fish/.config/functions/fisher
 
-
+# TMUX
+tmux/.config/tmux/plugins
