@@ -1,9 +1,15 @@
 # Fish
-fish/.config/fish/completions/
-fish/.config/fish/conf.d/
-fish/.config/fish/fish_variables
-fish/.config/fish/functions/__*
-fish/.config/fish/functions/fisher.fish
+/fish/.config/fish/*
+!/fish/.config/fish/config.fish
+!/fish/.config/fish/fish_plugins
+!/fish/.config/fish/functions/fish_user_key_bindings.fish
+!/fish/.config/fish/functions/fzf_directory.fish
+!/fish/.config/fish/functions/fzf_file.fish
+!/fish/.config/fish/functions/fzf_history.fish
+!/fish/.config/fish/functions/history_previous_command.fish
+!/fish/.config/fish/functions/history_previous_command_arguments.fish
+!/fish/.config/fish/functions/tmux_attach.fish
+!/fish/.config/fish/functions/tmux_kill.fish
 
 # TMUX
 tmux/.config/tmux/plugins/*
