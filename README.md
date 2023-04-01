@@ -11,7 +11,8 @@
 > files or directories. Dotfiles are configuration files for various programs, and they
 > help those programs manage their functionality. What sets them apart from regular files
 > and directories is their prefix. Dotfiles are named that way because each file and directory
-> starts with a dot (.) On Unix based systems, dotfiles are hidden by the Operating System by default."  
+> starts with a dot (.). On Unix based systems, dotfiles are hidden by the Operating System by
+> default."  
 > --- _FreeCodeCamp_
 
 ## Installing
@@ -34,8 +35,7 @@ $ git clone --depth 1 https://github.com/gersonfaneto/Dotfiles
 $ stow */
 ```
 
-> **Note**: You can also select individually the folders you want to stow by providing its name
-> in place of '\*/':
+> **Note**: You can also select individually the folders you want to stow by providing its folder name:
 >
 > ```bash
 > $ stow nvim
