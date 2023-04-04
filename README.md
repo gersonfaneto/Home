@@ -35,6 +35,11 @@ $ git clone --depth 1 https://github.com/gersonfaneto/Dotfiles
 $ stow */
 ```
 
+3. Some folders like `tmux` depends on some `git` submodules. The following command will sync them.
+```bash
+$ git submodule update --init
+```
+
 > **Note**: You can also select individually the folders you want to stow by providing its folder name:
 >
 > ```bash
