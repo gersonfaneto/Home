@@ -16,3 +16,10 @@ tmux/.config/tmux/plugins/*
 
 # GH
 gh/.config/gh/hosts.yml
+
+# Neovim
+neovim/.config/nvim/.luarc.json
+neovim/.config/nvim/lazy-lock.json
+
+# Vim
+vim/.vim/.netrwhist
