@@ -100,9 +100,9 @@
   }; f"
 
   # Delete all branches that have already been merged into the "main" branch.
-  clean-all = "!git clean-local && git clean-remote"
+  clean-all = "!git clean-local; git clean-remote"
 
-  # Delete all local branches that have been merged into the local master branch.
+  # Delete all local branches that have been merged into the local "main" branch.
   clean-local = "!git checkout main && git branch --merged | xargs git branch -d"
 
   # Delete all remote branches that have been merged into the remote "main" branch.
@@ -119,11 +119,12 @@
   # and they go out of sync, and you want to nuke the "dev" branch.
   #
   # Calls the `publish` and `unpublish` aliases.
-  reincarnate = !"f() {\
-    if [[ -n $@ ]]; then\
+  reincarnate = "!f() {\
+    if [ -n "$@" ];\
+    then\
         git checkout \"$@\" &&\
         git unpublish &&\
-        git checkout master &&\
+        git checkout main &&\
         git branch -D \"$@\" &&\
         git checkout -b \"$@\" &&\
         git publish;\
