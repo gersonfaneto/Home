@@ -63,7 +63,7 @@
   ca = commit --all
 
   # Quickly edit the last commit message.
-  ce = commit --amend --no-edit
+  ce = commit --amend
   
   # Push the changes on the current local branch to the remote
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
@@ -94,6 +94,9 @@
 
   # Show the history of the commits in a minimal version (Message, date, author, ...) 
   hist = log --graph --topo-order --abbrev-commit --date=relative --decorate --all --boundary
+
+  # Show all the commits made today.
+  today = log --graph --topo-order --date=relative --decorate --since midnight
   
   # Show a more detailed version of the commit history (Complete message, date, author, files, ...)
   llog = log --graph --topo-order --name-status --date=relative --decorate
