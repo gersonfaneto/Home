@@ -15,7 +15,7 @@
   user = gersonfaneto
 
 [push]
-  default = upstream
+  default = simple
 
 [color]
   status = auto
@@ -25,87 +25,119 @@
   grep = auto
   ui = auto
 
-[format]
-  pretty = "%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset"
-
 [alias]
-  # Use "fzf" as a file selector for "git add"
+  # Use "fzf" as a file selector for "git add".
   a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
 
-  # Quickly initialize a new git repository
+  # Quickly initialize a new git repository.
   i = init
   
   # Quickly diff all the current changes.
   da = diff
   
-  # Select a tracked file through "fzf" and diff it
+  # Select a modified file through "fzf" and view its diff.
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
 
-  # Select a commit through "fzf" and display the changes/diff.
-  dc = "!git hist | fzf | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  # Select a commit through "fzf" and display the diff of the changes made.
+  dc = "!git log --oneline | fzf |  awk '{print $1}' | xargs -I {} git diff {}^ {}"
   
-  # Quickly checkout a branch
+  # Quickly manage branches.
   co = checkout
+
+  # Quickly checkout the "main" branch.
+  cm = "!git co main"
+    
+  # Quickly checkout the "dev" branch.
+  cd = "!git mk dev"
   
-  # Quickly checkout the "main" branch
-  cm = checkout main
+  # Quickly checkout the "build" branch.
+  cb = "!git mk build"
   
-  # Quickly checkout the "dev" branch
-  cd = checkout dev
-  
-  # Quickly checkout the "build" branch
-  cb = checkout build
-  
-  # Quickly commit the currently staged files
+  # Quickly commit the currently staged files.
   ci = commit
   
-  # Quickly add and commit the currently changed files
+  # Quickly add and commit the currently changed files.
   ca = commit --all
 
   # Quickly edit the last commit message.
   ce = commit --amend
   
-  # Push the changes on the current local branch to the remote
+  # Push the changes on the current local branch to the remote.
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   
-  # Pull the changes from the remote to the current local branch
+  # Pull the changes from the remote to the current local branch.
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
-  
-  # Show the status of the current branch
+
+  # Show the status of the current branch.
   st = status
   
-  # A minimal version of "st"
+  # A minimal version of "st".
   ss = status --short --branch
   
-  # Show the log for a specific commit, but only the file names are displayed
-  sf = show --name-only
+  # Show the log for a specific commit, but only the file names are displayed.
+  sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-only"
   
-  # Quickly manipulate branches
+  # Quickly manipulate branches.
   br = branch
 
-  # Show all the branches
-  ba = branch  --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
+  # Show all the branches.
+  ba = branch --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
   
-  # Show all the merged branches
+  # Show all the merged branches.
   bm = branch --merged
   
-  # Show all the non merged branches
+  # Show all the non merged branches.
   bn = branch --no-merged
 
-  # Show the history of the commits in a minimal version (Message, date, author, ...) 
-  hist = log --graph --topo-order --abbrev-commit --date=relative --decorate --all --boundary
+  # Quickly create a new branch and checkout it.
+  mk-branch = "!f() {\
+      if git rev-parse --verify $1 >/dev/null 2>&1;\
+      then\
+          git checkout $1;\
+      else\
+          git checkout -b $1;\
+      fi;\
+  }; f"
 
-  # Show all the commits made today.
-  today = log --graph --topo-order --date=relative --decorate --since midnight
+  # Delete all branches that have already been merged into the "main" branch.
+  clean-all = "!git clean-local && git clean-remote"
+
+  # Delete all local branches that have been merged into the local master branch.
+  clean-local = "!git checkout main && git branch --merged | xargs git branch -d"
+
+  # Delete all remote branches that have been merged into the remote "main" branch.
+  clean-remote = "!git branch -r --merged origin/main | sed 's# *origin/##' | grep -v '^main$' xargs -I% git push origin :% 2>&1 | grep --colour=never 'deleted'"
+
+  # Publish the current branch by pushing it to the remote "origin", and setting the current branch to track the upstream branch.
+  publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+
+  # Unpublish the current branch by deleting the remote version of the current branch.
+  unpublish = "!git push origin :$(git rev-parse --abbrev-ref HEAD)"
+
+  # Delete a branch name, then create the same branch name based on "main" —
+  # useful if you have, for example, a "dev" branch and "main" branch
+  # and they go out of sync, and you want to nuke the "dev" branch.
+  #
+  # Calls the `publish` and `unpublish` aliases.
+  reincarnate = !"f() {\
+    if [[ -n $@ ]]; then\
+        git checkout \"$@\" &&\
+        git unpublish &&\
+        git checkout master &&\
+        git branch -D \"$@\" &&\
+        git checkout -b \"$@\" &&\
+        git publish;\
+    fi;\
+  }; f"
   
-  # Show a more detailed version of the commit history (Complete message, date, author, files, ...)
-  llog = log --graph --topo-order --name-status --date=relative --decorate
-  
-  # Show the last (from the previous day to the moment) commits in a minimal version (Message, date, author, ...) 
-  last = log --graph --topo-order --date=relative --decorate --since yesterday
-  
-  # Show a more detailed version of the last commits made (Complete message, date, author, files, ...)
-  llast = log --graph --topo-order --name-status --date=relative --decorate --since yesterday
+  # Quickly update remotes.
+  prune = remote prune origin
+
+  # Show the commit history in a custom format.
+  hist = log --graph --abbrev-commit --date=relative --decorate --all --boundary --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
+
+  # Show all the commits made in the last 24 hours.
+  last = log --graph --date=relative --decorate --since midnight --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   
   # Fetch the remote and show the commits ahead of the local branch
   incoming = "!git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u}"
@@ -121,6 +153,7 @@
   
   # Reset to one commit behind
   rollback = reset --soft HEAD~1
-  
+
   # List all the committers/authors on a repository and rank them
   committers = "!git log | grep Author | sort | uniq -c | sort -n -r"
+
