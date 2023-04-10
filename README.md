@@ -1,7 +1,8 @@
-<h1 align="center">Dotfiles 🔧</h1>
+<h1 align="center">DOTFILES</h1>
 
 <div align="center">
 
+[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles/commit/main)
 [![License](https://img.shields.io/github/license/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles)
 
@@ -15,36 +16,46 @@
 > default."  
 > --- _FreeCodeCamp_
 
-## Installing
+<h4 align="center">
+  <a href="#usage">Usage</a>
+  ·
+  <a href="#todo">TODO</a>
+  ·
+  <a href="#license">License</a>
+</h4>
+
+## Usage
 
 This repository uses [`stow`](https://www.gnu.org/software/stow/) to manage the symlinks off all the
-files and directories in it, but you can also just individually symlink the contents of each directory
-directly into your `$HOME` directory.
-
-#### Using `Stow`
+files and directories in it, so make sure you have it installed before proceeding.
 
 1. Clone this repository into your local machine.
 
 ```bash
-$ git clone --depth 1 https://github.com/gersonfaneto/Dotfiles
+$ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```
 
-2. Run `Stow` and it will manage all the links.
+2. Inside the new folder, run `stow`.
 
 ```bash
 $ stow */
 ```
 
-3. Some folders like `tmux` depends on some `git` submodules. The following command will sync them.
+3. Update the `git` submodules (only needed for `tmux`).
+
 ```bash
 $ git submodule update --init
 ```
 
-> **Note**: You can also select individually the folders you want to stow by providing its folder name:
+> **Note**: You can also select individually the folders you want to stow by providing their name.
 >
 > ```bash
 > $ stow nvim
 > ```
+
+## TODO
+
+- [ ] `JARVIS.sh` - Basic script for automatic installing configurations, programs and dependencies.
 
 ## License
 
