@@ -45,13 +45,13 @@
   co = checkout
 
   # Quickly checkout the "main" branch.
-  cm = "!git co main"
+  cm = "!git checkout main"
     
   # Quickly checkout the "dev" branch.
-  cd = "!git mk dev"
+  cd = "!git mk-branch dev"
   
   # Quickly checkout the "build" branch.
-  cb = "!git mk build"
+  cb = "!git mk-brach build"
   
   # Quickly commit the currently staged files.
   ci = commit
@@ -89,7 +89,7 @@
   # Show all the non merged branches.
   bn = branch --no-merged
 
-  # Quickly create a new branch and checkout it.
+  # Quickly create a new branch and switch to it or switch automatically if it already existed.
   mk-branch = "!f() {\
       if git rev-parse --verify $1 >/dev/null 2>&1;\
       then\
