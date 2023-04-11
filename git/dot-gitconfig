@@ -32,32 +32,32 @@
   # Quickly initialize a new git repository.
   i = init
   
-  # Quickly diff all the current changes.
-  da = diff
-  
   # Select a modified file through "fzf" and view its diff.
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
 
   # Select a commit through "fzf" and display the diff of the changes made.
   dc = "!git log --oneline | fzf |  awk '{print $1}' | xargs -I {} git diff {}^ {}"
   
-  # Quickly manage branches.
+  # Quickly manage branches/commits.
   co = checkout
 
-  # Quickly checkout the "main" branch.
+  # Quickly switch to the "main" branch.
   cm = "!git checkout main"
     
-  # Quickly checkout the "dev" branch.
-  cd = "!git mk-branch dev"
-  
+  # Quickly switch to the "dev" branch.
+  cd = "!git go dev"
+
   # Quickly checkout the "build" branch.
-  cb = "!git mk-brach build"
+  cb = "!git go build"
+
+  # Quickly switch to the "staging" branch.
+  cs = "!git go staging"
   
   # Quickly commit the currently staged files.
   ci = commit
   
   # Quickly add and commit the currently changed files.
-  ca = commit --all
+  ca = "!git add --all && git commit"
 
   # Quickly edit the last commit message.
   ce = commit --amend
@@ -74,10 +74,10 @@
   # A minimal version of "st".
   ss = status --short --branch
   
-  # Show the log for a specific commit, but only the file names are displayed.
+  # Show all the details for a specific commit.
   sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-only"
   
-  # Quickly manipulate branches.
+  # Quickly manage branches.
   br = branch
 
   # Show all the branches.
@@ -89,8 +89,32 @@
   # Show all the non merged branches.
   bn = branch --no-merged
 
+  # Show the commit history in a custom format.
+  hist = log --graph --abbrev-commit --date=relative --decorate --all --boundary --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
+
+  # Show all the commits made in the last 24 hours.
+  last = "!git hist --since yesterday"
+  
+  # Fetch the remote and show the commits ahead of the local branch
+  in = "!git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u}"
+  
+  # Fetch the remote and show the commits ahead of the remote
+  out = "!git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}.."
+  
+  # Uses "fzf" to select staged files and restore/unstage them.
+  unstage = "!git status --short | awk '{print $2}' | fzf | xargs git restore --staged"
+
+  # Uses "fzf" to select modified (tracked) files and undo their changes
+  undo = "!git status --short | awk '{print $2}' | fzf | xargs git restore"
+  
+  # Reset to one commit behind
+  rollback = reset --soft HEAD~1
+
+  # List all the committers/authors on a repository and rank them
+  rank = "!git log | grep Author | sort | uniq -c | sort -n -r"
+
   # Quickly create a new branch and switch to it or switch automatically if it already existed.
-  mk-branch = "!f() {\
+  go = "!f() {\
       if git rev-parse --verify $1 >/dev/null 2>&1;\
       then\
           git checkout $1;\
@@ -100,7 +124,7 @@
   }; f"
 
   # Delete all branches that have already been merged into the "main" branch.
-  clean-all = "!git clean-local; git clean-remote"
+  clean = "!git clean-local; git clean-remote"
 
   # Delete all local branches that have been merged into the local "main" branch.
   clean-local = "!git checkout main && git branch --merged | xargs git branch -d"
@@ -131,30 +155,3 @@
     fi;\
   }; f"
   
-  # Quickly update remotes.
-  prune = remote prune origin
-
-  # Show the commit history in a custom format.
-  hist = log --graph --abbrev-commit --date=relative --decorate --all --boundary --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-
-  # Show all the commits made in the last 24 hours.
-  last = log --graph --date=relative --decorate --since midnight --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-  
-  # Fetch the remote and show the commits ahead of the local branch
-  incoming = "!git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u}"
-  
-  # Fetch the remote and show the commits ahead of the remote
-  outgoing = "!git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}.."
-  
-  # Quickly clear the staging area
-  unstage = "!git status --short | awk '{print $2}' | fzf | xargs git restore --staged"
-
-  # Uses "fzf" to select modified (tracked) files and undo their changes
-  undo = "!git status --short | awk '{print $2}' | fzf | xargs git restore"
-  
-  # Reset to one commit behind
-  rollback = reset --soft HEAD~1
-
-  # List all the committers/authors on a repository and rank them
-  committers = "!git log | grep Author | sort | uniq -c | sort -n -r"
-
