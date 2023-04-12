@@ -14,7 +14,6 @@ alias ex exit
 alias cl clear
 alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
-alias refresh "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
 # Confirm before overwriting something.
 alias cp "cp -i"
