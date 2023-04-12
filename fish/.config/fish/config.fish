@@ -62,8 +62,8 @@ if type -q git
 end
 
 # Use 'bat' as a substitute for 'cat'.
-if type -q batcat
-  alias bat "batcat --theme=TwoDark"
+if type -q bat
+  alias bat "bat --theme=TwoDark"
 end
 
 # Quickly summon 'neovim' (Default editor)
@@ -93,15 +93,15 @@ end
 #                                 Common Tools                                   #
 #--------------------------------------------------------------------------------#
 
-# 'FZF': Fuzzy file finder. Enable preview using 'batcat' and change default styling.
+# 'FZF': Fuzzy file finder. Enable preview using 'bat' and change default styling.
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark"
 end
 
-# 'Batcat': Use it as the pager for 'man'.
-if type -q batcat
-  export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# 'Bat': Use it as the pager for 'man'.
+if type -q bat
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
 
 # 'Starship': Prompt theme
