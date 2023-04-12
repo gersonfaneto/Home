@@ -3,7 +3,6 @@ local pCall = require("Utils.ProtectedCall")
 local GitHub_Theme = pCall("github-theme")
 
 GitHub_Theme.setup({
-  theme_style = "dark_default",
   transparent = true,
   dark_float = false,
   dark_sidebar = false,
@@ -24,3 +23,5 @@ GitHub_Theme.setup({
     }
   end,
 })
+
+vim.cmd[[ colorscheme github_dark_default ]]
