@@ -9,7 +9,7 @@ function tmux_attach
   tmux list-sessions | sed 's/:.*$//' | fzf | read line
 
   if test $line
-    if set -q $TMUX
+    if test "$TMUX" = ""
       tmux attach-session -t $line
     else
       tmux switch-client -t $line
