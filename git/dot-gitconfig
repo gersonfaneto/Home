@@ -93,7 +93,7 @@
   hist = log --graph --abbrev-commit --date=relative --decorate --all --boundary --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
 
   # Show all the commits made in the last 24 hours.
-  last = "!git hist --since yesterday"
+  last = log --graph --abbrev-commit --date=relative --decorate --all --since=midnight --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   
   # Fetch the remote and show the commits ahead of the local branch
   in = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
