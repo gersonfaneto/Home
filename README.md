@@ -1,56 +1,52 @@
-<h1 align="center">DOTFILES</h1>
+<h1 align="center">YADR</h1>
 
 <div align="center">
 
-[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles/commit/main)
-[![License](https://img.shields.io/github/license/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/gersonfaneto/Dotfiles?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/Dotfiles)
+[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR/commit/main)
+[![License](https://img.shields.io/github/license/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR)
 
 </div>
 
-> "Many computer software programs store their configuration settings in plain, text-based
-> files or directories. Dotfiles are configuration files for various programs, and they
-> help those programs manage their functionality. What sets them apart from regular files
-> and directories is their prefix. Dotfiles are named that way because each file and directory
-> starts with a dot (.). On Unix based systems, dotfiles are hidden by the Operating System by
-> default."  
-> --- _FreeCodeCamp_
+> _Y.A.D.R._ - "Yet Another Dotfiles Repo". This is the `$HOME` for all the my configuration files for things like:
+> terminal, shell, text editors and even favorite fonts.
 
 <h4 align="center">
   <a href="#usage">Usage</a>
-  ·
-  <a href="#todo">TODO</a>
   ·
   <a href="#license">License</a>
 </h4>
 
 ## Usage
 
-This repository uses [`stow`](https://www.gnu.org/software/stow/) to manage the symlinks off all the
+I'm currently using [`stow`](https://www.gnu.org/software/stow/) to manage the symlinks off all the
 files and directories in it, so make sure you have it installed before proceeding.
 
 1. Clone this repository into your local machine.
 
 ```bash
-$ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
+git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```
 
 2. Inside the new folder, run `stow`.
 
 ```bash
-$ stow */
+stow */
 ```
 
-3. Update the `git` submodules (only needed for `tmux`).
+> **Note**: The `.stowrc` file included makes so that no flags are needed to be passed
+> to the command line.
+
+3. Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
 
 ```bash
-$ git submodule update --init
+git submodule update --init
 ```
 
 > **Note**: You can also select individually the folders you want to stow by providing their name.
 >
 > ```bash
-> $ stow nvim
+> stow nvim
 > ```
 
 ## TODO
