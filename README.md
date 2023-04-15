@@ -8,7 +8,7 @@
 
 </div>
 
-> _Y.A.D.R._ - "Yet Another Dotfiles Repo". This is the `$HOME` for all the my configuration files for things like:
+> _Y.A.D.R._ - "Yet Another Dotfiles Repo". This is the `$HOME` for all my configuration files for things like:
 > terminal, shell, text editors and even favorite fonts.
 
 <h4 align="center">
@@ -34,8 +34,8 @@ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 stow */
 ```
 
-> **Note**: The `.stowrc` file included makes so that no flags are needed to be passed
-> to the command line.
+> **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc) file included makes so that no 
+> flags are needed to be passed to the command line.
 
 3. Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
 
