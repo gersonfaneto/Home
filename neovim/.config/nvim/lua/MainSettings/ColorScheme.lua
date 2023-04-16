@@ -3,27 +3,19 @@ local pCall = require("Utils.ProtectedCall")
 local GitHub_Theme = pCall("github-theme")
 
 GitHub_Theme.setup({
-  options = {
-    transparent = false,
-    hide_end_of_buffer = true,
-    hide_nc_statusline = true,
-    styles = {
-      comments = "Italic",
-      functions = "NONE",
-      keywords = "Bold",
-      variables = "Underline",
-    },
-    darken = {
-      floats = true,
-      sidebars = {
-        enable = true,
-        list = { "qf", "vista_kind", "terminal", "packer" },
-      },
-    },
+  theme_style = "dark_default",
+  transparent = true,
+  dark_float = false,
+  dark_sidebar = false,
+  comment_style = "italic",
+  keyword_style = "italic",
+  function_style = "italic",
+  variable_style = "italic",
+  sidebars = { "qf", "vista_kind", "terminal", "packer" },
+  colors = {
+    hint = "orange",
+    error = "#ff0000",
   },
-
-  colors = { hint = "orange", error = "#ff0000" },
-
   overrides = function(c)
     return {
       htmlTag = { fg = c.red, bg = "#282c34", sp = c.hint, style = "underline" },
@@ -32,5 +24,3 @@ GitHub_Theme.setup({
     }
   end,
 })
-
-vim.cmd("colorscheme github_dark_default")

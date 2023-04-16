@@ -16,6 +16,7 @@ LazyPlugins.setup({
 
   {
     "projekt0n/github-nvim-theme",
+    tag = "v0.0.6",
     lazy = false,
     config = function()
       require("MainSettings.ColorScheme")
