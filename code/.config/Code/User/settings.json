@@ -1,0 +1,12 @@
+{
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+
+    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+
+    "window.titleBarStyle": "custom",
+    "window.title": "${appName}",
+    "workbench.startupEditor": "none",
+}
