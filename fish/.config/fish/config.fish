@@ -88,6 +88,11 @@ if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
 end
 
+# Add 'Go' binaries to the $PATH
+if asdf where golang > /dev/null 2>&1
+  export PATH="$PATH:$(asdf where golang)/packages/bin"
+end
+
 #--------------------------------------------------------------------------------#
 #                                 Common Tools                                   #
 #--------------------------------------------------------------------------------#
