@@ -93,6 +93,11 @@ if asdf where golang > /dev/null 2>&1
   export PATH="$PATH:$(asdf where golang)/packages/bin"
 end
 
+# Add 'Rust' binaries to the $PATH
+if asdf where rust > /dev/null 2>&1
+  export PATH="$PATH:$(asdf where rust)/bin"
+end
+
 #--------------------------------------------------------------------------------#
 #                                 Common Tools                                   #
 #--------------------------------------------------------------------------------#
