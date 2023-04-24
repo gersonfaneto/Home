@@ -7,7 +7,7 @@ setOption.writebackup = false
 setOption.fileencoding = "utf-8"
 
 setOption.spell = false
-setOption.spelllang = { "en_us" }
+setOption.spelllang = { "en_us", "pt_br" }
 
 setOption.clipboard = "unnamedplus"
 setOption.mouse = "a"

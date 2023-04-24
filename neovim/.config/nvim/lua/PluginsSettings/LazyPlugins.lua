@@ -98,4 +98,6 @@ LazyPlugins.setup({
 
   "numToStr/Comment.nvim",
   "folke/todo-comments.nvim",
+
+  "mateusbraga/vim-spell-pt-br",
 })
