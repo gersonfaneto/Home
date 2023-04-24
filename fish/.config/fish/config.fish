@@ -9,11 +9,16 @@ set fish_greeting ""
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
+#--------------------------------------------------------------------------------#
+#                               Basic Aliases                                    #
+#--------------------------------------------------------------------------------#
+
 # General Aliases.
 alias ex exit
 alias cl clear
 alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
+alias sweep "echo yes | history clear"
 
 # Confirm before overwriting something.
 alias cp "cp -i"
