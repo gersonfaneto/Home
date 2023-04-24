@@ -18,14 +18,11 @@ local mainServers = {
   "cmake",
   "pyright",
   "lua_ls",
-  "tsserver",
-  "emmet_ls",
-  "eslint",
-  "cssls",
   "html",
+  "cssls",
   "tailwindcss",
-  "jsonls",
-  "taplo",
+  "tsserver",
+  "eslint",
 }
 
 MasonManager.setup({
