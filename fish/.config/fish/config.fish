@@ -98,6 +98,11 @@ if asdf where rust > /dev/null 2>&1
   export PATH="$PATH:$(asdf where rust)/bin"
 end
 
+# Add 'Dotnet' binaries to the $PATH.
+if test -d "$HOME/.dotnet/tools"
+  export PATH="$PATH:$HOME/.dotnet/tools"
+end
+
 #--------------------------------------------------------------------------------#
 #                                 Common Tools                                   #
 #--------------------------------------------------------------------------------#
