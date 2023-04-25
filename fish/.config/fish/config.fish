@@ -63,6 +63,11 @@ if type -q bat
   alias bat "bat --theme=TwoDark"
 end
 
+# Quickly summon 'git'.
+if type -q git
+  alias g git
+end
+
 # Quickly summon 'vim'.
 if type -q vim
   alias v vim
