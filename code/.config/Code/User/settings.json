@@ -5,8 +5,11 @@
 
     "workbench.colorTheme": "GitHub Dark Default",
     "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "workbench.startupEditor": "none",
 
     "window.titleBarStyle": "custom",
     "window.title": "${appName}",
-    "workbench.startupEditor": "none",
+
+    "terminal.integrated.fontFamily": "'Iosevka'",
+    "terminal.integrated.fontSize": 18,
 }
