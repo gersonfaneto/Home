@@ -58,13 +58,6 @@ if type -q neofetch
   alias nf "neofetch"
 end
 
-# Quickly summon 'git' and use 'config' as an alias for the 'MySetup' repository.
-if type -q git
-  alias g git
-  alias config "/usr/bin/git --git-dir=$HOME/Developer/GitHub/MySetup \
-    --work-tree=$HOME/"
-end
-
 # Use 'bat' as a substitute for 'cat'.
 if type -q bat
   alias bat "bat --theme=TwoDark"
