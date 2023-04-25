@@ -25,18 +25,18 @@ alias cp "cp -i"
 alias mv "mv -i"
 alias rm "rm -i"
 
-# Navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
-alias .5="cd ../../../../.."
+# Navigation.
+alias ..  "cd .."
+alias ... "cd ../.."
+alias .3  "cd ../../.."
+alias .4  "cd ../../../.."
+alias .5  "cd ../../../../.."
 
 #--------------------------------------------------------------------------------#
 #                               Especial Aliases                                 #
 #--------------------------------------------------------------------------------#
 
-# Use 'exa' instead of 'ls'
+# Use 'exa' instead of 'ls'.
 if type -q exa
   alias ls "exa --icons --color=always --group-directories-first"
   alias la "exa --all --icons --color=always --group-directories-first"
@@ -45,7 +45,7 @@ if type -q exa
   alias tree "exa --all --tree --icons --color=always --group-directories-first"
 end
 
-# Quickly manipulate 'TMUX' sessions
+# Quickly manipulate 'TMUX' sessions.
 if type -q tmux
   alias tl "tmux list-sessions"
   alias ta "tmux attach-session"
@@ -53,7 +53,7 @@ if type -q tmux
   alias tk "tmux kill-session"
 end
 
-# Quickly summon 'neofetch'
+# Quickly summon 'neofetch'.
 if type -q neofetch
   alias nf "neofetch"
 end
@@ -70,16 +70,26 @@ if type -q bat
   alias bat "bat --theme=TwoDark"
 end
 
-# Quickly summon 'neovim' (Default editor)
+# Quickly summon 'vim'.
+if type -q vim
+  alias v vim
+end
+
+# Quickly summon 'neovim' (Default editor).
 if type -q nvim
-  alias v nvim
+  alias nv nvim
+end
+
+# Use 'trash' instead of default 'rm' command.
+if type -q trash
+  alias rm trash
 end
 
 #--------------------------------------------------------------------------------#
 #                               Version Manager                                  #
 #--------------------------------------------------------------------------------#
 
-# 'ASDF': Multiple runtime and language version manager
+# 'ASDF': Multiple runtime and language version manager.
 if test -d ~/.asdf
   source ~/.asdf/asdf.fish
 end
@@ -88,17 +98,17 @@ end
 #                                 Path Updates                                   #
 #--------------------------------------------------------------------------------#
 
-# Add '~/.local/bin' to the $PATH
+# Add '~/.local/bin' to the $PATH.
 if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
 end
 
-# Add 'Go' binaries to the $PATH
+# Add 'Go' binaries to the $PATH.
 if asdf where golang > /dev/null 2>&1
   export PATH="$PATH:$(asdf where golang)/packages/bin"
 end
 
-# Add 'Rust' binaries to the $PATH
+# Add 'Rust' binaries to the $PATH.
 if asdf where rust > /dev/null 2>&1
   export PATH="$PATH:$(asdf where rust)/bin"
 end
@@ -123,7 +133,7 @@ if type -q bat
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
 
-# 'Starship': Prompt theme
+# 'Starship': Prompt theme.
 if type -q starship
   starship init fish | source
 end
@@ -162,13 +172,13 @@ end
 
 # Function for creating a backup for a given file.
 # Ex: bak Foo.txt
-# Output: Copies file as Foo.txt.bak
+# Output: Copies file as Foo.txt.bak.
 function bak --argument filename -d "Function for creating a backup for a given file."
     cp $filename $filename.bak
 end
 
 
-# Function for displaying the contents of a TOOD.md file on the current working
+# Function for displaying the contents of a TOOD.md file on the current working.
 # directory. If no file is found, looks for one in the ~/Desktop.
 # Ex: todo 
 # Output: Display the contents of the found TODO.md using 'glow'.
