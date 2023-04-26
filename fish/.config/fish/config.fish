@@ -18,7 +18,7 @@ alias ex exit
 alias cl clear
 alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
-alias sweep "echo yes | history clear"
+alias sweep "echo yes | history clear > /dev/null"
 
 # Confirm before overwriting something.
 alias cp "cp -i"
