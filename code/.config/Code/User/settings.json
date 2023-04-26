@@ -7,9 +7,16 @@
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "workbench.startupEditor": "none",
 
+    "editor.minimap.enabled": false,
+
+    "window.restoreWindows": "none",
+
+    "window.openFoldersInNewWindow": "off",
+    "window.openFilesInNewWindow": "off",
+
     "window.titleBarStyle": "custom",
     "window.title": "${appName}",
 
     "terminal.integrated.fontFamily": "'Iosevka'",
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 18
 }
