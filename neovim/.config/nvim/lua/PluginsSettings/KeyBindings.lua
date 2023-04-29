@@ -2,15 +2,6 @@ local KeyBindings = {}
 
 local keyMap = require("Utils.KeyBindings")
 
-function DiscordStatus()
-  package.loaded.presence:stop()
-  vim.notify("Discord Presence Disabled!")
-end
-
-function KeyBindings.DiscordToggle()
-  keyMap("n", "<leader>pd", ":lua DiscordStatus()<CR>", "Discord [P]resence [D]isable")
-end
-
 function KeyBindings.LiveServers()
   if vim.bo.filetype == "markdown" then
     keyMap("n", "<leader>ls", ":MarkdownPreviewToggle<CR>", "Markdown - [L]ive [S]ervers")

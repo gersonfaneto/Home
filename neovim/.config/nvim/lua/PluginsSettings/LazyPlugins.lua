@@ -90,8 +90,6 @@ LazyPlugins.setup({
     ft = "html",
   },
 
-  "andweeb/presence.nvim",
-
   "windwp/nvim-autopairs",
   "windwp/nvim-ts-autotag",
   "NvChad/nvim-colorizer.lua",
