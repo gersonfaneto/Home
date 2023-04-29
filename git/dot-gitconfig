@@ -41,6 +41,11 @@
   # Quickly manage branches/commits.
   co = checkout
 
+  # Worktrees 
+  wl = worktree list
+  wa = worktree add
+  wr = worktree remove
+
   # Quickly switch to the "main" branch.
   cm = "!git checkout main"
     
