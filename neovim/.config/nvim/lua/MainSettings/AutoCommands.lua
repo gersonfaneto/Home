@@ -43,6 +43,11 @@ autoCMD("BufEnter", {
   pattern = { "*.md", "*.html" },
 })
 
+autoCMD("BufEnter", {
+  command = "set spell",
+  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" }
+})
+
 autoCMD("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
