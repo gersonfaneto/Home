@@ -24,4 +24,11 @@
     "doxdocgen.generic.authorName": "Gerson Ferreira",
     "doxdocgen.file.versionTag": "@version 1.0.0",
     "doxdocgen.generic.dateFormat": "DD-MM-YYYY",
+
+    "cSpell.userWords": [
+        "doxdocgen",
+        "Ferreira",
+        "Gerson"
+    ],
+
 }
