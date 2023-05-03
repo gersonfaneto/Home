@@ -36,7 +36,7 @@ keyMap("v", "<", "<gv", "Editor - Indent Line (LEFT)")
 keyMap("v", ">", ">gv", "Editor - Indent Line (RIGHT)")
 
 keyMap("n", "+", "<C-a>", "Editor - Increment")
-keyMap("n", "+", "<C-a>", "Editor - Increment")
+keyMap("n", "-", "<C-x>", "Editor - Increment")
 
 keyMap("n", "<F11>", ":set spell<CR>", "Editor - Enable Spell Check")
 keyMap("n", "<F12>", ":set nospell<CR>", "Editor - Disable Spell Check")
