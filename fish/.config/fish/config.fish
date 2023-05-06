@@ -19,6 +19,7 @@ alias cl clear
 alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
 alias sweep "echo yes | history clear > /dev/null"
+alias rs reset
 
 # Confirm before overwriting something.
 alias cp "cp -i"
