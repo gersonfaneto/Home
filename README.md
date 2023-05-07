@@ -1,21 +1,17 @@
-<h1 align="center">YADR</h1>
+<h1 align="center">
+    Y.A.D.R.
+</h1>
 
 <div align="center">
 
-[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR/commit/main)
-[![License](https://img.shields.io/github/license/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?style=for-the-badge&logo=appveyor)](https://github.com/gersonfaneto/YADR)
+[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
+[![License](https://img.shields.io/github/license/gersonfaneto/YADR?style=for-the-badge)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
 
 </div>
 
-> _Y.A.D.R._ - "Yet Another Dotfiles Repo". This is the `$HOME` for all my configuration files for things like:
+> __Y.A.D.R.__ - "Yet Another Dotfiles Repo". This is the `$HOME` for all my configuration files for things like:
 > terminal, shell, text editors and even favorite fonts.
-
-<h4 align="center">
-  <a href="#usage">Usage</a>
-  ·
-  <a href="#license">License</a>
-</h4>
 
 ## Usage
 
@@ -48,10 +44,6 @@ git submodule update --init
 > ```bash
 > stow nvim
 > ```
-
-## TODO
-
-- [ ] `JARVIS.sh` - Basic script for automatic installing configurations, programs and dependencies.
 
 ## License
 
