@@ -3,11 +3,48 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 18,
 
+    "editor.bracketPairColorization.enabled": true,
+    "editor.colorDecorators": true,
+    "editor.cursorStyle": "line",
+    "editor.glyphMargin": false,
+    "editor.guides.indentation": false,
+    "editor.hideCursorInOverviewRuler": false,
+    "editor.lineHeight": 28,
+    "editor.lineNumbers": "on",
+    "editor.matchBrackets": "near",
+    "editor.occurrencesHighlight": false,
+    "editor.renderLineHighlight": "none",
+    "editor.renderWhitespace": "none",
+    "editor.scrollbar.horizontalScrollbarSize": 8,
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.minimap.enabled": false,
+    
+    "editor.formatOnSave": false,
+
+    "explorer.compactFolders": false,
+    "explorer.decorations.badges": false,
+    "explorer.openEditors.visible": 0,
+
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editor.showTabs": true,
+    "workbench.editor.untitled.hint": "hidden",
+    
+    "workbench.list.horizontalScrolling": true,
+    
+    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "none",
+
     "workbench.colorTheme": "GitHub Dark Default",
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "workbench.startupEditor": "none",
-
-    "editor.minimap.enabled": false,
 
     "window.restoreWindows": "none",
 
@@ -17,8 +54,19 @@
     "window.titleBarStyle": "custom",
     "window.title": "${appName}",
 
+    "window.autoDetectColorScheme": true,
+    "window.newWindowDimensions": "inherit",
+    
     "terminal.integrated.fontFamily": "'Iosevka'",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.lineHeight": 1.85,
     "terminal.integrated.fontSize": 18,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+
+    "markdown.preview.markEditorSelection": false,
 
     "doxdocgen.generic.authorEmail": "gersonfaneto.dev@gmail.com",
     "doxdocgen.generic.authorName": "Gerson Ferreira",
@@ -30,5 +78,4 @@
         "Ferreira",
         "Gerson"
     ],
-
 }
