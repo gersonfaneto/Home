@@ -84,6 +84,13 @@ if type -q trash
   alias rm trash
 end
 
+# Quickly summon 'Python' interpreter.
+if type -q python
+  alias py python
+else
+  alias py python3
+end
+
 #--------------------------------------------------------------------------------#
 #                               Version Manager                                  #
 #--------------------------------------------------------------------------------#
