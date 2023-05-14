@@ -91,6 +91,11 @@ else
   alias py python3
 end
 
+# Change default behavior of 'tldr'
+if type -q tldr
+  alias tldr "tldr --theme base16"
+end
+
 #--------------------------------------------------------------------------------#
 #                               Version Manager                                  #
 #--------------------------------------------------------------------------------#
