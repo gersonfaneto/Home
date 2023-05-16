@@ -96,6 +96,11 @@ if type -q tldr
   alias tldr "tldr --theme base16"
 end
 
+# Alias for 'wezterm imgcat' function.
+if type -q wezterm
+  alias icat "wezterm imgcat"
+end
+
 #--------------------------------------------------------------------------------#
 #                               Version Manager                                  #
 #--------------------------------------------------------------------------------#
