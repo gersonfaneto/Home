@@ -98,7 +98,7 @@ end
 
 # Alias for 'wezterm imgcat' function.
 if type -q wezterm
-  alias icat "wezterm imgcat"
+  alias icat "wezterm imgcat --width 100"
 end
 
 #--------------------------------------------------------------------------------#
