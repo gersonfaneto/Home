@@ -12,4 +12,11 @@ config.window_decorations = "NONE"
 config.hide_tab_bar_if_only_one_tab = true
 config.hide_mouse_cursor_when_typing = true
 
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 10,
+	bottom = 10,
+}
+
 return config
