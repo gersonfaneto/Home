@@ -1,19 +1,14 @@
-# Editors
 .vscode/
 .idea/
 
-# Logs
 [Ll]ogs/
 .log
 
-# Dependency Directories
 node_modules/
 
-# Enviroment Variables Files
 .env
 .env.test
 
-# C / CPP (Testing/Debugging)
 [Bb]uild/
 Main
 Main.c
@@ -23,13 +18,11 @@ Out.txt
 *.o
 *.a
 
-# Java (Testing/Debugging)
 bin/
 target/
 Flags.txt
 Files.txt
 
-# General
 [Ee]xamples
 TODO.md
 Run.sh

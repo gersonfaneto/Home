@@ -1,5 +1,3 @@
-# Uses 'fzf' to list 'tmux' active sessions and quickly
-# attach or switch to them.
 function tmux_attach
   tmux has-session 2> /dev/null
   if test $status -eq 1

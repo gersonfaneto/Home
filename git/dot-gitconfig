@@ -34,69 +34,41 @@
   st = status
   ss = status --short --branch
 
-  # Selects multiple files and add them to staging the area.
   a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
 
-  # Selects a modified file and diffs it.
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
-
-  # Selects a commit and diffs it.
   dc = "!git log --oneline | fzf |  awk '{print $1}' | xargs -I {} git diff {}^ {}"
   
-  # Worktrees.
   wl = worktree list
   wa = worktree add
   wr = worktree remove
 
-  # Branches.
   cm = "!git checkout main"
   cd = "!git go dev"
   cb = "!git go build"
   cs = "!git go staging"
   
-  # Add all tracked and modified files and commit them.
   ca = "!git add --all && git commit"
-
-  # Edit the most recent commit message.
   ce = commit --amend
   
-  # Pushes the changes on the current local branch to the remote.
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-  
-  # Pulls the changes from the remote to the current local branch.
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   
-  # Display all the details of a specific commit.
   sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-only"
   
-  # Display all the local branches.
   ba = branch --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
-  
-  # Show the commit history in the current branch - with custom styling.
   hist = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-
-  # Show all the commits made in the last 24 hours in the current branch - with custom styling.
   last = log --graph --abbrev-commit --date=relative --decorate --since=yesterday --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   
-  # Show the commits ahead of the local branch.
   in = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
-  
-  # Show the commits ahead of the remote.
   out = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' @{u}.."
   
-  # Removes files from the staging area.
   unstage = "!git status --short | awk '{print $2}' | fzf | xargs git restore --staged"
-
-  # Revert changes made to tracked files.
   undo = "!git status --short | awk '{print $2}' | fzf | xargs git restore"
-  
-  # Revert to one commit behind.
   rollback = reset --soft HEAD~1
 
-  # List all the committers/authors on a repository and rank them by number of commits.
   rank = "!git log | grep Author | sort | uniq -c | sort -n -r"
 
-  # Creates a new branch and switch to it, or switch automatically if it already existed.
   go = "!f() {\
       if git rev-parse --verify $1 >/dev/null 2>&1;\
       then\
@@ -106,17 +78,9 @@
       fi;\
   }; f"
 
-  # Pushes the current branch to the remote and sets the current branch to track the upstream branch.
   publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
-
-  # Removes the current branch from the remote - basically undo 'publish'.
   unpublish = "!git push origin :$(git rev-parse --abbrev-ref HEAD)"
 
-  # Delete a branch name, then create the same branch name based on "main" —
-  # useful if you have, for example, a "dev" branch and "main" branch
-  # and they go out of sync, and you want to nuke the "dev" branch.
-  #
-  # Calls the `publish` and `unpublish` aliases.
   reincarnate = "!f() {\
     if [ -n "$@" ];\
     then\

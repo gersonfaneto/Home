@@ -1,5 +1,3 @@
-# Uses 'fzf' to quickly browse the command history
-# and re-execute a previous command.
 function fzf_history
   history | fzf | read line
 

@@ -1,4 +1,3 @@
-# Retrieves the arguments form the previous executed command.
 function history_previous_command_arguments
   switch (commandline -t)
     case "!"

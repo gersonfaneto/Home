@@ -1,4 +1,3 @@
-# Retrieves the previous executed command.
 function history_previous_command
   switch (commandline -t)
     case "!"

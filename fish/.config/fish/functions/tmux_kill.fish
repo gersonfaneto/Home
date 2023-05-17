@@ -1,5 +1,3 @@
-# Uses 'fzf' to list 'tmux' active sessions and quickly
-# kill and/or exit them.
 function tmux_kill
   tmux has-session 2> /dev/null
   if test $status -eq 1
