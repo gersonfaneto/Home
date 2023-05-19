@@ -10,7 +10,8 @@
 	"tab_size": 2,
 
 	"word_wrap": false,
+
+  "hot_exit": "disabled",
 	
-	"ignored_packages": [ "Vintage",
-	],
+	"ignored_packages": [ "Vintage" ],
 }
