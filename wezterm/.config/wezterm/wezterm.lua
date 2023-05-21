@@ -12,6 +12,11 @@ config.window_decorations = "NONE"
 config.hide_tab_bar_if_only_one_tab = true
 config.hide_mouse_cursor_when_typing = true
 
+config.cursor_blink_rate = 400
+config.cursor_blink_ease_in = "Constant"
+config.cursor_blink_ease_out = "Constant"
+config.default_cursor_style = "BlinkingBlock"
+
 config.window_padding = {
 	left = 0,
 	right = 0,
