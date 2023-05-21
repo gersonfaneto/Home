@@ -9,5 +9,5 @@ function fish_user_key_bindings
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
 
-  fish_vi_key_bindings --no-erase insert
+  # fish_vi_key_bindings --no-erase insert
 end
