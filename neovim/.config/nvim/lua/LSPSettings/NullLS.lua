@@ -13,6 +13,7 @@ local sources = {
   Formatting.clang_format,
   Formatting.stylelint,
   Formatting.prettier,
+  Formatting.google_java_format,
 
   CodeActions.eslint_d,
 
