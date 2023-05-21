@@ -15,6 +15,7 @@ local mainServers = {
   "rust_analyzer",
   "csharp_ls",
   "clangd",
+  "jdtls",
   "cmake",
   "pyright",
   "lua_ls",
@@ -22,7 +23,6 @@ local mainServers = {
   "cssls",
   "tailwindcss",
   "tsserver",
-  "eslint",
 }
 
 MasonManager.setup({
