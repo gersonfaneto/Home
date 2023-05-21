@@ -38,6 +38,15 @@ autoCMD("BufEnter", {
   pattern = "*",
 })
 
+autoCMD("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "IncSearch",
+      timeout = 300,
+    })
+  end,
+})
+
 autoCMD("BufEnter", {
   command = "lua require('PluginsSettings.KeyBindings').LiveServers()",
   pattern = { "*.md", "*.html" },
@@ -45,14 +54,12 @@ autoCMD("BufEnter", {
 
 autoCMD("BufEnter", {
   command = "set spell",
-  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" }
+  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
 })
 
-autoCMD("TextYankPost", {
+autoCMD("BufWritePost", {
+  pattern = { "*.java" },
   callback = function()
-    vim.highlight.on_yank({
-      higroup = "IncSearch",
-      timeout = 300,
-    })
+    local _, _ = pcall(vim.lsp.codelens.refresh)
   end,
 })

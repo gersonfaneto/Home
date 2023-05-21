@@ -87,5 +87,11 @@ for _, lspServer in pairs(mainServers) do
     LSPConfig[lspServer].setup(customOpts)
   end
 
+  if lspServer == "jdtls" then
+    goto continue
+  end
+
   LSPConfig[lspServer].setup(lspOpts)
+
+  ::continue::
 end

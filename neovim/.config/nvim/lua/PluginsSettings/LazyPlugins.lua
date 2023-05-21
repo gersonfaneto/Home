@@ -54,6 +54,7 @@ LazyPlugins.setup({
   "jose-elias-alvarez/null-ls.nvim",
   "jose-elias-alvarez/typescript.nvim",
   "simrat39/rust-tools.nvim",
+  "mfussenegger/nvim-jdtls",
 
   {
     "L3MON4D3/LuaSnip",
