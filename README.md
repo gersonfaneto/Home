@@ -10,13 +10,15 @@
 
 </div>
 
-> __Y.A.D.R.__ - "Yet Another Dotfiles Repo". This is the `$HOME` for all my configuration files for things like:
-> terminal, shell, text editors and even favorite fonts.
+> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all my
+> configuration files for things like: terminal, shell, text editors and even
+> favorite fonts.
 
 ## Usage
 
-I'm currently using [`stow`](https://www.gnu.org/software/stow/) to manage the symlinks off all the
-files and directories in it, so make sure you have it installed before proceeding.
+I'm currently using [`stow`](https://www.gnu.org/software/stow/) to manage
+the symlinks off all the files and directories in it, so make sure you have
+it installed before proceeding.
 
 1. Clone this repository into your local machine.
 
@@ -30,8 +32,8 @@ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 stow */
 ```
 
-> **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc) file included makes so that no 
-> flags are needed to be passed to the command line.
+> **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
+> file included makes so that no flags are needed to be passed to the command line.
 
 3. Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
 
@@ -39,7 +41,8 @@ stow */
 git submodule update --init
 ```
 
-> **Note**: You can also select individually the folders you want to stow by providing their name.
+> **Note**: You can also select individually the folders you want to stow by
+> providing their name.
 >
 > ```bash
 > stow nvim
