@@ -81,15 +81,3 @@
   publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   unpublish = "!git push origin :$(git rev-parse --abbrev-ref HEAD)"
 
-  reincarnate = "!f() {\
-    if [ -n "$@" ];\
-    then\
-        git checkout \"$@\" &&\
-        git unpublish &&\
-        git checkout main &&\
-        git branch -D \"$@\" &&\
-        git checkout -b \"$@\" &&\
-        git publish;\
-    fi;\
-  }; f"
-  
