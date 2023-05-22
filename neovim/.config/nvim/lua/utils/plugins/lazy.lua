@@ -9,7 +9,7 @@ function M.get_opts()
   return {
     root = settings.storage_directory,
     install = {
-      colorscheme = { "default" },
+      colorscheme = { "habamax" },
     },
     ui = {
       border = settings.float_border and "double" or "none",
