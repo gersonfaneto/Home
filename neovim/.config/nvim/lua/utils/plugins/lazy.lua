@@ -80,9 +80,6 @@ function M.load(plugins)
             module.load()
             module.after()
           end
-        else
-          print("Failed")
-          print(require_file_path)
         end
       end
       table.insert(requires_moduls, plugin_opts)
