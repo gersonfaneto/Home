@@ -8,6 +8,7 @@ local M = {
     show_winbar = true,
 
     auto_save = true,
+    remember_position = false,
 
     storage_directory = files.join(vim.fn.stdpath("data"), "store"),
     lazy_install_directory = files.join(vim.fn.stdpath("data"), "lazy"),
