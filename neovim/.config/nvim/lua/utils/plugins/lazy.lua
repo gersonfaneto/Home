@@ -69,17 +69,16 @@ function M.load(plugins)
         local ok, module = pcall(require, require_file_path)
 
         if ok then
-          plugin_opts.init = plugin_opts.init
-          or function()
+          plugin_opts.init = plugin_opts.init or function()
             module.before()
           end
 
           plugin_opts.config = plugin_opts.config
-          or function()
-            api.require_all_package(module)
-            module.load()
-            module.after()
-          end
+            or function()
+              api.require_all_package(module)
+              module.load()
+              module.after()
+            end
         end
       end
       table.insert(requires_moduls, plugin_opts)

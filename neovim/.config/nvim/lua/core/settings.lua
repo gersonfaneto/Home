@@ -1,19 +1,19 @@
 local files = require("utils.api").files
 
 local M = {
-    transparent = false,
-    dim_inactive = false,
+  transparent = false,
+  dim_inactive = false,
 
-    float_border = true,
-    show_winbar = true,
+  float_border = true,
+  show_winbar = true,
 
-    auto_save = false,
-    remember_position = false,
+  auto_save = false,
+  remember_position = false,
 
-    storage_directory = files.join(vim.fn.stdpath("data"), "store"),
-    lazy_install_directory = files.join(vim.fn.stdpath("data"), "lazy"),
-    mason_install_directory = files.join(vim.fn.stdpath("data"), "mason"),
-    global_config_directory = files.join(vim.fn.stdpath("config"), "config"),
+  storage_directory = files.join(vim.fn.stdpath("data"), "store"),
+  lazy_install_directory = files.join(vim.fn.stdpath("data"), "lazy"),
+  mason_install_directory = files.join(vim.fn.stdpath("data"), "mason"),
+  global_config_directory = files.join(vim.fn.stdpath("config"), "config"),
 }
 
 return M

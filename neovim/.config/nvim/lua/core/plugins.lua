@@ -121,7 +121,7 @@ M.languages = {
   {
     "mfussenegger/nvim-jdtls",
   },
-  { 
+  {
     "jose-elias-alvarez/typescript.nvim",
   },
   {
@@ -166,12 +166,11 @@ M.views = {
 }
 
 M.grammar = {
-  { 
-    "mateusbraga/vim-spell-pt-br" 
+  {
+    "mateusbraga/vim-spell-pt-br",
   },
 }
 
 lazy.entry(M)
 
 return M
-

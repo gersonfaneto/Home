@@ -1,9 +1,9 @@
 local settings = require("core.settings")
 
 local M = {
-    requires = {
-        "github-theme",
-    },
+  requires = {
+    "github-theme",
+  },
 }
 
 function M.before() end
@@ -15,7 +15,6 @@ function M.load()
   })
 end
 
-function M.after() 
-end
+function M.after() end
 
 return M
