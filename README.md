@@ -4,9 +4,9 @@
 
 <div align="center">
 
-[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
-[![License](https://img.shields.io/github/license/gersonfaneto/YADR?style=for-the-badge)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
+[![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
+[![License](https://img.shields.io/github/license/gersonfaneto/YADR?color=blue&style=for-the-badge)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
 
 </div>
 
