@@ -7,7 +7,7 @@ local M = {
     float_border = true,
     show_winbar = true,
 
-    auto_save = true,
+    auto_save = false,
     remember_position = false,
 
     storage_directory = files.join(vim.fn.stdpath("data"), "store"),
