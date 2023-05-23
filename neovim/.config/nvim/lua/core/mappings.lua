@@ -5,140 +5,140 @@ maps.bulk_register({
 		mode = { "n" },
 		lhs = "<leader>e",
 		rhs = ":Ex<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "File Explorer.",
 	},
   {
     mode = { "n" },
     lhs = "<leader><Esc>",
     rhs = ":qa!<cr>",
-    options = { silent = true },
+    options = { noremap = true, silent = true },
     description = "Escape Neovim",
   },
   {
     mode = { "n" },
     lhs = "<Esc>",
     rhs = ":noh<CR>",
-    options = { silent = true },
+    options = { noremap = true, silent = true },
     description = "Clear search highlight.",
   },
   {
     mode = { "n" },
     lhs = "<leader>cs",
     rhs = ":set spell!<CR>",
-    options = { silent = true },
+    options = { noremap = true, silent = true },
     description = "Enable or disable spell checking.",
   },
 	{
 		mode = { "n" },
 		lhs = "<leader>s",
 		rhs = "<C-w>j",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Move to the split bellow.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>a",
 		rhs = "<C-w>h",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Move to the split on the left.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>w",
 		rhs = "<C-w>k",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Move to the split above.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>d",
 		rhs = "<C-w>l",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Move to the split on the right.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-Up>",
 		rhs = ":resize -2<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Decrease split size horizontally.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-Down>",
 		rhs = ":resize +2<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Increase split size horizontally.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-Left>",
 		rhs = ":vertical resize -2<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Decrease split size vertically.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-Right>",
 		rhs = ":vertical resize +2<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Increase split size vertically.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<Tab>",
 		rhs = ":bnext<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Switch to next buffer.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<S-Tab>",
 		rhs = ":bprevious<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Switch to previous buffer.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>q",
 		rhs = ":bprevious<CR>:bdelete #<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Kill current buffer and switch to previous one.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>h",
 		rhs = ":split<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Split horizontally.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<leader>v",
 		rhs = ":vsplit<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Split vertically.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-w>",
 		rhs = ":write<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Write contents in the current buffer.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-q>",
 		rhs = ":quit<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Close the current buffer.",
 	},
 	{
 		mode = { "v" },
 		lhs = "p",
 		rhs = "_dP",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Paste in visual mode without writing to registers.",
 	},
   {
@@ -158,28 +158,28 @@ maps.bulk_register({
 		mode = { "n" },
 		lhs = "<C-a>",
 		rhs = "ggVG",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Select all the content from the current buffer.",
 	},
 	{
 		mode = { "n" },
 		lhs = "<C-y>",
 		rhs = ":%y<CR>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Copy all the content from the current buffer.",
 	},
 	{
     mode = { "n" },
     lhs = "+",
 		rhs = "<C-a>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Increment number under the cursor.",
 	},
 	{
 		mode = { "n" },
 		lhs = "-",
 		rhs = "<C-x>",
-		options = { silent = true },
+		options = { noremap = true, silent = true },
 		description = "Decrement number under the cursor.",
 	},
   {
@@ -188,7 +188,7 @@ maps.bulk_register({
     rhs = function()
       vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "k")
     end,
-    options = { silent = true },
+    options = { noremap = true, silent = true },
     description = "Better navigation with C-u.",
   },
   {
@@ -197,7 +197,7 @@ maps.bulk_register({
     rhs = function()
       vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "j")
     end,
-    options = { silent = true },
+    options = { noremap = true, silent = true },
     description = "Better navigation with C-d.",
   },
   {
@@ -206,7 +206,7 @@ maps.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "k" or "gk"
     end,
-    options = { silent = true, expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = "Better movement with k.",
   },
   {
@@ -215,7 +215,7 @@ maps.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "j" or "gj"
     end,
-    options = { silent = true, expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = "Better movement with j.",
   },
   {
@@ -224,7 +224,7 @@ maps.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "^" or "g^"
     end,
-    options = { silent = true, expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = "Move to the first character at the beginning of the line.",
   },
   {
@@ -233,7 +233,7 @@ maps.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "$" or "g$"
     end,
-    options = { silent = true, expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = "Move to the last character at the end of the line.",
   },
   {
