@@ -1,3 +1,5 @@
+local paths = require("utils.api.paths")
+
 local M = {}
 
 function M.require_all_package(module)
@@ -24,9 +26,8 @@ function M.require_all_package(module)
 end
 
 function M.get_importable_subfiles(dir)
-  local api_path = require("utils.api.path")
   local require_path = {}
-  local files_table = api_path.listdir_by_filetype(api_path.join(vim.fn.stdpath("config"), "lua", dir), "lua")
+  local files_table = paths.listdir_by_filetype(paths.join(vim.fn.stdpath("config"), "lua", dir), "lua")
 
   ---@diagnostic disable-next-line: param-type-mismatch
   for _, file_path in ipairs(files_table) do

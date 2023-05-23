@@ -13,12 +13,16 @@ M.themes = {
 
 M.basics = {
   {
-    "nvim-lua/plenary.nvim",
-    lazy = true,
-  },
-  {
     "nvim-tree/nvim-web-devicons",
     event = { "VimEnter" },
+  },
+  {
+    "williamboman/mason.nvim",
+    event = { "VimEnter" },
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
   },
 }
 
@@ -26,7 +30,6 @@ M.lsp = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
     },
   },
