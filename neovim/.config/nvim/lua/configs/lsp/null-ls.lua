@@ -27,35 +27,11 @@ function M.load()
     sources = {
       M.null_ls.builtins.formatting.gofmt,
       M.null_ls.builtins.formatting.shfmt,
-      M.null_ls.builtins.formatting.prettier,
+      M.null_ls.builtins.formatting.stylua,
       M.null_ls.builtins.formatting.fixjson,
-      M.null_ls.builtins.formatting.autopep8.with({
-        extra_args = { "--aggressive" },
-      }),
-      M.null_ls.builtins.formatting.clang_format.with({
-        extra_args = { "--style", "{IndentWidth: 4}" },
-      }),
-      M.null_ls.builtins.formatting.sql_formatter.with({
-        extra_args = {
-          ("-l=%s"):format(settings.sql_langkind),
-        },
-      }),
-      M.null_ls.builtins.formatting.stylua.with({
-        extra_args = {
-          "--indent-type=Spaces",
-          "--indent-width=4",
-        },
-      }),
-
-      -- M.null_ls.builtins.diagnostics.pylint.with({
-      --     extra_args = {
-      --         "-f",
-      --         "json",
-      --         "--load-plugins=pylint_django",
-      --         "--disable=django-not-configured",
-      --         "--rcfile=" .. api.path.join(options.lint_directory, "pylint.conf"),
-      --     },
-      -- }),
+      M.null_ls.builtins.formatting.prettier,
+      M.null_ls.builtins.formatting.autopep8,
+      M.null_ls.builtins.formatting.clang_format,
     },
   })
 end

@@ -12,7 +12,6 @@ function M.before()
     lsp = {
       "gopls",
       "jdtls",
-      "cmake",
       "clangd",
       "pyright",
       "css-lsp",
@@ -24,6 +23,7 @@ function M.before()
       "vim-language-server",
       "lua-language-server",
       "bash-language-server",
+      "cmake-language-server",
       "typescript-language-server",
       "tailwindcss-language-server",
     },
@@ -71,7 +71,7 @@ function M.after()
 
   if not vim.tbl_isempty(installed_packages) then
     vim.notify(
-      ("Start install package : \n - %s"):format(table.concat(installed_packages, "\n - ")),
+      ("Installing packages : \n - %s"):format(table.concat(installed_packages, "\n - ")),
       "INFO",
       { title = "Mason" }
     )
