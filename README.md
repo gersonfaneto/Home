@@ -26,10 +26,11 @@ it installed before proceeding.
 git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```
 
-2. Inside the new folder, run `stow`.
+2. Inside the new folder, use `stow` to manage the symlinks.
 
 ```bash
-stow */
+stow */ # Will link all the folders.
+stow neovim # Will link only the `neovim` folder.
 ```
 
 > **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
@@ -40,13 +41,6 @@ stow */
 ```bash
 git submodule update --init
 ```
-
-> **Note**: You can also select individually the folders you want to stow by
-> providing their name.
->
-> ```bash
-> stow nvim
-> ```
 
 ## License
 
