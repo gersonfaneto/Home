@@ -115,7 +115,6 @@ M.explorer = {
       },
       { "nvim-lua/plenary.nvim" },
     },
-    lazy = true,
   },
 }
 
