@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local api = require("utils.api")
 local plugins_nvim_lsputils = require("utils.plugins.nvim-lsputils")
 local plugins_nvim_lspconfig = require("utils.plugins.nvim-lspconfig")

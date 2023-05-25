@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local api = require("utils.api")
 local settings = require("core.settings")
 

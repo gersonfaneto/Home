@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local api = require("utils.api")
 local settings = require("core.settings")
 
@@ -15,7 +17,7 @@ function M.load()
     numhl = false,
     linehl = false,
     word_diff = false,
-    on_attach = function(bufnr)
+    on_attach = function(_)
       M.register_key()
     end,
     signs = {

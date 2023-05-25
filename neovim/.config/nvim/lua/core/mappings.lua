@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local maps = require("utils.api").maps
 
 maps.bulk_register({

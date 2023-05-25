@@ -1,4 +1,4 @@
----@diagnostic disable: unused-local
+---@diagnostic disable: unused-local, undefined-global
 
 local api = require("utils.api")
 local settings = require("core.settings")

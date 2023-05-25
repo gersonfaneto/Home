@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local paths = require("utils.api.paths")
 
 local M = {}

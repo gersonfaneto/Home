@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local M = {}
 
 function M.close_document_format(client)

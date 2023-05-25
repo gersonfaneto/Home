@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local M = {}
 
 function M.get_icons_group(icon_group_name, has_suffix_space)

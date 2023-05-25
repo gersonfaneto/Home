@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local api = require("utils.api")
 
 local M = {
@@ -7,8 +9,8 @@ local M = {
   float_border = true,
   show_winbar = true,
 
-  auto_save = false,
-  remember_position = false,
+  auto_save = true,
+  auto_restore_cursor_position = true,
 
   storage_directory = api.paths.join(vim.fn.stdpath("data"), "store"),
   lazy_install_directory = api.paths.join(vim.fn.stdpath("data"), "lazy"),

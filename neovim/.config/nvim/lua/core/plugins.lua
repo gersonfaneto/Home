@@ -7,7 +7,7 @@ M.themes = {
     "projekt0n/github-nvim-theme",
     tag = "v0.0.7",
     lazy = false,
-    priority = 1000,
+    priority = 100,
   },
 }
 
@@ -38,16 +38,16 @@ M.lsp = {
     },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "UIEnter" },
-  },
-  {
     "folke/neodev.nvim",
     lazy = true,
   },
   {
     "j-hui/fidget.nvim",
     event = { "LspAttach" },
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "UIEnter" },
   },
 }
 

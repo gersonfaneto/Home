@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local interface = require("utils.interface")
 local settings = require("core.settings")
 local nvim_cmp = require("utils.plugins.nvim-cmp")

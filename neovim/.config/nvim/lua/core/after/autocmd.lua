@@ -1,4 +1,5 @@
-local api = require("utils.api")
+---@diagnostic disable: undefined-global
+
 local settings = require("core.settings")
 
 local favoriteLangs = {
@@ -63,18 +64,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
-if settings.remember_position then
-  vim.api.nvim_create_autocmd("BufReadPost", {
-    callback = function()
-      local mark = vim.api.nvim_buf_get_mark(0, '"')
-      local lcount = vim.api.nvim_buf_line_count(0)
-      if mark[1] > 0 and mark[1] <= lcount then
-        pcall(vim.api.nvim_win_set_cursor, 0, mark)
-      end
-    end,
-  })
-end
-
 if settings.auto_save then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
@@ -90,6 +79,18 @@ if settings.auto_save then
       vim.cmd("silent! wall")
     end,
     nested = true,
+  })
+end
+
+if settings.auto_restore_cursor_position then
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
+    end,
   })
 end
 

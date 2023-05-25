@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local settings = require("core.settings")
 
 local M = {
@@ -54,7 +56,7 @@ function M.after()
 
   for _, package_kind in pairs(M.installer_tools) do
     for _, package_name_version in pairs(package_kind) do
-      ---@diagnostic disable-next-line: missing-parameter
+      ---@diagnostic disable-next-line: missing-parameter, deprecated
       local name, version = unpack(vim.split(package_name_version, "@"))
 
       if not M.mason_registry.is_installed(name) then

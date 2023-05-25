@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local M = {
   requires = {
     "indent_blankline",

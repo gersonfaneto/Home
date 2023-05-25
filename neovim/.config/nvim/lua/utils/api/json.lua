@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local M = {}
 
 function M.dumps(obj)
@@ -10,7 +12,7 @@ end
 
 function M.dump(file_name, obj)
   local content = M.dumps(obj)
-  require("utils.apis.files").write(file_name, content)
+  require("utils.api.files").write(file_name, content)
 end
 
 function M.load(file_name, opts)

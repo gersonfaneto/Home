@@ -6,6 +6,12 @@ local M = {
   },
 }
 
+local Error_Red = "#EA4A5A"
+local Warning_Orange = "#FFEA7F"
+local Hint_Blue = "#2188FF"
+local Perf_Purple = "#B392F0"
+local Note_Green = "#34D058"
+
 function M.before()
   M.register_key()
 end
