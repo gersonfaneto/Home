@@ -14,6 +14,7 @@ M.themes = {
 M.basics = {
   {
     "williamboman/mason.nvim",
+    build = ":MasonUpdate",
     event = { "VimEnter" },
   },
   {
