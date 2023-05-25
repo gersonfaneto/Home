@@ -13,16 +13,20 @@ M.themes = {
 
 M.basics = {
   {
-    "nvim-tree/nvim-web-devicons",
+    "williamboman/mason.nvim",
     event = { "VimEnter" },
   },
   {
-    "williamboman/mason.nvim",
+    "nvim-tree/nvim-web-devicons",
     event = { "VimEnter" },
   },
   {
     "nvim-lua/plenary.nvim",
     lazy = true,
+  },
+  {
+    "rcarriga/nvim-notify",
+    priority = 90,
   },
 }
 
@@ -73,6 +77,7 @@ M.editor = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     dependencies = {
+      { "HiPhish/nvim-ts-rainbow2" },
       { "windwp/nvim-ts-autotag" },
       { "nvim-lua/plenary.nvim" },
     },
@@ -98,16 +103,8 @@ M.explorer = {
     event = { "UIEnter" },
   },
   {
-    "AckslD/nvim-neoclip.lua",
-    dependencies = {
-      "kkharji/sqlite.lua",
-    },
-    event = { "VeryLazy" },
-  },
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      { "nvim-lua/plenary.nvim" },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -115,6 +112,7 @@ M.explorer = {
       {
         "nvim-telescope/telescope-ui-select.nvim",
       },
+      { "nvim-lua/plenary.nvim" },
     },
     lazy = true,
   },
@@ -122,21 +120,18 @@ M.explorer = {
 
 M.languages = {
   {
-    "mfussenegger/nvim-jdtls",
-  },
-  {
-    "jose-elias-alvarez/typescript.nvim",
-  },
-  {
-    "simrat39/rust-tools.nvim",
-  },
-  {
     "davidgranstrom/nvim-markdown-preview",
     ft = { "markdown" },
   },
   {
     "manzeloth/live-server",
     ft = { "html" },
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+  },
+  {
+    "simrat39/rust-tools.nvim",
   },
 }
 
