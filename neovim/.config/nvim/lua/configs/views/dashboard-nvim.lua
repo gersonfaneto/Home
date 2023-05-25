@@ -45,7 +45,7 @@ function M.load()
     {
       icon = " ",
       desc = "       Browse File      ",
-      action = "Telescope file_browser",
+      action = "Explore",
       shortcut = "  ",
     },
     {
