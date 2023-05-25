@@ -1,7 +1,7 @@
 local api = require("utils.api")
 local interface = require("utils.interface")
+local settings = require("core.settings")
 local options = require("core.options")
-local setting = require("core.settings")
 local icons = interface.get_icons_group("diagnostic", true)
 
 local M = {
@@ -110,11 +110,11 @@ end
 function M.basic_quick_set()
   M.lsp_handlers = {
     ["textDocument/hover"] = vim.lsp.with(M.lsp_hover, {
-      border = options.float_border and "rounded" or "none",
+      border = settings.float_border and "rounded" or "none",
       filetype = M.filetype.hover,
     }),
     ["textDocument/signatureHelp"] = vim.lsp.with(M.lsp_signature_help, {
-      border = options.float_border and "rounded" or "none",
+      border = settings.float_border and "rounded" or "none",
       filetype = M.filetype.signatureHelp,
     }),
   }
@@ -162,7 +162,7 @@ function M.diagnostic_quick_set()
 end
 
 function M.lspconfig_ui_quick_set()
-  require("lspconfig.ui.windows").default_options.border = options.float_border and "double" or "none"
+  require("lspconfig.ui.windows").default_options.border = settings.float_border and "double" or "none"
 end
 
 function M.get_configuration(ok, configuration)
@@ -183,15 +183,15 @@ function M.get_capabilities(configuration)
 end
 
 function M.diagnostic_open_float()
-  vim.diagnostic.open_float({ border = options.float_border and "rounded" or "none" })
+  vim.diagnostic.open_float({ border = settings.float_border and "rounded" or "none" })
 end
 
 function M.goto_next_diagnostic()
-  vim.diagnostic.goto_next({ float = { border = options.float_border and "rounded" or "none" } })
+  vim.diagnostic.goto_next({ float = { border = settings.float_border and "rounded" or "none" } })
 end
 
 function M.goto_prev_diagnostic()
-  vim.diagnostic.goto_prev({ float = { border = options.float_border and "rounded" or "none" } })
+  vim.diagnostic.goto_prev({ float = { border = settings.float_border and "rounded" or "none" } })
 end
 
 function M.toggle_sigature_help()
@@ -233,7 +233,7 @@ function M.scroll_docs_to_up(map)
           vim.api.nvim_win_set_cursor(opts.window_id, { cursor_line - 5, 0 })
         end
 
-        vim.opt.scrolloff = setting.opt.scrolloff
+        vim.opt.scrolloff = options.opt.scrolloff
 
         return
       end
@@ -274,7 +274,7 @@ function M.scroll_docs_to_down(map)
           vim.api.nvim_win_set_cursor(opts.window_id, { cursor_line + 5, 0 })
         end
 
-        vim.opt.scrolloff = setting.opt.scrolloff
+        vim.opt.scrolloff = options.opt.scrolloff
 
         return
       end

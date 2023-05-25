@@ -1,4 +1,4 @@
-local options = require("core.options")
+local settings = require("core.settings")
 
 local M = {
   requires = {
@@ -43,9 +43,9 @@ function M.load()
         package_pending = "➜",
         package_uninstalled = "✗",
       },
-      border = options.float_border and "double" or "none",
+      border = settings.float_border and "double" or "none",
     },
-    install_root_dir = options.mason_install_directory,
+    install_root_dir = settings.mason_install_directory,
   })
 end
 

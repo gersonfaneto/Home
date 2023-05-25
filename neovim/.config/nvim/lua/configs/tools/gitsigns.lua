@@ -1,5 +1,5 @@
 local api = require("utils.api")
-local options = require("core.options")
+local settings = require("core.settings")
 
 local M = {
   requires = {
@@ -63,7 +63,7 @@ function M.load()
       ignore_whitespace = false,
     },
     preview_config = {
-      border = options.float_border and "rounded" or "none",
+      border = settings.float_border and "rounded" or "none",
       style = "minimal",
       relative = "cursor",
       row = 0,

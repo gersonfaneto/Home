@@ -1,5 +1,5 @@
 local interface = require("utils.interface")
-local options = require("core.options")
+local settings = require("core.settings")
 local nvim_cmp = require("utils.plugins.nvim-cmp")
 local icons = interface.get_icons_group("lsp_kind", false)
 
@@ -130,7 +130,7 @@ function M.load()
       end,
     },
     -- define the appearance of the completion menu
-    window = not options.float_border and {} or {
+    window = not settings.float_border and {} or {
       completion = M.cmp.config.window.bordered({
         winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:Search",
         -- menu position offset
