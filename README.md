@@ -29,8 +29,8 @@ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 2. Inside the new folder, use `stow` to manage the symlinks.
 
 ```bash
-stow */ # Will link all the folders.
-stow neovim # Will link only the `neovim` folder.
+stow */ # Link all the folders.
+stow neovim # Link only the `neovim` folder.
 ```
 
 > **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
