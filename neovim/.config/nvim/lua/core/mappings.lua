@@ -247,8 +247,22 @@ maps.bulk_register({
         return "i"
       end
     end,
-    options = { expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = "Automatically indent to the appropriate position, when entering insert mode.",
+  },
+  {
+    mode = { "v" },
+    lhs = ">",
+    rhs = ">gv",
+    options = { noremap = true, silent = true },
+    description = "Better forward indenting.",
+  },
+  {
+    mode = { "v" },
+    lhs = "<",
+    rhs = "<gv",
+    options = { noremap = true, silent = true },
+    description = "Better backwards indenting.",
   },
 })
 
