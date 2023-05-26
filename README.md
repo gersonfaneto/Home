@@ -8,6 +8,10 @@ __     __                  _____        _____
 
 ```
 
+> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all my
+> configuration files for things like: terminal, shell, text editors and even
+> favorite fonts.
+
 <div align="center">
 
 [![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
@@ -15,10 +19,6 @@ __     __                  _____        _____
 [![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
 
 </div>
-
-> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all my
-> configuration files for things like: terminal, shell, text editors and even
-> favorite fonts.
 
 ## Usage
 
