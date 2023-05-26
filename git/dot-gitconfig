@@ -54,6 +54,7 @@
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   
+  cc = "!git log --oneline | fzf | awk '{print $1}' | xargs git checkout"
   sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-only"
   
   ba = branch --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
