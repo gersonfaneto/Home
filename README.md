@@ -1,6 +1,12 @@
-<h1 align="center">
-    Y.A.D.R.
-</h1>
+```markdown
+__     __                  _____        _____      
+\ \   / /      /\         |  __ \      |  __ \           # Yet Another Dotfiles Repo.
+ \ \_/ /      /  \        | |  | |     | |__) |          
+  \   /      / /\ \       | |  | |     |  _  /           # There's no place like `$HOME`. 
+   | |  _   / ____ \   _  | |__| |  _  | | \ \   _       
+   |_| (_) /_/    \_\ (_) |_____/  (_) |_|  \_\ (_)      # by @gersonfaneto
+
+```
 
 <div align="center">
 
