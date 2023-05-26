@@ -8,7 +8,6 @@ local M = {
 function M.before() end
 
 function M.load()
-  M.nvim_treesitter_install.prefer_git = true
   M.nvim_treesitter_configs.setup({
     ensure_installed = {
       "c",
