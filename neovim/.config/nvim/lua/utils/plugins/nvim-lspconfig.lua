@@ -15,7 +15,7 @@ local M = {
     servers = {
       -- pylance
     },
-    configurations_dir_path = api.paths.join("conf", "lsp", "expands_nvim_lspconfig"),
+    configurations_dir_path = api.paths.join("configs", "lsp", "custom"),
   },
   lsp_replace_message_char = {
     ["\\\\n"] = "\n",

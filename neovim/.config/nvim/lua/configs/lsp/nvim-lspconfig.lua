@@ -13,7 +13,7 @@ local M = {
     -- "pyright",
     "pylance",
   },
-  server_configurations_dir_path = api.paths.join("configs", "lsp", "server-configs"),
+  server_configurations_dir_path = api.paths.join("configs", "lsp", "customs"),
 }
 
 function M.before()
