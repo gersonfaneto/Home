@@ -26,6 +26,7 @@ function M.before()
       "lua-language-server",
       "bash-language-server",
       "cmake-language-server",
+      "svelte-language-server",
       "typescript-language-server",
       "tailwindcss-language-server",
     },
