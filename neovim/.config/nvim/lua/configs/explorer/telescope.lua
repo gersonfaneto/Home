@@ -21,6 +21,7 @@ function M.load()
       multi_icon = " ",
       color_devicons = true,
       file_ignore_patterns = { "node_modules" },
+      sorting_strategy = "ascending",
       layout_strategy = "horizontal",
       layout_config = {
         horizontal = {
@@ -97,7 +98,7 @@ function M.register_key()
     },
     {
       mode = { "n" },
-      lhs = "<leader>fg",
+      lhs = "<leader>lg",
       rhs = function()
         require("telescope.builtin").live_grep()
       end,
