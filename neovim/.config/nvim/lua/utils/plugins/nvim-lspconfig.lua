@@ -176,7 +176,7 @@ function M.get_configuration(ok, configuration)
   }, ok and configuration or {})
 end
 
-function M.get_headlers(configuration)
+function M.get_handlers(configuration)
   return vim.tbl_deep_extend("force", M.lsp_handlers, configuration.handlers or {})
 end
 

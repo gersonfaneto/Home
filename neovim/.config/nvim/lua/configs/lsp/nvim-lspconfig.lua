@@ -42,7 +42,7 @@ function M.load()
 
       -- set default configuration
       configuration = plugins_nvim_lspconfig.get_configuration(ok, configuration)
-      configuration.handlers = plugins_nvim_lspconfig.get_headlers(configuration)
+      configuration.handlers = plugins_nvim_lspconfig.get_handlers(configuration)
       configuration.capabilities = plugins_nvim_lspconfig.get_capabilities(configuration)
 
       local private_on_init = configuration.on_init
