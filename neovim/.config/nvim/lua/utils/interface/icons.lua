@@ -1,10 +1,10 @@
 local M = {}
 
 M.diagnostic = {
-  Error = "",
-  Warn = "",
-  Info = "",
-  Hint = "ﬤ",
+  Error = "✗",
+  Warn = "!",
+  Info = "",
+  Hint = "",
 }
 
 M.tag_level = {
