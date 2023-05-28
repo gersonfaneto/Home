@@ -104,9 +104,9 @@ maps.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>q",
-    rhs = ":bprevious<CR>:bdelete #<CR>",
+    rhs = ":BufferDelete<CR>",
     options = { noremap = true, silent = true },
-    description = "Kill current buffer and switch to previous one.",
+    description = "Kill current buffer.",
   },
   {
     mode = { "n" },
