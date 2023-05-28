@@ -25,7 +25,6 @@ function M.load()
   M.null_ls.setup({
     border = settings.float_border and "double" or "none",
     sources = {
-      M.null_ls.builtins.formatting.gofmt,
       M.null_ls.builtins.formatting.shfmt,
       M.null_ls.builtins.formatting.stylua,
       M.null_ls.builtins.formatting.fixjson,

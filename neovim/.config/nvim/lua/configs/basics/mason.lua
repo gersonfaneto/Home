@@ -32,7 +32,14 @@ function M.before()
     },
     dap = {},
     linter = {},
-    formatter = {},
+    formatter = {
+      "shfmt",
+      "stylua",
+      "prettier",
+      "autopep8",
+      "clang-format",
+      "google-java-format",
+    },
   }
 end
 
