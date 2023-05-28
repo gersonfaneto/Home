@@ -129,9 +129,11 @@ M.languages = {
   },
   {
     "mfussenegger/nvim-jdtls",
+    ft = { "java" },
   },
   {
     "simrat39/rust-tools.nvim",
+    ft = { "rust" },
   },
 }
 
