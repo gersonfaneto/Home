@@ -1,10 +1,8 @@
 ```markdown
-__     __                  _____        _____      
-\ \   / /      /\         |  __ \      |  __ \           # Yet Another Dotfiles Repo.
- \ \_/ /      /  \        | |  | |     | |__) |          
-  \   /      / /\ \       | |  | |     |  _  /           # There's no place like `$HOME`. 
-   | |  _   / ____ \   _  | |__| |  _  | | \ \   _       
-   |_| (_) /_/    \_\ (_) |_____/  (_) |_|  \_\ (_)      # by @gersonfaneto
+__   __         _         ___        ___     
+\ \ / /        /_\       |   \      | _ \       # Yet Another Dotfiles Repo.
+ \ V /   _    / _ \   _  | |) |  _  |   /  _ 
+  |_|   (_)  /_/ \_\ (_) |___/  (_) |_|_\ (_)   # by @gersonfaneto
 
 ```
 
