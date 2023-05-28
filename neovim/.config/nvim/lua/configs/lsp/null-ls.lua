@@ -31,7 +31,10 @@ function M.load()
       M.null_ls.builtins.formatting.fixjson,
       M.null_ls.builtins.formatting.prettier,
       M.null_ls.builtins.formatting.autopep8,
-      M.null_ls.builtins.formatting.clang_format,
+      M.null_ls.builtins.formatting.clang_format.with({
+        filetypes = { "c", "cpp" },
+      }),
+      M.null_ls.builtins.formatting.google_java_format,
     },
   })
 end
