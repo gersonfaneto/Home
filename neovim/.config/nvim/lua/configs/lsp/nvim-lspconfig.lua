@@ -10,8 +10,7 @@ local M = {
     "mason-lspconfig",
   },
   disabled_servers = {
-    -- "pyright",
-    "pylance",
+    "jdtls",
   },
   server_configurations_dir_path = api.paths.join("configs", "lsp", "customs"),
 }
