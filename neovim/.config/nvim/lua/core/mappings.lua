@@ -139,9 +139,23 @@ maps.bulk_register({
   {
     mode = { "v" },
     lhs = "p",
-    rhs = "_dP",
+    rhs = '"_dp"',
+    options = { noremap = true, silent = true },
+    description = "paste in visual mode without writing to registers.",
+  },
+  {
+    mode = { "v" },
+    lhs = "P",
+    rhs = '"_dP"',
     options = { noremap = true, silent = true },
     description = "Paste in visual mode without writing to registers.",
+  },
+  {
+    mode = { "n" },
+    lhs = "YY",
+    rhs = "va{Vy",
+    options = { noremap = true, silent = true },
+    description = "Yank everything between and including { and }.",
   },
   {
     mode = { "n" },
