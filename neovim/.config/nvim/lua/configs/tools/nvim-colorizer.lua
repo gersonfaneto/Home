@@ -10,7 +10,7 @@ function M.load()
   M.colorizer.setup({
     user_default_options = {
       css = true,
-      mode = "virtualtext",
+      mode = "background",
     },
     filetypes = { "*" },
   })
