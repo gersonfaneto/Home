@@ -14,6 +14,7 @@ function M.load()
       "cpp",
       "c_sharp",
       "rust",
+      "go",
       "java",
       "lua",
       "python",
