@@ -287,6 +287,55 @@ maps.bulk_register({
     options = { noremap = true, silent = true },
     description = "Quickly edit word under cursor.",
   },
+  {
+    mode = { "n" },
+    lhs = "<A-Down>",
+    rhs = ":m .+1<CR>==",
+    options = { noremap = true, silent = true },
+    description = "Move current line down.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<A-Up>",
+    rhs = ":m .-2<CR>==",
+    options = { noremap = true, silent = true },
+    description = "Move current line up.",
+  },
+  {
+    mode = { "i" },
+    lhs = "<A-Down>",
+    rhs = "<Esc>:m .+1<CR>==gi",
+    options = { noremap = true, silent = true },
+    description = "Move current line down.",
+  },
+  {
+    mode = { "i" },
+    lhs = "<A-Up>",
+    rhs = "<Esc>:m .-2<CR>==gi",
+    options = { noremap = true, silent = true },
+    description = "Move current line up.",
+  },
+  {
+    mode = { "v" },
+    lhs = "<A-Down>",
+    rhs = ":m '>+1<CR>gv=gv",
+    options = { noremap = true, silent = true },
+    description = "Move current line down.",
+  },
+  {
+    mode = { "v" },
+    lhs = "<A-Up>",
+    rhs = ":m '<-2<CR>gv=gv",
+    options = { noremap = true, silent = true },
+    description = "Move current line down.",
+  },
+  {
+    mode = { "v" },
+    lhs = "y",
+    rhs = "ygv<Esc>",
+    options = { noremap = true, silent = true },
+    description = "Copy without returning to start of selection.",
+  },
 })
 
 return M

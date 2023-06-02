@@ -114,6 +114,15 @@ function M.register_key()
       options = { noremap = true, silent = true },
       description = "Browse trough the open buffers.",
     },
+    {
+      mode = { "n" },
+      lhs = "<leader>;",
+      rhs = function()
+        require("telescope.builtin").resume()
+      end,
+      options = { noremap = true, silent = true },
+      description = "Resume to last open picker.",
+    },
   })
 end
 
