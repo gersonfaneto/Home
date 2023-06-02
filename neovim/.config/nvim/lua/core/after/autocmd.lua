@@ -2,31 +2,7 @@
 
 local settings = require("core.settings")
 
-local favoriteLangs = {
-  cpp = { build = "g++ % -o %:r", exec = "./%:r" },
-  cs = { build = "dotnet build", exec = "dotnet run" },
-  c = { build = "gcc % -o %:r", exec = "./%:r" },
-  java = { build = "javac %", exec = "java %:r" },
-  python = { exec = "python %" },
-  typescript = { build = "tsc %", exec = "node %:r.js" },
-  javascript = { exec = "node %" },
-  sh = { build = "chmod u+x %", exec = "./%" },
-}
-
 local M = {}
-
-for langType, langInfo in pairs(favoriteLangs) do
-  if langInfo.build ~= nil then
-    vim.api.nvim_create_autocmd("FileType", {
-      command = "nnoremap <F5> :!" .. langInfo.build .. "<CR>",
-      pattern = langType,
-    })
-  end
-  vim.api.nvim_create_autocmd("FileType", {
-    command = "nnoremap <F6> :split<CR>:terminal " .. langInfo.exec .. "<CR>",
-    pattern = langType,
-  })
-end
 
 vim.api.nvim_create_autocmd("InsertEnter", {
   command = "set norelativenumber",
