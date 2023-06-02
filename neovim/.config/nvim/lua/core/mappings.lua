@@ -280,6 +280,13 @@ maps.bulk_register({
     options = { noremap = true, silent = true },
     description = "Better backwards indenting.",
   },
+  {
+    mode = { "n" },
+    lhs = "<CR>",
+    rhs = "ciw",
+    options = { noremap = true, silent = true },
+    description = "Quickly edit word under cursor.",
+  },
 })
 
 return M
