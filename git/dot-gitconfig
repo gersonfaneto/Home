@@ -1,21 +1,22 @@
-[core]
-  excludesfile = ~/.gitignore
-  editor = nvim
-  ignorecase = false
-  autocrlf = input
+[init]
+  defaultBranch = main
+
+[push]
+  default = simple
+
+[github]
+  user = gersonfaneto
 
 [user]
   name = Gerson Ferreira
   email = gersonfaneto.dev@gmail.com
 
-[init]
-  defaultBranch = main
-
-[github]
-  user = gersonfaneto
-
-[push]
-  default = simple
+[core]
+  editor = nvim
+  pager = bat
+  autocrlf = input
+  ignorecase = false
+  excludesfile = ~/.gitignore
 
 [color]
   status = auto
