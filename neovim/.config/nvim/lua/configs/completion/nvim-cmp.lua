@@ -23,14 +23,12 @@ function M.before()
   -- whether to allow the following completion sources to have the same keywords as other completion sources
   M.duplicate_keywords = {
     -- allow duplicate keywords
-    ["luasnip"] = 1,
     ["nvim_lsp"] = 1,
+    ["luasnip"] = 1,
     -- do not allow duplicate keywords
     ["buffer"] = 0,
     ["path"] = 0,
     ["cmdline"] = 0,
-    ["cmp_tabnine"] = 0,
-    ["vim-dadbod-completion"] = 0,
   }
 end
 
@@ -56,12 +54,10 @@ function M.load()
     },
     -- define completion source
     sources = M.cmp.config.sources({
-      { name = "luasnip" },
       { name = "nvim_lsp" },
+      { name = "luasnip" },
       { name = "path" },
       { name = "buffer" },
-      { name = "cmp_tabnine" },
-      { name = "vim-dadbod-completion" },
     }),
     -- define buttons
     -- • i: valid in insert mode
