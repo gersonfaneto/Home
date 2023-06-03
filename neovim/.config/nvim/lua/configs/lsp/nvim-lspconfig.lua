@@ -93,7 +93,7 @@ function M.register_key()
     },
     {
       mode = { "n" },
-      lhs = "gh",
+      lhs = "K",
       rhs = vim.lsp.buf.hover,
       options = { noremap = true, silent = true },
       description = "Show help information.",
