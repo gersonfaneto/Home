@@ -103,6 +103,13 @@ maps.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<BS>",
+    rhs = ":b#<CR>",
+    options = { noremap = true, silent = true },
+    description = "Quickly switch between current and last open buffer.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>q",
     rhs = ":BufferDelete<CR>",
     options = { noremap = true, silent = true },
