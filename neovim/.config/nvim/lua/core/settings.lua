@@ -3,7 +3,7 @@
 local api = require("utils.api")
 
 local M = {
-  transparent = false,
+  transparent = true,
   dim_inactive = false,
 
   float_border = true,

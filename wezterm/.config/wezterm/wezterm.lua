@@ -1,5 +1,17 @@
 local wezterm = require("wezterm")
 
+wezterm.on("toggleOpacity", function(window, _)
+	local overrides = window:get_config_overrides() or {}
+
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 0.8
+	else
+		overrides.window_background_opacity = nil
+	end
+
+	window:set_config_overrides(overrides)
+end)
+
 return {
 	color_scheme = "GitHub Dark",
 
@@ -17,6 +29,11 @@ return {
 			key = "F11",
 			mods = "NONE",
 			action = wezterm.action.ToggleFullScreen,
+		},
+		{
+			key = "F12",
+			mods = "NONE",
+			action = wezterm.action.EmitEvent("toggleOpacity"),
 		},
 	},
 
