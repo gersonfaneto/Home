@@ -209,7 +209,7 @@ maps.bulk_register({
     mode = { "n" },
     lhs = "<C-u>",
     rhs = function()
-      vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "k")
+      vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "kzz")
     end,
     options = { noremap = true, silent = true },
     description = "Better navigation with C-u.",
@@ -218,7 +218,7 @@ maps.bulk_register({
     mode = { "n" },
     lhs = "<C-d>",
     rhs = function()
-      vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "j")
+      vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "jzz")
     end,
     options = { noremap = true, silent = true },
     description = "Better navigation with C-d.",
