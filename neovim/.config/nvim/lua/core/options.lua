@@ -53,6 +53,7 @@ M.opt = {
   relativenumber = true,
   numberwidth = 4,
   signcolumn = "yes",
+  fillchars = { eob = " " },
 }
 
 vim.opt.shortmess:append("sI")
