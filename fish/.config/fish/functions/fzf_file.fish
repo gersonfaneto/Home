@@ -1,5 +1,5 @@
 function fzf_file
-  set -l fzf_flags --preview="bat --theme=TwoDark --style=numbers --color=always --line-range :500 {}"
+  set -l fzf_flags --preview="bat --style=numbers --color=always --line-range :500 {}"
 
   rg --files --hidden --glob "!.git/*" | fzf $fzf_flags | read line
 

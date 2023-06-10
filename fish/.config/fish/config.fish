@@ -96,7 +96,11 @@ end
 
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark"
+  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  --color=fg:#e2caa9,bg:#0d1117,hl:#80aa9e \
+  --color=fg+:#e2caa9,bg+:#0d1117,hl+:#80aa9e \
+  --color=info:#7c6f64,prompt:#f2594b,pointer:#e2cca9\
+  --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
 end
 
 if type -q bat
