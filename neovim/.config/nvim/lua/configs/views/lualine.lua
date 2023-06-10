@@ -24,9 +24,9 @@ function M.load()
         replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
 
         inactive = {
-          a = { bg = colors.fg, fg = colors.bg },
-          b = { bg = colors.fg, fg = colors.bg },
-          c = { bg = colors.fg, fg = colors.bg },
+          a = { bg = colors.bg, fg = colors.fg },
+          b = { bg = colors.bg, fg = colors.fg },
+          c = { bg = colors.bg, fg = colors.fg },
         },
       },
       icons_enabled = true,
