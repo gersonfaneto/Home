@@ -44,6 +44,7 @@ M.lsp = {
   {
     "j-hui/fidget.nvim",
     event = { "LspAttach" },
+    tag = "legacy",
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
