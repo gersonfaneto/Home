@@ -4,8 +4,7 @@ local M = {}
 
 M.themes = {
   {
-    "projekt0n/github-nvim-theme",
-    tag = "v0.0.7",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 100,
   },
@@ -154,7 +153,9 @@ M.views = {
   },
   {
     "nvim-lualine/lualine.nvim",
-    event = { "UIEnter" },
+    enabled = true,
+    lazy = false,
+    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
   },
   {
     "nvim-tree/nvim-tree.lua",
