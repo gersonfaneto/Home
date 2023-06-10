@@ -9,6 +9,7 @@ alias sr "sudo reboot -h now"
 alias sp "sudo poweroff"
 alias sweep "echo yes | history clear > /dev/null"
 alias rs reset
+alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
 alias cp "cp -i"
 alias mv "mv -i"
@@ -40,7 +41,7 @@ if type -q neofetch
 end
 
 if type -q bat
-  alias bat "bat --theme=TwoDark"
+  alias bat "bat --theme=gruvbox-dark"
 end
 
 if type -q git
