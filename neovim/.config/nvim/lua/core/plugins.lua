@@ -123,10 +123,6 @@ M.languages = {
     ft = { "markdown" },
   },
   {
-    "manzeloth/live-server",
-    ft = { "html" },
-  },
-  {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
   },
