@@ -110,9 +110,7 @@ M.explorer = {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
-      {
-        "nvim-telescope/telescope-ui-select.nvim",
-      },
+      { "nvim-telescope/telescope-ui-select.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
   },
@@ -122,6 +120,12 @@ M.languages = {
   {
     "davidgranstrom/nvim-markdown-preview",
     ft = { "markdown" },
+  },
+  {
+    "vim-pandoc/vim-pandoc",
+    dependencies = {
+      { "vim-pandoc/vim-pandoc-syntax" },
+    },
   },
   {
     "mfussenegger/nvim-jdtls",

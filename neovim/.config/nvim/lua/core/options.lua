@@ -17,6 +17,9 @@ M.opt = {
   spell = false,
   spelllang = { "en_us", "pt_br" },
 
+  foldmethod = "manual",
+  foldenable = false,
+
   mouse = "a",
   wrap = false,
   scrolloff = 8,
