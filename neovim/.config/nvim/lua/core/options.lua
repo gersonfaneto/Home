@@ -5,6 +5,7 @@ local M = {}
 M.g = {
   mapleader = " ",
   maplocalleader = " ",
+  cmptoggle = true,
 }
 
 M.opt = {

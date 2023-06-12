@@ -346,16 +346,9 @@ maps.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>c",
-    rhs = ":lua require('cmp').setup({ enabled = true })<CR>",
+    rhs = ":ToggleCompletion<CR>",
     options = { noremap = true, silent = true },
-    description = "Enable completion.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>C",
-    rhs = ":lua require('cmp').setup({ enabled = false })<CR>",
-    options = { noremap = true, silent = true },
-    description = "Disable completion.",
+    description = "Toggle completion.",
   },
 })
 

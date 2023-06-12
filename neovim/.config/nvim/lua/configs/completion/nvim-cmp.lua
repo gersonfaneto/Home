@@ -37,6 +37,9 @@ function M.load()
   nvim_cmp.receive_cmp(M.cmp)
 
   M.cmp.setup({
+    enabled = function()
+      return vim.g.cmptoggle
+    end,
     view = {
       -- "custom", "wildmenu" or "native"
       entries = "custom",
