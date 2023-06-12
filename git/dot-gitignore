@@ -1,7 +1,6 @@
 .vscode/
 .idea/
 
-[Ll]ogs/
 .log
 
 node_modules/
@@ -9,21 +8,17 @@ node_modules/
 .env
 .env.test
 
-[Bb]uild/
 Main
 Main.c
 Main.cpp
 In.txt
 Out.txt
-*.o
-*.a
 
 bin/
+build/
 target/
 Flags.txt
 Files.txt
 
 [Ee]xamples
 TODO.md
-Run.sh
-Build.sh
