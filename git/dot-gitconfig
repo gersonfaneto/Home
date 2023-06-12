@@ -39,6 +39,9 @@
 
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
   dc = "!git log --oneline | fzf |  awk '{print $1}' | xargs -I {} git diff {}^ {}"
+
+  ri = rebase --interactive
+  rc = rebase --continue
   
   wl = worktree list
   wa = worktree add
