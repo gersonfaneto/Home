@@ -61,6 +61,7 @@ function M.load()
       { name = "luasnip" },
       { name = "path" },
       { name = "buffer" },
+      { name = "emoji" },
     }),
     -- define buttons
     -- • i: valid in insert mode
