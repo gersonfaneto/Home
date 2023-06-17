@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-global
+diagnostic disable: undefined-global
 
 local settings = require("core.settings")
 
@@ -12,7 +12,6 @@ local M = {
 function M.before()
   M.installer_tools = {
     lsp = {
-      "gopls",
       "jdtls",
       "clangd",
       "pyright",
