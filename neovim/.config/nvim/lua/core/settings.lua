@@ -9,8 +9,8 @@ local M = {
   float_border = true,
   show_winbar = false,
 
-  auto_save = true,
-  auto_restore_cursor_position = true,
+  auto_save = false,
+  auto_restore_cursor_position = false,
   auto_remove_new_lines_comments = true,
 
   storage_directory = api.paths.join(vim.fn.stdpath("data"), "store"),
