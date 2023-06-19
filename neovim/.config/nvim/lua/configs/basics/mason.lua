@@ -1,4 +1,4 @@
-diagnostic disable: undefined-global
+---@diagnostic disable: undefined-global
 
 local settings = require("core.settings")
 
