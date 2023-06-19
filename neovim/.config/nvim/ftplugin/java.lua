@@ -140,7 +140,7 @@ local function on_attach()
       lhs = "<leader>la",
       rhs = vim.lsp.buf.code_action,
       options = { noremap = true, silent = true },
-      description = "Show code action.",
+      description = "Show code actions.",
     },
     {
       mode = { "n" },
@@ -252,6 +252,34 @@ local function on_attach()
       rhs = plugins_nvim_lspconfig.scroll_docs_to_down("<C-f>"),
       options = { noremap = true, silent = true },
       description = "Scroll down floating window.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>oi",
+      rhs = jdtls.organize_imports,
+      options = { noremap = true, silent = true },
+      description = "Organize imports.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>ev",
+      rhs = jdtls.extract_variable,
+      options = { noremap = true, silent = true },
+      description = "Extract to variable.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>ec",
+      rhs = jdtls.extract_constant,
+      options = { noremap = true, silent = true },
+      description = "Extract to constant.",
+    },
+    {
+      mode = { "v" },
+      lhs = "<leader>em",
+      rhs = "<Esc>:lua require('jdtls').extract_method(true)<CR>",
+      options = { noremap = true, silent = true },
+      description = "Extract to method.",
     },
   })
   local _ = pcall(require, vim.lsp.codelens.refresh)
