@@ -122,8 +122,8 @@ if status is-interactive
     end
 end
 
-function hop -d "Create a new directory and set it as the CWD"
-  command mkdir $argv
+function hop -d "Create a new directory and sets the CWD to it."
+  command mkdir -p $argv 2>/dev/null
     if test $status = 0
         switch $argv[(count $argv)]
           case '-*'
@@ -131,6 +131,8 @@ function hop -d "Create a new directory and set it as the CWD"
             cd $argv[(count $argv)]
             return
         end
+      else
+        cd $argv
     end
 end
 
