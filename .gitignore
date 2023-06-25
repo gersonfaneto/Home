@@ -25,4 +25,4 @@ neovim/.config/nvim/lazy-lock.json
 vim/.vim/.netrwhist
 
 # Fonts
-fonts/.local/share/fonts/.uuid
+*.uuid
