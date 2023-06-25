@@ -83,11 +83,11 @@ if test -d "$HOME/.local/bin/"
 end
 
 if asdf where golang > /dev/null 2>&1
-  export PATH="$PATH:(asdf where golang)/packages/bin"
+  export PATH="$PATH:$(asdf where golang)/packages/bin"
 end
 
 if asdf where rust > /dev/null 2>&1
-  export PATH="$PATH:(asdf where rust)/bin"
+  export PATH="$PATH:$(asdf where rust)/bin"
 end
 
 if test -d "$HOME/.dotnet/tools"
