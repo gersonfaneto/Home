@@ -40,7 +40,9 @@ if type -q neofetch
   alias nf "neofetch"
 end
 
-if type -q bat
+if type -q batcat
+  alias bat "batcat --theme=gruvbox-dark"
+else if type -q bat
   alias bat "bat --theme=gruvbox-dark"
 end
 
