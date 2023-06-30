@@ -1,17 +1,5 @@
 local wezterm = require("wezterm")
 
-wezterm.on("toggleOpacity", function(window, _)
-	local overrides = window:get_config_overrides() or {}
-
-	if not overrides.window_background_opacity then
-		overrides.window_background_opacity = 0.7
-	else
-		overrides.window_background_opacity = nil
-	end
-
-	window:set_config_overrides(overrides)
-end)
-
 return {
 	color_scheme = "Gruvbox Material (Gogh)",
 
@@ -33,23 +21,11 @@ return {
 		top = 10,
 		bottom = 10,
 	},
+  window_background_opacity = 0.7,
 
 	window_decorations = "NONE",
 	hide_tab_bar_if_only_one_tab = true,
 	hide_mouse_cursor_when_typing = true,
-
-	keys = {
-		{
-			key = "F11",
-			mods = "NONE",
-			action = wezterm.action.ToggleFullScreen,
-		},
-		{
-			key = "F12",
-			mods = "NONE",
-			action = wezterm.action.EmitEvent("toggleOpacity"),
-		},
-	},
 
 	default_prog = { "/usr/bin/fish" },
 }
