@@ -40,10 +40,12 @@ if type -q neofetch
   alias nf "neofetch"
 end
 
-if type -q batcat
-  alias bat "batcat --theme=gruvbox-dark"
-else if type -q bat
-  alias bat "bat --theme=gruvbox-dark"
+if type -q bat
+  # Catppuccin
+  export BAT_THEME="Catppuccin-mocha"
+
+  # Gruvbox
+  # export BAT_THEME="gruvbox-dark"
 end
 
 if type -q git
@@ -97,12 +99,20 @@ if test -d "$HOME/.dotnet/tools"
 end
 
 if type -q fzf
+  # Catppuccin
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-  --color=fg:#e2caa9,bg:-1,hl:#80aa9e \
-  --color=fg+:#e2caa9,bg+:-1,hl+:#80aa9e \
-  --color=info:#7c6f64,prompt:#f2594b,pointer:#e2cca9\
-  --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
+  --color=bg+:-1,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+  # Gruvbox
+  # export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
+  # --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  # --color=fg:#e2caa9,bg:-1,hl:#80aa9e \
+  # --color=fg+:#e2caa9,bg+:-1,hl+:#80aa9e \
+  # --color=info:#7c6f64,prompt:#f2594b,pointer:#e2cca9\
+  # --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
 end
 
 if type -q bat
