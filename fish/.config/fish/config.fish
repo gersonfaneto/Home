@@ -42,7 +42,7 @@ end
 
 if type -q bat
   # Catppuccin
-  export BAT_THEME="Catppuccin-mocha"
+  # export BAT_THEME="Catppuccin-mocha"
 
   # Gruvbox
   # export BAT_THEME="gruvbox-dark"
