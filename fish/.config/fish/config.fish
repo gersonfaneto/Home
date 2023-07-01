@@ -78,6 +78,10 @@ if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
 end
 
+if test -d "$HOME/.cargo/bin/"
+  export PATH="$PATH:$HOME/.cargo/bin/"
+end
+
 if asdf where golang > /dev/null 2>&1
   export PATH="$PATH:$(asdf where golang)/packages/bin"
 end
