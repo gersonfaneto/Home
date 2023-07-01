@@ -70,14 +70,6 @@ else
   alias py python3
 end
 
-if type -q tldr
-  alias tldr "tldr --theme base16"
-end
-
-if type -q wezterm
-  alias icat "wezterm imgcat --width 100"
-end
-
 if test -d ~/.asdf
   source ~/.asdf/asdf.fish
 end
