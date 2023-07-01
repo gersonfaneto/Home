@@ -13,7 +13,7 @@ return {
 	},
 
 	font = wezterm.font("Comic Mono"),
-	font_size = 10,
+	font_size = 12,
 
 	cursor_blink_rate = 400,
 	cursor_blink_ease_in = "Constant",
