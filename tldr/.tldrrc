@@ -37,7 +37,7 @@
       "exampleDescription": "green, bgBlack",
       "exampleCode": "green, bgBlack",
       "exampleToken": "green, bold, bgBlack"
-    },
+    }
   },
-  "theme": "ocean",
+  "theme": "ocean"
 }
