@@ -6,13 +6,19 @@ M.themes = {
   {
     "sainnhe/gruvbox-material",
     lazy = false,
-    priority = 110,
+    priority = 100,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
     priority = 100,
+  },
+  {
+    "decaycs/decay.nvim",
+    name = "decay",
+    lazy = false,
+    priority = 110,
   },
 }
 
