@@ -26,7 +26,7 @@ return {
 		top = 10,
 		bottom = 10,
 	},
-  window_background_opacity = 0.0,
+  window_background_opacity = 0.6,
 
 	window_decorations = "NONE",
 	hide_tab_bar_if_only_one_tab = true,
