@@ -88,9 +88,11 @@ nnoremap <silent> <leader>d <C-w>l
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 nnoremap <silent> <leader>D :bdelete<CR>
+nnoremap <silent> <BACKSPACE> :b#<CR>
 
 nnoremap <silent> <C-w> :wall<CR>
 nnoremap <silent> <C-q> :quit<CR>
+nnoremap <silent> <leader><ESC> :qall!<CR>
 
 nnoremap <silent> <C-a> ggVG
 nnoremap <silent> <C-y> :%y<CR>
@@ -101,4 +103,6 @@ vnoremap <silent> > >gv
 
 nnoremap <silent> + <C-a>
 nnoremap <silent> - <C-x>
+
+nnoremap <silent> <RETURN> ciw
 
