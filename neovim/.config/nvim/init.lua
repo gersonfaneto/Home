@@ -6,7 +6,7 @@ require("core.after")
 
 -- TODO: Move into proper cofiguration file. 
 
-local style = "default"
+--[[ local style = "default"
 
 local colors = require("decay.core").get_colors(style)
 local highlights = require("decay.highlights")
@@ -34,4 +34,4 @@ require("decay").setup({
   palette_overrides = {
     background = "NONE",
   },
-})
+}) ]]

@@ -3,22 +3,27 @@ local lazy = require("utils.plugins.lazy")
 local M = {}
 
 M.themes = {
-  {
+  --[[ {
     "sainnhe/gruvbox-material",
     lazy = false,
-    priority = 100,
+    priority = 1000,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
-    priority = 100,
+    priority = 1000,
   },
   {
     "decaycs/decay.nvim",
     name = "decay",
     lazy = false,
-    priority = 110,
+    priority = 1000,
+  }, ]]
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
   },
 }
 
