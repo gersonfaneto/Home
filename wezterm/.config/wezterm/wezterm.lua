@@ -4,6 +4,9 @@ local wezterm = require("wezterm")
 
 local Gruvbox = "Gruvbox Material (Gogh)"
 local Catppuccin = "Catppuccin Mocha"
+local RosePine = "rose-pine"
+local TokyoNight = "Tokyo Night (Gogh)"
+local Decay = "Decay (Default)"
 
 return {
 	color_scheme = Catppuccin,
