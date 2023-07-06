@@ -41,11 +41,10 @@ if type -q neofetch
 end
 
 if type -q bat
-  # Catppuccin
-  # export BAT_THEME="Catppuccin-mocha"
-
-  # Gruvbox
-  # export BAT_THEME="gruvbox-dark"
+  export BAT_THEME="Catppucin Mocha"
+  # export BAT_THEME="Catppuccin Latte"
+  # export BAT_THEME="Rose Pine"
+  # export BAT_THEME="Tokyonight Storm"
 end
 
 if type -q git
