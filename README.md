@@ -22,7 +22,7 @@ __   __         _         ___        ___
 
 ## Usage
 
-> Note: The steps bellow describe how to setup the configuration manually,
+> **Note**: The steps bellow describe how to setup the configuration manually,
 > however if you are on an `Arch` based distro you can use the script
 > `JARVIS.sh` to have all the dependencies listed bellow installed and the
 > configuration files synchronized.
