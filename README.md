@@ -15,14 +15,42 @@ __   __         _         ___        ___
 [![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
 [![License](https://img.shields.io/github/license/gersonfaneto/YADR?color=blue&style=for-the-badge)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
+[![Distro](https://img.shields.io/badge/DISTRO-Arch-74c7ec?color=blue&style=for-the-badge&logo=arch-linux)](https://archlinux.org/)
+
 
 </div>
 
 ## Usage
 
-I'm currently using [`stow`](https://www.gnu.org/software/stow/) to manage
-the symlinks off all the files and directories in it, so make sure you have
-it installed before proceeding.
+> Note: The steps bellow describe how to setup the configuration manually,
+> however if you are on an `Arch` based distro you can use the script
+> `JARVIS.sh` to have all the dependencies listed bellow installed and the
+> configuration files synchronized.
+
+### Dependencies
+
+Make sure to have the following dependencies installed before proceeding!
+
+- bat
+- exa
+- fd
+- fish
+- fzf
+- github-cli
+- glow
+- kitty
+- neofetch
+- neovim
+- ripgrep
+- starship
+- stow
+- tmux
+- trash-cli
+- vim
+- zoxide
+
+After installing all the packages listed above use [`stow`](https://www.gnu.org/software/stow/)
+to manage the symbolic links for all the files and directories.
 
 1. Clone this repository into your local machine.
 
@@ -30,7 +58,7 @@ it installed before proceeding.
 git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```
 
-2. Inside the new folder, use `stow` to manage the symlinks.
+2. Inside the new folder, use `stow` to create the symbolic links.
 
 ```bash
 stow */ # Link all the folders.
