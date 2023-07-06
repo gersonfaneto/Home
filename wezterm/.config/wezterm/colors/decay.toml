@@ -24,17 +24,6 @@ brights = [
 
 background = "#171a1f"
 
-brights = [
-  "#555555",
-  "#ff5555",
-  "#55ff55",
-  "#ffff55",
-  "#5555ff",
-  "#ff55ff",
-  "#55ffff",
-  "#ffffff",
-]
-
 cursor_bg = "#dee1e6"
 cursor_border = "#fafdff"
 cursor_fg = "#22262e"
