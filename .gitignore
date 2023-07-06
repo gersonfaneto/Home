@@ -1,12 +1,18 @@
+# General
+INSTALL.log
+
+# FISH
+fish/.config/fish/fish_variables
+
 # TMUX
 tmux/.config/tmux/plugins/*
 
-# Neovim
+# NEOVIM
 neovim/.config/nvim/.luarc.json
 neovim/.config/nvim/lazy-lock.json
 
-# Vim
+# VIM
 vim/.vim/.netrwhist
 
-# Fonts
+# FONTS
 *.uuid
