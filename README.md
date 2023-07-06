@@ -39,13 +39,13 @@ stow tmux trash-cli vim zoxide
 After installing all the packages listed above use [`stow`](https://www.gnu.org/software/stow/)
 to manage the symbolic links for all the files and directories.
 
-1. Clone this repository into your local machine.
+- Clone this repository into your local machine.
 
 ```bash
 git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```
 
-2. Inside the new folder, use `stow` to create the symbolic links.
+- Inside the new folder, use `stow` to create the symbolic links.
 
 ```bash
 stow */ # Link all the folders.
@@ -56,7 +56,7 @@ stow -D neovim # Remove the link for the `neovim` folder.
 > **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
 > file included makes so that no flags are needed to be passed to the command line.
 
-3. Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
+- Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
 
 ```bash
 git submodule update --init
