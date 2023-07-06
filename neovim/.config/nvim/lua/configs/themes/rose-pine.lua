@@ -1,11 +1,15 @@
 local settings = require("core.settings")
 
-local M = {}
+local M = {
+  requires = {
+    "rose-pine",
+  },
+}
 
 function M.before() end
 
 function M.load()
-  require("rose-pine").setup({
+  M.rose_pine.setup({
     variant = "auto",
     dark_variant = "main",
     bold_vert_split = false,

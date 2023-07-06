@@ -1,10 +1,12 @@
 local settings = require("core.settings")
 
 local M = {
+  requires = {
+    "catppuccin",
+  },
 }
 
-function M.before()
-end
+function M.before() end
 
 function M.load()
   require("catppuccin").setup({

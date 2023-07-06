@@ -1,18 +1,17 @@
 local settings = require("core.settings")
-local extra_hl = ""
 
-if settings.transparent then
-  extra_hl = "transparent"
-else
-  extra_hl = "dark"
-end
+local override = settings.transparent and "transparent" or "dark"
 
-local M = {}
+local M = {
+  requires = {
+    "tokyonight",
+  }
+}
 
 function M.before() end
 
 function M.load()
-  require("tokyonight").setup({
+  M.tokyonight.setup({
     style = "night",
     light_style = "day",
     transparent = settings.transparent,
@@ -22,8 +21,8 @@ function M.load()
       keywords = { italic = true },
       functions = {},
       variables = {},
-      sidebars = extra_hl,
-      floats = extra_hl,
+      sidebars = override,
+      floats = override,
     },
     sidebars = { "qf", "help" },
     day_brightness = 0.3,

@@ -5,13 +5,7 @@ local settings = require("core.settings")
 local M = {}
 
 function M.before()
-  local bg = ""
-
-  if settings.transparent then
-    bg = "NONE"
-  else
-    bg = colors.bg
-  end
+  local bg = settings.transparent and "NONE" or colors.bg
 
   vim.api.nvim_create_autocmd("ColorScheme", {
     group = groupID,
