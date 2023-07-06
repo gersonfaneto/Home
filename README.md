@@ -31,23 +31,10 @@ __   __         _         ___        ___
 
 Make sure to have the following dependencies installed before proceeding!
 
-- bat
-- exa
-- fd
-- fish
-- fzf
-- github-cli
-- glow
-- kitty
-- neofetch
-- neovim
-- ripgrep
-- starship
-- stow
-- tmux
-- trash-cli
-- vim
-- zoxide
+```markdown
+bat exa fd fish fzf github-cli glow kitty neofetch neovim ripgrep starship
+stow tmux trash-cli vim zoxide
+```
 
 After installing all the packages listed above use [`stow`](https://www.gnu.org/software/stow/)
 to manage the symbolic links for all the files and directories.
@@ -63,6 +50,7 @@ git clone https://github.com/gersonfaneto/Dotfiles --depth 1
 ```bash
 stow */ # Link all the folders.
 stow neovim # Link only the `neovim` folder.
+stow -D neovim # Remove the link for the `neovim` folder.
 ```
 
 > **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
