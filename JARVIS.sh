@@ -31,6 +31,7 @@ packages=(
 	glow
 	kitty
 	neofetch
+  vim
 	neovim
 	ripgrep
 	starship
