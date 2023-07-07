@@ -9,9 +9,8 @@ local M = {
 function M.before() end
 
 function M.load()
-  M.lualine.setup {
+  M.lualine.setup({
     options = {
-      -- theme = "auto", --"gruvbox-material",
       theme = {
         normal = {
           a = { fg = colors.fg, bg = colors.bg },
@@ -34,20 +33,20 @@ function M.load()
       component_separators = "",
       disabled_filetypes = {
         statusline = {
-          'help',
-          'startify',
-          'dashboard',
-          'neo-tree',
-          'packer',
-          'neogitstatus',
-          'NvimTree',
-          'Trouble',
-          'alpha',
-          'lir',
-          'Outline',
-          'spectre_panel',
-          'toggleterm',
-          'qf',
+          "help",
+          "startify",
+          "dashboard",
+          "neo-tree",
+          "packer",
+          "neogitstatus",
+          "NvimTree",
+          "Trouble",
+          "alpha",
+          "lir",
+          "Outline",
+          "spectre_panel",
+          "toggleterm",
+          "qf",
         },
         winbar = {},
       },
@@ -62,38 +61,40 @@ function M.load()
           icon_only = true,
           separator = "",
           padding = {
-            left = 1, right = 0 }
+            left = 1,
+            right = 0,
           },
-          {
-            "filename",
-            path = 1,
-            symbols = {
-              modified = "  ",
-              readonly = "",
-              unnamed = ""
-            }
+        },
+        {
+          "filename",
+          path = 1,
+          symbols = {
+            modified = "  ",
+            readonly = "",
+            unnamed = "",
           },
-          { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = " ", warn = " ", info = " " } },
         },
-        lualine_x = { "encoding" },
-        lualine_y = { "progress" },
-        lualine_z = {
-          function()
-            return " " .. os.date("%R")
-          end,
-        },
+        { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = " ", warn = " ", info = " " } },
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { "filename" },
-        lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
+      lualine_x = { "encoding" },
+      lualine_y = { "progress" },
+      lualine_z = {
+        function()
+          return " " .. os.date("%R")
+        end,
       },
-      tabline = {},
-      extensions = { "neo-tree", "lazy" },
-    }
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = { "filename" },
+      lualine_x = { "location" },
+      lualine_y = {},
+      lualine_z = {},
+    },
+    tabline = {},
+    extensions = { "neo-tree", "lazy" },
+  })
 end
 
 function M.after() end

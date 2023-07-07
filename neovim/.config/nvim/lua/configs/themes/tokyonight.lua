@@ -5,7 +5,7 @@ local override = settings.transparent and "transparent" or "dark"
 local M = {
   requires = {
     "tokyonight",
-  }
+  },
 }
 
 function M.before() end
