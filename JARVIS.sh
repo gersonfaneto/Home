@@ -15,7 +15,7 @@ M_WAIT="\e[1A\e[K"
 INST_LOG="INSTALL.log"
 
 # List of directories to be used on the configuration linking step.
-EXCLUDE=("JARVIS.sh" "INSTALL.log" "RUN.sh" "README.md" "LICENSE" "fonts" )
+EXCLUDE=("JARVIS.sh" "INSTALL.log" "RUN.sh" "README.md" "LICENSE" "fonts")
 DIRS=$(ls)
 
 FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLUDE[@]}"))
@@ -33,7 +33,7 @@ packages=(
 	neofetch
 	neovim
 	ripgrep
-  starship
+	starship
 	stow
 	tmux
 	trash-cli
@@ -158,4 +158,17 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	display_progress $!
 fi
 
+# Change the default shell to fish.
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to change the default shell to fish? [Y/n] ' REPLY
+
+if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
+	if [ "$SHELL" != "/usr/bin/fish" ]; then
+		echo -e "$M_NOTE - Changing default shell to fish..."
+		chsh -s "$(which zsh)"
+	else
+		echo -e "$M_OK - Fish is already the default shell!"
+	fi
+fi
+
 echo -e "$M_NOTE - Installation was finished with success!"
+echo -e "$M_NOTE - You may close and reopen your terminal for changes to take full effect!"
