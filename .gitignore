@@ -1,5 +1,8 @@
-# General
+# GENERAL
 INSTALL.log
+
+# KITTY
+kitty/.config/kitty/themes/theme.conf
 
 # FISH
 fish/.config/fish/fish_variables
