@@ -6,6 +6,7 @@ kitty/.config/kitty/themes/theme.conf
 
 # FISH
 fish/.config/fish/fish_variables
+fish/.config/fish/themes/theme.fish
 
 # TMUX
 tmux/.config/tmux/plugins/*
