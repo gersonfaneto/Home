@@ -45,6 +45,7 @@ if type -q bat
   # export BAT_THEME="Catppuccin Latte"
   # export BAT_THEME="Rose Pine"
   # export BAT_THEME="Tokyonight Storm"
+  # export BAT_THEME="gruvbox-dark"
 end
 
 if type -q git
@@ -94,29 +95,44 @@ if test -d "$HOME/.dotnet/tools"
 end
 
 if type -q fzf
+  # Catppuccin (Mocha)
+  export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
+    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+    --color=bg+:-1,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
+    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+  # Catppuccin (Latte)
+  # export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
+  #   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  #   --color=bg+:-1,bg:-1,spinner:#dc8a78,hl:#d20f39 \
+  #   --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+  #   --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
+
   # Rose Pine
   # export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-  # --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-	# --color=fg:#908caa,bg:-1,hl:#ebbcba
-	# --color=fg+:#e0def4,bg+:-1,hl+:#ebbcba
-	# --color=border:#403d52,header:#31748f,gutter:#191724
-	# --color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
-	# --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
-
-  # Catppuccin
-  export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-  --color=bg+:-1,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
-  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+  #   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  #   --color=fg:#908caa,bg:-1,hl:#ebbcba \
+  #   --color=fg+:#e0def4,bg+:-1,hl+:#ebbcba \
+  #   --color=border:#403d52,header:#31748f,gutter:#191724 \
+  #   --color=spinner:#f6c177,info:#9ccfd8,separator:#403d52 \
+  #   --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
   # Gruvbox
   # export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-  # --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-  # --color=fg:#e2caa9,bg:-1,hl:#80aa9e \
-  # --color=fg+:#e2caa9,bg+:-1,hl+:#80aa9e \
-  # --color=info:#7c6f64,prompt:#f2594b,pointer:#e2cca9\
-  # --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
+  #   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  #   --color=fg:#e2caa9,bg:-1,hl:#80aa9e \
+  #   --color=fg+:#e2caa9,bg+:-1,hl+:#80aa9e \
+  #   --color=info:#7c6f64,prompt:#f2594b,pointer:#e2cca9\
+  #   --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
+
+  # Tokyonight
+  # export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
+  #   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  #   --color=fg:#c0caf5,bg:-1,hl:#bb9af7 \
+  #   --color=fg+:#ffffff,bg+:-1,hl+:#7dcfff \
+  #   --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff \
+  #   --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 end
 
 if type -q bat
