@@ -1,9 +1,9 @@
 if type -q bat
-  set -Ux BAT_THEME "Rose Pine"
+  set -gx BAT_THEME "Rose Pine"
 end
 
 if type -q fzf
-  set -Ux FZF_DEFAULT_OPTS "--layout=reverse --height=50% --border=rounded \
+  set -gx FZF_DEFAULT_OPTS "--layout=reverse --height=50% --border=rounded \
     --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
     --color=fg:#908caa,bg:-1,hl:#ebbcba \
     --color=fg+:#e0def4,bg+:-1,hl+:#ebbcba \

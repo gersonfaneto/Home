@@ -1,11 +1,11 @@
 # TODO: Change to Gruvbox Material: https://github.com/sainnhe/gruvbox-material 
 
 if type -q bat
-  set -Ux BAT_THEME "gruvbox-dark"
+  set -gx BAT_THEME "gruvbox-dark"
 end
 
 if type -q fzf
-  set -Ux FZF_DEFAULT_OPTS "--layout=reverse --height=50% --border=rounded \
+  set -gx FZF_DEFAULT_OPTS "--layout=reverse --height=50% --border=rounded \
     --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
     --color=fg:#e2caa9,bg:-1,hl:#80aa9e \
     --color=fg+:#e2caa9,bg+:-1,hl+:#80aa9e \
