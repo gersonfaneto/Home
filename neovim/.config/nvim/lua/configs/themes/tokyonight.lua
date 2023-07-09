@@ -33,7 +33,6 @@ function M.load()
 end
 
 function M.after()
-  vim.cmd("colorscheme tokyonight")
 end
 
 return M

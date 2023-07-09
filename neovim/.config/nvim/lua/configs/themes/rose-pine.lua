@@ -53,7 +53,6 @@ function M.load()
 end
 
 function M.after()
-  vim.cmd("colorscheme rose-pine")
 end
 
 return M

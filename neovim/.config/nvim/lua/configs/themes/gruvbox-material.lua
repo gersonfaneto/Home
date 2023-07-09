@@ -37,7 +37,6 @@ function M.load()
 end
 
 function M.after()
-  vim.cmd("colorscheme gruvbox-material")
 end
 
 return M
