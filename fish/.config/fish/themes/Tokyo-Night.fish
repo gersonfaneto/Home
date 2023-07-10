@@ -1,9 +1,9 @@
 if type -q bat
-  set -gx BAT_THEME "Tokyonight Storm"
+  export BAT_THEME="Tokyonight Storm"
 end
 
 if type -q fzf
-  set -gx FZF_DEFAULT_OPTS "--layout=reverse --height=50% --border=rounded \
+  export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
    --color=fg:#c0caf5,bg:-1,hl:#bb9af7 \
    --color=fg+:#ffffff,bg+:-1,hl+:#7dcfff \
@@ -11,4 +11,4 @@ if type -q fzf
    --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 end
 
-set -Ux CURRENT_THEME "Tokyo-Night"
+export CURRENT_THEME="Tokyo-Night"

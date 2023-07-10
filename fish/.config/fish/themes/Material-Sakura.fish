@@ -6,4 +6,4 @@ end
 if type -q fzf
 end
 
-set -Ux CURRENT_THEME "Material-Sakura"
+export CURRENT_THEME="Material-Sakura"
