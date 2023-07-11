@@ -1,7 +1,5 @@
-# TODO: Change to Gruvbox Material: https://github.com/sainnhe/gruvbox-material 
-
 if type -q bat
-  export BAT_THEME="gruvbox-dark"
+  export BAT_THEME="Gruvbox-Material"
 end
 
 if type -q fzf
