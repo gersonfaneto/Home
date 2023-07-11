@@ -2,6 +2,10 @@ if type -q bat
   export BAT_THEME="Tokyo-Night"
 end
 
+if type -q tmux
+  ln -sf $HOME/.config/tmux/themes/Tokyo-Night.conf $HOME/.config/tmux/theme.conf
+end
+
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \

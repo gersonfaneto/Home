@@ -8,5 +8,10 @@ function fzf_theme
     source $HOME/.config/fish/themes/theme.fish
   end
 
+
+  if test -f $HOME/.config/tmux/theme.conf
+    tmux source $HOME/.config/tmux/theme.conf
+  end
+
   commandline -f repaint
 end
