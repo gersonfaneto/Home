@@ -1,5 +1,6 @@
 local groupID = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {})
-local colors = require("core.colors").gruvbox_material
+
+local colors = require("core.colors").get_colors()
 local settings = require("core.settings")
 
 local M = {}
@@ -17,13 +18,9 @@ end
 function M.load()
   vim.g.gruvbox_material_background = "hard"
 
-  if settings.transparent then
-    vim.g.gruvbox_material_transparent_background = 2
-  end
+  vim.g.gruvbox_material_transparent_background = 2 and settings.transparent or 0
 
-  if settings.dim_inactive then
-    vim.g.gruvbox_material_dim_inactive_windows = 1
-  end
+  vim.g.gruvbox_material_dim_inactive_windows = 1 and settings.dim_inactive or 0
 
   vim.g.gruvbox_material_enable_bold = 1
   vim.g.gruvbox_material_enable_italic = 1
@@ -36,7 +33,6 @@ function M.load()
   }
 end
 
-function M.after()
-end
+function M.after() end
 
 return M

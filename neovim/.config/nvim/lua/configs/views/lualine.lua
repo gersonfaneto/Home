@@ -1,4 +1,4 @@
-local colors = require("core.colors").gruvbox_material
+local colors = require("core.colors").get_colors()
 
 local M = {
   requires = {
