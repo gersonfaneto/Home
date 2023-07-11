@@ -5,34 +5,43 @@ local M = {}
 M.themes = {
   {
     "catppuccin/nvim",
-    name = "catppuccin",
+    name = "Catppuccin",
     lazy = true,
     priority = 1000,
   },
   {
     "decaycs/decay.nvim",
-    name = "decay",
+    name = "Decay",
+    lazy = true,
+    priority = 1000,
+  },
+  {
+    "sainnhe/everforest",
+    name = "Everforest",
     lazy = true,
     priority = 1000,
   },
   {
     "sainnhe/gruvbox-material",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "numToStr/Sakura.nvim",
+    name = "Gruvbox-Material",
     lazy = true,
     priority = 1000,
   },
   {
     "rose-pine/neovim",
-    name = "rose-pine",
+    name = "Rose-Pine",
     lazy = true,
     priority = 1000,
   },
   {
     "folke/tokyonight.nvim",
+    name = "Tokyo-Night",
+    lazy = true,
+    priority = 1000,
+  },
+  {
+    "numToStr/Sakura.nvim",
+    name = "Sakura",
     lazy = true,
     priority = 1000,
   },

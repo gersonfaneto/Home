@@ -18,18 +18,21 @@ M.themes = {
   ["Decay-Green"] = function()
     vim.cmd("silent colorscheme decay")
   end,
-  ["Gruvbox"] = function()
-    vim.cmd("silent colorscheme gruvbox-material")
+  ["Everforest"] = function()
+    vim.cmd("silent colorscheme everforest")
   end,
-  ["Material-Sakura"] = function()
-    vim.cmd("silent set background=light")
-    vim.cmd("silent colorscheme sakura")
+  ["Gruvbox-Material"] = function()
+    vim.cmd("silent colorscheme gruvbox-material")
   end,
   ["Rose-Pine"] = function()
     vim.cmd("silent colorscheme rose-pine")
   end,
   ["Tokyo-Night"] = function()
     vim.cmd("silent colorscheme tokyonight")
+  end,
+  ["Material-Sakura"] = function()
+    vim.cmd("silent set background=light")
+    vim.cmd("silent colorscheme sakura")
   end,
 }
 
