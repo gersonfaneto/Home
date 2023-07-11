@@ -39,12 +39,6 @@ M.themes = {
     lazy = true,
     priority = 1000,
   },
-  {
-    "numToStr/Sakura.nvim",
-    name = "Sakura",
-    lazy = true,
-    priority = 1000,
-  },
 }
 
 M.basics = {

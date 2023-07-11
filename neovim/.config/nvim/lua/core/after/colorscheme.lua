@@ -30,10 +30,6 @@ M.themes = {
   ["Tokyo-Night"] = function()
     vim.cmd("silent colorscheme tokyonight")
   end,
-  ["Material-Sakura"] = function()
-    vim.cmd("silent set background=light")
-    vim.cmd("silent colorscheme sakura")
-  end,
 }
 
 for colorscheme, define in pairs(M.themes) do

@@ -29,10 +29,6 @@ M.colors = {
     fg = "#C0CAF5",
     bg = "#24283B",
   },
-  ["Material-Sakura"] = {
-    fg = "#575279",
-    bg = "#FAF4ED",
-  },
 }
 
 M.get_colors = function()
