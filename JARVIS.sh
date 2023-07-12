@@ -31,14 +31,13 @@ packages=(
 	glow
 	kitty
 	neofetch
-  vim
+	vim
 	neovim
 	ripgrep
 	starship
 	stow
 	tmux
 	trash-cli
-	vim
 	zoxide
 )
 
@@ -83,7 +82,7 @@ $(echo -e "$M_NOTE - You will be prompted to enter your password when needed.")
 $(echo -e "$M_NOTE - If you are worried about entering your password then you may want to review the content of the script.")
 EOM
 
-sleep 1
+sleep 0.5
 
 # Expect user input to confirm and continua with the script or exit.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install [Y/n] ' REPLY
@@ -97,7 +96,7 @@ fi
 
 # Check for package manager (YAY).
 if [ ! -f /sbin/yay ]; then
-	echo -en "$M_NOTE - Configuring yay."
+	echo -en "$M_NOTE - Configuring yay..."
 
 	git clone https://aur.archlinux.org/yay.git &>>"$INST_LOG"
 
@@ -135,6 +134,30 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	done
 fi
 
+# Install asdf for version management.
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install asdf? [Y/n] ' REPLY
+
+if [[ ! -d "$HOME"/.asdf/  &&  ($REPLY =~ ^[Yy]$  ||  -z $REPLY) ]]; then
+  echo -en "$M_NOTE - Beggining installation, this may take a while..."
+
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 &>>"$INST_LOG" &
+
+  display_progress $!
+
+  if [[ -d $HOME/.asdf/ ]]; then
+    echo -e "$M_WAIT$M_OK - asdf installed completed with success!"
+
+    mkdir -p ~/.config/fish/completions
+
+    ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions 
+	else
+		echo -e "$M_WAIT$M_ERROR - asdf installation failed, please check the log at $INST_LOG!"
+		exit
+	fi
+else
+  echo -e "$M_NOTE - asdf is already installed!"
+fi
+
 # Link configuration files.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to link the configuration files? [Y/n] ' REPLY
 
@@ -146,17 +169,15 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 		stow --dotfiles --target="$HOME" "$DIR" &>>/dev/null
 	done
 
-	echo -e "$M_NOTE - Copying fonts..."
+  echo -e "$M_NOTE - Copying fonts..."
 
 	mkdir -p "$HOME"/.local/share/fonts/ >>/dev/null
 
 	cp -r fonts/* "$HOME"/.local/share/fonts/
 
-	fc-cache -fv &>>/dev/null &
+  echo -e "$M_NOTE - Refreshing font cache..."
 
-	echo -e "$M_WAIT$M_NOTE - Refreshing font cache..."
-
-	display_progress $!
+	fc-cache -f
 fi
 
 # Change the default shell to fish.
@@ -167,7 +188,7 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 		echo -e "$M_NOTE - Changing default shell to fish..."
 		chsh -s "$(which zsh)"
 	else
-		echo -e "$M_OK - Fish is already the default shell!"
+		echo -e "$M_NOTE - Fish is already the default shell!"
 	fi
 fi
 
