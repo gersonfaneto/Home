@@ -10,6 +10,7 @@ fish/.config/fish/themes/theme.fish
 
 # TMUX
 tmux/.config/tmux/plugins/*
+tmux/.config/tmux/theme.conf
 
 # NEOVIM
 neovim/.config/nvim/.luarc.json
