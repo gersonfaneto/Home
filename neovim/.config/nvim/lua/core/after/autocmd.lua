@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 local settings = require("core.settings")
+local colors = require("utils.colors").get_colors()
 
 local M = {}
 
@@ -36,6 +37,30 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     local _, _ = pcall(vim.lsp.codelens.refresh)
   end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.cmd("highlight NormalFloat guibg=none guifg=none")
+    vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
+    vim.cmd("highlight NormalNC guibg=none guifg=none")
+  end,
+})
+
+if settings.show_cursor_line then
+  local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
+
+  vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
+    pattern = "*",
+    command = "set cursorline",
+    group = cursor_group,
+  })
+
+  vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
+    pattern = "*",
+    command = "set nocursorline",
+    group = cursor_group,
+  })
+end
 
 if settings.auto_save then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {

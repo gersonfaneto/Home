@@ -1,5 +1,7 @@
 ---@diagnostic disable: undefined-global
 
+local settings = require("core.settings")
+
 local M = {}
 
 M.g = {
@@ -48,7 +50,7 @@ M.opt = {
 
   smartcase = true,
   smartindent = true,
-  cursorline = false,
+  cursorline = settings.show_cursor_line,
 
   splitbelow = true,
   splitright = true,

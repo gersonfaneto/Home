@@ -1,8 +1,24 @@
 ---@diagnostic disable: undefined-global
 
-local maps = require("utils.api").maps
+local maps = require("utils").maps
+
+local M = {}
 
 maps.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>c",
+    rhs = ":e ~/.config/nvim/ <CR>",
+    options = { noremap = true, silent = true },
+    description = "Open Neovim config.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>n",
+    rhs = ":ene <BAR> startinsert <CR>",
+    options = { noremap = true, silent = true },
+    description = "New buffer",
+  },
   {
     mode = { "n" },
     lhs = "<leader>e",
@@ -342,13 +358,6 @@ maps.bulk_register({
     rhs = "ygv<Esc>",
     options = { noremap = true, silent = true },
     description = "Copy without returning to start of selection.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>c",
-    rhs = ":ToggleCompletion<CR>",
-    options = { noremap = true, silent = true },
-    description = "Toggle completion.",
   },
 })
 

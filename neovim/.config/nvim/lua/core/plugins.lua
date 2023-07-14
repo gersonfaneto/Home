@@ -1,210 +1,66 @@
-local lazy = require("utils.plugins.lazy")
+local settings = require("core.settings")
 
-local M = {}
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-M.themes = {
-  {
-    "catppuccin/nvim",
-    name = "Catppuccin",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "decaycs/decay.nvim",
-    name = "Decay",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "sainnhe/everforest",
-    name = "Everforest",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    name = "Gruvbox-Material",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "rose-pine/neovim",
-    name = "Rose-Pine",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "folke/tokyonight.nvim",
-    name = "Tokyo-Night",
-    lazy = true,
-    priority = 1000,
-  },
-}
+if not vim.loop.fs_stat(lazypath) then
+  vim.notify("Downloading lazy.nvim ...", "INFO", { title = "Lazy" })
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
 
-M.basics = {
-  {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    event = { "VimEnter" },
-  },
-  {
-    "nvim-tree/nvim-web-devicons",
-    event = { "VimEnter" },
-  },
-  {
-    "nvim-lua/plenary.nvim",
-    lazy = true,
-  },
-  {
-    "rcarriga/nvim-notify",
-    priority = 90,
-  },
-}
+vim.opt.rtp:prepend(lazypath)
 
-M.lsp = {
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      { "williamboman/mason-lspconfig.nvim" },
-    },
-  },
-  {
-    "folke/neodev.nvim",
-    lazy = true,
-  },
-  {
-    "j-hui/fidget.nvim",
-    event = { "LspAttach" },
-    tag = "legacy",
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "UIEnter" },
-  },
-}
+local ok, lazy = pcall(require, "lazy")
 
-M.completion = {
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-emoji" },
-      { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-cmdline" },
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "saadparwaiz1/cmp_luasnip" },
-    },
-    event = { "InsertEnter", "CmdlineEnter" },
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    lazy = true,
-    dependencies = {
-      { "rafamadriz/friendly-snippets" },
-    },
-  },
-}
+if not ok then
+  vim.notify("Failed to download lazy.nvim ...", "ERROR", { title = "Lazy" })
+  return
+end
 
-M.editor = {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    dependencies = {
-      { "HiPhish/nvim-ts-rainbow2" },
-      { "windwp/nvim-ts-autotag" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    event = { "UIEnter" },
+lazy.setup("plugins", {
+  install = {
+    missing = true,
+    colorscheme = { "habamax" },
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "UIEnter" },
+  ui = {
+    border = settings.float_border and "double" or "none",
   },
-  {
-    "numToStr/Comment.nvim",
-    event = { "VeryLazy" },
-  },
-  {
-    "windwp/nvim-autopairs",
-    event = { "InsertEnter" },
-  },
-}
-
-M.explorer = {
-  {
-    "folke/todo-comments.nvim",
-    event = { "UIEnter" },
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-      },
-      { "nvim-telescope/telescope-ui-select.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-  },
-}
-
-M.languages = {
-  {
-    "davidgranstrom/nvim-markdown-preview",
-    ft = { "markdown" },
-  },
-  {
-    "vim-pandoc/vim-pandoc",
-    dependencies = {
-      { "vim-pandoc/vim-pandoc-syntax" },
-    },
-  },
-  {
-    "mfussenegger/nvim-jdtls",
-    ft = { "java" },
-  },
-  {
-    "simrat39/rust-tools.nvim",
-    ft = { "rust" },
-  },
-}
-
-M.tools = {
-  {
-    "NvChad/nvim-colorizer.lua",
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "UIEnter" },
-  },
-}
-
-M.views = {
-  {
-    "glepnir/dashboard-nvim",
-    commit = "e517188dab55493fb9034b4d4f1a508ccacfcd45",
-  },
-  {
-    "nvim-lualine/lualine.nvim",
+  checker = {
     enabled = true,
-    lazy = false,
-    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+    notify = false,
   },
-  {
-    "nvim-tree/nvim-tree.lua",
-    lazy = true,
+  change_detection = {
+    enabled = true,
+    notify = false,
   },
-  {
-    "stevearc/dressing.nvim",
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        -- "netrw",
+        -- "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "2html_plugin",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "matchit",
+        "tar",
+        "tarPlugin",
+        "rrhelper",
+        "spellfile_plugin",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin",
+      },
+    },
   },
-}
-
-M.grammar = {
-  {
-    "mateusbraga/vim-spell-pt-br",
-  },
-}
-
-lazy.entry(M)
-
-return M
+})
