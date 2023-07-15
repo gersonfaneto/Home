@@ -30,7 +30,7 @@ return {
     p = { ":BufferLineTogglePin<CR>", "Toggle pin" },
     P = { ":BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
   },
-  G = {
+  g = {
     name = "+Git",
     k = { ":lua require('gitsigns').prev_hunk({navigation_message = false})<CR>", "Prev Hunk" },
     l = { ":lua require('gitsigns').blame_line()<CR>", "Blame" },
@@ -46,7 +46,7 @@ return {
     C = { ":Telescope git_bcommits<CR>", "Checkout commit(for current file)" },
     d = { ":Gitsigns diffthis HEAD<CR>", "Git Diff" },
   },
-  L = {
+  l = {
     name = "+LSP",
     a = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
     d = { ":lua vim.lsp.buf.definition()<CR>", "Definition" },
@@ -63,8 +63,8 @@ return {
     w = { ":Telescope diagnostics<CR>", "Diagnostics" },
     t = { [[ <Esc>:lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
   },
-  S = {
-    name = "+Search",
+  t = {
+    name = "+Telescope",
     f = { ":Telescope find_files<CR>", "Find File" },
     h = { ":Telescope help_tags<CR>", "Find Help" },
     H = { ":Telescope highlights<CR>", "Find highlight groups" },
@@ -81,14 +81,6 @@ return {
     S = { ":Telescope git_stash<CR>", "Git stash" },
     z = { ":Telescope zoxide list<CR>", "Zoxide" },
     b = { ":Telescope buffers<CR>", "Buffers" },
-    d = {
-      name = "+DAP",
-      c = { ":Telescope dap commands<CR>", "Dap Commands" },
-      b = { ":Telescope dap list_breakpoints<CR>", "Dap Breakpoints" },
-      g = { ":Telescope dap configurations<CR>", "Dap Configurations" },
-      v = { ":Telescope dap variables<CR>", "Dap Variables" },
-      f = { ":Telescope dap frames<CR>", "Dap Frames" },
-    }
   },
   T = {
     name = "+Todo",
@@ -96,20 +88,5 @@ return {
     T = { ":TodoTelescope keywords=TODO,FIX,FIXME<CR>", "Todo/Fix/Fixme" },
     x = { ":TodoTrouble<CR>", "Todo (Trouble)" },
     X = { ":TodoTrouble keywords=TODO,FIX,FIXME<CR><CR>", "Todo/Fix/Fixme (Trouble)" },
-  },
-  D = {
-    name = "Debug",
-    b = { ":lua require('dap').toggle_breakpoint()<CR>", "Breakpoint" },
-    c = { ":lua require('dap').continue()<CR>", "Continue" },
-    i = { ":lua require('dap').step_into()<CR>", "Into" },
-    o = { ":lua require('dap').step_over()<CR>", "Over" },
-    O = { ":lua require('dap').step_out()<CR>", "Out" },
-    r = { ":lua require('dap').repl.toggle()<CR>", "Repl" },
-    l = { ":lua require('dap').run_last()<CR>", "Last" },
-    u = { ":lua require('dapui').toggle()<CR>", "UI" },
-    x = { ":lua require('dap').terminate()<CR>", "Exit" },
-  },
-  t = {
-    name = "+Tests"
   },
 }
