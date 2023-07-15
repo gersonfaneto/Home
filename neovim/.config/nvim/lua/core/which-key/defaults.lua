@@ -1,4 +1,5 @@
 return {
+  mode = { "n", "v" },
   m = { ":Alpha<CR>", "Dashboard" },
   c = { ":bd<CR>", "Close Buffer" },
   p = { ":Telescope treesitter<CR>", "List Symbols" },
