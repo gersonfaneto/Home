@@ -1,8 +1,20 @@
 return {
-  [";"] = { ":Alpha<CR>", "Dashboard" },
+  m = { ":Alpha<CR>", "Dashboard" },
   c = { ":bd<CR>", "Close Buffer" },
   p = { ":Telescope treesitter<CR>", "List Symbols" },
   f = { ":lua require('utils').telescope_git_or_file()<CR>", "Find Files" },
+  [";"] = {
+    ":lua require('telescope.builtin').resume(require('telescope.themes').get_dropdown({}))<CR>",
+    "Open last picker",
+  },
+  ["/"] = {
+    function()
+      require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        previewer = false,
+      })
+    end,
+    'Fuzzily search in current buffer',
+  },
   b = {
     name = "Buffers",
     j = { ":BufferLinePick<CR>", "Jump" },
