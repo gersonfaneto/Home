@@ -2,14 +2,14 @@ return {
   "bennypowers/splitjoin.nvim",
   keys = {
     {
-      "<leader>J",
+      "oJ",
       function()
         require("splitjoin").join()
       end,
       desc = "Join the object under cursor",
     },
     {
-      "<leader>S",
+      "oS",
       function()
         require("splitjoin").split()
       end,

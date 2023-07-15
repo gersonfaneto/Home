@@ -4,9 +4,6 @@ return {
     branch = "v2.x",
     lazy = false,
     dependencies = {
-      "neovim/nvim-lspconfig",
-      "onsails/lspkind.nvim",
-      "b0o/schemastore.nvim",
       {
         "williamboman/mason.nvim",
         build = function()
@@ -27,6 +24,9 @@ return {
           "saadparwaiz1/cmp_luasnip",
         },
       },
+      "neovim/nvim-lspconfig",
+      "onsails/lspkind.nvim",
+      "b0o/schemastore.nvim",
     },
     config = function()
       local lsp = require("lsp-zero").preset("recommended")
