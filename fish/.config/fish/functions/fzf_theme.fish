@@ -1,5 +1,5 @@
 function fzf_theme
-  find $HOME/.config/fish/themes -type f -exec basename {} .fish \; | sed 's/-/ /g' | fzf | read line
+  find -L $HOME/.config/fish/themes -type f -exec basename {} .fish \; | grep --invert-match 'theme' | sed 's/-/ /g' | fzf | read line
 
   set line (echo $line | sed 's/ /-/g')
 
@@ -7,7 +7,6 @@ function fzf_theme
     ln -sf $HOME/.config/fish/themes/$line.fish $HOME/.config/fish/themes/theme.fish
     source $HOME/.config/fish/themes/theme.fish
   end
-
 
   if test -f $HOME/.config/tmux/theme.conf
     tmux source $HOME/.config/tmux/theme.conf
