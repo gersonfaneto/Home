@@ -16,7 +16,7 @@ return {
     end,
     'Fuzzily search in current buffer',
   },
-  b = {
+  B = {
     name = "Buffers",
     j = { ":BufferLinePick<CR>", "Jump" },
     f = { ":Telescope buffers previewer=false<CR>", "Find" },
@@ -31,7 +31,7 @@ return {
     p = { ":BufferLineTogglePin<CR>", "Toggle pin" },
     P = { ":BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
   },
-  g = {
+  G = {
     name = "+Git",
     k = { ":lua require('gitsigns').prev_hunk({navigation_message = false})<CR>", "Prev Hunk" },
     l = { ":lua require('gitsigns').blame_line()<CR>", "Blame" },
@@ -47,7 +47,7 @@ return {
     C = { ":Telescope git_bcommits<CR>", "Checkout commit(for current file)" },
     d = { ":Gitsigns diffthis HEAD<CR>", "Git Diff" },
   },
-  l = {
+  L = {
     name = "+LSP",
     a = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
     d = { ":lua vim.lsp.buf.definition()<CR>", "Definition" },
@@ -64,8 +64,8 @@ return {
     w = { ":Telescope diagnostics<CR>", "Diagnostics" },
     t = { [[ <Esc>:lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
   },
-  t = {
-    name = "+Telescope",
+  S = {
+    name = "+Search",
     f = { ":Telescope find_files<CR>", "Find File" },
     h = { ":Telescope help_tags<CR>", "Find Help" },
     H = { ":Telescope highlights<CR>", "Find highlight groups" },
