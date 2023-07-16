@@ -1,1 +1,0 @@
-/home/gerson/.asdf/completions/asdf.fish
