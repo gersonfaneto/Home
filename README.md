@@ -41,13 +41,19 @@ to manage the symbolic links for all the files and directories.
 
 - Clone this repository into your local machine.
 
-```bash
+```shell
 git clone https://github.com/gersonfaneto/Dotfiles --depth 1
+```
+
+- Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
+
+```shell
+git submodule update --init
 ```
 
 - Inside the new folder, use `stow` to create the symbolic links.
 
-```bash
+```shell
 stow */ # Link all the folders.
 stow neovim # Link only the `neovim` folder.
 stow -D neovim # Remove the link for the `neovim` folder.
@@ -55,12 +61,6 @@ stow -D neovim # Remove the link for the `neovim` folder.
 
 > **Note**: The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
 > file included makes so that no flags are needed to be passed to the command line.
-
-- Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
-
-```bash
-git submodule update --init
-```
 
 ## License
 
