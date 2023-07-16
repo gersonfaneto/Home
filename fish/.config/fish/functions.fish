@@ -1,5 +1,5 @@
 function bak --argument filename
-  cp $filename $filename.bak
+  cp -r $filename $filename.bak
 end
 
 function hop
@@ -16,14 +16,26 @@ function hop
   end
 end
 
-function todo -d "Display the contents of a TODO.md file on the current directory."
+function todo
   ls --oneline --no-icons | grep TODO.md | read line
 
-  if test $line 
-    and type -q glow
-    command glow $line
+  if test $line && type -q glow
+    if type -q glow
+      command glow $line
+    else if type -q bat
+      command bat $line
+    else
+      command cat $line
+    end
   else if test -f ~/Desktop/TODO.md
-    and type -q glow
-    command glow ~/Desktop/TODO.md
+    if type -q glow
+      command glow ~/Desktop/TODO.md
+    else if type -q bat
+      command bat ~/Desktop/TODO.md
+    else
+      command cat ~/Desktop/TODO.md
+    end
+  else
+    echo "No TODO.md found"
   end
 end
