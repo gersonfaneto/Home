@@ -11,11 +11,11 @@ M.colors = {
   },
   ["Decay-Green"] = {
     fg = "#B1CCC9",
-    bg = "#171B20",
+    bg = "#0D0F18",
   },
   ["Everforest"] = {
     fg = "#D3C6AA",
-    bg = "#1E2326",
+    bg = "#272E33",
   },
   ["Gruvbox-Material"] = {
     fg = "#7C7D83",
