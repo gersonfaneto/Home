@@ -5,6 +5,22 @@ local opts = { noremap = true, silent = true }
 local M = {}
 
 maps.bulk_register({
+  -- Lazy.
+  {
+    mode = { "n" },
+    lhs = "<leader>ll",
+    rhs = ":Lazy<CR>",
+    options = opts,
+    description = "Open Lazy.",
+  },
+  -- Mason.
+  {
+    mode = { "n" },
+    lhs = "<leader>mm",
+    rhs = ":Mason<CR>",
+    options = opts,
+    description = "Open Mason.",
+  },
   -- Telescope.
   {
     mode = { "n" },
