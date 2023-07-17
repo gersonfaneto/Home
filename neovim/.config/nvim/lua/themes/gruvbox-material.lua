@@ -3,7 +3,6 @@ local settings = require("core.settings")
 local M = {}
 
 local colors = require("utils.colors").get_colors()
-local bg = settings.transparent and "NONE" or colors.bg
 
 vim.g.gruvbox_material_background = "hard"
 

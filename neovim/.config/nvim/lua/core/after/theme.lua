@@ -20,6 +20,10 @@ M.themes = {
   ["Decay-Green"] = function()
     require("themes.decay")
   end,
+  ["Everforest"] = function()
+    require("themes.everforest")
+    vim.cmd("colorscheme everforest")
+  end,
   ["Gruvbox-Material"] = function()
     require("themes.gruvbox-material")
     vim.cmd("colorscheme gruvbox-material")
