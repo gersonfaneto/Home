@@ -14,8 +14,8 @@ M_WAIT="\e[1A\e[K"
 # Path to the installation log.
 INST_LOG="INSTALL.log"
 
-# List of directories to be used on the configuration linking step.
-EXCLUDE=("JARVIS.sh" "INSTALL.log" "RUN.sh" "README.md" "LICENSE" "fonts")
+# List of directories to be excluded/used on the configuration linking step.
+EXCLUDE=("JARVIS.sh" "INSTALL.log" "README.md" "LICENSE" "fonts")
 DIRS=$(ls)
 
 FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLUDE[@]}"))
@@ -173,7 +173,7 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
 	mkdir -p "$HOME"/.local/share/fonts/ >>/dev/null
 
-	cp -r fonts/* "$HOME"/.local/share/fonts/
+	stow --dotfiles --target="$HOME" fonts &>>/dev/null
 
   echo -e "$M_NOTE - Refreshing font cache..."
 
