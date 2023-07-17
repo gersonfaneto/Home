@@ -64,4 +64,4 @@ stow -D neovim # Remove the link for the `neovim` folder.
 
 ## License
 
-Released under [MIT](https://github.com/gersonfaneto/Dotfiles/blob/main/LICENSE) by [gersonfaneto](https://github.com/gersonfaneto).
+Released under [MIT](https://github.com/gersonfaneto/YADR/blob/main/LICENSE) by [gersonfaneto](https://github.com/gersonfaneto).
