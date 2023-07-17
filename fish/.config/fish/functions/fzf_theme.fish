@@ -6,6 +6,9 @@ function fzf_theme
   if test $line
     ln -sf $HOME/.config/fish/themes/$line.fish $HOME/.config/fish/themes/theme.fish
     source $HOME/.config/fish/themes/theme.fish
+
+    ln -fs $HOME/.config/kitty/themes/$line.conf $HOME/.config/kitty/themes/theme.conf
+    killall -SIGUSR1 kitty
   end
 
   if test -f $HOME/.config/tmux/theme.conf
