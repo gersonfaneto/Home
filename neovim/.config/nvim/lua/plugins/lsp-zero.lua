@@ -31,7 +31,7 @@ return {
     config = function()
       local lsp = require("lsp-zero").preset("recommended")
 
-      lsp.ensure_installed({
+      local ensure_installed = {
         -- LSP
         "jdtls",
         "clangd",
@@ -49,7 +49,7 @@ return {
         "svelte",
         "tsserver",
         "tailwindcss",
-      })
+      }
 
       lsp.on_attach(function(_, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
@@ -81,7 +81,7 @@ return {
 
       vim.diagnostic.config({
         underline = true,
-        virtual_text = false,
+        virtual_text = true,
         signs = true,
         update_in_insert = false,
         severity_sort = true,
@@ -96,7 +96,13 @@ return {
 
       local lspconfig = require("lspconfig")
 
-      require("mason-lspconfig").setup_handlers({
+      local mason_lspconfig = require("mason-lspconfig")
+
+      mason_lspconfig.setup({
+        ensure_installed = ensure_installed,
+      })
+
+      mason_lspconfig.setup_handlers({
         function(server_name)
           lspconfig[server_name].setup({
             on_attach = lsp_attach,
