@@ -52,8 +52,73 @@ return {
       }
 
       lsp.on_attach(function(_, bufnr)
-        lsp.default_keymaps({ buffer = bufnr })
-        vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
+        local opts = { noremap = true, silent = true }
+
+        local maps = require("utils").maps
+
+        lsp.default_keymaps({
+          buffer = bufnr,
+          omit = { "F2", "F3", "F4", "gl" },
+        })
+
+        maps.bulk_register({
+          {
+            mode = { "n" },
+            lhs = "<leader>la",
+            rhs = vim.lsp.buf.code_action,
+            options = opts,
+            description = "Show code actions.",
+          },
+          {
+            mode = { "n" },
+            lhs = "<leader>rn",
+            rhs = vim.lsp.buf.rename,
+            options = opts,
+            description = "Rename variable.",
+          },
+          {
+            mode = { "n" },
+            lhs = "<leader>lf",
+            rhs = function()
+              vim.lsp.buf.format({ async = true })
+            end,
+            options = opts,
+            description = "Format buffer.",
+          },
+          {
+            mode = { "n" },
+            lhs = "gr",
+            rhs = function()
+              require("telescope.builtin").lsp_references()
+            end,
+            options = opts,
+            description = "Go to references.",
+          },
+          {
+            mode = { "n" },
+            lhs = "of",
+            rhs = ":lua vim.diagnostics.open_float()<CR>",
+            options = opts,
+            description = "Show line diagnostic.",
+          },
+          {
+            mode = { "n" },
+            lhs = "<leader>td",
+            rhs = function()
+              require("telescope.builtin").diagnostics()
+            end,
+            options = opts,
+            description = "Show workspace diagnostics.",
+          },
+
+          {
+            mode = { "n", "v" },
+            lhs = "<leader>lr",
+            rhs = "<ESC>:lua require('telescope').extensions.refactoring.refactors()<CR>",
+            options = opts,
+            description = "Show refactoring options.",
+          },
+        })
       end)
 
       lsp.format_on_save({
@@ -286,7 +351,7 @@ return {
           ["<Up>"] = cmp_mapping(cmp_mapping.select_prev_item({ behavior = cmp_types.SelectBehavior.Select }), {
             "i",
           }),
-          ["<C-d>"] = cmp_mapping.scroll_docs(-4),
+          ["<C-b>"] = cmp_mapping.scroll_docs(-4),
           ["<C-f>"] = cmp_mapping.scroll_docs(4),
           ["<C-y>"] = cmp_mapping({
             i = cmp_mapping.confirm({ behavior = cmp_types.ConfirmBehavior.Replace, select = false }),
@@ -321,7 +386,7 @@ return {
               fallback()
             end
           end, { "i", "s" }),
-          ["<C-Space>"] = cmp_mapping.complete(),
+          ["<C-c>"] = cmp_mapping.complete(),
           ["<C-e>"] = cmp_mapping.abort(),
           ["<CR>"] = cmp_mapping(function(fallback)
             if cmp.visible() then
