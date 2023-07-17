@@ -2,7 +2,11 @@ return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
   lazy = false,
-  event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+    "VeryLazy",
+  },
   config = function()
     local colors = require("utils.colors").get_colors()
 
@@ -52,7 +56,6 @@ return {
         lualine_a = {},
         lualine_b = { "branch" },
         lualine_c = {
-          -- "filename",
           {
             "filetype",
             icon_only = true,
@@ -71,14 +74,22 @@ return {
               unnamed = "",
             },
           },
-          { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = " ", warn = " ", info = " " } },
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            symbols = {
+              error = " ",
+              warn = " ",
+              info = " ",
+            },
+          },
         },
         lualine_x = { "encoding" },
         lualine_y = {},
         lualine_z = {
-          -- function()
-          --   return " " .. os.date("%R")
-          -- end,
+          function()
+            return " " .. os.date("%R")
+          end,
         },
       },
       inactive_sections = {
@@ -90,7 +101,10 @@ return {
         lualine_z = {},
       },
       tabline = {},
-      extensions = { "neo-tree", "lazy" },
+      extensions = {
+        "neo-tree",
+        "lazy",
+      },
     })
   end,
 }
