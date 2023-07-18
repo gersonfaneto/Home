@@ -1,10 +1,10 @@
-local maps = require("utils").maps
+local mappings = require("utils.api").mappings
 
 local opts = { noremap = true, silent = true }
 
 local M = {}
 
-maps.bulk_register({
+mappings.bulk_register({
   -- Lazy.
   {
     mode = { "n" },
@@ -44,7 +44,7 @@ maps.bulk_register({
     mode = { "n" },
     lhs = "<leader>ff",
     rhs = function()
-      require("utils").telescope_git_or_file()
+      require("utils.api").telescope_git_or_file()
     end,
     options = opts,
     description = "Find files in the current workspace.",

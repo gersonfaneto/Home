@@ -1,10 +1,10 @@
 ---@diagnostic disable: undefined-global
 
-local maps = require("utils").maps
+local mapppings = require("utils.api").mappings
 
 local M = {}
 
-maps.bulk_register({
+mapppings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>c",

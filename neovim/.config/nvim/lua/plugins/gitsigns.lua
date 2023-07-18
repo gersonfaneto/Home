@@ -2,7 +2,7 @@ return {
   "lewis6991/gitsigns.nvim",
   lazy = false,
   config = function()
-    local icons = require("utils").icons
+    local icons = require("utils.interface").icons
     require("gitsigns").setup({
       signs = {
         add = {

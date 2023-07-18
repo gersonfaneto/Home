@@ -8,7 +8,7 @@ return {
     "VeryLazy",
   },
   config = function()
-    local colors = require("utils.colors").get_colors()
+    local colors = require("utils.interface").colors.get_colors()
 
     require("lualine").setup({
       options = {

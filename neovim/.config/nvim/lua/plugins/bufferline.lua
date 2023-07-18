@@ -1,4 +1,4 @@
-local colors = require("utils.colors").get_colors()
+local colors = require("utils.interface").colors.get_colors()
 
 return {
   "akinsho/bufferline.nvim",

@@ -54,14 +54,14 @@ return {
       lsp.on_attach(function(_, bufnr)
         local opts = { noremap = true, silent = true }
 
-        local maps = require("utils").maps
+        local mapppings = require("utils.api").mappings
 
         lsp.default_keymaps({
           buffer = bufnr,
           omit = { "F2", "F3", "F4", "gl" },
         })
 
-        maps.bulk_register({
+        mapppings.bulk_register({
           {
             mode = { "n" },
             lhs = "<leader>la",
@@ -225,11 +225,11 @@ return {
 
       local cmp = require("cmp")
       local lspkind = require("lspkind")
-      local icons = require("utils").icons
+      local icons = require("utils.interface").icons
       local luasnip = require("luasnip")
       local cmp_mapping = require("cmp.config.mapping")
       local cmp_types = require("cmp.types.cmp")
-      local utils = require("utils")
+      local utils = require("utils.api")
 
       cmp.setup({
         formatting = {

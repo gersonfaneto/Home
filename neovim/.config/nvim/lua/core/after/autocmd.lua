@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 local settings = require("core.settings")
-local colors = require("utils.colors").get_colors()
+local colors = require("utils.interface").colors.get_colors()
 
 local M = {}
 

@@ -2,7 +2,7 @@ local settings = require("core.settings")
 
 local M = {}
 
-local colors = require("utils.colors").get_colors()
+local colors = require("utils.interface").colors.get_colors()
 
 vim.g.gruvbox_material_background = "hard"
 
