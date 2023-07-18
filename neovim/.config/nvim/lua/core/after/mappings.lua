@@ -5,10 +5,18 @@ local opts = { noremap = true, silent = true }
 local M = {}
 
 mappings.bulk_register({
+  -- Alpha.
+  {
+    mode = { "n" },
+    lhs = "<leader>ma",
+    rhs = ":Alpha<CR>",
+    options = opts,
+    description = "Open Alpha.",
+  },
   -- Lazy.
   {
     mode = { "n" },
-    lhs = "<leader>ll",
+    lhs = "<leader>lh",
     rhs = ":Lazy<CR>",
     options = opts,
     description = "Open Lazy.",
@@ -16,7 +24,7 @@ mappings.bulk_register({
   -- Mason.
   {
     mode = { "n" },
-    lhs = "<leader>mm",
+    lhs = "<leader>ms",
     rhs = ":Mason<CR>",
     options = opts,
     description = "Open Mason.",
