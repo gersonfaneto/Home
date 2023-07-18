@@ -27,6 +27,7 @@ M.opt = {
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
+  colorcolumn = "80",
 
   expandtab = true,
   shiftwidth = 2,
