@@ -121,17 +121,21 @@ return {
         })
       end)
 
-      lsp.format_on_save({
-        format_opts = {
-          async = false,
-          timeout_ms = 10000,
-        },
-        servers = {
-          ["lua_ls"] = { "lua" },
-          ["rust_analyzer"] = { "rust" },
-          ["gopls"] = { "go" },
-        },
-      })
+      local settings = require("core.settings")
+
+      if settings.format_on_save then
+        lsp.format_on_save({
+          format_opts = {
+            async = false,
+            timeout_ms = 10000,
+          },
+          servers = {
+            ["gopls"] = { "go" },
+            ["lua_ls"] = { "lua" },
+            ["rust_analyzer"] = { "rust" },
+          },
+        })
+      end
 
       lsp.set_preferences({
         suggest_lsp_servers = false,
@@ -336,11 +340,9 @@ return {
           { name = "luasnip" },
           { name = "nvim_lua" },
           { name = "buffer" },
-          { name = "calc" },
           { name = "emoji" },
           { name = "treesitter" },
           { name = "crates" },
-          { name = "tmux" },
         },
         mapping = cmp_mapping.preset.insert({
           ["<C-k>"] = cmp_mapping(cmp_mapping.select_prev_item(), { "i", "c" }),

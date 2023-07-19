@@ -9,12 +9,13 @@ local M = {
   show_cursor_line = true,
 
   -- Editor.
-  auto_save = false,
+  auto_save = true,
   auto_restore_cursor_position = true,
   auto_remove_new_lines_comment = true,
 
   -- LSP.
   inlay_hints = true,
+  format_on_save = false,
 }
 
 return M
