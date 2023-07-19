@@ -17,6 +17,13 @@ mappings.bulk_register({
     options = { noremap = true, silent = true },
     description = "Jump to previous fold.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>mp",
+    rhs = ":MarkdownPreviewToggle<CR>",
+    options = { noremap = true, silent = true },
+    description = "Toggle markdown preview.",
+  }
 })
 
 return M

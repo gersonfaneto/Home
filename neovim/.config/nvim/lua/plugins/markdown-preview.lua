@@ -1,12 +1,10 @@
 return {
   {
-    "davidgranstrom/nvim-markdown-preview",
-    ft = {
-      "markdown",
-    },
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown" },
+    build = "cd app && npm install",
     config = function()
-      vim.g.nvim_markdown_preview_theme = "github"
-      vim.g.nvim_markdown_preview_format = "markdown"
+      vim.g.mkdp_filetypes = { "markdown" }
     end,
   },
 }
