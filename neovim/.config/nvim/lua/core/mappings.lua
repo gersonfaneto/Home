@@ -14,13 +14,6 @@ mapppings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>n",
-    rhs = ":ene <BAR> startinsert <CR>",
-    options = { noremap = true, silent = true },
-    description = "New buffer",
-  },
-  {
-    mode = { "n" },
     lhs = "<leader>e",
     rhs = ":Ex<CR>",
     options = { noremap = true, silent = true },
@@ -102,6 +95,13 @@ mapppings.bulk_register({
     rhs = ":vertical resize +2<CR>",
     options = { noremap = true, silent = true },
     description = "Increase split size vertically.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bn",
+    rhs = ":ene <BAR> startinsert <CR>",
+    options = { noremap = true, silent = true },
+    description = "New buffer",
   },
   {
     mode = { "n" },

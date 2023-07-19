@@ -227,45 +227,73 @@ mappings.bulk_register({
   -- Buffers.
   {
     mode = { "n" },
-    lhs = "<leader>bj",
-    rhs = ":BufferLinePick<CR>",
-    options = opts,
-    description = "Select buffer from the list.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bn",
-    rhs = ":BufferLineCycleNext<CR>",
-    options = opts,
-    description = "Go to next buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bp",
-    rhs = ":BufferLineCyclePrev<CR>",
-    options = opts,
-    description = "Go to previous buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bc",
+    lhs = "<leader>bq",
     rhs = ":BufferLinePickClose<CR>",
-    options = opts,
-    description = "Close buffer from the list.",
+    options = { silent = true },
+    description = "Close target buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>bm",
-    rhs = ":BufferLineTogglePin<CR>",
-    options = opts,
-    description = "Pin/unpin buffer.",
+    lhs = "<C-h>",
+    rhs = ":BufferLineMovePrev<CR>",
+    options = { silent = true },
+    description = "Move current buffer to left.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>bd",
-    rhs = ":BufferLineGroupClose ungrouped<CR>",
-    options = opts,
-    description = "Close all non-pinned buffers.",
+    lhs = "<C-l>",
+    rhs = ":BufferLineMoveNext<CR>",
+    options = { silent = true },
+    description = "Move current buffer to right.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bh",
+    rhs = ":BufferLineCloseLeft<CR>",
+    options = { silent = true },
+    description = "Close all left buffers.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bl",
+    rhs = ":BufferLineCloseRight<CR>",
+    options = { silent = true },
+    description = "Close all right buffers.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bo",
+    rhs = function()
+      vim.cmd("BufferLineCloseLeft")
+      vim.cmd("BufferLineCloseRight")
+    end,
+    options = { silent = true },
+    description = "Close all other buffers.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ba",
+    rhs = function()
+      vim.cmd("BufferLineCloseLeft")
+      vim.cmd("BufferLineCloseRight")
+      vim.cmd("BufferDelete")
+    end,
+    options = { silent = true },
+    description = "Close all buffers.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bt",
+    rhs = ":BufferLinePick<CR>",
+    options = { silent = true },
+    description = "Go to buffer *.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>bs",
+    rhs = ":BufferLineSortByExtension<CR>",
+    options = { silent = true },
+    description = "Buffers sort (by extension).",
   },
 })
 
