@@ -171,61 +171,56 @@ return {
         ensure_installed = ensure_installed,
       })
 
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          lspconfig[server_name].setup({
-            on_attach = lsp_attach,
-            capabilities = lsp_capabilities,
-          })
-        end,
-        ["lua_ls"] = function()
-          lspconfig.lua_ls.setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-                workspace = {
-                  library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.stdpath("config") .. "/lua"] = true,
-                  },
-                },
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = {
+                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                [vim.fn.stdpath("config") .. "/lua"] = true,
               },
             },
-          })
-        end,
-        ["rust_analyzer"] = function()
-          lspconfig.rust_analyzer.setup({
-            settings = {
-              ["rust-analyzer"] = {
-                lens = {
-                  enable = true,
-                },
-                cargo = {
-                  allFeatures = true,
-                  loadOutDirsFromCheck = true,
-                  runBuildScripts = true,
-                },
-                check = {
-                  enable = true,
-                  allFeatures = true,
-                  command = "clippy",
-                  extraArgs = { "--no-deps" },
-                },
-                procMacro = {
-                  enable = true,
-                  ignored = {
-                    ["async-trait"] = { "async_trait" },
-                    ["napi-derive"] = { "napi" },
-                    ["async-recursion"] = { "async_recursion" },
-                  },
-                },
-              },
-            },
-          })
-        end,
+          },
+        },
       })
+
+      lspconfig.rust_analyzer.setup({
+        settings = {
+          ["rust-analyzer"] = {
+            lens = {
+              enable = true,
+            },
+            cargo = {
+              allFeatures = true,
+              loadOutDirsFromCheck = true,
+              runBuildScripts = true,
+            },
+            check = {
+              enable = true,
+              allFeatures = true,
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            procMacro = {
+              enable = true,
+              ignored = {
+                ["async-trait"] = { "async_trait" },
+                ["napi-derive"] = { "napi" },
+                ["async-recursion"] = { "async_recursion" },
+              },
+            },
+          },
+        },
+      })
+
+      lsp.skip_server_setup({
+        "jdtls",
+      })
+
+      lsp.setup()
 
       local cmp = require("cmp")
       local lspkind = require("lspkind")

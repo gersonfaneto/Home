@@ -31,13 +31,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
 })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.java" },
-  callback = function()
-    local _, _ = pcall(vim.lsp.codelens.refresh)
-  end,
-})
-
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     vim.cmd("highlight NormalFloat guibg=none guifg=none")
