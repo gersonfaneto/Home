@@ -1,16 +1,20 @@
 ---@diagnostic disable: undefined-global
 
 local M = {
+  -- UI.
+  show_winbar = true,
   transparent = true,
-  dim_inactive = false,
-
   float_border = true,
-  show_winbar = false,
+  dim_inactive = false,
   show_cursor_line = true,
 
-  auto_save = false,
-  auto_restore_cursor_position = false,
-  auto_remove_new_lines_comments = true,
+  -- Editor.
+  auto_save = true,
+  auto_restore_cursor_position = true,
+  auto_remove_new_lines_comment = true,
+
+  -- LSP.
+  inlay_hints = true,
 }
 
 return M
