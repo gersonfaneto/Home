@@ -130,20 +130,6 @@ mappings.bulk_register({
     options = opts,
     description = "TODOs/FIXs/FIXMEs in current buffer",
   },
-  {
-    mode = { "n" },
-    lhs = "<leader>Tt",
-    rhs = ":TodoTrouble<CR>",
-    options = opts,
-    description = "TODOs in current buffer (Trouble).",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>Ta",
-    rhs = ":TodoTrouble keywords=TODO,FIX,FIXME<CR><CR>",
-    options = opts,
-    description = "TODOs/FIXs/FIXMEs in current buffer (Trouble).",
-  },
   -- Git.
   {
     mode = { "n" },
