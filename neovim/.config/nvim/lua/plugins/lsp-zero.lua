@@ -31,6 +31,8 @@ return {
     config = function()
       local lsp = require("lsp-zero").preset("recommended")
 
+      local settings = require("core.settings")
+
       local ensure_installed = {
         -- LSP
         "jdtls",
@@ -52,18 +54,13 @@ return {
       }
 
       lsp.on_attach(function(_, bufnr)
-        local opts = { noremap = true, silent = true }
+        local opts = { noremap = true, silent = true, buffer = bufnr }
 
-        local mapppings = require("utils.api").mappings
+        local api = require("utils.api")
 
-        lsp.default_keymaps({
-          buffer = bufnr,
-          omit = { "F2", "F3", "F4", "gl" },
-        })
-
-        mapppings.bulk_register({
+        api.mappings.bulk_register({
           {
-            mode = { "n" },
+            mode = { "n", "v" },
             lhs = "<leader>la",
             rhs = vim.lsp.buf.code_action,
             options = opts,
@@ -74,7 +71,7 @@ return {
             lhs = "<leader>rn",
             rhs = vim.lsp.buf.rename,
             options = opts,
-            description = "Rename variable.",
+            description = "Rename symbol under cursor.",
           },
           {
             mode = { "n" },
@@ -83,7 +80,14 @@ return {
               vim.lsp.buf.format({ async = true })
             end,
             options = opts,
-            description = "Format buffer.",
+            description = "Format current buffer.",
+          },
+          {
+            mode = { "n" },
+            lhs = "K",
+            rhs = vim.lsp.buf.hover,
+            options = opts,
+            description = "Show help information.",
           },
           {
             mode = { "n" },
@@ -96,32 +100,64 @@ return {
           },
           {
             mode = { "n" },
-            lhs = "of",
-            rhs = ":lua vim.diagnostic.open_float()<CR>",
+            lhs = "gi",
+            rhs = function()
+              require("telescope.builtin").lsp_implementations()
+            end,
             options = opts,
-            description = "Show line diagnostic.",
+
+            description = "Go to implementations.",
           },
           {
             mode = { "n" },
-            lhs = "<leader>td",
+            lhs = "gd",
+            rhs = function()
+              require("telescope.builtin").lsp_definitions()
+            end,
+            options = opts,
+            description = "Go to definitions.",
+          },
+          {
+            mode = { "n" },
+            lhs = "gD",
+            rhs = function()
+              require("telescope.builtin").lsp_type_definitions()
+            end,
+            options = opts,
+            description = "Go to type definitions.",
+          },
+          {
+            mode = { "n" },
+            lhs = "of",
+            rhs = vim.diagnostic.open_float,
+            options = opts,
+            description = "Show current line diagnostic..",
+          },
+          {
+            mode = { "n" },
+            lhs = "<leader>ld",
             rhs = function()
               require("telescope.builtin").diagnostics()
             end,
             options = opts,
-            description = "Show workspace diagnostics.",
+            description = "Show project diagnostics.",
           },
-
           {
-            mode = { "n", "v" },
-            lhs = "<leader>lr",
-            rhs = "<ESC>:lua require('telescope').extensions.refactoring.refactors()<CR>",
+            mode = { "n" },
+            lhs = "[d",
+            rhs = vim.diagnostic.goto_prev,
             options = opts,
-            description = "Show refactoring options.",
+            description = "Jump to previous diagnostic.",
+          },
+          {
+            mode = { "n" },
+            lhs = "]d",
+            rhs = vim.diagnostic.goto_next,
+            options = opts,
+            description = "Jump to next diagnostic.",
           },
         })
       end)
-
-      local settings = require("core.settings")
 
       if settings.format_on_save then
         lsp.format_on_save({
@@ -142,10 +178,10 @@ return {
       })
 
       lsp.set_sign_icons({
-        error = "E",
-        warn = "W",
-        hint = "H",
         info = "I",
+        hint = "H",
+        warn = "W",
+        error = "E",
       })
 
       vim.diagnostic.config({
@@ -207,8 +243,8 @@ return {
             procMacro = {
               enable = true,
               ignored = {
-                ["async-trait"] = { "async_trait" },
                 ["napi-derive"] = { "napi" },
+                ["async-trait"] = { "async_trait" },
                 ["async-recursion"] = { "async_recursion" },
               },
             },
@@ -222,13 +258,15 @@ return {
 
       lsp.setup()
 
-      local cmp = require("cmp")
-      local lspkind = require("lspkind")
-      local icons = require("utils.interface").icons
-      local luasnip = require("luasnip")
-      local cmp_mapping = require("cmp.config.mapping")
-      local cmp_types = require("cmp.types.cmp")
       local utils = require("utils.api")
+      local icons = require("utils.interface").icons
+
+      local cmp = require("cmp")
+      local cmp_types = require("cmp.types.cmp")
+      local cmp_mapping = require("cmp.config.mapping")
+
+      local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
 
       cmp.setup({
         formatting = {
@@ -245,11 +283,6 @@ return {
               vim_item.kind_hl_group = "CmpItemKindCopilot"
             end
 
-            if entry.source.name == "crates" then
-              vim_item.kind = icons.misc.Package
-              vim_item.kind_hl_group = "CmpItemKindCrate"
-            end
-
             if entry.source.name == "emoji" then
               vim_item.kind = icons.misc.Smiley
               vim_item.kind_hl_group = "CmpItemKindEmoji"
@@ -258,13 +291,10 @@ return {
               nvim_lsp = "[LSP]",
               emoji = "[Emoji]",
               path = "[Path]",
-              calc = "[Calc]",
               vsnip = "[Snippet]",
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
-              tmux = "[TMUX]",
               copilot = "[Copilot]",
-              treesitter = "[TreeSitter]",
             })[entry.source.name]
             vim_item.dup = ({
               buffer = 1,
@@ -291,7 +321,7 @@ return {
         sources = {
           {
             name = "copilot",
-            -- keyword_length = 0,
+            keyword_length = 5,
             max_item_count = 3,
             trigger_characters = {
               {
@@ -331,13 +361,11 @@ return {
             end,
           },
 
-          { name = "path" },
           { name = "luasnip" },
-          { name = "nvim_lua" },
+          { name = "path" },
           { name = "buffer" },
           { name = "emoji" },
-          { name = "treesitter" },
-          { name = "crates" },
+          { name = "nvim_lua" },
         },
         mapping = cmp_mapping.preset.insert({
           ["<C-k>"] = cmp_mapping(cmp_mapping.select_prev_item(), { "i", "c" }),
@@ -390,11 +418,11 @@ return {
               local confirm_opts = vim.deepcopy({
                 behavior = cmp_types.ConfirmBehavior.Replace,
                 select = false,
-              }) -- avoid mutating the original opts below
+              })
               local is_insert_mode = function()
                 return vim.api.nvim_get_mode().mode:sub(1, 1) == "i"
               end
-              if is_insert_mode() then -- prevent overwriting brackets
+              if is_insert_mode() then
                 confirm_opts.behavior = cmp_types.ConfirmBehavior.Insert
               end
               local entry = cmp.get_selected_entry()
@@ -404,10 +432,10 @@ return {
                 confirm_opts.select = true
               end
               if cmp.confirm(confirm_opts) then
-                return -- success, exit early
+                return
               end
             end
-            fallback() -- if not exited early, always fallback
+            fallback()
           end),
         }),
       })
