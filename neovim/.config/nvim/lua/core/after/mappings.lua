@@ -29,6 +29,14 @@ mappings.bulk_register({
     options = opts,
     description = "Open Mason.",
   },
+  -- LSP.
+  {
+    mode = { "n" },
+    lhs = "<leader>ls",
+    rhs = ":LspInfo<CR>",
+    options = opts,
+    description = "Open LSP Info.",
+  },
   -- Telescope.
   {
     mode = { "n" },
@@ -227,37 +235,58 @@ mappings.bulk_register({
   -- Buffers.
   {
     mode = { "n" },
+    lhs = "<leader>q",
+    rhs = ":BufferDelete<CR>",
+    options = opts,
+    description = "Close current buffer.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>bq",
     rhs = ":BufferLinePickClose<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Close target buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<Tab>",
+    rhs = ":BufferLineCycleNext<CR>",
+    options = opts,
+    description = "Cycle to next buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<S-Tab>",
+    rhs = ":BufferLineCyclePrev<CR>",
+    options = opts,
+    description = "Cycle to previous buffer.",
   },
   {
     mode = { "n" },
     lhs = "<C-h>",
     rhs = ":BufferLineMovePrev<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Move current buffer to left.",
   },
   {
     mode = { "n" },
     lhs = "<C-l>",
     rhs = ":BufferLineMoveNext<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Move current buffer to right.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bh",
     rhs = ":BufferLineCloseLeft<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Close all left buffers.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bl",
     rhs = ":BufferLineCloseRight<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Close all right buffers.",
   },
   {
@@ -267,7 +296,7 @@ mappings.bulk_register({
       vim.cmd("BufferLineCloseLeft")
       vim.cmd("BufferLineCloseRight")
     end,
-    options = { silent = true },
+    options = opts,
     description = "Close all other buffers.",
   },
   {
@@ -278,21 +307,21 @@ mappings.bulk_register({
       vim.cmd("BufferLineCloseRight")
       vim.cmd("BufferDelete")
     end,
-    options = { silent = true },
+    options = opts,
     description = "Close all buffers.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bt",
     rhs = ":BufferLinePick<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Go to buffer *.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bs",
     rhs = ":BufferLineSortByExtension<CR>",
-    options = { silent = true },
+    options = opts,
     description = "Buffers sort (by extension).",
   },
 })
