@@ -196,7 +196,7 @@ mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "[c",
+    lhs = "[h",
     rhs = function()
       if vim.wo.diff then
         return "[c"
@@ -211,7 +211,7 @@ mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "]c",
+    lhs = "]h",
     rhs = function()
       if vim.wo.diff then
         return "]c"

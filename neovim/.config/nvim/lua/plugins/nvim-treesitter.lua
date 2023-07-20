@@ -5,10 +5,10 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "HiPhish/nvim-ts-rainbow2",
-      "windwp/nvim-ts-autotag",
       "nvim-lua/plenary.nvim",
+      "windwp/nvim-ts-autotag",
+      "HiPhish/nvim-ts-rainbow2",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
@@ -63,8 +63,8 @@ return {
           enable = true,
           keymaps = {
             init_selection = "<leader>vv",
-            node_incremental = "+",
             scope_incremental = false,
+            node_incremental = "+",
             node_decremental = "_",
           },
         },
@@ -72,7 +72,6 @@ return {
           select = {
             enable = true,
             lookahead = true,
-
             keymaps = {
               ["af"] = { query = "@function.outer", desc = "around a function" },
               ["if"] = { query = "@function.inner", desc = "inner part of a function" },
@@ -91,7 +90,7 @@ return {
               ["@function.outer"] = "v",
               ["@conditional.outer"] = "V",
               ["@loop.outer"] = "V",
-              ["@class.outer"] = "<c-v>",
+              ["@class.outer"] = "<C-v>",
             },
             include_surrounding_whitespace = false,
           },
@@ -111,6 +110,12 @@ return {
           },
           swap = {
             enable = false,
+            swap_next = {
+              ["<leader>pn"] = "@parameter.inner",
+            },
+            swap_previous = {
+              ["<leader>pp"] = "@parameter.inner",
+            },
           },
         },
       })
