@@ -108,7 +108,7 @@ if settings.auto_restore_cursor_position then
   })
 end
 
-if settings.auto_remove_new_lines_comments then
+if settings.auto_remove_new_lines_comment then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
     callback = function()
