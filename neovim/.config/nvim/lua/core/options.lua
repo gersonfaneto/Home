@@ -51,7 +51,6 @@ M.opt = {
 
   smartcase = true,
   smartindent = true,
-  cursorline = settings.show_cursor_line,
 
   splitbelow = true,
   splitright = true,
