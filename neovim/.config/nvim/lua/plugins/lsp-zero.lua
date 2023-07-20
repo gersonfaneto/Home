@@ -97,7 +97,7 @@ return {
           {
             mode = { "n" },
             lhs = "of",
-            rhs = ":lua vim.diagnostics.open_float()<CR>",
+            rhs = ":lua vim.diagnostic.open_float()<CR>",
             options = opts,
             description = "Show line diagnostic.",
           },
