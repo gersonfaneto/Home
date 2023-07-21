@@ -23,7 +23,7 @@ mappings.bulk_register({
     rhs = ":MarkdownPreviewToggle<CR>",
     options = { noremap = true, silent = true },
     description = "Toggle markdown preview.",
-  }
+  },
 })
 
 return M

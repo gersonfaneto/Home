@@ -10,9 +10,7 @@ return {
       "undotree",
       "neo-tree",
     }
-    vim.cmd(
-      "highlight IndentBlanklineIndent guifg=" .. colors.fg .. " gui=nocombine"
-    )
+    vim.cmd("highlight IndentBlanklineIndent guifg=" .. colors.fg .. " gui=nocombine")
 
     require("indent_blankline").setup({
       show_trailing_blankline_indent = false,

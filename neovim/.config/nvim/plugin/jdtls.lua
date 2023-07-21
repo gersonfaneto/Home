@@ -1,12 +1,12 @@
-local java_cmds = vim.api.nvim_create_augroup('java_cmds', { clear = true })
+local java_cmds = vim.api.nvim_create_augroup("java_cmds", { clear = true })
 local cache_vars = {}
 
 local root_files = {
-  '.git',
-  'mvnw',
-  'gradlew',
-  'pom.xml',
-  'build.gradle',
+  ".git",
+  "mvnw",
+  "gradlew",
+  "pom.xml",
+  "build.gradle",
 }
 
 local features = {
@@ -25,21 +25,19 @@ local function get_jdtls_paths()
 
   local path = {}
 
-  path.data_dir = vim.fn.stdpath('cache') .. '/nvim-jdtls'
+  path.data_dir = vim.fn.stdpath("cache") .. "/nvim-jdtls"
 
-  local jdtls_install = require('mason-registry')
-      .get_package('jdtls')
-      :get_install_path()
+  local jdtls_install = require("mason-registry").get_package("jdtls"):get_install_path()
 
-  path.java_agent = jdtls_install .. '/lombok.jar'
-  path.launcher_jar = vim.fn.glob(jdtls_install .. '/plugins/org.eclipse.equinox.launcher_*.jar')
+  path.java_agent = jdtls_install .. "/lombok.jar"
+  path.launcher_jar = vim.fn.glob(jdtls_install .. "/plugins/org.eclipse.equinox.launcher_*.jar")
 
-  if vim.fn.has('mac') == 1 then
-    path.platform_config = jdtls_install .. '/config_mac'
-  elseif vim.fn.has('unix') == 1 then
-    path.platform_config = jdtls_install .. '/config_linux'
-  elseif vim.fn.has('win32') == 1 then
-    path.platform_config = jdtls_install .. '/config_win'
+  if vim.fn.has("mac") == 1 then
+    path.platform_config = jdtls_install .. "/config_mac"
+  elseif vim.fn.has("unix") == 1 then
+    path.platform_config = jdtls_install .. "/config_linux"
+  elseif vim.fn.has("win32") == 1 then
+    path.platform_config = jdtls_install .. "/config_win"
   end
 
   path.bundles = {}
@@ -47,32 +45,23 @@ local function get_jdtls_paths()
   ---
   -- Include java-test bundle if present
   ---
-  local java_test_path = require('mason-registry')
-      .get_package('java-test')
-      :get_install_path()
+  local java_test_path = require("mason-registry").get_package("java-test"):get_install_path()
 
-  local java_test_bundle = vim.split(
-    vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
-    '\n'
-  )
+  local java_test_bundle = vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar"), "\n")
 
-  if java_test_bundle[1] ~= '' then
+  if java_test_bundle[1] ~= "" then
     vim.list_extend(path.bundles, java_test_bundle)
   end
 
   ---
   -- Include java-debug-adapter bundle if present
   ---
-  local java_debug_path = require('mason-registry')
-      .get_package('java-debug-adapter')
-      :get_install_path()
+  local java_debug_path = require("mason-registry").get_package("java-debug-adapter"):get_install_path()
 
-  local java_debug_bundle = vim.split(
-    vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar'),
-    '\n'
-  )
+  local java_debug_bundle =
+    vim.split(vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"), "\n")
 
-  if java_debug_bundle[1] ~= '' then
+  if java_debug_bundle[1] ~= "" then
     vim.list_extend(path.bundles, java_debug_bundle)
   end
 
@@ -104,10 +93,10 @@ end
 local function enable_codelens(bufnr)
   pcall(vim.lsp.codelens.refresh)
 
-  vim.api.nvim_create_autocmd('BufWritePost', {
+  vim.api.nvim_create_autocmd("BufWritePost", {
     buffer = bufnr,
     group = java_cmds,
-    desc = 'refresh codelens',
+    desc = "refresh codelens",
     callback = function()
       pcall(vim.lsp.codelens.refresh)
     end,
@@ -115,12 +104,12 @@ local function enable_codelens(bufnr)
 end
 
 local function enable_debugger(bufnr)
-  require('jdtls').setup_dap({ hotcodereplace = 'auto' })
-  require('jdtls.dap').setup_dap_main_class_configs()
+  require("jdtls").setup_dap({ hotcodereplace = "auto" })
+  require("jdtls.dap").setup_dap_main_class_configs()
 
   local opts = { buffer = bufnr }
-  vim.keymap.set('n', '<leader>df', "<cmd>lua require('jdtls').test_class()<cr>", opts)
-  vim.keymap.set('n', '<leader>dn', "<cmd>lua require('jdtls').test_nearest_method()<cr>", opts)
+  vim.keymap.set("n", "<leader>df", "<cmd>lua require('jdtls').test_class()<cr>", opts)
+  vim.keymap.set("n", "<leader>dn", "<cmd>lua require('jdtls').test_nearest_method()<cr>", opts)
 end
 
 local function jdtls_on_attach(client, bufnr)
@@ -136,26 +125,26 @@ local function jdtls_on_attach(client, bufnr)
   -- https://github.com/mfussenegger/nvim-jdtls#usage
 
   local opts = { buffer = bufnr }
-  vim.keymap.set('n', '<leader>oi', "<cmd>lua require('jdtls').organize_imports()<cr>", opts)
-  vim.keymap.set('n', '<leader>ev', "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
-  vim.keymap.set('x', '<leader>ev', "<esc><cmd>lua require('jdtls').extract_variable(true)<cr>", opts)
-  vim.keymap.set('n', '<leader>ec', "<cmd>lua require('jdtls').extract_constant()<cr>", opts)
-  vim.keymap.set('x', '<leader>ec', "<esc><cmd>lua require('jdtls').extract_constant(true)<cr>", opts)
-  vim.keymap.set('x', '<leader>em', "<esc><Cmd>lua require('jdtls').extract_method(true)<cr>", opts)
+  vim.keymap.set("n", "<leader>oi", "<cmd>lua require('jdtls').organize_imports()<cr>", opts)
+  vim.keymap.set("n", "<leader>ev", "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
+  vim.keymap.set("x", "<leader>ev", "<esc><cmd>lua require('jdtls').extract_variable(true)<cr>", opts)
+  vim.keymap.set("n", "<leader>ec", "<cmd>lua require('jdtls').extract_constant()<cr>", opts)
+  vim.keymap.set("x", "<leader>ec", "<esc><cmd>lua require('jdtls').extract_constant(true)<cr>", opts)
+  vim.keymap.set("x", "<leader>em", "<esc><Cmd>lua require('jdtls').extract_method(true)<cr>", opts)
 end
 
 local function jdtls_setup(event)
-  local jdtls = require('jdtls')
+  local jdtls = require("jdtls")
 
   local path = get_jdtls_paths()
-  local data_dir = path.data_dir .. '/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+  local data_dir = path.data_dir .. "/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
   if cache_vars.capabilities == nil then
     jdtls.extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
-    local ok_cmp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
+    local ok_cmp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
     cache_vars.capabilities = vim.tbl_deep_extend(
-      'force',
+      "force",
       vim.lsp.protocol.make_client_capabilities(),
       ok_cmp and cmp_lsp.default_capabilities() or {}
     )
@@ -165,31 +154,31 @@ local function jdtls_setup(event)
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   local cmd = {
     -- 💀
-    'java',
+    "java",
 
-    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-    '-Dosgi.bundles.defaultStartLevel=4',
-    '-Declipse.product=org.eclipse.jdt.ls.core.product',
-    '-Dlog.protocol=true',
-    '-Dlog.level=ALL',
-    '-javaagent:' .. path.java_agent,
-    '-Xms1g',
-    '--add-modules=ALL-SYSTEM',
-    '--add-opens',
-    'java.base/java.util=ALL-UNNAMED',
-    '--add-opens',
-    'java.base/java.lang=ALL-UNNAMED',
+    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+    "-Dosgi.bundles.defaultStartLevel=4",
+    "-Declipse.product=org.eclipse.jdt.ls.core.product",
+    "-Dlog.protocol=true",
+    "-Dlog.level=ALL",
+    "-javaagent:" .. path.java_agent,
+    "-Xms1g",
+    "--add-modules=ALL-SYSTEM",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
 
     -- 💀
-    '-jar',
+    "-jar",
     path.launcher_jar,
 
     -- 💀
-    '-configuration',
+    "-configuration",
     path.platform_config,
 
     -- 💀
-    '-data',
+    "-data",
     data_dir,
   }
 
@@ -204,7 +193,7 @@ local function jdtls_setup(event)
         downloadSources = true,
       },
       configuration = {
-        updateBuildConfiguration = 'interactive',
+        updateBuildConfiguration = "interactive",
         runtimes = path.runtimes,
       },
       maven = {
@@ -226,35 +215,35 @@ local function jdtls_setup(event)
         -- settings = {
         --   profile = 'asdf'
         -- },
-      }
+      },
     },
     signatureHelp = {
       enabled = true,
     },
     completion = {
       favoriteStaticMembers = {
-        'org.hamcrest.MatcherAssert.assertThat',
-        'org.hamcrest.Matchers.*',
-        'org.hamcrest.CoreMatchers.*',
-        'org.junit.jupiter.api.Assertions.*',
-        'java.util.Objects.requireNonNull',
-        'java.util.Objects.requireNonNullElse',
-        'org.mockito.Mockito.*',
+        "org.hamcrest.MatcherAssert.assertThat",
+        "org.hamcrest.Matchers.*",
+        "org.hamcrest.CoreMatchers.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "java.util.Objects.requireNonNull",
+        "java.util.Objects.requireNonNullElse",
+        "org.mockito.Mockito.*",
       },
     },
     contentProvider = {
-      preferred = 'fernflower',
+      preferred = "fernflower",
     },
     extendedClientCapabilities = jdtls.extendedClientCapabilities,
     sources = {
       organizeImports = {
         starThreshold = 9999,
         staticStarThreshold = 9999,
-      }
+      },
     },
     codeGeneration = {
       toString = {
-        template = '${object.className}{${member.name()}=${member.value}, ${otherMembers}}',
+        template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
       },
       useBlocks = true,
     },
@@ -277,9 +266,9 @@ local function jdtls_setup(event)
   })
 end
 
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd("FileType", {
   group = java_cmds,
-  pattern = { 'java' },
-  desc = 'Setup jdtls',
+  pattern = { "java" },
+  desc = "Setup jdtls",
   callback = jdtls_setup,
 })

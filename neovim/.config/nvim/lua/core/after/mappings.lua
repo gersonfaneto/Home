@@ -114,11 +114,9 @@ mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>/",
     rhs = function()
-      require('telescope.builtin').current_buffer_fuzzy_find(
-        require('telescope.themes').get_dropdown({
-          previewer = false,
-        })
-      )
+      require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        previewer = false,
+      }))
     end,
     options = opts,
     description = "Fuzzily search in current buffer",
