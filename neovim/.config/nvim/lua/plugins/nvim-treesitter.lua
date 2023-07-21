@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     version = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufNewFile", "BufReadPost" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "windwp/nvim-ts-autotag",
@@ -109,7 +109,7 @@ return {
             },
           },
           swap = {
-            enable = false,
+            enable = true,
             swap_next = {
               ["<leader>pn"] = "@parameter.inner",
             },
