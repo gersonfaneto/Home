@@ -34,23 +34,21 @@ return {
       local settings = require("core.settings")
 
       local ensure_installed = {
-        -- LSP
-        "jdtls",
-        "clangd",
-        "pyright",
-        "cssls",
-        "jsonls",
-        "html",
-        "emmet_ls",
-        "vuels",
-        "rust_analyzer",
-        "vimls",
-        "lua_ls",
         "bashls",
+        "clangd",
         "cmake",
+        "csharp_ls",
+        "cssls",
+        "emmet_ls",
+        "html",
+        "jdtls",
+        "lua_ls",
+        "pyright",
+        "rust_analyzer",
         "svelte",
-        "tsserver",
         "tailwindcss",
+        "tsserver",
+        "vuels",
       }
 
       lsp.on_attach(function(_, bufnr)
@@ -291,7 +289,6 @@ return {
               nvim_lsp = "[LSP]",
               emoji = "[Emoji]",
               path = "[Path]",
-              vsnip = "[Snippet]",
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
               copilot = "[Copilot]",
