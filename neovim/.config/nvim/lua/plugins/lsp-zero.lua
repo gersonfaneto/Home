@@ -362,6 +362,7 @@ return {
           { name = "path" },
           { name = "buffer" },
           { name = "emoji" },
+          { name = "crates" },
           { name = "nvim_lua" },
         },
         mapping = cmp_mapping.preset.insert({

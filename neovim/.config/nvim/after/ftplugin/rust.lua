@@ -40,6 +40,15 @@ mappings.bulk_register({
     options = opts,
     description = "Rust - Reload Workspace.",
   },
+  {
+    mode = {"n"},
+    lhs = "<leader>uc",
+    rhs = function()
+      require("crates").upgrade_all_crates()
+    end,
+    options = opts,
+    description = "Rust - Upgrade Crates.",
+  }
 })
 
 return M
