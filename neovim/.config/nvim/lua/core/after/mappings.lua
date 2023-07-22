@@ -121,6 +121,21 @@ mappings.bulk_register({
     options = opts,
     description = "Fuzzily search in current buffer",
   },
+  -- Git Worktree.
+  {
+    mode = { "n" },
+    lhs = "<leader>wl",
+    rhs = ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+    options = opts,
+    description = "Browse trough the git worktrees.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>wa",
+    rhs = ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+    options = opts,
+    description = "Create a new git worktree.",
+  },
   -- TODO.
   {
     mode = { "n" },

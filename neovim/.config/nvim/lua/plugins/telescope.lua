@@ -6,10 +6,14 @@ return {
     lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "jvgrootveld/telescope-zoxide",
       "nvim-tree/nvim-web-devicons",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "jvgrootveld/telescope-zoxide",
+      "ThePrimeagen/git-worktree.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
     },
     config = function()
       local telescope = require("telescope")
@@ -129,6 +133,7 @@ return {
       telescope.load_extension("fzf")
       telescope.load_extension("zoxide")
       telescope.load_extension("refactoring")
+      telescope.load_extension("git_worktree")
     end,
   },
 }
