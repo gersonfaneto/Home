@@ -15,6 +15,7 @@ local M = {
 
   -- LSP.
   inlay_hints = true,
+  virtual_text = false,
   format_on_save = false,
 }
 
