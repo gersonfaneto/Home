@@ -6,9 +6,8 @@ __   __         _         ___        ___
 
 ```
 
-> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all my
-> configuration files for things like: terminal, shell, text editors and even
-> favorite fonts.
+> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all the
+> configuration files that make my day-to-day as a developer more pleasant.
 
 <div align="center">
 
@@ -17,7 +16,6 @@ __   __         _         ___        ___
 [![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
 [![Distro](https://img.shields.io/badge/DISTRO-Arch-74c7ec?color=blue&style=for-the-badge&logo=arch-linux)](https://archlinux.org/)
 
-
 </div>
 
 ## Usage
@@ -25,15 +23,15 @@ __   __         _         ___        ___
 > **Note**: The steps bellow describe how to setup the configuration manually,
 > however if you are on an `Arch` based distro you can use the script
 > `JARVIS.sh` to have all the dependencies listed bellow installed and the
-> configuration files synchronized.
+> configuration files synchronized automatically.
 
 ### Dependencies
 
-Make sure to have the following dependencies installed before proceeding!
+Make sure to have the following dependencies installed before proceeding.
 
 ```markdown
-bat exa fd fish fzf github-cli glow kitty neofetch neovim ripgrep starship
-stow tmux trash-cli vim zoxide
+lf bat exa fd fish fzf git github-cli glow kitty neofetch vim neovim ripgrep
+starship stow tmux trash-cli zoxide
 ```
 
 After installing all the packages listed above use [`stow`](https://www.gnu.org/software/stow/)
