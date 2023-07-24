@@ -1,0 +1,121 @@
+# vim=ft:conf
+
+set previewer ~/.config/lf/scripts/previwer.sh
+set cleaner ~/.config/lf/scripts/cleaner.sh
+
+set icons true
+set drawbox true
+set ignorecase true
+
+cmd open ${{
+  case $(file --mime-type "$f" -bL) in
+    text/*|application/json) $EDITOR "$f" ;;
+    *) xdg-open "$f" ;;
+   esac
+}}
+
+cmd mkdir %{{
+  echo "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile %{{
+  echo "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd chmod %{{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"; do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+}}
+
+cmd unarchive %{{
+  case "$f" in
+    *.zip) unzip "$f" ;;
+    *.tar.gz) tar -xzvf "$f" ;;
+    *.tar.bz2) tar -xjvf "$f" ;;
+    *.tar) tar -xvf "$f" ;;
+    *) echo "Unsupported format!" ;;
+  esac
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+
+map az zip
+map at tar
+map ag targz
+map ab targz
+map au unarchive
+
+map ee $$EDITOR "$f"
+map u $view "$f"
+
+map dd trash
+map tc clear_trash
+map tr restore_trash
+
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map mf mkfile
+map md mkdir
+map ch chmod
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gr cd ~/Developer
+map gv cd ~/Videos
+map gs cd ~/.local/bin
+map gt cd ~/.local/share/Trash/files

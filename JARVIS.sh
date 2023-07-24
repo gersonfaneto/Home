@@ -22,6 +22,7 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 
 # List of needed packages to be installed.
 packages=(
+  lf
 	bat
 	exa
 	fd
