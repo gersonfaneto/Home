@@ -20,6 +20,7 @@ return {
       local lsp = require("lsp-zero").preset("lsp-only")
 
       local settings = require("core.settings")
+      local icons = require("utils.interface").icons
 
       local ensure_installed = {
         "bashls",
@@ -167,10 +168,10 @@ return {
       })
 
       lsp.set_sign_icons({
-        info = "I",
-        hint = "H",
-        warn = "W",
-        error = "E",
+        info = icons.diagnostics.BoldInformation,
+        hint = icons.diagnostics.BoldHint,
+        warn = icons.diagnostics.BoldWarning,
+        error = icons.diagnostics.BoldError,
       })
 
       vim.diagnostic.config({

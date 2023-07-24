@@ -9,6 +9,7 @@ return {
   },
   config = function()
     local colors = require("utils.interface").colors.get_colors()
+    local icons = require("utils.interface").icons
 
     require("lualine").setup({
       options = {
@@ -78,9 +79,10 @@ return {
             "diagnostics",
             sources = { "nvim_lsp" },
             symbols = {
-              error = " ",
-              warn = " ",
-              info = " ",
+              info = icons.diagnostics.BoldInformation .. " ",
+              hint = icons.diagnostics.BoldHint .. " ",
+              warn = icons.diagnostics.BoldWarning .. " ",
+              error = icons.diagnostics.BoldError .. " ",
             },
           },
         },
