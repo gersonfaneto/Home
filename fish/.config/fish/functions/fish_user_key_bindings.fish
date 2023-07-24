@@ -3,6 +3,7 @@ function fish_user_key_bindings
   bind \ef fzf_file
   bind \er fzf_history
   bind \et fzf_theme
+  bind \el lf
 
   bind \ea tmux_attach
   bind \ek tmux_kill
