@@ -11,6 +11,7 @@ if test -d "/usr/local/lib"
 end
 
 if type -q bat
+  export MANROFFOPT='-c'
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
 
