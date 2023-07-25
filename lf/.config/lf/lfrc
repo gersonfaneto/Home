@@ -15,15 +15,15 @@ cmd open ${{
 }}
 
 cmd mkdir %{{
-  echo "Directory Name: "
+  printf "Directory Name: "
   read ans
   mkdir $ans
 }}
 
 cmd mkfile %{{
-  echo "File Name: "
+  printf "File Name: "
   read ans
-  $EDITOR $ans
+  touch $ans
 }}
 
 cmd chmod %{{
@@ -68,10 +68,6 @@ cmd trash %{{
   done
 }}
 
-cmd restore_trash ${{
-  trash-restore
-}}
-
 map m
 map o
 map n
@@ -92,8 +88,6 @@ map ee $$EDITOR "$f"
 map u $view "$f"
 
 map dd trash
-map tc clear_trash
-map tr restore_trash
 
 map . set hidden!
 map DD delete
