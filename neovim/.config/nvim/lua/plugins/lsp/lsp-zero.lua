@@ -29,6 +29,7 @@ return {
         "csharp_ls",
         "cssls",
         "emmet_ls",
+        "eslint",
         "gopls",
         "html",
         "jdtls",
@@ -168,8 +169,12 @@ return {
               "sh",
               "bash",
               "python",
-              "typescript",
               "javascript",
+              "javascriptreact",
+              "typescript",
+              "typescriptreact",
+              "vue",
+              "svelte",
             },
           },
         })
@@ -210,6 +215,7 @@ return {
       })
 
       lspconfig.lua_ls.setup(require("plugins.lsp.extras.lua_ls"))
+      lspconfig.eslint.setup(require("plugins.lsp.extras.eslint"))
       lspconfig.gopls.setup(require("plugins.lsp.extras.gopls"))
       lspconfig.rust_analyzer.setup(require("plugins.lsp.extras.rust_analyzer"))
 
