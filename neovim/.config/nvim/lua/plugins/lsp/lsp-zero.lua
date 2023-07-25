@@ -155,9 +155,9 @@ return {
           },
           servers = {
             ["gopls"] = { "go" },
-            ["lua_ls"] = { "lua" },
             ["rust_analyzer"] = { "rust" },
             ["null-ls"] = {
+              "lua",
               "c",
               "cpp",
               "css",
