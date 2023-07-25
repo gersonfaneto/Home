@@ -34,7 +34,7 @@ return {
     },
     dependencies = {
       "hrsh7th/nvim-cmp",
-      "nvim-lua/plenary.nvim"
+      "nvim-lua/plenary.nvim",
     },
     config = function(_, opts)
       local crates = require("crates")
@@ -60,7 +60,7 @@ return {
         goimport = "gopls",
         gofmt = "gopls",
       })
-    end
+    end,
   },
   {
     "ray-x/go.nvim",

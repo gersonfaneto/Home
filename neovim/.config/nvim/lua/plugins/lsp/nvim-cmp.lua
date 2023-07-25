@@ -19,7 +19,7 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
       },
-    }
+    },
   },
   config = function()
     local utils = require("utils.api")
