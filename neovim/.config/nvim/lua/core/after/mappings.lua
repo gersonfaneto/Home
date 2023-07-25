@@ -223,7 +223,7 @@ mappings.bulk_register({
         return "[c"
       end
       vim.schedule(function()
-        M.gitsigns.prev_hunk()
+        require("gitsigns").prev_hunk()
       end)
       return "<Ignore>"
     end,
@@ -238,7 +238,7 @@ mappings.bulk_register({
         return "]c"
       end
       vim.schedule(function()
-        M.gitsigns.next_hunk()
+        require("gitsigns").next_hunk()
       end)
       return "<Ignore>"
     end,
