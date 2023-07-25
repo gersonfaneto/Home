@@ -33,6 +33,7 @@ packages=(
 	kitty
 	neofetch
 	vim
+  vimv
 	neovim
 	ripgrep
 	starship
