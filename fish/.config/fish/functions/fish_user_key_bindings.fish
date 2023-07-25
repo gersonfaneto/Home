@@ -1,12 +1,15 @@
 function fish_user_key_bindings
-  bind \ej fzf_directory
   bind \ef fzf_file
-  bind \er fzf_history
   bind \et fzf_theme
-  bind \el lf
+  bind \er fzf_history
+  bind \ej fzf_directory
 
-  bind \ea tmux_attach
+  bind \el lf
+  bind \eb btm
+  bind \en nvim
+
   bind \ek tmux_kill
+  bind \ea tmux_attach
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
