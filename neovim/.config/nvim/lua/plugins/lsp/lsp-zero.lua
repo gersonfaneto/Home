@@ -154,11 +154,23 @@ return {
             timeout_ms = 10000,
           },
           servers = {
-            ["clangd"] = { "c", "cpp" },
             ["gopls"] = { "go" },
             ["lua_ls"] = { "lua" },
-            ["pyright"] = { "python" },
             ["rust_analyzer"] = { "rust" },
+            ["null-ls"] = {
+              "c",
+              "cpp",
+              "css",
+              "html",
+              "json",
+              "yaml",
+              "markdown",
+              "sh",
+              "bash",
+              "python",
+              "typescript",
+              "javascript",
+            },
           },
         })
       end
