@@ -9,12 +9,17 @@ return {
     "BufRead",
   },
   dependencies = {
-    "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
+    {
+      "L3MON4D3/LuaSnip",
+      dependencies = {
+        "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
+      },
+    }
   },
   config = function()
     local utils = require("utils.api")
@@ -26,6 +31,8 @@ return {
 
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
+
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       formatting = {
@@ -198,7 +205,5 @@ return {
         end),
       }),
     })
-
-    require("luasnip.loaders.from_vscode").lazy_load()
   end,
 }
