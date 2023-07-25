@@ -1,6 +1,9 @@
 return {
   "hrsh7th/nvim-cmp",
-  lazy = true,
+  lazy = false,
+  after = {
+    "lsp-zero.nvim",
+  },
   event = {
     "InsertEnter",
     "BufRead",

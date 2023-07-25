@@ -197,89 +197,9 @@ return {
         ensure_installed = ensure_installed,
       })
 
-      lspconfig.lua_ls.setup({
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.stdpath("config") .. "/lua"] = true,
-              },
-            },
-          },
-        },
-      })
-
-      lspconfig.rust_analyzer.setup({
-        settings = {
-          ["rust-analyzer"] = {
-            lens = {
-              enable = true,
-            },
-            cargo = {
-              allFeatures = true,
-              loadOutDirsFromCheck = true,
-              runBuildScripts = true,
-            },
-            check = {
-              enable = true,
-              allFeatures = true,
-              command = "clippy",
-              extraArgs = { "--no-deps" },
-            },
-            procMacro = {
-              enable = true,
-              ignored = {
-                ["napi-derive"] = { "napi" },
-                ["async-trait"] = { "async_trait" },
-                ["async-recursion"] = { "async_recursion" },
-              },
-            },
-          },
-        },
-      })
-
-      lspconfig.gopls.setup({
-        settings = {
-          gopls = {
-            gofumpt = true,
-            codelenses = {
-              gc_details = false,
-              generate = true,
-              regenerate_cgo = true,
-              run_govulncheck = true,
-              test = true,
-              tidy = true,
-              upgrade_dependency = true,
-              vendor = true,
-            },
-            hints = {
-              assignVariableTypes = true,
-              compositeLiteralFields = true,
-              compositeLiteralTypes = true,
-              constantValues = true,
-              functionTypeParameters = true,
-              parameterNames = true,
-              rangeVariableTypes = true,
-            },
-            analyses = {
-              fieldalignment = true,
-              nilness = true,
-              unusedparams = true,
-              unusedwrite = true,
-              useany = true,
-            },
-            usePlaceholders = true,
-            completeUnimported = true,
-            staticcheck = true,
-            directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-            semanticTokens = true,
-          }
-        }
-      })
+      lspconfig.lua_ls.setup(require("plugins.lsp.extras.lua_ls"))
+      lspconfig.gopls.setup(require("plugins.lsp.extras.gopls"))
+      lspconfig.rust_analyzer.setup(require("plugins.lsp.extras.rust_analyzer"))
 
       lsp.skip_server_setup({
         "jdtls",
