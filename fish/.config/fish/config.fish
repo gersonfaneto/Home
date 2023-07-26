@@ -24,12 +24,12 @@ alias .3  "cd ../../.."
 alias .4  "cd ../../../.."
 alias .5  "cd ../../../../.."
 
-if not test -f $HOME/.config/fish/themes/theme.fish
+if not test -f $HOME/.config/fish/theme.fish
   ln -sf $HOME/.config/fish/themes/Gruvbox.fish \
-    $HOME/.config/fish/themes/theme.fish
+    $HOME/.config/fish/theme.fish
 end
 
-source $HOME/.config/fish/themes/theme.fish
+source $HOME/.config/fish/theme.fish
 
 source $HOME/.config/fish/alias.fish
 source $HOME/.config/fish/extras.fish

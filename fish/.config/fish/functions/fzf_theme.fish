@@ -4,13 +4,13 @@ function fzf_theme
   set line (echo $line | sed 's/ /-/g')
 
   if test $line
-    ln -sf $HOME/.config/fish/themes/$line.fish $HOME/.config/fish/themes/theme.fish
-    source $HOME/.config/fish/themes/theme.fish
+    ln -sf $HOME/.config/fish/themes/$line.fish $HOME/.config/fish/theme.fish
+    source $HOME/.config/fish/theme.fish
 
     ln -fs $HOME/.config/tmux/themes/$line.conf $HOME/.config/tmux/theme.conf
     tmux source $HOME/.config/tmux/theme.conf
 
-    ln -fs $HOME/.config/kitty/themes/$line.conf $HOME/.config/kitty/themes/theme.conf
+    ln -fs $HOME/.config/kitty/themes/$line.conf $HOME/.config/kitty/theme.conf
     killall -SIGUSR1 kitty
   end
 
