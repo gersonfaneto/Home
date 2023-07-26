@@ -30,7 +30,7 @@ __   __         _         ___        ___
 Make sure to have the following dependencies installed before proceeding.
 
 ```markdown
-lf bat exa fd fish fzf git github-cli glow kitty neofetch vim neovim ripgrep
+lf bat exa fd fish fzf git github-cli glow kitty neofetch neovim ripgrep
 starship stow tmux trash-cli zoxide
 ```
 

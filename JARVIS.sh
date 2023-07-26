@@ -37,7 +37,6 @@ packages=(
 	stow
 	tmux
 	trash-cli
-	vim
 	vimv
 	zoxide
 	bottom
