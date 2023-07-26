@@ -256,10 +256,10 @@ mappings.bulk_register({
   -- Buffers.
   {
     mode = { "n" },
-    lhs = "<leader>q",
+    lhs = "<leader>bd",
     rhs = ":BufferDelete<CR>",
     options = opts,
-    description = "Close current buffer.",
+    description = "Delete the current Buffer while maintaining the window layout.",
   },
   {
     mode = { "n" },

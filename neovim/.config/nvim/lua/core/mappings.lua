@@ -17,7 +17,7 @@ mapppings.bulk_register({
     lhs = "<leader>nn",
     rhs = ":NewNote<CR>",
     options = { noremap = true, silent = true },
-    description = "Create a new note.",
+    description = "Create a new note as a markdown file.",
   },
   {
     mode = { "n" },
@@ -108,7 +108,7 @@ mapppings.bulk_register({
     lhs = "<leader>bn",
     rhs = ":BufferCreate<CR>",
     options = { noremap = true, silent = true },
-    description = "New buffer",
+    description = "Create a new buffer/file relative to the current buffer.",
   },
   {
     mode = { "n" },
@@ -133,10 +133,10 @@ mapppings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>q",
+    lhs = "<leader>bd",
     rhs = ":BufferDelete<CR>",
     options = { noremap = true, silent = true },
-    description = "Kill current buffer.",
+    description = "Delete the current Buffer while maintaining the window layout.",
   },
   {
     mode = { "n" },
