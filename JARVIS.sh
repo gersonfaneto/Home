@@ -38,11 +38,11 @@ packages=(
 	tmux
 	trash-cli
 	vim
-  vimv
+	vimv
 	zoxide
-  bottom
-  git
-  lf
+	bottom
+	git
+	lf
 )
 
 # Show a progress bar to the user.
@@ -141,25 +141,25 @@ fi
 # Install asdf for version management.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install asdf? [Y/n] ' REPLY
 
-if [[ ! -d "$HOME"/.asdf/  &&  ($REPLY =~ ^[Yy]$  ||  -z $REPLY) ]]; then
-  echo -en "$M_NOTE - Beggining installation, this may take a while..."
+if [[ -d "$HOME"/.asdf/ ]]; then
+	echo -e "$M_NOTE - asdf is already installed!"
+elif [[ $REPLY =~ ^[Yy]$ || -z $REPLY ]]; then
+	echo -en "$M_NOTE - Beggining installation, this may take a while..."
 
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 &>>"$INST_LOG" &
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 &>>"$INST_LOG" &
 
-  display_progress $!
+	display_progress $!
 
-  if [[ -d $HOME/.asdf/ ]]; then
-    echo -e "$M_WAIT$M_OK - asdf installed completed with success!"
+	if [[ -d $HOME/.asdf/ ]]; then
+		echo -e "$M_WAIT$M_OK - asdf installed completed with success!"
 
-    mkdir -p ~/.config/fish/completions
+		mkdir -p ~/.config/fish/completions
 
-    ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions 
+		ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 	else
 		echo -e "$M_WAIT$M_ERROR - asdf installation failed, please check the log at $INST_LOG!"
 		exit
 	fi
-else
-  echo -e "$M_NOTE - asdf is already installed!"
 fi
 
 # Link configuration files.
@@ -173,15 +173,19 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 		stow --dotfiles --target="$HOME" "$DIR" &>>/dev/null
 	done
 
-  echo -e "$M_NOTE - Copying fonts..."
+	echo -e "$M_NOTE - Copying fonts..."
 
 	mkdir -p "$HOME"/.local/share/fonts/ >>/dev/null
 
 	stow --dotfiles --target="$HOME" fonts &>>/dev/null
 
-  echo -e "$M_NOTE - Refreshing font cache..."
+	echo -e "$M_NOTE - Refreshing font cache..."
 
 	fc-cache -f
+
+	echo -e "$M_NOTE - Updating git submodules..."
+
+  git submodule update --init
 fi
 
 # Change the default shell to fish.
