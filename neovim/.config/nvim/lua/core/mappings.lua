@@ -14,6 +14,13 @@ mapppings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<leader>nn",
+    rhs = ":NewNote<CR>",
+    options = { noremap = true, silent = true },
+    description = "Create a new note.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>e",
     rhs = ":Ex<CR>",
     options = { noremap = true, silent = true },

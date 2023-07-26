@@ -20,6 +20,9 @@ end, { desc = "Delete the current Buffer while maintaining the window layout." }
 
 vim.api.nvim_create_user_command("NewNote", function()
   vim.ui.input({ prompt = "Name: ", relative = "editor" }, function(name)
+    if name == nil then
+      return
+    end
     vim.api.nvim_command(":e ~/Notes/" .. name .. ".md")
   end)
 end, { desc = "Create a new note as a markdown file." })
