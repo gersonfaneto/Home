@@ -3,7 +3,7 @@ function bak --argument filename
 end
 
 function hop
-  command mkdir -p $argv 2>/dev/null
+  mkdir -p $argv 2>/dev/null
   if test $status = 0
     switch $argv[(count $argv)]
       case '-*'
@@ -17,25 +17,25 @@ function hop
 end
 
 function todo
-  ls --oneline --no-icons | grep TODO.md | read line
+  command ls | grep TODO.md | read line
 
   if test $line && type -q glow
     if type -q glow
-      command glow $line
+      glow $line
     else if type -q bat
-      command bat $line
+      bat $line
     else
-      command cat $line
+      cat $line
     end
-  else if test -f ~/Desktop/TODO.md
+  else if test -f ~/Notes/TODO.md
     if type -q glow
-      command glow ~/Desktop/TODO.md
+      glow ~/Notes/TODO.md
     else if type -q bat
-      command bat ~/Desktop/TODO.md
+      bat ~/Notes/TODO.md
     else
-      command cat ~/Desktop/TODO.md
+      cat ~/Notes/TODO.md
     end
   else
-    echo "No TODO.md found"
+    echo "No TODO.md file found!"
   end
 end
