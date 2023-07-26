@@ -40,7 +40,7 @@ to manage the symbolic links for all the files and directories.
 - Clone this repository into your local machine.
 
 ```shell
-git clone https://github.com/gersonfaneto/Dotfiles --depth 1
+git clone https://github.com/gersonfaneto/YADR --depth 1
 ```
 
 - Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
