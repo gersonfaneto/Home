@@ -1,7 +1,16 @@
 ---@diagnostic disable: unused-local, param-type-mismatch
 
+-- Buffers.
+vim.api.nvim_create_user_command("BufferCreate", function()
+  vim.ui.input({ prompt = "Name: ", relative = "editor" }, function(name)
+    if name == nil then
+      return
+    end
+    vim.api.nvim_command(":e " .. vim.fn.expand("%:p:h") .. "/" .. name)
+  end)
+end, { desc = "Create a new buffer/file relative to the current buffer." })
+
 vim.api.nvim_create_user_command("BufferDelete", function()
-  ---@diagnostic disable-next-line: missing-parameter
   local file_exists = vim.fn.filereadable(vim.fn.expand("%p"))
   local modified = vim.api.nvim_buf_get_option(0, "modified")
 
@@ -18,6 +27,7 @@ vim.api.nvim_create_user_command("BufferDelete", function()
   vim.cmd(force and "bd!" or ("bp | bd! %s"):format(vim.api.nvim_get_current_buf()))
 end, { desc = "Delete the current Buffer while maintaining the window layout." })
 
+-- Notes.
 vim.api.nvim_create_user_command("NewNote", function()
   vim.ui.input({ prompt = "Name: ", relative = "editor" }, function(name)
     if name == nil then

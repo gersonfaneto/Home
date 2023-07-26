@@ -106,7 +106,7 @@ mapppings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>bn",
-    rhs = ":ene <BAR> startinsert <CR>",
+    rhs = ":BufferCreate<CR>",
     options = { noremap = true, silent = true },
     description = "New buffer",
   },
