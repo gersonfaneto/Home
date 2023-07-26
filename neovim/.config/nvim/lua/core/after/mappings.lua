@@ -119,7 +119,15 @@ mappings.bulk_register({
       }))
     end,
     options = opts,
-    description = "Fuzzily search in current buffer",
+    description = "Fuzzily search in current buffer.",
+  },
+  -- Refactoring.
+  {
+    mode = { "n", "v" },
+    lhs = "<leader>lr",
+    rhs = [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]],
+    options = opts,
+    description = "Refactor.",
   },
   -- Git Worktree.
   {
