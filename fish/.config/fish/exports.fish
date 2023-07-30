@@ -14,5 +14,3 @@ if type -q bat
   export MANROFFOPT='-c'
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
-
-export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
