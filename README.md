@@ -14,6 +14,7 @@ __   __         _         ___        ___
 [![Activity](https://img.shields.io/github/last-commit/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=git)](https://github.com/gersonfaneto/YADR/commit/main)
 [![License](https://img.shields.io/github/license/gersonfaneto/YADR?color=blue&style=for-the-badge)](https://github.com/gersonfaneto/YADR/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
+[![Repo-Size](https://img.shields.io/github/repo-size/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github)](https://github.com/gersonfaneto/YADR)
 [![Distro](https://img.shields.io/badge/DISTRO-Arch-74c7ec?color=blue&style=for-the-badge&logo=arch-linux)](https://archlinux.org/)
 
 </div>
@@ -35,8 +36,7 @@ lf bat exa fd fish fzf git github-cli glow kitty neofetch neovim ripgrep
 starship stow tmux trash-cli zoxide
 ```
 
-After installing all the packages listed above use [`stow`](https://www.gnu.org/software/stow/)
-to manage the symbolic links for all the files and directories.
+After installing all the packages listed above follow the steps ahead.
 
 - Clone this repository into your local machine.
 
@@ -50,7 +50,20 @@ git clone https://github.com/gersonfaneto/YADR --depth 1
 git submodule update --init
 ```
 
-- Inside the new folder, use `stow` to create the symbolic links.
+- Update the `bat` themes.
+
+```shell
+bat cache --build
+```
+
+- Update the font cache.
+
+```shell
+fc-cache -fv
+```
+
+- Inside the project folder, use `stow` to manage the symbolic links for the
+  configurations.
 
 ```shell
 stow */ # Link all the folders.
@@ -60,7 +73,8 @@ stow -D neovim # Remove the link for the `neovim` folder.
 
 > 📝 **Note**  
 > The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
-> file included makes so that no flags are needed to be passed to the command line.
+> file included makes so that no flags are needed to be passed to the command
+> line.
 
 ## TODOs
 
