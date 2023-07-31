@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WARNING: This script is currently broken, packages will fail to install...
+
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"

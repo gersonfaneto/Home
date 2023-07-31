@@ -62,6 +62,10 @@ stow -D neovim # Remove the link for the `neovim` folder.
 > The [`.stowrc`](https://github.com/gersonfaneto/YADR/blob/main/.stowrc)
 > file included makes so that no flags are needed to be passed to the command line.
 
+## TODOs
+
+- [ ] Fix `JARVIS.sh` - Packages are failing to install. No idea why 🫠.
+
 ## License
 
 Released under [MIT](https://github.com/gersonfaneto/YADR/blob/main/LICENSE) by [gersonfaneto](https://github.com/gersonfaneto).
