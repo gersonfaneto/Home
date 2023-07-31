@@ -7,10 +7,23 @@ local M = {}
 mapppings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>c",
+    lhs = "<leader>ec",
     rhs = ":e ~/.config/nvim/ <CR>",
     options = { noremap = true, silent = true },
     description = "Open Neovim config.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>cc",
+    rhs = function()
+      if vim.opt.colorcolumn:get()[1] ~= nil then
+        vim.opt.colorcolumn = nil
+      else
+        vim.opt.colorcolumn = "100"
+      end
+    end,
+    options = { noremap = true, silent = true },
+    description = "Toggle color column.",
   },
   {
     mode = { "n" },
