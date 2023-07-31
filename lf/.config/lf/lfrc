@@ -81,7 +81,7 @@ map f
 map az zip
 map at tar
 map ag targz
-map ab targz
+map ab tarbz2
 map au unarchive
 
 map ee $$EDITOR "$f"
@@ -106,11 +106,12 @@ map R reload
 map C clear
 map U unselect
 
+map gG cd ~/Developer/GitHub
 map gD cd ~/Documents
 map gd cd ~/Downloads
+map gn cd ~/Notes
 map gp cd ~/Pictures
-map gc cd ~/.config
-map gG cd ~/Developer/GitHub
 map gv cd ~/Videos
+map gc cd ~/.config
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
