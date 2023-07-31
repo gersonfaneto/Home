@@ -2,7 +2,7 @@
 INSTALL.log
 
 # KITTY
-kitty/.config/kitty/themes/theme.conf
+kitty/.config/kitty/theme.conf
 
 # FISH
 fish/.config/fish/fish_variables
