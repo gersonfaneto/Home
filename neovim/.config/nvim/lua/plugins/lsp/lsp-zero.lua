@@ -214,6 +214,7 @@ return {
         ensure_installed = ensure_installed,
       })
 
+      lspconfig.clangd.setup(require("plugins.lsp.extras.clangd"))
       lspconfig.lua_ls.setup(require("plugins.lsp.extras.lua_ls"))
       lspconfig.eslint.setup(require("plugins.lsp.extras.eslint"))
       lspconfig.gopls.setup(require("plugins.lsp.extras.gopls"))
