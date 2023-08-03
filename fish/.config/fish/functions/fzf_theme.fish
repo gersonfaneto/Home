@@ -13,7 +13,9 @@ function fzf_theme
     set sessions (tmux list-sessions -F "#S")
 
     for session in $sessions
-      tmux send-keys -t $session "source $HOME/.config/fish/theme.fish" ENTER "clear" ENTER
+      for pane in (tmux list-panes -t $session -F "#I")
+        tmux send-keys -t $session:$pane "source $HOME/.config/fish/theme.fish && clear" ENTER
+      end
     end
 
     ln -fs $HOME/.config/kitty/themes/$line.conf $HOME/.config/kitty/theme.conf
