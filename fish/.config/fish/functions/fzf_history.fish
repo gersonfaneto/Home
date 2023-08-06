@@ -1,5 +1,5 @@
 function fzf_history
-  history | fzf | read line
+  history | fzf --prompt='Run: ' | read line
 
   if test $line
     commandline $line

@@ -4,7 +4,7 @@ function tmux_kill
     return
   end
 
-  tmux list-sessions | sed 's/:.*$//' | fzf | read line
+  tmux list-sessions | sed 's/:.*$//' | fzf --prompt='Kill: ' | read line
 
   if test $line
     tmux kill-session -t $line

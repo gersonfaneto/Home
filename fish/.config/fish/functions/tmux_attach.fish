@@ -4,10 +4,10 @@ function tmux_attach
     return
   end
 
-  tmux list-sessions | sed 's/:.*$//' | fzf | read line
+  tmux list-sessions | sed 's/:.*$//' | fzf --prompt='Attach: ' | read line
 
   if test $line
-    if test "$TMUX" = ""
+    if test "$TMUX" = ''
       tmux attach-session -t $line
     else
       tmux switch-client -t $line

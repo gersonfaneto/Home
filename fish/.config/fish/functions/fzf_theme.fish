@@ -1,5 +1,5 @@
 function fzf_theme
-  find -L $HOME/.config/fish/themes -type f -exec basename {} .fish \; | grep --invert-match 'theme' | sed 's/-/ /g' | fzf | read line
+  find -L $HOME/.config/fish/themes -type f -exec basename {} .fish \; | grep --invert-match 'theme' | sed 's/-/ /g' | fzf --prompt='Theme: ' | read line
 
   set line (echo $line | sed 's/ /-/g')
 
@@ -10,12 +10,12 @@ function fzf_theme
     ln -fs $HOME/.config/tmux/themes/$line.conf $HOME/.config/tmux/theme.conf
     tmux source $HOME/.config/tmux/theme.conf
 
-    set sessions (tmux list-sessions -F "#S")
+    set sessions (tmux list-sessions -F '#S')
 
     for session in $sessions
-      set windows (tmux list-windows -t "$session" -F "#I")
+      set windows (tmux list-windows -t $session -F '#I')
       for window in $windows
-        set panes (tmux list-panes -t "$session:$window" -F "#P")
+        set panes (tmux list-panes -t $session:$window -F '#P')
         for pane in $panes
           tmux send-keys -t $session:$window.$pane "source $HOME/.config/fish/theme.fish && clear" ENTER
         end
