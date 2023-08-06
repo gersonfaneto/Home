@@ -1,0 +1,46 @@
+#!/usr/bin/env fish
+
+function help_message --argument-names exit_code
+  echo "Usage: $script_name [THEME]"
+  echo "  Avaliable themes:"
+  cat "$HOME/.config/swww/wall.ctl" | cut -d '|' -f 2 | awk '{print "    - " $0}'
+  exit $exit_code
+end
+
+set script_name (basename (status -f))
+
+set avaliable_themes (cat $HOME/.config/swww/wall.ctl | awk -F '|' '{print $2}')
+
+if contains -- "-h" $argv || contains -- "--help" $argv
+  help_message 0
+else if test -z $argv
+  help_message 1
+else
+  set choosen_theme $argv[1]
+end
+
+if not contains -- $choosen_theme $avaliable_themes 
+  echo "Theme '$choosen_theme' not found!"
+  exit 1
+end
+
+ln -sf $HOME/.config/fish/themes/$choosen_theme.fish $HOME/.config/fish/theme.fish
+source $HOME/.config/fish/theme.fish
+
+ln -fs $HOME/.config/tmux/themes/$choosen_theme.conf $HOME/.config/tmux/theme.conf
+tmux source $HOME/.config/tmux/theme.conf
+
+set sessions (tmux list-sessions -F '#S')
+
+for session in $sessions
+  set windows (tmux list-windows -t $session -F '#I')
+  for window in $windows
+    set panes (tmux list-panes -t $session:$window -F '#P')
+    for pane in $panes
+      tmux send-keys -t $session:$window.$pane "source $HOME/.config/fish/theme.fish && clear" ENTER
+    end
+  end
+end
+
+ln -fs $HOME/.config/kitty/themes/$choosen_theme.conf $HOME/.config/kitty/theme.conf
+killall -SIGUSR1 kitty
