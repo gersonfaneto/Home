@@ -115,3 +115,4 @@ map gv cd ~/Videos
 map gc cd ~/.config
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
+map gm cd /run/media/gerson
