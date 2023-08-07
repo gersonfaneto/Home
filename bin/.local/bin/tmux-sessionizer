@@ -1,0 +1,24 @@
+#!/usr/bin/env fish
+
+set -l targeted_directories "$HOME/Developer" "$HOME/Developer/GitHub"
+set search_flags -mindepth 1 -maxdepth 1 -type d
+
+set selected (find $targeted_directories $search_flags | fzf-tmux -p -- --prompt="Sessionizer: ")
+
+if test -z $selected
+  return 0
+end
+
+set selected_name (basename $selected | tr . _)
+set is_session (tmux list-sessions | grep $selected_name | wc --lines)
+set is_attached (tmux list-sessions | grep attached | wc --lines)
+
+if test $is_session -eq 0
+  tmux new-session -s $selected_name -c $selected &>>/dev/null
+end
+
+if test $is_attached -eq 0
+  tmux attach-session -t $selected_name &>>/dev/null
+else
+  tmux switch-client -t $selected_name &>>/dev/null
+end
