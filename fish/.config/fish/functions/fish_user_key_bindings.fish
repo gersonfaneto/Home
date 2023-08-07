@@ -10,6 +10,7 @@ function fish_user_key_bindings
 
   bind \ek tmux_kill
   bind \ea tmux_attach
+  bind \es tmux_sessionizer
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
