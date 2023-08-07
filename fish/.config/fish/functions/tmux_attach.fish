@@ -1,9 +1,4 @@
 function tmux_attach
-  tmux has-session 2> /dev/null
-  if test $status -eq 1
-    return
-  end
-
   tmux list-sessions | sed 's/:.*$//' | fzf --prompt='Attach: ' | read line
 
   if test $line
