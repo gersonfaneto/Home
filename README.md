@@ -44,12 +44,6 @@ After installing all the packages listed above follow the steps ahead.
 git clone https://github.com/gersonfaneto/YADR --depth 1
 ```
 
-- Update the `git` submodules (used for things like for [`tmux-tpm`](https://github.com/tmux-plugins/tpm)).
-
-```shell
-git submodule update --init
-```
-
 - Update the `bat` themes.
 
 ```shell
