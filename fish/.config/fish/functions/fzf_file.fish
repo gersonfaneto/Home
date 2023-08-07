@@ -1,5 +1,5 @@
 function fzf_file
-  set -l extra_flags --prompt='Search: ' --preview='bat --style=numbers --color=always --line-range :500 {}'
+  set -l extra_flags --prompt='Find: ' --preview='bat --style=numbers --color=always --line-range :500 {}'
 
   rg --files --hidden --glob '!.git/*' | fzf $extra_flags | read line
 
