@@ -1,10 +1,7 @@
 function tmux_kill
-  tmux has-session 2> /dev/null
-  if test $status -eq 1
-    return
-  end
+  set sessions (tmux list-sessions -F '#S' 2>/dev/null)
 
-  tmux list-sessions | sed 's/:.*$//' | fzf --prompt='Kill: ' | read line
+  echo $sessions | tr ' ' '\n' | fzf --prompt='Kill: ' | read line
 
   if test $line
     tmux kill-session -t $line

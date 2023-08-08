@@ -1,5 +1,7 @@
 function tmux_attach
-  tmux list-sessions | sed 's/:.*$//' | fzf --prompt='Attach: ' | read line
+  set sessions (tmux list-sessions -F '#S' 2>/dev/null)
+  
+  echo $sessions | tr ' ' '\n' | fzf --prompt='Attach: ' | read line
 
   if test $line
     if test "$TMUX" = ''

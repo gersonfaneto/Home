@@ -9,9 +9,3 @@ end
 if test -d "$HOME/.asdf"
   source $HOME/.asdf/asdf.fish
 end
-
-if status is-interactive && not set -q TMUX
-    if not tmux has-session -t Home 2>/dev/null
-      tmux new-session -s Home -d 2>/dev/null
-    end
-end
