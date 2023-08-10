@@ -31,6 +31,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    if vim.fn.expand("%:t") == "LICENSE" then
+      vim.bo.filetype = "license"
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     vim.cmd("highlight NormalFloat guibg=none guifg=none")
