@@ -106,6 +106,7 @@ map R reload
 map C clear
 map U unselect
 
+map ga cd ~/Alexandria
 map gG cd ~/Developer/GitHub
 map gD cd ~/Documents
 map gd cd ~/Downloads
