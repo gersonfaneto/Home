@@ -4,7 +4,7 @@ function tmux_sessionizer
   set -l found_directories (find $base_targets -mindepth 1 -maxdepth 1 -type d)
   set -a found_directories "$HOME/Notes"
 
-  set selected (echo $found_directories | tr ' ' '\n' | fzf --prompt="Sessionizer: ")
+  set selected (echo $found_directories | tr ' ' '\n' | fzf )
 
   set is_attached (tmux list-sessions 2>/dev/null | grep attached | wc --lines)
 

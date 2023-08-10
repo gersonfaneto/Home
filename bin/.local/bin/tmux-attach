@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 set -l sessions (tmux list-sessions -F '#{?session_attached,,#{session_name}}' | sed '/^$/d')
-set -l selected (echo $sessions | tr ' ' '\n' | fzf-tmux -p --  --prompt='Attach: ')
+set -l selected (echo $sessions | tr ' ' '\n' | fzf-tmux -p)
 
 if test -z $selected
   return 0
