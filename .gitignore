@@ -9,6 +9,7 @@ fish/.config/fish/completions
 tmux/.config/tmux/plugins/*
 tmux/.config/tmux/theme.conf
 
+neovim/.config/spell
 neovim/.config/nvim/.luarc.json
 neovim/.config/nvim/lazy-lock.json
 
