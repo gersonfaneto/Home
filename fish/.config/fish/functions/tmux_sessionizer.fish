@@ -1,5 +1,5 @@
 function tmux_sessionizer
-  set -l base_targets "$HOME/Developer" "$HOME/Developer/GitHub"
+  set -l base_targets "$HOME/Developer" "$HOME/Developer/Personal"
 
   set -l found_directories (find $base_targets -mindepth 1 -maxdepth 1 -type d)
   set -a found_directories "$HOME/Notes"
