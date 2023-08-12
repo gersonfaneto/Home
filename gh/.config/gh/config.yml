@@ -6,5 +6,6 @@ aliases:
     co: pr checkout
     clone: repo clone
     find: repo list
+    view: repo view --web
 http_unix_socket:
 browser:
