@@ -32,8 +32,8 @@ __   __         _         ___        ___
 Make sure to have the following dependencies installed before proceeding.
 
 ```markdown
-lf bat exa fd fish fzf git github-cli glow kitty neofetch neovim ripgrep
-starship stow tmux trash-cli zoxide
+bat bottom exa fd fish fzf git github-cli glow kitty lf neofetch neovim ripgrep starship
+stow tmux trash-cli vimv zoxide
 ```
 
 After installing all the packages listed above follow the steps ahead.
