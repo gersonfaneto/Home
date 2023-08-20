@@ -29,6 +29,14 @@ mappings.bulk_register({
     options = opts,
     description = "Open Mason.",
   },
+  -- Copilot.
+  {
+    mode = { "n" },
+    lhs = "<leader>ct",
+    rhs = ":Copilot toggle<CR>",
+    options = opts,
+    description = "Toggle Copilot.",
+  },
   -- LSP.
   {
     mode = { "n" },
