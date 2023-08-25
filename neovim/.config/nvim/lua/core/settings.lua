@@ -6,12 +6,12 @@ local M = {
   float_border = true,
   dim_inactive = true,
   show_cursor_line = true,
-  show_color_column = true,
+  show_color_column = false,
 
   -- Editor.
   auto_save = false,
   auto_restore_cursor_position = false,
-  auto_remove_new_lines_comment = true,
+  auto_remove_new_lines_comment = false,
 
   -- LSP.
   inlay_hints = false,
