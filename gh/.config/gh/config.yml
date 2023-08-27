@@ -7,5 +7,6 @@ aliases:
     clone: repo clone
     find: repo list
     view: repo view --web
+    edit: repo edit
 http_unix_socket:
 browser:
