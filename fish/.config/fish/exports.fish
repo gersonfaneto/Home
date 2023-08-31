@@ -10,6 +10,10 @@ if test -d "/usr/local/lib"
   export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 end
 
+if test -f "$HOME/Licenses/LR-133011_License.dat"
+  export LM_LICENSE_FILE="$HOME/Licenses/LR-133011_License.dat"
+end
+
 if type -q bat
   export MANROFFOPT='-c'
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
