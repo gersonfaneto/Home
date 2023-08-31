@@ -6,7 +6,8 @@ local M = {
   float_border = true,
   dim_inactive = true,
   show_cursor_line = true,
-  show_color_column = false,
+  color_column = "100",
+  show_color_column = true,
 
   -- Editor.
   auto_save = false,
