@@ -44,6 +44,8 @@
   st = status
   ss = status --short --branch
 
+  f = fetch --all
+
   a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
 
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
