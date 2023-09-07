@@ -9,3 +9,7 @@ end
 if test -d "$HOME/.asdf"
   source $HOME/.asdf/asdf.fish
 end
+
+if type -q opam
+  eval $(opam env)
+end
