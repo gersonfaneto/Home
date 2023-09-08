@@ -2,6 +2,10 @@ if test -d "$HOME/.local/bin/"
   export PATH="$PATH:$HOME/.local/bin/"
 end
 
+if test -d "$HOME/.local/scripts/"
+  export PATH="$PATH:$HOME/.local/scripts/"
+end
+
 if test -d "$HOME/.cargo/bin/"
   export PATH="$PATH:$HOME/.cargo/bin/"
 end
