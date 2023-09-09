@@ -1,15 +1,15 @@
 #!/usr/bin/env fish
 
+set script_name (basename (status -f))
+
+set avaliable_themes (command ls $HOME/.config/fish/themes/ | sed 's/.fish//g')
+
 function help_message --argument-names exit_code
   echo "Usage: $script_name [THEME]"
   echo "  Avaliable themes:"
-  cat "$HOME/.config/swww/wall.ctl" | cut -d '|' -f 2 | awk '{print "    - " $0}'
+  echo $avaliable_themes | tr ' ' '\n' | awk '{print "    * " $0}'
   exit $exit_code
 end
-
-set script_name (basename (status -f))
-
-set avaliable_themes (cat $HOME/.config/swww/wall.ctl | awk -F '|' '{print $2}')
 
 if contains -- "-h" $argv || contains -- "--help" $argv
   help_message 0
