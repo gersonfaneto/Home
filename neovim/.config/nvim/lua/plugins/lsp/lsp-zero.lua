@@ -30,15 +30,18 @@ return {
         "cssls",
         "emmet_ls",
         "eslint",
+        "fortls",
         "gopls",
         "html",
         "jdtls",
         "lua_ls",
+        "ocamllsp",
         "pyright",
         "rust_analyzer",
         "svelte",
         "tailwindcss",
         "tsserver",
+        "verible",
         "vuels",
       }
 
