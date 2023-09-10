@@ -35,7 +35,7 @@ mapppings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>e",
+    lhs = "<leader>ot",
     rhs = ":Ex<CR>",
     options = { noremap = true, silent = true },
     description = "File Explorer.",
