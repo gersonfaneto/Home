@@ -15,7 +15,7 @@ local M = {
   -- Editor.
   auto_save = false,
   auto_restore_cursor_position = false,
-  auto_remove_new_lines_comment = false,
+  auto_remove_new_lines_comment = true,
 
   -- LSP.
   inlay_hints = true,
