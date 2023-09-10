@@ -380,6 +380,13 @@ mapppings.bulk_register({
     options = { noremap = true, silent = true },
     description = "Copy without returning to start of selection.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>rp",
+    rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    options = { noremap = true },
+    description = "Replace current text inside the buffer.",
+  },
 })
 
 return M
