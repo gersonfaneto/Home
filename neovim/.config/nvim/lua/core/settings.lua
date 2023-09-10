@@ -1,16 +1,16 @@
 ---@diagnostic disable: undefined-global
 
 local M = {
-  -- Aesthetics.
+  -- UI.
   transparent = true,
   float_border = true,
   dim_inactive = true,
 
-  -- UI.
+  -- UX.
   show_bufferline = false,
   show_cursor_line = true,
+  show_color_column = false,
   color_column = "100",
-  show_color_column = true,
 
   -- Editor.
   auto_save = false,
@@ -18,8 +18,8 @@ local M = {
   auto_remove_new_lines_comment = false,
 
   -- LSP.
-  inlay_hints = false,
-  virtual_text = false,
+  inlay_hints = true,
+  virtual_text = true,
   format_on_save = false,
 }
 
