@@ -16,14 +16,14 @@ return {
     api.mappings.bulk_register({
       {
         mode = { "n" },
-        lhs = "<leader>a",
+        lhs = "<leader>hf",
         rhs = harpoon_mark.add_file,
         options = { noremap = true, silent = true },
         description = "Add current file to Harpoon.",
       },
       {
         mode = { "n" },
-        lhs = "<leader>e",
+        lhs = "<leader>hm",
         rhs = harpoon_ui.toggle_quick_menu,
         options = { noremap = true, silent = true },
         description = "Open Harpoon.",
