@@ -1,10 +1,13 @@
 ---@diagnostic disable: undefined-global
 
 local M = {
-  -- UI.
+  -- Aesthetics.
   transparent = true,
   float_border = true,
   dim_inactive = true,
+
+  -- UI.
+  show_bufferline = false,
   show_cursor_line = true,
   color_column = "100",
   show_color_column = true,
