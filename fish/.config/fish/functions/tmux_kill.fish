@@ -1,10 +1,12 @@
 function tmux_kill
-  set sessions (tmux list-sessions -F '#S' 2>/dev/null)
+  tmux list-sessions -F '#S' 2>/dev/null | fzf | tr '\n' ' ' | read --list line
 
-  echo $sessions | tr ' ' '\n' | fzf | read line
+  set count (count $line)
 
-  if test $line
-    tmux kill-session -t $line
+  if test $count -gt 0
+    for session in $line
+      tmux kill-session -t $session
+    end
   end
 
   commandline -f repaint
