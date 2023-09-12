@@ -10,6 +10,11 @@ if test -d "$HOME/.cargo/bin/"
   export PATH="$PATH:$HOME/.cargo/bin/"
 end
 
+if test -d "$HOME/.bun"
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$PATH:$BUN_INSTALL/bin"
+end
+
 if test -d "/usr/local/lib"
   export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 end
