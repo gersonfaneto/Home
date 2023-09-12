@@ -222,6 +222,7 @@ return {
       lspconfig.eslint.setup(require("plugins.lsp.extras.eslint"))
       lspconfig.gopls.setup(require("plugins.lsp.extras.gopls"))
       lspconfig.rust_analyzer.setup(require("plugins.lsp.extras.rust_analyzer"))
+      lspconfig.dartls.setup(require("plugins.lsp.extras.dartls"))
 
       lsp.skip_server_setup({
         "jdtls",
