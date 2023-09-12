@@ -223,6 +223,7 @@ return {
       lspconfig.gopls.setup(require("plugins.lsp.extras.gopls"))
       lspconfig.rust_analyzer.setup(require("plugins.lsp.extras.rust_analyzer"))
       lspconfig.dartls.setup(require("plugins.lsp.extras.dartls"))
+      lspconfig.ocamllsp.setup(require("plugins.lsp.extras.ocamllsp"))
 
       lsp.skip_server_setup({
         "jdtls",
