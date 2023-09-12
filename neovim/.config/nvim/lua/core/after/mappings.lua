@@ -40,10 +40,31 @@ mappings.bulk_register({
   -- LSP.
   {
     mode = { "n" },
-    lhs = "<leader>ls",
+    lhs = "<leader>li",
     rhs = ":LspInfo<CR>",
     options = opts,
-    description = "Open LSP Info.",
+    description = "Open the LSP Info.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ls",
+    rhs = ":LspStart<CR>",
+    options = opts,
+    description = "Start the LSP.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>lS",
+    rhs = ":LspStop<CR>",
+    options = opts,
+    description = "Stop the LSP.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>lr",
+    rhs = ":LspStop<CR>",
+    options = opts,
+    description = "Restart the LSP.",
   },
   -- Telescope.
   {
@@ -132,7 +153,7 @@ mappings.bulk_register({
   -- Refactoring.
   {
     mode = { "n", "v" },
-    lhs = "<leader>lr",
+    lhs = "<leader>rr",
     rhs = [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]],
     options = opts,
     description = "Refactor.",
