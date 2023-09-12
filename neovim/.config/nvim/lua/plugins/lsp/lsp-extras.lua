@@ -6,6 +6,13 @@ return {
     event = "BufReadPre",
   },
 
+  -- Dart.
+  {
+    "dart-lang/dart-vim-plugin",
+    ft = { "dart" },
+    event = "BufReadPre",
+  },
+
   -- Rust.
   {
     "simrat39/rust-tools.nvim",
