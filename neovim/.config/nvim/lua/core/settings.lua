@@ -7,7 +7,7 @@ local M = {
   dim_inactive = true,
 
   -- UX.
-  show_bufferline = false,
+  show_bufferline = true,
   show_cursor_line = true,
   show_color_column = false,
   color_column = "100",

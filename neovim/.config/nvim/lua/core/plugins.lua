@@ -1,8 +1,8 @@
 local settings = require("core.settings")
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
+if not vim.loop.fs_stat(lazy_path) then
   vim.notify("Downloading lazy.nvim ...", "INFO", { title = "Lazy" })
   vim.fn.system({
     "git",
@@ -10,11 +10,11 @@ if not vim.loop.fs_stat(lazypath) then
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath,
+    lazy_path,
   })
 end
 
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazy_path)
 
 local ok, lazy = pcall(require, "lazy")
 
@@ -23,7 +23,12 @@ if not ok then
   return
 end
 
-lazy.setup("plugins", {
+local include_directories = {
+  { import = "plugins" },
+  { import = "plugins.lsp" },
+}
+
+local lazy_options = {
   install = {
     missing = true,
     colorscheme = { "habamax" },
@@ -63,4 +68,6 @@ lazy.setup("plugins", {
       },
     },
   },
-})
+}
+
+lazy.setup(include_directories, lazy_options)
