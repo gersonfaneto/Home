@@ -1,14 +1,17 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false,
+    commit = "f2778bd1a28b74adf5b1aa51aa57da85adfa3d16",
     build = ":TSUpdate",
     event = { "BufNewFile", "BufReadPost" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "windwp/nvim-ts-autotag",
       "HiPhish/nvim-ts-rainbow2",
-      "nvim-treesitter/nvim-treesitter-textobjects",
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        commit = "35a60f093fa15a303874975f963428a5cd24e4a0",
+      },
     },
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
