@@ -7,8 +7,8 @@ return {
   },
   event = "VeryLazy",
   keys = {
-    { "<leader>ot", ":Neotree toggle<CR>", silent = true, desc = "File Explorer - Open" },
-    { "<leader>ft", ":Neotree focus<CR>", silent = true, desc = "File Explorer - Focus" },
+    { "<leader>nt", ":Neotree toggle<CR>", silent = true, desc = "File Explorer - Open" },
+    { "<leader>nf", ":Neotree focus<CR>", silent = true, desc = "File Explorer - Focus" },
   },
   config = function()
     require("neo-tree").setup({
