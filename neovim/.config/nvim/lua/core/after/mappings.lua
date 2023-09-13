@@ -62,7 +62,7 @@ mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>lr",
-    rhs = ":LspStop<CR>",
+    rhs = ":LspRestart<CR>",
     options = opts,
     description = "Restart the LSP.",
   },
