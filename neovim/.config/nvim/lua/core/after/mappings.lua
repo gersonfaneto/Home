@@ -47,6 +47,13 @@ mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<leader>ll",
+    rhs = ":LspLog<CR>",
+    options = opts,
+    description = "Open the LSP Log.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>ls",
     rhs = ":LspStart<CR>",
     options = opts,
