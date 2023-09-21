@@ -1,9 +1,9 @@
-if type -q exa
-  alias ls "exa --icons --color=always --group-directories-first"
-  alias la "exa --all --icons --color=always --group-directories-first"
-  alias ll "exa --icons --color=always --long --header --group-directories-first"
-  alias lla "exa --all --long --icons --color=always --header --group-directories-first"
-  alias tree "exa --all --tree --icons --color=always --group-directories-first"
+if type -q eza
+  alias ls "eza --icons --color=always --group-directories-first"
+  alias la "eza --all --icons --color=always --group-directories-first"
+  alias ll "eza --icons --color=always --long --header --group-directories-first"
+  alias lla "eza --all --long --icons --color=always --header --group-directories-first"
+  alias tree "eza --all --tree --icons --color=always --group-directories-first"
 end
 
 if type -q tmux
