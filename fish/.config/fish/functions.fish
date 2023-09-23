@@ -2,6 +2,16 @@ function bak --argument filename
   cp -r $filename $filename.bak
 end
 
+function tn --argument session_name
+  if type -q tmux
+    if test $session_name
+      tmux new-session -s $session_name -d
+    else
+      tmux new-session -s (basename (pwd)) -d
+    end
+  end
+end
+
 function hop
   mkdir -p $argv 2>/dev/null
 
