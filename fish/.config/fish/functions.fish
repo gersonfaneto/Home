@@ -1,5 +1,18 @@
-function bak --argument filename
-  cp -r $filename $filename.bak
+function bak --argument path
+  set path (basename $path 2>/dev/null)
+
+  if not test $path
+    echo "No path provided!"
+    return
+  end
+
+  if test -f "$path".bak || test -d "$path".bak
+    echo "Backup already exists!"
+  else if test $path && test -f $path || test -d $path
+    cp -r $path $path.bak
+  else
+    echo "File or directory does not exist!"
+  end
 end
 
 function tn --argument session_name
@@ -12,11 +25,11 @@ function tn --argument session_name
   end
 end
 
-function hop --argument new_directory
-  mkdir -p $new_directory 2>/dev/null
+function hop --argument path
+  mkdir -p $path 2>/dev/null
 
-  if test $new_directory
-    cd $new_directory
+  if test $path
+    cd $path
   else
     echo "Failed to create directory!"
   end
