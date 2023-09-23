@@ -4,6 +4,7 @@ end
 
 function hop
   mkdir -p $argv 2>/dev/null
+
   if test $status = 0
     switch $argv[(count $argv)]
       case '-*'
@@ -19,22 +20,31 @@ end
 function todo
   command ls | grep TODO.md | read line
 
-  if test $line && type -q glow
-    if type -q glow
-      glow $line
-    else if type -q bat
-      bat $line
-    else
-      cat $line
-    end
+  if test $line
+    set todo $line
   else if test -f ~/Notes/TODO.md
-    if type -q glow
-      glow ~/Notes/TODO.md
-    else if type -q bat
-      bat ~/Notes/TODO.md
-    else
-      cat ~/Notes/TODO.md
-    end
+    set todo ~/Notes/TODO.md
+  else
+    echo "No TODO.md file found!"
+    return
+  end
+
+  if type -q glow
+    glow $todo
+  else if type -q bat
+    bat $todo
+  else
+    cat $todo
+  end
+end
+
+function etodo
+  command ls | grep TODO.md | read line
+
+  if test $line
+    $EDITOR $line
+  else if test -f ~/Notes/TODO.md
+    $EDITOR ~/Notes/TODO.md
   else
     echo "No TODO.md file found!"
   end
