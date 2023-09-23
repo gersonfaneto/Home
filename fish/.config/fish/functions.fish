@@ -12,18 +12,13 @@ function tn --argument session_name
   end
 end
 
-function hop
-  mkdir -p $argv 2>/dev/null
+function hop --argument new_directory
+  mkdir -p $new_directory 2>/dev/null
 
-  if test $status = 0
-    switch $argv[(count $argv)]
-      case '-*'
-      case '*'
-        cd $argv[(count $argv)]
-        return
-    end
+  if test $new_directory
+    cd $new_directory
   else
-    cd $argv
+    echo "Failed to create directory!"
   end
 end
 
