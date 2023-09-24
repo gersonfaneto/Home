@@ -24,13 +24,16 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 # List of needed packages to be installed.
 packages=(
 	bat
+	bottom
 	eza
 	fd
 	fish
 	fzf
+	git
 	github-cli
 	glow
 	kitty
+	lf
 	neofetch
 	neovim
 	ripgrep
@@ -40,9 +43,8 @@ packages=(
 	trash-cli
 	vimv
 	zoxide
-	bottom
-	git
-	lf
+  difft
+  xh
 )
 
 # Show a progress bar to the user.
