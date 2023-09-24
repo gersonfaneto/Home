@@ -61,6 +61,7 @@
   wa = worktree add
   wr = worktree remove
 
+  sb = "!git br --all | sed 's/^*//g' | awk '{print $1}' | rg -v remotes | fzf | xargs git checkout"
   cm = "!git checkout main"
   cd = "!git go dev"
   cb = "!git go build"
