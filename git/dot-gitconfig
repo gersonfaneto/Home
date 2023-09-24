@@ -28,6 +28,9 @@
   ignorecase = false
   excludesfile = ~/.gitignore
 
+[diff]
+  external = difft
+
 [color]
   status = auto
   diff = auto
