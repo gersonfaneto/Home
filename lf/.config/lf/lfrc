@@ -26,6 +26,10 @@ cmd mkfile %{{
   touch $ans
 }}
 
+cmd bulk_rename ${{
+  printf "$fx" | tr '\n' '\0' | xargs -0 vimv
+}}
+
 cmd chmod %{{
   printf "Mode Bits: "
   read ans
@@ -99,7 +103,7 @@ map mf mkfile
 map md mkdir
 map ch chmod
 map r rename
-map br $vimv $fx
+map br bulk_rename
 map H top
 map L bottom
 map R reload
