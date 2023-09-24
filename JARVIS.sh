@@ -25,6 +25,7 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 packages=(
 	bat
 	bottom
+  difft
 	eza
 	fd
 	fish
@@ -32,6 +33,7 @@ packages=(
 	git
 	github-cli
 	glow
+  jq
 	kitty
 	lf
 	neofetch
@@ -42,9 +44,8 @@ packages=(
 	tmux
 	trash-cli
 	vimv
-	zoxide
-  difft
   xh
+	zoxide
 )
 
 # Show a progress bar to the user.
