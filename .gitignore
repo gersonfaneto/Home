@@ -2,9 +2,9 @@ INSTALL.log
 
 kitty/.config/kitty/theme.conf
 
-fish/.config/fish/fish_variables
-fish/.config/fish/themes/theme.fish
+fish/.config/fish/theme.fish
 fish/.config/fish/completions
+fish/.config/fish/fish_variables
 
 tmux/.config/tmux/plugins/*
 tmux/.config/tmux/theme.conf
