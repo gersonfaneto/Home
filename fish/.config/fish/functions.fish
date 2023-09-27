@@ -35,6 +35,18 @@ function hop --argument path
   end
 end
 
+function ix --argument file
+  if not test $file
+    echo "No file provided!"
+    return
+  else if not test -f $file
+    echo "File does not exist!"
+    return
+  else
+    curl -F "f:1=@$file" ix.io
+  end
+end
+
 function todo
   command ls | grep TODO.md | read line
 
