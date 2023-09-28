@@ -1,5 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  tag = "v2.20.8",
   event = { "BufReadPost", "BufNewFile" },
   enabled = true,
   config = function()
@@ -12,7 +13,7 @@ return {
     }
     vim.cmd("highlight IndentBlanklineIndent guifg=" .. colors.fg .. " gui=nocombine")
 
-    require("ibl").setup({
+    require("indent_blankline").setup({
       show_trailing_blankline_indent = false,
       show_current_context_start = false,
       show_current_context = true,
