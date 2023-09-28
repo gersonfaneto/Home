@@ -33,6 +33,10 @@ if type -q trash
   alias rm trash
 end
 
+if type -q bat
+  alias cat bat
+end
+
 if type -q kitty
   alias icat "kitty +kitten icat"
 end
