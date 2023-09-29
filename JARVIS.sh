@@ -36,15 +36,20 @@ packages=(
   jq
 	kitty
 	lf
+  mediainfo
 	neofetch
 	neovim
+  pdftotext
 	ripgrep
 	starship
 	stow
+  tar
 	tmux
 	trash-cli
+  unzip
 	vimv
   xh
+  zip
 	zoxide
 )
 
