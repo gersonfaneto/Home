@@ -111,7 +111,6 @@ map C clear
 map U unselect
 
 map ga cd ~/Alexandria
-map gP cd ~/Developer/Personal
 map gD cd ~/Documents
 map gd cd ~/Downloads
 map gn cd ~/Notes
