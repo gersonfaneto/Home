@@ -25,12 +25,9 @@ return {
       local ensure_installed = {
         "bashls",
         "clangd",
-        "cmake",
-        "csharp_ls",
         "cssls",
         "emmet_ls",
         "eslint",
-        "fortls",
         "gopls",
         "html",
         "jdtls",
@@ -38,11 +35,6 @@ return {
         "ocamllsp",
         "pyright",
         "rust_analyzer",
-        "svelte",
-        "tailwindcss",
-        "tsserver",
-        "verible",
-        "vuels",
       }
 
       lsp.on_attach(function(_, bufnr)
@@ -172,12 +164,6 @@ return {
               "sh",
               "bash",
               "python",
-              "javascript",
-              "javascriptreact",
-              "typescript",
-              "typescriptreact",
-              "vue",
-              "svelte",
             },
           },
         })
