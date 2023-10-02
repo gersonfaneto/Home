@@ -132,6 +132,7 @@ return {
       })
       telescope.load_extension("fzf")
       telescope.load_extension("zoxide")
+      telescope.load_extension("flutter")
       telescope.load_extension("refactoring")
       telescope.load_extension("git_worktree")
     end,
