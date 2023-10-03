@@ -168,6 +168,7 @@ return {
           servers = {
             ["gopls"] = { "go" },
             ["rust_analyzer"] = { "rust" },
+            ["lua_ls"] = { "lua" },
           },
         })
       end
