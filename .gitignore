@@ -12,6 +12,7 @@ tmux/.config/tmux/theme.conf
 neovim/.config/spell
 neovim/.config/nvim/.luarc.json
 neovim/.config/nvim/lazy-lock.json
+neovim/.config/nvim/lua/custom/*
 
 vim/.vim/.netrwhist
 
