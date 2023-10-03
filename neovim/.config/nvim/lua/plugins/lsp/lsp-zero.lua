@@ -11,6 +11,7 @@ return {
         end,
         dependencies = {
           "williamboman/mason-lspconfig.nvim",
+          "WhoIsSethDaniel/mason-tool-installer.nvim"
         },
       },
       "onsails/lspkind.nvim",
@@ -23,18 +24,33 @@ return {
       local icons = require("utils.interface").icons
 
       local ensure_installed = {
-        "bashls",
-        "clangd",
-        "cssls",
-        "emmet_ls",
-        "eslint",
-        "gopls",
-        "html",
-        "jdtls",
-        "lua_ls",
-        "ocamllsp",
-        "pyright",
-        "rust_analyzer",
+        lsp = {
+          "bashls",
+          "clangd",
+          "cssls",
+          "emmet_ls",
+          "eslint",
+          "gopls",
+          "html",
+          "jdtls",
+          "lua_ls",
+          "ocamllsp",
+          "pyright",
+          "rust_analyzer",
+        },
+        linters = {
+          "pylint",
+          "eslint_d",
+          "shellcheck",
+        },
+        formatters = {
+          "shfmt",
+          "black",
+          "stylua",
+          "prettier",
+          "ocamlformat",
+          "clang-format",
+        }
       }
 
       lsp.on_attach(function(_, bufnr)
@@ -152,19 +168,6 @@ return {
           servers = {
             ["gopls"] = { "go" },
             ["rust_analyzer"] = { "rust" },
-            ["null-ls"] = {
-              "lua",
-              "c",
-              "cpp",
-              "css",
-              "html",
-              "json",
-              "yaml",
-              "markdown",
-              "sh",
-              "bash",
-              "python",
-            },
           },
         })
       end
@@ -198,9 +201,17 @@ return {
       local lspconfig = require("lspconfig")
 
       local mason_lspconfig = require("mason-lspconfig")
+      local mason_tool_installer = require("mason-tool-installer")
 
       mason_lspconfig.setup({
-        ensure_installed = ensure_installed,
+        ensure_installed = ensure_installed.lsp,
+      })
+
+      mason_tool_installer.setup({
+        ensure_installed = vim.tbl_flatten({
+          ensure_installed.linters,
+          ensure_installed.formatters,
+        }),
       })
 
       lspconfig.clangd.setup(require("plugins.lsp.extras.clangd"))
