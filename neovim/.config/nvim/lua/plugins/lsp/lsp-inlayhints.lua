@@ -1,9 +1,9 @@
-local settings = require("core.settings")
+local settings = require("utils.api").settings
 
 return {
   {
     "lvimuser/lsp-inlayhints.nvim",
-    enabled = settings.inlay_hints,
+    enabled = settings.get_settings("inlay_hints"),
     config = function()
       local lsp_inlayhints = require("lsp-inlayhints")
 

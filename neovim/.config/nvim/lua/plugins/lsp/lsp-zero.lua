@@ -20,7 +20,7 @@ return {
     config = function()
       local lsp = require("lsp-zero").preset("lsp-only")
 
-      local settings = require("core.settings")
+      local settings = require("utils.api").settings
       local icons = require("utils.interface").icons
 
       local ensure_installed = {
@@ -29,7 +29,6 @@ return {
           "clangd",
           "cssls",
           "emmet_ls",
-          "eslint",
           "gopls",
           "html",
           "jdtls",
@@ -39,17 +38,18 @@ return {
           "rust_analyzer",
         },
         linters = {
-          "pylint",
           "eslint_d",
+          "pylint",
           "shellcheck",
         },
         formatters = {
-          "shfmt",
           "black",
-          "stylua",
-          "prettier",
-          "ocamlformat",
           "clang-format",
+          "isort",
+          "ocamlformat",
+          "prettier",
+          "shfmt",
+          "stylua",
         }
       }
 
@@ -159,7 +159,7 @@ return {
         })
       end)
 
-      if settings.format_on_save then
+      if settings.get_settings("format_on_save") then
         lsp.format_on_save({
           format_opts = {
             async = false,
@@ -185,7 +185,7 @@ return {
 
       vim.diagnostic.config({
         underline = true,
-        virtual_text = settings.virtual_text,
+        virtual_text = settings.get_settings("format_on_save"),
         signs = true,
         update_in_insert = false,
         severity_sort = true,

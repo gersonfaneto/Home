@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global
 
-local settings = require("core.settings")
+local settings = require("utils.api").settings
 
 local M = {}
 
@@ -27,7 +27,7 @@ M.opt = {
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
-  colorcolumn = settings.show_color_column and settings.color_column or "",
+  colorcolumn = settings.get_settings("show_color_column") and settings.get_settings("color_column") or "",
 
   expandtab = true,
   shiftwidth = 2,

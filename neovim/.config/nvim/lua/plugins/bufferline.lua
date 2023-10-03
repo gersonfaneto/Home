@@ -1,9 +1,9 @@
 local colors = require("utils.interface").colors.get_colors()
-local settings = require("core.settings")
+local settings = require("utils.api").settings
 
 return {
   "akinsho/bufferline.nvim",
-  enabled = settings.show_bufferline,
+  enabled = settings.get_settings("show_bufferline"),
   event = "VeryLazy",
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
