@@ -150,6 +150,10 @@ return {
     for _, server in pairs(servers.lsp) do
       local has_extras, extras = pcall(require, "plugins.lsp.extras." .. server)
 
+      if server == "jdtls" then
+        goto continue
+      end
+
       if has_extras then
         lspconfig[server].setup(vim.tbl_deep_extend("force", {
           capabilities = capabilities,
@@ -161,6 +165,8 @@ return {
           on_attach = on_attach,
         })
       end
+
+      ::continue::
     end
   end,
 }
