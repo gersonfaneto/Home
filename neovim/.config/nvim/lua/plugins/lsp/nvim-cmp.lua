@@ -1,9 +1,5 @@
 return {
   "hrsh7th/nvim-cmp",
-  lazy = false,
-  after = {
-    "lsp-zero.nvim",
-  },
   event = {
     "InsertEnter",
     "BufRead",
@@ -13,6 +9,7 @@ return {
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
+    "onsails/lspkind.nvim",
     {
       "L3MON4D3/LuaSnip",
       dependencies = {
@@ -130,7 +127,6 @@ return {
         { name = "path" },
         { name = "buffer" },
         { name = "emoji" },
-        { name = "crates" },
         { name = "nvim_lua" },
       },
       mapping = cmp_mapping.preset.insert({
