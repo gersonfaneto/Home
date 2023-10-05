@@ -36,18 +36,27 @@ return {
       })
     end
 
-    api.mappings.register({
-      mode = { "n", "v" },
-      lhs = "<leader>lf",
-      rhs = function()
-        conform.format({
-          lsp_fallback = true,
-          async = false,
-          timeout_ms = 1000,
-        })
-      end,
-      options = { noremap = true, silent = true },
-      description = "Format current buffer.",
+    api.mappings.bulk_register({
+      {
+        mode = { "n" },
+        lhs = "<leader>ci",
+        rhs = ":ConformInfo<CR>",
+        options = { noremap = true, silent = true },
+        description = "Open Conform.",
+      },
+      {
+        mode = { "n", "v" },
+        lhs = "<leader>lf",
+        rhs = function()
+          conform.format({
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 1000,
+          })
+        end,
+        options = { noremap = true, silent = true },
+        description = "Format current buffer.",
+      },
     })
   end,
 }
