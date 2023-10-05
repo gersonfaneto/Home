@@ -12,6 +12,7 @@ M.lsp = {
   "ocamllsp",
   "pyright",
   "rust_analyzer",
+  "tsserver",
 }
 
 M.linters = {
