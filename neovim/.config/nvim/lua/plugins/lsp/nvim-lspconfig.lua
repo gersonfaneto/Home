@@ -34,15 +34,6 @@ return {
         },
         {
           mode = { "n" },
-          lhs = "<leader>lf",
-          rhs = function()
-            vim.lsp.buf.format({ async = true })
-          end,
-          options = opts,
-          description = "Format current buffer.",
-        },
-        {
-          mode = { "n" },
           lhs = "K",
           rhs = vim.lsp.buf.hover,
           options = opts,
