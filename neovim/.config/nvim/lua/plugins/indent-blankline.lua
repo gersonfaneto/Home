@@ -4,7 +4,9 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   enabled = true,
   config = function()
-    local colors = require("utils.interface").colors.get_colors()
+    local interface = require("utils.interface")
+
+    local colors = interface.colors.get_colors()
 
     vim.g.indent_blankline_filetype_exclude = {
       "help",

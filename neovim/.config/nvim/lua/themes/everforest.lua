@@ -1,4 +1,4 @@
-local settings = require("utils.api").settings
+local api = require("utils.api")
 
 local M = {}
 
@@ -6,9 +6,9 @@ local colors = require("utils.interface").colors.get_colors()
 
 vim.g.everforest_background = "hard"
 
-vim.g.everforest_transparent_background = 2 and settings.get_settings("transparent") or 0
+vim.g.everforest_transparent_background = 2 and api.settings.get_settings("transparent") or 0
 
-vim.g.everforest_dim_inactive_windows = 1 and settings.get_settings("dim_inactive") or 0
+vim.g.everforest_dim_inactive_windows = 1 and api.settings.get_settings("dim_inactive") or 0
 
 vim.g.everforest_enable_bold = 1
 vim.g.everforest_enable_italic = 1

@@ -1,4 +1,4 @@
-local settings = require("utils.api").settings
+local api = require("utils.api")
 
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -34,7 +34,7 @@ local lazy_options = {
     colorscheme = { "habamax" },
   },
   ui = {
-    border = settings.get_settings("float_border") and "double" or "none",
+    border = api.settings.get_settings("float_border") and "double" or "none",
   },
   checker = {
     enabled = true,

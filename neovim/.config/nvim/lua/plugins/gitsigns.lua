@@ -2,36 +2,37 @@ return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local icons = require("utils.interface").icons
+    local interface = require("utils.interface")
+
     require("gitsigns").setup({
       signs = {
         add = {
           hl = "GitSignsAdd",
-          text = icons.ui.BoldLineLeft,
+          text = interface.icons.ui.BoldLineLeft,
           numhl = "GitSignsAddNr",
           linehl = "GitSignsAddLn",
         },
         change = {
           hl = "GitSignsChange",
-          text = icons.ui.BoldLineLeft,
+          text = interface.icons.ui.BoldLineLeft,
           numhl = "GitSignsChangeNr",
           linehl = "GitSignsChangeLn",
         },
         delete = {
           hl = "GitSignsDelete",
-          text = icons.ui.Triangle,
+          text = interface.icons.ui.Triangle,
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },
         topdelete = {
           hl = "GitSignsDelete",
-          text = icons.ui.Triangle,
+          text = interface.icons.ui.Triangle,
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },
         changedelete = {
           hl = "GitSignsChange",
-          text = icons.ui.BoldLineLeft,
+          text = interface.icons.ui.BoldLineLeft,
           numhl = "GitSignsChangeNr",
           linehl = "GitSignsChangeLn",
         },

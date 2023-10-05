@@ -1,8 +1,8 @@
-local mappings = require("utils.api").mappings
+local api = require("utils.api")
 
 local M = {}
 
-mappings.bulk_register({
+api.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>fl",

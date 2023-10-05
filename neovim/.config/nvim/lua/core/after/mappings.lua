@@ -1,10 +1,10 @@
-local mappings = require("utils.api").mappings
+local api = require("utils.api")
 
 local opts = { noremap = true, silent = true }
 
 local M = {}
 
-mappings.bulk_register({
+api.mappings.bulk_register({
   -- Alpha.
   {
     mode = { "n" },

@@ -16,8 +16,8 @@ return {
     },
   },
   config = function()
-    local utils = require("utils.api")
-    local icons = require("utils.interface").icons
+    local api = require("utils.api")
+    local interface = require("utils.interface")
 
     local cmp = require("cmp")
     local cmp_types = require("cmp.types.cmp")
@@ -34,17 +34,17 @@ return {
         format = function(entry, vim_item)
           local max_width = 0
           if max_width ~= 0 and #vim_item.abbr > max_width then
-            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
+            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. interface.icons.ui.Ellipsis
           end
           vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
           if entry.source.name == "copilot" then
-            vim_item.kind = icons.git.Octoface
+            vim_item.kind = interface.icons.git.Octoface
             vim_item.kind_hl_group = "CmpItemKindCopilot"
           end
 
           if entry.source.name == "emoji" then
-            vim_item.kind = icons.misc.Smiley
+            vim_item.kind = interface.icons.misc.Smiley
             vim_item.kind_hl_group = "CmpItemKindEmoji"
           end
           vim_item.menu = ({
@@ -152,9 +152,9 @@ return {
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
-          elseif utils.jumpable(1) then
+          elseif api.utils.jumpable(1) then
             luasnip.jump(1)
-          elseif utils.has_words_before() then
+          elseif api.utils.has_words_before() then
             -- cmp.complete()
             fallback()
           else

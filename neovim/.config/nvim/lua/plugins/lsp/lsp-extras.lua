@@ -1,5 +1,3 @@
-local settings = require("utils.api").settings
-
 return {
   -- Inlay Hints.
   {
@@ -9,6 +7,8 @@ return {
       "BufNewFile",
     },
     config = function()
+      local api = require("utils.api")
+
       local lsp_inlayhints = require("lsp-inlayhints")
 
       lsp_inlayhints.setup()
@@ -18,7 +18,7 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = "LspAttachInlayHints",
         callback = function(args)
-          if not settings.get_settings("inlay_hints") then
+          if not api.settings.get_settings("inlay_hints") then
             return
           end
           if not (args.data and args.data.client_id) then

@@ -8,14 +8,11 @@ return {
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    local servers = require("utils.api").servers
-    local settings = require("utils.api").settings
-    local icons = require("utils.interface").icons
+    local api = require("utils.api")
+    local interface = require("utils.interface")
 
     local on_attach = function(_, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
-
-      local api = require("utils.api")
 
       api.mappings.bulk_register({
         {
@@ -112,10 +109,10 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     local signs = {
-      Error = icons.diagnostics.BoldError,
-      Warn = icons.diagnostics.BoldWarning,
-      Hint = icons.diagnostics.BoldHint,
-      Info = icons.diagnostics.BoldInformation,
+      Error = interface.icons.diagnostics.BoldError,
+      Warn = interface.icons.diagnostics.BoldWarning,
+      Hint = interface.icons.diagnostics.BoldHint,
+      Info = interface.icons.diagnostics.BoldInformation,
     }
 
     for type, icon in pairs(signs) do
@@ -125,7 +122,7 @@ return {
 
     vim.diagnostic.config({
       underline = true,
-      virtual_text = settings.get_settings("format_on_save"),
+      virtual_text = api.settings.get_settings("format_on_save"),
       signs = true,
       update_in_insert = false,
       severity_sort = true,
@@ -138,7 +135,7 @@ return {
       },
     })
 
-    for _, server in pairs(servers.lsp) do
+    for _, server in pairs(api.servers.lsp) do
       local has_extras, extras = pcall(require, "plugins.lsp.extras." .. server)
 
       if server == "jdtls" then

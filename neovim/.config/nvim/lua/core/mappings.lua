@@ -1,11 +1,10 @@
 ---@diagnostic disable: undefined-global, undefined-field
 
-local mapppings = require("utils.api").mappings
-local settings = require("utils.api").settings
+local api = require("utils.api")
 
 local M = {}
 
-mapppings.bulk_register({
+api.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ec",
@@ -20,7 +19,7 @@ mapppings.bulk_register({
       if vim.opt.colorcolumn:get()[1] ~= nil then
         vim.opt.colorcolumn = nil
       else
-        vim.opt.colorcolumn = settings.get_settings("color_column")
+        vim.opt.colorcolumn = api.settings.get_settings("color_column")
       end
     end,
     options = { noremap = true, silent = true },
