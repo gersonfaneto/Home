@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     commit = "f2778bd1a28b74adf5b1aa51aa57da85adfa3d16",
     build = ":TSUpdate",
-    event = { "BufNewFile", "BufReadPost" },
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "windwp/nvim-ts-autotag",

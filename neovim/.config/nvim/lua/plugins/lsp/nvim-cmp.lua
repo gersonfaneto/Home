@@ -1,9 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
-  event = {
-    "InsertEnter",
-    "BufRead",
-  },
+  event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-emoji",
