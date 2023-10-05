@@ -24,12 +24,16 @@ return {
         typescript = { "prettier" },
         yaml = { "prettier" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
-      },
     })
+
+    if api.settings.get_settings("format_on_save") then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*",
+        callback = function(args)
+          conform.format({ bufnr = args.buf })
+        end,
+      })
+    end
 
     api.mappings.register({
       mode = { "n", "v" },
