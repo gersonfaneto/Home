@@ -9,20 +9,21 @@ return {
 
     conform.setup({
       formatters_by_ft = {
+        sh = { "shfmt" },
+        lua = { "stylua" },
         c = { "clang_format" },
         cpp = { "clang_format" },
-        css = { "prettier" },
-        html = { "prettier" },
         java = { "clang_format" },
-        javascript = { "prettier" },
-        json = { "prettier" },
-        lua = { "stylua" },
-        markdown = { "prettier" },
         ocaml = { "ocamlformat" },
         python = { "isort", "black" },
-        sh = { "shfmt" },
+        css = { "prettier" },
+        html = { "prettier" },
+        javascript = { "prettier" },
         typescript = { "prettier" },
+        toml = { "prettier" },
         yaml = { "prettier" },
+        json = { "prettier" },
+        markdown = { "prettier" },
       },
     })
 
