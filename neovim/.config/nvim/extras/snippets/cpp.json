@@ -1,4 +1,64 @@
 {
+  "C++": {
+    "prefix": "cpp",
+    "body": [
+      "#include <iostream>",
+      "#include <stdlib.h>",
+      "\n",
+      "int main(int argc, const char** argv) {",
+      "\t$1",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Basic structure of a `C++` program."
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": [
+      "#include \"$1\""
+    ],
+    "description": "Simple `#include` for local header file."
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": [
+      "#include <$1>"
+    ],
+    "description": "Simple `#include` for system wide header file."
+  },
+  "#def": {
+    "prefix": "def",
+    "body": ["#define $1 $2 "],
+    "description": "Code snippet for #define \" \""
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": [
+      "#ifdef ${DEBUG}",
+      "$1",
+      "#endif // ${DEBUG}"
+    ],
+    "description": "Simple `#ifdef` guard."
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": [
+      "#ifndef ${1:1}",
+      "$2",
+      "#endif // !$1"
+    ],
+    "description": "Simple `#ifndef` guard."
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": [
+      "#ifdef ${1:0}",
+      "$2",
+      "#endif // $1"
+    ],
+    "description": "Simple `#if` pre-processor."
+  },
   "for": {
     "prefix": "for",
     "body": [
@@ -6,7 +66,7 @@
       "\t$3",
       "}"
     ],
-    "description": "Code snippet for a 'for' loop"
+    "description": "Basic `for` loop."
   },
   "forr": {
     "prefix": "forr",
@@ -15,47 +75,86 @@
       "\t$3",
       "}"
     ],
-    "description": "Code snippet for reverse 'for' loop"
-  },
-  "do": {
-    "prefix": "do",
-    "body": ["do {", "\t$1", "} while($2);"],
-    "description": "Code snippet for do...while loop"
+    "description": "Basic reversed `for` loop."
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1) {", "\t$2", "}"],
-    "description": ""
+    "body": [
+      "while ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Basic `while` loop."
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$1",
+      "} while($2);"
+    ],
+    "description": "Basic `do-while` loop."
   },
   "foreach": {
     "prefix": "foreach",
-    "body": ["for(auto ${var} : ${collection_to_loop}) {", "\t$1", "}"],
-    "description": "Code snippet for range-based for loop (c++11) statement"
+    "body": [
+      "for(auto ${var} : ${collection_to_loop}) {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Basic `for-each` ranged block."
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) {", "\t$2", "}"],
-    "description": "Code snippet for if statement"
+    "body": [
+      "if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Basic `if` statement."
+  },
+  "else-if": {
+    "prefix": "elseif",
+    "body": [
+      "else if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Basic `else-if` statement."
   },
   "else": {
     "prefix": "else",
-    "body": ["else {", "\t$1", "}"],
-    "description": "Code snippet for else statement"
+    "body": [
+      "else {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Basic `else` statement."
   },
-  "else if": {
-    "prefix": "else if",
-    "body": ["else if ($1) {", "\t$2", "}"],
-    "description": "Code snippet for else-if statement"
+  "namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${MyNamespace} {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Definition of a `namespace`."
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${MyEnum} {", "\t$1", "};"],
-    "description": "Code snippet for enum"
+    "body": [
+      "enum ${MyEnum} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Declaration of an `enum`."
   },
   "enum class": {
     "prefix": "enum class",
-    "body": ["enum class ${MyClass} { };"],
-    "description": "Code snippet for enum class (c++11)"
+    "body": [
+      "enum class ${MyClass} {};"
+    ],
+    "description": "Declaration of an `enum-class`."
   },
   "class": {
     "prefix": "class",
@@ -79,7 +178,7 @@
       "${MyClass}::~${MyClass}() {",
       "}"
     ],
-    "description": "Code snippet for class"
+    "description": "Basic skeleton of a `class`."
   },
   "classi": {
     "prefix": "classi",
@@ -97,41 +196,7 @@
       "\t$1",
       "};"
     ],
-    "description": "Code snippet for class with inline constructor/destructor"
-  },
-  "interface": {
-    "prefix": "interface",
-    "body": ["__interface I${Interface} {", "\t$1", "};"],
-    "description": "Code snippet for interface (Visual C++)"
-  },
-  "namespace": {
-    "prefix": "namespace",
-    "body": ["namespace ${MyNamespace} {", "\t$1", "}"]
-  },
-  "#ifdef": {
-    "prefix": "#ifdef",
-    "body": ["#ifdef ${DEBUG}", "$1", "#endif // ${DEBUG}"],
-    "description": "Code snippet for #ifdef"
-  },
-  "#ifndef": {
-    "prefix": "#ifndef",
-    "body": ["#ifndef ${1:1}", "$2", "#endif // !$1"],
-    "description": "Code snippet for #ifndef"
-  },
-  "#if": {
-    "prefix": "#if",
-    "body": ["#ifdef ${1:0}", "$2", "#endif // $1"],
-    "description": "Code snippet for #if"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": ["struct ${MyStruct} {", "\t$1", "};"],
-    "description": "Code snippet for struct"
-  },
-  "switch": {
-    "prefix": "switch",
-    "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
-    "description": "Code snippet for switch statement"
+    "description": "Basic skeleton of a `class`, with inline constructor/destructor."
   },
   "try": {
     "prefix": "try",
@@ -145,56 +210,32 @@
     ],
     "description": "Code snippet for try catch"
   },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${MyStruct} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Simple `struct` declaration."
+  },
   "union": {
     "prefix": "union",
-    "body": ["union ${MyUnion} {", "\t$1", "};"],
-    "description": "Code snippet for union"
-  },
-  "cout": {
-    "prefix": "cout",
-    "body": ["std::cout << \"${1:/* message */}\" << std::endl;"],
-    "description": "Code snippet for printing to std::cout, provided the header is set"
-  },
-  "#inc": {
-    "prefix": "#inc",
-    "body": ["#include \"$1\""],
-    "description": "Code snippet for #include \" \""
-  },
-  "#inc<": {
-    "prefix": "#inc<",
-    "body": ["#include <$1>"],
-    "description": "Code snippet for #include \" \""
-  },
-  "#def": {
-    "prefix": "def",
-    "body": ["#define $1 $2 "],
-    "description": "Code snippet for #define \" \""
-  },
-  "main": {
-    "prefix": "main",
     "body": [
-      "int main(int argc, const char** argv)",
-      "{",
+      "union ${MyUnion} {",
       "\t$1",
-      "",
-      "\treturn 0;",
-      "}"
+      "};"
     ],
-    "description": "Code snippet for 'for' loop"
+    "description": "Simple `union` statement."
   },
-  "#include main": {
-    "prefix": "#include main",
+  "switch": {
+    "prefix": "switch",
     "body": [
-      "#include <iostream>",
-      "#include <stdlib.h>",
-      "\n",
-      "int main(int argc, const char** argv)",
-      "{",
-      "\t$0",
-      "",
-      "\treturn 0;",
+      "switch (${switch_on}) {",
+      "default:",
+      "\tbreak;$1",
       "}"
     ],
-    "description": "basic C++ MainFunction stracture"
-  }
+    "description": "Simple `switch` statement."
+  },
 }

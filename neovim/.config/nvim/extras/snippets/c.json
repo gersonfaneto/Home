@@ -115,14 +115,14 @@
     ],
     "description": "Simple `while` loop."
   },
-  "do...while": {
-    "prefix": "dowhile",
+  "do": {
+    "prefix": "do",
     "body": [
       "do {",
       "\t$0",
       "} while($0);"
     ],
-    "description": "Defines a simple `do...while` loop."
+    "description": "Defines a simple `do-while` loop."
   },
   "if": {
     "prefix": "if",
@@ -169,6 +169,15 @@
     ],
     "description": "Simple `struct` declaration."
   },
+  "union": {
+    "prefix": "union",
+    "body": [
+      "union ${MyUnion} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Simple `union` statement."
+  },
   "switch": {
     "prefix": "switch",
     "body": [
@@ -178,15 +187,6 @@
       "}"
     ],
     "description": "Simple `switch` statement."
-  },
-  "union": {
-    "prefix": "union",
-    "body": [
-      "union ${MyUnion} {",
-      "\t$1",
-      "};"
-    ],
-    "description": "Simple `union` statement."
   },
   "Define a `int` function": {
     "prefix": "intfunc",
