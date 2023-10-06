@@ -218,20 +218,6 @@ api.mappings.bulk_register({
     description = "Show current block blame.",
   },
   {
-    mode = { "n" },
-    lhs = "<leader>dt",
-    rhs = ":Gitsigns diffthis<CR>",
-    options = opts,
-    description = "Open diff view.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>dT",
-    rhs = ":Gitsigns toggle_deleted<CR>",
-    options = opts,
-    description = "Show deleted lines.",
-  },
-  {
     mode = { "n", "v" },
     lhs = "<leader>rh",
     rhs = ":Gitsigns reset_hunk<CR>",
