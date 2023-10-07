@@ -60,6 +60,18 @@ return {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
     },
-    config = true,
+    config = function()
+      local api = require("utils.api")
+
+      api.mappings.register({
+        mode = { "n" },
+        lhs = "<leader>fl",
+        rhs = ":Telescope flutter commands<CR>",
+        options = { noremap = true, silent = true },
+        description = "Open Telescope Flutter Commands.",
+      })
+
+      return true
+    end,
   },
 }
