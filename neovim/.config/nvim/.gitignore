@@ -1,0 +1,4 @@
+spell/*
+lua/custom/*
+.luarc.json
+lazy-lock.json
