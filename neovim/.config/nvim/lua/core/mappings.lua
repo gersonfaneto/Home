@@ -160,6 +160,13 @@ api.mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "X",
+    rhs = ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<CR>",
+    options = { silent = true, noremap = true },
+    description = "Split current line at the cursor position.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>v",
     rhs = ":vsplit<CR>",
     options = { noremap = true, silent = true },
