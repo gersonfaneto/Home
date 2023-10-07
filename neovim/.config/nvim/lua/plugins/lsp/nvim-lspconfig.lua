@@ -122,7 +122,7 @@ return {
 
     vim.diagnostic.config({
       underline = true,
-      virtual_text = api.settings.get_settings("format_on_save"),
+      virtual_text = api.settings.get_settings("virtual_text"),
       signs = true,
       update_in_insert = false,
       severity_sort = true,
