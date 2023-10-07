@@ -6,6 +6,10 @@
   "contributes": {
     "snippets": [
       {
+        "language": "all",
+        "path": "comments.json"
+      },
+      {
         "language": "c",
         "path": "c.json"
       },
