@@ -25,18 +25,29 @@ return {
     null_ls.setup({
       border = api.settings.get_settings("float_border") and "double" or "none",
       sources = {
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettier,
-        null_ls.builtins.formatting.autopep8,
         null_ls.builtins.formatting.clang_format,
+        null_ls.builtins.formatting.ocamlformat,
 
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.shellcheck,
       },
       on_attach = api.settings.get_settings("format_on_save") and on_attach or nil,
     })
 
     api.mappings.bulk_register({
+      {
+        mode = { "n" },
+        lhs = "<leader>ni",
+        rhs = ":NullLsInfo<CR>",
+        options = { noremap = true, silent = true },
+        description = "Open NoneLs Info.",
+      },
       {
         mode = { "n", "v" },
         lhs = "<leader>lf",
