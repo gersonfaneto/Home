@@ -7,19 +7,19 @@ local M = {
   dim_inactive = true,
 
   -- UX.
-  show_bufferline = true,
+  show_bufferline = false,
   show_cursor_line = true,
-  show_color_column = false,
+  show_color_column = true,
   color_column = "100",
 
   -- Editor.
   auto_save = false,
   auto_restore_cursor_position = false,
-  auto_remove_new_lines_comment = true,
+  auto_remove_new_lines_comment = false,
 
   -- LSP.
   inlay_hints = false,
-  virtual_text = false,
+  virtual_text = true,
   format_on_save = false,
 }
 
