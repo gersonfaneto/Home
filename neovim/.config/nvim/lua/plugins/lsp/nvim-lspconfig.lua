@@ -8,6 +8,7 @@ return {
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+    local base = require("utils.base")
     local types = require("utils.types")
     local interface = require("utils.interface")
 
