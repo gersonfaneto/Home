@@ -15,15 +15,15 @@ return {
     },
   },
   config = function()
-    local api = require("utils.api")
-    local interface = require("utils.interface")
-
     local cmp = require("cmp")
     local cmp_types = require("cmp.types.cmp")
     local cmp_mapping = require("cmp.config.mapping")
 
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
+
+    local api = require("utils.api")
+    local interface = require("utils.interface")
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
 
@@ -33,17 +33,17 @@ return {
         format = function(entry, vim_item)
           local max_width = 0
           if max_width ~= 0 and #vim_item.abbr > max_width then
-            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. interface.icons.ui.Ellipsis
+            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. interface.icons.get_icon("ui", "Ellipsis")
           end
           vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
           if entry.source.name == "copilot" then
-            vim_item.kind = interface.icons.git.Octoface
+            vim_item.kind = interface.icons.get_icon("git", "Octoface")
             vim_item.kind_hl_group = "CmpItemKindCopilot"
           end
 
           if entry.source.name == "emoji" then
-            vim_item.kind = interface.icons.misc.Smiley
+            vim_item.kind = interface.icons.get_icon("misc", "Smiley")
             vim_item.kind_hl_group = "CmpItemKindEmoji"
           end
           vim_item.menu = ({

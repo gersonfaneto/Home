@@ -11,6 +11,7 @@ return {
     local interface = require("utils.interface")
 
     local colors = interface.colors.get_colors()
+    local icons = interface.icons.get_icons("diagnostics")
 
     require("lualine").setup({
       options = {
@@ -80,10 +81,10 @@ return {
             "diagnostics",
             sources = { "nvim_lsp" },
             symbols = {
-              info = interface.icons.diagnostics.BoldInformation .. " ",
-              hint = interface.icons.diagnostics.BoldHint .. " ",
-              warn = interface.icons.diagnostics.BoldWarning .. " ",
-              error = interface.icons.diagnostics.BoldError .. " ",
+              info = icons.BoldInformation .. " ",
+              hint = icons.BoldHint .. " ",
+              warn = icons.BoldWarning .. " ",
+              error = icons.BoldError .. " ",
             },
           },
         },

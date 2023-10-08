@@ -11,6 +11,8 @@ return {
     local api = require("utils.api")
     local interface = require("utils.interface")
 
+    local icons = interface.icons.get_icons("diagnostics")
+
     local on_attach = function(_, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -109,10 +111,10 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     local signs = {
-      Error = interface.icons.diagnostics.BoldError,
-      Warn = interface.icons.diagnostics.BoldWarning,
-      Hint = interface.icons.diagnostics.BoldHint,
-      Info = interface.icons.diagnostics.BoldInformation,
+      Error = icons.BoldError,
+      Warn = icons.BoldWarning,
+      Hint = icons.BoldHint,
+      Info = icons.BoldInformation,
     }
 
     for type, icon in pairs(signs) do

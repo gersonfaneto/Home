@@ -4,35 +4,37 @@ return {
   config = function()
     local interface = require("utils.interface")
 
+    local icons = interface.icons.get_icons("ui")
+
     require("gitsigns").setup({
       signs = {
         add = {
           hl = "GitSignsAdd",
-          text = interface.icons.ui.BoldLineLeft,
+          text = icons.BoldLineLeft,
           numhl = "GitSignsAddNr",
           linehl = "GitSignsAddLn",
         },
         change = {
           hl = "GitSignsChange",
-          text = interface.icons.ui.BoldLineLeft,
+          text = icons.BoldLineLeft,
           numhl = "GitSignsChangeNr",
           linehl = "GitSignsChangeLn",
         },
         delete = {
           hl = "GitSignsDelete",
-          text = interface.icons.ui.Triangle,
+          text = icons.Triangle,
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },
         topdelete = {
           hl = "GitSignsDelete",
-          text = interface.icons.ui.Triangle,
+          text = icons.Triangle,
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },
         changedelete = {
           hl = "GitSignsChange",
-          text = interface.icons.ui.BoldLineLeft,
+          text = icons.BoldLineLeft,
           numhl = "GitSignsChangeNr",
           linehl = "GitSignsChangeLn",
         },
