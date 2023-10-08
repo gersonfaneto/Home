@@ -1,7 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
-  enabled = true,
-  lazy = false,
+  event = { "UIEnter" },
   config = function()
     local base = require("utils.base")
 

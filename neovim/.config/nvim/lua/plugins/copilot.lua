@@ -1,7 +1,7 @@
 return {
   {
     "zbirenbaum/copilot.lua",
-    lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
     cmd = "Copilot",
     config = function()
       require("copilot").setup({
@@ -39,6 +39,7 @@ return {
   {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("copilot_cmp").setup()
     end,

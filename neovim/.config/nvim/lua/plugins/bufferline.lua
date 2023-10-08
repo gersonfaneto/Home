@@ -3,14 +3,10 @@ local types = require("utils.types")
 
 local colors = interface.get_colors()
 
-if colors == nil then
-  return {}
-end
-
 return {
   "akinsho/bufferline.nvim",
   enabled = types.get_settings("show_bufferline"),
-  event = "VeryLazy",
+  event = { "VeryLazy" },
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = {

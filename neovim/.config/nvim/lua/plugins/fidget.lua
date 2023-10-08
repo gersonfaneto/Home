@@ -1,5 +1,6 @@
 return {
   "j-hui/fidget.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   branch = "legacy",
   config = function()
     local commenced = "Started"

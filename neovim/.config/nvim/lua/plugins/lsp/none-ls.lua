@@ -1,6 +1,5 @@
 return {
   "nvimtools/none-ls.nvim",
-  lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local types = require("utils.types")

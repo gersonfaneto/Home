@@ -1,12 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  enabled = true,
   lazy = false,
-  event = {
-    "BufReadPost",
-    "BufNewFile",
-    "VeryLazy",
-  },
   config = function()
     local interface = require("utils.interface")
 

@@ -24,6 +24,10 @@
       {
         "language": "gitcommit",
         "path": "gitcommit.json"
+      },
+      {
+        "language": "license",
+        "path": "license.json"
       }
     ]
   }
