@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global
 
-local base = require("utils.base")
+local types = require("utils.types")
 
 local M = {}
 
@@ -27,7 +27,7 @@ M.opt = {
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
-  colorcolumn = base.settings.get_settings("show_color_column") and base.settings.get_settings("color_column") or "",
+  colorcolumn = types.get_settings("show_color_column") and types.get_settings("color_column") or "",
 
   expandtab = true,
   shiftwidth = 2,

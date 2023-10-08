@@ -6,7 +6,7 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local colors = interface.colors.get_colors()
+    local colors = interface.get_colors()
 
     vim.g.indent_blankline_filetype_exclude = {
       "help",

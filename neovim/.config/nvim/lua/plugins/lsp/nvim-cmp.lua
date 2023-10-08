@@ -38,12 +38,12 @@ return {
           vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
           if entry.source.name == "copilot" then
-            vim_item.kind = interface.icons.get_icon("git", "Octoface")
+            vim_item.kind = interface.get_icon("git", "Octoface")
             vim_item.kind_hl_group = "CmpItemKindCopilot"
           end
 
           if entry.source.name == "emoji" then
-            vim_item.kind = interface.icons.get_icon("misc", "Smiley")
+            vim_item.kind = interface.get_icon("misc", "Smiley")
             vim_item.kind_hl_group = "CmpItemKindEmoji"
           end
           vim_item.menu = ({

@@ -1,6 +1,6 @@
-local base = require("utils.base")
+local types = require("utils.types")
 
-local override = base.settings.get_settings("transparent") and "transparent" or "dark"
+local override = types.get_settings("transparent") and "transparent" or "dark"
 
 local tokyo_night = require("tokyonight")
 
@@ -9,7 +9,7 @@ local M = {}
 tokyo_night.setup({
   style = "night",
   light_style = "day",
-  transparent = base.settings.get_settings("transparent"),
+  transparent = types.get_settings("transparent"),
   terminal_colors = true,
   styles = {
     comments = { italic = true },
@@ -22,7 +22,7 @@ tokyo_night.setup({
   sidebars = { "qf", "help" },
   day_brightness = 0.3,
   hide_inactive_statusline = false,
-  dim_inactive = base.settings.get_settings("dim_inactive"),
+  dim_inactive = types.get_settings("dim_inactive"),
   lualine_bold = false,
 })
 

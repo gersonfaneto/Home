@@ -1,4 +1,4 @@
-local base = require("utils.base")
+local types = require("utils.types")
 
 local style = "default"
 
@@ -7,7 +7,7 @@ local decay_core = require("decay.core")
 local decay_highlights = require("decay.highlights")
 
 local colors = decay_core.get_colors(style)
-local colors_override = base.settings.get_settings("transparent") and "NONE" or colors.background
+local colors_override = types.get_settings("transparent") and "NONE" or colors.background
 
 local M = {}
 
@@ -28,7 +28,7 @@ decay.setup({
   },
 })
 
-if base.settings.get_settings("transparent") then
+if types.get_settings("transparent") then
   decay_highlights.bulk_hi({
     NvimTreeNormal = { bg = "NONE" },
     NvimTreeNormalNC = { bg = "NONE" },

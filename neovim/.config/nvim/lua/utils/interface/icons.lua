@@ -157,37 +157,4 @@ M.misc = {
   CircuitBoard = "",
 }
 
---- Returns a table of a given icon category.
---- @param category string The category of the desired icons.
---- @return table icons The sub table of the given category.
-M.get_icons = function(category)
-  local table = vim.tbl_get(M, category)
-
-  if table == nil then
-    return {}
-  end
-
-  return table
-end
-
---- Returns an icon given it's name and category.
---- @param category string The category of the desired icon.
---- @param name string The name of the desired icon.
---- @return string icon The requested icon.
-M.get_icon = function(category, name)
-  local table = M.get_icons(category)
-
-  if vim.tbl_isempty(table) then
-    return ""
-  end
-
-  local icon = vim.tbl_get(table, name)
-
-  if icon == nil then
-    return ""
-  end
-
-  return icon
-end
-
 return M

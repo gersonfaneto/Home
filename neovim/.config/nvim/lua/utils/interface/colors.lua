@@ -1,6 +1,6 @@
 local M = {}
 
-M.colors = {
+M = {
   ["Catppuccin-Mocha"] = {
     fg = "#CDD6F4",
     bg = "#1E1E2E",
@@ -30,11 +30,5 @@ M.colors = {
     bg = "#24283B",
   },
 }
-
-M.get_colors = function()
-  local current_theme = os.getenv("CURRENT_THEME")
-
-  return M.colors[current_theme] or M.colors["Gruvbox-Material"]
-end
 
 return M

@@ -8,10 +8,10 @@ return {
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    local base = require("utils.base")
+    local types = require("utils.types")
     local interface = require("utils.interface")
 
-    local icons = interface.icons.get_icons("diagnostics")
+    local icons = interface.get_icons("diagnostics")
 
     local on_attach = function(_, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -124,7 +124,7 @@ return {
 
     vim.diagnostic.config({
       underline = true,
-      virtual_text = base.settings.get_settings("virtual_text"),
+      virtual_text = types.get_settings("virtual_text"),
       signs = true,
       update_in_insert = false,
       severity_sort = true,
@@ -137,7 +137,7 @@ return {
       },
     })
 
-    for _, server in pairs(base.servers.lsp) do
+    for _, server in pairs(types.servers.lsp) do
       local has_extras, extras = pcall(require, "plugins.lsp.extras." .. server)
 
       if server == "jdtls" then

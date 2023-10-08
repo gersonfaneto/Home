@@ -10,8 +10,8 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local colors = interface.colors.get_colors()
-    local icons = interface.icons.get_icons("diagnostics")
+    local colors = interface.get_colors()
+    local icons = interface.get_icons("diagnostics")
 
     require("lualine").setup({
       options = {

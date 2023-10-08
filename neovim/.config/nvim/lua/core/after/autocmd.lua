@@ -1,9 +1,9 @@
 ---@diagnostic disable: undefined-global
 
-local base = require("utils.base")
+local types = require("utils.types")
 local interface = require("utils.interface")
 
-local colors = interface.colors.get_colors()
+local colors = interface.get_colors()
 
 local M = {}
 
@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-if base.settings.get_settings("show_cursor_line") then
+if types.get_settings("show_cursor_line") then
   local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 
   vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
@@ -88,7 +88,7 @@ if base.settings.get_settings("show_cursor_line") then
   })
 end
 
-if base.settings.get_settings("auto_save") then
+if types.get_settings("auto_save") then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
     callback = function()
@@ -106,7 +106,7 @@ if base.settings.get_settings("auto_save") then
   })
 end
 
-if base.settings.get_settings("auto_restore_cursor_position") then
+if types.get_settings("auto_restore_cursor_position") then
   vim.api.nvim_create_autocmd("BufReadPost", {
     callback = function()
       local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -118,7 +118,7 @@ if base.settings.get_settings("auto_restore_cursor_position") then
   })
 end
 
-if base.settings.get_settings("auto_remove_new_lines_comment") then
+if types.get_settings("auto_remove_new_lines_comment") then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
     callback = function()

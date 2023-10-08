@@ -4,7 +4,7 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local icons = interface.icons.get_icons("ui")
+    local icons = interface.get_icons("ui")
 
     require("gitsigns").setup({
       signs = {

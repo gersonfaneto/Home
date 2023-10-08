@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-global, undefined-field
 
 local base = require("utils.base")
+local types = require("utils.types")
 
 local M = {}
 
@@ -19,7 +20,7 @@ base.mappings.bulk_register({
       if vim.opt.colorcolumn:get()[1] ~= nil then
         vim.opt.colorcolumn = nil
       else
-        vim.opt.colorcolumn = base.settings.get_settings("color_column")
+        vim.opt.colorcolumn = types.get_settings("color_column")
       end
     end,
     options = { noremap = true, silent = true },
