@@ -22,7 +22,7 @@ return {
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
 
-    local api = require("utils.api")
+    local base = require("utils.base")
     local interface = require("utils.interface")
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
@@ -151,9 +151,9 @@ return {
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
-          elseif api.jumpable(1) then
+          elseif base.jumpable(1) then
             luasnip.jump(1)
-          elseif api.has_words_before() then
+          elseif base.has_words_before() then
             -- cmp.complete()
             fallback()
           else

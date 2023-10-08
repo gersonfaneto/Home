@@ -2,11 +2,11 @@ return {
   "sindrets/diffview.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local api = require("utils.api")
+    local base = require("utils.base")
 
     local opts = { silent = true, noremap = true }
 
-    api.mappings.bulk_register({
+    base.mappings.bulk_register({
       {
         mode = { "n" },
         lhs = "<leader>do",

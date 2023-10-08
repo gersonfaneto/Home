@@ -1,4 +1,4 @@
-local api = require("utils.api")
+local base = require("utils.base")
 
 local rose_pine = require("rose-pine")
 
@@ -9,8 +9,8 @@ rose_pine.setup({
   dark_variant = "main",
   bold_vert_split = false,
   dim_nc_background = false,
-  disable_background = api.settings.get_settings("transparent"),
-  disable_float_background = api.settings.get_settings("transparent"),
+  disable_background = base.settings.get_settings("transparent"),
+  disable_float_background = base.settings.get_settings("transparent"),
   disable_italics = false,
 
   groups = {

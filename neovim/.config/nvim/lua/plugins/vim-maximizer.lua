@@ -2,9 +2,9 @@ return {
   "szw/vim-maximizer",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local api = require("utils.api")
+    local base = require("utils.base")
 
-    api.mappings.register({
+    base.mappings.register({
       mode = { "n" },
       lhs = "<leader>m",
       rhs = ":MaximizerToggle<CR>",

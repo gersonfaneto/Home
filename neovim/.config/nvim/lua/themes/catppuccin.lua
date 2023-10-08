@@ -1,4 +1,4 @@
-local api = require("utils.api")
+local base = require("utils.base")
 
 local catppuccin = require("catppuccin")
 
@@ -11,11 +11,11 @@ catppuccin.setup({
     dark = "mocha",
   },
   dim_inactive = {
-    enabled = api.settings.get_settings("dim_inactive"),
+    enabled = base.settings.get_settings("dim_inactive"),
     shade = "dark",
     percentage = 0.15,
   },
-  transparent_background = api.settings.get_settings("transparent"),
+  transparent_background = base.settings.get_settings("transparent"),
 })
 
 return M

@@ -4,11 +4,11 @@ return {
     ft = { "markdown" },
     build = "cd app && npm install",
     config = function()
-      local api = require("utils.api")
+      local base = require("utils.base")
 
       vim.g.mkdp_filetypes = { "markdown" }
 
-      api.mappings.register({
+      base.mappings.register({
         mode = { "n" },
         lhs = "<leader>mp",
         rhs = ":MarkdownPreviewToggle<CR>",

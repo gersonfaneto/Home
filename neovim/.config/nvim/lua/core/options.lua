@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global
 
-local api = require("utils.api")
+local base = require("utils.base")
 
 local M = {}
 
@@ -27,7 +27,7 @@ M.opt = {
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
-  colorcolumn = api.settings.get_settings("show_color_column") and api.settings.get_settings("color_column") or "",
+  colorcolumn = base.settings.get_settings("show_color_column") and base.settings.get_settings("color_column") or "",
 
   expandtab = true,
   shiftwidth = 2,

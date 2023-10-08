@@ -3,7 +3,7 @@ return {
   enabled = true,
   lazy = false,
   config = function()
-    local api = require("utils.api")
+    local base = require("utils.base")
 
     local harpoon = require("harpoon")
     local harpoon_ui = require("harpoon.ui")
@@ -13,7 +13,7 @@ return {
       excluded_filetypes = { "NvimTree" },
     })
 
-    api.mappings.bulk_register({
+    base.mappings.bulk_register({
       {
         mode = { "n" },
         lhs = "<leader>hf",

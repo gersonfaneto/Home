@@ -1,5 +1,5 @@
 ---@diagnostic disable: need-check-nil
-local api = require("utils.api")
+local base = require("utils.base")
 
 local _, jdtls = pcall(require, "jdtls")
 local _, jdtls_setup = pcall(require, "jdtls.setup")
@@ -101,7 +101,7 @@ local config = {
         "org.hamcrest.MatcherAssert.assertThat",
         "org.hamcrest.Matchers.*",
         "org.hamcrest.CoreMatchers.*",
-        "org.junit.jupiter.api.Assertions.*",
+        "org.junit.jupiter.base.Assertions.*",
         "java.util.Objects.requireNonNull",
         "java.util.Objects.requireNonNullElse",
         "org.mockito.Mockito.*",
@@ -138,7 +138,7 @@ local config = {
 local function on_attach()
   local opts = { noremap = true, silent = true }
 
-  api.mappings.bulk_register({
+  base.mappings.bulk_register({
     {
       mode = { "n", "v" },
       lhs = "<leader>la",

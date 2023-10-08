@@ -9,7 +9,7 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
 
-    local api = require("utils.api")
+    local base = require("utils.base")
 
     mason.setup({
       ui = {
@@ -22,14 +22,14 @@ return {
     })
 
     mason_lspconfig.setup({
-      ensure_installed = api.servers.lsp,
+      ensure_installed = base.servers.lsp,
       automatic_installation = true,
     })
 
     mason_tool_installer.setup({
       ensure_installed = vim.tbl_flatten({
-        api.servers.linters,
-        api.servers.formatters,
+        base.servers.linters,
+        base.servers.formatters,
       }),
     })
   end,

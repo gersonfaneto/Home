@@ -3,7 +3,7 @@ return {
   lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local api = require("utils.api")
+    local base = require("utils.base")
 
     local null_ls = require("null-ls")
 
@@ -23,7 +23,7 @@ return {
     end
 
     null_ls.setup({
-      border = api.settings.get_settings("float_border") and "double" or "none",
+      border = base.settings.get_settings("float_border") and "double" or "none",
       sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
@@ -37,10 +37,10 @@ return {
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.shellcheck,
       },
-      on_attach = api.settings.get_settings("format_on_save") and on_attach or nil,
+      on_attach = base.settings.get_settings("format_on_save") and on_attach or nil,
     })
 
-    api.mappings.bulk_register({
+    base.mappings.bulk_register({
       {
         mode = { "n" },
         lhs = "<leader>ni",

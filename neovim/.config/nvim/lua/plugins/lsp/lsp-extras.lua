@@ -7,7 +7,7 @@ return {
       "BufNewFile",
     },
     config = function()
-      local api = require("utils.api")
+      local base = require("utils.base")
 
       local lsp_inlayhints = require("lsp-inlayhints")
 
@@ -18,7 +18,7 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = "LspAttachInlayHints",
         callback = function(args)
-          if not api.settings.get_settings("inlay_hints") then
+          if not base.settings.get_settings("inlay_hints") then
             return
           end
           if not (args.data and args.data.client_id) then
@@ -61,9 +61,9 @@ return {
       "stevearc/dressing.nvim",
     },
     config = function()
-      local api = require("utils.api")
+      local base = require("utils.base")
 
-      api.mappings.register({
+      base.mappings.register({
         mode = { "n" },
         lhs = "<leader>fl",
         rhs = ":Telescope flutter commands<CR>",
