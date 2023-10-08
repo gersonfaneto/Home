@@ -1,3 +1,5 @@
+local defaults = require("utils.types.settings")
+
 local M = {}
 
 --- Used to retrieve the value of a given setting used across the other modules. Overrides must be
@@ -7,8 +9,7 @@ local M = {}
 --- @param key string The name of the setting to be retrieved.
 --- @return string | boolean | nil value The setting corresponding to the given key.
 M.get_settings = function(key)
-  local defaults = require("core.settings")
-  local has_custom, custom = pcall(require, "custom.settings")
+  local has_custom, custom = pcall(require, "core.custom.settings")
 
   local default_value = vim.tbl_get(defaults, key)
 
