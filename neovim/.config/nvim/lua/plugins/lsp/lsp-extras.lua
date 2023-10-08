@@ -55,7 +55,11 @@ return {
   },
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
+    ft = { "dart" },
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
