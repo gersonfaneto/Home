@@ -1,8 +1,9 @@
 local types = require("utils.types")
+local interface = require("utils.interface")
+
+local colors = interface.get_colors()
 
 local M = {}
-
-local colors = require("utils.interface").colors.get_colors()
 
 vim.g.gruvbox_material_background = "hard"
 
