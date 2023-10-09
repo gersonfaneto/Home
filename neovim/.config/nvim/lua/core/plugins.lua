@@ -26,6 +26,8 @@ end
 local include_directories = {
   { import = "plugins" },
   { import = "plugins.lsp" },
+  { import = "plugins.lsp.extras" },
+  { import = "plugins.copilot" },
 }
 
 local lazy_options = {
