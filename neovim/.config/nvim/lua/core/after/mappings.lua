@@ -37,6 +37,14 @@ base.mappings.bulk_register({
     options = opts,
     description = "Toggle Copilot.",
   },
+  -- Octo.
+  {
+    mode = { "n" },
+    lhs = "<leader>O",
+    rhs = ":Octo<CR>",
+    options = { noremap = true, silent = true },
+    description = "Open Octo.",
+  },
   -- LSP.
   {
     mode = { "n" },
