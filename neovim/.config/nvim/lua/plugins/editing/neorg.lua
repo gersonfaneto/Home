@@ -17,6 +17,8 @@ return {
           config = {
             workspaces = {
               Notes = "~/Notes",
+              Work = "~/Notes/Work",
+              Study = "~/Notes/Study",
             },
             default_workspace = "Notes",
             index = "Main.norg",
