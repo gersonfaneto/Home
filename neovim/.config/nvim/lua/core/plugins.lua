@@ -24,10 +24,14 @@ if not ok then
 end
 
 local include_directories = {
-  { import = "plugins" },
-  { import = "plugins.lsp" },
-  { import = "plugins.lsp.extras" },
-  { import = "plugins.copilot" },
+  { import = "plugins.coding" },
+  { import = "plugins.coding.copilot" },
+  { import = "plugins.coding.extras" },
+  { import = "plugins.editing" },
+  { import = "plugins.exploring" },
+  { import = "plugins.spelling" },
+  { import = "plugins.tooling" },
+  { import = "plugins.viewing" },
 }
 
 local lazy_options = {

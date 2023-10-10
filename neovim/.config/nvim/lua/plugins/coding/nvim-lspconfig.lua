@@ -139,7 +139,7 @@ return {
     })
 
     for _, server in pairs(types.servers.lsp) do
-      local has_settings, extras = pcall(require, "plugins.lsp.settings." .. server)
+      local has_settings, extras = pcall(require, "plugins.coding.settings." .. server)
 
       if server == "jdtls" then
         goto continue
