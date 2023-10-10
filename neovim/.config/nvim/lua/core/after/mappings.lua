@@ -378,10 +378,24 @@ base.mappings.bulk_register({
   -- Neorg.
   {
     mode = { "n" },
-    lhs = "<leader>N",
-    rhs = ":Neorg workspace Notes<CR>",
+    lhs = "<leader>nw",
+    rhs = ":Neorg workspace<CR>",
     options = opts,
-    description = "Neorg - Go to the workspace 'Notes'.",
+    description = "Neorg - Go to the default workspace - 'Notes'.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ni",
+    rhs = ":Neorg index<CR>",
+    options = opts,
+    description = "Neorg - Open current workspace index.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>nr",
+    rhs = ":Neorg return<CR>",
+    options = opts,
+    description = "Neorg - Return to the previous point.",
   },
 })
 
