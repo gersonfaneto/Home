@@ -18,6 +18,8 @@ return {
             workspaces = {
               Notes = "~/Notes",
             },
+            default_workspace = "Notes",
+            index = "Main.norg",
           },
         },
       },

@@ -43,7 +43,7 @@ return {
     base.mappings.bulk_register({
       {
         mode = { "n" },
-        lhs = "<leader>ni",
+        lhs = "<leader>nl",
         rhs = ":NullLsInfo<CR>",
         options = { noremap = true, silent = true },
         description = "Open NoneLs Info.",
