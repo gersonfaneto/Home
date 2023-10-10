@@ -1,11 +1,14 @@
 return {
   "nvim-neorg/neorg",
   ft = { "norg" },
-  event = { "VeryLazy" },
+  cmd = { "Neorg" },
+  event = { "BufReadPre", "BufNewFile" },
   build = ":Neorg sync-parsers",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("neorg").setup({
+    local neorg = require("neorg")
+
+    neorg.setup({
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
@@ -13,7 +16,7 @@ return {
         ["core.dirman"] = {
           config = {
             workspaces = {
-              notes = "~/Notes",
+              Notes = "~/Notes",
             },
           },
         },

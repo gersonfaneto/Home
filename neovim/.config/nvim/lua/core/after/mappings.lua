@@ -37,14 +37,6 @@ base.mappings.bulk_register({
     options = opts,
     description = "Toggle Copilot.",
   },
-  -- Octo.
-  {
-    mode = { "n" },
-    lhs = "<leader>O",
-    rhs = ":Octo<CR>",
-    options = { noremap = true, silent = true },
-    description = "Open Octo.",
-  },
   -- LSP.
   {
     mode = { "n" },
@@ -283,6 +275,14 @@ base.mappings.bulk_register({
     options = opts,
     description = "Jump to the next hunk.",
   },
+  -- Octo.
+  {
+    mode = { "n" },
+    lhs = "<leader>O",
+    rhs = ":Octo<CR>",
+    options = { noremap = true, silent = true },
+    description = "Open Octo.",
+  },
   -- Buffers.
   {
     mode = { "n" },
@@ -374,6 +374,14 @@ base.mappings.bulk_register({
     rhs = ":BufferLineSortByExtension<CR>",
     options = opts,
     description = "Buffers sort (by extension).",
+  },
+  -- Neorg.
+  {
+    mode = { "n" },
+    lhs = "<leader>N",
+    rhs = ":Neorg workspace Notes<CR>",
+    options = opts,
+    description = "Neorg - Go to the workspace 'Notes'.",
   },
 })
 
