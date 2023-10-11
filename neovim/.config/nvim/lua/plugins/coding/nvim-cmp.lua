@@ -42,6 +42,11 @@ return {
             vim_item.kind_hl_group = "CmpItemKindCopilot"
           end
 
+          if entry.source.name == "crates" then
+            vim_item.kind = interface.get_icon("misc", "Package")
+            vim_item.kind_hl_group = "CmpItemKindCrate"
+          end
+
           if entry.source.name == "emoji" then
             vim_item.kind = interface.get_icon("misc", "Smiley")
             vim_item.kind_hl_group = "CmpItemKindEmoji"
@@ -119,11 +124,12 @@ return {
           end,
         },
 
-        { name = "luasnip" },
         { name = "path" },
+        { name = "luasnip" },
+        { name = "nvim_lua" },
         { name = "buffer" },
         { name = "emoji" },
-        { name = "nvim_lua" },
+        { name = "crates" },
       },
       mapping = cmp_mapping.preset.insert({
         ["<C-k>"] = cmp_mapping(cmp_mapping.select_prev_item(), { "i", "c" }),

@@ -13,7 +13,13 @@ return {
         enable = true,
         allFeatures = true,
         command = "clippy",
-        extraArgs = { "--no-deps" },
+        extraArgs = {
+          "--",
+          "-W clippy::pedantic",
+          "-W clippy::nursery",
+          "-W clippy::unwrap_used",
+          "-W clippy::expect_used",
+        },
       },
       procMacro = {
         enable = true,
