@@ -35,7 +35,7 @@ M.opt = {
 
   cmdheight = 1,
   pumheight = 10,
-  conceallevel = 3,
+  conceallevel = 0,
   showmode = false,
 
   hlsearch = true,
