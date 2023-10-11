@@ -1,5 +1,5 @@
 function fzf_theme
-  find -L $HOME/.config/fish/themes -type f -exec basename {} .fish \; | grep --invert-match 'theme' | sed 's/-/ /g' | fzf | read line
+  find -L $HOME/.config/fish/themes -type f -exec basename {} .fish \; | grep --invert-match 'theme' | sed 's/-/ /g' | sort | fzf | read line
 
   set line (echo $line | sed 's/ /-/g')
 
