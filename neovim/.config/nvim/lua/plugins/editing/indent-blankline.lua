@@ -8,14 +8,17 @@ return {
 
     local colors = interface.get_colors()
 
+    local indent_blankline = require("indent_blankline")
+
     vim.g.indent_blankline_filetype_exclude = {
+      "norg",
       "help",
       "undotree",
       "neo-tree",
     }
     vim.cmd("highlight IndentBlanklineIndent guifg=" .. colors.fg .. " gui=nocombine")
 
-    require("indent_blankline").setup({
+    indent_blankline.setup({
       show_trailing_blankline_indent = false,
       show_current_context_start = false,
       show_current_context = true,
