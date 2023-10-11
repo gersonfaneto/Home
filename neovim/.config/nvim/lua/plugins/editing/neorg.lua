@@ -19,6 +19,7 @@ return {
               Notes = "~/Notes",
               Work = "~/Notes/Work",
               Study = "~/Notes/Study",
+              Personal = "~/Notes/Personal",
             },
             default_workspace = "Notes",
             index = "Main.norg",
