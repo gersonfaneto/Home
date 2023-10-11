@@ -60,6 +60,7 @@ return {
           "ocaml",
           "python",
           "rust",
+          "sql",
           "toml",
           "typescript",
         },
