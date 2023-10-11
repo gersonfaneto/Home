@@ -30,7 +30,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "set spell",
-  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
+  pattern = {
+    "*.md",
+    "*.txt",
+    "*.org",
+    "*.norg",
+    "COMMIT_EDITMSG",
+  },
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
