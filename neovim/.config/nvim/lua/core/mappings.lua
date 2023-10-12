@@ -9,7 +9,14 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ec",
-    rhs = ":e ~/.config/nvim/ <CR>",
+    rhs = ":chdir ~/.config/nvim/ | e init.lua<CR>",
+    options = { noremap = true, silent = true },
+    description = "Open Neovim config.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>es",
+    rhs = ":chdir ~/.config/nvim/ | e lua/core/custom/settings.lua<CR>",
     options = { noremap = true, silent = true },
     description = "Open Neovim config.",
   },
