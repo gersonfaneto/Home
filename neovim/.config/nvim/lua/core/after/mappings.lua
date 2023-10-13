@@ -37,6 +37,14 @@ base.mappings.bulk_register({
     options = opts,
     description = "Toggle Copilot.",
   },
+  -- Indent.
+  {
+    mode = { "n" },
+    lhs = "<leader>ti",
+    rhs = ":IndentBlanklineToggle<CR>",
+    options = opts,
+    description = "Toggle indentation lines.",
+  },
   -- LSP.
   {
     mode = { "n" },
