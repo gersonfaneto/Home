@@ -46,7 +46,7 @@ return {
           {
 
             mode = "n",
-            lhs = "[[<Plug>RestNvim]]",
+            lhs = "<leader>hx",
             rhs = rest_nvim.run,
             options = { noremap = true, silent = true, buffer = buffer },
             description = "REST - Run request under cursor.",
@@ -54,7 +54,7 @@ return {
           {
 
             mode = "n",
-            lhs = "[[<Plug>RestNvimLast]]",
+            lhs = "<leader>hl",
             rhs = rest_nvim.last,
             options = { noremap = true, silent = true, buffer = buffer },
             description = "REST - Run last request.",
@@ -62,8 +62,10 @@ return {
           {
 
             mode = "n",
-            lhs = "[[<Plug>RestNvimPreview]]",
-            rhs = rest_nvim.preview,
+            lhs = "<leader>hp",
+            rhs = function()
+              rest_nvim.run(true)
+            end,
             options = { noremap = true, silent = true, buffer = buffer },
             description = "REST - Preview request under cursor.",
           },
