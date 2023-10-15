@@ -30,4 +30,7 @@ M.virtual_text = true
 -- Automatically format the buffer when saved, subject to active `LSP` support.
 M.format_on_save = false
 
+-- Enable Discord Rich Presence.
+M.discord_presence = false
+
 return M
