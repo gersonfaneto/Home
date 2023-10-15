@@ -46,5 +46,9 @@
   "breaking change conventional commit footer": {
     "prefix": "BREAK",
     "body": ["BREAKING CHANGE: $0"]
+  },
+  "Updated README": {
+    "prefix": "readme",
+    "body": ["docs: Updated `README`."]
   }
 }
