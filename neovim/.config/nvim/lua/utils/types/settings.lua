@@ -32,5 +32,9 @@ M.format_on_save = false
 
 -- Enable Discord Rich Presence.
 M.discord_presence = false
+-- Enable DB tools.
+M.db_tools = false
+-- Enable REST tools.
+M.http_tools = false
 
 return M

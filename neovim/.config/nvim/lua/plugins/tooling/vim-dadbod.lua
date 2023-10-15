@@ -1,6 +1,11 @@
 return {
   "tpope/vim-dadbod",
   event = { "VeryLazy" },
+  cond = function()
+    local types = require("utils.types")
+
+    return types.get_settings("db_tools")
+  end,
   dependencies = {
     {
       "kristijanhusak/vim-dadbod-ui",
