@@ -61,7 +61,7 @@
       "else then",
       "\t$0",
       "end"
-    ]
+    ],
     "description": "Basic `else` statement."
   },
   "elseif": {
@@ -69,7 +69,7 @@
     "body": [
       "elseif ${1:true} then",
       "\t$0"
-    ]
+    ],
     "description": "Basic `else-if` statement."
   },
   "for": {
@@ -154,4 +154,30 @@
     ],
     "description": "Basic `lua` interpreted block."
   },
+  "Clean Map": {
+    "prefix": "cmap",
+    "body": [
+      "{",
+      "\tmode = { $1 },",
+      "\tlhs = \"$2\",",
+      "\trhs = \"$3\",",
+      "\toptions = { $4 },",
+      "\tdescription = \"$5\",",
+      "}$0"
+    ],
+    "description": "Custom clean mapping definition structure."
+  },
+  "Default Map": {
+    "prefix": "dmap",
+    "body": [
+      "{",
+      "\tmode = { $1 },",
+      "\tlhs = \"$2\",",
+      "\trhs = \"$3\",",
+      "\toptions = { noremap = true, silent = true },",
+      "\tdescription = \"$4\",",
+      "}$0"
+    ],
+    "description": "Custom mapping definition structure with default options."
+  }
 }
