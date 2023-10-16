@@ -78,6 +78,23 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufNewFile", {
+  callback = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = 0,
+      once = true,
+      callback = function()
+        local path = vim.fn.expand("%:h")
+        local p = require("plenary.path"):new(path)
+        if not p:exists() then
+          p:mkdir({ parents = true })
+        end
+      end,
+      desc = "Create missing parent directories automatically.",
+    })
+  end,
+})
+
 if types.get_settings("show_cursor_line") then
   local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 
