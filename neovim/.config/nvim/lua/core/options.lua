@@ -7,12 +7,12 @@ local M = {}
 M.g = {
   mapleader = " ",
   maplocalleader = " ",
-  cmptoggle = true,
 }
 
 M.opt = {
   backup = false,
   undofile = true,
+  undodir = os.getenv("HOME") .. "/.cache/nvim/undodir",
   swapfile = false,
   writebackup = false,
   fileencoding = "utf-8",
