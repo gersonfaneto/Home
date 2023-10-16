@@ -27,3 +27,13 @@ if type -q bat
   export MANROFFOPT='-c'
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
+
+if type -q asdf
+  set rust_vesion (asdf current rust 2>/dev/null | awk '{print $2}')
+
+  if not test $rust_vesion
+    return
+  end
+
+  export PATH="$PATH:$HOME/.asdf/installs/rust/$rust_vesion/bin"
+end
