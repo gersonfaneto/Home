@@ -104,14 +104,23 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>ff",
     rhs = function()
-      require("utils.base").telescope_git_or_file()
+      require("telescope.builtin").find_files()
     end,
     options = opts,
     description = "Find files in the current workspace.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>fr",
+    lhs = "<leader>fg",
+    rhs = function()
+      require("telescope.builtin").git_files()
+    end,
+    options = opts,
+    description = "Find files in the current repository.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>fo",
     rhs = function()
       require("telescope.builtin").oldfiles()
     end,
