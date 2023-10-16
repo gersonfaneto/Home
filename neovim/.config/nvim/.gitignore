@@ -1,4 +1,2 @@
-spell/*
-lua/core/custom/*
 .luarc.json
-lazy-lock.json
+lua/core/custom/*
