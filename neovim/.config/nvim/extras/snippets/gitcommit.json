@@ -43,6 +43,10 @@
     "prefix": "test",
     "body": ["test(${1:scope}): ${2:title}", "", "$0"]
   },
+  "revert conventional commit": {
+    "prefix": "revert",
+    "body": ["revert(${1:scope}): ${2:title}", "", "$0"]
+  },
   "breaking change conventional commit footer": {
     "prefix": "BREAK",
     "body": ["BREAKING CHANGE: $0"]
