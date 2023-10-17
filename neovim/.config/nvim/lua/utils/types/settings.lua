@@ -1,5 +1,7 @@
 local M = {}
 
+-- Toggle enhanced UI features provided by plugins like `folke/noice.nvim`.
+M.enhanced_ui = false
 -- Make the background transparent, subject to theme support.
 M.transparent = true
 -- Make the boarder visible/invisible.
