@@ -175,6 +175,20 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<leader>H",
+    rhs = "<C-w>H",
+    options = { noremap = true, silent = true },
+    description = "Toggle split layout - Vertically.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>K",
+    rhs = "<C-w>K",
+    options = { noremap = true, silent = true },
+    description = "Toggle split layout - Horizontally.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>=",
     rhs = "<C-w>=",
     options = { noremap = true, silent = true },
