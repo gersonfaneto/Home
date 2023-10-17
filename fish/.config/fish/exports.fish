@@ -1,26 +1,31 @@
 if test -d "$HOME/.local/bin/"
-  export PATH="$PATH:$HOME/.local/bin/"
+  if not contains $HOME/.local/bin/ $PATH
+    export PATH="$PATH:$HOME/.local/bin/"
+  end
 end
 
 if test -d "$HOME/.local/scripts/"
-  export PATH="$PATH:$HOME/.local/scripts/"
+  if not contains $HOME/.local/scripts/ $PATH
+    export PATH="$PATH:$HOME/.local/scripts/"
+  end
 end
 
 if test -d "$HOME/.cargo/bin/"
-  export PATH="$PATH:$HOME/.cargo/bin/"
+  if not contains $HOME/.cargo/bin/ $PATH
+    export PATH="$PATH:$HOME/.cargo/bin/"
+  end
 end
 
 if test -d "$HOME/.bun"
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$PATH:$BUN_INSTALL/bin"
+  if not contains $HOME/.bun/bin/ $PATH
+    export PATH="$PATH:$HOME/.bun/bin/"
+  end
 end
 
-if test -d "/usr/local/lib"
-  export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-end
-
-if test -f "$HOME/Licenses/LR-133011_License.dat"
-  export LM_LICENSE_FILE="$HOME/Licenses/LR-133011_License.dat"
+if test -d "/usr/local/lib/"
+  if not contains /usr/local/lib $LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
+  end
 end
 
 if type -q bat
@@ -35,5 +40,7 @@ if type -q asdf
     return
   end
 
-  export PATH="$PATH:$HOME/.asdf/installs/rust/$rust_vesion/bin"
+  if not contains $HOME/.asdf/installs/rust/$rust_vesion/bin/ $PATH
+    export PATH="$PATH:$HOME/.asdf/installs/rust/$rust_vesion/bin/"
+  end
 end
