@@ -256,6 +256,13 @@ base.mappings.bulk_register({
     description = "Stage current hunk.",
   },
   {
+    mode = { "v" },
+    lhs = "<leader>sh",
+    rhs = ":VisualStage<CR>",
+    options = opts,
+    description = "Stage current visual selection.",
+  },
+  {
     mode = { "n" },
     lhs = "<leader>uh",
     rhs = ":Gitsigns undo_stage_hunk<CR>",

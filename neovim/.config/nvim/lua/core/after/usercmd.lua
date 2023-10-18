@@ -36,3 +36,16 @@ vim.api.nvim_create_user_command("NewNote", function()
     vim.api.nvim_command(":e ~/Notes/" .. name .. ".md")
   end)
 end, { desc = "Create a new note as a markdown file." })
+
+-- GitSigns.
+vim.api.nvim_create_user_command("VisualStage", function(info)
+  local gitsigns = require("gitsigns")
+
+  local first_line = info.line1
+  local last_line = info.line2
+
+  gitsigns.stage_hunk({ first_line, last_line })
+
+  -- Switch back to normal mode, there may be a cleaner way to do this
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<ESC>", true, false, true), "t", false)
+end, { range = true, desc = "Stage current visual selection." })
