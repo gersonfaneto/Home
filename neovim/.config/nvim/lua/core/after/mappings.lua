@@ -271,7 +271,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "[h",
+    lhs = "[c",
     rhs = function()
       if vim.wo.diff then
         return "[c"
@@ -282,11 +282,11 @@ base.mappings.bulk_register({
       return "<Ignore>"
     end,
     options = opts,
-    description = "Jump to the prev hunk.",
+    description = "Jump to the previous hunk.",
   },
   {
     mode = { "n" },
-    lhs = "]h",
+    lhs = "]c",
     rhs = function()
       if vim.wo.diff then
         return "]c"
