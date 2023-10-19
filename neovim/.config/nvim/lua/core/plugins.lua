@@ -38,14 +38,15 @@ local include_directories = {
 local lazy_options = {
   install = {
     missing = true,
-    colorscheme = { "habamax" },
+    colorscheme = {
+      "habamax",
+    },
   },
   ui = {
     border = types.get_settings("float_border") and "double" or "none",
   },
   checker = {
-    enabled = true,
-    notify = false,
+    enabled = false,
   },
   change_detection = {
     enabled = true,
@@ -54,8 +55,8 @@ local lazy_options = {
   performance = {
     rtp = {
       disabled_plugins = {
-        -- "netrw",
-        -- "netrwPlugin",
+        "netrw",
+        "netrwPlugin",
         "netrwSettings",
         "netrwFileHandlers",
         "2html_plugin",
