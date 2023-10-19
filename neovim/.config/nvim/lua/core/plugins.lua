@@ -32,6 +32,7 @@ local include_directories = {
   { import = "plugins.spelling" },
   { import = "plugins.tooling" },
   { import = "plugins.viewing" },
+  { import = "plugins.viewing.themes" },
 }
 
 local lazy_options = {
