@@ -4,7 +4,7 @@ return {
     "BufReadPre",
     "BufNewFile",
   },
-  cond = function ()
+  cond = function()
     local types = require("utils.types")
 
     return types.get_settings("inlay_hints")
