@@ -13,6 +13,13 @@ return {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
         ["core.summary"] = {},
+        ["core.keybinds"] = {
+          config = {
+            hook = function(keybinds)
+              keybinds.remap_key("norg", "n", "<C-Space>", "<M-Space>")
+            end,
+          },
+        },
         ["core.dirman"] = {
           config = {
             workspaces = {
