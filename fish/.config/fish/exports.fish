@@ -46,7 +46,7 @@ if type -q asdf
 end
 
 if test -d "$HOME/.local/share/nvim/mason/bin/"
-  if not contains "$HOME/.local/share/nvim/mason/bin/" "$PATH"
+  if not contains $HOME/.local/share/nvim/mason/bin/ $PATH
     export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
   end
 end
