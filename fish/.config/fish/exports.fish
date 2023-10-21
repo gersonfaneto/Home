@@ -44,3 +44,9 @@ if type -q asdf
     export PATH="$PATH:$HOME/.asdf/installs/rust/$rust_vesion/bin/"
   end
 end
+
+if test -d "$HOME/.local/share/nvim/mason/bin/"
+  if not contains "$HOME/.local/share/nvim/mason/bin/" "$PATH"
+    export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
+  end
+end
