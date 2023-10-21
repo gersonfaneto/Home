@@ -101,6 +101,12 @@
       "BREAKING CHANGE: $0"
     ]
   },
+  "First Commit!": {
+    "prefix": "init",
+    "body": [
+      "Ready... Set... Go!"
+    ]
+  },
   "Updated README": {
     "prefix": "readme",
     "body": [
