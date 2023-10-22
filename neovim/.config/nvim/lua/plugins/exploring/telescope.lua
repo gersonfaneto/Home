@@ -15,6 +15,9 @@ return {
     },
     config = function()
       local telescope = require("telescope")
+
+      local actions = require("telescope.actions")
+
       telescope.setup({
         defaults = {
           previewer = false,
@@ -26,6 +29,14 @@ return {
           layout_config = {
             prompt_position = "top",
             preview_cutoff = 120,
+          },
+          mappings = {
+            n = {
+              ["<C-d>"] = actions.delete_buffer,
+            },
+            i = {
+              ["<C-d>"] = actions.delete_buffer,
+            },
           },
         },
         pickers = {
@@ -128,6 +139,7 @@ return {
           },
         },
       })
+
       telescope.load_extension("fzf")
       telescope.load_extension("zoxide")
       telescope.load_extension("flutter")
