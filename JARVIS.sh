@@ -189,6 +189,10 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
 	fc-cache -f
 
+	echo -e "$NOTE - Generating extra configurations for kitty..."
+
+  "$HOME"/.config/kitty/scripts/generate-fonts.sh
+
 	echo -e "$NOTE - Updating git submodules..."
 
 	git submodule update --init
