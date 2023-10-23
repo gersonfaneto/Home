@@ -39,7 +39,7 @@ packages=(
   mediainfo
 	neofetch
 	neovim
-  pdftotext
+  python-pdftotext
 	ripgrep
 	starship
 	stow
