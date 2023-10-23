@@ -193,10 +193,6 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
   "$HOME"/.config/kitty/scripts/generate-fonts.sh
 
-	echo -e "$NOTE - Updating git submodules..."
-
-	git submodule update --init
-
 	if yay -Q bat &>>/dev/null; then
 		echo -e "$NOTE - Updating 'bat' themes..."
 		bat cache --build &>>/dev/null
