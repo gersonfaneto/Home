@@ -28,7 +28,7 @@ return {
       dashboard.button("SPC b n", " " .. " New file", ":BufferCreate<CR>"),
       dashboard.button("SPC f r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
       dashboard.button("SPC l g", " " .. " Find text", ":Telescope live_grep <CR>"),
-      dashboard.button("SPC e c", " " .. " Config", ":e ~/.config/nvim/ <CR>"),
+      dashboard.button("SPC e c", " " .. " Config", ":chdir ~/.config/nvim | e init.lua <CR>"),
       dashboard.button("SPC l h", "󰒲 " .. " Lazy", ":Lazy<CR>"),
       dashboard.button("CTRL q", " " .. " Quit", ":qa<CR>"),
     }

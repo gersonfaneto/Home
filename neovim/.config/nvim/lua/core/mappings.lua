@@ -18,14 +18,14 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ec",
-    rhs = ":e init.lua<CR>",
+    rhs = ":chdir ~/.config/nvim | e init.lua<CR>",
     options = props.options,
     description = props.prefix .. "Open Neovim config.",
   },
   {
     mode = { "n" },
     lhs = "<leader>es",
-    rhs = ":e lua/core/custom/settings.lua<CR>",
+    rhs = ":chdir ~/.config/nvim | e lua/core/custom/settings.lua<CR>",
     options = props.options,
     description = props.prefix .. "Open Neovim config.",
   },
