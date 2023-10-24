@@ -255,7 +255,7 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "k" or "gk"
     end,
-    options = props.options,
+    options = { silent = true, noremap = true, expr = true },
     description = props.prefix .. "Better movement with k.",
   },
   {
@@ -264,7 +264,7 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "j" or "gj"
     end,
-    options = props.options,
+    options = { silent = true, noremap = true, expr = true },
     description = props.prefix .. "Better movement with j.",
   },
   {
@@ -273,7 +273,7 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "^" or "g^"
     end,
-    options = props.options,
+    options = { silent = true, noremap = true, expr = true },
     description = props.prefix .. "Move to the first character at the beginning of the line.",
   },
   {
@@ -282,7 +282,7 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "$" or "g$"
     end,
-    options = props.options,
+    options = { silent = true, noremap = true, expr = true },
     description = props.prefix .. "Move to the last character at the end of the line.",
   },
 })
@@ -300,7 +300,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>rp",
     rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-    options = props.options,
+    options = { noremap = true, expr = true },
     description = props.prefix .. "Replace current text inside the buffer.",
   },
 })
@@ -356,7 +356,7 @@ base.mappings.bulk_register({
         return "dd"
       end
     end,
-    options = { expr = true },
+    options = { noremap = true, silent = true, expr = true },
     description = props.prefix .. "Delete empty lines without writing to registers.",
   },
   {
