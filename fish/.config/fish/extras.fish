@@ -6,8 +6,8 @@ if type -q zoxide
   zoxide init fish | source
 end
 
-if test -d "$HOME/.asdf"
-  source $HOME/.asdf/asdf.fish
+if type -q rtx
+  rtx activate fish | source
 end
 
 if type -q opam
