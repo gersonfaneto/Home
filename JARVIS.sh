@@ -41,6 +41,7 @@ packages=(
 	neovim
   python-pdftotext
 	ripgrep
+  rtx
 	starship
 	stow
   tar
@@ -142,30 +143,6 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	for PACKAGE in "${packages[@]}"; do
 		install_package "$PACKAGE"
 	done
-fi
-
-# Install asdf for version management.
-read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install asdf? [Y/n] ' REPLY
-
-if [[ -d "$HOME"/.asdf/ ]]; then
-	echo -e "$NOTE - asdf is already installed!"
-elif [[ $REPLY =~ ^[Yy]$ || -z $REPLY ]]; then
-	echo -en "$NOTE - Beggining installation, this may take a while..."
-
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 &>>"$LOG" &
-
-	display_progress $!
-
-	if [[ -d $HOME/.asdf/ ]]; then
-		echo -e "$WAIT$OK - asdf installed completed with success!"
-
-		mkdir -p ~/.config/fish/completions
-
-		ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-	else
-		echo -e "$WAIT$ERROR - asdf installation failed, please check the log at $INST_LOG!"
-		exit
-	fi
 fi
 
 # Link configuration files.
