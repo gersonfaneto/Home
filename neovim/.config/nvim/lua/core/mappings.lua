@@ -300,7 +300,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>rp",
     rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-    options = { noremap = true, expr = true },
+    options = { noremap = true },
     description = props.prefix .. "Replace current text inside the buffer.",
   },
 })
