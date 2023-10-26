@@ -182,7 +182,7 @@ read -rep $'[\e[1;33mACTION\e[0m] - Would you like to change the default shell t
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	if [ "$SHELL" != "/usr/bin/fish" ]; then
 		echo -e "$M_NOTE - Changing default shell to fish..."
-		chsh -s "$(which zsh)"
+		chsh -s "$(which fish)"
 	else
 		echo -e "$NOTE - Fish is already the default shell!"
 	fi
