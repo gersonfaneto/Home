@@ -26,3 +26,7 @@ if type -q bat
   export MANROFFOPT='-c'
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 end
+
+if type -q google-chrome-stable
+  export CHROME_EXECUTABLE="google-chrome-stable"
+end
