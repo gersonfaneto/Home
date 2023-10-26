@@ -9,6 +9,7 @@ if types.get_settings("show_bufferline") then
 end
 
 require("core.after.mappings.copilot")
+require("core.after.mappings.flutter-tools")
 require("core.after.mappings.git-worktree")
 require("core.after.mappings.gitsigns")
 require("core.after.mappings.indent-blankline")
