@@ -56,3 +56,6 @@ CRM
 submodules
 utils
 rtx
+zsh
+dunst
+swayidle
