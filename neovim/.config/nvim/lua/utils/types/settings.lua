@@ -26,14 +26,14 @@ M.auto_restore_cursor_position = true
 M.auto_remove_new_lines_comment = true
 
 -- Toggle `inlay_hints`, subject to active `LSP` support.
-M.inlay_hints = false
+M.inlay_hints = true
 -- Toggle `virtual_text`, displaying diagnostics inline.
 M.virtual_text = false
 -- Automatically format the buffer when saved, subject to active `LSP` support.
 M.format_on_save = false
 
 -- Enable Discord Rich Presence.
-M.discord_presence = false
+M.discord_presence = true
 -- Enable DB tools.
 M.db_tools = true
 -- Enable REST tools.
