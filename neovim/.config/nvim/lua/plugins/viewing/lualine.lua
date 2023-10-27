@@ -7,7 +7,9 @@ return {
     local colors = interface.get_colors()
     local icons = interface.get_icons("diagnostics")
 
-    require("lualine").setup({
+    local lualine = require("lualine")
+
+    lualine.setup({
       options = {
         theme = {
           normal = {
@@ -82,7 +84,10 @@ return {
             },
           },
         },
-        lualine_x = { "encoding" },
+        lualine_x = {
+          -- "encoding",
+          "progress",
+        },
         lualine_y = {},
         lualine_z = {
           function()
