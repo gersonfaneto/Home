@@ -31,6 +31,8 @@ M.inlay_hints = true
 M.virtual_text = false
 -- Automatically format the buffer when saved, subject to active `LSP` support.
 M.format_on_save = false
+-- Toggle enhanced coding features provided by plugins such as `zbirenbaum/copilot.lua`.
+M.enhanced_coding = true
 
 -- Enable Discord Rich Presence.
 M.discord_presence = true
