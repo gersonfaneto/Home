@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "80a8528f084a97b624ae443a6f50ff8074ba486b" },
   "alpha-nvim": { "branch": "main", "commit": "234822140b265ec4ba3203e3e0be0e0bb826dff5" },
+  "bufferline.nvim": { "branch": "main", "commit": "6ecd37e0fa8b156099daedd2191130e083fb1490" },
   "catppuccin": { "branch": "main", "commit": "b359f3eec32dcc6b7c9a26901dc235bbb6cd8a0b" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-emoji": { "branch": "main", "commit": "19075c36d5820253d32e2478b6aaf3734aeaafa0" },
@@ -50,6 +51,7 @@
   "octo.nvim": { "branch": "master", "commit": "e933611c74cb735c00d0db8ca94533bec1444bf0" },
   "oil.nvim": { "branch": "master", "commit": "4088efb8ff664b6f1624aab5dac6c3fe11d3962c" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "refactoring.nvim": { "branch": "master", "commit": "5831194debd23920a32abd9fefd5dddba44e34fc" },
   "rest.nvim": { "branch": "main", "commit": "8b62563cfb19ffe939a260504944c5975796a682" },
   "rose-pine": { "branch": "main", "commit": "92762f4fa2144c05db760ea254f4c399a56a7ef5" },
