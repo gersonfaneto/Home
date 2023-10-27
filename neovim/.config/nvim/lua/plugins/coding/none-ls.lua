@@ -40,23 +40,5 @@ return {
       on_attach = types.get_settings("format_on_save") and on_attach or nil,
     })
 
-    base.mappings.bulk_register({
-      {
-        mode = { "n" },
-        lhs = "<leader>nl",
-        rhs = ":NullLsInfo<CR>",
-        options = { noremap = true, silent = true },
-        description = "Open NoneLs Info.",
-      },
-      {
-        mode = { "n", "v" },
-        lhs = "<leader>lf",
-        rhs = function()
-          vim.lsp.buf.format()
-        end,
-        options = { noremap = true, silent = true },
-        description = "Format current buffer.",
-      },
-    })
   end,
 }

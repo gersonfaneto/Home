@@ -1,25 +1,57 @@
 local types = require("utils.types")
 
+local mappings = {
+  base = {
+    "alpha",
+    "copilot",
+    "splitjoin",
+    "diffview",
+    "flutter-tools",
+    "git-worktree",
+    "gitsigns",
+    "harpoon",
+    "indent-blankline",
+    "lazy",
+    "lsp",
+    "lspsaga",
+    "mason",
+    "neo-tree",
+    "neorg",
+    "none-ls",
+    "octo",
+    "oil",
+    "refactoring",
+    "telescope",
+    "todo-comments",
+    "vim-maximizer",
+  },
+  extras = {
+    ["show_bufferline"] = "bufferline",
+    ["enhanced_ui"] = "noice",
+    ["db_tools"] = "dbee",
+    ["https_tools"] = "rest-nvim",
+  },
+  prefix = "core.after.mappings.",
+}
+
 local M = {}
 
-require("core.after.mappings.alpha")
+for _, mapping in pairs(mappings.base) do
+  local present, _ = pcall(require, mappings.prefix .. mapping)
 
-if types.get_settings("show_bufferline") then
-  require("core.after.mappings.bufferline")
+  if not present then
+    return
+  end
 end
 
-require("core.after.mappings.copilot")
-require("core.after.mappings.flutter-tools")
-require("core.after.mappings.git-worktree")
-require("core.after.mappings.gitsigns")
-require("core.after.mappings.indent-blankline")
-require("core.after.mappings.lazy")
-require("core.after.mappings.lsp")
-require("core.after.mappings.mason")
-require("core.after.mappings.neorg")
-require("core.after.mappings.octo")
-require("core.after.mappings.refactoring")
-require("core.after.mappings.telescope")
-require("core.after.mappings.todo-comments")
+for condition, mapping in pairs(mappings.extras) do
+  if types.get_settings(condition) then
+    local present, _ = pcall(require, mappings.prefix .. mapping)
+
+    if not present then
+      return
+    end
+  end
+end
 
 return M

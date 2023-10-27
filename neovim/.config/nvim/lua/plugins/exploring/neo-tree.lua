@@ -1,14 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  event = { "VeryLazy" },
+  cmd = { "Neotree" },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-  },
-  keys = {
-    { "<leader>nt", ":Neotree toggle<CR>", silent = true, desc = "File Explorer - Open" },
-    { "<leader>nf", ":Neotree focus<CR>", silent = true, desc = "File Explorer - Focus" },
   },
   config = function()
     require("neo-tree").setup({
@@ -35,12 +31,10 @@ return {
         },
         git_status = {
           symbols = {
-            -- Change type
             added = "",
             deleted = "",
             modified = "",
             renamed = "",
-            -- Status type
             untracked = "",
             ignored = "",
             unstaged = "",

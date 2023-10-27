@@ -11,8 +11,6 @@ return {
     return types.get_settings("http_tools")
   end,
   config = function()
-    local base = require("utils.base")
-
     local rest_nvim = require("rest-nvim")
 
     rest_nvim.setup({
@@ -36,42 +34,6 @@ return {
           end,
         },
       },
-    })
-
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "http",
-      callback = function()
-        local buffer = tonumber(vim.fn.expand("<abuf>"), 10)
-
-        base.mappings.bulk_register({
-          {
-
-            mode = "n",
-            lhs = "<leader>hx",
-            rhs = rest_nvim.run,
-            options = { noremap = true, silent = true, buffer = buffer },
-            description = "REST - Run request under cursor.",
-          },
-          {
-
-            mode = "n",
-            lhs = "<leader>hl",
-            rhs = rest_nvim.last,
-            options = { noremap = true, silent = true, buffer = buffer },
-            description = "REST - Run last request.",
-          },
-          {
-
-            mode = "n",
-            lhs = "<leader>hp",
-            rhs = function()
-              rest_nvim.run(true)
-            end,
-            options = { noremap = true, silent = true, buffer = buffer },
-            description = "REST - Preview request under cursor.",
-          },
-        })
-      end,
     })
   end,
 }

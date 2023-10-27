@@ -50,7 +50,6 @@
   "octo.nvim": { "branch": "master", "commit": "e933611c74cb735c00d0db8ca94533bec1444bf0" },
   "oil.nvim": { "branch": "master", "commit": "4088efb8ff664b6f1624aab5dac6c3fe11d3962c" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
-  "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "refactoring.nvim": { "branch": "master", "commit": "5831194debd23920a32abd9fefd5dddba44e34fc" },
   "rest.nvim": { "branch": "main", "commit": "8b62563cfb19ffe939a260504944c5975796a682" },
   "rose-pine": { "branch": "main", "commit": "92762f4fa2144c05db760ea254f4c399a56a7ef5" },

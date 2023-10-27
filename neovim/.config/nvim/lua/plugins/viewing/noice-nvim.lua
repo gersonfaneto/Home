@@ -10,9 +10,8 @@ return {
     return types.get_settings("enhanced_ui")
   end,
   config = function()
-    local base = require("utils.base")
-
     local noice = require("noice")
+
     local telescope = require("telescope")
 
     noice.setup({
@@ -59,43 +58,5 @@ return {
     })
 
     telescope.load_extension("noice")
-
-    base.mappings.bulk_register({
-      {
-        mode = { "n" },
-        lhs = "<leader>nh",
-        rhs = ":Noice telescope<CR>",
-        options = { noremap = true, silent = true },
-        description = "Noice - Open notification history.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>nc",
-        rhs = ":Noice dismiss<CR>",
-        options = { noremap = true, silent = true },
-        description = "Noice - Clear all notifications.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>np",
-        rhs = ":Noice last<CR>",
-        options = { noremap = true, silent = true },
-        description = "Noice - View last notification.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>nd",
-        rhs = ":Noice disable<CR>",
-        options = { noremap = true, silent = true },
-        description = "Noice - Disable.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>ne",
-        rhs = ":Noice enable<CR>",
-        options = { noremap = true, silent = true },
-        description = "Noice - Enable.",
-      },
-    })
   end,
 }

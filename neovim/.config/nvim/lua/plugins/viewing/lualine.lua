@@ -1,6 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-  lazy = false,
   config = function()
     local interface = require("utils.interface")
 
