@@ -3,7 +3,6 @@ local types = require("utils.types")
 local mappings = {
   base = {
     "alpha",
-    "copilot",
     "splitjoin",
     "diffview",
     "flutter-tools",
