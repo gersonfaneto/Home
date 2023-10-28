@@ -1,10 +1,5 @@
 local current_theme = os.getenv("CURRENT_THEME")
 
-if current_theme == nil then
-  vim.cmd("colorscheme gruvbox-material")
-  return
-end
-
 local M = {}
 
 M.themes = {
@@ -38,11 +33,10 @@ M.themes = {
   end,
 }
 
-for colorscheme, define in pairs(M.themes) do
-  if colorscheme == current_theme then
-    define()
-    return
-  end
+if current_theme == nil or M.themes[current_theme] == nil then
+  M.themes["Gruvbox-Material"]()
+else
+  M.themes[current_theme]()
 end
 
 return M
