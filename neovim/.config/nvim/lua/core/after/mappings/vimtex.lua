@@ -10,12 +10,24 @@ local props = {
 
 local M = {}
 
-base.mappings.register({
-  mode = { "n" },
-  lhs = "<leader>sp",
-  rhs = ":VimtexCompile<CR>",
-  options = { noremap = true, silent = true },
-  description = "LaTeX: Start Preview.",
+base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>sp",
+    rhs = ":VimtexCompile<CR>",
+    options = props.options,
+    description = props.prefix .. "Start Preview.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ep",
+    rhs = function ()
+      vim.cmd("VimtexStopAll")
+      vim.cmd("VimtexClean")
+    end,
+    options = props.options,
+    description = props.prefix .. "End Preview.",
+  }
 })
 
 return M
