@@ -202,6 +202,13 @@ base.mappings.bulk_register({
     options = props.options,
     description = props.prefix .. "Quickly switch between current and last open buffer.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>bo",
+    rhs = ":%bd|e#|bd#<CR>",
+    options = { noremap = true, silent = true },
+    description = props.prefix .. "Close all other buffers.",
+  },
 })
 
 -- INFO: Mappings - Basic Operations...
