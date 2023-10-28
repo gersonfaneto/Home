@@ -23,6 +23,7 @@ local mappings = {
     "todo-comments",
     "treesj",
     "vim-maximizer",
+    "vimtex",
   },
   extras = {
     ["show_bufferline"] = "bufferline",
