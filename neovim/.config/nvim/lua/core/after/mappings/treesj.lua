@@ -1,7 +1,5 @@
 local base = require("utils.base")
 
-local treesj = require("treesj")
-
 local props = {
   options = {
     silent = true,
@@ -14,23 +12,23 @@ local M = {}
 
 base.mappings.bulk_register({
   {
-    mode = { "n", "v", "x" },
-    lhs = "gJ",
-    rhs = treesj.join,
-    options = props.options,
-    description = props.prefix .. "Join the object at the current position/selection.",
-  },
-  {
-    mode = { "n", "v", "x" },
-    lhs = "gS",
-    rhs = treesj.split,
+    mode = { "n", "v" },
+    lhs = "<leader>os",
+    rhs = ":TSJSplit<CR>",
     options = props.options,
     description = props.prefix .. "Split the object at the current position/selection.",
   },
   {
-    mode = { "n", "v", "x" },
-    lhs = "gA",
-    rhs = treesj.toggle,
+    mode = { "n", "v" },
+    lhs = "<leader>oj",
+    rhs = ":TSJJoin<CR>",
+    options = props.options,
+    description = props.prefix .. "Join the object at the current position/selection.",
+  },
+  {
+    mode = { "n", "v" },
+    lhs = "<leader>ot",
+    rhs = ":TSJToggle<CR>",
     options = props.options,
     description = props.prefix .. "Split/Join the object at the current position/selection.",
   },
