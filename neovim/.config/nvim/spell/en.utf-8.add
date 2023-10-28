@@ -61,3 +61,9 @@ dunst
 swayidle
 config
 Maximizer
+README.md
+config.toml
+linters
+formatters
+formatter
+linter
