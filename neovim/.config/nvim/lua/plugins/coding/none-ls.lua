@@ -32,7 +32,9 @@ return {
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.clang_format,
         null_ls.builtins.formatting.ocamlformat,
+        null_ls.builtins.formatting.latexindent,
 
+        null_ls.builtins.diagnostics.vale,
         null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.shellcheck,
