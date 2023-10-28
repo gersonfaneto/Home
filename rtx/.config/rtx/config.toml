@@ -6,6 +6,7 @@ rust = "latest"
 opam = "latest"
 dart = "latest"
 flutter = "latest"
+python = "latest"
 
 [settings]
 experimental = true
