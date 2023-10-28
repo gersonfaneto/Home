@@ -114,6 +114,21 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   end,
 })
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "BufferDeletePost",
+  group = vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true }),
+  callback = function(event)
+    local fallback_name = vim.api.nvim_buf_get_name(event.buf)
+    local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
+    local fallback_on_empty = fallback_name == "" and fallback_ft == ""
+
+    if fallback_on_empty then
+      vim.api.nvim_command("Alpha")
+      vim.api.nvim_command(event.buf .. "bwipeout")
+    end
+  end,
+})
+
 if types.get_settings("show_cursor_line") then
   local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 
