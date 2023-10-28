@@ -45,6 +45,7 @@ packages=(
 	starship
 	stow
   tar
+  texlive
 	tmux
 	trash-cli
   unzip
