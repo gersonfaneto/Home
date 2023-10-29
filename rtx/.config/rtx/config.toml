@@ -4,7 +4,6 @@ node = "latest"
 go = "latest"
 rust = "latest"
 opam = "latest"
-dart = "latest"
 flutter = "latest"
 python = "latest"
 
