@@ -4,6 +4,8 @@ return {
   config = function()
     local treesj = require("treesj")
 
-    treesj.setup({})
+    treesj.setup({
+      use_default_keymaps = false,
+    })
   end,
 }
