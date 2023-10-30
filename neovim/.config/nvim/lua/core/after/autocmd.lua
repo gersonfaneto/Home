@@ -35,6 +35,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     "*.txt",
     "*.org",
     "*.norg",
+    "*.tex",
+    "*.bib",
     "COMMIT_EDITMSG",
   },
 })
@@ -74,7 +76,7 @@ vim.api.nvim_create_autocmd("FileType", {
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+    vim.keymap.set("n", "q", ":close<CR>", { silent = true, buffer = event.buf })
   end,
 })
 
@@ -92,7 +94,7 @@ vim.api.nvim_create_autocmd("FileType", {
       lhs = "<CR>",
       rhs = "<CR>",
       options = { silent = true, noremap = true, buffer = event.buf },
-      description = "Quick Fix - Silent the item under cursor.",
+      description = "Quick Fix - Select the item under cursor.",
     })
   end,
 })
