@@ -48,7 +48,7 @@ base.mappings.bulk_register({
   },
 })
 
--- INFO: Mappings - Custom Commands...
+-- INFO: Mappings - Custom Commands/Functions...
 base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -70,6 +70,42 @@ base.mappings.bulk_register({
     rhs = ":BufferDelete<CR>",
     options = props.options,
     description = props.prefix .. "Delete the current Buffer while maintaining the window layout.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>sw",
+    rhs = function()
+      return base.editing.SurroundWith("w")
+    end,
+    options = { noremap = true, silent = true },
+    description = "",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>sW",
+    rhs = function()
+      return base.editing.SurroundWith("W")
+    end,
+    options = { noremap = true, silent = true },
+    description = "",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>se",
+    rhs = function()
+      return base.editing.SurroundWith("$")
+    end,
+    options = { noremap = true, silent = true },
+    description = "",
+  },
+  {
+    mode = { "v" },
+    lhs = "<leader>as",
+    rhs = function()
+      return base.editing.AlignText()
+    end,
+    options = { noremap = true, silent = true },
+    description = "",
   },
 })
 
