@@ -103,6 +103,21 @@ base.mappings.bulk_register({
     options = props.options,
     description = props.prefix .. "Fuzzily search in current buffer.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>\\",
+    rhs = function()
+      require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
+        previewer = false,
+        layout_config = {
+          width = 50,
+          height = 15,
+        },
+      }))
+    end,
+    options = props.options,
+    description = props.prefix .. "Get suggestions for spelling.",
+  },
 })
 
 return M
