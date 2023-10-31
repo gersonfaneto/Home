@@ -1,9 +1,22 @@
 local M = {}
 
+M.chars = {
+  ["("] = ")",
+  ["["] = "]",
+  ["{"] = "}",
+  ["<"] = ">",
+  ["'"] = "'",
+  ['"'] = '"',
+  ["`"] = "`",
+  ["/"] = "/",
+  ["|"] = "|",
+}
+
 function M.AlignText()
   local c = vim.fn.input("Align with: ")
   local start = vim.fn.col("'<")
   local max = 0
+
   for i = vim.fn.line("'<"), vim.fn.line("'>") do
     local line = vim.fn.getline(i)
     local equals = string.find(line, c, start)
@@ -14,6 +27,7 @@ function M.AlignText()
       end
     end
   end
+
   for i = vim.fn.line("'<"), vim.fn.line("'>") do
     local line = vim.fn.getline(i)
     local equals = string.find(line, c, start)
@@ -21,7 +35,9 @@ function M.AlignText()
       local length = equals - start
       local spaces = max - length
       local spaces_string = string.rep(" ", spaces)
+
       local new_line = string.sub(line, 0, equals - 1) .. spaces_string .. string.sub(line, equals)
+
       vim.fn.setline(i, new_line)
     end
   end
@@ -29,34 +45,11 @@ end
 
 function M.SurroundWith(t)
   local open_char = vim.fn.input("Surround with: ")
-  local closed_char = nil
 
-  if open_char == "(" then
-    closed_char = ")"
-  end
-  if open_char == "[" then
-    closed_char = "]"
-  end
-  if open_char == "{" then
-    closed_char = "}"
-  end
-  if open_char == "<" then
-    closed_char = ">"
-  end
-  if open_char == "'" then
-    closed_char = "'"
-  end
-  if open_char == '"' then
-    closed_char = '"'
-  end
-  if open_char == "`" then
-    closed_char = "`"
-  end
-  if open_char == "/" then
-    closed_char = "/"
-  end
-  if open_char == "|" then
-    closed_char = "|"
+  local closed_char = M.chars[open_char]
+
+  if closed_char == nil then
+    return
   end
 
   if t == "w" then
