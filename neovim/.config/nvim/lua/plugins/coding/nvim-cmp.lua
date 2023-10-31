@@ -15,15 +15,15 @@ return {
     },
   },
   config = function()
-    local cmp = require("cmp")
-    local cmp_types = require("cmp.types.cmp")
-    local cmp_mapping = require("cmp.config.mapping")
-
-    local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
-
     local base = require("utils.base")
     local interface = require("utils.interface")
+
+    local cmp = require("cmp")
+    local cmp_types = require("cmp.types.cmp")
+    local cmp_mapping = cmp.mapping
+
+    local lspkind = require("lspkind")
+    local luasnip = require("luasnip")
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
 
@@ -31,40 +31,40 @@ return {
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local max_width = 0
-          if max_width ~= 0 and #vim_item.abbr > max_width then
-            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. interface.icons.get_icon("ui", "Ellipsis")
+          if #vim_item.abbr > 0 then
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 0 - 1) .. interface.icons.ui.Ellipsis
           end
-          vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
           if entry.source.name == "copilot" then
             vim_item.kind = interface.get_icon("git", "Octoface")
             vim_item.kind_hl_group = "CmpItemKindCopilot"
-          end
-
-          if entry.source.name == "crates" then
+          elseif entry.source.name == "crates" then
             vim_item.kind = interface.get_icon("misc", "Package")
             vim_item.kind_hl_group = "CmpItemKindCrate"
-          end
-
-          if entry.source.name == "emoji" then
+          elseif entry.source.name == "emoji" then
             vim_item.kind = interface.get_icon("misc", "Smiley")
             vim_item.kind_hl_group = "CmpItemKindEmoji"
+          else
+            vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
           end
+
           vim_item.menu = ({
             nvim_lsp = "[LSP]",
-            emoji = "[Emoji]",
-            path = "[Path]",
+            crates = "[Crates]",
             luasnip = "[Snippet]",
-            buffer = "[Buffer]",
             copilot = "[Copilot]",
+            path = "[Path]",
+            emoji = "[Emoji]",
+            buffer = "[Buffer]",
           })[entry.source.name]
+
           vim_item.dup = ({
             buffer = 1,
             path = 1,
             nvim_lsp = 0,
             luasnip = 1,
           })[entry.source.name] or 0
+
           return vim_item
         end,
       },
@@ -84,7 +84,7 @@ return {
       sources = {
         {
           name = "copilot",
-          keyword_length = 5,
+          -- keyword_length = 0,
           max_item_count = 3,
           trigger_characters = {
             {
@@ -107,6 +107,8 @@ return {
               "+",
               "?",
               " ",
+              -- "\t",
+              -- "\n",
             },
           },
         },
@@ -124,12 +126,12 @@ return {
           end,
         },
 
-        { name = "path" },
+        { name = "crates" },
         { name = "luasnip" },
         { name = "nvim_lua" },
-        { name = "buffer" },
+        { name = "path" },
         { name = "emoji" },
-        { name = "crates" },
+        { name = "buffer" },
       },
       mapping = cmp_mapping.preset.insert({
         ["<C-k>"] = cmp_mapping(cmp_mapping.select_prev_item(), { "i", "c" }),
