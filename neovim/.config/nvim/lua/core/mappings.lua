@@ -77,8 +77,8 @@ base.mappings.bulk_register({
     rhs = function()
       return base.editing.SurroundWith("w")
     end,
-    options = { noremap = true, silent = true },
-    description = "",
+    options = props.options,
+    description = props.prefix .. "Surround current word.",
   },
   {
     mode = { "n" },
@@ -86,8 +86,8 @@ base.mappings.bulk_register({
     rhs = function()
       return base.editing.SurroundWith("W")
     end,
-    options = { noremap = true, silent = true },
-    description = "",
+    options = props.options,
+    description = props.prefix .. "Surround current object.",
   },
   {
     mode = { "n" },
@@ -95,8 +95,8 @@ base.mappings.bulk_register({
     rhs = function()
       return base.editing.SurroundWith("$")
     end,
-    options = { noremap = true, silent = true },
-    description = "",
+    options = props.options,
+    description = props.prefix .. "Surround from cursor to the end of the line.",
   },
   {
     mode = { "v" },
@@ -104,8 +104,8 @@ base.mappings.bulk_register({
     rhs = function()
       return base.editing.AlignText()
     end,
-    options = { noremap = true, silent = true },
-    description = "",
+    options = props.options,
+    description = props.prefix .. "Align selection.",
   },
 })
 
