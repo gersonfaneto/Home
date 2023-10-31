@@ -19,7 +19,6 @@ M.lsp = {
 }
 
 M.linters = {
-  "vale",       -- LaTeX
   "eslint_d",   -- *
   "pylint",     -- Python
   "shellcheck", -- Bash/Shell
