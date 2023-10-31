@@ -116,7 +116,14 @@ base.mappings.bulk_register({
     lhs = "<leader>fe",
     rhs = ":Ex<CR>",
     options = props.options,
-    description = props.prefix .. "File Explorer.",
+    description = props.prefix .. "File Explorer - Full.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>se",
+    rhs = ":25Lex<CR>",
+    options = props.options,
+    description = props.prefix .. "File Explorer - Split.",
   },
 })
 

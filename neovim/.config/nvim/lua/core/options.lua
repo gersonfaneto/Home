@@ -8,6 +8,12 @@ M.g = {
   -- Leader.
   mapleader = " ",
   maplocalleader = " ",
+
+  -- File Explorer.
+  netrw_banner = 0,
+  netrw_browse_split = 4,
+  netrw_altv = 1,
+  netrw_liststyle = 3,
 }
 
 M.opt = {
@@ -67,7 +73,7 @@ M.opt = {
   smartcase = true,
   hlsearch = true,
 
-  -- Responsiveness
+  -- Responsiveness.
   timeoutlen = 200,
   updatetime = 100,
 }
