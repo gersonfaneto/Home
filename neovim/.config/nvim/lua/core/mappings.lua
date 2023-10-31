@@ -82,7 +82,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>sW",
+    lhs = "<leader>so",
     rhs = function()
       return base.editing.SurroundWith("W")
     end,
@@ -120,7 +120,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>se",
+    lhs = "<leader>ve",
     rhs = ":25Lex<CR>",
     options = props.options,
     description = props.prefix .. "File Explorer - Split.",
