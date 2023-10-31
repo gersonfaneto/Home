@@ -381,6 +381,13 @@ base.mappings.bulk_register({
     description = props.prefix .. "Copy all the content from the current buffer.",
   },
   {
+    mode = { "v" },
+    lhs = "<C-s>",
+    rhs = ":sort<CR>",
+    options = props.options,
+    description = props.prefix .. "Sort the current selection.",
+  },
+  {
     mode = { "n" },
     lhs = "+",
     rhs = "<C-a>",
