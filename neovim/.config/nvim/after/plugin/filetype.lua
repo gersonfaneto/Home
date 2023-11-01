@@ -4,7 +4,7 @@ end
 
 vim.filetype.add({
   filename = {
-    ["dunstrc"] = "cfg",
+    ["LICENSE"] = "license",
   },
   pattern = {
     [".*%.conf"] = "conf",
