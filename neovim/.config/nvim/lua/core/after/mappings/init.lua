@@ -31,7 +31,7 @@ local mappings = {
     ["show_bufferline"] = "bufferline",
     ["enhanced_ui"] = "noice",
     ["db_tools"] = "dbee",
-    ["https_tools"] = "rest-nvim",
+    ["http_tools"] = "rest-nvim",
   },
   prefix = "core.after.mappings.",
 }

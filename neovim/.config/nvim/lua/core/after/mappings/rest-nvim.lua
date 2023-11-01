@@ -6,7 +6,6 @@ local props = {
   options = {
     silent = true,
     noremap = true,
-    buffer = base.buffers.bufnr(),
   },
   prefix = "REST: ",
 }

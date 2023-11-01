@@ -1,10 +1,13 @@
 return {
   "rest-nvim/rest.nvim",
   commit = "8b62563",
+  event = {
+    "BufReadPre *.http",
+    "BufNewFile *.http",
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  event = { "VeryLazy" },
   cond = function()
     local types = require("utils.types")
 
