@@ -26,13 +26,13 @@ return {
     local luasnip = require("luasnip")
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
-
     cmp.setup({
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          if #vim_item.abbr > 0 then
-            vim_item.abbr = string.sub(vim_item.abbr, 1, 0 - 1) .. interface.icons.ui.Ellipsis
+          local max_width = 0
+          if max_width ~= 0 and #vim_item.abbr > max_width then
+            vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. interface.icons.ui.Ellipsis
           end
 
           if entry.source.name == "copilot" then
