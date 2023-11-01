@@ -17,7 +17,7 @@ base.mappings.bulk_register({
   {
 
     mode = "n",
-    lhs = "<leader>hx",
+    lhs = "<leader>hr",
     rhs = rest_nvim.run,
     options = props.options,
     description = props.prefix .. "Run request under cursor.",
