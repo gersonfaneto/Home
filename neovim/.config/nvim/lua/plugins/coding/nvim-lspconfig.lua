@@ -42,16 +42,14 @@ return {
         {
           mode = { "n" },
           lhs = "gr",
-          rhs = ":Lspsaga finder<CR>",
+          rhs = ":Lspsaga finder ref<CR>",
           options = opts,
           description = "Go to references.",
         },
         {
           mode = { "n" },
           lhs = "gi",
-          rhs = function()
-            require("telescope.builtin").lsp_implementations()
-          end,
+          rhs = ":Lspsaga finder imp<CR>",
           options = opts,
 
           description = "Go to implementations.",
@@ -83,15 +81,6 @@ return {
           rhs = ":Lspsaga show_cursor_diagnostics<CR>",
           options = opts,
           description = "Show diagnostics under cursor.",
-        },
-        {
-          mode = { "n" },
-          lhs = "<leader>fd",
-          rhs = function()
-            require("telescope.builtin").diagnostics()
-          end,
-          options = opts,
-          description = "Find project diagnostics.",
         },
         {
           mode = { "n" },
