@@ -8,14 +8,11 @@ return {
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "windwp/nvim-ts-autotag",
-      "HiPhish/nvim-ts-rainbow2",
     },
     config = function()
       local treesitter_configs = require("nvim-treesitter.configs")
 
       treesitter_configs.setup({
-        auto_install = true,
         indent = {
           enable = true,
         },
@@ -23,20 +20,7 @@ return {
           enable = true,
           additional_vim_regex_highlighting = false,
         },
-        rainbow = {
-          enable = true,
-          disable = {
-            "jsx",
-            "html",
-          },
-        },
-        autotag = {
-          enable = true,
-        },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
+        auto_install = true,
         ensure_installed = {
           "bash",
           "c",
