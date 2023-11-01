@@ -1,5 +1,6 @@
 ---@diagnostic disable: undefined-global
 
+local base = require("utils.base")
 local types = require("utils.types")
 local interface = require("utils.interface")
 
@@ -17,17 +18,25 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
 })
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function ()
+  callback = function()
     vim.cmd("highlight Pmenu guibg=NONE")
     vim.cmd("highlight WinSeparator guibg=NONE")
   end,
   pattern = "*",
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
-    vim.highlight.on_yank()
+    vim.cmd("highlight NormalFloat guibg=none guifg=none")
+    vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
+    vim.cmd("highlight NormalNC guibg=none guifg=none")
   end,
 })
 
@@ -39,47 +48,31 @@ vim.api.nvim_create_autocmd("BufEnter", {
     "*.org",
     "*.norg",
     "*.tex",
-    "*.bib",
     "COMMIT_EDITMSG",
   },
-})
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    if vim.fn.expand("%:t") == "LICENSE" then
-      vim.bo.filetype = "license"
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = function()
-    vim.cmd("highlight NormalFloat guibg=none guifg=none")
-    vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
-    vim.cmd("highlight NormalNC guibg=none guifg=none")
-  end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
   pattern = {
-    "PlenaryTestPopup",
-    "help",
-    "lspinfo",
-    "man",
-    "notify",
     "qf",
-    "spectre_panel",
-    "startuptime",
-    "tsplayground",
-    "neotest-output",
+    "man",
+    "help",
+    "notify",
+    "lspinfo",
     "checkhealth",
-    "neotest-summary",
-    "neotest-output-panel",
+    "PlenaryTestPopup",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", ":close<CR>", { silent = true, buffer = event.buf })
+
+    base.mappings.register({
+      mode = { "n" },
+      lhs = "q",
+      rhs = ":close<CR>",
+      options = { noremap = true, silent = true, buffer = event.buf },
+      description = "Close current buffer/window.",
+    })
   end,
 })
 
@@ -88,8 +81,6 @@ vim.api.nvim_create_autocmd("FileType", {
     "qf",
   },
   callback = function(event)
-    local base = require("utils.base")
-
     vim.bo[event.buf].buflisted = false
 
     base.mappings.register({
