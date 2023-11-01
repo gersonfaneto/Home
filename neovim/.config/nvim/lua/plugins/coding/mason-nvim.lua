@@ -1,7 +1,10 @@
 return {
   "williamboman/mason.nvim",
-  cmd = { "Mason" },
-  event = { "VeryLazy" },
+  cmd = {
+    "Mason",
+    "MasonInstall",
+    "MasonToolInstall",
+  },
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",

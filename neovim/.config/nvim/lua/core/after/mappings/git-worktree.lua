@@ -14,14 +14,14 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>wl",
-    rhs = ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+    rhs = ":Telescope git_worktree git_worktrees<CR>",
     options = props.options,
     description = "Browse trough the git worktrees.",
   },
   {
     mode = { "n" },
     lhs = "<leader>wa",
-    rhs = ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+    rhs = ":Telescope git_worktree create_git_worktree<CR>",
     options = props.options,
     description = props.prefix .. "Create a new git worktree.",
   },

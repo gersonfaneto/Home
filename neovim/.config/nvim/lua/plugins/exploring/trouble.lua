@@ -1,5 +1,11 @@
 return {
   "folke/trouble.nvim",
+  cmd = {
+    "Trouble",
+    "TroubleClose",
+    "TroubleToggle",
+    "TroubleRefresh",
+  },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local trouble = require("trouble")
@@ -7,5 +13,7 @@ return {
     trouble.setup({
       icons = false,
     })
+
+    require("core.after.mappings.trouble")
   end,
 }

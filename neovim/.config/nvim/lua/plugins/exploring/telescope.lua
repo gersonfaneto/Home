@@ -5,13 +5,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
-      "jvgrootveld/telescope-zoxide",
-      "ThePrimeagen/git-worktree.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-      },
     },
     config = function()
       local telescope = require("telescope")
@@ -116,12 +110,6 @@ return {
           },
         },
         extensions = {
-          fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-          },
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({
               previewer = false,
@@ -140,11 +128,7 @@ return {
         },
       })
 
-      telescope.load_extension("fzf")
-      telescope.load_extension("zoxide")
-      telescope.load_extension("flutter")
-      telescope.load_extension("refactoring")
-      telescope.load_extension("git_worktree")
+      telescope.load_extension("ui-select")
     end,
   },
 }

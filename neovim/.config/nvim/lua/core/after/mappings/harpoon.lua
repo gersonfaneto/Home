@@ -1,8 +1,5 @@
 local base = require("utils.base")
 
-local harpoon_ui = require("harpoon.ui")
-local harpoon_mark = require("harpoon.mark")
-
 local props = {
   options = {
     silent = true,
@@ -17,104 +14,84 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>hf",
-    rhs = harpoon_mark.add_file,
+    rhs = ":lua require('harpoon.mark').add_file()<CR>",
     options = props.options,
     description = props.prefix .. "Add current file to Harpoon.",
   },
   {
     mode = { "n" },
     lhs = "<leader>hm",
-    rhs = harpoon_ui.toggle_quick_menu,
+    rhs = ":lua require('harpoon.ui').toggle_quick_menu()<CR>",
     options = props.options,
     description = props.prefix .. "Open.",
   },
   {
     mode = { "n" },
     lhs = "<leader>1",
-    rhs = function()
-      return harpoon_ui.nav_file(1)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(1)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 1.",
   },
   {
     mode = { "n" },
     lhs = "<leader>2",
-    rhs = function()
-      return harpoon_ui.nav_file(2)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(2)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 2.",
   },
   {
     mode = { "n" },
     lhs = "<leader>3",
-    rhs = function()
-      return harpoon_ui.nav_file(3)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(3)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 3.",
   },
   {
     mode = { "n" },
     lhs = "<leader>4",
-    rhs = function()
-      return harpoon_ui.nav_file(4)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(4)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 4.",
   },
   {
     mode = { "n" },
     lhs = "<leader>5",
-    rhs = function()
-      return harpoon_ui.nav_file(5)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(5)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 5.",
   },
   {
     mode = { "n" },
     lhs = "<leader>6",
-    rhs = function()
-      return harpoon_ui.nav_file(6)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(6)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 6.",
   },
   {
     mode = { "n" },
     lhs = "<leader>7",
-    rhs = function()
-      return harpoon_ui.nav_file(7)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(7)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 7.",
   },
   {
     mode = { "n" },
     lhs = "<leader>8",
-    rhs = function()
-      return harpoon_ui.nav_file(8)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(8)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 8.",
   },
   {
     mode = { "n" },
     lhs = "<leader>9",
-    rhs = function()
-      return harpoon_ui.nav_file(9)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(9)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 9.",
   },
   {
     mode = { "n" },
     lhs = "<leader>0",
-    rhs = function()
-      return harpoon_ui.nav_file(10)
-    end,
+    rhs = ":lua require('harpoon.ui').nav_file(10)<CR>",
     options = props.options,
     description = props.prefix .. "Go to file number 10.",
   },

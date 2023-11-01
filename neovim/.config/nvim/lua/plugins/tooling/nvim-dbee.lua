@@ -1,6 +1,12 @@
 return {
   "kndndrj/nvim-dbee",
-  event = { "VeryLazy" },
+  keys = {
+    { "<leader>Do", vim.NIL },
+    { "<leader>Dc", vim.NIL },
+    { "<leader>Dt", vim.NIL },
+    { "<leader>Dp", vim.NIL },
+    { "<leader>Dn", vim.NIL },
+  },
   dependencies = {
     "MunifTanjim/nui.nvim",
   },

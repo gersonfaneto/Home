@@ -1,8 +1,8 @@
 return {
   "zbirenbaum/copilot-cmp",
-  cmd = { "Copilot" },
   after = { "copilot.lua" },
-  cond = function ()
+  event = { "InsertEnter" },
+  cond = function()
     local types = require("utils.types")
 
     return types.get_settings("enhanced_coding")

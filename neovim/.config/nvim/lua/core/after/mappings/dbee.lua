@@ -1,7 +1,5 @@
 local base = require("utils.base")
 
-local dbee = require("dbee")
-
 local props = {
   options = {
     silent = true,
@@ -16,35 +14,35 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>Do",
-    rhs = dbee.open,
+    rhs = ":lua require('dbee').open()<CR>",
     options = props.options,
     description = props.prefix .. "Open UI.",
   },
   {
     mode = { "n" },
     lhs = "<leader>Dc",
-    rhs = dbee.close,
+    rhs = ":lua require('dbee').close()<CR>",
     options = props.options,
     description = props.prefix .. "Close UI.",
   },
   {
     mode = { "n" },
     lhs = "<leader>Dt",
-    rhs = dbee.toggle,
+    rhs = ":lua require('dbee').toggle()<CR>",
     options = props.options,
     description = props.prefix .. "Toggle UI.",
   },
   {
     mode = { "n" },
     lhs = "<leader>Dn",
-    rhs = dbee.next,
+    rhs = ":lua require('dbee').next()<CR>",
     options = props.options,
     description = props.prefix .. "Go to next result page.",
   },
   {
     mode = { "n" },
     lhs = "<leader>Dp",
-    rhs = dbee.prev,
+    rhs = ":lua require('dbee').prev()<CR>",
     options = props.options,
     description = props.prefix .. "Go to previous result page.",
   },

@@ -1,7 +1,9 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  tag = "v2.20.8",
-  event = { "BufReadPost", "BufNewFile" },
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   config = function()
     local interface = require("utils.interface")
 

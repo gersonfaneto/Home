@@ -5,5 +5,4 @@ return {
     "DiffviewClose",
     "DiffviewFileHistory",
   },
-  event = { "VeryLazy" },
 }

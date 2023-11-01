@@ -1,6 +1,5 @@
 return {
   "szw/vim-maximizer",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-  end,
+  cmd = { "MaximizerToggle" },
+  config = function() end,
 }

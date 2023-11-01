@@ -61,6 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "help",
     "notify",
     "lspinfo",
+    "httpResult",
     "checkhealth",
     "PlenaryTestPopup",
   },

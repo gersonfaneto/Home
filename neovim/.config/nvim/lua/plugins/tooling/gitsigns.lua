@@ -1,6 +1,9 @@
 return {
   "lewis6991/gitsigns.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = {
+    "BufReadPre",
+    "BufNewFile",
+  },
   config = function()
     local interface = require("utils.interface")
 

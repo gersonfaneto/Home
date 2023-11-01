@@ -1,8 +1,7 @@
 return {
   "akinsho/flutter-tools.nvim",
-  event = {
-    "BufReadPre *.dart",
-    "BufNewFile *.dart",
+  cmd = {
+    "Telescope flutter",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -10,6 +9,8 @@ return {
   },
   config = function()
     local flutter_tools = require("flutter-tools")
+
+    local telescope = require("telescope")
 
     flutter_tools.setup({
       lsp = {
@@ -28,5 +29,7 @@ return {
         },
       },
     })
+
+    telescope.load_extension("flutter")
   end,
 }

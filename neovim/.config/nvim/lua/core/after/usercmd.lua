@@ -40,11 +40,11 @@ vim.api.nvim_create_user_command("NewNote", function()
 end, { desc = "Create a new note as a markdown file." })
 
 -- GitSigns.
-vim.api.nvim_create_user_command("VisualStage", function(info)
+vim.api.nvim_create_user_command("VisualStage", function(args)
   local gitsigns = require("gitsigns")
 
-  local first_line = info.line1
-  local last_line = info.line2
+  local first_line = args.line1
+  local last_line = args.line2
 
   gitsigns.stage_hunk({ first_line, last_line })
 
