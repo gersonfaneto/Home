@@ -5,9 +5,7 @@ return {
       "BufReadPre *.md",
       "BufNewFile *.md",
     },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
+    build = "cd app && npm install",
     config = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,

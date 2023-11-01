@@ -18,7 +18,7 @@ return {
   build = function()
     local dbee = require("dbee")
 
-    dbee.install("go")
+    dbee.install()
   end,
   config = function()
     local dbee = require("dbee")
