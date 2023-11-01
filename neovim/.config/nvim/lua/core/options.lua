@@ -75,7 +75,7 @@ M.opt = {
   hlsearch = true,
 
   -- Responsiveness.
-  timeoutlen = 200,
+  timeoutlen = 300,
   updatetime = 100,
 }
 
