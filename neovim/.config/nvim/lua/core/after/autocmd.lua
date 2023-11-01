@@ -17,8 +17,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  command = "highlight Pmenu guibg=NONE",
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function ()
+    vim.cmd("highlight Pmenu guibg=NONE")
+    vim.cmd("highlight WinSeparator guibg=NONE")
+  end,
   pattern = "*",
 })
 

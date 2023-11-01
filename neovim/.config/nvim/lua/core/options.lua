@@ -58,6 +58,7 @@ M.opt = {
   numberwidth = 4,
   fillchars = { eob = " " },
   completeopt = { "menu", "menuone", "noselect" },
+  laststatus = 3,
 
   -- Tabs / Indentation.
   tabstop = 2,
