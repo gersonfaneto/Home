@@ -7,7 +7,9 @@ return {
     return types.get_settings("enhanced_coding")
   end,
   config = function()
-    require("copilot").setup({
+    local copilot = require("copilot")
+
+    copilot.setup({
       panel = {
         enabled = true,
         auto_refresh = true,

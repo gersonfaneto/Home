@@ -2,12 +2,14 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   cmd = { "Neotree" },
   dependencies = {
+    "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
   },
   config = function()
-    require("neo-tree").setup({
+    local neo_tree = require("neo-tree")
+
+    neo_tree.setup({
       close_if_last_window = true,
       popup_border_style = "single",
       enable_git_status = true,

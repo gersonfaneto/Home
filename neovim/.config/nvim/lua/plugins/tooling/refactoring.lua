@@ -6,6 +6,8 @@ return {
     { "nvim-treesitter/nvim-treesitter" },
   },
   config = function()
-    require("refactoring").setup({})
+    local refactoring = require("refactoring")
+
+    refactoring.setup({})
   end,
 }

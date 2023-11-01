@@ -14,10 +14,8 @@ return {
 
     lsp_inlayhints.setup()
 
-    vim.api.nvim_create_augroup("LSPAttachInlayHints", {})
-
     vim.api.nvim_create_autocmd("LSPAttach", {
-      group = "LSPAttachInlayHints",
+      group = vim.api.nvim_create_augroup("LSPAttachInlayHints", {}),
       callback = function(args)
         if not (args.data and args.data.client_id) then
           return

@@ -6,7 +6,9 @@ return {
 
     local icons = interface.get_icons("ui")
 
-    require("gitsigns").setup({
+    local gitsigns = require("gitsigns")
+
+    gitsigns.setup({
       signs = {
         add = {
           hl = "GitSignsAdd",

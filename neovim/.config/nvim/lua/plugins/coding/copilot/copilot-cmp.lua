@@ -8,6 +8,8 @@ return {
     return types.get_settings("enhanced_coding")
   end,
   config = function()
-    require("copilot_cmp").setup()
+    local copilot_cmp = require("copilot_cmp")
+
+    copilot_cmp.setup()
   end,
 }

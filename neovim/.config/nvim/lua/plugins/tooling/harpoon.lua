@@ -1,6 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
-  event = { "UIEnter" },
+  event = { "VeryLazy" },
   config = function()
     local harpoon = require("harpoon")
 

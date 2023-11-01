@@ -1,9 +1,8 @@
 return {
   "akinsho/flutter-tools.nvim",
-  ft = { "dart" },
   event = {
-    "BufReadPre",
-    "BufNewFile",
+    "BufReadPre *.dart",
+    "BufNewFile *.dart",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

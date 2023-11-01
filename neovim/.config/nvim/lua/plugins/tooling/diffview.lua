@@ -1,6 +1,9 @@
 return {
   "sindrets/diffview.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-  end,
+  cmd = {
+    "DiffviewOpen",
+    "DiffviewClose",
+    "DiffviewFileHistory",
+  },
+  event = { "VeryLazy" },
 }

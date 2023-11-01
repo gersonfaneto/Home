@@ -1,8 +1,10 @@
 return {
   {
     "iamcco/markdown-preview.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    ft = { "markdown" },
+    event = {
+      "BufReadPre *.md",
+      "BufNewFile *.md",
+    },
     build = function()
       vim.fn["mkdp#util#install"]()
     end,

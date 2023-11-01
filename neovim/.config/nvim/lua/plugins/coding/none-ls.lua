@@ -3,7 +3,6 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local types = require("utils.types")
-    local base = require("utils.base")
 
     local null_ls = require("null-ls")
 
@@ -34,13 +33,11 @@ return {
         null_ls.builtins.formatting.ocamlformat,
         null_ls.builtins.formatting.latexindent,
 
-        null_ls.builtins.diagnostics.vale,
         null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.shellcheck,
       },
       on_attach = types.get_settings("format_on_save") and on_attach or nil,
     })
-
   end,
 }

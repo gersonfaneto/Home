@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.comment",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       local mini_comment = require("mini.comment")
 

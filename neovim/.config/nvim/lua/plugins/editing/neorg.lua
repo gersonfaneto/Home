@@ -1,8 +1,10 @@
 return {
   "nvim-neorg/neorg",
-  ft = { "norg" },
   cmd = { "Neorg" },
-  event = { "BufReadPre", "BufNewFile" },
+  event = {
+    "BufReadPre *.norg",
+    "BufNewFile *.norg",
+  },
   build = ":Neorg sync-parsers",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()

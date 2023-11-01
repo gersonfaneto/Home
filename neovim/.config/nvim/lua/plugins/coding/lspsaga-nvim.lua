@@ -7,12 +7,6 @@ return {
     local lspsaga = require("lspsaga")
 
     lspsaga.setup({
-      symbol_in_winbar = {
-        enable = false,
-      },
-      breadcrumbs = {
-        enable = false,
-      },
       move_in_saga = {
         prev = "<C-k>",
         next = "<C-j>",

@@ -1,13 +1,8 @@
 return {
   "Saecki/crates.nvim",
-  ft = {
-    "rust",
-    "toml",
-  },
   event = {
-    "BufRead",
-    "BufReadPre",
-    "BufNewFile",
+    "BufReadPre Cargo.toml",
+    "BufNewFile Cargo.toml",
   },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
