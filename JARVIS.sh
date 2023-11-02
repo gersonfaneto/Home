@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# WARNING: This script is currently broken, packages will fail to install...
-
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"
@@ -25,7 +23,7 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 packages=(
 	bat
 	bottom
-  difft
+	difft
 	eza
 	fd
 	fish
@@ -33,31 +31,30 @@ packages=(
 	git
 	github-cli
 	glow
-  jq
+	jq
 	kitty
 	lf
-  mediainfo
+	mediainfo
 	neofetch
 	neovim
-  python-pdftotext
+	python-pdftotext
 	ripgrep
-  rtx
+	rtx
 	starship
 	stow
-  tar
-  texlive
+	tar
 	tmux
 	trash-cli
-  unzip
+	unzip
 	vimv
-  xh
-  zip
+	xh
+	zip
 	zoxide
 )
 
 # Show a progress bar to the user.
 display_progress() {
-	while pgrep "$1" &>/dev/null; do
+	while ps | grep $1 &>/dev/null; do
 		echo -n "."
 		sleep 2
 	done
@@ -169,7 +166,7 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
 	echo -e "$NOTE - Generating extra configurations for kitty..."
 
-  "$HOME"/.config/kitty/scripts/generate-fonts.sh
+	"$HOME"/.config/kitty/scripts/generate-fonts.sh
 
 	if yay -Q bat &>>/dev/null; then
 		echo -e "$NOTE - Updating 'bat' themes..."
