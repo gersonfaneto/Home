@@ -12,6 +12,8 @@ return {
 
       local actions = require("telescope.actions")
 
+      local trouble = require("trouble.providers.telescope")
+
       telescope.setup({
         defaults = {
           previewer = false,
@@ -27,9 +29,11 @@ return {
           mappings = {
             n = {
               ["<C-d>"] = actions.delete_buffer,
+              ["<C-q>"] = trouble.smart_open_with_trouble,
             },
             i = {
               ["<C-d>"] = actions.delete_buffer,
+              ["<C-q>"] = trouble.smart_open_with_trouble,
             },
           },
         },
