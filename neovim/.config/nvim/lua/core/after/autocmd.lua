@@ -148,14 +148,20 @@ if types.get_settings("auto_save") then
     pattern = { "*" },
     callback = function()
       local disable_file_types = {
-        "toggleterm",
-        "translate",
+        "oil",
       }
-      local directory = vim.fn.fnamemodify(vim.fn.expand("%"), ":p:h")
-      if vim.fn.isdirectory(directory) == 0 and not vim.tbl_contains(disable_file_types, vim.bo.filetype) then
-        vim.fn.mkdir(directory, "p")
+
+      local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":p:h")
+
+      local is_allowed = not vim.tbl_contains(disable_file_types, vim.bo.filetype)
+      local is_directory = vim.fn.isdirectory(path) == 0
+
+      if is_allowed then
+        if is_directory then
+          vim.fn.mkdir(path, "p")
+        end
+        vim.cmd("silent! wall")
       end
-      vim.cmd("silent! wall")
     end,
     nested = true,
   })
