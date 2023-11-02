@@ -31,6 +31,9 @@ end
 
 if type -q trash
   alias rm trash
+  alias rml trash-list
+  alias rmr trash-restore
+  alias rme "echo y | command trash-empty"
 end
 
 if type -q bat
