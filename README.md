@@ -32,7 +32,7 @@ Make sure to have the following dependencies installed before proceeding.
 
 ```markdown
 bat bottom difft eza fd fish fzf git github-cli glow jq kitty lf mediainfo neofetch neovim
-python-pdftotext ripgrep rtx starship stow tar texlive tmux trash-cli unzip vimv xh zip zoxide
+python-pdftotext ripgrep rtx starship stow tar tmux trash-cli unzip vimv xh zip zoxide
 ```
 
 After installing all the packages listed above follow the steps ahead.
