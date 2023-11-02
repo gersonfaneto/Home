@@ -131,7 +131,12 @@ return {
       },
     })
 
-    for _, server in pairs(types.servers.lsp) do
+    local servers = vim.tbl_flatten({
+      types.servers.lsp.base,
+      types.servers.lsp.extras,
+    })
+
+    for _, server in pairs(servers) do
       local has_settings, extras = pcall(require, "plugins.coding.settings." .. server)
 
       if server == "jdtls" then

@@ -29,7 +29,7 @@ return {
     })
 
     mason_lspconfig.setup({
-      ensure_installed = types.servers.lsp,
+      ensure_installed = types.servers.lsp.base,
       automatic_installation = true,
     })
 
