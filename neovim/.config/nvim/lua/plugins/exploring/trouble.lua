@@ -11,9 +11,8 @@ return {
     local trouble = require("trouble")
 
     trouble.setup({
-      icons = false,
+      auto_fold = true,
+      auto_preview = false,
     })
-
-    require("core.after.mappings.trouble")
   end,
 }
