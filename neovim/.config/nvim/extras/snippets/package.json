@@ -22,6 +22,10 @@
         "path": "lua.json"
       },
       {
+        "language": "make",
+        "path": "make.json"
+      },
+      {
         "language": "gitcommit",
         "path": "gitcommit.json"
       },
