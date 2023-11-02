@@ -3,6 +3,10 @@ return {
   cmd = {
     "Telescope flutter",
   },
+  event = {
+    "BufReadPre *.dart",
+    "BufNewFile *.dart",
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "stevearc/dressing.nvim",
