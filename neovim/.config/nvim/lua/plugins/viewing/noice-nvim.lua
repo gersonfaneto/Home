@@ -12,8 +12,6 @@ return {
   config = function()
     local noice = require("noice")
 
-    local telescope = require("telescope")
-
     noice.setup({
       cmdline = {
         format = {
@@ -56,7 +54,5 @@ return {
         lsp_doc_border = false,
       },
     })
-
-    telescope.load_extension("noice")
   end,
 }

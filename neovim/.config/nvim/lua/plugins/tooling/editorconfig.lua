@@ -1,4 +1,7 @@
 return {
   "editorconfig/editorconfig-vim",
-  event = { "VeryLazy" },
+  event = {
+    "BufReadPre",
+    "BufNewFile",
+  },
 }
