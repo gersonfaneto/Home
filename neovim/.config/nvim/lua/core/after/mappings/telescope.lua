@@ -51,7 +51,11 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>fp",
     rhs = function()
-      require("telescope.builtin").git_files()
+      local was_called, _ = pcall(require("telescope.builtin").git_files)
+
+      if not was_called then
+        require("telescope.builtin").find_files()
+      end
     end,
     options = props.options,
     description = props.prefix .. "Find files in the current project.",
