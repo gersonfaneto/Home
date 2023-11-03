@@ -10,6 +10,7 @@ M.lsp = {
     "html", -- HTML
     "jdtls", -- Java
     "jsonls", -- JSON
+    "yamlls", -- YAML
     "lua_ls", -- Lua
     "ocamllsp", -- OCaml
     "pyright", -- Python
