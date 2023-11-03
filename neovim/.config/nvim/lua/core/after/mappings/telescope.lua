@@ -18,7 +18,7 @@ base.mappings.bulk_register({
       require("telescope.builtin").builtin()
     end,
     options = props.options,
-    description = props.prefix .. "Broswe trough all Telescope builtins.",
+    description = props.prefix .. "Browse trough all Telescope builtins.",
   },
   {
     mode = { "n" },
@@ -27,7 +27,16 @@ base.mappings.bulk_register({
       require("telescope.builtin").keymaps()
     end,
     options = props.options,
-    description = props.prefix .. "Broswe trough all the registered mappings.",
+    description = props.prefix .. "Browse trough all the registered mappings.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>fh",
+    rhs = function()
+      require("telescope.builtin").help_tags()
+    end,
+    options = props.options,
+    description = props.prefix .. "Browse through all the Help tags.",
   },
   {
     mode = { "n" },
@@ -36,25 +45,37 @@ base.mappings.bulk_register({
       require("telescope.builtin").find_files()
     end,
     options = props.options,
-    description = props.prefix .. "Find files in the current workspace.",
+    description = props.prefix .. "Find files in the current directory.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>fg",
+    lhs = "<leader>fp",
     rhs = function()
       require("telescope.builtin").git_files()
     end,
     options = props.options,
-    description = props.prefix .. "Find files in the current repository.",
+    description = props.prefix .. "Find files in the current project.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>fo",
+    lhs = "<leader>fr",
     rhs = function()
       require("telescope.builtin").oldfiles()
     end,
     options = props.options,
-    description = props.prefix .. "Find files in the current workspace.",
+    description = props.prefix .. "Find recent opened files.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>fn",
+    rhs = function()
+      require("telescope.builtin").find_files({
+        prompt_title = " Notes ",
+        cwd = "$HOME/Notes",
+      })
+    end,
+    options = props.options,
+    description = props.prefix .. "Browse through the Notes.",
   },
   {
     mode = { "n" },
@@ -63,7 +84,7 @@ base.mappings.bulk_register({
       require("telescope.builtin").live_grep()
     end,
     options = props.options,
-    description = props.prefix .. "Find a string in the current workspace.",
+    description = props.prefix .. "Find matching strings in the current workspace.",
   },
   {
     mode = { "n" },

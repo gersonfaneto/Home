@@ -12,7 +12,7 @@ local M = {}
 
 base.mappings.register({
   mode = { "n" },
-  lhs = "<leader>fe",
+  lhs = "-",
   rhs = ":Oil<CR>",
   options = { silent = true, noremap = true },
   description = "Oil - Open parent directory.",

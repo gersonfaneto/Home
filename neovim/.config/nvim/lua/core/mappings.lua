@@ -13,21 +13,28 @@ local props = {
 
 local M = {}
 
--- INFO: Mappings - Settings...
+-- INFO: Mappings - Quick Edit...
 base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>et",
+    rhs = ":e ~/Notes/TODO.md<CR>",
+    options = props.options,
+    description = props.prefix .. "TODOs.",
+  },
   {
     mode = { "n" },
     lhs = "<leader>ec",
     rhs = ":chdir ~/.config/nvim | e init.lua<CR>",
     options = props.options,
-    description = props.prefix .. "Open Neovim config.",
+    description = props.prefix .. "Configuration.",
   },
   {
     mode = { "n" },
     lhs = "<leader>es",
     rhs = ":chdir ~/.config/nvim | e lua/core/custom/settings.lua<CR>",
     options = props.options,
-    description = props.prefix .. "Open Neovim config.",
+    description = props.prefix .. "Settings.",
   },
 })
 
