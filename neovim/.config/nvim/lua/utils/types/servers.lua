@@ -9,6 +9,7 @@ M.lsp = {
     "gopls", -- Go
     "html", -- HTML
     "jdtls", -- Java
+    "jsonls", -- JSON
     "lua_ls", -- Lua
     "ocamllsp", -- OCaml
     "pyright", -- Python
