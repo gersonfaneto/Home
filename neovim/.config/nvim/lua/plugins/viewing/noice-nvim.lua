@@ -13,11 +13,6 @@ return {
     local noice = require("noice")
 
     noice.setup({
-      cmdline = {
-        format = {
-          substitute = { pattern = "^:%%?s/", icon = " ", ft = "regex", title = "Rename" },
-        },
-      },
       lsp = {
         progress = {
           enabled = false,
@@ -41,7 +36,7 @@ return {
               { event = "msg_show", find = "%d+ change" },
               { event = "msg_show", find = "%d+ line" },
               { event = "msg_show", find = "%d+ more line" },
-              { event = "notify", find = "No information available" },
+              { event = "notify",   find = "No information available" },
             },
           },
         },
@@ -52,6 +47,13 @@ return {
         long_message_to_split = true,
         inc_rename = false,
         lsp_doc_border = false,
+      },
+      cmdline = {
+        view = "cmdline_popup",
+        format = {
+          cmdline = { pattern = "^:", icon = "> ", lang = "vim", title = " Command " },
+          substitute = { pattern = "^:%%?s/", icon = " ", ft = "regex", title = " Rename " },
+        },
       },
     })
   end,
