@@ -7,7 +7,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("enhanced_ui")
+    return types.settings.enhanced_ui
   end,
   config = function()
     local noice = require("noice")
@@ -36,7 +36,7 @@ return {
               { event = "msg_show", find = "%d+ change" },
               { event = "msg_show", find = "%d+ line" },
               { event = "msg_show", find = "%d+ more line" },
-              { event = "notify",   find = "No information available" },
+              { event = "notify", find = "No information available" },
             },
           },
         },

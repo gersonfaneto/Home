@@ -1,4 +1,3 @@
----@diagnostic disable: need-check-nil
 local base = require("utils.base")
 
 local _, jdtls = pcall(require, "jdtls")
@@ -25,6 +24,8 @@ extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local function directory_exists(path)
   local f = io.popen("cd " .. path)
+
+  ---@diagnostic disable-next-line: need-check-nil
   local ff = f:read("*all")
 
   if ff:find("ItemNotFoundException") then

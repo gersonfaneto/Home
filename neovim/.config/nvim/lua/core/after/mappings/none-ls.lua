@@ -5,7 +5,7 @@ local props = {
     silent = true,
     noremap = true,
   },
-  prefix = "NoneLS: "
+  prefix = "NoneLS: ",
 }
 
 local M = {}

@@ -25,7 +25,7 @@ return {
     end
 
     null_ls.setup({
-      border = types.get_settings("float_border") and "double" or "none",
+      border = types.settings.float_border and "double" or "none",
       sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
@@ -40,7 +40,7 @@ return {
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.shellcheck,
       },
-      on_attach = types.get_settings("format_on_save") and on_attach or nil,
+      on_attach = types.settings.format_on_save and on_attach or nil,
     })
   end,
 }

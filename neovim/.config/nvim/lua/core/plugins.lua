@@ -43,7 +43,7 @@ local lazy_options = {
     },
   },
   ui = {
-    border = types.get_settings("float_border") and "double" or "none",
+    border = types.settings.float_border and "double" or "none",
   },
   checker = {
     enabled = false,

@@ -4,7 +4,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("enhanced_coding")
+    return types.settings.enhanced_coding
   end,
   config = function()
     local copilot = require("copilot")

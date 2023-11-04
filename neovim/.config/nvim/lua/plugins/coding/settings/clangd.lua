@@ -20,6 +20,7 @@ return {
     "cuda",
     "proto",
   },
+  ---@diagnostic disable-next-line: deprecated
   root_dir = require("lspconfig/util").root_pattern(unpack(root_files)),
   capabilities = {
     textDocument = {

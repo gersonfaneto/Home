@@ -7,7 +7,7 @@ local decay_core = require("decay.core")
 local decay_highlights = require("decay.highlights")
 
 local colors = decay_core.get_colors(style)
-local colors_override = types.get_settings("transparent") and "NONE" or colors.background
+local colors_override = types.settings.transparent and "NONE" or colors.background
 
 local M = {}
 

@@ -11,7 +11,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("http_tools")
+    return types.settings.http_tools
   end,
   config = function()
     local rest_nvim = require("rest-nvim")

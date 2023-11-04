@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global, undefined-field
-
 local base = require("utils.base")
 local types = require("utils.types")
 
@@ -44,10 +42,11 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>cc",
     rhs = function()
+      ---@diagnostic disable-next-line: undefined-field
       if vim.opt.colorcolumn:get()[1] ~= nil then
         vim.opt.colorcolumn = nil
       else
-        vim.opt.colorcolumn = types.get_settings("color_column")
+        vim.opt.colorcolumn = types.settings.color_column
       end
     end,
     options = props.options,

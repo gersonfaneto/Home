@@ -7,7 +7,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("inlay_hints")
+    return types.settings.inlay_hints
   end,
   config = function()
     local lsp_inlayhints = require("lsp-inlayhints")

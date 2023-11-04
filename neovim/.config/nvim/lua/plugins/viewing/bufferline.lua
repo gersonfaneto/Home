@@ -9,7 +9,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("show_bufferline")
+    return types.settings.show_bufferline
   end,
   config = function()
     local interface = require("utils.interface")

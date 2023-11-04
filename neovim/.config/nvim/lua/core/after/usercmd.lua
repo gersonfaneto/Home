@@ -1,5 +1,3 @@
----@diagnostic disable: unused-local, param-type-mismatch
-
 -- Buffers.
 vim.api.nvim_create_user_command("BufferCreate", function()
   vim.ui.input({ prompt = "Name: ", relative = "editor" }, function(name)

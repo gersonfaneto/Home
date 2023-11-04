@@ -7,9 +7,9 @@ local M = {}
 
 vim.g.gruvbox_material_background = "hard"
 
-vim.g.gruvbox_material_transparent_background = 2 and types.get_settings("transparent") or 0
+vim.g.gruvbox_material_transparent_background = 2 and types.settings.transparent or 0
 
-vim.g.gruvbox_material_dim_inactive_windows = 1 and types.get_settings("dim_inactive") or 0
+vim.g.gruvbox_material_dim_inactive_windows = 1 and types.settings.dim_inactive or 0
 
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_enable_italic = 1

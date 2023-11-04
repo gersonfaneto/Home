@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 local types = require("utils.types")
 
 local M = {}
@@ -47,7 +45,7 @@ M.opt = {
   number = true,
   relativenumber = true,
   termguicolors = true,
-  colorcolumn = types.get_settings("show_color_column") and types.get_settings("color_column") or "",
+  colorcolumn = types.settings.show_color_column and types.settings.color_column or "",
   signcolumn = "yes",
   cmdheight = 1,
   scrolloff = 10,

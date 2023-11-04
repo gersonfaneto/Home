@@ -118,7 +118,7 @@ return {
 
     vim.diagnostic.config({
       underline = true,
-      virtual_text = types.get_settings("virtual_text"),
+      virtual_text = types.settings.virtual_text,
       signs = true,
       update_in_insert = false,
       severity_sort = true,
@@ -132,8 +132,8 @@ return {
     })
 
     local servers = vim.tbl_flatten({
-      types.servers.lsp.base,
-      types.servers.lsp.extras,
+      types.servers.languages.base,
+      types.servers.languages.extras,
     })
 
     for _, server in pairs(servers) do

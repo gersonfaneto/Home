@@ -4,7 +4,7 @@ return {
   cond = function()
     local types = require("utils.types")
 
-    return types.get_settings("discord_presence")
+    return types.settings.discord_presence
   end,
   config = function()
     local presence = require("presence")

@@ -9,8 +9,8 @@ rose_pine.setup({
   dark_variant = "main",
   bold_vert_split = false,
   dim_nc_background = false,
-  disable_background = types.get_settings("transparent"),
-  disable_float_background = types.get_settings("transparent"),
+  disable_background = types.settings.transparent,
+  disable_float_background = types.settings.transparent,
   disable_italics = false,
 
   groups = {

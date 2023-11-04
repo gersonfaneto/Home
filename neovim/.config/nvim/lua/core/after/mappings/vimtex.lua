@@ -21,13 +21,13 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ep",
-    rhs = function ()
+    rhs = function()
       vim.cmd("VimtexStopAll")
       vim.cmd("VimtexClean")
     end,
     options = props.options,
     description = props.prefix .. "End Preview.",
-  }
+  },
 })
 
 return M

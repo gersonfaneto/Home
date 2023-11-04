@@ -11,11 +11,11 @@ catppuccin.setup({
     dark = "mocha",
   },
   dim_inactive = {
-    enabled = types.get_settings("dim_inactive"),
+    enabled = types.settings.dim_inactive,
     shade = "dark",
     percentage = 0.15,
   },
-  transparent_background = types.get_settings("transparent"),
+  transparent_background = types.settings.transparent,
 })
 
 return M
