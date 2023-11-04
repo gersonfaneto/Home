@@ -1,12 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   event = {
-    "BufReadPre",
-    "BufNewFile",
+    "VeryLazy",
   },
-  commit = "f2778bd1a28b74adf5b1aa51aa57da85adfa3d16",
   build = function()
-    pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+    vim.api.nvim_command("TSUpdate")
   end,
   dependencies = {
     "nvim-lua/plenary.nvim",
