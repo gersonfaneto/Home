@@ -132,8 +132,8 @@ return {
     })
 
     local servers = vim.tbl_flatten({
-      types.servers.languages.base,
-      types.servers.languages.extras,
+      types.servers.base_languages,
+      types.servers.extra_languages,
     })
 
     for _, server in pairs(servers) do

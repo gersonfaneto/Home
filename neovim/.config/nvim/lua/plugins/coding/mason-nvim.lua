@@ -29,14 +29,14 @@ return {
     })
 
     mason_lspconfig.setup({
-      ensure_installed = types.servers.languages.base,
+      ensure_installed = types.servers.base_languages,
       automatic_installation = true,
     })
 
     mason_tool_installer.setup({
       ensure_installed = vim.tbl_flatten({
-        types.servers.general.linters,
-        types.servers.general.formatters,
+        types.servers.linters,
+        types.servers.formatters,
       }),
     })
   end,
