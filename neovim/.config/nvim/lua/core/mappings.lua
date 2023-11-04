@@ -81,7 +81,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>sw",
     rhs = function()
-      return base.editing.SurroundWith("w")
+      return base.editing.surround_with("w")
     end,
     options = props.options,
     description = props.prefix .. "Surround current word.",
@@ -90,7 +90,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>so",
     rhs = function()
-      return base.editing.SurroundWith("W")
+      return base.editing.surround_with("W")
     end,
     options = props.options,
     description = props.prefix .. "Surround current object.",
@@ -99,7 +99,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>se",
     rhs = function()
-      return base.editing.SurroundWith("$")
+      return base.editing.surround_with("$")
     end,
     options = props.options,
     description = props.prefix .. "Surround from cursor to the end of the line.",
@@ -108,7 +108,7 @@ base.mappings.bulk_register({
     mode = { "v" },
     lhs = "<leader>as",
     rhs = function()
-      return base.editing.AlignText()
+      return base.editing.align_text()
     end,
     options = props.options,
     description = props.prefix .. "Align selection.",

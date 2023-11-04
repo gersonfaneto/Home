@@ -8,14 +8,14 @@ if plugins.marp.IsMarp() then
     {
       mode = { "n" },
       lhs = "<leader>sp",
-      rhs = plugins.marp.StartServer,
+      rhs = plugins.marp.start_server,
       options = { noremap = true, silent = true },
       description = "Marp: Start Preview.",
     },
     {
       mode = { "n" },
       lhs = "<leader>ep",
-      rhs = plugins.marp.StopServer,
+      rhs = plugins.marp.stop_server,
       options = { noremap = true, silent = true },
       description = "Marp: End Preview.",
     },

@@ -162,7 +162,7 @@ local icons = {
 -- Returns a table of a given icon category.
 -- @param category string The category of the desired icons.
 --- @return table icons The sub table of the given category.
-M.get_icons = function(category)
+function M.get_icons(category)
   local table = vim.tbl_get(icons, category)
 
   if table == nil then
@@ -176,7 +176,7 @@ end
 --- @param category string The category of the desired icon.
 --- @param name string The name of the desired icon.
 --- @return string icon The requested icon.
-M.get_icon = function(category, name)
+function M.get_icon(category, name)
   local table = M.get_icons(category)
 
   if vim.tbl_isempty(table) then

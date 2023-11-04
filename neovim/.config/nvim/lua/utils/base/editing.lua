@@ -12,7 +12,7 @@ M.chars = {
   ["|"] = "|",
 }
 
-function M.AlignText()
+function M.align_text()
   local c = vim.fn.input("Align with: ")
   local start = vim.fn.col("'<")
   local max = 0
@@ -43,7 +43,7 @@ function M.AlignText()
   end
 end
 
-function M.SurroundWith(t)
+function M.surround_with(t)
   local open_char = vim.fn.input("Surround with: ")
 
   local closed_char = M.chars[open_char]
