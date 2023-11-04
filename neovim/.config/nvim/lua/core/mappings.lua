@@ -54,7 +54,7 @@ base.mappings.bulk_register({
   },
 })
 
--- INFO: Mappings - Custom Commands/Functions...
+-- INFO: Mappings - Custom Commands...
 base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -76,42 +76,6 @@ base.mappings.bulk_register({
     rhs = ":BufferDelete<CR>",
     options = props.options,
     description = props.prefix .. "Delete the current Buffer while maintaining the window layout.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>sw",
-    rhs = function()
-      return base.editing.surround_with("w")
-    end,
-    options = props.options,
-    description = props.prefix .. "Surround current word.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>so",
-    rhs = function()
-      return base.editing.surround_with("W")
-    end,
-    options = props.options,
-    description = props.prefix .. "Surround current object.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>se",
-    rhs = function()
-      return base.editing.surround_with("$")
-    end,
-    options = props.options,
-    description = props.prefix .. "Surround from cursor to the end of the line.",
-  },
-  {
-    mode = { "v" },
-    lhs = "<leader>as",
-    rhs = function()
-      return base.editing.align_text()
-    end,
-    options = props.options,
-    description = props.prefix .. "Align selection.",
   },
 })
 
