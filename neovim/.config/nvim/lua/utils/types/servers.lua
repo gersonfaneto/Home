@@ -1,29 +1,8 @@
 ---@class Servers
 local M = {}
 
---- List of linters that can be installed through `Mason` and will be configured by `NullLS`.
---- @type string[]
-M.linters = {
-  "eslint_d",   -- TypeScript / JavaScript
-  "pylint",     -- Python
-  "shellcheck", -- Bash/Shell
-}
-
---- List of formatters that can be installed through `Mason` and will be configured by `NullLS`.
---- @type string[]
-M.formatters = {
-  "latexindent",        -- LaTeX
-  "black",              -- Python
-  "clang-format",       -- C/C++
-  "google-java-format", -- Java
-  "isort",              -- Python
-  "ocamlformat",        -- OCaml
-  "prettier",           -- *
-  "shfmt",              -- Bash|Shell
-  "stylua",             -- Lua
-}
-
 --- List of parsers that will be installed by `TreeSitter`.
+--- See: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 --- @type string[]
 M.parsers = {
   "bash",
@@ -32,9 +11,9 @@ M.parsers = {
   "css",
   "dart",
   "fish",
+  "git_rebase",
   "gitcommit",
   "gitignore",
-  "git_rebase",
   "go",
   "html",
   "java",
@@ -50,10 +29,12 @@ M.parsers = {
   "sql",
   "toml",
   "typescript",
+  "yaml",
 }
 
 --- List of language servers that can be installed through `Mason` and will be configured by the
 --- native `LSP`.
+--- See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 --- @type string[]
 M.base_languages = {
   "bashls",        -- Bash
@@ -64,22 +45,43 @@ M.base_languages = {
   "html",          -- HTML
   "jdtls",         -- Java
   "jsonls",        -- JSON
-  "yamlls",        -- YAML
   "lua_ls",        -- Lua
   "ocamllsp",      -- OCaml
   "pyright",       -- Python
   "rust_analyzer", -- Rust
-  "svelte",        -- Svelte
-  "tailwindcss",   -- TailwindCSS
   "texlab",        -- LaTeX
   "tsserver",      -- TypeScript / JavaScript
+  "yamlls",        -- YAML
 }
 
 --- List of language servers that can't be installed through `Mason`, but should be configured by
 --- the native `LSP`.
+--- See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 --- @type string[]
 M.extra_languages = {
   "dartls", -- Dart
+}
+
+--- List of linters that can be installed through `Mason` and will be configured by `NoneLS`.
+--- See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+--- @type string[]
+M.linters = {
+  "eslint_d",   -- TypeScript / JavaScript
+  "pylint",     -- Python
+  "shellcheck", -- Bash/Shell
+}
+
+--- List of formatters that can be installed through `Mason` and will be configured by `NoneLS`.
+--- See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+--- @type string[]
+M.formatters = {
+  "black",        -- Python
+  "clang-format", -- C/C++
+  "isort",        -- Python
+  "ocamlformat",  -- OCaml
+  "prettier",     -- *
+  "shfmt",        -- Bash|Shell
+  "stylua",       -- Lua
 }
 
 return require("utils.base.settings").extend_settings(M, "core.custom.servers")
