@@ -15,7 +15,6 @@ return {
     },
   },
   config = function()
-    local base = require("utils.base")
     local interface = require("utils.interface")
 
     local cmp = require("cmp")
@@ -159,11 +158,6 @@ return {
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
-          elseif base.jumpable(1) then
-            luasnip.jump(1)
-          elseif base.has_words_before() then
-            -- cmp.complete()
-            fallback()
           else
             fallback()
           end

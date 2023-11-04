@@ -1,4 +1,4 @@
-local M = require("utils.base.base")
+local M = {}
 
 M.files = require("utils.base.files")
 M.buffers = require("utils.base.buffers")
