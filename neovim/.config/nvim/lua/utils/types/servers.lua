@@ -1,20 +1,36 @@
----@class Parsers
----@field languages string[]
-
----@class General
----@field linters string[]
----@field formatters string[]
-
----@class Languages
----@field base string[]
----@field extras string[]
+-- HACK: LSP goes crazy without this, can't tell why... - 11.04.2023: 
+---@diagnostic disable: duplicate-doc-field
 
 ---@class Servers
----@field parsers Parsers
----@field general General
----@field languages Languages
+---@field general? General
+---@field parsers? Parsers
+---@field languages? Languages
 local M = {}
 
+---@class General
+---@field linters? string[]
+---@field formatters? string[]
+M.general = {
+  linters = {
+    "eslint_d",   -- TypeScript / JavaScript
+    "pylint",     -- Python
+    "shellcheck", -- Bash/Shell
+  },
+  formatters = {
+    "latexindent",        -- LaTeX
+    "black",              -- Python
+    "clang-format",       -- C/C++
+    "google-java-format", -- Java
+    "isort",              -- Python
+    "ocamlformat",        -- OCaml
+    "prettier",           -- *
+    "shfmt",              -- Bash|Shell
+    "stylua",             -- Lua
+  },
+}
+
+---@class Parsers
+---@field languages? string[]
 M.parsers = {
   languages = {
     "bash",
@@ -44,6 +60,9 @@ M.parsers = {
   },
 }
 
+---@class Languages
+---@field base? string[]
+---@field extras? string[]
 M.languages = {
   base = {
     "bashls",        -- Bash
@@ -69,23 +88,4 @@ M.languages = {
   },
 }
 
-M.general = {
-  linters = {
-    "eslint_d",   -- TypeScript / JavaScript
-    "pylint",     -- Python
-    "shellcheck", -- Bash/Shell
-  },
-  formatters = {
-    "latexindent",        -- LaTeX
-    "black",              -- Python
-    "clang-format",       -- C/C++
-    "google-java-format", -- Java
-    "isort",              -- Python
-    "ocamlformat",        -- OCaml
-    "prettier",           -- *
-    "shfmt",              -- Bash|Shell
-    "stylua",             -- Lua
-  },
-}
-
-return M
+return require("utils.base.settings").extend_settings(M, "core.custom.servers")
