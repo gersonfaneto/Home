@@ -3,7 +3,7 @@ local plugins = require("utils.plugins")
 
 local M = {}
 
-if plugins.marp.IsMarp() then
+if plugins.marp.is_marp() then
   base.mappings.bulk_register({
     {
       mode = { "n" },
