@@ -1,21 +1,14 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    silent = true,
-    noremap = true,
-  },
-  prefix = "Maximizer: ",
-}
-
 local M = {}
 
-base.mappings.register({
-  mode = { "n" },
-  lhs = "<leader>m",
-  rhs = ":MaximizerToggle<CR>",
-  options = props.options,
-  description = props.prefix .. "Maximize/Minimize current split.",
-})
+base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>m",
+    rhs = ":MaximizerToggle<CR>",
+    description = "Maximize/Minimize current split.",
+  },
+}, { options = { silent = true, noremap = true }, prefix = "Maximizer: " })
 
 return M

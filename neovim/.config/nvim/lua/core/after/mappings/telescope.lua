@@ -1,13 +1,5 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    noremap = true,
-    silent = true,
-  },
-  prefix = "Telescope: ",
-}
-
 local M = {}
 
 base.mappings.bulk_register({
@@ -17,8 +9,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").builtin()
     end,
-    options = props.options,
-    description = props.prefix .. "Browse trough all Telescope builtins.",
+    description = "Browse trough all Telescope builtins.",
   },
   {
     mode = { "n" },
@@ -26,8 +17,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").keymaps()
     end,
-    options = props.options,
-    description = props.prefix .. "Browse trough all the registered mappings.",
+    description = "Browse trough all the registered mappings.",
   },
   {
     mode = { "n" },
@@ -35,8 +25,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").help_tags()
     end,
-    options = props.options,
-    description = props.prefix .. "Browse through all the Help tags.",
+    description = "Browse through all the Help tags.",
   },
   {
     mode = { "n" },
@@ -44,8 +33,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").find_files()
     end,
-    options = props.options,
-    description = props.prefix .. "Find files in the current directory.",
+    description = "Find files in the current directory.",
   },
   {
     mode = { "n" },
@@ -57,8 +45,7 @@ base.mappings.bulk_register({
         require("telescope.builtin").find_files()
       end
     end,
-    options = props.options,
-    description = props.prefix .. "Find files in the current project.",
+    description = "Find files in the current project.",
   },
   {
     mode = { "n" },
@@ -66,8 +53,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").oldfiles()
     end,
-    options = props.options,
-    description = props.prefix .. "Find recent opened files.",
+    description = "Find recent opened files.",
   },
   {
     mode = { "n" },
@@ -78,8 +64,7 @@ base.mappings.bulk_register({
         cwd = "$HOME/Notes",
       })
     end,
-    options = props.options,
-    description = props.prefix .. "Browse through the Notes.",
+    description = "Browse through the Notes.",
   },
   {
     mode = { "n" },
@@ -87,8 +72,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").live_grep()
     end,
-    options = props.options,
-    description = props.prefix .. "Find matching strings in the current workspace.",
+    description = "Find matching strings in the current workspace.",
   },
   {
     mode = { "n" },
@@ -96,8 +80,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope").extensions.zoxide.list()
     end,
-    options = props.options,
-    description = props.prefix .. "Jump to directories using zoxide.",
+    description = "Jump to directories using zoxide.",
   },
   {
     mode = { "n" },
@@ -105,8 +88,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").buffers()
     end,
-    options = props.options,
-    description = props.prefix .. "Browse trough the open buffers.",
+    description = "Browse trough the open buffers.",
   },
   {
     mode = { "n" },
@@ -114,8 +96,7 @@ base.mappings.bulk_register({
     rhs = function()
       require("telescope.builtin").resume()
     end,
-    options = props.options,
-    description = props.prefix .. "Resume to last open picker.",
+    description = "Resume to last open picker.",
   },
   {
     mode = { "n" },
@@ -125,8 +106,7 @@ base.mappings.bulk_register({
         previewer = false,
       }))
     end,
-    options = props.options,
-    description = props.prefix .. "Fuzzily search in current buffer.",
+    description = "Fuzzily search in current buffer.",
   },
   {
     mode = { "n" },
@@ -140,9 +120,8 @@ base.mappings.bulk_register({
         },
       }))
     end,
-    options = props.options,
-    description = props.prefix .. "Get suggestions for spelling.",
+    description = "Get suggestions for spelling.",
   },
-})
+}, { options = { noremap = true, silent = true }, prefix = "Telescope: " })
 
 return M

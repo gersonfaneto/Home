@@ -1,14 +1,6 @@
 local base = require("utils.base")
 local types = require("utils.types")
 
-local props = {
-  options = {
-    silent = true,
-    noremap = true,
-  },
-  prefix = "Core: ",
-}
-
 local M = {}
 
 -- INFO: Mappings - Quick Edit...
@@ -17,24 +9,21 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>et",
     rhs = ":e ~/Notes/TODO.md<CR>",
-    options = props.options,
-    description = props.prefix .. "TODOs.",
+    description = "TODOs.",
   },
   {
     mode = { "n" },
     lhs = "<leader>ec",
     rhs = ":chdir ~/.config/nvim | e init.lua<CR>",
-    options = props.options,
-    description = props.prefix .. "Configuration.",
+    description = "Configuration.",
   },
   {
     mode = { "n" },
     lhs = "<leader>es",
     rhs = ":chdir ~/.config/nvim | e lua/core/custom/settings.lua<CR>",
-    options = props.options,
-    description = props.prefix .. "Settings.",
+    description = "Settings.",
   },
-})
+}, { prefix = "Quick Edit: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Interface & Visuals...
 base.mappings.bulk_register({
@@ -49,10 +38,9 @@ base.mappings.bulk_register({
         vim.opt.colorcolumn = types.settings.color_column
       end
     end,
-    options = props.options,
-    description = props.prefix .. "Toggle color column.",
+    description = "Toggle color column.",
   },
-})
+}, { prefix = "UI: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Commands...
 base.mappings.bulk_register({
@@ -60,24 +48,21 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>nn",
     rhs = ":NewNote<CR>",
-    options = props.options,
-    description = props.prefix .. "Create a new note as a markdown file.",
+    description = "Create a new note as a markdown file.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bn",
     rhs = ":BufferCreate<CR>",
-    options = props.options,
-    description = props.prefix .. "Create a new buffer/file relative to the current buffer.",
+    description = "Create a new buffer/file relative to the current buffer.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bd",
     rhs = ":BufferDelete<CR>",
-    options = props.options,
-    description = props.prefix .. "Delete the current Buffer while maintaining the window layout.",
+    description = "Delete the current Buffer while maintaining the window layout.",
   },
-})
+}, { prefix = "Custom Commands: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - File Management...
 base.mappings.bulk_register({
@@ -85,17 +70,15 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>fe",
     rhs = ":Ex<CR>",
-    options = props.options,
-    description = props.prefix .. "File Explorer - Full.",
+    description = "File Explorer - Full.",
   },
   {
     mode = { "n" },
     lhs = "<leader>ve",
     rhs = ":25Lex<CR>",
-    options = props.options,
-    description = props.prefix .. "File Explorer - Split.",
+    description = "File Explorer - Split.",
   },
-})
+}, { prefix = "File Management: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Splits & Windows...
 base.mappings.bulk_register({
@@ -103,94 +86,81 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>s",
     rhs = "<C-w>j",
-    options = props.options,
-    description = props.prefix .. "Move to the split bellow.",
+    description = "Move to the split bellow.",
   },
   {
     mode = { "n" },
     lhs = "<leader>a",
     rhs = "<C-w>h",
-    options = props.options,
-    description = props.prefix .. "Move to the split on the left.",
+    description = "Move to the split on the left.",
   },
   {
     mode = { "n" },
     lhs = "<leader>w",
     rhs = "<C-w>k",
-    options = props.options,
-    description = props.prefix .. "Move to the split above.",
+    description = "Move to the split above.",
   },
   {
     mode = { "n" },
     lhs = "<leader>d",
     rhs = "<C-w>l",
-    options = props.options,
-    description = props.prefix .. "Move to the split on the right.",
+    description = "Move to the split on the right.",
   },
   {
     mode = { "n" },
     lhs = "<leader>h",
     rhs = ":split<CR>",
-    options = props.options,
-    description = props.prefix .. "Split horizontally.",
+    description = "Split horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<leader>v",
     rhs = ":vsplit<CR>",
-    options = props.options,
-    description = props.prefix .. "Split vertically.",
+    description = "Split vertically.",
   },
   {
     mode = { "n" },
     lhs = "<C-Up>",
     rhs = ":resize -2<CR>",
-    options = props.options,
-    description = props.prefix .. "Decrease split size horizontally.",
+    description = "Decrease split size horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<C-Down>",
     rhs = ":resize +2<CR>",
-    options = props.options,
-    description = props.prefix .. "Increase split size horizontally.",
+    description = "Increase split size horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<C-Left>",
     rhs = ":vertical resize -2<CR>",
-    options = props.options,
-    description = props.prefix .. "Decrease split size vertically.",
+    description = "Decrease split size vertically.",
   },
   {
     mode = { "n" },
     lhs = "<C-Right>",
     rhs = ":vertical resize +2<CR>",
-    options = props.options,
-    description = props.prefix .. "Increase split size vertically.",
+    description = "Increase split size vertically.",
   },
   {
     mode = { "n" },
     lhs = "<leader>H",
     rhs = "<C-w>H",
-    options = props.options,
-    description = props.prefix .. "Toggle split layout - Vertically.",
+    description = "Toggle split layout - Vertically.",
   },
   {
     mode = { "n" },
     lhs = "<leader>K",
     rhs = "<C-w>K",
-    options = props.options,
-    description = props.prefix .. "Toggle split layout - Horizontally.",
+    description = "Toggle split layout - Horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<leader>=",
     rhs = "<C-w>=",
-    options = props.options,
-    description = props.prefix .. "Make splits size equal.",
+    description = "Make splits size equal.",
   },
-})
+}, { prefix = "Splits & Windows: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Buffers...
 base.mappings.bulk_register({
@@ -198,31 +168,27 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<Tab>",
     rhs = ":bnext<CR>",
-    options = props.options,
-    description = props.prefix .. "Switch to next buffer.",
+    description = "Switch to next buffer.",
   },
   {
     mode = { "n" },
     lhs = "<S-Tab>",
     rhs = ":bprevious<CR>",
-    options = props.options,
-    description = props.prefix .. "Switch to previous buffer.",
+    description = "Switch to previous buffer.",
   },
   {
     mode = { "n" },
     lhs = "<BS>",
     rhs = ":b#<CR>",
-    options = props.options,
-    description = props.prefix .. "Quickly switch between current and last open buffer.",
+    description = "Quickly switch between current and last open buffer.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bo",
     rhs = ":%bd|e#|bd#<CR>",
-    options = { noremap = true, silent = true },
-    description = props.prefix .. "Close all other buffers.",
+    description = "Close all other buffers.",
   },
-})
+}, { prefix = "Buffers: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Basic Operations...
 base.mappings.bulk_register({
@@ -230,24 +196,21 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader><Esc>",
     rhs = ":qa!<cr>",
-    options = props.options,
-    description = props.prefix .. "Escape Neovim",
+    description = "Escape Neovim",
   },
   {
     mode = { "n" },
     lhs = "<C-w>",
     rhs = ":write<CR>",
-    options = props.options,
-    description = props.prefix .. "Write contents in the current buffer.",
+    description = "Write contents in the current buffer.",
   },
   {
     mode = { "n" },
     lhs = "<C-q>",
     rhs = ":quit<CR>",
-    options = props.options,
-    description = props.prefix .. "Close the current buffer.",
+    description = "Close the current buffer.",
   },
-})
+}, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Navigation...
 base.mappings.bulk_register({
@@ -257,8 +220,7 @@ base.mappings.bulk_register({
     rhs = function()
       vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "kzz")
     end,
-    options = props.options,
-    description = props.prefix .. "Better navigation with C-u.",
+    description = "Better navigation with C-u.",
   },
   {
     mode = { "n" },
@@ -266,8 +228,7 @@ base.mappings.bulk_register({
     rhs = function()
       vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "jzz")
     end,
-    options = props.options,
-    description = props.prefix .. "Better navigation with C-d.",
+    description = "Better navigation with C-d.",
   },
   {
     mode = { "n", "x" },
@@ -275,8 +236,8 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "k" or "gk"
     end,
-    options = { silent = true, noremap = true, expr = true },
-    description = props.prefix .. "Better movement with k.",
+    options = { expr = true },
+    description = "Better movement with k.",
   },
   {
     mode = { "n", "x" },
@@ -284,8 +245,8 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "j" or "gj"
     end,
-    options = { silent = true, noremap = true, expr = true },
-    description = props.prefix .. "Better movement with j.",
+    options = { expr = true },
+    description = "Better movement with j.",
   },
   {
     mode = { "n", "x" },
@@ -293,8 +254,8 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "^" or "g^"
     end,
-    options = { silent = true, noremap = true, expr = true },
-    description = props.prefix .. "Move to the first character at the beginning of the line.",
+    options = { expr = true },
+    description = "Move to the first character at the beginning of the line.",
   },
   {
     mode = { "n", "x" },
@@ -302,10 +263,10 @@ base.mappings.bulk_register({
     rhs = function()
       return vim.v.count > 0 and "$" or "g$"
     end,
-    options = { silent = true, noremap = true, expr = true },
-    description = props.prefix .. "Move to the last character at the end of the line.",
+    options = { expr = true },
+    description = "Move to the last character at the end of the line.",
   },
-})
+}, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Search...
 base.mappings.bulk_register({
@@ -313,17 +274,16 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<Esc>",
     rhs = ":noh<CR>",
-    options = props.options,
-    description = props.prefix .. "Clear search highlight.",
+    description = "Clear search highlight.",
   },
   {
     mode = { "n" },
     lhs = "<leader>rp",
     rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-    options = { noremap = true },
-    description = props.prefix .. "Replace current text inside the buffer.",
+    options = { silent = false },
+    description = "Replace current text inside the buffer.",
   },
-})
+}, { prefix = "Search: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Spelling...
 base.mappings.bulk_register({
@@ -331,10 +291,9 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>cs",
     rhs = ":set spell!<CR>",
-    options = props.options,
-    description = props.prefix .. "Enable or disable spell checking.",
+    description = "Enable or disable spell checking.",
   },
-})
+}, { prefix = "Spelling: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Editing...
 base.mappings.bulk_register({
@@ -342,29 +301,25 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "X",
     rhs = ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<CR>",
-    options = { silent = true, noremap = true },
-    description = props.prefix .. "Split current line at the cursor position.",
+    description = "Split current line at the cursor position.",
   },
   {
     mode = { "v" },
     lhs = "p",
     rhs = '"_dp"',
-    options = props.options,
-    description = props.prefix .. "paste in visual mode without writing to registers.",
+    description = "Paste in visual mode without writing to registers.",
   },
   {
     mode = { "v" },
     lhs = "P",
     rhs = '"_dP"',
-    options = props.options,
-    description = props.prefix .. "Paste in visual mode without writing to registers.",
+    description = "Paste in visual mode without writing to registers.",
   },
   {
     mode = { "n" },
     lhs = "YY",
     rhs = "va{Vy",
-    options = props.options,
-    description = props.prefix .. "Yank everything between and including { and }.",
+    description = "Yank everything between and including { and }.",
   },
   {
     mode = { "n" },
@@ -376,43 +331,38 @@ base.mappings.bulk_register({
         return "dd"
       end
     end,
-    options = { noremap = true, silent = true, expr = true },
-    description = props.prefix .. "Delete empty lines without writing to registers.",
+    options = { expr = true },
+    description = "Delete empty lines without writing to registers.",
   },
   {
     mode = { "n" },
     lhs = "<C-a>",
     rhs = "ggVG",
-    options = props.options,
-    description = props.prefix .. "Select all the content from the current buffer.",
+    description = "Select all the content from the current buffer.",
   },
   {
     mode = { "n" },
     lhs = "<C-y>",
     rhs = ":%y<CR>",
-    options = props.options,
-    description = props.prefix .. "Copy all the content from the current buffer.",
+    description = "Copy all the content from the current buffer.",
   },
   {
     mode = { "v" },
     lhs = "<C-s>",
     rhs = ":sort<CR>",
-    options = props.options,
-    description = props.prefix .. "Sort the current selection.",
+    description = "Sort the current selection.",
   },
   {
     mode = { "n" },
     lhs = "+",
     rhs = "<C-a>",
-    options = props.options,
-    description = props.prefix .. "Increment number under the cursor.",
+    description = "Increment number under the cursor.",
   },
   {
     mode = { "n" },
     lhs = "-",
     rhs = "<C-x>",
-    options = props.options,
-    description = props.prefix .. "Decrement number under the cursor.",
+    description = "Decrement number under the cursor.",
   },
   {
     mode = { "n" },
@@ -425,79 +375,69 @@ base.mappings.bulk_register({
         return "i"
       end
     end,
-    options = { silent = true, noremap = true, expr = true },
-    description = props.prefix .. "Automatically indent to the appropriate position, when entering insert mode.",
+    options = { expr = true },
+    description = "Automatically indent to the appropriate position, when entering insert mode.",
   },
   {
     mode = { "v" },
     lhs = ">",
     rhs = ">gv",
-    options = props.options,
-    description = props.prefix .. "Better forward indenting.",
+    description = "Better forward indenting.",
   },
   {
     mode = { "v" },
     lhs = "<",
     rhs = "<gv",
-    options = props.options,
-    description = props.prefix .. "Better backwards indenting.",
+    description = "Better backwards indenting.",
   },
   {
     mode = { "n" },
     lhs = "<CR>",
     rhs = "ciw",
-    options = props.options,
-    description = props.prefix .. "Quickly edit word under cursor.",
+    description = "Quickly edit word under cursor.",
   },
   {
     mode = { "n" },
     lhs = "<A-Down>",
     rhs = ":m .+1<CR>==",
-    options = props.options,
-    description = props.prefix .. "Move current line down.",
+    description = "Move current line down.",
   },
   {
     mode = { "n" },
     lhs = "<A-Up>",
     rhs = ":m .-2<CR>==",
-    options = props.options,
-    description = props.prefix .. "Move current line up.",
+    description = "Move current line up.",
   },
   {
     mode = { "i" },
     lhs = "<A-Down>",
     rhs = "<Esc>:m .+1<CR>==gi",
-    options = props.options,
-    description = props.prefix .. "Move current line down.",
+    description = "Move current line down.",
   },
   {
     mode = { "i" },
     lhs = "<A-Up>",
     rhs = "<Esc>:m .-2<CR>==gi",
-    options = props.options,
-    description = props.prefix .. "Move current line up.",
+    description = "Move current line up.",
   },
   {
     mode = { "v" },
     lhs = "<A-Down>",
     rhs = ":m '>+1<CR>gv=gv",
-    options = props.options,
-    description = props.prefix .. "Move current line down.",
+    description = "Move current line down.",
   },
   {
     mode = { "v" },
     lhs = "<A-Up>",
     rhs = ":m '<-2<CR>gv=gv",
-    options = props.options,
-    description = props.prefix .. "Move current line down.",
+    description = "Move current line down.",
   },
   {
     mode = { "v" },
     lhs = "y",
     rhs = "ygv<Esc>",
-    options = props.options,
-    description = props.prefix .. "Copy without returning to start of selection.",
+    description = "Copy without returning to start of selection.",
   },
-})
+}, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
 
 return M

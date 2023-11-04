@@ -1,13 +1,5 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    silent = true,
-    noremap = true,
-  },
-  prefix = "Trouble: ",
-}
-
 local M = {}
 
 base.mappings.bulk_register({
@@ -15,44 +7,38 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>xx",
     rhs = ":TroubleToggle<CR>",
-    options = props.options,
-    description = props.prefix .. "Toggle.",
+    description = "Toggle.",
   },
   {
     mode = { "n" },
     lhs = "<leader>xw",
     rhs = ":TroubleToggle workspace_diagnostics<CR>",
-    options = props.options,
-    description = props.prefix .. "Browse workspace diagnostics.",
+    description = "Browse workspace diagnostics.",
   },
   {
     mode = { "n" },
     lhs = "<leader>xd",
     rhs = ":TroubleToggle document_diagnostics<CR>",
-    options = props.options,
-    description = props.prefix .. "Browse document diagnostics.",
+    description = "Browse document diagnostics.",
   },
   {
     mode = { "n" },
     lhs = "<leader>xq",
     rhs = ":TroubleToggle quickfix<CR>",
-    options = props.options,
-    description = props.prefix .. "Browse quick fix list.",
+    description = "Browse quick fix list.",
   },
   {
     mode = { "n" },
     lhs = "<leader>xl",
     rhs = ":TroubleToggle loclist<CR>",
-    options = props.options,
-    description = props.prefix .. "Browse location list.",
+    description = "Browse location list.",
   },
   {
     mode = { "n" },
     lhs = "<leader>xr",
     rhs = ":TroubleToggle lsp_references<CR>",
-    options = props.options,
-    description = props.prefix .. "Browse LSP references.",
+    description = "Browse LSP references.",
   },
-})
+}, { options = { silent = true, noremap = true }, prefix = "Trouble: " })
 
 return M

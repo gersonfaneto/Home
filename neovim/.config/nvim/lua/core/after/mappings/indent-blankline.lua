@@ -1,21 +1,14 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    noremap = true,
-    silent = true,
-  },
-  prefix = "Indent Blankline: ",
-}
-
 local M = {}
 
-base.mappings.register({
-  mode = { "n" },
-  lhs = "<leader>ti",
-  rhs = ":IndentBlanklineToggle<CR>",
-  options = props.options,
-  description = props.prefix .. "Toggle indentation lines.",
-})
+base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>ti",
+    rhs = ":IndentBlanklineToggle<CR>",
+    description = "Toggle indentation lines.",
+  },
+}, { options = { noremap = true, silent = true }, prefix = "Indent Blankline: " })
 
 return M

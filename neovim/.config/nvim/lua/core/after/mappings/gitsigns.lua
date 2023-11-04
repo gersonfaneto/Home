@@ -1,13 +1,5 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    noremap = true,
-    silent = true,
-  },
-  prefix = "Git Signs: ",
-}
-
 local M = {}
 
 base.mappings.bulk_register({
@@ -15,57 +7,49 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>tb",
     rhs = ":Gitsigns toggle_current_line_blame<CR>",
-    options = props.options,
-    description = props.prefix .. "Toggle current line blame.",
+    description = "Toggle current line blame.",
   },
   {
     mode = { "n" },
     lhs = "<leader>ph",
     rhs = ":lua require('gitsigns').preview_hunk()<CR>",
-    options = props.options,
-    description = props.prefix .. "Preview current hunk.",
+    description = "Preview current hunk.",
   },
   {
     mode = { "n" },
     lhs = "<leader>bf",
     rhs = ":lua require('gitsigns').blame_line{full=true}<CR>",
-    options = props.options,
-    description = props.prefix .. "Show current block blame.",
+    description = "Show current block blame.",
   },
   {
     mode = { "n", "v" },
     lhs = "<leader>rh",
     rhs = ":Gitsigns reset_hunk<CR>",
-    options = props.options,
-    description = props.prefix .. "Reset current hunk.",
+    description = "Reset current hunk.",
   },
   {
     mode = { "n" },
     lhs = "<leader>rb",
     rhs = ":Gitsigns reset_buffer<CR>",
-    options = props.options,
-    description = props.prefix .. "Reset current buffer.",
+    description = "Reset current buffer.",
   },
   {
     mode = { "n" },
     lhs = "<leader>sh",
     rhs = ":Gitsigns stage_hunk<CR>",
-    options = props.options,
-    description = props.prefix .. "Stage current hunk.",
+    description = "Stage current hunk.",
   },
   {
     mode = { "v" },
     lhs = "<leader>sh",
     rhs = ":VisualStage<CR>",
-    options = props.options,
-    description = props.prefix .. "Stage current visual selection.",
+    description = "Stage current visual selection.",
   },
   {
     mode = { "n" },
     lhs = "<leader>uh",
     rhs = ":Gitsigns undo_stage_hunk<CR>",
-    options = props.options,
-    description = props.prefix .. "Unstage current hunk.",
+    description = "Unstage current hunk.",
   },
   {
     mode = { "n" },
@@ -79,8 +63,7 @@ base.mappings.bulk_register({
       end)
       return "<Ignore>"
     end,
-    options = props.options,
-    description = props.prefix .. "Jump to the previous hunk.",
+    description = "Jump to the previous hunk.",
   },
   {
     mode = { "n" },
@@ -94,9 +77,8 @@ base.mappings.bulk_register({
       end)
       return "<Ignore>"
     end,
-    options = props.options,
-    description = props.prefix .. "Jump to the next hunk.",
+    description = "Jump to the next hunk.",
   },
-})
+}, { options = { noremap = true, silent = true }, prefix = "Git Signs: " })
 
 return M

@@ -1,21 +1,14 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    silent = true,
-    noremap = true,
-  },
-  prefix = "UndoTree: ",
-}
-
 local M = {}
 
-base.mappings.register({
-  mode = { "n" },
-  lhs = "<leader>uu",
-  rhs = ":UndotreeToggle<CR>",
-  options = props.options,
-  description = props.prefix .. "Toggle.",
-})
+base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>ut",
+    rhs = ":UndotreeToggle<CR>",
+    description = "Toggle.",
+  },
+}, { options = { silent = true, noremap = true }, prefix = "UndoTree: " })
 
 return M

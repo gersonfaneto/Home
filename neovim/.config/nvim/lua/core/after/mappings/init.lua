@@ -42,6 +42,7 @@ for _, mapping in pairs(mappings.base) do
   local present, _ = pcall(require, mappings.prefix .. mapping)
 
   if not present then
+    print("Error loading " .. mapping .. " mappings")
     return
   end
 end
@@ -51,6 +52,7 @@ for condition, mapping in pairs(mappings.extras) do
     local present, _ = pcall(require, mappings.prefix .. mapping)
 
     if not present then
+      print("Error loading " .. mapping .. " mappings")
       return
     end
   end

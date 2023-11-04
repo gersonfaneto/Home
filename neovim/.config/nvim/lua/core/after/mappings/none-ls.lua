@@ -1,13 +1,5 @@
 local base = require("utils.base")
 
-local props = {
-  options = {
-    silent = true,
-    noremap = true,
-  },
-  prefix = "NoneLS: ",
-}
-
 local M = {}
 
 base.mappings.bulk_register({
@@ -15,8 +7,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>nl",
     rhs = ":NullLsInfo<CR>",
-    options = props.options,
-    description = props.prefix .. "Open NoneLs Info.",
+    description = "Open NoneLs Info.",
   },
   {
     mode = { "n", "v" },
@@ -24,9 +15,8 @@ base.mappings.bulk_register({
     rhs = function()
       vim.lsp.buf.format()
     end,
-    options = props.options,
-    description = props.prefix .. "Format current buffer.",
+    description = "Format current buffer.",
   },
-})
+}, { options = { silent = true, noremap = true }, prefix = "NoneLS: " })
 
 return M
