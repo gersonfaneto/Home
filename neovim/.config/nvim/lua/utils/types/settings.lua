@@ -60,4 +60,4 @@ M.db_tools = true
 ---@type boolean
 M.http_tools = true
 
-return M
+return require("utils.base.settings").extend_settings(M, "core.custom.settings")
