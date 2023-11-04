@@ -15,7 +15,7 @@ return {
     local types = require("utils.types")
     local interface = require("utils.interface")
 
-    local icons = interface.get_icons("diagnostics")
+    local icons = interface.icons.get("diagnostics")
 
     local on_attach = function(_, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }

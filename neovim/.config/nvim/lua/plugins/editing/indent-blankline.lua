@@ -8,7 +8,7 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local colors = interface.get_colors()
+    local colors = interface.colors.get()
 
     local indent_blankline = require("indent_blankline")
 

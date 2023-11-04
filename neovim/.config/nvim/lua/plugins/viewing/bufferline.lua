@@ -14,7 +14,7 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local colors = interface.get_colors()
+    local colors = interface.colors.get()
 
     local bufferline = require("bufferline")
 

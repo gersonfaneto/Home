@@ -2,7 +2,7 @@ local base = require("utils.base")
 local types = require("utils.types")
 local interface = require("utils.interface")
 
-local colors = interface.get_colors()
+local colors = interface.colors.get()
 
 local M = {}
 

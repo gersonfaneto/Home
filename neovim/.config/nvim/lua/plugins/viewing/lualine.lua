@@ -3,8 +3,8 @@ return {
   config = function()
     local interface = require("utils.interface")
 
-    local colors = interface.get_colors()
-    local icons = interface.get_icons("diagnostics")
+    local colors = interface.colors.get()
+    local icons = interface.icons.get("diagnostics")
 
     local lualine = require("lualine")
 

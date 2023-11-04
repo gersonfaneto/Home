@@ -1,6 +1,6 @@
 local M = {}
 
-M = {
+local colors = {
   ["Catppuccin-Mocha"] = {
     fg = "#CDD6F4",
     bg = "#1E1E2E",
@@ -30,5 +30,14 @@ M = {
     bg = "#24283B",
   },
 }
+
+-- Returns a table with the colors values for a given theme, based on a specific enviroment
+-- variable. If the variable isn't set the default theme (Gruvbox-Material) is returned.
+---@return table colors The tbale with the proper color values.
+M.get = function()
+  local current_theme = os.getenv("CURRENT_THEME")
+
+  return colors[current_theme] or colors["Gruvbox-Material"]
+end
 
 return M
