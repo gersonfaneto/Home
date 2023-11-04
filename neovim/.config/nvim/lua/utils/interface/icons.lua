@@ -159,42 +159,9 @@ local icons = {
   },
 }
 
--- Returns a table of a given icon category.
--- @param category string The category of the desired icons.
---- @return table icons The sub table of the given category.
-function M.get_icons(category)
-  local table = vim.tbl_get(icons, category)
-
-  if table == nil then
-    return {}
-  end
-
-  return table
-end
-
--- Returns an icon given it's name and category.
---- @param category string The category of the desired icon.
---- @param name string The name of the desired icon.
---- @return string icon The requested icon.
-function M.get_icon(category, name)
-  local table = M.get_icons(category)
-
-  if vim.tbl_isempty(table) then
-    return ""
-  end
-
-  local icon = vim.tbl_get(table, name)
-
-  if icon == nil then
-    return ""
-  end
-
-  return icon
-end
-
---- Get a specific icon group.
---- @param category "kind"|"git"|"ui"|"diagnostics"|"misc"
---- @param add_space? boolean Add a trailing space after the icon.
+---Get a specific icon group.
+---@param category "kind"|"git"|"ui"|"diagnostics"|"misc"
+---@param add_space? boolean Add a trailing space after the icon.
 function M.get(category, add_space)
   if add_space then
     return setmetatable({}, {
@@ -202,9 +169,9 @@ function M.get(category, add_space)
         return icons[category][key] .. " "
       end,
     })
-  else
-    return icons[category]
   end
+
+  return icons[category]
 end
 
 return M

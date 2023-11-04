@@ -31,9 +31,9 @@ local colors = {
   },
 }
 
--- Returns a table with the colors values for a given theme, based on a specific enviroment
--- variable. If the variable isn't set the default theme (Gruvbox-Material) is returned.
----@return table colors The tbale with the proper color values.
+---Returns a table with the colors values for a given theme, based on a specific environment
+---variable. If the variable isn't set the default theme (Gruvbox-Material) is returned.
+---@return table colors The ta
 function M.get()
   local current_theme = os.getenv("CURRENT_THEME")
 

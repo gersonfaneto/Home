@@ -4,9 +4,9 @@ local M = {
   job_ID = 0,
 }
 
---- Check if current file can use marp.
---- @param bufnr? integer
---- @return boolean
+---Check if current file can use `Marp`.
+---@param bufnr? integer
+---@return boolean
 function M.is_marp(bufnr)
   bufnr = base.buffers.bufnr(bufnr)
 
@@ -34,6 +34,7 @@ function M.is_marp(bufnr)
   return false
 end
 
+---Start or stop the `Marp` server.
 function M.start_server()
   if vim.fn.executable("marp") ~= 1 then
     print("Marp: Marp CLI executable not found.")
@@ -64,6 +65,7 @@ function M.start_server()
   })
 end
 
+---Stop the `Marp` server.
 function M.stop_server()
   vim.fn.jobstop(M.job_ID)
 
