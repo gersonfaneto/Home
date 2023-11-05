@@ -2,30 +2,29 @@
 ---@field fg string
 ---@field bg string
 
+local theme = require("utils.interface.theme")
 local settings = require("utils.types.settings")
+
+local current_theme = theme.get()
 
 local M = {}
 
 local colors = {
-  ["Catppuccin-Mocha"] = {
-    fg = "#CDD6F4",
-    bg = "#1E1E2E",
+  ["Catppuccin"] = {
+    fg = current_theme.background == "dark" and "#CDD6F4" or "#4C4F69",
+    bg = current_theme.background == "dark" and "#1E1E2E" or "#EFF1F5",
   },
-  ["Catppuccin-Latte"] = {
-    fg = "#4C4F69",
-    bg = "#EFF1F5",
-  },
-  ["Decay-Green"] = {
+  ["Decay"] = {
     fg = "#B1CCC9",
     bg = "#0D0F18",
   },
   ["Everforest"] = {
-    fg = "#D3C6AA",
-    bg = "#272E33",
+    fg = current_theme.background == "dark" and "#D3C6AA" or "#5C6A72",
+    bg = current_theme.background == "dark" and "#272E33" or "#FFFBEF",
   },
   ["Gruvbox-Material"] = {
-    fg = "#7C7D83",
-    bg = "#1D2022",
+    fg = current_theme.background == "dark" and "#7C7D83" or "#A9B1D6",
+    bg = current_theme.background == "dark" and "#1D2022" or "#F9F5D7",
   },
   ["Rose-Pine"] = {
     fg = "#E0DEF4",
@@ -37,13 +36,10 @@ local colors = {
   },
 }
 
----Returns a table with the color values for a given theme, based on a specific environment
----variable. If the variable isn't set the `default_theme` from `Settings` is used.
+---Returns a table with the `bg` and `fg` color values for the current theme.
 ---@return Color color The table with the corresponding colors.
 function M.get()
-  local current_theme = os.getenv("CURRENT_THEME")
-
-  local color = colors[current_theme] or colors[settings.default_colorscheme]
+  local color = colors[current_theme.colorscheme]
 
   if settings.transparent then
     color.bg = "NONE"
