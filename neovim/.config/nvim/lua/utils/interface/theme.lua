@@ -14,17 +14,17 @@ function M.get()
 
   local theme = {
     colorscheme = colorscheme,
-    background = settings.default_colorscheme.background,
+    background = settings.colorscheme.background,
   }
 
   if colorscheme == nil or #colorscheme == 0 then
-    return settings.default_colorscheme
+    return settings.colorscheme
   end
 
   -- NOTE: This are very specific to `Archie`... - 11.05.2023:
   if colorscheme == "Decay-Green" then
     theme = {
-      background = settings.default_colorscheme.background,
+      background = settings.colorscheme.background,
       colorscheme = "Decay",
     }
   end

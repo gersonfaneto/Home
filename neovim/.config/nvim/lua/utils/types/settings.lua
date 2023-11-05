@@ -5,7 +5,7 @@ local M = {}
 ---The default `colorscheme` values are: Gruvbox-Material, Catppuccin, Decay-Green,
 ---Everforest, Rose-Pine, Tokyo-Night.
 ---@type Theme
-M.default_colorscheme = {
+M.colorscheme = {
   background = "dark",
   colorscheme = "Gruvbox-Material",
 }
