@@ -60,6 +60,7 @@ base.mappings.bulk_register({
     lhs = "<leader>fn",
     rhs = function()
       require("telescope.builtin").find_files({
+        no_ignore = true,
         prompt_title = " Notes ",
         cwd = "$HOME/Notes",
       })

@@ -20,7 +20,7 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>es",
-    rhs = ":chdir ~/.config/nvim | e lua/core/custom/settings.lua<CR>",
+    rhs = ":chdir ~/.config/nvim | e lua/custom/settings.lua<CR>",
     description = "Settings.",
   },
 }, { prefix = "Quick Edit: ", options = { silent = true, noremap = true } })
