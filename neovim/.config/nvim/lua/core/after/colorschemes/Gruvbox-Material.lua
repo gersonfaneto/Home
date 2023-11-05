@@ -18,6 +18,10 @@ vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_diagnostic_text_highlight = 1
 vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
 
+vim.g.gruvbox_material_colors_override = {
+  bg0 = { colors.bg, "234" },
+}
+
 vim.cmd("colorscheme gruvbox-material")
 
 return M
