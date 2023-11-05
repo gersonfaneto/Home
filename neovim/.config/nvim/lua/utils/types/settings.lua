@@ -1,22 +1,27 @@
 ---@class Settings
 local M = {}
 
----The default colorscheme to be loaded and configured on startup.
----@type "Gruvbox-Material"|"Catppuccin-Mocha"|"Catppuccin-Latte"|"Decay-Green"|"Everforest"|"Rose-Pine"|"Tokyo-Night"
-M.default_colorscheme = "Gruvbox-Material"
+---The colorscheme to be loaded and configured on startup.
+---The default `colorscheme` values are: Gruvbox-Material, Catppuccin, Decay-Green,
+---Everforest, Rose-Pine, Tokyo-Night.
+---@type Theme
+M.default_colorscheme = {
+  background = "dark",
+  colorscheme = "Gruvbox-Material",
+}
 
 ---Toggle enhanced UI features provided by plugins like `folke/noice.nvim`.
 ---@type boolean
 M.enhanced_ui = true
 ---Make the background transparent, subject to theme support.
 ---@type boolean
-M.transparent = true
+M.transparent = false
 ---Make the boarder visible/invisible.
 ---@type boolean
 M.float_border = true
 ---Dim inactive window/split, subject to theme support.
 ---@type boolean
-M.dim_inactive = true
+M.dim_inactive = false
 
 ---Toggle a buffer line on the top, listing the active buffers.
 ---@type boolean
