@@ -1,3 +1,9 @@
+---@class Color
+---@field fg string
+---@field bg string
+
+local settings = require("utils.types.settings")
+
 local M = {}
 
 local colors = {
@@ -19,7 +25,7 @@ local colors = {
   },
   ["Gruvbox-Material"] = {
     fg = "#7C7D83",
-    bg = "#1D2021",
+    bg = "#1D2022",
   },
   ["Rose-Pine"] = {
     fg = "#E0DEF4",
@@ -31,13 +37,19 @@ local colors = {
   },
 }
 
----Returns a table with the colors values for a given theme, based on a specific environment
----variable. If the variable isn't set the default theme (Gruvbox-Material) is returned.
----@return table colors The ta
+---Returns a table with the color values for a given theme, based on a specific environment
+---variable. If the variable isn't set the `default_theme` from `Settings` is used.
+---@return Color color The table with the corresponding colors.
 function M.get()
   local current_theme = os.getenv("CURRENT_THEME")
 
-  return colors[current_theme] or colors["Gruvbox-Material"]
+  local color = colors[current_theme] or colors[settings.default_colorscheme]
+
+  if settings.transparent then
+    color.bg = "NONE"
+  end
+
+  return color
 end
 
 return M
