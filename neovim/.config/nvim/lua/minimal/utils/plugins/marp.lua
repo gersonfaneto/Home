@@ -1,4 +1,4 @@
-local base = require("minimal.utils.base.tables")
+local base = require("minimal.utils.base")
 
 local M = {
   job_ID = 0,
