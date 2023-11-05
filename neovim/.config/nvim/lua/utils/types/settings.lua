@@ -2,14 +2,12 @@
 local M = {}
 
 ---The colorscheme to be loaded and configured on startup.
----The default `colorscheme` values are: Gruvbox-Material, Catppuccin, Decay-Green,
----Everforest, Rose-Pine, Tokyo-Night.
 ---@type Theme
 M.colorscheme = {
+  priority = false,
   background = "dark",
-  colorscheme = "Gruvbox-Material",
+  colorscheme = "Gruvbox-Material"
 }
-
 ---Toggle enhanced UI features provided by plugins like `folke/noice.nvim`.
 ---@type boolean
 M.enhanced_ui = true

@@ -1,8 +1,9 @@
 ---@class Theme
----@field background "dark" | "light" @ The background color for the theme.
----@field colorscheme string @ The colorscheme to be loaded.
+---@field override? boolean @ When set to `true` the theme will be loaded even if the `CURRENT_THEME` environment variable is set.
+---@field background? "dark" | "light" @ The variant of the theme to be loaded, defaults to the `dark` if not set.
+---@field colorscheme "Gruvbox-Material"|"Catppuccin"|"Decay-Green"|"Everforest"|"Rose-Pine"|"Tokyo-Night" @ The theme to be loaded.
 
-local settings = require("utils.types.settings")
+local types = require("utils.types")
 
 local M = {}
 
@@ -10,31 +11,32 @@ local M = {}
 ---If the variable isn't set the `default_theme` from `Settings` is used.
 ---@return Theme theme The current loaded theme.
 function M.get()
-  local colorscheme = os.getenv("CURRENT_THEME")
+  local colorscheme = types.settings.colorscheme
+  local current_theme = os.getenv("CURRENT_THEME")
 
-  local theme = {
-    colorscheme = colorscheme,
-    background = settings.colorscheme.background,
-  }
-
-  if colorscheme == nil or #colorscheme == 0 then
-    return settings.colorscheme
+  if current_theme == nil or #current_theme == 0 or colorscheme.override then
+    return colorscheme
   end
 
-  -- NOTE: This are very specific to `Archie`... - 11.05.2023:
-  if colorscheme == "Decay-Green" then
+  local theme = {
+    colorscheme = current_theme,
+    background = colorscheme.background,
+  }
+
+  -- FIX: This could be better... - 11.05.2023:
+  if theme == "Decay-Green" then
     theme = {
-      background = settings.colorscheme.background,
+      background = colorscheme.background,
       colorscheme = "Decay",
     }
   end
-  if colorscheme == "Catppuccin-Latte" then
+  if theme == "Catppuccin-Latte" then
     theme = {
       background = "light",
       colorscheme = "Catppuccin",
     }
   end
-  if colorscheme == "Catppuccin-Mocha" then
+  if theme == "Catppuccin-Mocha" then
     theme = {
       background = "dark",
       colorscheme = "Catppuccin",
