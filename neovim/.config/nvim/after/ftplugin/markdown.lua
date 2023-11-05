@@ -9,34 +9,30 @@ if plugins.marp.is_marp() then
       mode = { "n" },
       lhs = "<leader>sp",
       rhs = plugins.marp.start_server,
-      options = { noremap = true, silent = true },
-      description = "Marp: Start Preview.",
+      description = "Start Preview.",
     },
     {
       mode = { "n" },
       lhs = "<leader>ep",
       rhs = plugins.marp.stop_server,
-      options = { noremap = true, silent = true },
-      description = "Marp: End Preview.",
+      description = "End Preview.",
     },
-  })
+  }, { options = { noremap = true, silent = true }, prefix = "Marp: " })
 else
   base.mappings.bulk_register({
     {
       mode = { "n" },
       lhs = "<leader>sp",
       rhs = ":MarkdownPreview<CR>",
-      options = { noremap = true, silent = true },
-      description = "Markdown: Start Preview.",
+      description = "Start Preview.",
     },
     {
       mode = { "n" },
       lhs = "<leader>ep",
       rhs = ":MarkdownPreviewStop<CR>",
-      options = { noremap = true, silent = true },
-      description = "Markdown: End Preview.",
+      description = "End Preview.",
     },
-  })
+  }, { options = { noremap = true, silent = true }, prefix = "Markdown: " })
 end
 
 return M
