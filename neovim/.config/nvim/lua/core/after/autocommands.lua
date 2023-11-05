@@ -8,12 +8,10 @@ local M = {}
 
 vim.api.nvim_create_autocmd("InsertEnter", {
   command = "set norelativenumber",
-  pattern = "*",
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set relativenumber",
-  pattern = "*",
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -24,19 +22,25 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    vim.cmd("highlight WinSeparator guibg=NONE")
+    vim.cmd("highlight Pmenu guibg=NONE")
   end,
-  pattern = "*",
 })
+
+if types.settings.float_border then
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+      vim.cmd("highlight WinSeparator guibg=NONE")
+      vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
+    end,
+  })
+end
 
 if types.settings.transparent then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
-      vim.cmd("highlight Pmenu guibg=NONE")
       vim.cmd("highlight Normal guibg=none guifg=none")
       vim.cmd("highlight NormalNC guibg=none guifg=none")
       vim.cmd("highlight NormalFloat guibg=none guifg=none")
-      vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
     end,
   })
 end
