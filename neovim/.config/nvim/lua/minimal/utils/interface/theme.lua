@@ -24,19 +24,19 @@ function M.get()
   }
 
   -- FIX: This could be better... - 11.05.2023:
-  if theme == "Decay-Green" then
+  if current_theme == "Decay-Green" then
     theme = {
       background = colorscheme.background,
       colorscheme = "Decay",
     }
   end
-  if theme == "Catppuccin-Latte" then
+  if current_theme == "Catppuccin-Latte" then
     theme = {
       background = "light",
       colorscheme = "Catppuccin",
     }
   end
-  if theme == "Catppuccin-Mocha" then
+  if current_theme == "Catppuccin-Mocha" then
     theme = {
       background = "dark",
       colorscheme = "Catppuccin",
