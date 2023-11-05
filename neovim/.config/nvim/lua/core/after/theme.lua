@@ -1,3 +1,5 @@
+local types = require("utils.types")
+
 local current_theme = os.getenv("CURRENT_THEME")
 
 local M = {}
@@ -34,7 +36,7 @@ M.themes = {
 }
 
 if current_theme == nil or M.themes[current_theme] == nil then
-  M.themes["Gruvbox-Material"]()
+  M.themes[types.settings.default_colorscheme]()
 else
   M.themes[current_theme]()
 end
