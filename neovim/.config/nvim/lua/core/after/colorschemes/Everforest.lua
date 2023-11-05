@@ -18,7 +18,9 @@ vim.g.everforest_diagnostic_text_highlight = 1
 vim.g.everforest_diagnostic_virtual_text = "colored"
 
 vim.g.everforest_colors_override = {
-  bg0 = {colors.bg, "234"},
+  bg0 = { colors.bg, "234" },
 }
+
+vim.cmd("colorscheme everforest")
 
 return M

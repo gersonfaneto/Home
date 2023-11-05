@@ -5,7 +5,6 @@ local catppuccin = require("catppuccin")
 local M = {}
 
 catppuccin.setup({
-  flavour = "mocha",
   background = {
     light = "latte",
     dark = "mocha",
@@ -17,5 +16,7 @@ catppuccin.setup({
   },
   transparent_background = types.settings.transparent,
 })
+
+vim.cmd("colorscheme catppuccin")
 
 return M

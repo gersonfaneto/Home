@@ -7,7 +7,6 @@ local tokyo_night = require("tokyonight")
 local M = {}
 
 tokyo_night.setup({
-  style = "night",
   light_style = "day",
   transparent = types.settings.transparent,
   terminal_colors = true,
@@ -25,5 +24,7 @@ tokyo_night.setup({
   dim_inactive = types.settings.dim_inactive,
   lualine_bold = false,
 })
+
+vim.cmd("colorscheme tokyonight")
 
 return M

@@ -46,4 +46,6 @@ rose_pine.setup({
   },
 })
 
+vim.cmd("colorscheme rose-pine")
+
 return M
