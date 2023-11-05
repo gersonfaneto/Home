@@ -1,4 +1,4 @@
-local base = require("utils.base")
+local base = require("minimal.utils.base")
 
 local _, jdtls = pcall(require, "jdtls")
 local _, jdtls_setup = pcall(require, "jdtls.setup")

@@ -1,5 +1,5 @@
-local base = require("utils.base")
-local plugins = require("utils.plugins")
+local base = require("minimal.utils.base")
+local plugins = require("minimal.utils.plugins")
 
 local M = {}
 
