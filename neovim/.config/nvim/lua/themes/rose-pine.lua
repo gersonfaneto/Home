@@ -10,7 +10,7 @@ rose_pine.setup({
   bold_vert_split = false,
   dim_nc_background = false,
   disable_background = types.settings.transparent,
-  disable_float_background = types.settings.transparent,
+  disable_float_background = types.settings.float_border,
   disable_italics = false,
 
   groups = {

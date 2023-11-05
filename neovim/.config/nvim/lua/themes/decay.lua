@@ -28,7 +28,7 @@ decay.setup({
   },
 })
 
-if types.get_settings("transparent") then
+if types.settings.transparent then
   decay_highlights.bulk_hi({
     NvimTreeNormal = { bg = "NONE" },
     NvimTreeNormalNC = { bg = "NONE" },

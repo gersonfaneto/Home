@@ -1,6 +1,6 @@
 local types = require("utils.types")
 
-local override = types.get_settings("transparent") and "transparent" or "dark"
+local override = types.settings.transparent and "transparent" or "dark"
 
 local tokyo_night = require("tokyonight")
 
