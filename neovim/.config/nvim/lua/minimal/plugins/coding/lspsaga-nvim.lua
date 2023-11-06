@@ -1,8 +1,10 @@
 return {
   "glepnir/lspsaga.nvim",
+  cmd = {
+    "Lspsaga",
+  },
   event = {
-    "BufReadPre",
-    "BufNewFile",
+    "LspAttach",
   },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
