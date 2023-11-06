@@ -20,8 +20,8 @@ M["Catppuccin"] = {
 
 M["Decay"] = {
   light = {
-    fg = "",
-    bg = "",
+    fg = "#101419",
+    bg = "#DEE1E6",
   },
   dark = {
     fg = "#B1CCC9",
@@ -53,8 +53,8 @@ M["Gruvbox-Material"] = {
 
 M["Rose-Pine"] = {
   light = {
-    fg = "",
-    bg = "",
+    fg = "#575279",
+    bg = "#FAF4ED",
   },
   dark = {
     fg = "#E0DEF4",
@@ -64,8 +64,8 @@ M["Rose-Pine"] = {
 
 M["Tokyo-Night"] = {
   light = {
-    fg = "",
-    bg = "",
+    fg = "#3760BF",
+    bg = "#E1E2E7",
   },
   dark = {
     fg = "#C0CAF5",

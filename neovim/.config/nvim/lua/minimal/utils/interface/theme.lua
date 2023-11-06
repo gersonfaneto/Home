@@ -1,7 +1,7 @@
 ---@class Theme
 ---@field override? boolean @ When set to `true` the theme will be loaded even if the `CURRENT_THEME` environment variable is set.
 ---@field background? "dark" | "light" @ The variant of the theme to be loaded, defaults to the `dark` if not set.
----@field colorscheme "Gruvbox-Material"|"Catppuccin"|"Decay-Green"|"Everforest"|"Rose-Pine"|"Tokyo-Night" @ The theme to be loaded.
+---@field colorscheme "Catppuccin"|"Decay"|"Everforest"|"Gruvbox-Material"|"Rose-Pine"|"Tokyo-Night" @ The theme to be loaded.
 
 local types = require("minimal.utils.types")
 
