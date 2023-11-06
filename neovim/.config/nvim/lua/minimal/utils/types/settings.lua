@@ -1,9 +1,9 @@
 ---@class Settings
 local M = {}
 
----The colorscheme to be loaded and configured on startup.
+---The `Theme` to be loaded and configured on startup.
 ---@type Theme
-M.colorscheme = {
+M.theme = {
   priority = false,
   background = "dark",
   colorscheme = "Gruvbox-Material"
