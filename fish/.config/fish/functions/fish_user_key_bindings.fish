@@ -11,8 +11,10 @@ function fish_user_key_bindings
   bind \ea tmux_attach
   bind \es tmux_sessionizer
   
-  bind \ct fzf_theme
   bind \cf font-selector
+
+  bind \ct fzf_theme
+  bind \cb fzf_background
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
