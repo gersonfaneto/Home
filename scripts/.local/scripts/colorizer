@@ -1,33 +1,48 @@
 #!/usr/bin/env fish
 
+set argc (count $argv)
 set script_name (basename (status -f))
 
-set avaliable_themes (command ls $HOME/.config/fish/themes/ | sed 's/.fish//g')
+set avaliable_backgrounds (command ls $HOME/.config/fish/themes)
+set avaliable_themes (command ls $HOME/.config/fish/themes/$avaliable_backgrounds[1] | sed 's/.fish//g')
 
 function help_message --argument-names exit_code
-  echo "Usage: $script_name [THEME]"
-  echo "  Avaliable themes:"
+  echo "Usage: $script_name [COLORSCHEME] [BACKGROUND]"
+  echo ""
+  echo "  Colorschemes:"
+  echo ""
   echo $avaliable_themes | tr ' ' '\n' | awk '{print "    * " $0}'
+  echo ""
+  echo "  Backgrounds:"
+  echo ""
+  echo $avaliable_backgrounds | tr ' ' '\n' | awk '{print "    * " $0}'
+
   exit $exit_code
 end
 
 if contains -- "-h" $argv || contains -- "--help" $argv
   help_message 0
-else if test -z $argv
+else if test $argc -ne 2
   help_message 1
 else
   set choosen_theme $argv[1]
+  set choosen_background $argv[2]
 end
 
 if not contains -- $choosen_theme $avaliable_themes 
-  echo "Theme '$choosen_theme' not found!"
+  echo "Colorscheme '$choosen_theme' not found!"
   exit 1
 end
 
-ln -sf $HOME/.config/fish/themes/$choosen_theme.fish $HOME/.config/fish/theme.fish
+if not contains -- $choosen_background $avaliable_backgrounds 
+  echo "Background '$choosen_background' not found!"
+  exit 1
+end
+
+ln -sf $HOME/.config/fish/themes/$choosen_background/$choosen_theme.fish $HOME/.config/fish/theme.fish
 source $HOME/.config/fish/theme.fish
 
-ln -fs $HOME/.config/tmux/themes/$choosen_theme.conf $HOME/.config/tmux/theme.conf
+ln -fs $HOME/.config/tmux/themes/$choosen_background/$choosen_theme.conf $HOME/.config/tmux/theme.conf
 tmux source $HOME/.config/tmux/theme.conf
 
 set sessions (tmux list-sessions -F '#S')
@@ -42,5 +57,5 @@ for session in $sessions
   end
 end
 
-ln -fs $HOME/.config/kitty/themes/$choosen_theme.conf $HOME/.config/kitty/theme.conf
+ln -fs $HOME/.config/kitty/themes/$choosen_background/$choosen_theme.conf $HOME/.config/kitty/theme.conf
 killall -SIGUSR1 kitty
