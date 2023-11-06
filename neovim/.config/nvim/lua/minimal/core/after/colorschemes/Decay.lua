@@ -30,6 +30,8 @@ decay.setup({
 
 if types.settings.transparent then
   decay_highlights.bulk_hi({
+    StatusLine = { bg = colors.bg, fg = colors.fg },
+    StatusLineNC = { bg = colors.fg, fg = colors.bg },
     NvimTreeNormal = { bg = "NONE" },
     NvimTreeNormalNC = { bg = "NONE" },
     NvimTreeEndOfBuffer = { bg = "NONE", fg = colors.fg },
