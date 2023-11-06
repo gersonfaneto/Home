@@ -7,6 +7,7 @@ local tokyo_night = require("tokyonight")
 local M = {}
 
 tokyo_night.setup({
+  style = "storm",
   light_style = "day",
   transparent = types.settings.transparent,
   terminal_colors = true,
