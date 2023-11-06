@@ -1,5 +1,5 @@
 function fzf_directory
-  zoxide query --list --score | awk '{print $2}' | fzf | read line
+  zoxide query --interactive | read line
 
   if test $line
     cd $line

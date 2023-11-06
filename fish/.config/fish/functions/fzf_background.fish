@@ -5,6 +5,8 @@ function fzf_background
     set line (echo $line | tr '[:upper:]' '[:lower:]')
 
     export BACKGROUND="$line"
+
+    colorizer $COLORSCHEME $BACKGROUND
   end
 
   commandline -f repaint

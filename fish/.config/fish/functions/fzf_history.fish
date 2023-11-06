@@ -3,7 +3,6 @@ function fzf_history
 
   if test $line
     commandline $line
-    commandline -f execute
   else
     commandline ''
   end
