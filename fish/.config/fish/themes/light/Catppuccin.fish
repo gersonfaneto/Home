@@ -2,10 +2,6 @@ if type -q bat
   export BAT_THEME="Catppuccin-Latte"
 end
 
-if type -q tmux
-  ln -sf $HOME/.config/tmux/themes/Catppuccin-Latte.conf $HOME/.config/tmux/theme.conf
-end
-
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
     --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
@@ -14,4 +10,5 @@ if type -q fzf
     --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
 end
 
-export COLORSCHEME="Catppuccin-Latte"
+export BACKGROUND="light"
+export COLORSCHEME="Catppuccin"

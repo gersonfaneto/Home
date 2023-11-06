@@ -2,10 +2,6 @@ if type -q bat
   export BAT_THEME="Everforest"
 end
 
-if type -q tmux
-  ln -sf $HOME/.config/tmux/themes/Everforest.conf $HOME/.config/tmux/theme.conf
-end
-
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
     --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
@@ -15,4 +11,5 @@ if type -q fzf
     --color=marker:#d3c6aa,spinner:#e67380,header:#7fbbb3"
 end
 
+export BACKGROUND="light"
 export COLORSCHEME="Everforest"

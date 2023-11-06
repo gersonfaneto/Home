@@ -2,10 +2,6 @@ if type -q bat
   export BAT_THEME="Rose-Pine"
 end
 
-if type -q tmux
-  ln -sf $HOME/.config/tmux/themes/Rose-Pine.conf $HOME/.config/tmux/theme.conf
-end
-
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=51% --border=rounded \
     --prompt='Search: ' --info=inline --multi --tabstop=3 --color=dark \
@@ -16,4 +12,5 @@ if type -q fzf
     --color=pointer:#c5a7e7,marker:#eb6f92,prompt:#908caa"
 end
 
+export BACKGROUND="light"
 export COLORSCHEME="Rose-Pine"
