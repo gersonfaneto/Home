@@ -1,52 +1,37 @@
 ---@class Theme
----@field override? boolean @ When set to `true` the theme will be loaded even if the `CURRENT_THEME` environment variable is set.
----@field background? "dark" | "light" @ The variant of the theme to be loaded, defaults to the `dark` if not set.
+---@field override? boolean @ When set to `true`, `background` and `colorscheme` will be used over their respective environment variables.
+---@field background? "dark" | "light" @ The variant of the theme to be loaded.
 ---@field colorscheme "Catppuccin"|"Decay"|"Everforest"|"Gruvbox-Material"|"Rose-Pine"|"Tokyo-Night" @ The theme to be loaded.
 
 local types = require("minimal.utils.types")
 
 local M = {}
 
----Returns the current theme name based on the environment variable `CURRENT_THEME`.
----If the variable isn't set the `default_theme` from `Settings` is used.
----@return Theme theme The current loaded theme.
+---Returns the current `Theme` with the `colorscheme` and `background` based on their respective
+---environment variables. If the variables aren't set, the default values from `Settings` are used.
+---@return Theme theme The `Theme` to be loaded.
 function M.get()
-  local colorscheme = types.settings.colorscheme
-  local current_theme = os.getenv("CURRENT_THEME")
+  local colorscheme = os.getenv("COLORSCHEME")
+  local background = os.getenv("BACKGROUND")
 
-  if current_theme == nil or #current_theme == 0 or colorscheme.override then
-    return colorscheme
+  if colorscheme == nil or types.settings.theme.override then
+    colorscheme = types.settings.theme.colorscheme
+  end
+
+  if background == nil or types.settings.theme.override then
+    background = types.settings.theme.background
   end
 
   local theme = {
-    colorscheme = current_theme,
-    background = colorscheme.background,
+    colorscheme = colorscheme,
+    background = background,
   }
-
-  -- FIX: This could be better... - 11.05.2023:
-  if current_theme == "Decay-Green" then
-    theme = {
-      background = colorscheme.background,
-      colorscheme = "Decay",
-    }
-  end
-  if current_theme == "Catppuccin-Latte" then
-    theme = {
-      background = "light",
-      colorscheme = "Catppuccin",
-    }
-  end
-  if current_theme == "Catppuccin-Mocha" then
-    theme = {
-      background = "dark",
-      colorscheme = "Catppuccin",
-    }
-  end
 
   return theme
 end
 
----@param theme? Theme @ The theme to be loaded.
+---Loads a `Theme`.
+---@param theme? Theme @ The `Theme` to be loaded.
 function M.set(theme)
   if theme == nil then
     theme = M.get()
