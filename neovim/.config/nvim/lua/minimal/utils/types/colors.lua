@@ -68,7 +68,7 @@ M["Tokyo-Night"] = {
     bg = "#E1E2E7",
   },
   dark = {
-    fg = "#C0CAF5",
+    fg = "#A9B1D6",
     bg = "#24283B",
   },
 }
