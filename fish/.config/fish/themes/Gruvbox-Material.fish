@@ -15,4 +15,4 @@ if type -q fzf
     --color=marker:#e2cca9,spinner:#f2594b,header:#80aa9e"
 end
 
-export CURRENT_THEME="Gruvbox-Material"
+export COLORSCHEME="Gruvbox-Material"

@@ -15,4 +15,4 @@ if type -q fzf
    --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
 end
 
-export CURRENT_THEME="Tokyo-Night"
+export COLORSCHEME="Tokyo-Night"

@@ -14,4 +14,4 @@ if type -q fzf
     --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
 end
 
-export CURRENT_THEME="Catppuccin-Latte"
+export COLORSCHEME="Catppuccin-Latte"

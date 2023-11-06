@@ -15,4 +15,4 @@ if type -q fzf
     --color=marker:#ecd3a0,spinner:#ecd3a0,header:#ecd3a0"
 end
 
-export CURRENT_THEME="Decay-Green"
+export COLORSCHEME="Decay-Green"

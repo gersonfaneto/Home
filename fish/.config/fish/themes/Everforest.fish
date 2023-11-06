@@ -15,4 +15,4 @@ if type -q fzf
     --color=marker:#d3c6aa,spinner:#e67380,header:#7fbbb3"
 end
 
-export CURRENT_THEME="Everforest"
+export COLORSCHEME="Everforest"

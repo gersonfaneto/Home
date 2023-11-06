@@ -16,4 +16,4 @@ if type -q fzf
     --color=pointer:#c5a7e7,marker:#eb6f92,prompt:#908caa"
 end
 
-export CURRENT_THEME="Rose-Pine"
+export COLORSCHEME="Rose-Pine"
