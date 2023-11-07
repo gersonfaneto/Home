@@ -1,7 +1,7 @@
 ---@class Theme
 ---@field override? boolean @ When set to `true`, `background` and `colorscheme` will be used over their respective environment variables.
----@field background? "dark" | "light" @ The variant of the theme to be loaded.
----@field colorscheme "Catppuccin"|"Decay"|"Everforest"|"Gruvbox-Material"|"Rose-Pine"|"Tokyo-Night" @ The theme to be loaded.
+---@field background? "dark" | "light" @ The variant of the colorscheme to be loaded.
+---@field colorscheme "Catppuccin"|"Decay"|"Everforest"|"Gruvbox-Material"|"Rose-Pine"|"Tokyo-Night" @ The colorscheme to be loaded.
 
 local types = require("minimal.utils.types")
 
