@@ -14,7 +14,7 @@ catppuccin.setup({
     shade = "dark",
     percentage = 0.15,
   },
-  transparent_background = types.settings.transparent,
+  transparent_background = types.settings.transparent_background,
 })
 
 vim.cmd("colorscheme catppuccin")

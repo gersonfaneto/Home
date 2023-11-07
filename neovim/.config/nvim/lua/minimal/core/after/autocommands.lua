@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-if types.settings.float_border then
+if types.settings.transparent_floats then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
       vim.cmd("highlight WinSeparator guibg=NONE")
@@ -35,7 +35,7 @@ if types.settings.float_border then
   })
 end
 
-if types.settings.transparent then
+if types.settings.transparent_background then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
       vim.cmd("highlight Normal guibg=none guifg=none")

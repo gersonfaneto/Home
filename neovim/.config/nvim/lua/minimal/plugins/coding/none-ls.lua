@@ -25,7 +25,7 @@ return {
     end
 
     null_ls.setup({
-      border = types.settings.float_border and "double" or "none",
+      border = types.settings.transparent_floats and "double" or "none",
       sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,

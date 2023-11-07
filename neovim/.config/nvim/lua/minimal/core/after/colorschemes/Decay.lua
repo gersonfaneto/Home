@@ -7,7 +7,7 @@ local decay = require("decay")
 local decay_highlights = require("decay.highlights")
 
 local colors = interface.colors.get()
-local colors_override = types.settings.transparent and "NONE" or colors.bg
+local colors_override = types.settings.transparent_background and "NONE" or colors.bg
 
 local M = {}
 
@@ -28,7 +28,7 @@ decay.setup({
   },
 })
 
-if types.settings.transparent then
+if types.settings.transparent_background then
   decay_highlights.bulk_hi({
     StatusLine = { bg = colors.bg, fg = colors.fg },
     StatusLineNC = { bg = colors.fg, fg = colors.bg },

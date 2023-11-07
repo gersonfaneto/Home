@@ -15,7 +15,7 @@ function M.get()
     bg = current_theme.background == "dark" and hl.dark.bg or hl.light.bg,
   }
 
-  if types.settings.transparent then
+  if types.settings.transparent_background then
     color.bg = "NONE"
   end
 

@@ -42,7 +42,7 @@ local lazy_options = {
     },
   },
   ui = {
-    border = types.settings.float_border and "double" or "none",
+    border = types.settings.transparent_floats and "double" or "none",
   },
   checker = {
     enabled = false,

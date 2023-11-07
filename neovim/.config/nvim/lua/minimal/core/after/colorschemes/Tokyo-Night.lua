@@ -1,6 +1,6 @@
 local types = require("minimal.utils.types")
 
-local override = types.settings.transparent and "transparent" or "dark"
+local override = types.settings.transparent_background and "transparent" or "dark"
 
 local tokyo_night = require("tokyonight")
 
@@ -9,7 +9,7 @@ local M = {}
 tokyo_night.setup({
   style = "storm",
   light_style = "day",
-  transparent = types.settings.transparent,
+  transparent = types.settings.transparent_background,
   terminal_colors = true,
   styles = {
     comments = { italic = true },
