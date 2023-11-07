@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Catppuccin-Mocha"
+  export BAT_THEME="Catppuccin (Dark)"
 end
 
 if type -q fzf

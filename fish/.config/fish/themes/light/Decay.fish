@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Decay-Green"
+  export BAT_THEME="Decay (Light)"
 end
 
 if type -q fzf

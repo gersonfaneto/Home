@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Everforest"
+  export BAT_THEME="Everforest (Dark)"
 end
 
 if type -q fzf

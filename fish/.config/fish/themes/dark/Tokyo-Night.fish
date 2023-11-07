@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Tokyo-Night"
+  export BAT_THEME="Tokyo-Night (Dark)"
 end
 
 if type -q fzf

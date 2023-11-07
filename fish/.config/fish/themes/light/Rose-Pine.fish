@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Rose-Pine"
+  export BAT_THEME="Rose-Pine (Light)"
 end
 
 if type -q fzf
