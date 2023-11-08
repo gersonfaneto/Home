@@ -210,6 +210,20 @@ base.mappings.bulk_register({
     rhs = ":quit<CR>",
     description = "Close the current buffer.",
   },
+  {
+    mode = { "n", "x" },
+    lhs = ";",
+    rhs = ":",
+    options = { silent = false },
+    description = "Enter command mode.",
+  },
+  {
+    mode = { "n", "x" },
+    lhs = "q;",
+    rhs = "q:",
+    options = { silent = false },
+    description = "Open command window.",
+  },
 }, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Navigation...
