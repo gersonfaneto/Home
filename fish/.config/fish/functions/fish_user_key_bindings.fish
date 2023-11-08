@@ -3,7 +3,8 @@ function fish_user_key_bindings
   bind \er fzf_history
   bind \ej fzf_directory
 
-  bind \el lf
+  bind \el "lf && commandline -f repaint"
+  bind \eL "lfcd && commandline -f repaint"
   bind \eb btm
   bind \en nvim
 
