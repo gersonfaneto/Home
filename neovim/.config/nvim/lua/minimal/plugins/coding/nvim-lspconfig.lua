@@ -4,15 +4,12 @@ return {
     "BufReadPre",
     "BufNewFile",
   },
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-  },
   config = function()
     local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
     local base = require("minimal.utils.base")
     local types = require("minimal.utils.types")
+    local plugins = require("minimal.utils.plugins")
     local interface = require("minimal.utils.interface")
 
     local icons = interface.icons.get("diagnostics")
@@ -102,7 +99,7 @@ return {
       })
     end
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = plugins.lsp.capabilities.default_capabilities()
 
     local signs = {
       Error = icons.BoldError,
@@ -144,7 +141,7 @@ return {
       end
 
       if has_settings then
-        lspconfig[server].setup(vim.tbl_deep_extend("force", {
+        lspconfig[server].setup(base.tables.merge({
           capabilities = capabilities,
           on_attach = on_attach,
         }, extras))
