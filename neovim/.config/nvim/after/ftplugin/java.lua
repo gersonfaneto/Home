@@ -1,23 +1,15 @@
-local base = require("minimal.utils.base")
+local plugins = require("minimal.utils.plugins")
 
-local _, jdtls = pcall(require, "jdtls")
-local _, jdtls_setup = pcall(require, "jdtls.setup")
+local has_jdtls, jdtls = pcall(require, "jdtls")
+local has_jdtls_setup, jdtls_setup = pcall(require, "jdtls.setup")
+
+if not (has_jdtls or has_jdtls_setup) then
+  return
+end
 
 local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 
-local function capabilities()
-  local default_capabilities = vim.lsp.protocol.make_client_capabilities()
-  default_capabilities.textDocument.completion.completionItem.snippetSupport = true
-  default_capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
-    },
-  }
-
-  return default_capabilities
-end
+local capabilities = plugins.lsp.capabilities.default_capabilities()
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
@@ -74,7 +66,8 @@ local config = {
     "-data",
     workspace_dir,
   },
-  capabilities = capabilities(),
+  on_attach = plugins.lsp.attach.on_attach,
+  capabilities = capabilities,
   root_dir = root_dir,
   settings = {
     java = {
@@ -135,105 +128,5 @@ local config = {
     bundles = {},
   },
 }
-
-local function on_attach()
-  local opts = { noremap = true, silent = true }
-
-  base.mappings.bulk_register({
-    {
-      mode = { "n", "v" },
-      lhs = "<leader>la",
-      rhs = ":Lspsaga code_action<CR>",
-      options = opts,
-      description = "Show code actions.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>rn",
-      rhs = ":Lspsaga rename<CR>",
-      options = opts,
-      description = "Rename symbol under cursor.",
-    },
-    {
-      mode = { "n" },
-      lhs = "K",
-      rhs = ":Lspsaga hover_doc<CR>",
-      options = opts,
-      description = "Show help information.",
-    },
-    {
-      mode = { "n" },
-      lhs = "gr",
-      rhs = ":Lspsaga finder<CR>",
-      options = opts,
-      description = "Go to references.",
-    },
-    {
-      mode = { "n" },
-      lhs = "gi",
-      rhs = function()
-        require("telescope.builtin").lsp_implementations()
-      end,
-      options = opts,
-
-      description = "Go to implementations.",
-    },
-    {
-      mode = { "n" },
-      lhs = "gd",
-      rhs = ":Lspsaga peek_definition<CR>",
-      options = opts,
-      description = "Peek type definition.",
-    },
-    {
-      mode = { "n" },
-      lhs = "gD",
-      rhs = ":Lspsaga goto_definition<CR>",
-      options = opts,
-      description = "Go to type definition.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>ld",
-      rhs = ":Lspsaga show_line_diagnostics<CR>",
-      options = opts,
-      description = "Show current line diagnostics.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>cd",
-      rhs = ":Lspsaga show_cursor_diagnostics<CR>",
-      options = opts,
-      description = "Show diagnostics under cursor.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>fd",
-      rhs = function()
-        require("telescope.builtin").diagnostics()
-      end,
-      options = opts,
-      description = "Find project diagnostics.",
-    },
-    {
-      mode = { "n" },
-      lhs = "[d",
-      rhs = ":Lspsaga diagnostic_jump_prev<CR>",
-      options = opts,
-      description = "Jump to previous diagnostic.",
-    },
-    {
-      mode = { "n" },
-      lhs = "]d",
-      rhs = ":Lspsaga diagnostic_jump_next<CR>",
-      options = opts,
-      description = "Jump to next diagnostic.",
-    },
-  })
-
-  local _ = pcall(require, vim.lsp.codelens.refresh)
-end
-
-config["on_attach"] = on_attach()
 
 jdtls.start_or_attach(config)
