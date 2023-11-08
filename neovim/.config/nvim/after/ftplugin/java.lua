@@ -1,3 +1,4 @@
+local base = require("minimal.utils.base")
 local plugins = require("minimal.utils.plugins")
 
 local has_jdtls, jdtls = pcall(require, "jdtls")
@@ -14,19 +15,6 @@ local capabilities = plugins.lsp.capabilities.default_capabilities()
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
-local function directory_exists(path)
-  local f = io.popen("cd " .. path)
-
-  ---@diagnostic disable-next-line: need-check-nil
-  local ff = f:read("*all")
-
-  if ff:find("ItemNotFoundException") then
-    return false
-  else
-    return true
-  end
-end
-
 local root_markers = {
   ".git",
   "mvnw",
@@ -39,7 +27,7 @@ local root_dir = jdtls_setup.find_root(root_markers)
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
 
-if not directory_exists(workspace_dir) then
+if not base.files.is_directory(workspace_dir) then
   os.execute("mkdir " .. workspace_dir)
 end
 
