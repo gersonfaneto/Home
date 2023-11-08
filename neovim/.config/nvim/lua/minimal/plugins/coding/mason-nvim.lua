@@ -1,7 +1,8 @@
 return {
   "williamboman/mason.nvim",
   event = {
-    "VeryLazy",
+    "BufReadPre",
+    "BufNewFile",
   },
   build = function()
     vim.api.nvim_command(":MasonUpdate")
