@@ -23,6 +23,9 @@ return {
       definition_action_keys = {
         edit = "<CR>",
       },
+      lightbulb = {
+        enable = false,
+      },
     })
   end,
 }
