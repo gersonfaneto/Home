@@ -25,7 +25,6 @@ local mappings = {
     "trouble",
     "undotree",
     "vim-maximizer",
-    "vimtex",
   },
   extras = {
     ["show_bufferline"] = "bufferline",
