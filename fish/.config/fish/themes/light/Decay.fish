@@ -4,11 +4,11 @@ end
 
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-    --color=fg:#b1ccc9,bg:-1,hl:#e88693 \
-    --color=fg+:#b1ccc9,bg+:-1,hl+:#e88693 \
-    --color=info:#af87ff,prompt:#af87ff,pointer:#e88693 \
-    --color=marker:#ecd3a0,spinner:#ecd3a0,header:#ecd3a0"
+  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  --color=fg:#101419,bg:-1,hl:#BD3C42 \
+  --color=fg+:#101419,bg+:-1,hl+:#BD3C42 \
+  --color=info:#A86CD0,prompt:#A86CD0,pointer:#BD3C42 \
+  --color=marker:#CEAC67,spinner:#CEAC67,header:#CEAC67"
 end
 
 export BACKGROUND="light"

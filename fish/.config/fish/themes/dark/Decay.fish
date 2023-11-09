@@ -1,14 +1,14 @@
 if type -q bat
-  export BAT_THEME="Decay-D"
+  export BAT_THEME="Decay (Dark)"
 end
 
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
-    --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
-    --color=fg:#b1ccc9,bg:-1,hl:#e88693 \
-    --color=fg+:#b1ccc9,bg+:-1,hl+:#e88693 \
-    --color=info:#af87ff,prompt:#af87ff,pointer:#e88693 \
-    --color=marker:#ecd3a0,spinner:#ecd3a0,header:#ecd3a0"
+  --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
+  --color=fg:#B1CCC9,bg:-1,hl:#E88693 \
+  --color=fg+:#B1CCC9,bg+:-1,hl+:#E88693 \
+  --color=info:#AF87FF,prompt:#AF87FF,pointer:#E88693 \
+  --color=marker:#ECD3A0,spinner:#ECD3A0,header:#ECD3A0"
 end
 
 export BACKGROUND="dark"
