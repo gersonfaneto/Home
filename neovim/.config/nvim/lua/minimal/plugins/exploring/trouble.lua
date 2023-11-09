@@ -12,7 +12,6 @@ return {
 
     trouble.setup({
       auto_fold = true,
-      auto_preview = false,
     })
   end,
 }

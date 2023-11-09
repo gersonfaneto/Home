@@ -84,10 +84,12 @@ return {
           },
         },
         lualine_x = {
-          -- "encoding",
-          "progress",
+          "selectioncount",
         },
-        lualine_y = {},
+        lualine_y = {
+          "progress",
+          "location",
+        },
         lualine_z = {
           function()
             return " " .. os.date("%R")
