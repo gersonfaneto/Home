@@ -10,35 +10,35 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cdd6f4</string>
+          <string>#CDD6F4</string>
           <key>background</key>
-          <string>#1e1e2e</string>
+          <string>#1E1E2E</string>
           <key>caret</key>
-          <string>#bac2de</string>
+          <string>#BAC2DE</string>
           <key>invisibles</key>
-          <string>#a6adc8</string>
+          <string>#A6ADC8</string>
           <key>gutterForeground</key>
-          <string>#9399b2</string>
+          <string>#9399B2</string>
           <key>gutterForegroundHighlight</key>
-          <string>#a6e3a1</string>
+          <string>#A6E3A1</string>
           <key>lineHighlight</key>
-          <string>#585b70</string>
+          <string>#585B70</string>
           <key>selection</key>
-          <string>#6c7086</string>
+          <string>#6C7086</string>
           <key>selectionBorder</key>
-          <string>#1e1e2e</string>
+          <string>#1E1E2E</string>
           <key>activeGuide</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>findHighlightForeground</key>
           <string>#181825</string>
           <key>findHighlight</key>
-          <string>#f9e2af</string>
+          <string>#F9E2AF</string>
           <key>bracketsForeground</key>
-          <string>#9399b2</string>
+          <string>#9399B2</string>
           <key>bracketContentsForeground</key>
-          <string>#9399b2</string>
+          <string>#9399B2</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Comment</string>
@@ -47,11 +47,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#6c7086</string>
+          <string>#6C7086</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>String</string>
@@ -60,11 +60,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#a6e3a1</string>
+          <string>#A6E3A1</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>String regex</string>
@@ -73,11 +73,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Number</string>
@@ -86,11 +86,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Boolean</string>
@@ -99,11 +99,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string>bold italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Built-in constant</string>
@@ -112,11 +112,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b4befe</string>
+          <string>#B4BEFE</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Built-in function</string>
@@ -125,11 +125,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>User-defined constant</string>
@@ -138,11 +138,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable</string>
@@ -150,7 +150,7 @@
         <string>variable</string>
         <key>settings</key>
         <dict></dict>
-      </dict>
+        </dict>
       <dict>
         <key>name</key>
         <string>Keyword</string>
@@ -159,11 +159,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Conditional/loop</string>
@@ -172,11 +172,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cba6f7</string>
+          <string>#CBA6F7</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Return</string>
@@ -185,11 +185,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5c2e7</string>
+          <string>#F5C2E7</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Exception</string>
@@ -198,11 +198,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Operator</string>
@@ -211,11 +211,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89dceb</string>
+          <string>#89DCEB</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Punctuation separator</string>
@@ -224,11 +224,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Punctuation terminator</string>
@@ -237,11 +237,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Punctuation bracket</string>
@@ -250,11 +250,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9399b2</string>
+          <string>#9399B2</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Include</string>
@@ -263,11 +263,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage</string>
@@ -276,11 +276,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage type</string>
@@ -289,11 +289,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f9e2af</string>
+          <string>#F9E2AF</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage modifier</string>
@@ -302,11 +302,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage type namespace</string>
@@ -315,11 +315,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage type class</string>
@@ -328,11 +328,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Label</string>
@@ -341,11 +341,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Keyword class</string>
@@ -354,11 +354,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Class name</string>
@@ -367,11 +367,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89dceb</string>
+          <string>#89DCEB</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Inherited class</string>
@@ -380,11 +380,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89dceb</string>
+          <string>#89DCEB</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function name</string>
@@ -393,11 +393,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function macro</string>
@@ -406,11 +406,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Macro directive - ifdef</string>
@@ -419,11 +419,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Constructor</string>
@@ -432,11 +432,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b4befe</string>
+          <string>#B4BEFE</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function argument</string>
@@ -445,11 +445,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function declaration</string>
@@ -458,11 +458,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#eba0ac</string>
+          <string>#EBA0AC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Library function</string>
@@ -471,11 +471,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89dceb</string>
+          <string>#89DCEB</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Library constant</string>
@@ -484,11 +484,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Library class/type</string>
@@ -497,11 +497,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Library variable</string>
@@ -511,8 +511,8 @@
         <dict>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable function</string>
@@ -521,11 +521,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable parameter</string>
@@ -534,11 +534,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable other</string>
@@ -547,11 +547,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cdd6f4</string>
+          <string>#CDD6F4</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable field</string>
@@ -560,11 +560,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable language</string>
@@ -573,11 +573,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Tag name</string>
@@ -586,11 +586,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fab387</string>
+          <string>#FAB387</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Tag attribute</string>
@@ -599,11 +599,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cba6f7</string>
+          <string>#CBA6F7</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Tag delimiter</string>
@@ -612,11 +612,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#eba0ac</string>
+          <string>#EBA0AC</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown URL</string>
@@ -625,11 +625,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5e0dc</string>
+          <string>#F5E0DC</string>
           <key>fontStyle</key>
           <string>italic underline</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown reference</string>
@@ -638,11 +638,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b4befe</string>
+          <string>#B4BEFE</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown literal</string>
@@ -651,11 +651,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown title</string>
@@ -664,11 +664,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#89b4fa</string>
+          <string>#89B4FA</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown emphasis</string>
@@ -677,11 +677,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#eba0ac</string>
+          <string>#EBA0AC</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown strong</string>
@@ -690,11 +690,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#eba0ac</string>
+          <string>#EBA0AC</string>
           <key>fontStyle</key>
           <string>bold</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Escape</string>
@@ -703,11 +703,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5c2e7</string>
+          <string>#F5C2E7</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Bash built-in function</string>
@@ -716,11 +716,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f5c2e7</string>
+          <string>#F5C2E7</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Bash parameter</string>
@@ -729,11 +729,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Lua field</string>
@@ -742,11 +742,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b4befe</string>
+          <string>#B4BEFE</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Lua constructor</string>
@@ -755,11 +755,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f2cdcd</string>
+          <string>#F2CDCD</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Java constant</string>
@@ -768,11 +768,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS property</string>
@@ -781,11 +781,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f2cdcd</string>
+          <string>#F2CDCD</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS constant</string>
@@ -794,11 +794,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cdd6f4</string>
+          <string>#CDD6F4</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS suffix</string>
@@ -807,11 +807,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS variable property</string>
@@ -820,11 +820,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>SCSS tag</string>
@@ -833,11 +833,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b4befe</string>
+          <string>#B4BEFE</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>SASS variable</string>
@@ -846,11 +846,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#94e2d5</string>
+          <string>#94E2D5</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Invalid</string>
@@ -859,13 +859,13 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cdd6f4</string>
+          <string>#CDD6F4</string>
           <key>background</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Invalid deprecated</string>
@@ -874,13 +874,13 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cdd6f4</string>
+          <string>#CDD6F4</string>
           <key>background</key>
-          <string>#cba6f7</string>
+          <string>#CBA6F7</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Diff header</string>
@@ -889,11 +889,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#6c7086</string>
+          <string>#6C7086</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Diff deleted</string>
@@ -902,11 +902,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Diff inserted</string>
@@ -915,11 +915,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#a6e3a1</string>
+          <string>#A6E3A1</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Diff changed</string>
@@ -928,11 +928,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f9e2af</string>
+          <string>#F9E2AF</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Message error</string>
@@ -941,12 +941,12 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f38ba8</string>
+          <string>#F38BA8</string>
           <key>fontStyle</key>
           <string></string>
+          </dict>
         </dict>
-      </dict>
-    </array>
+      </array>
     <key>uuid</key>
     <string>4d0379b5-ef82-467b-b8b8-365889420646</string>
     <key>colorSpaceName</key>
@@ -955,5 +955,5 @@
     <string>theme.dark.Catppuccin</string>
     <key>author</key>
     <string>BrunDerSchwarzmagier</string>
-  </dict>
-</plist>
+    </dict>
+  </plist>

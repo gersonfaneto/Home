@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
@@ -15,25 +16,25 @@
         <key>settings</key>
         <dict>
           <key>activeGuide</key>
-          <string>#363b54</string>
+          <string>#363B54</string>
           <key>background</key>
-          <string>#e1e2e7</string>
+          <string>#E1E2E7</string>
           <key>caret</key>
           <string>#DBC08A</string>
           <key>findHighlight</key>
-          <string>#ffa300</string>
+          <string>#FFA300</string>
           <key>findHighlightForeground</key>
           <string>#000000</string>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
           <key>guide</key>
-          <string>#4f4f5e40</string>
+          <string>#4F4F5E40</string>
           <key>gutterForeground</key>
-          <string>#3b415caa</string>
+          <string>#3B415CAA</string>
           <key>inactiveSelection</key>
           <string>#282833</string>
           <key>invisibles</key>
-          <string>#4f4f5e</string>
+          <string>#4F4F5E</string>
           <key>lineHighlight</key>
           <string>#00000030</string>
           <key>selection</key>
@@ -43,11 +44,11 @@
           <key>shadow</key>
           <string>#00000010</string>
           <key>stackGuide</key>
-          <string>#4f4f5e60</string>
+          <string>#4F4F5E60</string>
           <key>tagsOptions</key>
           <string>underline</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Italics - Comments, Storage, Keyword Flow, Vue attributes, Decorators</string>
@@ -57,8 +58,8 @@
         <dict>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Comment</string>
@@ -67,9 +68,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#848cb5</string>
+          <string>#848CB5</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Comment Doc</string>
@@ -78,9 +79,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#848cb5</string>
+          <string>#848CB5</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Number, Boolean, Undefined, Null</string>
@@ -89,9 +90,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b15c00</string>
+          <string>#B15C00</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>String, Symbols, Markup Heading</string>
@@ -103,8 +104,8 @@
           <string></string>
           <key>foreground</key>
           <string>#387068</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>String</string>
@@ -116,8 +117,8 @@
           <string></string>
           <key>foreground</key>
           <string>#587539</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Colors</string>
@@ -126,9 +127,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9aa5ce</string>
+          <string>#9AA5CE</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Invalid</string>
@@ -137,9 +138,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Invalid deprecated</string>
@@ -148,9 +149,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage Type</string>
@@ -159,9 +160,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Storage - modifier, var, const, let</string>
@@ -170,9 +171,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7847bd</string>
+          <string>#7847BD</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Interpolation</string>
@@ -182,8 +183,8 @@
         <dict>
           <key>foreground</key>
           <string>#007197</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Spread</string>
@@ -194,9 +195,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Operator, Misc</string>
@@ -205,9 +206,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Import, Export, From, Default</string>
@@ -217,8 +218,8 @@
         <dict>
           <key>foreground</key>
           <string>#007197</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Keyword</string>
@@ -227,9 +228,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Keyword SQL</string>
@@ -239,8 +240,8 @@
         <dict>
           <key>foreground</key>
           <string>#007197</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Keyword Operator Logical, Arrow, Ternary, Comparison</string>
@@ -249,9 +250,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Tag</string>
@@ -260,9 +261,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Tag Punctuation</string>
@@ -271,9 +272,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ba3c97</string>
+          <string>#BA3C97</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Blade</string>
@@ -282,9 +283,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>PHP - Embedded Tag</string>
@@ -293,9 +294,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Smarty - Twig tag - Blade</string>
@@ -305,8 +306,8 @@
         <dict>
           <key>foreground</key>
           <string>#7DCFFF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Smarty - Twig variable - function</string>
@@ -316,8 +317,8 @@
         <dict>
           <key>foreground</key>
           <string>#188092</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Globals - PHP Constants  etc</string>
@@ -326,9 +327,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variables</string>
@@ -337,9 +338,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Object Variable</string>
@@ -348,9 +349,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Object Key</string>
@@ -360,8 +361,8 @@
         <dict>
           <key>foreground</key>
           <string>#387068</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Object Property</string>
@@ -371,8 +372,8 @@
         <dict>
           <key>foreground</key>
           <string>#007197</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Object Property</string>
@@ -381,9 +382,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Object Literal Member lvl 3 (Vue Prop Validation)</string>
@@ -392,9 +393,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#38919f</string>
+          <string>#38919F</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>C-related Block Level Variables</string>
@@ -403,9 +404,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Other Variable</string>
@@ -414,9 +415,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Methods</string>
@@ -425,9 +426,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function Definition</string>
@@ -436,9 +437,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Function Argument</string>
@@ -447,9 +448,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Constant, Tag Attribute</string>
@@ -458,9 +459,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable Definition</string>
@@ -469,9 +470,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Inherited Class</string>
@@ -482,9 +483,9 @@
           <key>fontStyle</key>
           <string></string>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Class, Support, DOM, etc</string>
@@ -493,9 +494,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Class Name</string>
@@ -504,9 +505,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Support Function</string>
@@ -516,8 +517,8 @@
         <dict>
           <key>foreground</key>
           <string>#188092</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Class and Support</string>
@@ -526,9 +527,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Font</string>
@@ -538,8 +539,8 @@
         <dict>
           <key>foreground</key>
           <string>#587539</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Class</string>
@@ -549,8 +550,8 @@
         <dict>
           <key>foreground</key>
           <string>#587539</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS ID</string>
@@ -559,9 +560,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fc7b7b</string>
+          <string>#FC7B7B</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Tag</string>
@@ -570,9 +571,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Tag Reference</string>
@@ -581,9 +582,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Property Separator</string>
@@ -592,9 +593,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9abdf5</string>
+          <string>#9ABDF5</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Punctuation</string>
@@ -603,9 +604,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>SCSS @</string>
@@ -614,9 +615,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>SCSS Mixins, Extends, Include Keyword</string>
@@ -625,9 +626,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7847bd</string>
+          <string>#7847BD</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>SCSS Include Mixin Argument</string>
@@ -636,9 +637,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS value</string>
@@ -647,9 +648,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b15c00</string>
+          <string>#B15C00</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Sub-methods</string>
@@ -658,9 +659,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Language methods</string>
@@ -669,9 +670,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Variable punctuation</string>
@@ -680,9 +681,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Keyword this with Punctuation, ES7 Bind Operator</string>
@@ -691,9 +692,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>HTML Attributes</string>
@@ -702,9 +703,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Vue Template attributes</string>
@@ -713,9 +714,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Vue Template attribute separator</string>
@@ -724,9 +725,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS IDs</string>
@@ -735,9 +736,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS psuedo selectors</string>
@@ -746,9 +747,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Inserted</string>
@@ -757,9 +758,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4197a4</string>
+          <string>#4197A4</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Deleted</string>
@@ -768,9 +769,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#c47981</string>
+          <string>#C47981</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Changed</string>
@@ -779,9 +780,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#506d9c</string>
+          <string>#506D9C</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions</string>
@@ -790,9 +791,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e5857</string>
+          <string>#2E5857</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions - Punctuation</string>
@@ -801,9 +802,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions - Character Class</string>
@@ -812,9 +813,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions - Character Class Set</string>
@@ -823,9 +824,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions - Quantifier</string>
@@ -834,9 +835,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Regular Expressions - Backslash</string>
@@ -845,9 +846,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Escape Characters</string>
@@ -856,9 +857,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Decorators</string>
@@ -867,9 +868,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>CSS Units</string>
@@ -878,9 +879,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 0</string>
@@ -889,9 +890,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 1</string>
@@ -900,9 +901,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 2</string>
@@ -912,8 +913,8 @@
         <dict>
           <key>foreground</key>
           <string>#007197</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 3</string>
@@ -922,9 +923,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 4</string>
@@ -933,9 +934,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8c6c3e</string>
+          <string>#8C6C3E</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 5</string>
@@ -944,9 +945,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 6</string>
@@ -956,8 +957,8 @@
         <dict>
           <key>foreground</key>
           <string>#387068</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 7</string>
@@ -966,9 +967,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - Level 8</string>
@@ -978,8 +979,8 @@
         <dict>
           <key>foreground</key>
           <string>#587539</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>JSON Key - value</string>
@@ -989,8 +990,8 @@
         <dict>
           <key>foreground</key>
           <string>#587539</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Plain Punctuation</string>
@@ -999,9 +1000,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9abdf5</string>
+          <string>#9ABDF5</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Block Punctuation</string>
@@ -1010,9 +1011,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9abdf5</string>
+          <string>#9ABDF5</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Plain</string>
@@ -1021,9 +1022,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>HTML text</string>
@@ -1032,9 +1033,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9aa5ce</string>
+          <string>#9AA5CE</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Markup Raw Inline</string>
@@ -1043,9 +1044,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#9854f1</string>
+          <string>#9854F1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Markup Raw Inline Punctuation</string>
@@ -1055,8 +1056,8 @@
         <dict>
           <key>foreground</key>
           <string>#4E5579</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 1</string>
@@ -1067,9 +1068,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 2</string>
@@ -1080,9 +1081,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#61bdf2</string>
+          <string>#61BDF2</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 3</string>
@@ -1093,9 +1094,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 4</string>
@@ -1106,9 +1107,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#6d91de</string>
+          <string>#6D91DE</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 5</string>
@@ -1119,9 +1120,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#9aa5ce</string>
+          <string>#9AA5CE</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Heading 6</string>
@@ -1132,9 +1133,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#747ca1</string>
+          <string>#747CA1</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Italic</string>
@@ -1145,9 +1146,9 @@
           <key>fontStyle</key>
           <string>italic</string>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Bold</string>
@@ -1158,9 +1159,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Bold-Italic</string>
@@ -1171,9 +1172,9 @@
           <key>fontStyle</key>
           <string>bold italic</string>
           <key>foreground</key>
-          <string>#3760bf</string>
+          <string>#3760BF</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Underline</string>
@@ -1183,8 +1184,8 @@
         <dict>
           <key>fontStyle</key>
           <string>underline</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Blockquote</string>
@@ -1193,9 +1194,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4e5579</string>
+          <string>#4E5579</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Quote</string>
@@ -1205,8 +1206,8 @@
         <dict>
           <key>fontStyle</key>
           <string>italic</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Link</string>
@@ -1216,8 +1217,8 @@
         <dict>
           <key>foreground</key>
           <string>#387068</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Fenced Code Block</string>
@@ -1226,9 +1227,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#006a83</string>
+          <string>#006A83</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markdown - Separator</string>
@@ -1239,9 +1240,9 @@
           <key>fontStyle</key>
           <string>bold</string>
           <key>foreground</key>
-          <string>#444b6a</string>
+          <string>#444B6A</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Markup - Table</string>
@@ -1250,9 +1251,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#c0cefc</string>
+          <string>#C0CEFC</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Token - Info</string>
@@ -1261,9 +1262,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#07879d</string>
+          <string>#07879D</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Token - Warn</string>
@@ -1272,9 +1273,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ffdb69</string>
+          <string>#FFDB69</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Token - Error</string>
@@ -1283,9 +1284,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#c64343</string>
+          <string>#C64343</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Token - Debug</string>
@@ -1294,9 +1295,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b267e6</string>
+          <string>#B267E6</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Apache Tag</string>
@@ -1305,9 +1306,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#f52a65</string>
+          <string>#F52A65</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>Preprocessor</string>
@@ -1317,8 +1318,8 @@
         <dict>
           <key>foreground</key>
           <string>#387068</string>
+          </dict>
         </dict>
-      </dict>
       <dict>
         <key>name</key>
         <string>ENV value</string>
@@ -1327,12 +1328,11 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#2e7de9</string>
+          <string>#2E7DE9</string>
+          </dict>
         </dict>
-      </dict>
-    </array>
+      </array>
     <key>uuid</key>
     <string>06f855e3-9fb7-4fb1-b790-aef06065f34e</string>
-  </dict>
-</plist>
-
+    </dict>
+  </plist>
