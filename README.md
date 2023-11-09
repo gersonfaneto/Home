@@ -69,7 +69,9 @@ stow -D neovim # Remove the link for the `neovim` folder.
 
 ## TODOs
 
-- [ ] Fix `JARVIS.sh` - Packages are failing to install. No idea why 🫠.
+- [ ] Check for bugs and improvements...
+- [ ] Improve the `README` and the overall documentation...
+- [x] Fix `JARVIS.sh` - Packages are failing to install. No idea why 🫠.
 
 ## License
 
