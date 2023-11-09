@@ -3,6 +3,7 @@ local types = require("minimal.utils.types")
 local mappings = {
   base = {
     "alpha",
+    "crates-nvim",
     "diffview",
     "flutter-tools",
     "git-worktree",
