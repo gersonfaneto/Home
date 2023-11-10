@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# WARNING: This script is currently broken, packages will fail to install...
-
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"
@@ -24,30 +22,39 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 # List of needed packages to be installed.
 packages=(
 	bat
-	exa
+	bottom
+	difft
+	eza
 	fd
 	fish
 	fzf
+	git
 	github-cli
 	glow
+	jq
 	kitty
+	lf
+	mediainfo
 	neofetch
 	neovim
+	python-pdftotext
 	ripgrep
+	rtx
 	starship
 	stow
+	tar
 	tmux
 	trash-cli
+	unzip
 	vimv
+	xh
+	zip
 	zoxide
-	bottom
-	git
-	lf
 )
 
 # Show a progress bar to the user.
 display_progress() {
-	while pgrep "$1" &>/dev/null; do
+	while ps | grep $1 &>/dev/null; do
 		echo -n "."
 		sleep 2
 	done
@@ -136,30 +143,6 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	done
 fi
 
-# Install asdf for version management.
-read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install asdf? [Y/n] ' REPLY
-
-if [[ -d "$HOME"/.asdf/ ]]; then
-	echo -e "$NOTE - asdf is already installed!"
-elif [[ $REPLY =~ ^[Yy]$ || -z $REPLY ]]; then
-	echo -en "$NOTE - Beggining installation, this may take a while..."
-
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 &>>"$LOG" &
-
-	display_progress $!
-
-	if [[ -d $HOME/.asdf/ ]]; then
-		echo -e "$WAIT$OK - asdf installed completed with success!"
-
-		mkdir -p ~/.config/fish/completions
-
-		ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-	else
-		echo -e "$WAIT$ERROR - asdf installation failed, please check the log at $INST_LOG!"
-		exit
-	fi
-fi
-
 # Link configuration files.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to link the configuration files? [Y/n] ' REPLY
 
@@ -181,9 +164,9 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
 	fc-cache -f
 
-	echo -e "$NOTE - Updating git submodules..."
+	echo -e "$NOTE - Generating extra configurations for kitty..."
 
-	git submodule update --init
+	"$HOME"/.config/kitty/scripts/generate-fonts.sh
 
 	if yay -Q bat &>>/dev/null; then
 		echo -e "$NOTE - Updating 'bat' themes..."
@@ -197,7 +180,7 @@ read -rep $'[\e[1;33mACTION\e[0m] - Would you like to change the default shell t
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	if [ "$SHELL" != "/usr/bin/fish" ]; then
 		echo -e "$M_NOTE - Changing default shell to fish..."
-		chsh -s "$(which zsh)"
+		chsh -s "$(which fish)"
 	else
 		echo -e "$NOTE - Fish is already the default shell!"
 	fi

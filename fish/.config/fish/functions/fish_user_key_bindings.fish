@@ -1,15 +1,21 @@
 function fish_user_key_bindings
   bind \ef fzf_file
-  bind \et fzf_theme
   bind \er fzf_history
   bind \ej fzf_directory
 
-  bind \el lf
+  bind \el "lf && commandline -f repaint"
+  bind \eL "lfcd && commandline -f repaint"
   bind \eb btm
   bind \en nvim
 
   bind \ek tmux_kill
   bind \ea tmux_attach
+  bind \es tmux_sessionizer
+  
+  bind \cf font-selector
+
+  bind \ct fzf_theme
+  bind \cb fzf_background
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments

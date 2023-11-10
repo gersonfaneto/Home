@@ -1,29 +1,33 @@
-local mappings = require("utils.api").mappings
+local base = require("minimal.utils.base")
+local plugins = require("minimal.utils.plugins")
 
 local M = {}
 
-mappings.bulk_register({
+base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "[z",
-    rhs = "zk",
-    options = { noremap = true, silent = true },
-    description = "Jump to next fold.",
+    lhs = "<leader>sp",
+    rhs = function()
+      if plugins.marp.is_marp() then
+        plugins.marp.start_server()
+      else
+        vim.cmd("MarkdownPreview")
+      end
+    end,
+    description = "Start Preview.",
   },
   {
     mode = { "n" },
-    lhs = "]z",
-    rhs = "zj",
-    options = { noremap = true, silent = true },
-    description = "Jump to previous fold.",
+    lhs = "<leader>ep",
+    rhs = function()
+      if plugins.marp.is_marp() then
+        plugins.marp.stop_server()
+      else
+        vim.cmd("MarkdownPreviewStop")
+      end
+    end,
+    description = "End Preview.",
   },
-  {
-    mode = { "n" },
-    lhs = "<leader>mp",
-    rhs = ":MarkdownPreviewToggle<CR>",
-    options = { noremap = true, silent = true },
-    description = "Toggle markdown preview.",
-  },
-})
+}, { options = { noremap = true, silent = true }, prefix = "Markdown: " })
 
 return M

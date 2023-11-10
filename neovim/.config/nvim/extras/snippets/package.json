@@ -1,0 +1,38 @@
+{
+  "name": "custom-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "comments.json"
+      },
+      {
+        "language": "c",
+        "path": "c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "cpp.json"
+      },
+      {
+        "language": "lua",
+        "path": "lua.json"
+      },
+      {
+        "language": "make",
+        "path": "make.json"
+      },
+      {
+        "language": "gitcommit",
+        "path": "gitcommit.json"
+      },
+      {
+        "language": "license",
+        "path": "license.json"
+      }
+    ]
+  }
+}

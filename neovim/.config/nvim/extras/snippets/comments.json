@@ -1,0 +1,45 @@
+{
+  "NOTE": {
+    "prefix": "note",
+    "body": [
+      "$LINE_COMMENT NOTE: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate a `NOTE` comment."
+  },
+  "TODO": {
+    "prefix": "todo",
+    "body": [
+      "$LINE_COMMENT TODO: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate a `TODO` comment."
+  },
+  "WARN": {
+    "prefix": "warn",
+    "body": [
+      "$LINE_COMMENT WARN: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate a `WARN` comment."
+  },
+  "ERROR": {
+    "prefix": "error",
+    "body": [
+      "$LINE_COMMENT ERROR: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate an `ERROR` comment."
+  },
+  "FIX": {
+    "prefix": "fix",
+    "body": [
+      "$LINE_COMMENT FIX: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate a `FIX` comment."
+  },
+  "HACK": {
+    "prefix": "hack",
+    "body": [
+      "$LINE_COMMENT HACK: $1 - $CURRENT_MONTH.$CURRENT_DATE.$CURRENT_YEAR: $0"
+    ],
+    "description": "Generate a `HACK` comment."
+  }
+}
+

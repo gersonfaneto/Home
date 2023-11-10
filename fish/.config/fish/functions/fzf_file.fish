@@ -1,7 +1,7 @@
 function fzf_file
-  set -l fzf_flags --preview="bat --style=numbers --color=always --line-range :500 {}"
+  set -l extra_flags --preview='bat --style=numbers --color=always --line-range :500 {}'
 
-  rg --files --hidden --glob "!.git/*" | fzf $fzf_flags | read line
+  rg --files --hidden --glob '!.git/*' | fzf $extra_flags | tr '\n' ' ' | read line
 
   if test $line
     commandline "$EDITOR $line"

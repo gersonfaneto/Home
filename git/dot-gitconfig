@@ -1,3 +1,5 @@
+# vim:ft=gitconfig
+
 [init]
   defaultBranch = main
 
@@ -26,6 +28,9 @@
   ignorecase = false
   excludesfile = ~/.gitignore
 
+[diff]
+  external = difft
+
 [color]
   status = auto
   diff = auto
@@ -42,6 +47,8 @@
   st = status
   ss = status --short --branch
 
+  f = fetch --all
+
   a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
 
   df = "!git status --short | awk '{print $2}' | fzf | xargs git diff"
@@ -54,6 +61,7 @@
   wa = worktree add
   wr = worktree remove
 
+  sb = "!git br --all | sed 's/^*//g' | awk '{print $1}' | rg -v remotes | fzf | xargs git checkout"
   cm = "!git checkout main"
   cd = "!git go dev"
   cb = "!git go build"
@@ -66,10 +74,15 @@
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   
   cc = "!git log --oneline | fzf | awk '{print $1}' | xargs git checkout"
-  sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-only"
+  sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-status --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'"
   
   ba = branch --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
+
   hist = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
+  hhist = "!git log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' | head"
+
+  llog = log --graph --name-status --date=relative --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' 
+
   last = log --graph --abbrev-commit --date=relative --decorate --since=midnight --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   
   in = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"

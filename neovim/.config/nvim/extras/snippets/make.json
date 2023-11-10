@@ -1,0 +1,28 @@
+{
+  "Basic Makefile": {
+    "prefix": "basic",
+    "body": [
+      "CC=cc",
+      "CFLAGS=-Wall -Werror -Wextra",
+      "SOURCE=$1",
+      "OUTPUT=$2",
+      "",
+      "all: build run clean",
+      "",
+      "build:",
+      "	@echo '[MAKE]: Building...'",
+      "	@$(CC) $(SOURCE) -o $(OUTPUT) $(CFLAGS)",
+      "",
+      "run:",
+      "	@echo '[MAKE]: Running...'",
+      "	@./$(OUTPUT)",
+      "",
+      "clean:",
+      "	@echo '[MAKE]: Cleaning...'",
+      "	@rm -f $(OUTPUT)",
+      "",
+      ".PHONY: all build run clean"
+    ],
+    "description": "Basic structure for a Makefile."
+  }
+}

@@ -1,8 +1,8 @@
 function history_previous_command
   switch (commandline -t)
-    case "!"
+    case '!'
       commandline -t $history[1]; commandline -f repaint
-    case "*"
+    case '*'
       commandline -i !
   end
 end

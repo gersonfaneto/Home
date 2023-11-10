@@ -1,0 +1,266 @@
+{
+  "C": {
+    "prefix": "c",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "",
+      "int main(void) {",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Basic structure of a C program."
+  },
+  "Standard Starter Template": {
+    "prefix": "sst",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main (int argc, char *argv[]) {",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program."
+  },
+  "Variant Starter Template": {
+    "prefix": "vst",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "",
+      "int main (int argc, char *argv[]) {",
+      "\t$0",
+      "",
+      "\treturn EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "A variant starter template for a C program with `stdlib.h` included."
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": [
+      "#include \"$1\""
+    ],
+    "description": "Simple `#include` for local header file."
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": [
+      "#include <$1>"
+    ],
+    "description": "Simple `#include` for system wide header file."
+  },
+  "#def": {
+    "prefix": "def",
+    "body": [
+      "#define $1 $2 "
+    ],
+    "description": "Simple `#define` statement."
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": [
+      "#ifdef ${DEBUG}",
+      "$1",
+      "#endif // ${DEBUG}"
+    ],
+    "description": "Simple `#ifdef` guard."
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": [
+      "#ifndef ${1:1}",
+      "$2",
+      "#endif // !$1"
+    ],
+    "description": "Simple `#ifndef` guard."
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": [
+      "#ifdef ${1:0}",
+      "$2",
+      "#endif // $1"
+    ],
+    "description": "Simple `#if` pre-processor."
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++) {",
+      "\t$3",
+      "}"
+    ],
+    "description": "Simple `for` loop."
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": [
+      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--) {",
+      "\t$3",
+      "}"
+    ],
+    "description": "Simple reversed `for` loop."
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Simple `while` loop."
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$0",
+      "} while($0);"
+    ],
+    "description": "Defines a simple `do-while` loop."
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Simple `if` statement."
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Simple `else` statement."
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": [
+      "else if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Simple `else-if` statement."
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${MyEnum} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Simple `enum` declaration."
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${MyStruct} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Simple `struct` declaration."
+  },
+  "union": {
+    "prefix": "union",
+    "body": [
+      "union ${MyUnion} {",
+      "\t$1",
+      "};"
+    ],
+    "description": "Simple `union` statement."
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${switch_on}) {",
+      "default:",
+      "\tbreak;$1",
+      "}"
+    ],
+    "description": "Simple `switch` statement."
+  },
+  "Define a `int` function": {
+    "prefix": "intfunc",
+    "body": [
+      "int $1 () {",
+      "\tint $0;",
+      "\treturn $0;",
+      "}"
+    ],
+    "description": "Defines a function that returns an `int`."
+  },
+  "Define a `float` function": {
+    "prefix": "flfunc",
+    "body": [
+      "float $2 () {",
+      "\tfloat $0;",
+      "\treturn $0;",
+      "}"
+    ],
+    "description": "Defines a function that returns a `float`."
+  },
+  "Define a `double` function": {
+    "prefix": "doubfunc",
+    "body": [
+      "double $2 () {",
+      "\tdouble $0;",
+      "\treturn $0;",
+      "}"
+    ],
+    "description": "Defines a function that returns a `double`."
+  },
+  "Define a `char*` function": {
+    "prefix": "strfunc",
+    "body": [
+      "char[] $1 () {",
+      "\tchar[] $0 = {};",
+      "\treturn $0;",
+      "}"
+    ],
+    "description": "Defines a function that returns a `char[]`."
+  },
+  "Defines a `long` function": {
+    "prefix": "longfunc",
+    "body": [
+      "long $1 () {",
+      "   long $0;",
+      "   return $0;",
+      "}"
+    ],
+    "description": "Defines a function that returns a `long`."
+  },
+  "Log a `float`": {
+    "prefix": "pflo",
+    "body": ["printf(\"$0: %.2f\\n\", $0);"],
+    "description": "Calls `printf()` to log the value of a variable of type `float`, rounded to 2 decimal places."
+  },
+  "Log an `int`": {
+    "prefix": "pint",
+    "body": ["printf(\"$0: %d\\n\", $0);"],
+    "description": "Calls `printf()` to log the value of a variable of type `int`."
+  },
+  "Log a `char`": {
+    "prefix": "pcha",
+    "body": ["printf(\"$0: %c\\n\", $0);"],
+    "description": "Calls `printf()` to log the value of a variable of type `char`."
+  },
+  "Log a `*`": {
+    "prefix": "ppoint",
+    "body": ["printf(\"$0: %p\\n\", (void *) $0);"],
+    "description": "Calls `printf()` to log the value of a variable of type pointer."
+  },
+  "Log a `size_t`": {
+    "prefix": "psiz",
+    "body": ["printf(\"$0: %zu\\n\", $0);"],
+    "description": "Calls `printf()` to log the value of a variable of type `size_t`."
+  }
+}
