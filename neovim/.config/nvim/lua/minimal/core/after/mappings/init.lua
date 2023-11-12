@@ -26,6 +26,7 @@ local mappings = {
     "trouble",
     "undotree",
     "vim-maximizer",
+    "vim-tmux-navigator",
   },
   extras = {
     ["show_bufferline"] = "bufferline",
