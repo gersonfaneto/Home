@@ -5,15 +5,15 @@ local M = {}
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>nt",
-    rhs = ":Neotree toggle<CR>",
-    description = "Toggle.",
+    lhs = "<leader>nf",
+    rhs = ":Neotree toggle float<CR>",
+    description = "Float.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>nf",
-    rhs = ":Neotree focus<CR>",
-    description = "Focus.",
+    lhs = "<leader>ns",
+    rhs = ":Neotree toggle left<CR>",
+    description = "Side.",
   },
 }, { options = { silent = true, noremap = true }, prefix = "NeoTree: " })
 
