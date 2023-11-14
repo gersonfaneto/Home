@@ -10,6 +10,9 @@ return {
 
     lualine.setup({
       options = {
+        refresh = {
+          statusline = 100,
+        },
         theme = {
           normal = {
             a = { fg = colors.fg, bg = colors.bg },
@@ -51,9 +54,8 @@ return {
         },
       },
       sections = {
-        lualine_a = {},
-        lualine_b = { "branch" },
-        lualine_c = {
+        lualine_a = { "branch" },
+        lualine_b = {
           {
             "filetype",
             icon_only = true,
@@ -83,6 +85,7 @@ return {
             },
           },
         },
+        lualine_c = {},
         lualine_x = {
           "selectioncount",
         },
