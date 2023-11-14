@@ -17,7 +17,6 @@ local mappings = {
     "neo-tree",
     "neorg",
     "none-ls",
-    "octo",
     "oil",
     "refactoring",
     "telescope",
