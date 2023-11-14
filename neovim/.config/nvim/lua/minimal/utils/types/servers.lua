@@ -33,7 +33,7 @@ M.parsers = {
 }
 
 ---List of language servers that can be installed through `Mason` and will be configured by the
----native `LSP`.
+---native `LSP` client.
 ---See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 ---@type string[]
 M.base_languages = {
@@ -54,15 +54,16 @@ M.base_languages = {
   "yamlls",        -- YAML
 }
 
----List of language servers that can't be installed through `Mason`, but should be configured by
----the native `LSP`.
+---List of language servers that can't be installed through `Mason`, but will also be configured by
+---the native `LSP` client.
 ---See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 ---@type string[]
 M.extra_languages = {
   "dartls", -- Dart
 }
 
----List of linters that can be installed through `Mason` and will be configured by `NoneLS`.
+---List of linters that can be installed through `Mason` and configured by `NoneLS`.
+---NOTE: This **need** to be configured manually in the `NoneLS` configuration file.
 ---See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 ---@type string[]
 M.linters = {
@@ -71,7 +72,8 @@ M.linters = {
   "shellcheck", -- Bash/Shell
 }
 
----List of formatters that can be installed through `Mason` and will be configured by `NoneLS`.
+---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
+---NOTE: This **need** to be configured manually in the `NoneLS` configuration file.
 ---See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 ---@type string[]
 M.formatters = {
