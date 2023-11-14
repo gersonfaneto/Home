@@ -58,9 +58,6 @@ M.format_on_save = false
 ---@type boolean
 M.enhanced_coding = false
 
----Set to `true` to enable Discord integration, provided by `andweeb/presence.nvim`.
----@type boolean
-M.discord_presence = false
 ---Set to `true` to enable DB tools, provided by `kndndrj/nvim-dbee`.
 ---@type boolean
 M.db_tools = false
