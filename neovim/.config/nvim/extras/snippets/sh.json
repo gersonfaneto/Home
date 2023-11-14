@@ -1,0 +1,7 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "body": "#!/usr/bin/env $0",
+    "description": "Bang!"
+  }
+}
