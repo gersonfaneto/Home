@@ -30,7 +30,7 @@ return {
       dashboard.button("SPC l g", " " .. " Find text", ":Telescope live_grep <CR>"),
       dashboard.button("SPC e c", " " .. " Config", ":chdir ~/.config/nvim | e init.lua <CR>"),
       dashboard.button("SPC l h", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-      dashboard.button("CTRL q", " " .. " Quit", ":qa<CR>"),
+      dashboard.button("SPC Q", " " .. " Quit", ":qa<CR>"),
     }
 
     for _, button in ipairs(dashboard.section.buttons.val) do
