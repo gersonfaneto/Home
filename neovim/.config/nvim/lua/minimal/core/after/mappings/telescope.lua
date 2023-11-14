@@ -5,7 +5,7 @@ local M = {}
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader><leader>",
+    lhs = "<leader>fb",
     rhs = function()
       require("telescope.builtin").builtin()
     end,
