@@ -194,21 +194,27 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader><Esc>",
-    rhs = ":qa!<cr>",
-    description = "Escape Neovim",
-  },
-  {
-    mode = { "n" },
-    lhs = "<C-w>",
-    rhs = ":write<CR>",
-    description = "Write contents in the current buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<C-q>",
+    lhs = "<leader>q",
     rhs = ":quit<CR>",
     description = "Close the current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>Q",
+    rhs = ":qa!<cr>",
+    description = "Close all the open buffer - Exit NeoVIM.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>w",
+    rhs = ":write<CR>",
+    description = "Write the current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>W",
+    rhs = ":wall<CR>",
+    description = "Write all the open buffers.",
   },
   {
     mode = { "n", "x" },
@@ -303,9 +309,9 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>cs",
+    lhs = "<leader>ts",
     rhs = ":set spell!<CR>",
-    description = "Enable or disable spell checking.",
+    description = "Toggle spell checking.",
   },
 }, { prefix = "Spelling: ", options = { silent = true, noremap = true } })
 
