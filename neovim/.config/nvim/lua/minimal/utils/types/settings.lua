@@ -58,8 +58,4 @@ M.format_on_save = false
 ---@type boolean
 M.enhanced_coding = false
 
----set to `true` to enable HTTP tools, provided by `rest-nvim/rest.nvim`.
----@type boolean
-M.http_tools = false
-
 return require("minimal.utils.base.settings").extend_settings(M, "custom.settings")

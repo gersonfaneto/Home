@@ -30,7 +30,6 @@ local mappings = {
   extras = {
     ["show_bufferline"] = "bufferline",
     ["enhanced_ui"] = "noice",
-    ["http_tools"] = "rest-nvim",
   },
   prefix = "minimal.core.after.mappings.",
 }
