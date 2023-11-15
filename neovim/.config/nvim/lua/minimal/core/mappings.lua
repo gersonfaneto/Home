@@ -288,7 +288,7 @@ base.mappings.bulk_register({
   },
 }, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Search...
+-- INFO: Mappings - Search & Replace ...
 base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -299,11 +299,19 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>rp",
-    rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    rhs = function()
+      local previous = vim.fn.expand("<cword>")
+
+      vim.ui.input({ prompt = " Replace ", default = previous }, function(replacement)
+        if replacement ~= nil then
+          vim.cmd("%s/" .. previous .. "/" .. replacement .. "/gI")
+        end
+      end)
+    end,
     options = { silent = false },
-    description = "Replace current text inside the buffer.",
+    description = "Replace the word under the cursor.",
   },
-}, { prefix = "Search: ", options = { silent = true, noremap = true } })
+}, { prefix = "Search & Replace: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Spelling...
 base.mappings.bulk_register({
