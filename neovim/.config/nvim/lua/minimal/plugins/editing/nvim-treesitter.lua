@@ -10,11 +10,21 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function()
-    local treesitter_configs = require("nvim-treesitter.configs")
+    local configs = require("nvim-treesitter.configs")
+    local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 
     local types = require("minimal.utils.types")
 
-    treesitter_configs.setup({
+    -- BUG: See: https://github.com/nvim-treesitter/nvim-treesitter/issues/4945
+    parsers.dart = {
+      install_info = {
+        url = "https://github.com/UserNobody14/tree-sitter-dart",
+        files = { "src/parser.c", "src/scanner.c" },
+        revision = "8aa8ab977647da2d4dcfb8c4726341bee26fbce4",
+      },
+    }
+
+    configs.setup({
       indent = {
         enable = true,
       },
