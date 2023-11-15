@@ -69,7 +69,6 @@ M.extra_languages = {
 M.linters = {
   "eslint_d",   -- TypeScript / JavaScript
   "pylint",     -- Python
-  "shellcheck", -- Bash/Shell
 }
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
@@ -82,7 +81,6 @@ M.formatters = {
   "isort",        -- Python
   "ocamlformat",  -- OCaml
   "prettier",     -- *
-  "shfmt",        -- Bash|Shell
   "stylua",       -- Lua
 }
 
