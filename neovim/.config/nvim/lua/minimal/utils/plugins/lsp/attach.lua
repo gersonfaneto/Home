@@ -15,14 +15,14 @@ function M.on_attach(_, bufnr)
     },
     {
       mode = { "n" },
-      lhs = "<leader>rn",
+      lhs = "<leader>rf",
       rhs = ":Lspsaga rename<CR>",
       options = opts,
       description = "Rename symbol under cursor - File.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>rN",
+      lhs = "<leader>rp",
       rhs = ":Lspsaga rename ++project<CR>",
       options = opts,
       description = "Rename symbol under cursor - Project.",
@@ -66,14 +66,14 @@ function M.on_attach(_, bufnr)
     {
       mode = { "n" },
       lhs = "<leader>ld",
-      rhs = ":Lspsaga show_line_diagnostics<CR>",
+      rhs = ":Lspsaga show_line_diagnostics ++unfocus<CR>",
       options = opts,
       description = "Show current line diagnostics.",
     },
     {
       mode = { "n" },
       lhs = "<leader>cd",
-      rhs = ":Lspsaga show_cursor_diagnostics<CR>",
+      rhs = ":Lspsaga show_cursor_diagnostics ++unfocus<CR>",
       options = opts,
       description = "Show diagnostics under cursor.",
     },
