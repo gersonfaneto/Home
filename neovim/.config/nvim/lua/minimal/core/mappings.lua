@@ -298,7 +298,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>rp",
+    lhs = "<leader>rw",
     rhs = function()
       local previous = vim.fn.expand("<cword>")
 
