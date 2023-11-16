@@ -3,7 +3,7 @@ local types = require("minimal.utils.types")
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazy_path) then
-  vim.notify("Downloading lazy.nvim ...", "INFO", { title = "Lazy" })
+  vim.notify("Downloading lazy.nvim ...", vim.log.levels.INFO, { title = "Lazy" })
   vim.fn.system({
     "git",
     "clone",
@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazy_path)
 local ok, lazy = pcall(require, "lazy")
 
 if not ok then
-  vim.notify("Failed to download lazy.nvim ...", "ERROR", { title = "Lazy" })
+  vim.notify("Failed to download lazy.nvim ...", vim.log.levels.ERROR, { title = "Lazy" })
   return
 end
 
