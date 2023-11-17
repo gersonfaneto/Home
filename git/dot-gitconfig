@@ -57,6 +57,8 @@
 
   ri = rebase --interactive
   rc = rebase --continue
+  ra = rebase --abort
+  rt = rebase --edit-todo
   
   wl = worktree list
   wa = worktree add
