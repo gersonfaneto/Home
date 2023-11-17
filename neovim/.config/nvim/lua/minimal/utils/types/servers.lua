@@ -59,7 +59,6 @@ M.base_languages = {
 ---See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 ---@type string[]
 M.extra_languages = {
-  "dartls", -- Dart
 }
 
 ---List of linters that can be installed through `Mason` and configured by `NoneLS`.
