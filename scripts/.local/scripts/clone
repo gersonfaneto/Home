@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# A simple script for querying, listing and cloning repositories.
+
+set -e
+
+USER="gersonfaneto"
+
+REPOS=$(gh repo list $USER | awk '{print $1}' | cut -d '/' -f 2)
+
+SELECTED=$(echo "$REPOS" | fzf)
+
+for REPO in $SELECTED; do
+  if [[ ! -d $REPO ]]; then
+    echo "[INFO]: Cloning $REPO..."
+    gh repo clone "$USER/$REPO" "$REPO" 2>/dev/null
+  else
+    echo "[WARN]: $REPO already exists on current directory!"
+    echo "[INFO]: Skipping $REPO..."
+  fi
+done
