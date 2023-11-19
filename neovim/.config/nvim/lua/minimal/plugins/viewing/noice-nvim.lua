@@ -4,11 +4,6 @@ return {
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
-  cond = function()
-    local types = require("minimal.utils.types")
-
-    return types.settings.enhanced_ui
-  end,
   config = function()
     local noice = require("noice")
     local lualine = require("lualine")

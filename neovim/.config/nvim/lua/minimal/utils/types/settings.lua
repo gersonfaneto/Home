@@ -9,9 +9,6 @@ M.theme = {
   background = "dark",
   colorscheme = "Gruvbox-Material"
 }
----Set to `false` to enable enhanced UI features provided by plugins like `folke/noice.nvim`.
----@type boolean
-M.enhanced_ui = true
 ---Set to `true` to make the background transparent, subject to colorscheme support.
 ---@type boolean
 M.transparent_background = false

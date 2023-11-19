@@ -29,7 +29,6 @@ local mappings = {
   },
   extras = {
     ["show_bufferline"] = "bufferline",
-    ["enhanced_ui"] = "noice",
   },
   prefix = "minimal.core.after.mappings.",
 }
