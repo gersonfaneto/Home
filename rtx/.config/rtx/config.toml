@@ -5,7 +5,6 @@ go = "latest"
 rust = "latest"
 opam = "latest"
 flutter = "latest"
-python = "latest"
 
 [settings]
 experimental = true
