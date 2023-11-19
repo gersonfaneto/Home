@@ -113,6 +113,12 @@
       "docs: Updated `README`."
     ]
   },
+  "Updated TODO": {
+    "prefix": "todo",
+    "body": [
+      "docs: Updated `TODO`."
+    ]
+  },
   "Updated Notes": {
     "prefix": "notes",
     "body": [
