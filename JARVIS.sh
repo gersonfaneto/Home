@@ -23,7 +23,7 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 packages=(
   bat
   bottom
-  difft
+  difftastic
   eza
   fd
   fish
