@@ -22,9 +22,14 @@ if test -d "/usr/local/lib/"
   end
 end
 
-if type -q bat
+# if type -q bat
+#   export MANROFFOPT='-c'
+#   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# end
+
+if type -q nvim
   export MANROFFOPT='-c'
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  export MANPAGER="nvim +Man!"
 end
 
 if type -q google-chrome-stable
