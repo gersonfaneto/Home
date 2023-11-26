@@ -136,6 +136,8 @@ if types.settings.auto_save then
     callback = function()
       local disable_file_types = {
         "oil",
+        "man",
+        "DiffviewFiles",
       }
 
       local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":p:h")
