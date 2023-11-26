@@ -25,11 +25,11 @@ base.mappings.bulk_register({
   },
 }, { prefix = "Quick Edit: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Interface & Visuals...
+-- INFO: Mappings - Quick Toggles...
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>cc",
+    lhs = "<leader>tc",
     rhs = function()
       ---@diagnostic disable-next-line: undefined-field
       if vim.opt.colorcolumn:get()[1] ~= nil then
@@ -40,7 +40,13 @@ base.mappings.bulk_register({
     end,
     description = "Toggle color column.",
   },
-}, { prefix = "UI: ", options = { silent = true, noremap = true } })
+  {
+    mode = { "n" },
+    lhs = "<leader>ts",
+    rhs = ":set spell!<CR>",
+    description = "Toggle spell checking.",
+  }
+}, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Commands...
 base.mappings.bulk_register({
@@ -63,22 +69,6 @@ base.mappings.bulk_register({
     description = "Delete the current Buffer while maintaining the window layout.",
   },
 }, { prefix = "Custom Commands: ", options = { silent = true, noremap = true } })
-
--- INFO: Mappings - File Management...
-base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>fe",
-    rhs = ":Ex<CR>",
-    description = "File Explorer - Full.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>ve",
-    rhs = ":25Lex<CR>",
-    description = "File Explorer - Split.",
-  },
-}, { prefix = "File Management: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Splits & Windows...
 base.mappings.bulk_register({
@@ -144,18 +134,6 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>H",
-    rhs = "<C-w>H",
-    description = "Toggle split layout - Vertically.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>K",
-    rhs = "<C-w>K",
-    description = "Toggle split layout - Horizontally.",
-  },
-  {
-    mode = { "n" },
     lhs = "<leader>=",
     rhs = "<C-w>=",
     description = "Make splits size equal.",
@@ -181,12 +159,6 @@ base.mappings.bulk_register({
     lhs = "<BS>",
     rhs = ":b#<CR>",
     description = "Quickly switch between current and last open buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bo",
-    rhs = ":%bd|e#|bd#<CR>",
-    description = "Close all other buffers.",
   },
 }, { prefix = "Buffers: ", options = { silent = true, noremap = true } })
 
@@ -309,27 +281,23 @@ base.mappings.bulk_register({
       end)
     end,
     options = { silent = false },
-    description = "Replace the word under the cursor.",
+    description = "Replace the word under the cursor in the current buffer.",
   },
 }, { prefix = "Search & Replace: ", options = { silent = true, noremap = true } })
-
--- INFO: Mappings - Spelling...
-base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>ts",
-    rhs = ":set spell!<CR>",
-    description = "Toggle spell checking.",
-  },
-}, { prefix = "Spelling: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Editing...
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "X",
-    rhs = ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<CR>",
-    description = "Split current line at the cursor position.",
+    lhs = "<leader>sa",
+    rhs = "ggVG",
+    description = "Select all the content from the current buffer.",
+  },
+  {
+    mode = { "v" },
+    lhs = "<leader>ss",
+    rhs = ":sort<CR>",
+    description = "Sort the current selection.",
   },
   {
     mode = { "v" },
@@ -344,10 +312,10 @@ base.mappings.bulk_register({
     description = "Paste in visual mode without writing to registers.",
   },
   {
-    mode = { "n" },
-    lhs = "YY",
-    rhs = "va{Vy",
-    description = "Yank everything between and including { and }.",
+    mode = { "v" },
+    lhs = "y",
+    rhs = "ygv<Esc>",
+    description = "Copy without returning to start of selection.",
   },
   {
     mode = { "n" },
@@ -361,36 +329,6 @@ base.mappings.bulk_register({
     end,
     options = { expr = true },
     description = "Delete empty lines without writing to registers.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<C-a>",
-    rhs = "ggVG",
-    description = "Select all the content from the current buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<C-y>",
-    rhs = ":%y<CR>",
-    description = "Copy all the content from the current buffer.",
-  },
-  {
-    mode = { "v" },
-    lhs = "<C-s>",
-    rhs = ":sort<CR>",
-    description = "Sort the current selection.",
-  },
-  {
-    mode = { "n" },
-    lhs = "+",
-    rhs = "<C-a>",
-    description = "Increment number under the cursor.",
-  },
-  {
-    mode = { "n" },
-    lhs = "-",
-    rhs = "<C-x>",
-    description = "Decrement number under the cursor.",
   },
   {
     mode = { "n" },
@@ -417,12 +355,6 @@ base.mappings.bulk_register({
     lhs = "<",
     rhs = "<gv",
     description = "Better backwards indenting.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<CR>",
-    rhs = "ciw",
-    description = "Quickly edit word under cursor.",
   },
   {
     mode = { "n" },
@@ -459,12 +391,6 @@ base.mappings.bulk_register({
     lhs = "<A-Up>",
     rhs = ":m '<-2<CR>gv=gv",
     description = "Move current line down.",
-  },
-  {
-    mode = { "v" },
-    lhs = "y",
-    rhs = "ygv<Esc>",
-    description = "Copy without returning to start of selection.",
   },
 }, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
 
