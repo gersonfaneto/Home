@@ -111,7 +111,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>\\",
+    lhs = "<leader>zz",
     rhs = function()
       require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
         previewer = false,
