@@ -82,23 +82,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "qf",
-  },
-  callback = function(event)
-    vim.bo[event.buf].buflisted = false
-
-    base.mappings.register({
-      mode = { "n" },
-      lhs = "<CR>",
-      rhs = "<CR>",
-      options = { silent = true, noremap = true, buffer = event.buf },
-      description = "Quick Fix - Select the item under cursor.",
-    })
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufNewFile", {
   callback = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
