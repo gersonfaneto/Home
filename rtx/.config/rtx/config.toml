@@ -1,5 +1,4 @@
 [tools]
-bun = "latest"
 node = "latest"
 go = "latest"
 rust = "latest"
