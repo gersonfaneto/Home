@@ -5,7 +5,7 @@ local M = {}
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "^",
+    lhs = "-",
     rhs = ":Oil<CR>",
     description = "Open parent directory.",
   },
