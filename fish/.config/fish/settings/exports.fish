@@ -4,6 +4,12 @@ if test -d "$HOME/.local/bin/"
   end
 end
 
+if test -d "$HOME/.bun/bin/"
+  if not contains $HOME/.bun/bin/ $PATH
+    export PATH="$PATH:$HOME/.bun/bin/"
+  end
+end
+
 if test -d "$HOME/.local/scripts/"
   if not contains $HOME/.local/scripts/ $PATH
     export PATH="$PATH:$HOME/.local/scripts/"
