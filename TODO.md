@@ -3,10 +3,6 @@
 #### Pending...
 
 - [ ] Improve the `README` and the overall documentation...
-- [ ] Make the [`JARVIS`](./JARVIS.sh) more _distro friendly_, mainly for:
-    - [x] Arch
-    - [ ] Debian
-    - [ ] Fedora
 
 #### Working On...
 
