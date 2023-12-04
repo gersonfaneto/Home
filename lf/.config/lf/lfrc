@@ -26,6 +26,10 @@ cmd open ${{
    esac
 }}
 
+cmd set-bg ${{
+  feh --bg-fill "$f"
+}}
+
 cmd zi ${{
 	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
 	lf -remote "send $id cd \"$result\""
@@ -112,6 +116,7 @@ map au unarchive
 
 map zi zi
 map zp toggle_preview
+map zb set-bg
 
 map ee $$EDITOR "$f"
 
