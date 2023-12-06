@@ -9,7 +9,6 @@ local mappings = {
     "git-worktree",
     "gitsigns",
     "harpoon",
-    "indent-blankline",
     "lazy",
     "lsp",
     "lspsaga",
