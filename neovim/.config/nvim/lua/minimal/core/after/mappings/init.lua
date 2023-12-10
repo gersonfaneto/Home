@@ -15,6 +15,7 @@ local mappings = {
     "mason",
     "neo-tree",
     "neorg",
+    "noice",
     "none-ls",
     "oil",
     "refactoring",
