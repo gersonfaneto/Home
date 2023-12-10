@@ -35,4 +35,7 @@ source $HOME/.config/fish/settings/exports.fish
 source $HOME/.config/fish/settings/functions.fish
 source $HOME/.config/fish/settings/enviroment.fish
 
-# source $HOME/.config/fish/settings/extras.fish
+# NOTE: This file is not tracked by git, should be used for local/temporary settings.
+if test -f $HOME/.config/fish/settings/extras.fish
+  source $HOME/.config/fish/settings/extras.fish
+end
