@@ -1,9 +1,12 @@
 [tools]
-node = "latest"
-go = "latest"
-rust = "latest"
-opam = "latest"
 flutter = "latest"
+java = "latest"
+opam = "latest"
+rust = "latest"
+go = "latest"
+node = "latest"
+php = "latest"
+ruby = "latest"
 
 [settings]
 experimental = true
