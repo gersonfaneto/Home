@@ -1,3 +1,5 @@
 completions/*
-theme.fish
 fish_variables
+
+theme.fish
+settings/extras.fish
