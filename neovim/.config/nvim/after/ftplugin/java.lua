@@ -9,6 +9,7 @@ if not (has_jdtls or has_jdtls_setup) then
 end
 
 local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+local home = vim.fn.expand("$HOME") .. "/"
 
 local capabilities = plugins.lsp.capabilities.default_capabilities()
 
@@ -33,7 +34,7 @@ end
 
 local config = {
   cmd = {
-    "/usr/bin/java",
+    home .. ".local/share/rtx/installs/java/latest/bin/java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -59,6 +60,14 @@ local config = {
   root_dir = root_dir,
   settings = {
     java = {
+      configuration = {
+        runtimes = {
+          {
+            name = "JavaSE-11",
+            path = home .. ".local/share/rtx/installs/java/11/",
+          },
+        },
+      },
       maven = {
         downloadSources = true,
       },
