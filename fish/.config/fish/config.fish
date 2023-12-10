@@ -31,6 +31,8 @@ end
 source $HOME/.config/fish/theme.fish
 
 source $HOME/.config/fish/settings/alias.fish
-source $HOME/.config/fish/settings/extras.fish
 source $HOME/.config/fish/settings/exports.fish
 source $HOME/.config/fish/settings/functions.fish
+source $HOME/.config/fish/settings/enviroment.fish
+
+# source $HOME/.config/fish/settings/extras.fish
