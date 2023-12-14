@@ -6,6 +6,7 @@
 
 #### Working On...
 
+- [ ] Migrate from `fish` to `zsh` as default `$SHELL`.
 - [ ] Check for bugs and improvements...
 
 #### Done!
