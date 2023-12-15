@@ -5,7 +5,6 @@ local mappings = {
     "alpha",
     "crates-nvim",
     "diffview",
-    "flutter-tools",
     "git-worktree",
     "gitsigns",
     "harpoon",
