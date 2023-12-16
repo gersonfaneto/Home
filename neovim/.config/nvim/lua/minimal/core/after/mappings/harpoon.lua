@@ -75,6 +75,18 @@ base.mappings.bulk_register({
     rhs = ":lua require('harpoon.ui').nav_file(10)<CR>",
     description = "Go to file number 10.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>,",
+    rhs = ":lua require('harpoon.ui').nav_prev()<CR>",
+    description = "Go to previous file.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>.",
+    rhs = ":lua require('harpoon.ui').nav_next()<CR>",
+    description = "Go to next file.",
+  }
 }, { options = { silent = true, noremap = true }, prefix = "Harpoon: " })
 
 return M
