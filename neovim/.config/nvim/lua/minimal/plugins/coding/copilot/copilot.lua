@@ -18,7 +18,7 @@ return {
           jump_prev = "<C-k>",
           accept = "<C-a>",
           refresh = "r",
-          open = "<C-S-a>",
+          open = "<C-x><C-a>",
         },
         layout = {
           position = "bottom",
