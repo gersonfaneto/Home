@@ -8,7 +8,7 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>et",
-    rhs = ":e ~/Notes/TODO.md<CR>",
+    rhs = ":e ~/Notes/TODO.norg<CR>",
     description = "TODOs.",
   },
   {
