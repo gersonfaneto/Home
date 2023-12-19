@@ -34,6 +34,10 @@
         "path": "markdown.json"
       },
       {
+        "language": "norg",
+        "path": "norg.json"
+      },
+      {
         "language": "gitcommit",
         "path": "gitcommit.json"
       },

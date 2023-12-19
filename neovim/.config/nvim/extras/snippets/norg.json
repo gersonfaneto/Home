@@ -1,0 +1,18 @@
+{
+  "TODOs": {
+    "prefix": "todos",
+    "body": [
+      "* TODOs",
+      "",
+      "** Pending...                                           ",
+      "",
+      "- ( ) $0",
+      "",
+      "** Working On...                                        ",
+      "",
+      "** Done!                                                ",
+      ""
+    ],
+    "description": "Basic `TODOs` file template."
+  }
+}
