@@ -69,7 +69,7 @@ function M.on_attach(_, bufnr)
         require("telescope.builtin").lsp_references()
       end,
       options = opts,
-      description = "Go to references.",
+      description = "Browse references.",
     },
     {
       mode = { "n" },
@@ -79,7 +79,7 @@ function M.on_attach(_, bufnr)
       end,
       options = opts,
 
-      description = "Go to implementations.",
+      description = "Browse implementations.",
     },
     {
       mode = { "n" },
@@ -88,32 +88,23 @@ function M.on_attach(_, bufnr)
         require("telescope.builtin").lsp_definitions()
       end,
       options = opts,
-      description = "Go to definitions.",
-    },
-    {
-      mode = { "n" },
-      lhs = "gD",
-      rhs = function()
-        require("telescope.builtin").lsp_type_definitions()
-      end,
-      options = opts,
-      description = "Go to type definitions.",
+      description = "Browse definitions.",
     },
     {
       mode = { "n" },
       lhs = "of",
       rhs = vim.diagnostic.open_float,
       options = opts,
-      description = "Show current line diagnostic..",
+      description = "Open diagnostics as float.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>ld",
+      lhs = "<leader>pd",
       rhs = function()
         require("telescope.builtin").diagnostics()
       end,
       options = opts,
-      description = "Show project diagnostics.",
+      description = "Browse project diagnostics.",
     },
     {
       mode = { "n" },
