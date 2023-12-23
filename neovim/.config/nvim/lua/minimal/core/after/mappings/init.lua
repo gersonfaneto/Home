@@ -11,7 +11,6 @@ local mappings = {
     "harpoon",
     "lazy",
     "lsp",
-    "lspsaga",
     "mason",
     "neo-tree",
     "neorg",

@@ -44,42 +44,39 @@ function M.on_attach(_, bufnr)
     {
       mode = { "n", "v" },
       lhs = "<leader>la",
-      rhs = ":Lspsaga code_action<CR>",
+      rhs = vim.lsp.buf.code_action,
       options = opts,
       description = "Show code actions.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>rf",
-      rhs = ":Lspsaga rename<CR>",
+      lhs = "<leader>rn",
+      rhs = vim.lsp.buf.rename,
       options = opts,
-      description = "Rename symbol under cursor - File.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>rp",
-      rhs = ":Lspsaga rename ++project<CR>",
-      options = opts,
-      description = "Rename symbol under cursor - Project.",
+      description = "Rename symbol under cursor.",
     },
     {
       mode = { "n" },
       lhs = "K",
-      rhs = ":Lspsaga hover_doc<CR>",
+      rhs = vim.lsp.buf.hover,
       options = opts,
       description = "Show help information.",
     },
     {
       mode = { "n" },
       lhs = "gr",
-      rhs = ":Lspsaga finder ref<CR>",
+      rhs = function()
+        require("telescope.builtin").lsp_references()
+      end,
       options = opts,
       description = "Go to references.",
     },
     {
       mode = { "n" },
       lhs = "gi",
-      rhs = ":Lspsaga finder imp<CR>",
+      rhs = function()
+        require("telescope.builtin").lsp_implementations()
+      end,
       options = opts,
 
       description = "Go to implementations.",
@@ -87,42 +84,48 @@ function M.on_attach(_, bufnr)
     {
       mode = { "n" },
       lhs = "gd",
-      rhs = ":Lspsaga peek_definition<CR>",
+      rhs = function()
+        require("telescope.builtin").lsp_definitions()
+      end,
       options = opts,
-      description = "Peek type definition.",
+      description = "Go to definitions.",
     },
     {
       mode = { "n" },
       lhs = "gD",
-      rhs = ":Lspsaga goto_definition<CR>",
+      rhs = function()
+        require("telescope.builtin").lsp_type_definitions()
+      end,
       options = opts,
-      description = "Go to type definition.",
+      description = "Go to type definitions.",
+    },
+    {
+      mode = { "n" },
+      lhs = "of",
+      rhs = vim.diagnostic.open_float,
+      options = opts,
+      description = "Show current line diagnostic..",
     },
     {
       mode = { "n" },
       lhs = "<leader>ld",
-      rhs = ":Lspsaga show_line_diagnostics ++unfocus<CR>",
+      rhs = function()
+        require("telescope.builtin").diagnostics()
+      end,
       options = opts,
-      description = "Show current line diagnostics.",
-    },
-    {
-      mode = { "n" },
-      lhs = "<leader>cd",
-      rhs = ":Lspsaga show_cursor_diagnostics ++unfocus<CR>",
-      options = opts,
-      description = "Show diagnostics under cursor.",
+      description = "Show project diagnostics.",
     },
     {
       mode = { "n" },
       lhs = "[d",
-      rhs = ":Lspsaga diagnostic_jump_prev<CR>",
+      rhs = vim.diagnostic.goto_prev,
       options = opts,
       description = "Jump to previous diagnostic.",
     },
     {
       mode = { "n" },
       lhs = "]d",
-      rhs = ":Lspsaga diagnostic_jump_next<CR>",
+      rhs = vim.diagnostic.goto_next,
       options = opts,
       description = "Jump to next diagnostic.",
     },
