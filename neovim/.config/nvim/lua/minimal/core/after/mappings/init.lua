@@ -8,6 +8,7 @@ local mappings = {
     "diffview",
     "git-worktree",
     "gitsigns",
+    "glance-nvim",
     "harpoon",
     "lazy",
     "lsp",
