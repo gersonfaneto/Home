@@ -38,28 +38,23 @@ function M.on_attach(_, bufnr)
     },
   })
 
-  local opts = { noremap = true, silent = true, buffer = bufnr }
-
   base.mappings.bulk_register({
     {
       mode = { "n", "v" },
       lhs = "<leader>la",
       rhs = vim.lsp.buf.code_action,
-      options = opts,
       description = "Show code actions.",
     },
     {
       mode = { "n" },
       lhs = "<leader>rn",
       rhs = vim.lsp.buf.rename,
-      options = opts,
       description = "Rename symbol under cursor.",
     },
     {
       mode = { "n" },
       lhs = "K",
       rhs = vim.lsp.buf.hover,
-      options = opts,
       description = "Show help information.",
     },
     {
@@ -68,7 +63,6 @@ function M.on_attach(_, bufnr)
       rhs = function()
         require("telescope.builtin").lsp_references()
       end,
-      options = opts,
       description = "Browse references.",
     },
     {
@@ -77,7 +71,6 @@ function M.on_attach(_, bufnr)
       rhs = function()
         require("telescope.builtin").lsp_implementations()
       end,
-      options = opts,
 
       description = "Browse implementations.",
     },
@@ -87,14 +80,12 @@ function M.on_attach(_, bufnr)
       rhs = function()
         require("telescope.builtin").lsp_definitions()
       end,
-      options = opts,
       description = "Browse definitions.",
     },
     {
       mode = { "n" },
       lhs = "of",
       rhs = vim.diagnostic.open_float,
-      options = opts,
       description = "Open diagnostics as float.",
     },
     {
@@ -103,24 +94,21 @@ function M.on_attach(_, bufnr)
       rhs = function()
         require("telescope.builtin").diagnostics()
       end,
-      options = opts,
       description = "Browse project diagnostics.",
     },
     {
       mode = { "n" },
       lhs = "[d",
       rhs = vim.diagnostic.goto_prev,
-      options = opts,
       description = "Jump to previous diagnostic.",
     },
     {
       mode = { "n" },
       lhs = "]d",
       rhs = vim.diagnostic.goto_next,
-      options = opts,
       description = "Jump to next diagnostic.",
     },
-  })
+  }, { options = { noremap = true, silent = true, buffer = bufnr }, prefix = "LSP: " })
 end
 
 return M
