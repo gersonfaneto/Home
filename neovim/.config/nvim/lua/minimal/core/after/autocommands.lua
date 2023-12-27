@@ -26,43 +26,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-if types.settings.transparent_floats then
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-      vim.cmd("highlight WinSeparator guibg=NONE")
-      vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
-    end,
-  })
-end
-
-if types.settings.transparent_background then
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-      vim.cmd("highlight Normal guibg=none guifg=none")
-      vim.cmd("highlight NormalNC guibg=none guifg=none")
-      vim.cmd("highlight NormalFloat guibg=none guifg=none")
-    end,
-  })
-end
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "qf" },
-  callback = function()
-    local trouble = require("trouble")
-    if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
-      vim.defer_fn(function()
-        vim.cmd.lclose()
-        trouble.open("loclist")
-      end, 0)
-    else
-      vim.defer_fn(function()
-        vim.cmd.cclose()
-        trouble.open("quickfix")
-      end, 0)
-    end
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "set spell",
   pattern = {
@@ -75,28 +38,18 @@ vim.api.nvim_create_autocmd("BufEnter", {
   },
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
-  pattern = {
-    "qf",
-    "man",
-    "help",
-    "notify",
-    "lspinfo",
-    "httpResult",
-    "checkhealth",
-    "PlenaryTestPopup",
-  },
+vim.api.nvim_create_autocmd("User", {
+  pattern = "BufferDeletePost",
+  group = vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true }),
   callback = function(event)
-    vim.bo[event.buf].buflisted = false
+    local fallback_name = vim.api.nvim_buf_get_name(event.buf)
+    local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
+    local fallback_on_empty = fallback_name == "" and fallback_ft == ""
 
-    base.mappings.register({
-      mode = { "n" },
-      lhs = "q",
-      rhs = ":close<CR>",
-      options = { noremap = true, silent = true, buffer = event.buf },
-      description = "Close current buffer/window.",
-    })
+    if fallback_on_empty then
+      vim.api.nvim_command("Alpha")
+      vim.api.nvim_command(event.buf .. "bwipeout")
+    end
   end,
 })
 
@@ -117,20 +70,84 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   end,
 })
 
-vim.api.nvim_create_autocmd("User", {
-  pattern = "BufferDeletePost",
-  group = vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true }),
-  callback = function(event)
-    local fallback_name = vim.api.nvim_buf_get_name(event.buf)
-    local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
-    local fallback_on_empty = fallback_name == "" and fallback_ft == ""
-
-    if fallback_on_empty then
-      vim.api.nvim_command("Alpha")
-      vim.api.nvim_command(event.buf .. "bwipeout")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "qf" },
+  callback = function()
+    if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
+      vim.defer_fn(function()
+        vim.cmd("lclose")
+        vim.cmd("Trouble loclist")
+      end, 0)
+    else
+      vim.defer_fn(function()
+        vim.cmd("cclose")
+        vim.cmd("Trouble quickfix")
+      end, 0)
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
+  pattern = {
+    "qf",
+    "man",
+    "help",
+    "lspinfo",
+    "checkhealth",
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+
+    base.mappings.register({
+      mode = { "n" },
+      lhs = "q",
+      rhs = ":close<CR>",
+      options = { noremap = true, silent = true, buffer = event.buf },
+      description = "Close current buffer/window.",
+    })
+  end,
+})
+
+if types.settings.transparent_floats then
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+      vim.cmd("highlight WinSeparator guibg=NONE")
+      vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
+    end,
+  })
+end
+
+if types.settings.transparent_background then
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+      vim.cmd("highlight Normal guibg=none guifg=none")
+      vim.cmd("highlight NormalNC guibg=none guifg=none")
+      vim.cmd("highlight NormalFloat guibg=none guifg=none")
+    end,
+  })
+end
+
+if types.settings.auto_restore_cursor_position then
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
+    end,
+  })
+end
+
+if types.settings.auto_remove_new_lines_comment then
+  vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*" },
+    callback = function()
+      vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
+    end,
+  })
+end
 
 if types.settings.show_cursor_line then
   local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
@@ -171,27 +188,6 @@ if types.settings.auto_save then
       end
     end,
     nested = true,
-  })
-end
-
-if types.settings.auto_restore_cursor_position then
-  vim.api.nvim_create_autocmd("BufReadPost", {
-    callback = function()
-      local mark = vim.api.nvim_buf_get_mark(0, '"')
-      local lcount = vim.api.nvim_buf_line_count(0)
-      if mark[1] > 0 and mark[1] <= lcount then
-        pcall(vim.api.nvim_win_set_cursor, 0, mark)
-      end
-    end,
-  })
-end
-
-if types.settings.auto_remove_new_lines_comment then
-  vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = { "*" },
-    callback = function()
-      vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
-    end,
   })
 end
 
