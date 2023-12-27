@@ -34,7 +34,6 @@ return {
         null_ls.builtins.formatting.clang_format,
         null_ls.builtins.formatting.ocamlformat,
 
-        null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.diagnostics.pylint,
       },
       on_attach = types.settings.format_on_save and on_attach or nil,

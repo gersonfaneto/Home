@@ -41,6 +41,7 @@ M.base_languages = {
   "clangd",        -- C/C++
   "cssls",         -- CSS
   "emmet_ls",      -- HTML
+  "eslint",        -- TypeScript / JavaScript
   "gopls",         -- Go
   "html",          -- HTML
   "jdtls",         -- Java
@@ -67,8 +68,7 @@ M.extra_languages = {
 ---See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 ---@type string[]
 M.linters = {
-  "eslint_d",   -- TypeScript / JavaScript
-  "pylint",     -- Python
+  "pylint", -- Python
 }
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
