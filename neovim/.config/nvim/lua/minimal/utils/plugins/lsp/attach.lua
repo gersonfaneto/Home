@@ -60,41 +60,32 @@ function M.on_attach(_, bufnr)
     {
       mode = { "n" },
       lhs = "gr",
-      rhs = function()
-        require("telescope.builtin").lsp_references()
-      end,
+      rhs = vim.lsp.buf.references,
       description = "Browse references.",
     },
     {
       mode = { "n" },
       lhs = "gi",
-      rhs = function()
-        require("telescope.builtin").lsp_implementations()
-      end,
-
+      rhs = vim.lsp.buf.implementation,
       description = "Browse implementations.",
     },
     {
       mode = { "n" },
       lhs = "gd",
-      rhs = function()
-        require("telescope.builtin").lsp_definitions()
-      end,
-      description = "Browse definitions.",
+      rhs = vim.lsp.buf.definition,
+      description = "Jump to definition.",
     },
     {
       mode = { "n" },
       lhs = "of",
       rhs = vim.diagnostic.open_float,
-      description = "Open diagnostics as float.",
+      description = "Open diagnostic float.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>pd",
-      rhs = function()
-        require("telescope.builtin").diagnostics()
-      end,
-      description = "Browse project diagnostics.",
+      lhs = "dl",
+      rhs = vim.diagnostic.setqflist,
+      description = "View diagnostics in quickfix list.",
     },
     {
       mode = { "n" },
