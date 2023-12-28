@@ -8,7 +8,7 @@ bun = "latest"
 node = "latest"
 php = "latest"
 ruby = "latest"
-neovim = "nightly"
+neovim = "latest"
 
 [settings]
 experimental = true
