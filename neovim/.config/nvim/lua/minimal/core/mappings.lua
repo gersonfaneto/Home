@@ -3,33 +3,11 @@ local types = require("minimal.utils.types")
 
 local M = {}
 
--- INFO: Mappings - Quick Edit...
-base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>et",
-    rhs = ":e ~/Notes/TODO.norg<CR>",
-    description = "TODOs.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>ec",
-    rhs = ":chdir ~/.config/nvim | e init.lua<CR>",
-    description = "Configuration.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>es",
-    rhs = ":chdir ~/.config/nvim | e lua/custom/settings.lua<CR>",
-    description = "Settings.",
-  },
-}, { prefix = "Quick Edit: ", options = { silent = true, noremap = true } })
-
 -- INFO: Mappings - Quick Toggles...
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>tc",
+    lhs = "<C-t><C-r>",
     rhs = function()
       ---@diagnostic disable-next-line: undefined-field
       if vim.opt.colorcolumn:get()[1] ~= nil then
@@ -42,10 +20,10 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>ts",
+    lhs = "<C-t><C-s>",
     rhs = ":set spell!<CR>",
     description = "Toggle spell checking.",
-  }
+  },
 }, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Commands...
@@ -54,7 +32,7 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>nn",
     rhs = ":NewNote<CR>",
-    description = "Create a new note as a markdown file.",
+    description = "Create a new note.",
   },
   {
     mode = { "n" },
@@ -111,32 +89,38 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<S-Up>",
-    rhs = ":resize -2<CR>",
+    rhs = function()
+      local size = math.ceil(vim.api.nvim_win_get_height(0) / 10)
+      vim.cmd("resize +" .. size)
+    end,
     description = "Decrease split size horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<S-Down>",
-    rhs = ":resize +2<CR>",
+    rhs = function()
+      local size = math.ceil(vim.api.nvim_win_get_height(0) / 10)
+      vim.cmd("resize -" .. size)
+    end,
     description = "Increase split size horizontally.",
   },
   {
     mode = { "n" },
     lhs = "<S-Left>",
-    rhs = ":vertical resize -2<CR>",
+    rhs = function()
+      local size = math.ceil(vim.api.nvim_win_get_width(0) / 10)
+      vim.cmd("vertical resize +" .. size)
+    end,
     description = "Decrease split size vertically.",
   },
   {
     mode = { "n" },
     lhs = "<S-Right>",
-    rhs = ":vertical resize +2<CR>",
+    rhs = function()
+      local size = math.ceil(vim.api.nvim_win_get_width(0) / 10)
+      vim.cmd("vertical resize -" .. size)
+    end,
     description = "Increase split size vertically.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>=",
-    rhs = "<C-w>=",
-    description = "Make splits size equal.",
   },
 }, { prefix = "Splits & Windows: ", options = { silent = true, noremap = true } })
 
@@ -166,27 +150,15 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>q",
+    lhs = "<C-f><C-q>",
     rhs = ":quit<CR>",
     description = "Close the current buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>Q",
-    rhs = ":qa!<cr>",
-    description = "Close all the open buffer - Exit NeoVIM.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>w",
+    lhs = "<C-f><C-w>",
     rhs = ":write<CR>",
     description = "Write the current buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>W",
-    rhs = ":wall<CR>",
-    description = "Write all the open buffers.",
   },
   {
     mode = { "n", "x" },
@@ -289,13 +261,13 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>sa",
+    lhs = "aa",
     rhs = "ggVG",
     description = "Select all the content from the current buffer.",
   },
   {
-    mode = { "v" },
-    lhs = "<leader>ss",
+    mode = { "v", "x" },
+    lhs = "ss",
     rhs = ":sort<CR>",
     description = "Sort the current selection.",
   },
