@@ -54,7 +54,16 @@ M.opt = {
   showmode = false,
   showtabline = 0,
   numberwidth = 4,
-  fillchars = { eob = " " },
+  fillchars = "eob: ,fold: ,foldopen: ,foldsep: ,foldclose:",
+  list = true,
+  listchars = {
+    tab = "⇥ ",
+    leadmultispace = "┊ ",
+    trail = "␣",
+    nbsp = "⍽",
+    eol = "↴",
+    space = "⋅",
+  },
   completeopt = { "menu", "menuone", "noselect" },
   laststatus = 3,
 
