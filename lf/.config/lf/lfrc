@@ -97,6 +97,7 @@ cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
 
+map t
 map m
 map o
 map n
@@ -115,8 +116,10 @@ map ab tarbz2
 map au unarchive
 
 map zi zi
-map zp toggle_preview
-map zb set-bg
+
+map tp toggle_preview
+
+map sb set-bg
 
 map ee $$EDITOR "$f"
 
@@ -140,12 +143,8 @@ map C clear
 map U unselect
 
 map ga cd ~/Alexandria
-map gD cd ~/Documents
-map gd cd ~/Downloads
+map gc cd ~/Developer
+map gd cd ~/Documents
+map gi cd ~/Downloads
 map gn cd ~/Notes
 map gp cd ~/Pictures
-map gv cd ~/Videos
-map gc cd ~/.config
-map gs cd ~/.local/bin
-map gt cd ~/.local/share/Trash/files
-map gm cd /run/media/gerson
