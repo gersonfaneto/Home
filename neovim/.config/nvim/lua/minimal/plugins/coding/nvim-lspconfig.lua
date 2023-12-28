@@ -16,9 +16,6 @@ return {
       types.servers.extra_languages,
     })
 
-    local on_attach = plugins.lsp.attach.on_attach()
-    local capabilities = plugins.lsp.capabilities.default_capabilities()
-
     for _, server in pairs(servers) do
       if server == "jdtls" then
         goto continue
@@ -27,8 +24,8 @@ return {
       local has_settings, extras = pcall(require, "minimal.plugins.coding.settings." .. server)
 
       local settings = {
-        capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = plugins.lsp.attach.on_attach,
+        capabilities = plugins.lsp.capabilities.default_capabilities(),
       }
 
       if has_settings then

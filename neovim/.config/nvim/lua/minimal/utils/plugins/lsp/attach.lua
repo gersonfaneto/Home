@@ -4,7 +4,7 @@ local interface = require("minimal.utils.interface")
 
 local M = {}
 
-function M.on_attach(_, bufnr)
+function M.on_attach(client, bufnr)
   local icons = interface.icons.get("diagnostics")
 
   local signs = {
@@ -13,6 +13,8 @@ function M.on_attach(_, bufnr)
     Hint = icons.BoldHint,
     Info = icons.BoldInformation,
   }
+
+  bufnr = base.buffers.bufnr(bufnr)
 
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -37,6 +39,32 @@ function M.on_attach(_, bufnr)
       prefix = "",
     },
   })
+
+  local opts = { noremap = true, silent = true, buffer = bufnr }
+
+  local has_support = function ()
+    local version = vim.version()
+
+    version = version.major .. "." .. version.minor .. "." .. version.patch
+
+    return vim.version.cmp(version, "0.10.0") >= 0
+  end
+
+  if client.supports_method("textDocument/inlayHint") and has_support() then
+    vim.lsp.inlay_hint.enable(bufnr, true)
+
+    base.mappings.register({
+      mode = { "n" },
+      lhs = "th",
+      rhs = function()
+        local current = vim.lsp.inlay_hint.is_enabled(bufnr)
+
+        vim.lsp.inlay_hint.enable(bufnr, not current)
+      end,
+      options = opts,
+      description = "LSP: Toggle inlay hints.",
+    })
+  end
 
   base.mappings.bulk_register({
     {
