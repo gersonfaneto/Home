@@ -350,7 +350,7 @@
   },
   "SPDX": {
     "prefix": "spdx",
-    "description": "SPDX-style license header",
+    "description": "SPDX-style License Header",
     "body": [
       "SPDX-License-Identifier: ${1:Id}",
       "SPDX-FileCopyrightText: ${CURRENT_YEAR} ${2:Author}"
