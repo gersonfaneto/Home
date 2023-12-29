@@ -6,5 +6,5 @@
   --- ( ) [Oh My Zsh]{https://ohmyz.sh/}
   --- ( ) [Syntax Highlighting]{https://github.com/zsh-users/zsh-syntax-highlighting}
   --- ( ) [Auto Suggestions]{https://github.com/zsh-users/zsh-autosuggestions}
-  - ( ) Check for bugs and improvements...
+  - (-) Check for bugs and improvements...
   - (x) Fix JARVIS.sh - Packages are failing to install. No idea why 🫠.
