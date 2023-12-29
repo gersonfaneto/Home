@@ -5,7 +5,7 @@ local M = {}
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>m",
+    lhs = "<C-w>m",
     rhs = ":MaximizerToggle<CR>",
     description = "Maximize/Minimize current split.",
   },
