@@ -14,20 +14,8 @@
         "path": "sh.json"
       },
       {
-        "language": "c",
-        "path": "c.json"
-      },
-      {
-        "language": "cpp",
-        "path": "cpp.json"
-      },
-      {
-        "language": "lua",
-        "path": "lua.json"
-      },
-      {
-        "language": "make",
-        "path": "make.json"
+        "language": "license",
+        "path": "license.json"
       },
       {
         "language": "markdown",
@@ -36,10 +24,6 @@
       {
         "language": "gitcommit",
         "path": "gitcommit.json"
-      },
-      {
-        "language": "license",
-        "path": "license.json"
       }
     ]
   }
