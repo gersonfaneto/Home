@@ -20,6 +20,18 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<C-t><C-l>",
+    rhs = ":set cursorline!<CR>",
+    description = "Toggle cursor line.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<C-t><C-d>",
+    rhs = ":set list!<CR>",
+    description = "Toggle list.",
+  },
+  {
+    mode = { "n" },
     lhs = "<C-t><C-s>",
     rhs = ":set spell!<CR>",
     description = "Toggle spell checking.",
@@ -174,6 +186,13 @@ base.mappings.bulk_register({
     options = { silent = false },
     description = "Open command window.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>sa",
+    rhs = "1z=",
+    options = { silent = false },
+    description = "Accept first suggestion for spelling correction.",
+  },
 }, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Navigation...
@@ -261,7 +280,7 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "aa",
+    lhs = "sa",
     rhs = "ggVG",
     description = "Select all the content from the current buffer.",
   },
