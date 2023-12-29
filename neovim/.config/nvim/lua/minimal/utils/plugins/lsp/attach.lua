@@ -42,7 +42,7 @@ function M.on_attach(client, bufnr)
 
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
-  local has_support = function ()
+  local has_support = function()
     local version = vim.version()
 
     version = version.major .. "." .. version.minor .. "." .. version.patch
@@ -102,6 +102,12 @@ function M.on_attach(client, bufnr)
       lhs = "gd",
       rhs = vim.lsp.buf.definition,
       description = "Jump to definition.",
+    },
+    {
+      mode = { "n" },
+      lhs = "sd",
+      rhs = ":vsplit | lua vim.lsp.buf.definition()<CR>",
+      description = "Split and jump to definition.",
     },
     {
       mode = { "n" },
