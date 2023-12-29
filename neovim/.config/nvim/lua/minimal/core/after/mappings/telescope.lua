@@ -111,7 +111,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>zz",
+    lhs = "<leader>sm",
     rhs = function()
       require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
         previewer = false,
@@ -121,7 +121,7 @@ base.mappings.bulk_register({
         },
       }))
     end,
-    description = "Get suggestions for spelling.",
+    description = "Browse through the spell suggestions.",
   },
 }, { options = { noremap = true, silent = true }, prefix = "Telescope: " })
 
