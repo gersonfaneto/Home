@@ -140,13 +140,13 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<Tab>",
+    lhs = "<C-b><C-n>",
     rhs = ":bnext<CR>",
     description = "Switch to next buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<S-Tab>",
+    lhs = "<C-b><C-p>",
     rhs = ":bprevious<CR>",
     description = "Switch to previous buffer.",
   },
@@ -165,6 +165,12 @@ base.mappings.bulk_register({
     lhs = "<C-f><C-q>",
     rhs = ":quit<CR>",
     description = "Close the current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<C-f><C-x>",
+    rhs = ":quitall<CR>",
+    description = "Close all buffers and exit.",
   },
   {
     mode = { "n" },
@@ -336,15 +342,31 @@ base.mappings.bulk_register({
     description = "Automatically indent to the appropriate position, when entering insert mode.",
   },
   {
-    mode = { "v" },
-    lhs = ">",
-    rhs = ">gv",
+    mode = { "x", "n" },
+    lhs = "<Tab>",
+    rhs = function()
+      local mode = vim.api.nvim_get_mode().mode
+
+      if mode == "n" then
+        vim.cmd.normal(">>")
+      else
+        vim.cmd.normal(">gv")
+      end
+    end,
     description = "Better forward indenting.",
   },
   {
-    mode = { "v" },
-    lhs = "<",
-    rhs = "<gv",
+    mode = { "x", "n" },
+    lhs = "<S-Tab>",
+    rhs = function()
+      local mode = vim.api.nvim_get_mode().mode
+
+      if mode == "n" then
+        vim.cmd.normal("<<")
+      else
+        vim.cmd.normal("<gv")
+      end
+    end,
     description = "Better backwards indenting.",
   },
   {
@@ -384,5 +406,47 @@ base.mappings.bulk_register({
     description = "Move current line down.",
   },
 }, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
+
+-- INFO: Mappings - Custom Text Objects...
+base.mappings.bulk_register({
+  {
+    mode = { "v" },
+    lhs = "al",
+    rhs = ":<c-u>silent! normal! 0v$<cr>",
+    description = "Around the whole line.",
+  },
+  {
+    mode = { "o" },
+    lhs = "al",
+    rhs = ":normal val<cr>",
+    description = "Around the whole line.",
+  },
+
+  {
+    mode = { "v" },
+    lhs = "il",
+    rhs = ":<c-u>silent! normal! ^vg_<cr>",
+    description = "Inside the whole line.",
+  },
+  {
+    mode = { "o" },
+    lhs = "il",
+    rhs = ":normal vil<cr>",
+    description = "Inside the whole line.",
+  },
+
+  {
+    mode = { "v" },
+    lhs = "ae",
+    rhs = [[:<c-u>silent! normal! m'gg0VG$<cr>]],
+    description = "Around the whole file.",
+  },
+  {
+    mode = { "o" },
+    lhs = "ae",
+    rhs = ":normal Vae<cr>",
+    description = "Around the whole file.",
+  },
+}, { prefix = "Custom Text Objects: ", options = { silent = true, noremap = true } })
 
 return M

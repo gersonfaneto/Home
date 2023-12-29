@@ -25,6 +25,9 @@ return {
     }
 
     configs.setup({
+      ensure_installed = types.servers.parsers,
+      auto_install = true,
+      sync_install = false,
       indent = {
         enable = true,
       },
@@ -32,13 +35,11 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-      auto_install = true,
-      ensure_installed = types.servers.parsers,
       incremental_selection = {
         enable = true,
         keymaps = {
           init_selection = "<leader>vv",
-          scope_incremental = false,
+          scope_incremental = "*",
           node_incremental = "+",
           node_decremental = "_",
         },
