@@ -113,20 +113,24 @@ if types.settings.transparent_floats then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
       vim.cmd("highlight WinSeparator guibg=NONE")
+      vim.cmd("highlight Normal guibg=none guifg=none")
+      vim.cmd("highlight NormalNC guibg=none guifg=none")
+      vim.cmd("highlight NormalFloat guibg=none guifg=none")
       vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
     end,
   })
 end
 
-if types.settings.transparent_background then
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-      vim.cmd("highlight Normal guibg=none guifg=none")
-      vim.cmd("highlight NormalNC guibg=none guifg=none")
-      vim.cmd("highlight NormalFloat guibg=none guifg=none")
-    end,
-  })
-end
+-- NOTE: Do I really need this...? - 12.29.2023:
+-- if types.settings.transparent_background then
+--   vim.api.nvim_create_autocmd("ColorScheme", {
+--     callback = function()
+--       vim.cmd("highlight Normal guibg=none guifg=none")
+--       vim.cmd("highlight NormalNC guibg=none guifg=none")
+--       vim.cmd("highlight NormalFloat guibg=none guifg=none")
+--     end,
+--   })
+-- end
 
 if types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
