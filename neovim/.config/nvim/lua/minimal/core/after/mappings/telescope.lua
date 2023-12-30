@@ -31,7 +31,10 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>ff",
     rhs = function()
-      require("telescope.builtin").find_files()
+      require("telescope.builtin").find_files({
+        -- This will include .gitignore files in the search results.
+        no_ignore = true,
+      })
     end,
     description = "Find files in the current directory.",
   },
