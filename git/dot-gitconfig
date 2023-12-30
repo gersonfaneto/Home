@@ -84,10 +84,13 @@
   hist = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   hhist = "!git log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' | head"
 
+  l = log --date=format:'%b %d, %Y' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
+  lg = log --graph --name-status --date=format:'%b %d, %Y | %H:%M' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
   llog = log --graph --name-status --date=relative --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' 
 
   last = log --graph --abbrev-commit --date=relative --decorate --since=midnight --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-  
+  recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
   in = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
   out = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' @{u}.."
   
