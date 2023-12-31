@@ -1,3 +1,8 @@
+# Where files from spell checking are stored.
 spell/*
-lua/custom/*
+
+# Where files for custom settings/extensions are stored.
+lua/custom/*.lua
+
+# Used by the plugin manager to keep track of installed plugins.
 lazy-lock.json
