@@ -21,7 +21,7 @@ return {
         goto continue
       end
 
-      local has_settings, extras = pcall(require, "minimal.plugins.coding.settings." .. server)
+      local has_settings, extras = pcall(require, "minimal.core.plugins.coding.settings." .. server)
 
       local settings = {
         on_attach = plugins.lsp.attach.on_attach,
