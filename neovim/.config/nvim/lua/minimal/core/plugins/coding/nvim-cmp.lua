@@ -41,10 +41,7 @@ return {
             vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
           end
 
-          if entry.source.name == "copilot" then
-            vim_item.kind = icons.git.Octoface
-            vim_item.kind_hl_group = "CmpItemKindCopilot"
-          elseif entry.source.name == "crates" then
+          if entry.source.name == "crates" then
             vim_item.kind = icons.misc.Package
             vim_item.kind_hl_group = "CmpItemKindCrate"
           elseif entry.source.name == "emoji" then
@@ -58,7 +55,6 @@ return {
             nvim_lsp = "[LSP]",
             crates = "[Crates]",
             luasnip = "[Snippet]",
-            copilot = "[Copilot]",
             path = "[Path]",
             emoji = "[Emoji]",
             buffer = "[Buffer]",
@@ -88,36 +84,6 @@ return {
         }),
       },
       sources = {
-        {
-          name = "copilot",
-          -- keyword_length = 0,
-          max_item_count = 3,
-          trigger_characters = {
-            {
-              ".",
-              ":",
-              "(",
-              "'",
-              '"',
-              "[",
-              ",",
-              "#",
-              "*",
-              "@",
-              "|",
-              "=",
-              "-",
-              "{",
-              "/",
-              "\\",
-              "+",
-              "?",
-              " ",
-              -- "\t",
-              -- "\n",
-            },
-          },
-        },
         {
           name = "nvim_lsp",
           entry_filter = function(entry, ctx)
@@ -186,18 +152,15 @@ return {
               behavior = cmp_types.ConfirmBehavior.Replace,
               select = false,
             })
+
             local is_insert_mode = function()
               return vim.api.nvim_get_mode().mode:sub(1, 1) == "i"
             end
+
             if is_insert_mode() then
               confirm_opts.behavior = cmp_types.ConfirmBehavior.Insert
             end
-            local entry = cmp.get_selected_entry()
-            local is_copilot = entry and entry.source.name == "copilot"
-            if is_copilot then
-              confirm_opts.behavior = cmp_types.ConfirmBehavior.Replace
-              confirm_opts.select = true
-            end
+
             if cmp.confirm(confirm_opts) then
               return
             end

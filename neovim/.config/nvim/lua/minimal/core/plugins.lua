@@ -23,7 +23,6 @@ end
 
 local include_directories = {
   { import = "minimal.core.plugins.coding" },
-  { import = "minimal.core.plugins.coding.copilot" },
   { import = "minimal.core.plugins.coding.extras" },
   { import = "minimal.core.plugins.editing" },
   { import = "minimal.core.plugins.exploring" },
