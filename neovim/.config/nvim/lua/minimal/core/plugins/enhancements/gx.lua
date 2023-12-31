@@ -1,9 +1,6 @@
 return {
   "chrishrb/gx.nvim",
-  event = {
-    "BufReadPre",
-    "BufNewFile",
-  },
+  event = { "VeryLazy" },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local gx = require("gx")

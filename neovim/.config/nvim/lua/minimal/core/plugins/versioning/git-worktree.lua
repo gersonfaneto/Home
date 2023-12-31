@@ -1,9 +1,6 @@
 return {
   "ThePrimeagen/git-worktree.nvim",
-  keys = {
-    { "<leader>wl", vim.NIL },
-    { "<leader>wa", vim.NIL },
-  },
+  event = { "VeryLazy" },
   config = function()
     local git_worktree = require("git-worktree")
 

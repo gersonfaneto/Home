@@ -1,8 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = {
-    "VeryLazy",
-  },
+  event = { "VeryLazy" },
   build = function()
     vim.api.nvim_command("TSUpdate")
   end,

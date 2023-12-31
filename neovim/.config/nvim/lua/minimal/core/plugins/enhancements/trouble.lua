@@ -11,7 +11,7 @@ return {
     local trouble = require("trouble")
 
     trouble.setup({
-      auto_fold = true,
+      mode = "quickfix",
     })
   end,
 }

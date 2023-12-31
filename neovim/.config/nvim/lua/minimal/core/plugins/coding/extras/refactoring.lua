@@ -1,12 +1,6 @@
 return {
   "ThePrimeagen/refactoring.nvim",
-  keys = {
-    { "<leader>rr", vim.NIL },
-  },
-  -- event = {
-  --   "BufReadPre",
-  --   "BufNewFile",
-  -- },
+  event = { "VeryLazy" },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",

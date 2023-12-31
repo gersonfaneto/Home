@@ -1,13 +1,11 @@
 return {
-  {
-    "iamcco/markdown-preview.nvim",
-    event = {
-      "BufReadPre *.md",
-      "BufNewFile *.md",
-    },
-    build = "cd app && npm install",
-    config = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
+  "iamcco/markdown-preview.nvim",
+  build = "cd app && npm install",
+  event = {
+    "BufReadPre *.md",
+    "BufNewFile *.md",
   },
+  config = function()
+    vim.g.mkdp_filetypes = { "markdown" }
+  end,
 }

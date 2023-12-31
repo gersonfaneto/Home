@@ -1,9 +1,8 @@
 return {
   "lervag/vimtex",
-  ft = {
-    "tex",
-    "latex",
-    "plaintext",
+  event = {
+    "BufReadPre *.tex",
+    "BufNewFile *.tex",
   },
   config = function()
     vim.g.vimtex_view_method = "zathura"

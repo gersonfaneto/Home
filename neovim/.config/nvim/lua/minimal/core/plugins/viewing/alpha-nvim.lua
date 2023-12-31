@@ -1,7 +1,5 @@
 return {
   "goolord/alpha-nvim",
-  lazy = true,
-  enabled = true,
   event = { "VimEnter" },
   opts = function()
     local dashboard = require("alpha.themes.dashboard")

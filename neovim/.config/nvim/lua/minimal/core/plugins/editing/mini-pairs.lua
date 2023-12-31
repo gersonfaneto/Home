@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.pairs",
-  event = { "InsertEnter" },
+  event = { "VeryLazy" },
   config = function(_, opts)
     local mini_pairs = require("mini.pairs")
 

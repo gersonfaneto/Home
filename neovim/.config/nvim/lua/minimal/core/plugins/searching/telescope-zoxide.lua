@@ -1,8 +1,6 @@
 return {
   "jvgrootveld/telescope-zoxide",
-  keys = {
-    { "<leader>zl", vim.NIL },
-  },
+  event = { "VeryLazy" },
   config = function()
     local telescope = require("telescope")
 
