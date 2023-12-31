@@ -91,6 +91,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
   pattern = {
     "qf",
+    "oil",
     "man",
     "help",
     "lspinfo",

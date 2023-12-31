@@ -6,7 +6,7 @@ base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "-",
-    rhs = ":Oil<CR>",
+    rhs = ":Oil --float<CR>",
     description = "Open parent directory.",
   },
 }, { options = { silent = true, noremap = true }, prefix = "Oil: " })
