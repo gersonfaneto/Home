@@ -3,12 +3,12 @@ local types = require("minimal.utils.types")
 local mappings = {
   base = {
     "alpha",
-    "ccc-nvim",
-    "crates-nvim",
+    "ccc",
+    "crates",
     "diffview",
     "git-worktree",
     "gitsigns",
-    "glance-nvim",
+    "glance",
     "harpoon",
     "lazy",
     "lsp",
