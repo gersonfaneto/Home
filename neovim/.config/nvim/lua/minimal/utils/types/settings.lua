@@ -19,9 +19,6 @@ M.transparent_floats = false
 ---@type boolean
 M.dim_inactive = false
 
----Set to `false` to disable the buffer line on the top, listing the active buffers.
----@type boolean
-M.show_bufferline = true
 ---Set to `false` to disable the horizontal line at the current cursor position.
 ---@type boolean
 M.show_cursor_line = true

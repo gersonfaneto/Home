@@ -27,9 +27,7 @@ local mappings = {
     "vim-maximizer",
     "vim-tmux-navigator",
   },
-  extras = {
-    ["show_bufferline"] = "bufferline",
-  },
+  extras = {},
   prefix = "minimal.core.after.mappings.",
 }
 
