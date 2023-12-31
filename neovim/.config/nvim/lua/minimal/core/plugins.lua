@@ -1,5 +1,3 @@
-local types = require("minimal.utils.types")
-
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazy_path) then
@@ -24,14 +22,14 @@ if not ok then
 end
 
 local include_directories = {
-  { import = "minimal.plugins.coding" },
-  { import = "minimal.plugins.coding.copilot" },
-  { import = "minimal.plugins.coding.extras" },
-  { import = "minimal.plugins.editing" },
-  { import = "minimal.plugins.exploring" },
-  { import = "minimal.plugins.spelling" },
-  { import = "minimal.plugins.tooling" },
-  { import = "minimal.plugins.viewing" },
+  { import = "minimal.core.plugins.coding" },
+  { import = "minimal.core.plugins.coding.copilot" },
+  { import = "minimal.core.plugins.coding.extras" },
+  { import = "minimal.core.plugins.editing" },
+  { import = "minimal.core.plugins.exploring" },
+  { import = "minimal.core.plugins.spelling" },
+  { import = "minimal.core.plugins.tooling" },
+  { import = "minimal.core.plugins.viewing" },
 }
 
 local lazy_options = {
