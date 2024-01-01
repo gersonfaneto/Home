@@ -4,7 +4,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    "nvim-telescope/telescope-ui-select.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -108,25 +107,7 @@ return {
           },
         },
       },
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown({
-            previewer = false,
-            initial_mode = "normal",
-            sorting_strategy = "ascending",
-            layout_strategy = "horizontal",
-            layout_config = {
-              horizontal = {
-                width = 0.5,
-                height = 0.4,
-                preview_width = 0.6,
-              },
-            },
-          }),
-        },
-      },
+      extensions = {},
     })
-
-    telescope.load_extension("ui-select")
   end,
 }
