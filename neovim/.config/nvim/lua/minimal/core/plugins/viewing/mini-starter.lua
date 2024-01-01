@@ -37,7 +37,6 @@ return {
           name = "Find Files",
           action = function()
             require("telescope.builtin").find_files({
-              -- This will include .gitignore files in the search results.
               no_ignore = true,
             })
           end,
@@ -57,6 +56,11 @@ return {
               cwd = "$HOME/Notes",
             })
           end,
+          section = "Notes",
+        },
+        {
+          name = "New Note",
+          action = "NewNote",
           section = "Notes",
         },
         {
