@@ -140,19 +140,21 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<C-b><C-n>",
+    lhs = "[b",
     rhs = ":bnext<CR>",
+    options = { noremap = false },
     description = "Switch to next buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-p>",
+    lhs = "]b",
     rhs = ":bprevious<CR>",
+    options = { noremap = false },
     description = "Switch to previous buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<BS>",
+    lhs = ",b",
     rhs = ":b#<CR>",
     description = "Quickly switch between current and last open buffer.",
   },
@@ -162,21 +164,21 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<C-f><C-q>",
+    lhs = "W",
+    rhs = ":write<CR>",
+    description = "Write the current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "Q",
     rhs = ":quit<CR>",
     description = "Close the current buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<C-f><C-x>",
+    lhs = "E",
     rhs = ":quitall<CR>",
     description = "Close all buffers and exit.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<C-f><C-w>",
-    rhs = ":write<CR>",
-    description = "Write the current buffer.",
   },
   {
     mode = { "n", "x" },
@@ -261,7 +263,7 @@ base.mappings.bulk_register({
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<Esc>",
+    lhs = "<ESC>",
     rhs = ":noh<CR>",
     description = "Clear search highlight.",
   },
@@ -291,25 +293,25 @@ base.mappings.bulk_register({
     description = "Select all the content from the current buffer.",
   },
   {
-    mode = { "v", "x" },
+    mode = { "x" },
     lhs = "ss",
     rhs = ":sort<CR>",
     description = "Sort the current selection.",
   },
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "p",
     rhs = '"_dp"',
     description = "Paste in visual mode without writing to registers.",
   },
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "P",
     rhs = '"_dP"',
     description = "Paste in visual mode without writing to registers.",
   },
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "y",
     rhs = "ygv<Esc>",
     description = "Copy without returning to start of selection.",
@@ -394,13 +396,13 @@ base.mappings.bulk_register({
     description = "Move current line up.",
   },
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "<A-Down>",
     rhs = ":m '>+1<CR>gv=gv",
     description = "Move current line down.",
   },
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "<A-Up>",
     rhs = ":m '<-2<CR>gv=gv",
     description = "Move current line down.",
@@ -410,7 +412,7 @@ base.mappings.bulk_register({
 -- INFO: Mappings - Custom Text Objects...
 base.mappings.bulk_register({
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "al",
     rhs = ":<c-u>silent! normal! 0v$<cr>",
     description = "Around the whole line.",
@@ -423,7 +425,7 @@ base.mappings.bulk_register({
   },
 
   {
-    mode = { "v" },
+    mode = { "x" },
     lhs = "il",
     rhs = ":<c-u>silent! normal! ^vg_<cr>",
     description = "Inside the whole line.",
@@ -436,14 +438,14 @@ base.mappings.bulk_register({
   },
 
   {
-    mode = { "v" },
-    lhs = "ae",
+    mode = { "x" },
+    lhs = "ab",
     rhs = [[:<c-u>silent! normal! m'gg0VG$<cr>]],
     description = "Around the whole file.",
   },
   {
     mode = { "o" },
-    lhs = "ae",
+    lhs = "ab",
     rhs = ":normal Vae<cr>",
     description = "Around the whole file.",
   },
