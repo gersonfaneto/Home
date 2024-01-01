@@ -20,12 +20,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.cmd("highlight Pmenu guibg=NONE")
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "set spell",
   pattern = {
@@ -36,21 +30,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
     "*.tex",
     "COMMIT_EDITMSG",
   },
-})
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "BufferDeletePost",
-  group = vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true }),
-  callback = function(event)
-    local fallback_name = vim.api.nvim_buf_get_name(event.buf)
-    local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
-    local fallback_on_empty = fallback_name == "" and fallback_ft == ""
-
-    if fallback_on_empty then
-      vim.api.nvim_command("Alpha")
-      vim.api.nvim_command(event.buf .. "bwipeout")
-    end
-  end,
 })
 
 vim.api.nvim_create_autocmd("BufNewFile", {
@@ -114,6 +93,7 @@ if types.settings.transparent_floats then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
       vim.cmd("highlight WinSeparator guibg=NONE")
+      vim.cmd("highlight Pmenu guibg=NONE")
       vim.cmd("highlight Normal guibg=none guifg=none")
       vim.cmd("highlight NormalNC guibg=none guifg=none")
       vim.cmd("highlight NormalFloat guibg=none guifg=none")
@@ -121,17 +101,6 @@ if types.settings.transparent_floats then
     end,
   })
 end
-
--- NOTE: Do I really need this...? - 12.29.2023:
--- if types.settings.transparent_background then
---   vim.api.nvim_create_autocmd("ColorScheme", {
---     callback = function()
---       vim.cmd("highlight Normal guibg=none guifg=none")
---       vim.cmd("highlight NormalNC guibg=none guifg=none")
---       vim.cmd("highlight NormalFloat guibg=none guifg=none")
---     end,
---   })
--- end
 
 if types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
