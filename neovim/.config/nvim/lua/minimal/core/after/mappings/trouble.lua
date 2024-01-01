@@ -39,6 +39,50 @@ base.mappings.bulk_register({
     rhs = ":TroubleToggle lsp_references<CR>",
     description = "Browse LSP references.",
   },
+  {
+    mode = { "n" },
+    lhs = "]q",
+    rhs = function()
+      require("trouble").next({
+        skip_groups = true,
+        jump = true,
+      })
+    end,
+    description = "Foward.",
+  },
+  {
+    mode = { "n" },
+    lhs = "[q",
+    rhs = function()
+      require("trouble").previous({
+        skip_groups = true,
+        jump = true,
+      })
+    end,
+    description = "Backwards.",
+  },
+  {
+    mode = { "n" },
+    lhs = "]Q",
+    rhs = function()
+      require("trouble").first({
+        skip_groups = true,
+        jump = true,
+      })
+    end,
+    description = "First.",
+  },
+  {
+    mode = { "n" },
+    lhs = "[Q",
+    rhs = function()
+      require("trouble").last({
+        skip_groups = true,
+        jump = true,
+      })
+    end,
+    description = "Last.",
+  },
 }, { options = { silent = true, noremap = true }, prefix = "Trouble: " })
 
 return M
