@@ -463,13 +463,13 @@ base.mappings.bulk_register({
 
   {
     mode = { "x" },
-    lhs = "ab",
+    lhs = "ae",
     rhs = [[:<c-u>silent! normal! m'gg0VG$<cr>]],
     description = "Around the whole file.",
   },
   {
     mode = { "o" },
-    lhs = "ab",
+    lhs = "ae",
     rhs = ":normal Vae<cr>",
     description = "Around the whole file.",
   },
