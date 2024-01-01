@@ -35,22 +35,7 @@ return {
         section_separators = "",
         component_separators = "",
         disabled_filetypes = {
-          statusline = {
-            "help",
-            "startify",
-            "dashboard",
-            "neo-tree",
-            "packer",
-            "neogitstatus",
-            "NvimTree",
-            "Trouble",
-            "alpha",
-            "lir",
-            "Outline",
-            "spectre_panel",
-            "toggleterm",
-            "qf",
-          },
+          statusline = {},
           winbar = {},
         },
       },
@@ -110,8 +95,8 @@ return {
       },
       tabline = {},
       extensions = {
-        "neo-tree",
         "lazy",
+        "neo-tree",
       },
     })
   end,
