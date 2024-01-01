@@ -2,7 +2,6 @@ local types = require("minimal.utils.types")
 
 local mappings = {
   base = {
-    "alpha",
     "ccc",
     "crates",
     "diffview",
