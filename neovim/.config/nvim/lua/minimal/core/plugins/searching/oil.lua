@@ -14,6 +14,12 @@ return {
         max_height = 20,
         max_width = 60,
       },
+      keymaps = {
+        ["<C-s>"] = false,
+        ["v"] = "actions.select_vsplit",
+        ["<C-h>"] = false,
+        ["h"] = "actions.select_split",
+      },
     })
   end,
 }
