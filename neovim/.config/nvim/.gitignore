@@ -1,5 +1,6 @@
 # Where files from spell checking are stored.
-spell/*
+spell/*.add
+spell/*.add.spl
 
 # Where files for custom settings/extensions are stored.
 lua/custom/*.lua
