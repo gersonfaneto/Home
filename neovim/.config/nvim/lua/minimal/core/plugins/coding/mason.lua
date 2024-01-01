@@ -17,5 +17,23 @@ return {
         border = "rounded",
       },
     })
+
+    local types = require("minimal.utils.types")
+
+    local packages = vim.tbl_flatten({
+      types.servers.linters,
+      types.servers.formatters,
+      vim.tbl_values(types.servers.base_languages),
+    })
+
+    local registry = require("mason-registry")
+
+    for _, package in pairs(packages) do
+      package = registry.get_package(package)
+
+      if not package:is_installed() then
+        package:install()
+      end
+    end
   end,
 }
