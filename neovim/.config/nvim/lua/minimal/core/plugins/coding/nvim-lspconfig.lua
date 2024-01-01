@@ -9,7 +9,7 @@ return {
     local plugins = require("minimal.utils.plugins")
 
     local servers = vim.tbl_flatten({
-      types.servers.base_languages,
+      vim.tbl_keys(types.servers.base_languages),
       types.servers.extra_languages,
     })
 

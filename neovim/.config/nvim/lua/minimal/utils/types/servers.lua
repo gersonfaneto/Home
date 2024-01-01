@@ -2,7 +2,8 @@
 local M = {}
 
 ---List of parsers that will be installed by `TreeSitter`.
----See: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+---
+---[Supported Languages](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 ---@type string[]
 M.parsers = {
   "bash",
@@ -32,56 +33,65 @@ M.parsers = {
   "yaml",
 }
 
----List of language servers that can be installed through `Mason` and will be configured by the
----native `LSP` client.
----See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
----@type string[]
+---Table of language servers that can be installed through `Mason` and will be configured by the
+---native `LSP` client. Note that the `key-value` pairs, representing respectively a language
+---server supported by `nvim-lspconfig` and a package available on the `mason` registry, **don't**
+---always match.
+---
+---[Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+---[Mason Registry](https://mason-registry.dev/registry/list)
+---@type table<string, string>
 M.base_languages = {
-  "bashls",        -- Bash
-  "clangd",        -- C/C++
-  "cssls",         -- CSS
-  "emmet_ls",      -- HTML
-  "eslint",        -- TypeScript / JavaScript
-  "gopls",         -- Go
-  "html",          -- HTML
-  "jdtls",         -- Java
-  "jsonls",        -- JSON
-  "lua_ls",        -- Lua
-  "ocamllsp",      -- OCaml
-  "pyright",       -- Python
-  "rust_analyzer", -- Rust
-  "texlab",        -- LaTeX
-  "tsserver",      -- TypeScript / JavaScript
-  "yamlls",        -- YAML
+  bashls = "bash-language-server", -- Bash
+  clangd = "clangd", -- C/C++
+  cssls = "css-lsp", -- CSS
+  emmet_ls = "emmet-ls", -- HTML
+  eslint = "eslint-lsp", -- TypeScript / JavaScript
+  gopls = "gopls", -- Go
+  html = "html-lsp", -- HTML
+  jdtls = "jdtls", -- Java
+  jsonls = "json-lsp", -- JSON
+  lua_ls = "lua-language-server", -- Lua
+  ocamllsp = "ocaml-lsp", -- OCaml
+  pyright = "pyright", -- Python
+  rust_analyzer = "rust-analyzer", -- Rust
+  texlab = "texlab", -- LaTeX
+  tsserver = "typescript-language-server", -- TypeScript / JavaScript
+  yamlls = "yaml-language-server", -- YAML
 }
 
 ---List of language servers that can't be installed through `Mason`, but will also be configured by
 ---the native `LSP` client.
----See: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
+---
+---[Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 ---@type string[]
 M.extra_languages = {
   "dartls",
 }
 
 ---List of linters that can be installed through `Mason` and configured by `NoneLS`.
----NOTE: This **need** to be configured manually in the `NoneLS` configuration file.
----See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+---
+---**NOTE**: These **need** to be configured manually in the `NoneLS` configuration file.
+---
+---[Supported Linters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.linters = {
   "pylint", -- Python
 }
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
----NOTE: This **need** to be configured manually in the `NoneLS` configuration file.
----See: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+---
+---**NOTE**: These **need** to be configured manually in the `NoneLS` configuration file.
+---
+---[Support Formatters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.formatters = {
-  "black",        -- Python
+  "black", -- Python
   "clang-format", -- C/C++
-  "isort",        -- Python
-  "ocamlformat",  -- OCaml
-  "prettier",     -- *
-  "stylua",       -- Lua
+  "isort", -- Python
+  "ocamlformat", -- OCaml
+  "prettier", -- *
+  "stylua", -- Lua
 }
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.servers")
