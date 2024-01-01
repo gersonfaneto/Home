@@ -262,6 +262,24 @@ base.mappings.bulk_register({
 -- INFO: Mappings - Search & Replace ...
 base.mappings.bulk_register({
   {
+    mode = { "x" },
+    lhs = "//",
+    rhs = 'y/<C-r>"<CR>',
+    description = "Search for selected text.",
+  },
+  {
+    mode = { "n" },
+    lhs = "n",
+    rhs = "nzzzv",
+    description = "Foward.",
+  },
+  {
+    mode = { "n" },
+    lhs = "N",
+    rhs = "Nzzzv",
+    description = "Backward.",
+  },
+  {
     mode = { "n" },
     lhs = "<ESC>",
     rhs = ":noh<CR>",
@@ -297,6 +315,12 @@ base.mappings.bulk_register({
     lhs = "ss",
     rhs = ":sort<CR>",
     description = "Sort the current selection.",
+  },
+  {
+    mode = { "i" },
+    lhs = "<C-v>",
+    rhs = "<C-r>+",
+    description = "Paste in insert mode.",
   },
   {
     mode = { "x" },
@@ -344,7 +368,7 @@ base.mappings.bulk_register({
     description = "Automatically indent to the appropriate position, when entering insert mode.",
   },
   {
-    mode = { "x", "n" },
+    mode = { "n", "x" },
     lhs = "<Tab>",
     rhs = function()
       local mode = vim.api.nvim_get_mode().mode
@@ -358,7 +382,7 @@ base.mappings.bulk_register({
     description = "Better forward indenting.",
   },
   {
-    mode = { "x", "n" },
+    mode = { "n", "x" },
     lhs = "<S-Tab>",
     rhs = function()
       local mode = vim.api.nvim_get_mode().mode
