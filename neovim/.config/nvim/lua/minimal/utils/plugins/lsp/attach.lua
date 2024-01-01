@@ -133,6 +133,28 @@ function M.on_attach(client, bufnr)
       rhs = vim.diagnostic.goto_next,
       description = "Jump to next diagnostic.",
     },
+    {
+      mode = { "n" },
+      lhs = "]d",
+      rhs = vim.diagnostic.goto_next,
+      description = "Jump to next diagnostic.",
+    },
+    {
+      mode = { "n", "x" },
+      lhs = "<leader>lf",
+      rhs = function()
+        vim.lsp.buf.format({ async = true })
+      end,
+      description = "Format buffer or selection.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>tf",
+      rhs = function()
+        require("minimal.utils.plugins").lsp.formatting.toggle()
+      end,
+      description = "Toggle format on save.",
+    },
   }, { options = { noremap = true, silent = true, buffer = bufnr }, prefix = "LSP: " })
 end
 
