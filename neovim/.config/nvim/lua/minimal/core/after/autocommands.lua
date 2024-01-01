@@ -128,14 +128,30 @@ if types.settings.show_cursor_line then
 
   vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
     pattern = "*",
-    command = "set cursorline",
     group = cursor_group,
+    callback = function()
+      local exclude = { "starter" }
+
+      local excluded = vim.tbl_contains(exclude, vim.bo.filetype)
+
+      if not excluded then
+        vim.cmd("set cursorline")
+      end
+    end,
   })
 
   vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
     pattern = "*",
-    command = "set nocursorline",
     group = cursor_group,
+    callback = function()
+      local exclude = { "starter" }
+
+      local excluded = vim.tbl_contains(exclude, vim.bo.filetype)
+
+      if not excluded then
+        vim.cmd("set nocursorline")
+      end
+    end,
   })
 end
 
@@ -143,7 +159,7 @@ if types.settings.auto_save then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
     callback = function()
-      local disable_file_types = {
+      local excluded = {
         "oil",
         "man",
         "DiffviewFiles",
@@ -151,10 +167,10 @@ if types.settings.auto_save then
 
       local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":p:h")
 
-      local is_allowed = not vim.tbl_contains(disable_file_types, vim.bo.filetype)
+      local exclude = vim.tbl_contains(excluded, vim.bo.filetype)
       local is_directory = vim.fn.isdirectory(path) == 0
 
-      if is_allowed then
+      if not exclude then
         if is_directory then
           vim.fn.mkdir(path, "p")
         end
