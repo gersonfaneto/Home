@@ -7,5 +7,21 @@
       "```"
     ],
     "description": "Generate a code block."
+  },
+  "Prettier Ignore - Block": {
+    "prefix": "pib",
+    "body": [
+      "<!-- prettier-ignore -->"
+    ],
+    "description": "Make `prettier` ignore the next block."
+  },
+  "Prettier Ignore - Range": {
+    "prefix": "pir",
+    "body": [
+      "<!-- prettier-ignore-start -->",
+      "$0",
+      "<!-- prettier-ignore-end -->"
+    ],
+    "description": "Make `prettier` ignore inside a range."
   }
 }
