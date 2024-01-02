@@ -1,5 +1,5 @@
 * TODOs
 
-  - ( ) Improve the README and the overall documentation...
-  - (-) Check for bugs and improvements...
-  - (x) Fix JARVIS.sh - Packages are failing to install. No idea why 🫠.
+  - ( ) Refactor/Updated `JARVIS`.
+  - (-) Check for bugs and improvements.
+  - ( ) Improve the README and the overall documentation.
