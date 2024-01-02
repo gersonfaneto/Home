@@ -36,7 +36,6 @@ packages=(
   lf
   mediainfo
   neofetch
-  neovim
   python-pdftotext
   ripgrep
   rtx
