@@ -18,6 +18,7 @@ return {
         starter.gen_hook.aligning("center", "center"),
       },
       items = {
+        --- Files...
         {
           name = "New File",
           action = "BufferCreate",
@@ -42,11 +43,13 @@ return {
           end,
           section = "Files",
         },
+        --- Search...
         {
           name = "Search Text",
           action = "Telescope live_grep",
           section = "Search",
         },
+        --- Notes...
         {
           name = "Notes",
           action = function()
@@ -59,10 +62,16 @@ return {
           section = "Notes",
         },
         {
+          name = "TODOs",
+          action = "e $HOME/Notes/TODO.norg",
+          section = "Notes",
+        },
+        {
           name = "New Note",
           action = "NewNote",
           section = "Notes",
         },
+        -- Exit...
         {
           name = "Exit",
           action = "qa",
