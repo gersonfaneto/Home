@@ -5,7 +5,13 @@ local M = {}
 base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "-",
+    lhs = "<BS>",
+    rhs = ":Oil<CR>",
+    description = "Open parent directory.",
+  },
+  {
+    mode = { "n" },
+    lhs = '-',
     rhs = ":Oil --float<CR>",
     description = "Open parent directory - Float.",
   },
