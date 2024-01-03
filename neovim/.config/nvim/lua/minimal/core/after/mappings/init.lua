@@ -12,6 +12,7 @@ local mappings = {
     "lazy",
     "lsp",
     "mason",
+    "mini-starter",
     "neo-tree",
     "neorg",
     "noice",
