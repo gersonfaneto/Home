@@ -1,5 +1,12 @@
 * TODOs
 
   - ( ) Refactor/Updated `JARVIS`.
+
+  - ( ) Adopt Gruvbox as the *only* theme. I really don't use the others anyway...
+
+  -- Maybe create a system to easily generate the necessary theme files, based
+     on a specific pallet...
+
   - (-) Check for bugs and improvements.
+
   - ( ) Improve the README and the overall documentation.
