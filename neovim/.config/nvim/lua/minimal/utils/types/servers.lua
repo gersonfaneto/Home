@@ -42,22 +42,22 @@ M.parsers = {
 ---[Mason Registry](https://mason-registry.dev/registry/list)
 ---@type table<string, string>
 M.base_languages = {
-  bashls = "bash-language-server", -- Bash
-  clangd = "clangd", -- C/C++
-  cssls = "css-lsp", -- CSS
-  emmet_ls = "emmet-ls", -- HTML
-  eslint = "eslint-lsp", -- TypeScript / JavaScript
-  gopls = "gopls", -- Go
-  html = "html-lsp", -- HTML
-  jdtls = "jdtls", -- Java
-  jsonls = "json-lsp", -- JSON
-  lua_ls = "lua-language-server", -- Lua
-  ocamllsp = "ocaml-lsp", -- OCaml
-  pyright = "pyright", -- Python
-  rust_analyzer = "rust-analyzer", -- Rust
-  texlab = "texlab", -- LaTeX
+  bashls = "bash-language-server",         -- Bash
+  clangd = "clangd",                       -- C/C++
+  cssls = "css-lsp",                       -- CSS
+  emmet_ls = "emmet-ls",                   -- HTML
+  eslint = "eslint-lsp",                   -- TypeScript / JavaScript
+  gopls = "gopls",                         -- Go
+  html = "html-lsp",                       -- HTML
+  jdtls = "jdtls",                         -- Java
+  jsonls = "json-lsp",                     -- JSON
+  lua_ls = "lua-language-server",          -- Lua
+  ocamllsp = "ocaml-lsp",                  -- OCaml
+  pyright = "pyright",                     -- Python
+  rust_analyzer = "rust-analyzer",         -- Rust
+  texlab = "texlab",                       -- LaTeX
   tsserver = "typescript-language-server", -- TypeScript / JavaScript
-  yamlls = "yaml-language-server", -- YAML
+  yamlls = "yaml-language-server",         -- YAML
 }
 
 ---List of language servers that can't be installed through `Mason`, but will also be configured by
@@ -75,9 +75,7 @@ M.extra_languages = {
 ---
 ---[Supported Linters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
-M.linters = {
-  "pylint", -- Python
-}
+M.linters = {}
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
 ---
@@ -86,12 +84,13 @@ M.linters = {
 ---[Support Formatters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.formatters = {
-  "black", -- Python
-  "clang-format", -- C/C++
-  "isort", -- Python
-  "ocamlformat", -- OCaml
-  "prettier", -- *
-  "stylua", -- Lua
+  "black",              -- Python
+  "isort",              -- Python
+  "stylua",             -- Lua
+  "prettier",           -- JavaScript | TypeScript | Markdown ...
+  "clang-format",       -- C/C++
+  "google-java-format", -- Java
+  "ocamlformat",        -- OCaml
 }
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.servers")
