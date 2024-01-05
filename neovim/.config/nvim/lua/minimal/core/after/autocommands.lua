@@ -89,6 +89,27 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("custom_terminal", { clear = true }),
+  callback = function()
+    vim.opt_local.list = false
+    vim.opt_local.cursorline = false
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+
+    base.mappings.register({
+      mode = { "t" },
+      lhs = "<ESC>",
+      rhs = "<c-\\><c-n>",
+      options = { silent = true, noremap = true },
+      description = "Exit insert mode.",
+    })
+
+    vim.cmd("startinsert")
+  end,
+})
+
 if types.settings.transparent_floats then
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
