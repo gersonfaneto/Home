@@ -1,50 +1,24 @@
 return {
   "SmiteshP/nvim-navic",
+  event = { "LspAttach" },
   config = function()
     local navic = require("nvim-navic")
 
     local interface = require("minimal.utils.interface")
 
-    local icons = interface.icons.get("ui", false)
+    local icons = {
+      ui = interface.icons.get("ui"),
+      kind = interface.icons.get("kind", true),
+    }
 
     navic.setup({
-      highlight = true,
       lsp = {
         auto_attach = true,
-        preference = { "typescript-tools" },
       },
       click = true,
-      separator = " " .. icons.ChevronRight .. " ",
-      depth_limit = 0,
-      depth_limit_indicator = "..",
-      icons = {
-        File = " ",
-        Module = " ",
-        Namespace = " ",
-        Package = " ",
-        Class = " ",
-        Method = " ",
-        Property = " ",
-        Field = " ",
-        Constructor = " ",
-        Enum = " ",
-        Interface = " ",
-        Function = " ",
-        Variable = " ",
-        Constant = " ",
-        String = " ",
-        Number = " ",
-        Boolean = " ",
-        Array = " ",
-        Object = " ",
-        Key = " ",
-        Null = " ",
-        EnumMember = " ",
-        Struct = " ",
-        Event = " ",
-        Operator = " ",
-        TypeParameter = " ",
-      },
+      highlight = true,
+      icons = icons.kind,
+      separator = " " .. icons.ui.ChevronRight .. " ",
     })
   end,
 }

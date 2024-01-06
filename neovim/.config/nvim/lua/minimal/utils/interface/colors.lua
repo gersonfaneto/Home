@@ -7,7 +7,7 @@ M["Gruvbox-Material"] = {
   },
   dark = {
     fg = "#7C7D83",
-    bg = "#1D2022",
+    bg = "#121212",
   },
 }
 
