@@ -1,6 +1,7 @@
 return {
   "lewis6991/gitsigns.nvim",
-  event = { "VeryLazy" },
+  cmd = { "Gitsigns" },
+  event = { "BufRead", "BufNewFile" },
   config = function()
     local interface = require("minimal.utils.interface")
 

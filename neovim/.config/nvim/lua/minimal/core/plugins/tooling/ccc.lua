@@ -1,6 +1,6 @@
 return {
   "uga-rosa/ccc.nvim",
-  event = { "VeryLazy" },
+  cmd = { "CccPick" },
   opts = {
     highlighter = {
       auto_enable = true,

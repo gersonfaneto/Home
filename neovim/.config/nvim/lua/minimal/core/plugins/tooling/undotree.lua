@@ -1,9 +1,14 @@
 return {
   "mbbill/undotree",
-  cmd = { "UndotreeToggle" },
+  cmd = {
+    "UndotreeToggle",
+    "UndotreeHide",
+    "UndotreeShow",
+    "UndotreeFocus",
+  },
   config = function()
-    vim.g.undotree_HighlightChangedWithSign = 0
     vim.g.undotree_WindowLayout = 4
     vim.g.undotree_SetFocusWhenToggle = 1
+    vim.g.undotree_HighlightChangedWithSign = 0
   end,
 }

@@ -1,9 +1,31 @@
 return {
   "stevearc/oil.nvim",
+  cmd = "Oil",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
   },
+  -- If started with a directory argument, load Oil immediately.
+  -- See: https://github.com/folke/lazy.nvim/issues/533
+  init = function()
+    if vim.fn.argc() == 1 then
+      local stat = vim.loop.fs_stat(vim.fn.argv(0))
+      if stat and stat.type == "directory" then
+        require("lazy").load({ plugins = { "oil.nvim" } })
+      end
+    end
+    if not require("lazy.core.config").plugins["oil.nvim"]._.loaded then
+      vim.api.nvim_create_autocmd("BufNew", {
+        callback = function()
+          if vim.fn.isdirectory(vim.fn.expand("<afile>")) == 1 then
+            require("lazy").load({ plugins = { "oil.nvim" } })
+            -- Once oil is loaded, we can delete this `autocmd`.
+            return true
+          end
+        end,
+      })
+    end
+  end,
   config = function()
     local oil = require("oil")
 
