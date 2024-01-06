@@ -1,12 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "VeryLazy" },
-  build = function()
-    vim.api.nvim_command("TSUpdate")
-  end,
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
+  build = ":TSUpdate",
+  event = { "BufReadPost", "BufNewFile" },
   config = function()
     local configs = require("nvim-treesitter.configs")
     local parsers = require("nvim-treesitter.parsers").get_parser_configs()

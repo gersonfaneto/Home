@@ -14,8 +14,6 @@ return {
     local trouble = require("trouble")
     local telescope = require("telescope")
 
-    local providers = require("trouble.providers.telescope")
-
     trouble.setup({
       mode = "quickfix",
     })
