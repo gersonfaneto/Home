@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set -l fonts_config $HOME/.config/kitty/fonts.conf
+set -l fonts_config $HOME/.config/kitty/extras/fonts.conf
 
 set -l available_fonts (cat $fonts_config | grep '^# font_family' | sed 's/^# font_family\s*//g')
 
