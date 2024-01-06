@@ -1,6 +1,9 @@
 return {
   "nvimtools/none-ls.nvim",
-  event = { "VeryLazy" },
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "williamboman/mason.nvim",
+  },
   config = function()
     local types = require("minimal.utils.types")
     local plugins = require("minimal.utils.plugins")
@@ -8,7 +11,7 @@ return {
     local null_ls = require("null-ls")
 
     null_ls.setup({
-      border = types.settings.transparent_floats and "double" or "none",
+      border = "double",
       sources = {
         -- Python
         null_ls.builtins.formatting.black,
@@ -19,6 +22,11 @@ return {
 
         -- JavaScript | TypeScript | Markdown ...
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.eslint_d.with({
+          condition = function(utils)
+            return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
+          end,
+        }),
 
         -- C | C++
         null_ls.builtins.formatting.clang_format.with({ filetypes = { "c", "cpp" } }),
