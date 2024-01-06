@@ -2,11 +2,8 @@
 
   - ( ) Refactor/Updated `JARVIS`.
 
-  - ( ) Adopt Gruvbox as the *only* theme. I really don't use the others anyway...
-
-  -- Maybe create a system to easily generate the necessary theme files, based
-     on a specific pallet...
+  - (x) Adopt Gruvbox as the *only* theme. I really don't use the others anyway...
 
   - (-) Check for bugs and improvements.
 
-  - ( ) Improve the README and the overall documentation.
+  - (?) Improve the README and the overall documentation.
