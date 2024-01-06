@@ -1,5 +1,5 @@
 if type -q bat
-  export BAT_THEME="Gruvbox-Material (Light)"
+  export BAT_THEME="Gruvbox Material - (Light)"
 end
 
 if type -q fzf

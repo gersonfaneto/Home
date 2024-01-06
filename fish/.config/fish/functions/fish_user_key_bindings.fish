@@ -14,11 +14,8 @@ function fish_user_key_bindings
   
   bind \cf font-selector
 
-  bind \ct fzf_theme
   bind \cb fzf_background
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
-
-  # fish_vi_key_bindings --no-erase insert
 end

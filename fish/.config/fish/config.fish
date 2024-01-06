@@ -24,18 +24,14 @@ alias .3  "cd ../../.."
 alias .4  "cd ../../../.."
 alias .5  "cd ../../../../.."
 
-if not test -f $HOME/.config/fish/theme.fish
-  ln -sf $HOME/.config/fish/themes/dark/Gruvbox-Material.fish $HOME/.config/fish/theme.fish
-end
+source "$HOME/.config/fish/colors/current.fish"
 
-source $HOME/.config/fish/theme.fish
-
-source $HOME/.config/fish/settings/alias.fish
-source $HOME/.config/fish/settings/exports.fish
-source $HOME/.config/fish/settings/functions.fish
-source $HOME/.config/fish/settings/enviroment.fish
+source "$HOME/.config/fish/settings/alias.fish"
+source "$HOME/.config/fish/settings/exports.fish"
+source "$HOME/.config/fish/settings/functions.fish"
+source "$HOME/.config/fish/settings/enviroment.fish"
 
 # NOTE: This file is not tracked by git, should be used for local/temporary settings.
-if test -f $HOME/.config/fish/settings/extras.fish
-  source $HOME/.config/fish/settings/extras.fish
+if test -f "$HOME/.config/fish/settings/extras.fish"
+  source "$HOME/.config/fish/settings/extras.fish"
 end
