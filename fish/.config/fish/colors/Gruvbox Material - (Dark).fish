@@ -11,5 +11,5 @@ if type -q fzf
   --color=marker:#E2CCA9,spinner:#F2594B,header:#80AA9E"
 end
 
-export BACKGROUND="dark"
+export BACKGROUND="Dark"
 export COLORSCHEME="Gruvbox-Material"
