@@ -16,8 +16,6 @@ return {
     },
   },
   config = function()
-    local interface = require("minimal.utils.interface")
-
     local cmp = require("cmp")
     local cmp_types = require("cmp.types.cmp")
     local cmp_mapping = cmp.mapping
@@ -26,9 +24,9 @@ return {
     local luasnip = require("luasnip")
 
     local icons = {
-      ui = interface.icons.get("ui"),
-      git = interface.icons.get("git"),
-      misc = interface.icons.get("misc"),
+      ui = utils.interface.icons.get("ui"),
+      git = utils.interface.icons.get("git"),
+      misc = utils.interface.icons.get("misc"),
     }
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })

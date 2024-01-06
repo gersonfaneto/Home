@@ -5,9 +5,6 @@ return {
     "williamboman/mason.nvim",
   },
   config = function()
-    local types = require("minimal.utils.types")
-    local plugins = require("minimal.utils.plugins")
-
     local null_ls = require("null-ls")
 
     null_ls.setup({
@@ -38,7 +35,7 @@ return {
         null_ls.builtins.formatting.ocamlformat,
       },
       on_attach = function(client, bufnr)
-        plugins.lsp.formatting.on_attach(client, bufnr)
+        utils.plugins.lsp.formatting.on_attach(client, bufnr)
       end,
     })
   end,

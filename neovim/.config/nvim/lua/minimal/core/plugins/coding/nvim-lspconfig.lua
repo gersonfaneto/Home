@@ -7,13 +7,9 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
 
-    local base = require("minimal.utils.base")
-    local types = require("minimal.utils.types")
-    local plugins = require("minimal.utils.plugins")
-
     local servers = vim.tbl_flatten({
-      vim.tbl_keys(types.servers.base_languages),
-      types.servers.extra_languages,
+      vim.tbl_keys(utils.types.servers.base_languages),
+      utils.types.servers.extra_languages,
     })
 
     for _, server in pairs(servers) do
@@ -24,12 +20,12 @@ return {
       local has_settings, extras = pcall(require, "minimal.core.plugins.coding.settings." .. server)
 
       local settings = {
-        on_attach = plugins.lsp.attach.on_attach,
-        capabilities = plugins.lsp.capabilities.default_capabilities(),
+        on_attach = utils.plugins.lsp.attach.on_attach,
+        capabilities = utils.plugins.lsp.capabilities.default_capabilities(),
       }
 
       if has_settings then
-        settings = base.tables.merge(extras, settings)
+        settings = utils.base.tables.merge(extras, settings)
       end
 
       lspconfig[server].setup(settings)

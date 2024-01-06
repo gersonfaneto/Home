@@ -1,6 +1,3 @@
-local base = require("minimal.utils.base")
-local types = require("minimal.utils.types")
-
 local M = {}
 
 vim.api.nvim_create_autocmd("InsertEnter", {
@@ -84,7 +81,7 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
 
-    base.mappings.register({
+    utils.base.mappings.register({
       mode = { "n" },
       lhs = "q",
       rhs = ":close<CR>",
@@ -103,7 +100,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
 
-    base.mappings.register({
+    utils.base.mappings.register({
       mode = { "t" },
       lhs = "<ESC>",
       rhs = "<c-\\><c-n>",
@@ -115,7 +112,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
-if types.settings.auto_restore_cursor_position then
+if utils.types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
     callback = function()
       local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -127,7 +124,7 @@ if types.settings.auto_restore_cursor_position then
   })
 end
 
-if types.settings.auto_remove_new_lines_comment then
+if utils.types.settings.auto_remove_new_lines_comment then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
     callback = function()
@@ -136,7 +133,7 @@ if types.settings.auto_remove_new_lines_comment then
   })
 end
 
-if types.settings.show_cursor_line then
+if utils.types.settings.show_cursor_line then
   local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 
   vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
@@ -168,7 +165,7 @@ if types.settings.show_cursor_line then
   })
 end
 
-if types.settings.auto_save then
+if utils.types.settings.auto_save then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
     callback = function()

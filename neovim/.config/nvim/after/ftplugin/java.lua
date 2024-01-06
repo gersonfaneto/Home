@@ -1,6 +1,3 @@
-local base = require("minimal.utils.base")
-local plugins = require("minimal.utils.plugins")
-
 local has_jdtls, jdtls = pcall(require, "jdtls")
 local has_jdtls_setup, jdtls_setup = pcall(require, "jdtls.setup")
 
@@ -11,7 +8,7 @@ end
 local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 local home = vim.fn.expand("$HOME") .. "/"
 
-local capabilities = plugins.lsp.capabilities.default_capabilities()
+local capabilities = utils.plugins.lsp.capabilities.default_capabilities()
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
@@ -28,7 +25,7 @@ local root_dir = jdtls_setup.find_root(root_markers)
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
 
-if not base.files.is_directory(workspace_dir) then
+if not utils.base.files.is_directory(workspace_dir) then
   os.execute("mkdir " .. workspace_dir)
 end
 
@@ -55,7 +52,7 @@ local config = {
     "-data",
     workspace_dir,
   },
-  on_attach = plugins.lsp.attach.on_attach,
+  on_attach = utils.plugins.lsp.attach.on_attach,
   capabilities = capabilities,
   root_dir = root_dir,
   settings = {

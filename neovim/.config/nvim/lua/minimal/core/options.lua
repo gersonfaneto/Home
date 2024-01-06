@@ -1,5 +1,3 @@
-local types = require("minimal.utils.types")
-
 local M = {}
 
 M.g = {
@@ -45,7 +43,7 @@ M.opt = {
   number = true,
   relativenumber = true,
   termguicolors = true,
-  colorcolumn = types.settings.show_color_column and types.settings.color_column or "",
+  colorcolumn = utils.types.settings.show_color_column and utils.types.settings.color_column or "",
   signcolumn = "yes",
   cmdheight = 1,
   scrolloff = 10,

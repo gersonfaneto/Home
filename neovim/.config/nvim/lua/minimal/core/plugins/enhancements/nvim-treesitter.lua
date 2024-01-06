@@ -6,8 +6,6 @@ return {
     local configs = require("nvim-treesitter.configs")
     local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 
-    local types = require("minimal.utils.types")
-
     -- BUG: See: https://github.com/nvim-treesitter/nvim-treesitter/issues/4945
     parsers.dart = {
       install_info = {
@@ -18,7 +16,7 @@ return {
     }
 
     configs.setup({
-      ensure_installed = types.servers.parsers,
+      ensure_installed = utils.types.servers.parsers,
       auto_install = true,
       sync_install = false,
       indent = {

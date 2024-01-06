@@ -18,12 +18,10 @@ return {
       },
     })
 
-    local types = require("minimal.utils.types")
-
     local packages = vim.tbl_flatten({
-      types.servers.linters,
-      types.servers.formatters,
-      vim.tbl_values(types.servers.base_languages),
+      utils.types.servers.linters,
+      utils.types.servers.formatters,
+      vim.tbl_values(utils.types.servers.base_languages),
     })
 
     local registry = require("mason-registry")

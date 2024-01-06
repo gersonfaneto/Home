@@ -2,11 +2,8 @@ return {
   "sainnhe/gruvbox-material",
   priority = 1000,
   config = function()
-    local types = require("minimal.utils.types")
-    local interface = require("minimal.utils.interface")
-
-    local colors = interface.colors.get_colors()
-    local background = interface.colors.get_background()
+    local colors = utils.interface.colors.get_colors()
+    local background = utils.interface.colors.get_background()
 
     vim.g.gruvbox_material_foreground = "material"
     vim.g.gruvbox_material_background = "hard"
@@ -15,9 +12,9 @@ return {
     vim.g.gruvbox_material_float_style = "dim"
     vim.g.gruvbox_material_statusline_style = "material"
 
-    vim.g.gruvbox_material_transparent_background = types.settings.transparent_background and 2 or 0
+    vim.g.gruvbox_material_transparent_background = utils.types.settings.transparent_background and 2 or 0
 
-    vim.g.gruvbox_material_dim_inactive_windows = types.settings.dim_inactive and 1 or 0
+    vim.g.gruvbox_material_dim_inactive_windows = utils.types.settings.dim_inactive and 1 or 0
 
     vim.g.gruvbox_material_enable_bold = 1
     vim.g.gruvbox_material_enable_italic = 1

@@ -2,10 +2,8 @@ return {
   "nvim-lualine/lualine.nvim",
   event = { "UIEnter" },
   config = function()
-    local interface = require("minimal.utils.interface")
-
-    local colors = interface.colors.get_colors()
-    local icons = interface.icons.get("diagnostics")
+    local colors = utils.interface.colors.get_colors()
+    local icons = utils.interface.icons.get("diagnostics")
 
     local lualine = require("lualine")
 

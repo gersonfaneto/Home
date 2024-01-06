@@ -1,10 +1,7 @@
-local base = require("minimal.utils.base")
-local types = require("minimal.utils.types")
-
 local M = {}
 
 -- INFO: Mappings - Quick Toggles...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<C-t><C-r>",
@@ -13,7 +10,7 @@ base.mappings.bulk_register({
       if vim.opt.colorcolumn:get()[1] ~= nil then
         vim.opt.colorcolumn = nil
       else
-        vim.opt.colorcolumn = types.settings.color_column
+        vim.opt.colorcolumn = utils.types.settings.color_column
       end
     end,
     description = "Toggle color column.",
@@ -39,7 +36,7 @@ base.mappings.bulk_register({
 }, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Commands...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>nn",
@@ -61,7 +58,7 @@ base.mappings.bulk_register({
 }, { prefix = "Custom Commands: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Splits & Windows...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<C-Down>",
@@ -137,7 +134,7 @@ base.mappings.bulk_register({
 }, { prefix = "Splits & Windows: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Buffers...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "[b",
@@ -161,7 +158,7 @@ base.mappings.bulk_register({
 }, { prefix = "Buffers: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Basic Operations...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "W",
@@ -210,7 +207,7 @@ base.mappings.bulk_register({
 }, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Navigation...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<C-u>",
@@ -266,7 +263,7 @@ base.mappings.bulk_register({
 }, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Search & Replace ...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "x" },
     lhs = "//",
@@ -309,7 +306,7 @@ base.mappings.bulk_register({
 }, { prefix = "Search & Replace: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Better Editing...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "sa",
@@ -440,7 +437,7 @@ base.mappings.bulk_register({
 }, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Text Objects...
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "x" },
     lhs = "al",

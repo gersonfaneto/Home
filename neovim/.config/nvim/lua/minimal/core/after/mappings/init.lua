@@ -1,5 +1,3 @@
-local types = require("minimal.utils.types")
-
 local mappings = {
   base = {
     "ccc",
@@ -43,7 +41,7 @@ for _, mapping in pairs(mappings.base) do
 end
 
 for condition, mapping in pairs(mappings.extras) do
-  if types.settings[condition] then
+  if utils.types.settings[condition] then
     local present, _ = pcall(require, mappings.prefix .. mapping)
 
     if not present then

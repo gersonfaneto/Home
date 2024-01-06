@@ -3,9 +3,7 @@ return {
   cmd = { "Gitsigns" },
   event = { "BufRead", "BufNewFile" },
   config = function()
-    local interface = require("minimal.utils.interface")
-
-    local icons = interface.icons.get("ui")
+    local icons = utils.interface.icons.get("ui")
 
     local gitsigns = require("gitsigns")
 

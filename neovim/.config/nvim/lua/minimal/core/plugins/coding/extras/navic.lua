@@ -4,11 +4,9 @@ return {
   config = function()
     local navic = require("nvim-navic")
 
-    local interface = require("minimal.utils.interface")
-
     local icons = {
-      ui = interface.icons.get("ui"),
-      kind = interface.icons.get("kind", true),
+      ui = utils.interface.icons.get("ui"),
+      kind = utils.interface.icons.get("kind", true),
     }
 
     navic.setup({

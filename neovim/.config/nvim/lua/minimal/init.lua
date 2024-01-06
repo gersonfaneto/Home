@@ -1,3 +1,5 @@
+require("minimal.utils")
+
 require("minimal.core.options")
 require("minimal.core.mappings")
 require("minimal.core.after")

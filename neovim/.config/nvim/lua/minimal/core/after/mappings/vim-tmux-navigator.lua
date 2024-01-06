@@ -1,9 +1,7 @@
-local base = require("minimal.utils.base")
-
 local M = {}
 
 if os.getenv("TMUX") ~= nil then
-  base.mappings.bulk_register({
+  utils.base.mappings.bulk_register({
     {
       mode = { "n" },
       lhs = "<C-Left>",

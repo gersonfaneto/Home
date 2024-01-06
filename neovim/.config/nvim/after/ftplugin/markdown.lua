@@ -1,15 +1,12 @@
-local base = require("minimal.utils.base")
-local plugins = require("minimal.utils.plugins")
-
 local M = {}
 
-base.mappings.bulk_register({
+utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>sp",
     rhs = function()
-      if plugins.marp.is_marp() then
-        plugins.marp.start_server()
+      if utils.plugins.marp.is_marp() then
+        utils.plugins.marp.start_server()
       else
         vim.cmd("MarkdownPreview")
       end
@@ -20,8 +17,8 @@ base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>ep",
     rhs = function()
-      if plugins.marp.is_marp() then
-        plugins.marp.stop_server()
+      if utils.plugins.marp.is_marp() then
+        utils.plugins.marp.stop_server()
       else
         vim.cmd("MarkdownPreviewStop")
       end
