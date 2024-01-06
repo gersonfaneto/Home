@@ -41,7 +41,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "]q",
+    lhs = "]t",
     rhs = function()
       require("trouble").next({
         skip_groups = true,
@@ -52,7 +52,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "[q",
+    lhs = "[t",
     rhs = function()
       require("trouble").previous({
         skip_groups = true,
@@ -63,7 +63,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "]Q",
+    lhs = "[T",
     rhs = function()
       require("trouble").first({
         skip_groups = true,
@@ -74,7 +74,7 @@ base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "[Q",
+    lhs = "]T",
     rhs = function()
       require("trouble").last({
         skip_groups = true,
