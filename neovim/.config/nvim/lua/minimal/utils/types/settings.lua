@@ -1,20 +1,9 @@
 ---@class Settings
 local M = {}
 
----The `Theme` to be loaded and configured on startup.
----Default: `Gruvbox-Material` with the dark background.
----@type Theme
-M.theme = {
-  priority = false,
-  background = "dark",
-  colorscheme = "Gruvbox-Material"
-}
 ---Set to `true` to make the background transparent, subject to colorscheme support.
 ---@type boolean
 M.transparent_background = false
----Set to `true` to make the floats transparent.
----@type boolean
-M.transparent_floats = false
 ---Set to `true` to dim inactive windows/splits, subject to colorscheme support.
 ---@type boolean
 M.dim_inactive = false

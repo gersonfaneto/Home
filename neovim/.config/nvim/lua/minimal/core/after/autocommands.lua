@@ -17,6 +17,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
+  end,
+})
+
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "set spell",
   pattern = {
@@ -106,19 +114,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd("startinsert")
   end,
 })
-
-if types.settings.transparent_floats then
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-      vim.cmd("highlight WinSeparator guibg=NONE")
-      vim.cmd("highlight Pmenu guibg=NONE")
-      vim.cmd("highlight Normal guibg=NONE guifg=NONE")
-      vim.cmd("highlight NormalNC guibg=NONE guifg=NONE")
-      vim.cmd("highlight NormalFloat guibg=NONE guifg=NONE")
-      vim.cmd("highlight FloatBorder guifg=NONE guibg=NONE")
-    end,
-  })
-end
 
 if types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
