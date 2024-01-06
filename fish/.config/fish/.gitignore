@@ -1,5 +1,5 @@
 completions/*
 fish_variables
 
-theme.fish
-settings/extras.fish
+extras/colors.fish
+extras/extras.fish
