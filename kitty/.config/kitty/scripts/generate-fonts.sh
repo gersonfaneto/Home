@@ -4,7 +4,7 @@ FONTS_DIRECTORY="$HOME/.local/share/fonts/YADR/"
 KITTY_DIRECTORY="$HOME/.config/kitty/"
 
 DEFAULT_FONT="Writer"
-FONTS_FILE="$KITTY_DIRECTORY/fonts.conf"
+FONTS_FILE="$KITTY_DIRECTORY/extras/fonts.conf"
 
 AVAILABLE_FONTS=$(find "${FONTS_DIRECTORY}" -mindepth 1 -type d | xargs -I {} basename {})
 IFS=$'\n'
