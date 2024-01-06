@@ -24,14 +24,14 @@ alias .3  "cd ../../.."
 alias .4  "cd ../../../.."
 alias .5  "cd ../../../../.."
 
-source "$HOME/.config/fish/colors/current.fish"
+source "$HOME/.config/fish/extras/colors.fish"
 
-source "$HOME/.config/fish/settings/alias.fish"
-source "$HOME/.config/fish/settings/exports.fish"
-source "$HOME/.config/fish/settings/functions.fish"
-source "$HOME/.config/fish/settings/enviroment.fish"
+source "$HOME/.config/fish/extras/alias.fish"
+source "$HOME/.config/fish/extras/exports.fish"
+source "$HOME/.config/fish/extras/functions.fish"
+source "$HOME/.config/fish/extras/enviroment.fish"
 
 # NOTE: This file is not tracked by git, should be used for local/temporary settings.
-if test -f "$HOME/.config/fish/settings/extras.fish"
-  source "$HOME/.config/fish/settings/extras.fish"
+if test -f "$HOME/.config/fish/extras/extras.fish"
+  source "$HOME/.config/fish/extras/extras.fish"
 end

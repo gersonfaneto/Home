@@ -8,11 +8,11 @@ function fzf_background
       echo "Something went very wrong..."
   end
 
-  ln -sf "$HOME/.config/fish/colors/$COLORS.fish" "$HOME/.config/fish/colors/current.fish"
-  source "$HOME/.config/fish/colors/current.fish"
+  ln -sf "$HOME/.config/fish/colors/$COLORS.fish" "$HOME/.config/fish/extras/colors.fish"
+  source "$HOME/.config/fish/extras/colors.fish"
 
-  ln -fs "$HOME/.config/tmux/colors/$COLORS.conf" "$HOME/.config/tmux/colors/current.conf"
-  tmux source "$HOME/.config/tmux/colors/current.conf"
+  ln -fs "$HOME/.config/tmux/colors/$COLORS.conf" "$HOME/.config/tmux/extras/colors.conf"
+  tmux source "$HOME/.config/tmux/extras/colors.conf"
 
   set sessions (tmux list-sessions -F '#S')
 
@@ -21,12 +21,12 @@ function fzf_background
     for window in $windows
       set panes (tmux list-panes -t $session:$window -F '#P')
       for pane in $panes
-        tmux send-keys -t $session:$window.$pane "source $HOME/.config/fish/colors/current.fish && clear" ENTER
+        tmux send-keys -t $session:$window.$pane "source $HOME/.config/fish/extras/colors.fish && clear" ENTER
       end
     end
   end
 
-  ln -fs "$HOME/.config/kitty/colors/$COLORS.conf" "$HOME/.config/kitty/colors/current.conf"
+  ln -fs "$HOME/.config/kitty/colors/$COLORS.conf" "$HOME/.config/kitty/extras/colors.conf"
   killall -SIGUSR1 kitty
 
   commandline -f repaint

@@ -1,1 +1,0 @@
-/home/gerson/.config/fish/colors/Gruvbox Material - (Light).fish
