@@ -1,12 +1,12 @@
 local types = require("minimal.utils.types")
 
-local notify = require("lazy.core.util")
-
 local M = {}
 
 M.format_on_save = types.settings.format_on_save
 
 function M.toggle()
+  local notify = require("lazy.core.util")
+
   if types.settings.format_on_save == false then
     M.format_on_save = false
   else
