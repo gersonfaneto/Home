@@ -5,7 +5,8 @@ return {
     local types = require("minimal.utils.types")
     local interface = require("minimal.utils.interface")
 
-    local colors = interface.colors.get()
+    local colors = interface.colors.get_colors()
+    local background = interface.colors.get_background()
 
     vim.g.gruvbox_material_foreground = "material"
     vim.g.gruvbox_material_background = "hard"
@@ -24,7 +25,7 @@ return {
       bg0 = { colors.bg, "234" },
     }
 
-    vim.cmd("set background=" .. os.getenv("BACKGROUND"))
+    vim.cmd("set background=" .. background)
     vim.cmd("colorscheme gruvbox-material")
   end,
 }

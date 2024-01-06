@@ -1,8 +1,5 @@
 local base = require("minimal.utils.base")
 local types = require("minimal.utils.types")
-local interface = require("minimal.utils.interface")
-
-local colors = interface.colors.get()
 
 local M = {}
 
@@ -115,10 +112,10 @@ if types.settings.transparent_floats then
     callback = function()
       vim.cmd("highlight WinSeparator guibg=NONE")
       vim.cmd("highlight Pmenu guibg=NONE")
-      vim.cmd("highlight Normal guibg=none guifg=none")
-      vim.cmd("highlight NormalNC guibg=none guifg=none")
-      vim.cmd("highlight NormalFloat guibg=none guifg=none")
-      vim.cmd("highlight FloatBorder guifg=" .. colors.fg .. " guibg=none")
+      vim.cmd("highlight Normal guibg=NONE guifg=NONE")
+      vim.cmd("highlight NormalNC guibg=NONE guifg=NONE")
+      vim.cmd("highlight NormalFloat guibg=NONE guifg=NONE")
+      vim.cmd("highlight FloatBorder guifg=NONE guibg=NONE")
     end,
   })
 end
