@@ -48,7 +48,6 @@ packages=(
   usql
   vimv
   xh
-  yazi
   zip
   zoxide
 )
