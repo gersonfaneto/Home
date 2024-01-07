@@ -1,10 +1,13 @@
-return {
+local M = {
   "chrishrb/gx.nvim",
   event = { "VeryLazy" },
   dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    local gx = require("gx")
-
-    gx.setup({})
-  end,
 }
+
+function M.config()
+  local gx = require("gx")
+
+  gx.setup({})
+end
+
+return M

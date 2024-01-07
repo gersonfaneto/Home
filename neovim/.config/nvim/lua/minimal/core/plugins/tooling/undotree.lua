@@ -1,4 +1,4 @@
-return {
+local M = {
   "mbbill/undotree",
   cmd = {
     "UndotreeToggle",
@@ -6,9 +6,21 @@ return {
     "UndotreeShow",
     "UndotreeFocus",
   },
-  config = function()
-    vim.g.undotree_WindowLayout = 4
-    vim.g.undotree_SetFocusWhenToggle = 1
-    vim.g.undotree_HighlightChangedWithSign = 0
-  end,
 }
+
+function M.config()
+  vim.g.undotree_WindowLayout = 4
+  vim.g.undotree_SetFocusWhenToggle = 1
+  vim.g.undotree_HighlightChangedWithSign = 0
+end
+
+utils.base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>ut",
+    rhs = ":UndotreeToggle<CR>",
+    description = "Toggle.",
+  },
+}, { options = { silent = true, noremap = true }, prefix = "UndoTree: " })
+
+return M

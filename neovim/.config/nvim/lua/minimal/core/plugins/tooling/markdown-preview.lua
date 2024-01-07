@@ -1,4 +1,4 @@
-return {
+local M = {
   "iamcco/markdown-preview.nvim",
   build = function()
     vim.fn["mkdp#util#install"]()
@@ -7,7 +7,10 @@ return {
     "BufReadPre *.md",
     "BufNewFile *.md",
   },
-  config = function()
-    vim.g.mkdp_filetypes = { "markdown" }
-  end,
 }
+
+function M.config()
+  vim.g.mkdp_filetypes = { "markdown" }
+end
+
+return M

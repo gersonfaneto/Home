@@ -1,3 +1,5 @@
+local M = {}
+
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazy_path) then
@@ -77,3 +79,13 @@ local lazy_options = {
 }
 
 lazy.setup(include_directories, lazy_options)
+
+utils.base.mappings.register({
+  mode = { "n" },
+  lhs = "<leader>lh",
+  rhs = ":Lazy<CR>",
+  options = { silent = true, noremap = true },
+  description = "Lazy: Open.",
+})
+
+return M

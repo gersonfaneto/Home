@@ -1,9 +1,12 @@
-return {
+local M = {
   "LunarVim/breadcrumbs.nvim",
   event = { "LspAttach" },
-  config = function()
-    local breadcrumbs = require("breadcrumbs")
-
-    breadcrumbs.setup()
-  end,
 }
+
+function M.config()
+  local breadcrumbs = require("breadcrumbs")
+
+  breadcrumbs.setup()
+end
+
+return M
