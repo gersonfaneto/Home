@@ -1,12 +1,18 @@
 ---@class Settings
 local M = {}
 
----Set to `true` to make the background transparent, subject to colorscheme support.
----@type boolean
-M.transparent_background = false
 ---Set to `true` to dim inactive windows/splits, subject to colorscheme support.
 ---@type boolean
 M.dim_inactive = false
+---Based on the options from `sainnhe/gruvbox-material`.
+---@type "soft" | "medium" | "hard"
+M.material_background = "hard"
+---Based on the options from `sainnhe/gruvbox-material`.
+---@type "original" | "material" | "mix"
+M.material_foreground = "material"
+---Set to `true` to make the background transparent, subject to colorscheme support.
+---@type boolean
+M.transparent_background = false
 
 ---Set to `false` to disable the horizontal line at the current cursor position.
 ---@type boolean
