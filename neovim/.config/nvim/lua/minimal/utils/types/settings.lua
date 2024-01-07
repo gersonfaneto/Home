@@ -39,12 +39,12 @@ M.auto_remove_new_lines_comment = false
 M.inlay_hints = false
 ---Set to `true` to enable `virtual_text`, for displaying diagnostics inline.
 ---@type boolean
-M.virtual_text = false
----Set to `true` to enable formatting files when saved, provided by `nvimtools/none-ls.nvim`.
+M.virtual_text = true
+---Set to `false` to disable formatting files when saved, provided by `nvimtools/none-ls.nvim`.
 ---@type boolean
 M.format_on_save = false
----Set to `true` to enable A.I. enhanced coding features, provided by `zbirenbaum/copilot.lua`.
+---Set to `false` to disable A.I. enhanced coding features, provided by `zbirenbaum/copilot.lua`.
 ---@type boolean
-M.enhanced_coding = false
+M.enhanced_coding = true
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.settings")
