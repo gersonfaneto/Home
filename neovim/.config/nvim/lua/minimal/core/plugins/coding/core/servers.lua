@@ -19,18 +19,19 @@ function M.config()
       goto continue
     end
 
-    local has_settings, extras = pcall(require, "minimal.core.plugins.coding.settings." .. server)
+    local settings = "minimal.core.plugins.coding.core.servers."
+    local has_settings, extras = pcall(require, settings .. server)
 
-    local settings = {
+    local opts = {
       on_attach = utils.plugins.lsp.attach.on_attach,
       capabilities = utils.plugins.lsp.capabilities.default_capabilities(),
     }
 
     if has_settings then
-      settings = utils.base.tables.merge(extras, settings)
+      opts = utils.base.tables.merge(extras, opts)
     end
 
-    lspconfig[server].setup(settings)
+    lspconfig[server].setup(opts)
 
     ::continue::
   end

@@ -24,8 +24,9 @@ if not ok then
 end
 
 local include_directories = {
-  { import = "minimal.core.plugins.coding" },
+  { import = "minimal.core.plugins.coding.core" },
   { import = "minimal.core.plugins.coding.extras" },
+  { import = "minimal.core.plugins.coding.languages" },
   { import = "minimal.core.plugins.editing" },
   { import = "minimal.core.plugins.enhancements" },
   { import = "minimal.core.plugins.searching" },
