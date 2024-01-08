@@ -27,6 +27,12 @@ function M.config()
         end,
       }),
 
+      -- PHP
+      null_ls.builtins.formatting.pint,
+
+      -- Ruby
+      null_ls.builtins.formatting.rubocop,
+
       -- C | C++
       null_ls.builtins.formatting.clang_format.with({ filetypes = { "c", "cpp" } }),
 
