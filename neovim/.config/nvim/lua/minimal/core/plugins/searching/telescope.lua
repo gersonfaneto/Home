@@ -25,14 +25,6 @@ function M.config()
         prompt_position = "top",
         preview_cutoff = 120,
       },
-      mappings = {
-        n = {
-          ["<C-d>"] = actions.delete_buffer,
-        },
-        i = {
-          ["<C-d>"] = actions.delete_buffer,
-        },
-      },
     },
     pickers = {
       find_files = {
@@ -63,6 +55,14 @@ function M.config()
           height = 0.4,
           prompt_position = "top",
           preview_cutoff = 120,
+        },
+        mappings = {
+          n = {
+            ["<C-d>"] = actions.delete_buffer,
+          },
+          i = {
+            ["<C-d>"] = actions.delete_buffer,
+          },
         },
       },
       live_grep = {
