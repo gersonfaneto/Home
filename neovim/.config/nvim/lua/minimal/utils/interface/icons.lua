@@ -149,6 +149,7 @@ local icons = {
   },
 
   misc = {
+    DB = "",
     Robot = "ﮧ",
     Squirrel = "",
     Tag = "",
