@@ -52,8 +52,10 @@ M.base_languages = {
   jsonls = "json-lsp", -- JSON
   lua_ls = "lua-language-server", -- Lua
   ocamllsp = "ocaml-lsp", -- OCaml
+  phpactor = "phpactor", -- PHP
   pyright = "pyright", -- Python
   rust_analyzer = "rust-analyzer", -- Rust
+  solargraph = "solargraph", -- Ruby
   texlab = "texlab", -- LaTeX
   tsserver = "typescript-language-server", -- TypeScript / JavaScript
   yamlls = "yaml-language-server", -- YAML
@@ -65,7 +67,7 @@ M.base_languages = {
 ---[Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 ---@type string[]
 M.extra_languages = {
-  "dartls",
+  "dartls", -- Dart
 }
 
 ---List of linters that can be installed through `Mason` and configured by `NoneLS`.
@@ -75,7 +77,7 @@ M.extra_languages = {
 ---[Supported Linters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.linters = {
-  "eslint_d",
+  "eslint_d", -- JavaScript | TypeScript
 }
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
@@ -86,12 +88,12 @@ M.linters = {
 ---@type string[]
 M.formatters = {
   "black", -- Python
-  "isort", -- Python
-  "stylua", -- Lua
-  "prettier", -- JavaScript | TypeScript | Markdown ...
   "clang-format", -- C/C++
   "google-java-format", -- Java
+  "isort", -- Python
   "ocamlformat", -- OCaml
+  "prettier", -- JavaScript | TypeScript | Markdown ...
+  "stylua", -- Lua
 }
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.servers")
