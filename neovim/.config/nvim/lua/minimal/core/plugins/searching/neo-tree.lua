@@ -89,9 +89,15 @@ end
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<C-f><C-t>",
+    lhs = "<leader>nf",
     rhs = ":Neotree toggle float<CR>",
-    description = "Toggle NeoTree.",
+    description = "Toggle NeoTree - Float.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ns",
+    rhs = ":Neotree toggle left<CR>",
+    description = "Toggle NeoTree - Side.",
   },
 }, { options = { silent = true, noremap = true }, prefix = "NeoTree: " })
 
