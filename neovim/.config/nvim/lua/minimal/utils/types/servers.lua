@@ -85,6 +85,8 @@ M.linters = {
 ---[Support Formatters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.formatters = {
+  "pint", -- PHP
+  "rubocop", -- Ruby
   "black", -- Python
   "clang-format", -- C/C++
   "google-java-format", -- Java
