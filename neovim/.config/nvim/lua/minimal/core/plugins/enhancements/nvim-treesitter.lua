@@ -2,6 +2,10 @@ local M = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-context",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
 }
 
 function M.config()
@@ -35,6 +39,57 @@ function M.config()
         scope_incremental = "*",
         node_incremental = "+",
         node_decremental = "_",
+      },
+    },
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+
+        keymaps = {
+          ["af"] = { query = "@function.outer", desc = "Around a function." },
+          ["if"] = { query = "@function.inner", desc = "Inner part of a function." },
+          ["ac"] = { query = "@class.outer", desc = "Around a class." },
+          ["ic"] = { query = "@class.inner", desc = "Inner part of a class." },
+          ["ai"] = { query = "@conditional.outer", desc = "Around an if statement." },
+          ["ii"] = { query = "@conditional.inner", desc = "Inner part of an if statement." },
+          ["al"] = { query = "@loop.outer", desc = "Around a loop." },
+          ["il"] = { query = "@loop.inner", desc = "Inner part of a loop." },
+          ["ap"] = { query = "@parameter.outer", desc = "Around parameter." },
+          ["ip"] = { query = "@parameter.inner", desc = "Inside a parameter." },
+        },
+        selection_modes = {
+          ["@parameter.outer"] = "v",
+          ["@parameter.inner"] = "v",
+          ["@function.outer"] = "v",
+          ["@conditional.outer"] = "V",
+          ["@loop.outer"] = "V",
+          ["@class.outer"] = "<C-v>",
+        },
+        include_surrounding_whitespace = false,
+      },
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_previous_start = {
+          ["[f"] = { query = "@function.outer", desc = "Previous function." },
+          ["[c"] = { query = "@class.outer", desc = "Previous class." },
+          ["[p"] = { query = "@parameter.inner", desc = "Previous parameter." },
+        },
+        goto_next_start = {
+          ["]f"] = { query = "@function.outer", desc = "Next function." },
+          ["]c"] = { query = "@class.outer", desc = "Next class." },
+          ["]p"] = { query = "@parameter.inner", desc = "Next parameter." },
+        },
+      },
+      swap = {
+        enable = true,
+        swap_next = {
+          ["<leader>a"] = "@parameter.inner",
+        },
+        swap_previous = {
+          ["<leader>A"] = "@parameter.inner",
+        },
       },
     },
   })
