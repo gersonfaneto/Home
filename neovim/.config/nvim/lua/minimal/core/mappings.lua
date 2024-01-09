@@ -33,6 +33,12 @@ utils.base.mappings.bulk_register({
     rhs = ":set spell!<CR>",
     description = "Toggle spell checking.",
   },
+  {
+    mode = { "n" },
+    lhs = "<C-t><C-w>",
+    rhs = ":set wrap!<CR>",
+    description = "Toggle wrap.",
+  },
 }, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
 
 -- INFO: Mappings - Custom Commands...
@@ -198,10 +204,15 @@ utils.base.mappings.bulk_register({
     description = "Open command window.",
   },
   {
+    mode = { "i" },
+    lhs = "<C-s><C-a>",
+    rhs = "<C-g>u<ESC>[s1z=`]a<C-g>u",
+    description = "Accept first suggestion for spelling correction.",
+  },
+  {
     mode = { "n" },
     lhs = "<leader>sa",
     rhs = "1z=",
-    options = { silent = false },
     description = "Accept first suggestion for spelling correction.",
   },
 }, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
@@ -259,6 +270,18 @@ utils.base.mappings.bulk_register({
     end,
     options = { expr = true },
     description = "Move to the last character at the end of the line.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<C-b>",
+    rhs = "<C-o>zz",
+    description = "Go back in the jump list.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<C-f>",
+    rhs = "<C-i>zz",
+    description = "Go forward in the jump list.",
   },
 }, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
 
