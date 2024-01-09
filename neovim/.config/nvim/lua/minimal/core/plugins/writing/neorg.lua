@@ -1,10 +1,7 @@
 local M = {
   "nvim-neorg/neorg",
+  ft = { "norg" },
   cmd = { "Neorg" },
-  event = {
-    "BufReadPre *.norg",
-    "BufNewFile *.norg",
-  },
   build = ":Neorg sync-parsers",
   dependencies = { "nvim-lua/plenary.nvim" },
 }
