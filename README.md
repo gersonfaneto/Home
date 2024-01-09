@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 ```markdown
 __   __         _         ___        ___     
 \ \ / /        /_\       |   \      | _ \       # Yet Another Dotfiles Repo.
@@ -5,9 +6,6 @@ __   __         _         ___        ___
   |_|   (_)  /_/ \_\ (_) |___/  (_) |_|_\ (_)   # by @gersonfaneto
 
 ```
-
-> **Y.A.D.R.** - "Yet Another Dotfiles Repo". This is the `$HOME` for all the configuration files
-> that make my day-to-day as a developer more pleasant.
 
 <div align="center">
 
@@ -23,6 +21,8 @@ __   __         _         ___        ___
 
 Released under [MIT][license-url] by [gersonfaneto][profile-url].
 
+<!-- prettier-ignore-start -->
+
 <!-- NOTE: Links... -->
 
 [profile-url]: https://github.com/gersonfaneto
@@ -37,3 +37,5 @@ Released under [MIT][license-url] by [gersonfaneto][profile-url].
 [stars-shield]: https://img.shields.io/github/stars/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github
 [size-shield]: https://img.shields.io/github/repo-size/gersonfaneto/YADR?color=blue&style=for-the-badge&logo=github
 [distro-shield]: https://img.shields.io/badge/DISTRO-Arch-74c7ec?color=blue&style=for-the-badge&logo=arch-linux
+
+<!-- prettier-ignore-end -->
