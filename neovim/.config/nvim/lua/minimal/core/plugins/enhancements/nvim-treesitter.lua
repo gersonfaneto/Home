@@ -73,13 +73,13 @@ function M.config()
         set_jumps = true,
         goto_previous_start = {
           ["[f"] = { query = "@function.outer", desc = "Previous function." },
-          ["[c"] = { query = "@class.outer", desc = "Previous class." },
-          ["[p"] = { query = "@parameter.inner", desc = "Previous parameter." },
+          -- ["[c"] = { query = "@class.outer", desc = "Previous class." },
+          -- ["[p"] = { query = "@parameter.inner", desc = "Previous parameter." },
         },
         goto_next_start = {
           ["]f"] = { query = "@function.outer", desc = "Next function." },
-          ["]c"] = { query = "@class.outer", desc = "Next class." },
-          ["]p"] = { query = "@parameter.inner", desc = "Next parameter." },
+          -- ["]c"] = { query = "@class.outer", desc = "Next class." },
+          -- ["]p"] = { query = "@parameter.inner", desc = "Next parameter." },
         },
       },
       swap = {
