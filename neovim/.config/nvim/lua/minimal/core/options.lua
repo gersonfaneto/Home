@@ -30,8 +30,10 @@ M.opt = {
   spelllang = { "en_us", "pt_br" },
 
   -- Folding.
-  foldmethod = "manual",
-  foldenable = false,
+  foldlevel = 99,
+  foldlevelstart = 99,
+  foldcolumn = "0",
+  foldenable = true,
 
   -- Appearance.
   number = true,
