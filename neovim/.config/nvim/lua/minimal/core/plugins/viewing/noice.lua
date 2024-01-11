@@ -55,6 +55,10 @@ function M.config()
       lsp_doc_border = false,
     },
     views = {
+      hover = {
+        border = { style = "rounded" },
+        size = { max_width = 80 },
+      },
       cmdline_popup = {
         border = {
           style = "rounded",
