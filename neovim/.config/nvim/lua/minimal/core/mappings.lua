@@ -143,21 +143,21 @@ utils.base.mappings.bulk_register({
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "[b",
+    lhs = "<Tab>",
     rhs = ":bnext<CR>",
     options = { noremap = false },
     description = "Switch to next buffer.",
   },
   {
     mode = { "n" },
-    lhs = "]b",
+    lhs = "<S-Tab>",
     rhs = ":bprevious<CR>",
     options = { noremap = false },
     description = "Switch to previous buffer.",
   },
   {
     mode = { "n" },
-    lhs = ",b",
+    lhs = "<BS>",
     rhs = ":b#<CR>",
     description = "Quickly switch between current and last open buffer.",
   },
@@ -314,15 +314,7 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>rw",
-    rhs = function()
-      local previous = vim.fn.expand("<cword>")
-
-      vim.ui.input({ prompt = " Replace ", default = previous }, function(replacement)
-        if replacement ~= nil then
-          vim.cmd("%s/" .. previous .. "/" .. replacement .. "/gI")
-        end
-      end)
-    end,
+    rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
     options = { silent = false },
     description = "Replace the word under the cursor in the current buffer.",
   },
@@ -394,32 +386,16 @@ utils.base.mappings.bulk_register({
     description = "Automatically indent to the appropriate position, when entering insert mode.",
   },
   {
-    mode = { "n", "x" },
-    lhs = "<Tab>",
-    rhs = function()
-      local mode = vim.api.nvim_get_mode().mode
-
-      if mode == "n" then
-        vim.cmd.normal(">>")
-      else
-        vim.cmd.normal(">gv")
-      end
-    end,
-    description = "Better forward indenting.",
+    mode = { "v" },
+    lhs = ">",
+    rhs = ">gv",
+    description = "Better backwards indenting.",
   },
   {
-    mode = { "n", "x" },
-    lhs = "<S-Tab>",
-    rhs = function()
-      local mode = vim.api.nvim_get_mode().mode
-
-      if mode == "n" then
-        vim.cmd.normal("<<")
-      else
-        vim.cmd.normal("<gv")
-      end
-    end,
-    description = "Better backwards indenting.",
+    mode = { "v" },
+    lhs = "<",
+    rhs = "<gv",
+    description = "Better forward indenting.",
   },
   {
     mode = { "n" },

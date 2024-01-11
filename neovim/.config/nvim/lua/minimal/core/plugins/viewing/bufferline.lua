@@ -107,31 +107,31 @@ end
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<C-b><C-n>",
+    lhs = "<Tab>",
     rhs = ":BufferLineCycleNext<CR>",
     description = "Cycle to next buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-p>",
+    lhs = "<S-Tab>",
     rhs = ":BufferLineCyclePrev<CR>",
     description = "Cycle to previous buffer.",
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-l>",
+    lhs = "<A-S-Tab>",
     rhs = ":BufferLineMovePrev<CR>",
     description = "Move current buffer to left.",
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-h>",
+    lhs = "<A-Tab>",
     rhs = ":BufferLineMoveNext<CR>",
     description = "Move current buffer to right.",
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-o>",
+    lhs = "<leader>bo",
     rhs = function()
       vim.cmd("BufferLineCloseLeft")
       vim.cmd("BufferLineCloseRight")
@@ -140,7 +140,7 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<C-b><C-a>",
+    lhs = "<leader>ba",
     rhs = function()
       vim.cmd("BufferLineCloseLeft")
       vim.cmd("BufferLineCloseRight")
