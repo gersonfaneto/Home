@@ -23,34 +23,47 @@ function M.config()
   })
 
   noice.setup({
-    presets = {
-      bottom_search = false,
-      command_palette = false,
-      long_message_to_split = true,
-      inc_rename = false,
-      lsp_doc_border = true,
-    },
-    cmdline = {
-      view = "cmdline_popup",
-      format = {
-        cmdline = { pattern = "^:", icon = "> ", lang = "vim", title = " Command " },
-        substitute = { pattern = "^:%%?s/", icon = " ", ft = "regex", title = " Rename " },
-      },
-    },
     lsp = {
-      progress = {
-        enabled = false,
-      },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
-      hover = {
-        enabled = true,
+    },
+    cmdline = {
+      view = "cmdline_popup",
+      format = {
+        cmdline = {
+          pattern = "^:",
+          icon = "> ",
+          lang = "vim",
+          title = " Command ",
+        },
+        substitute = {
+          pattern = "^:%%?s/",
+          icon = " ",
+          ft = "regex",
+          title = " Rename ",
+        },
       },
-      signature = {
-        enabled = true,
+    },
+    presets = {
+      bottom_search = false,
+      command_palette = true,
+      long_message_to_split = true,
+      inc_rename = false,
+      lsp_doc_border = false,
+    },
+    views = {
+      cmdline_popup = {
+        border = {
+          style = "rounded",
+          padding = { 1, 2 },
+        },
+        filter_options = {},
+        win_options = {
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        },
       },
     },
     routes = {
