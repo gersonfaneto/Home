@@ -70,38 +70,44 @@ function M.on_attach(client, bufnr)
     {
       mode = { "n", "v" },
       lhs = "<leader>la",
-      rhs = vim.lsp.buf.code_action,
+      rhs = ":Lspsaga code_action<CR>",
       description = "Show code actions.",
     },
     {
       mode = { "n" },
       lhs = "<leader>rn",
-      rhs = vim.lsp.buf.rename,
+      rhs = ":Lspsaga rename<CR>",
       description = "Rename symbol under cursor.",
     },
     {
       mode = { "n" },
       lhs = "K",
-      rhs = vim.lsp.buf.hover,
+      rhs = ":Lspsaga hover_doc<CR>",
       description = "Show help information.",
     },
     {
       mode = { "n" },
       lhs = "gr",
-      rhs = vim.lsp.buf.references,
+      rhs = ":Lspsaga finder ref<CR>",
       description = "Browse references.",
     },
     {
       mode = { "n" },
       lhs = "gi",
-      rhs = vim.lsp.buf.implementation,
+      rhs = ":Lspsaga finder imp<CR>",
       description = "Browse implementations.",
     },
     {
       mode = { "n" },
       lhs = "gd",
-      rhs = vim.lsp.buf.definition,
+      rhs = ":Lspsaga goto_definition<CR>",
       description = "Jump to definition.",
+    },
+    {
+      mode = { "n" },
+      lhs = "pd",
+      rhs = ":Lspsaga peek_definition<CR>",
+      description = "Peek definition.",
     },
     {
       mode = { "n" },
@@ -111,9 +117,15 @@ function M.on_attach(client, bufnr)
     },
     {
       mode = { "n" },
-      lhs = "of",
-      rhs = vim.diagnostic.open_float,
-      description = "Open diagnostic float.",
+      lhs = "cd",
+      rhs = ":Lspsaga show_cursor_diagnostics ++unfocus<CR>",
+      description = "Show cursor diagnostics.",
+    },
+    {
+      mode = { "n" },
+      lhs = "ld",
+      rhs = ":Lspsaga show_line_diagnostics ++unfocus<CR>",
+      description = "Show line diagnostics.",
     },
     {
       mode = { "n" },
@@ -124,19 +136,13 @@ function M.on_attach(client, bufnr)
     {
       mode = { "n" },
       lhs = "[d",
-      rhs = vim.diagnostic.goto_prev,
+      rhs = ":Lspsaga diagnostic_jump_next ++unfocus<CR>",
       description = "Jump to previous diagnostic.",
     },
     {
       mode = { "n" },
       lhs = "]d",
-      rhs = vim.diagnostic.goto_next,
-      description = "Jump to next diagnostic.",
-    },
-    {
-      mode = { "n" },
-      lhs = "]d",
-      rhs = vim.diagnostic.goto_next,
+      rhs = ":Lspsaga diagnostic_jump_prev ++unfocus<CR>",
       description = "Jump to next diagnostic.",
     },
     {
