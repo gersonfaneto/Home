@@ -3,6 +3,7 @@ local M = {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
+    "windwp/nvim-ts-autotag",
     "nvim-treesitter/nvim-treesitter-context",
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
@@ -26,6 +27,9 @@ function M.config()
     auto_install = true,
     sync_install = false,
     indent = {
+      enable = true,
+    },
+    autotag = {
       enable = true,
     },
     highlight = {
