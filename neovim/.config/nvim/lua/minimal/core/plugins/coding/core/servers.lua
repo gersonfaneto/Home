@@ -15,17 +15,29 @@ function M.config()
   })
 
   for _, server in pairs(servers) do
-    if server == "jdtls" then
+    if vim.tbl_contains(M.server_exceptions.skip, server) then
       goto continue
     end
 
     local settings = "minimal.core.plugins.coding.core.servers."
     local has_settings, extras = pcall(require, settings .. server)
 
-    local opts = {
-      on_attach = utils.plugins.lsp.attach.on_attach,
-      capabilities = utils.plugins.lsp.capabilities.default_capabilities(),
-    }
+    local opts = {}
+
+    if vim.tbl_contains(M.server_exceptions.codeless, server) then
+      opts = {
+        on_attach = function(client, bufnr)
+          M.handlers.attach_codelens(client)
+          utils.plugins.lsp.attach.on_attach(client, bufnr)
+        end,
+        capabilities = utils.plugins.lsp.capabilities.default_capabilities(),
+      }
+    else
+      opts = {
+        on_attach = utils.plugins.lsp.attach.on_attach,
+        capabilities = utils.plugins.lsp.capabilities.default_capabilities(),
+      }
+    end
 
     if has_settings then
       opts = utils.base.tables.merge(extras, opts)
@@ -36,6 +48,30 @@ function M.config()
     ::continue::
   end
 end
+
+M.server_exceptions = {
+  skip = {
+    "jdtls",
+  },
+  codeless = {
+    "ocamllsp",
+    "rust_analyzer",
+  },
+}
+
+M.handlers = {
+  attach_codelens = function(client)
+    if client.supports_method("textDocument/codeLens") then
+      vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "TextChanged" }, {
+        group = vim.api.nvim_create_augroup("refreshCodelens", {}),
+        buffer = 0,
+        callback = vim.lsp.codelens.refresh,
+      })
+
+      vim.lsp.codelens.refresh()
+    end
+  end,
+}
 
 utils.base.mappings.bulk_register({
   {
