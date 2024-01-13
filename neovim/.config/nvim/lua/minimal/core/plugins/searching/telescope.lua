@@ -4,7 +4,6 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    "jvgrootveld/telescope-zoxide",
   },
 }
 
@@ -112,8 +111,6 @@ function M.config()
     },
     extensions = {},
   })
-
-  telescope.load_extension("zoxide")
 end
 
 utils.base.mappings.bulk_register({
@@ -191,14 +188,6 @@ utils.base.mappings.bulk_register({
       require("telescope.builtin").live_grep()
     end,
     description = "Find matching strings in the current workspace.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>zl",
-    rhs = function()
-      require("telescope").extensions.zoxide.list()
-    end,
-    description = "Jump to directories using zoxide.",
   },
   {
     mode = { "n" },
