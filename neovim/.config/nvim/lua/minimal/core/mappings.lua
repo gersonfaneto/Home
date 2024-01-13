@@ -386,6 +386,18 @@ utils.base.mappings.bulk_register({
     description = "Automatically indent to the appropriate position, when entering insert mode.",
   },
   {
+    mode = { "n" },
+    lhs = ">",
+    rhs = ">>",
+    description = "Better backwards indenting.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<",
+    rhs = "<<",
+    description = "Better backwards indenting.",
+  },
+  {
     mode = { "v" },
     lhs = ">",
     rhs = ">gv",
