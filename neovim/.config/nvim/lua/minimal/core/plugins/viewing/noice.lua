@@ -45,14 +45,23 @@ function M.config()
           ft = "regex",
           title = " Rename ",
         },
+        search_and_replace = {
+          kind = "replace",
+          pattern = "^:%%?s/",
+          icon = " ",
+          lang = "regex",
+        },
+        search_and_replace_range = {
+          kind = "replace",
+          pattern = "^:'<,'>%%?s/",
+          icon = " ",
+          lang = "regex",
+        },
       },
     },
     presets = {
-      bottom_search = false,
-      command_palette = true,
+      lsp_doc_border = true,
       long_message_to_split = true,
-      inc_rename = false,
-      lsp_doc_border = false,
     },
     views = {
       hover = {
