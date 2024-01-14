@@ -60,7 +60,7 @@ function M.config()
       },
     },
     presets = {
-      lsp_doc_border = true,
+      command_palette = true,
       long_message_to_split = true,
     },
     views = {
@@ -92,7 +92,7 @@ function M.config()
             { event = "msg_show", find = "%d+ change" },
             { event = "msg_show", find = "%d+ line" },
             { event = "msg_show", find = "%d+ more line" },
-            { event = "notify",   find = "No information available" },
+            { event = "notify", find = "No information available" },
           },
         },
       },
