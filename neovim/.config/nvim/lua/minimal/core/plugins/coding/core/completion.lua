@@ -6,7 +6,6 @@ local M = {
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
     "onsails/lspkind.nvim",
     {
       "L3MON4D3/LuaSnip",
@@ -53,7 +52,6 @@ function M.config()
     },
     sources = {
       { name = "luasnip" },
-      { name = "nvim_lua" },
       { name = "nvim_lsp" },
       { name = "path" },
       { name = "emoji" },
@@ -111,6 +109,7 @@ function M.config()
         fallback()
       end),
     }),
+    ---@diagnostic disable-next-line: missing-fields
     formatting = {
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
@@ -139,6 +138,7 @@ function M.config()
           buffer = "[Buffer]",
         })[entry.source.name]
 
+        ---@diagnostic disable-next-line: assign-type-mismatch
         vim_item.dup = ({
           buffer = 1,
           path = 1,
