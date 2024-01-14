@@ -49,15 +49,9 @@ end
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>tt",
+    lhs = "<leader>ft",
     rhs = ":TodoTelescope<CR>",
-    description = "TODOs in current buffer",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>ta",
-    rhs = ":TodoTelescope keywords=TODO,FIX,FIXME<CR>",
-    description = "TODOs/FIXs/FIXMEs in current buffer",
+    description = "TODOs in current project.",
   },
 }, { options = { noremap = true, silent = true }, prefix = "TODOs: " })
 

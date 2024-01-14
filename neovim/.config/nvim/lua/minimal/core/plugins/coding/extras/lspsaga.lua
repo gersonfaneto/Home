@@ -46,16 +46,19 @@ function M.config()
   })
 end
 
-utils.base.mappings.bulk_register(
+utils.base.mappings.bulk_register({
   {
-    {
-      mode = {"n"},
-      lhs = "T",
-      rhs = ":Lspsaga term_toggle<CR>",
-      description = "Toggle terminal.",
-    }
+    mode = { "n" },
+    lhs = "<leader>tt",
+    rhs = ":Lspsaga term_toggle<CR>",
+    description = "Toggle terminal.",
   },
-  { prefix = "Saga: ", options = { silent = true, noremap = true } }
-)
+  {
+    mode = { "n" },
+    lhs = "<leader>so",
+    rhs = ":Lspsaga outline<CR>",
+    description = "Toggle outline.",
+  },
+}, { prefix = "Saga: ", options = { silent = true, noremap = true } })
 
 return M
