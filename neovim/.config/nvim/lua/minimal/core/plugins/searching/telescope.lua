@@ -26,9 +26,21 @@ function M.config()
       },
     },
     pickers = {
+      oldfiles = {
+        theme = "dropdown",
+        previewer = false,
+        path_display = M.handlers.custom_format,
+        layout_config = {
+          width = 0.5,
+          height = 0.4,
+          prompt_position = "top",
+          preview_cutoff = 120,
+        },
+      },
       find_files = {
         theme = "dropdown",
         previewer = false,
+        path_display = M.handlers.custom_format,
         layout_config = {
           width = 0.5,
           height = 0.4,
@@ -39,6 +51,7 @@ function M.config()
       git_files = {
         previewer = false,
         theme = "dropdown",
+        path_display = M.handlers.custom_format,
         layout_config = {
           width = 0.5,
           height = 0.4,
@@ -49,6 +62,7 @@ function M.config()
       buffers = {
         previewer = false,
         theme = "dropdown",
+        path_display = M.handlers.custom_format,
         layout_config = {
           width = 0.5,
           height = 0.4,
@@ -67,6 +81,7 @@ function M.config()
       live_grep = {
         only_sort_text = true,
         previewer = true,
+        path_display = M.handlers.custom_format,
         layout_config = {
           horizontal = {
             width = 0.9,
@@ -78,28 +93,7 @@ function M.config()
       grep_string = {
         only_sort_text = true,
         previewer = true,
-        layout_config = {
-          horizontal = {
-            width = 0.9,
-            height = 0.75,
-            preview_width = 0.6,
-          },
-        },
-      },
-      lsp_references = {
-        show_line = false,
-        previewer = true,
-        layout_config = {
-          horizontal = {
-            width = 0.9,
-            height = 0.75,
-            preview_width = 0.6,
-          },
-        },
-      },
-      treesitter = {
-        show_line = false,
-        previewer = true,
+        path_display = M.handlers.custom_format,
         layout_config = {
           horizontal = {
             width = 0.9,
@@ -111,7 +105,30 @@ function M.config()
     },
     extensions = {},
   })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "TelescopeResults",
+    callback = function(ctx)
+      vim.api.nvim_buf_call(ctx.buf, function()
+        vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+        vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+      end)
+    end,
+  })
 end
+
+M.handlers = {
+  custom_format = function(_, entry)
+    local tail = vim.fs.basename(entry)
+    local parent = vim.fs.dirname(entry)
+
+    if parent == "." then
+      return tail
+    end
+
+    return string.format("%s\t\t%s", tail, parent)
+  end,
+}
 
 utils.base.mappings.bulk_register({
   {
