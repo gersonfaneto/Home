@@ -8,6 +8,18 @@
     ],
     "description": "Generate a code block."
   },
+  "Marp": {
+    "prefix": "marp",
+    "body": [
+      "---",
+      "marp: true",
+      "theme: ${1:uncover}",
+      "class: ${2:invert}",
+      "---",
+      "$0"
+    ],
+    "description": "Generate a code block."
+  },
   "Prettier Ignore - Block": {
     "prefix": "pib",
     "body": [
