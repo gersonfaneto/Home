@@ -21,7 +21,7 @@ M.show_cursor_line = true
 ---@type boolean
 M.show_color_column = true
 ---The limit number of characters by line, `show_color_column` must be set `true`.
----@type string
+---@type string | string[]
 M.color_column = "100"
 
 ---Set to `true` to automatically save files while editing.
