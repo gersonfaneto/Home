@@ -52,23 +52,6 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "qf" },
-  callback = function()
-    if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
-      vim.defer_fn(function()
-        vim.cmd("lclose")
-        vim.cmd("Trouble loclist")
-      end, 0)
-    else
-      vim.defer_fn(function()
-        vim.cmd("cclose")
-        vim.cmd("Trouble quickfix")
-      end, 0)
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
   pattern = {
     "qf",
