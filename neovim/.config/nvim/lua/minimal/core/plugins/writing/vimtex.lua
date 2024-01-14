@@ -1,9 +1,6 @@
 local M = {
   "lervag/vimtex",
-  event = {
-    "BufReadPre *.tex",
-    "BufNewFile *.tex",
-  },
+  ft = { "tex", "bib" },
 }
 
 function M.config()
@@ -24,6 +21,30 @@ function M.config()
     "specifier changed to",
     "Token not allowed in a PDF string",
   }
+
+  M.handlers.register_mappings()
 end
+
+M.handlers = {
+  register_mappings = function()
+    utils.base.mappings.bulk_register({
+      {
+        mode = { "n" },
+        lhs = "<leader>sp",
+        rhs = ":VimtexCompile<CR>",
+        description = "Start Preview.",
+      },
+      {
+        mode = { "n" },
+        lhs = "<leader>ep",
+        rhs = function()
+          vim.cmd("VimtexStopAll")
+          vim.cmd("VimtexClean")
+        end,
+        description = "End Preview.",
+      },
+    }, { options = { noremap = true, silent = true }, prefix = "LaTeX: " })
+  end,
+}
 
 return M
