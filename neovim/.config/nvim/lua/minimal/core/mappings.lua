@@ -1,6 +1,5 @@
 local M = {}
 
--- INFO: Mappings - Quick Toggles...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -41,7 +40,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Custom Commands...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -63,7 +61,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Custom Commands: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Splits & Windows...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -139,7 +136,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Splits & Windows: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Buffers...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -163,7 +159,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Buffers: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Basic Operations...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -217,7 +212,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Better Navigation...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -285,7 +279,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Search & Replace ...
 utils.base.mappings.bulk_register({
   {
     mode = { "x" },
@@ -320,7 +313,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Search & Replace: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Better Editing...
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
@@ -447,7 +439,6 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
 
--- INFO: Mappings - Custom Text Objects...
 utils.base.mappings.bulk_register({
   {
     mode = { "x" },
@@ -488,5 +479,44 @@ utils.base.mappings.bulk_register({
     description = "Around the whole file.",
   },
 }, { prefix = "Custom Text Objects: ", options = { silent = true, noremap = true } })
+
+utils.base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>qo",
+    rhs = ":copen<CR>",
+    description = "Open.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>qq",
+    rhs = ":cclose<CR>",
+    description = "Close.",
+  },
+  {
+    mode = { "n" },
+    lhs = "[q",
+    rhs = ":cprevious<CR>",
+    description = "Previous.",
+  },
+  {
+    mode = { "n" },
+    lhs = "]q",
+    rhs = ":cnext<CR>",
+    description = "Next.",
+  },
+  {
+    mode = { "n" },
+    lhs = "[Q",
+    rhs = ":colder<CR>",
+    description = "Older.",
+  },
+  {
+    mode = { "n" },
+    lhs = "]Q",
+    rhs = ":cnewer<CR>",
+    description = "Newer.",
+  },
+}, { prefix = "QuickFix List: ", options = { silent = true, noremap = true } })
 
 return M
