@@ -508,13 +508,13 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "[Q",
-    rhs = ":colder<CR>",
+    rhs = ":cfirst<CR>",
     description = "Older.",
   },
   {
     mode = { "n" },
     lhs = "]Q",
-    rhs = ":cnewer<CR>",
+    rhs = ":clast<CR>",
     description = "Newer.",
   },
 }, { prefix = "QuickFix List: ", options = { silent = true, noremap = true } })

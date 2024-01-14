@@ -59,6 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "man",
     "help",
     "lspinfo",
+    "fugitive",
     "checkhealth",
   },
   callback = function(event)
