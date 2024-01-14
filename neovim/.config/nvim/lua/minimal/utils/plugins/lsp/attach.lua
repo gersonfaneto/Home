@@ -68,11 +68,7 @@ function M.on_attach(client, bufnr)
 
   local mappings = require("minimal.utils.plugins.lsp.mappings")
 
-  if types.settings.lsp_mappings == "enhanced" then
-    mappings.enhanced(bufnr)
-  else
-    mappings.builtin(bufnr)
-  end
+  mappings.builtin(bufnr)
 end
 
 return M

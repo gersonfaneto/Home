@@ -24,8 +24,6 @@ M.auto_restore_cursor_position = false
 ---@type boolean
 M.auto_remove_new_lines_comment = false
 
----@type "builtin" | "enhanced"
-M.lsp_mappings = "builtin"
 ---@type boolean
 M.inlay_hints = false
 ---@type boolean
