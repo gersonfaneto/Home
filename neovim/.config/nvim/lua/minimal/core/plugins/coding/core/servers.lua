@@ -1,12 +1,6 @@
 local M = {
   "neovim/nvim-lspconfig",
   dependencies = {
-    {
-      "folke/neodev.nvim",
-      ft = { "lua" },
-      opts = {},
-      priority = 100,
-    },
     "williamboman/mason.nvim",
   },
   event = { "BufReadPre", "BufNewFile" },

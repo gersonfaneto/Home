@@ -6,6 +6,7 @@ local M = {
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
     "onsails/lspkind.nvim",
     {
       "L3MON4D3/LuaSnip",
@@ -53,6 +54,7 @@ function M.config()
     sources = {
       { name = "luasnip" },
       { name = "nvim_lsp" },
+      { name = "nvim_lua" },
       { name = "path" },
       { name = "emoji" },
       { name = "buffer" },
