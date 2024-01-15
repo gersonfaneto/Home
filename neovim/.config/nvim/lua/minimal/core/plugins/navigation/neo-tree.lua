@@ -4,6 +4,7 @@ local M = {
     "<C-e><C-r>",
     "<C-e><C-l>",
     "<C-e><C-f>",
+    "<C-e><C-e>",
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
@@ -114,6 +115,12 @@ M.handlers = {
         lhs = "<C-e><C-f>",
         rhs = ":Neotree toggle float<CR>",
         description = "Toggle the floating window.",
+      },
+      {
+        mode = { "n" },
+        lhs = "<C-e><C-e>",
+        rhs = ":Neotree focus<CR>",
+        description = "Focus the open window.",
       },
     }, { prefix = "NeoTree: ", options = { silent = true, noremap = true } })
   end,
