@@ -58,7 +58,6 @@ function M.config()
       { name = "path" },
       { name = "emoji" },
       { name = "buffer" },
-      { name = "crates" },
     },
     mapping = cmp_mapping.preset.insert({
       ["<C-e>"] = cmp_mapping.abort(),
@@ -121,10 +120,7 @@ function M.config()
           vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
         end
 
-        if entry.source.name == "crates" then
-          vim_item.kind = icons.misc.Package
-          vim_item.kind_hl_group = "CmpItemKindCrate"
-        elseif entry.source.name == "emoji" then
+        if entry.source.name == "emoji" then
           vim_item.kind = icons.misc.Smiley
           vim_item.kind_hl_group = "CmpItemKindEmoji"
         else
@@ -133,7 +129,6 @@ function M.config()
 
         vim_item.menu = ({
           nvim_lsp = "[LSP]",
-          crates = "[Crates]",
           luasnip = "[Snippet]",
           path = "[Path]",
           emoji = "[Emoji]",
