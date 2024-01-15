@@ -19,7 +19,7 @@ function M.config()
       goto continue
     end
 
-    local settings = "minimal.core.plugins.coding.core.servers."
+    local settings = "minimal.core.plugins.code.core.servers."
     local has_settings, extras = pcall(require, settings .. server)
 
     local opts = {}

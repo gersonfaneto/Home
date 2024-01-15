@@ -24,16 +24,14 @@ if not ok then
 end
 
 local include_directories = {
-  { import = "minimal.core.plugins.coding.core" },
-  { import = "minimal.core.plugins.coding.extras" },
-  { import = "minimal.core.plugins.coding.languages" },
-  { import = "minimal.core.plugins.editing" },
-  { import = "minimal.core.plugins.enhancements" },
-  { import = "minimal.core.plugins.searching" },
-  { import = "minimal.core.plugins.tooling" },
-  { import = "minimal.core.plugins.versioning" },
-  { import = "minimal.core.plugins.viewing" },
-  { import = "minimal.core.plugins.writing" },
+  { import = "minimal.core.plugins.code.core" },
+  { import = "minimal.core.plugins.code.extras" },
+  { import = "minimal.core.plugins.code.languages" },
+  { import = "minimal.core.plugins.editor" },
+  { import = "minimal.core.plugins.interface" },
+  { import = "minimal.core.plugins.navigation" },
+  { import = "minimal.core.plugins.tools" },
+  { import = "minimal.core.plugins.others" },
 }
 
 local lazy_options = {
@@ -51,7 +49,7 @@ local lazy_options = {
   },
   change_detection = {
     enabled = true,
-    notify = false,
+    notify = true,
   },
   performance = {
     rtp = {
