@@ -11,6 +11,8 @@ M["Gruvbox-Material"] = {
   },
 }
 
+---Returns the background color.
+---@return string
 function M.get_background()
   local background = os.getenv("BACKGROUND")
 
@@ -23,6 +25,9 @@ function M.get_background()
   return background
 end
 
+---Returns a table with the `fg` and `bg` colors, based on the colorscheme
+---and background.
+---@return table<string, string>
 function M.get_colors()
   local colors = os.getenv("COLORSCHEME")
   local background = M.get_background()
