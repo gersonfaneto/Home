@@ -51,9 +51,9 @@ end
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>nl",
-    rhs = ":NullLsInfo<CR>",
-    description = "Open NoneLs Info.",
+    lhs = "<leader>tf",
+    rhs = utils.plugins.lsp.formatting.toggle,
+    description = "Toggle format on save.",
   },
   {
     mode = { "n", "v" },

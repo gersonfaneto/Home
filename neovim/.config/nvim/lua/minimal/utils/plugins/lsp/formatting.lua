@@ -13,7 +13,9 @@ function M.toggle()
     M.format_on_save = not M.format_on_save
   end
 
-  if M.format_on_save then
+  if types.settings.format_on_save == false then
+    notify.warn("Can't toggle format on save, option disabled under `Settings`.", { title = "Format" })
+  elseif M.format_on_save then
     notify.info("Enabled format on save.", { title = "Format" })
   else
     notify.warn("Disabled format on save.", { title = "Format" })
