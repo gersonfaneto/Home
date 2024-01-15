@@ -34,6 +34,14 @@ local include_directories = {
   { import = "minimal.core.plugins.others" },
 }
 
+local customs = vim.fn.stdpath("config") .. "/lua/custom/plugins/"
+
+if utils.base.files.is_directory(customs) then
+  utils.base.tables.merge(include_directories, {
+    { import = "custom.plugins" },
+  })
+end
+
 local lazy_options = {
   install = {
     missing = true,
@@ -49,7 +57,7 @@ local lazy_options = {
   },
   change_detection = {
     enabled = true,
-    notify = true,
+    notify = false,
   },
   performance = {
     rtp = {
