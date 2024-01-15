@@ -3,7 +3,9 @@ spell/*.add
 spell/*.add.spl
 
 # Where files for custom settings/extensions are stored.
-lua/custom/*.lua
+lua/custom/plugins/
+lua/custom/settings.lua
+lua/custom/servers.lua
 
 # Used by the plugin manager to keep track of installed plugins.
 lazy-lock.json
