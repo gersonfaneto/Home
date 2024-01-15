@@ -37,9 +37,7 @@ local include_directories = {
 local customs = vim.fn.stdpath("config") .. "/lua/custom/plugins/"
 
 if utils.base.files.is_directory(customs) then
-  utils.base.tables.merge(include_directories, {
-    { import = "custom.plugins" },
-  })
+  include_directories[#include_directories + 1] = { import = "custom.plugins" }
 end
 
 local lazy_options = {
