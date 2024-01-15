@@ -1,10 +1,14 @@
 local M = {
   "nvim-neo-tree/neo-tree.nvim",
-  event = { "VeryLazy" },
+  keys = {
+    "<C-e><C-r>",
+    "<C-e><C-l>",
+    "<C-e><C-f>",
+  },
   dependencies = {
+    "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
   },
 }
 

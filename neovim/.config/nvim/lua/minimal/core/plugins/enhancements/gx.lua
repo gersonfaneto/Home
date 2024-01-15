@@ -1,6 +1,6 @@
 local M = {
   "chrishrb/gx.nvim",
-  event = { "VeryLazy" },
+  keys = { "gx" },
   dependencies = { "nvim-lua/plenary.nvim" },
 }
 
