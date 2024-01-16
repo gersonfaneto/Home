@@ -75,6 +75,8 @@ M.extra_languages = {
 ---[Supported Linters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
 ---@type string[]
 M.linters = {
+  "ruff",
+  "mypy",
   "eslint_d", -- JavaScript | TypeScript
 }
 

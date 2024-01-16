@@ -15,6 +15,8 @@ function M.config()
       -- Python
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.isort,
+      null_ls.builtins.diagnostics.ruff,
+      null_ls.builtins.diagnostics.mypy,
 
       -- Lua
       null_ls.builtins.formatting.stylua,
