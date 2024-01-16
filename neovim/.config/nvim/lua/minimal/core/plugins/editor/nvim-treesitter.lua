@@ -110,6 +110,17 @@ function M.config()
   })
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("disable_context", { clear = true }),
+  pattern = {
+    "norg",
+    "markdown",
+  },
+  callback = function()
+    vim.cmd("TSContextDisable")
+  end,
+})
+
 utils.base.mappings.bulk_register({
   {
     mode = { "n", "v" },
