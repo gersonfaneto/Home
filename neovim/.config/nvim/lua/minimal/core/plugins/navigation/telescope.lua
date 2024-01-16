@@ -202,7 +202,9 @@ utils.base.mappings.bulk_register({
     mode = { "n" },
     lhs = "<leader>lg",
     rhs = function()
-      require("telescope.builtin").live_grep()
+      require("telescope.builtin").live_grep({
+        additional_args = { "--hidden" },
+      })
     end,
     description = "Find matching strings in the current workspace.",
   },

@@ -35,7 +35,9 @@ function M.config()
       section_separators = "",
       component_separators = "",
       disabled_filetypes = {
-        statusline = {},
+        statusline = {
+          "starter",
+        },
         winbar = {},
       },
     },
