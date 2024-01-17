@@ -55,7 +55,7 @@ M.server_exceptions = {
   },
   codeless = {
     "ocamllsp",
-    "rust_analyzer",
+    -- "rust_analyzer",
   },
 }
 
