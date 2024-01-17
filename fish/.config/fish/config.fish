@@ -24,8 +24,6 @@ alias .3  "cd ../../.."
 alias .4  "cd ../../../.."
 alias .5  "cd ../../../../.."
 
-source "$HOME/.config/fish/extras/colors.fish"
-
 source "$HOME/.config/fish/extras/alias.fish"
 source "$HOME/.config/fish/extras/exports.fish"
 source "$HOME/.config/fish/extras/functions.fish"
@@ -35,3 +33,10 @@ source "$HOME/.config/fish/extras/enviroment.fish"
 if test -f "$HOME/.config/fish/extras/extras.fish"
   source "$HOME/.config/fish/extras/extras.fish"
 end
+
+# NOTE: This should generate the `colors.fish` on a fresh install.
+if not test -f "$HOME/.config/fish/extras/colors.fish"
+  background
+end
+
+source "$HOME/.config/fish/extras/colors.fish"
