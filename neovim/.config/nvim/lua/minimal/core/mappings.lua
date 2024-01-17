@@ -139,16 +139,41 @@ utils.base.mappings.bulk_register({
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
+    lhs = "<A-Tab>",
+    rhs = ":tabnext<CR>",
+    description = "Switch to next tab.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<A-S-Tab>",
+    rhs = ":tabprevious<CR>",
+    description = "Switch to previous tab.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>tn",
+    rhs = ":tabnew<CR>",
+    description = "Create a new tab.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>tc",
+    rhs = ":tabclose<CR>",
+    description = "Close the current tab.",
+  },
+}, { prefix = "Tabs: ", options = { silent = true, noremap = true } })
+
+utils.base.mappings.bulk_register({
+  {
+    mode = { "n" },
     lhs = "<Tab>",
     rhs = ":bnext<CR>",
-    options = { noremap = false },
     description = "Switch to next buffer.",
   },
   {
     mode = { "n" },
     lhs = "<S-Tab>",
     rhs = ":bprevious<CR>",
-    options = { noremap = false },
     description = "Switch to previous buffer.",
   },
   {
