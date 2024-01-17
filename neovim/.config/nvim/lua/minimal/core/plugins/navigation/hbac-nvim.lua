@@ -24,7 +24,7 @@ local M = {
 
 function M.config()
   require("hbac").setup({
-    threshold = 3,
+    threshold = 5,
   })
 
   require("telescope").load_extension("hbac")
