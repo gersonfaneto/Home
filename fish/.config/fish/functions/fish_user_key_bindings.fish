@@ -14,7 +14,7 @@ function fish_user_key_bindings
   
   bind \cf font-selector
 
-  bind \cb fzf_background
+  bind \cb background
 
   bind ! history_previous_command
   bind '$' history_previous_command_arguments
