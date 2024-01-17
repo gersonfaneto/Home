@@ -42,8 +42,18 @@ function M.config()
       },
     },
     sections = {
-      lualine_a = { "branch" },
+      lualine_a = {
+        "branch",
+      },
       lualine_b = {
+        {
+          "tabs",
+          tabs_color = {
+            active = { bg = colors.bg, fg = "#FFA000" },
+            inactive = { bg = colors.bg, fg = colors.fg },
+          },
+          show_modified_status = false,
+        },
         {
           "filetype",
           icon_only = true,
