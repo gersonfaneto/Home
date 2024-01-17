@@ -151,15 +151,33 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>tn",
+    lhs = "tn",
     rhs = ":tabnew<CR>",
     description = "Create a new tab.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>tc",
+    lhs = "tc",
     rhs = ":tabclose<CR>",
     description = "Close the current tab.",
+  },
+  {
+    mode = { "n" },
+    lhs = "to",
+    rhs = ":tabonly<CR>",
+    description = "Close all the other tabs.",
+  },
+  {
+    mode = { "n" },
+    lhs = "tmn",
+    rhs = ":tabmove +1<CR>",
+    description = "Shift tab to the right.",
+  },
+  {
+    mode = { "n" },
+    lhs = "tmp",
+    rhs = ":tabmove -1<CR>",
+    description = "Shift tab to the left.",
   },
 }, { prefix = "Tabs: ", options = { silent = true, noremap = true } })
 
