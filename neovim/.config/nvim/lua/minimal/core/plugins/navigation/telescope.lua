@@ -200,6 +200,14 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<leader><Tab>",
+    rhs = function()
+      require("telescope.builtin").buffers()
+    end,
+    description = "Browse trough the open buffers.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>lg",
     rhs = function()
       require("telescope.builtin").live_grep({
