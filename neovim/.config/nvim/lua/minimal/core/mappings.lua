@@ -218,7 +218,7 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "E",
-    rhs = ":quitall<CR>",
+    rhs = ":quitall!<CR>",
     description = "Close all buffers and exit.",
   },
   {
