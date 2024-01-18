@@ -30,7 +30,7 @@ M.helpers = {
         rhs = ":GBrowse<CR>",
         description = "Open File/Selection in Browser.",
       },
-    }, { prefix = "Fugitive: ", options = { silent = true, noremap = true } })
+    }, { prefix = "Fugitive :: ", options = { silent = true, noremap = true } })
   end,
   register_autocmds = function()
     vim.api.nvim_create_autocmd("BufWinEnter", {
@@ -62,7 +62,7 @@ M.helpers = {
             rhs = ":Git push -u origin ",
             description = "Push with tracking.",
           },
-        }, { prefix = "Fugitive: ", options = { buffer = bufnr, silent = true, noremap = true } })
+        }, { prefix = "Fugitive :: ", options = { buffer = bufnr, silent = true, noremap = true } })
       end,
     })
   end,

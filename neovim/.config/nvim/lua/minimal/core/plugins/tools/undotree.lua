@@ -21,6 +21,6 @@ utils.base.mappings.bulk_register({
     rhs = ":UndotreeToggle<CR>",
     description = "Toggle.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "UndoTree: " })
+}, { options = { silent = true, noremap = true }, prefix = "UndoTree :: " })
 
 return M

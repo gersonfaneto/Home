@@ -115,6 +115,6 @@ utils.base.mappings.bulk_register({
     end,
     description = "Last.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Trouble: " })
+}, { options = { silent = true, noremap = true }, prefix = "Trouble :: " })
 
 return M

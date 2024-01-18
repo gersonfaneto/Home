@@ -90,7 +90,7 @@ utils.base.mappings.register({
   lhs = "<leader>lh",
   rhs = ":Lazy<CR>",
   options = { silent = true, noremap = true },
-  description = "Lazy: Open.",
+  description = "Lazy :: Open.",
 })
 
 return M

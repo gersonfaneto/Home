@@ -40,6 +40,6 @@ utils.base.mappings.bulk_register({
     rhs = ":CccConvert<CR>",
     description = "Convert Color.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "CCC: " })
+}, { options = { noremap = true, silent = true }, prefix = "CCC :: " })
 
 return M

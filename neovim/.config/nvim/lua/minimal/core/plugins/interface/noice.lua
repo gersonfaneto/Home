@@ -131,6 +131,6 @@ utils.base.mappings.bulk_register({
     rhs = ":Noice last<CR>",
     description = "View last notification.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Noice: " })
+}, { options = { silent = true, noremap = true }, prefix = "Noice :: " })
 
 return M

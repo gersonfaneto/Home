@@ -16,6 +16,6 @@ utils.base.mappings.bulk_register({
     rhs = ":Outline<CR>",
     description = "Toggle.",
   },
-}, { prefix = "Outline: ", options = { noremap = true, silent = true } })
+}, { prefix = "Outline :: ", options = { noremap = true, silent = true } })
 
 return M

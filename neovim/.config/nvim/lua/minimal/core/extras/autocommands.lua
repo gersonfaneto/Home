@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("FileType", {
       lhs = "q",
       rhs = ":close<CR>",
       options = { noremap = true, silent = true, buffer = event.buf },
-      description = "Close current buffer/window.",
+      description = "Buffers & Windows :: Close current buffer/window.",
     })
   end,
 })
@@ -106,7 +106,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
       lhs = "<ESC>",
       rhs = "<c-\\><c-n>",
       options = { silent = true, noremap = true },
-      description = "Exit insert mode.",
+      description = "Terminal :: Exit insert mode.",
     })
 
     vim.cmd("startinsert")

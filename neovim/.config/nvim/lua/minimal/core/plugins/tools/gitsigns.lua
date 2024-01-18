@@ -163,6 +163,6 @@ utils.base.mappings.bulk_register({
     end,
     description = "Jump to the next hunk.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "Git Signs: " })
+}, { options = { noremap = true, silent = true }, prefix = "Git Signs :: " })
 
 return M

@@ -57,6 +57,6 @@ utils.base.mappings.bulk_register({
     rhs = ":DBUIToggle<CR>",
     description = "Open Database Explorer",
   },
-}, { options = { silent = true, noremap = true }, prefix = "DB: " })
+}, { options = { silent = true, noremap = true }, prefix = "DB :: " })
 
 return M

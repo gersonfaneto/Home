@@ -62,7 +62,7 @@ function M.on_attach(client, bufnr)
         vim.lsp.inlay_hint.enable(bufnr, not current)
       end,
       options = opts,
-      description = "LSP: Toggle inlay hints.",
+      description = "LSP :: Toggle inlay hints.",
     })
   end
 

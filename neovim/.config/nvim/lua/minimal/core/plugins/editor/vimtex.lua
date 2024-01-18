@@ -43,7 +43,7 @@ M.handlers = {
         end,
         description = "End Preview.",
       },
-    }, { options = { noremap = true, silent = true }, prefix = "LaTeX: " })
+    }, { options = { noremap = true, silent = true }, prefix = "LaTeX :: " })
   end,
 }
 

@@ -36,6 +36,6 @@ utils.base.mappings.bulk_register({
     rhs = ":DiffviewFileHistory %<CR>",
     description = "Open diff history for current file.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "Diffview: " })
+}, { options = { noremap = true, silent = true }, prefix = "Diffview :: " })
 
 return M

@@ -70,7 +70,7 @@ function M.builtin(bufnr)
       rhs = vim.diagnostic.goto_next,
       description = "Jump to next diagnostic.",
     },
-  }, { options = { noremap = true, silent = true, buffer = bufnr }, prefix = "LSP: " })
+  }, { options = { noremap = true, silent = true, buffer = bufnr }, prefix = "LSP :: " })
 end
 
 return M

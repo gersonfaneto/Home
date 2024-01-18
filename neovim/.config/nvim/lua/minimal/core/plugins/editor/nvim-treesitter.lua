@@ -128,6 +128,6 @@ utils.base.mappings.bulk_register({
     rhs = ":TSJToggle<CR>",
     description = "Split/Join the object at the current position/selection.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "TreeSJ: " })
+}, { options = { silent = true, noremap = true }, prefix = "TreeSJ :: " })
 
 return M

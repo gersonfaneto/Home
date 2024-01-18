@@ -122,7 +122,7 @@ M.handlers = {
         rhs = ":Neotree focus<CR>",
         description = "Focus the open window.",
       },
-    }, { prefix = "NeoTree: ", options = { silent = true, noremap = true } })
+    }, { prefix = "NeoTree :: ", options = { silent = true, noremap = true } })
   end,
 }
 

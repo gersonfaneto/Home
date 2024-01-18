@@ -11,8 +11,8 @@ function M.config()
     evaluate_single = true,
     silent = true,
     header = ""
-        .. "Experience is the name everyone gives to their mistakes.\n"
-        .. "                                         -- Oscar Wilde",
+      .. "Experience is the name everyone gives to their mistakes.\n"
+      .. "                                         -- Oscar Wilde",
     footer = "",
     query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789.",
     content_hooks = {
@@ -90,6 +90,6 @@ utils.base.mappings.bulk_register({
     rhs = ":lua require('mini.starter').open()<CR>",
     description = "Open.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Mini Starter: " })
+}, { options = { silent = true, noremap = true }, prefix = "Mini Starter :: " })
 
 return M

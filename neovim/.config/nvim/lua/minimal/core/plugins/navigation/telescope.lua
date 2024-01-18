@@ -248,6 +248,6 @@ utils.base.mappings.bulk_register({
     end,
     description = "Browse through the spell suggestions.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "Telescope: " })
+}, { options = { noremap = true, silent = true }, prefix = "Telescope :: " })
 
 return M

@@ -28,7 +28,7 @@ M.helpers = {
         rhs = "<Plug>RestNvimPreview<CR>",
         description = "Preview current request.",
       },
-    }, { prefix = "Rest: ", options = { silent = true, noremap = true } })
+    }, { prefix = "Rest :: ", options = { silent = true, noremap = true } })
   end,
 }
 

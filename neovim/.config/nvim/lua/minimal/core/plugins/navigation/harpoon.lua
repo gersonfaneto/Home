@@ -67,7 +67,7 @@ utils.base.mappings.bulk_register({
     rhs = M.helpers.open_menu,
     description = "Browser Harpoon.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Harpoon: " })
+}, { options = { silent = true, noremap = true }, prefix = "Harpoon :: " })
 
 for i = 1, 10 do
   utils.base.mappings.register({
@@ -77,7 +77,7 @@ for i = 1, 10 do
       M.helpers.select_file(i)
     end,
     options = { silent = true, noremap = true },
-    description = "Select " .. i .. "th File.",
+    description = "Harpoon :: Select " .. i .. "th File.",
   })
 end
 

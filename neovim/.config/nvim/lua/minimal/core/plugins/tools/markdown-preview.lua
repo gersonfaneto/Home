@@ -39,7 +39,7 @@ M.handlers = {
         end,
         description = "End Preview.",
       },
-    }, { options = { noremap = true, silent = true }, prefix = "Markdown: " })
+    }, { options = { noremap = true, silent = true }, prefix = "Markdown :: " })
   end,
 }
 

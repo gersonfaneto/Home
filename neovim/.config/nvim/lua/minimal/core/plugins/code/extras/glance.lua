@@ -44,6 +44,6 @@ utils.base.mappings.bulk_register({
     rhs = ":Glance implementations<CR>",
     description = "View implementations.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "Glance: " })
+}, { options = { noremap = true, silent = true }, prefix = "Glance :: " })
 
 return M

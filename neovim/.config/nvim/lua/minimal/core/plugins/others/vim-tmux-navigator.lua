@@ -33,7 +33,7 @@ if os.getenv("TMUX") ~= nil then
       rhs = ":TmuxNavigateRight<CR>",
       description = "Go to the right.",
     },
-  }, { options = { silent = true, noremap = true }, prefix = "TMUX: " })
+  }, { options = { silent = true, noremap = true }, prefix = "TMUX :: " })
 end
 
 return M

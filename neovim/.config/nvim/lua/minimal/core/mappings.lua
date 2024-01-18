@@ -38,7 +38,7 @@ utils.base.mappings.bulk_register({
     rhs = ":set wrap!<CR>",
     description = "Toggle wrap.",
   },
-}, { prefix = "Quick Toggles: ", options = { silent = true, noremap = true } })
+}, { prefix = "Quick Toggles :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -59,7 +59,7 @@ utils.base.mappings.bulk_register({
     rhs = ":BufferDelete<CR>",
     description = "Delete the current Buffer while maintaining the window layout.",
   },
-}, { prefix = "Custom Commands: ", options = { silent = true, noremap = true } })
+}, { prefix = "Custom Commands :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -134,7 +134,7 @@ utils.base.mappings.bulk_register({
     end,
     description = "Increase split size vertically.",
   },
-}, { prefix = "Splits & Windows: ", options = { silent = true, noremap = true } })
+}, { prefix = "Splits & Windows :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -179,7 +179,7 @@ utils.base.mappings.bulk_register({
     rhs = ":tabmove -1<CR>",
     description = "Shift tab to the left.",
   },
-}, { prefix = "Tabs: ", options = { silent = true, noremap = true } })
+}, { prefix = "Tabs :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -200,7 +200,7 @@ utils.base.mappings.bulk_register({
     rhs = ":b#<CR>",
     description = "Quickly switch between current and last open buffer.",
   },
-}, { prefix = "Buffers: ", options = { silent = true, noremap = true } })
+}, { prefix = "Buffers :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -253,7 +253,7 @@ utils.base.mappings.bulk_register({
     rhs = "1z=",
     description = "Accept first suggestion for spelling correction.",
   },
-}, { prefix = "Basic Operations: ", options = { silent = true, noremap = true } })
+}, { prefix = "Basic Operations :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -320,7 +320,7 @@ utils.base.mappings.bulk_register({
     rhs = "<C-i>zz",
     description = "Go forward in the jump list.",
   },
-}, { prefix = "Better Navigation: ", options = { silent = true, noremap = true } })
+}, { prefix = "Better Navigation :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -354,7 +354,7 @@ utils.base.mappings.bulk_register({
     options = { silent = false },
     description = "Replace the word under the cursor in the current buffer.",
   },
-}, { prefix = "Search & Replace: ", options = { silent = true, noremap = true } })
+}, { prefix = "Search & Replace :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -480,6 +480,6 @@ utils.base.mappings.bulk_register({
     rhs = ":m '<-2<CR>gv=gv",
     description = "Move current line down.",
   },
-}, { prefix = "Better Editing: ", options = { silent = true, noremap = true } })
+}, { prefix = "Better Editing :: ", options = { silent = true, noremap = true } })
 
 return M

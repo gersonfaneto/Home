@@ -61,6 +61,6 @@ utils.base.mappings.bulk_register({
     rhs = ":Oil --float<CR>",
     description = "Open parent directory - Float.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Oil: " })
+}, { options = { silent = true, noremap = true }, prefix = "Oil :: " })
 
 return M

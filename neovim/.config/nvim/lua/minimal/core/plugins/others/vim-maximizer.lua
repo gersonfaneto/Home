@@ -3,8 +3,7 @@ local M = {
   cmd = { "MaximizerToggle" },
 }
 
-function M.config()
-end
+function M.config() end
 
 utils.base.mappings.bulk_register({
   {
@@ -13,6 +12,6 @@ utils.base.mappings.bulk_register({
     rhs = ":MaximizerToggle<CR>",
     description = "Maximize/Minimize current split.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Maximizer: " })
+}, { options = { silent = true, noremap = true }, prefix = "Maximizer :: " })
 
 return M

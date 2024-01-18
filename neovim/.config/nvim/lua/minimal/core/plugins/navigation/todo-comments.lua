@@ -53,6 +53,6 @@ utils.base.mappings.bulk_register({
     rhs = ":TodoTelescope<CR>",
     description = "TODOs in current project.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "TODOs: " })
+}, { options = { noremap = true, silent = true }, prefix = "TODOs :: " })
 
 return M
