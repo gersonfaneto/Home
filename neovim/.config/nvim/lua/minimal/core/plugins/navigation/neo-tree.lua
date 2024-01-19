@@ -1,11 +1,6 @@
 local M = {
   "nvim-neo-tree/neo-tree.nvim",
-  keys = {
-    "<C-e><C-r>",
-    "<C-e><C-l>",
-    "<C-e><C-f>",
-    "<C-e><C-e>",
-  },
+  cmd = { "Neotree" },
   dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
@@ -18,7 +13,7 @@ function M.config()
 
   neo_tree.setup({
     close_if_last_window = true,
-    popup_border_style = "single",
+    popup_border_style = "rounded",
     enable_git_status = true,
     enable_modified_markers = true,
     enable_diagnostics = true,
@@ -72,26 +67,13 @@ function M.config()
         },
       },
     },
-    event_handlers = {
-      {
-        event = "neo_tree_window_after_open",
-        handler = function(args)
-          if args.position == "left" or args.position == "right" then
-            vim.cmd("wincmd =")
-          end
-        end,
-      },
-      {
-        event = "neo_tree_window_after_close",
-        handler = function(args)
-          if args.position == "left" or args.position == "right" then
-            vim.cmd("wincmd =")
-          end
-        end,
-      },
-    },
+    event_handlers = {},
   })
 
+  M.handlers.fix_colors()
+end
+
+function M.init()
   M.handlers.register_mappings()
 end
 
@@ -100,29 +82,31 @@ M.handlers = {
     utils.base.mappings.bulk_register({
       {
         mode = { "n" },
-        lhs = "<C-e><C-r>",
-        rhs = ":Neotree toggle right<CR>",
-        description = "Toggle the right window.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<C-e><C-l>",
-        rhs = ":Neotree toggle left<CR>",
-        description = "Toggle the left window.",
-      },
-      {
-        mode = { "n" },
         lhs = "<C-e><C-f>",
-        rhs = ":Neotree toggle float<CR>",
-        description = "Toggle the floating window.",
+        rhs = ":Neotree toggle float filesystem<CR>",
+        description = "Files",
       },
       {
         mode = { "n" },
-        lhs = "<C-e><C-e>",
-        rhs = ":Neotree focus<CR>",
-        description = "Focus the open window.",
+        lhs = "<C-e><C-b>",
+        rhs = ":Neotree toggle float buffers<CR>",
+        description = "Buffers",
+      },
+      {
+        mode = { "n" },
+        lhs = "<C-e><C-g>",
+        rhs = ":Neotree toggle float git_status<CR>",
+        description = "Git",
       },
     }, { prefix = "NeoTree :: ", options = { silent = true, noremap = true } })
+  end,
+  fix_colors = function()
+    local colors = utils.interface.colors.get_colors()
+
+    vim.cmd("highlight NeoTreeNormal guibg=" .. colors.bg .. " guifg=none")
+    vim.cmd("highlight NeoTreeFloatNormal guifg=none guibg=none")
+    vim.cmd("highlight NeoTreeFloatBorder gui=none guifg=" .. colors.fg .. " guibg=none")
+    vim.cmd("highlight NeoTreeEndOfBuffer guibg=" .. colors.bg)
   end,
 }
 
