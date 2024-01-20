@@ -14,7 +14,7 @@ WAIT="\e[1A\e[K"
 LOG="INSTALL.log"
 
 # List of directories to be excluded/used on the configuration linking step.
-EXCLUDE=("JARVIS.sh" "INSTALL.log" "README.md" "LICENSE" "fonts")
+EXCLUDE=("JARVIS.sh" "INSTALL.log" "README.md" "LICENSE" "fonts" "others")
 DIRS=$(ls)
 
 FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLUDE[@]}"))
