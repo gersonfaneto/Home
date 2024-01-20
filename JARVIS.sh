@@ -64,6 +64,23 @@ display_progress() {
 	sleep 2
 }
 
+ask_for_sudo() {
+  # Ask for the administrator password upfront.
+  sudo -v &> /dev/null
+
+  # Update existing `sudo` time stamp
+  # until this script has finished.
+  #
+  # https://gist.github.com/cowboy/3118588
+
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done &> /dev/null &
+
+}
+
 # Tests if a package is already installed and if not found it will attempt to install it.
 install_package() {
 	if yay -Q "$1" &>>/dev/null; then
@@ -95,6 +112,8 @@ sleep 1
 
 # Expect user input to confirm and continua with the script or exit.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install [Y/n] ' REPLY
+
+ask_for_sudo
 
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 	echo -e "$NOTE - Setup starting..."
