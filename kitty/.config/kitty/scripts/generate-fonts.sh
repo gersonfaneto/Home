@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 FONTS_DIRECTORY="$HOME/.local/share/fonts/YADR/"
-KITTY_DIRECTORY="$HOME/.config/kitty/"
+KITTY_DIRECTORY="$HOME/.config/kitty"
 
 DEFAULT_FONT="Writer"
 FONTS_FILE="$KITTY_DIRECTORY/extras/fonts.conf"

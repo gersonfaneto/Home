@@ -38,7 +38,7 @@ packages=(
   neofetch
   python-pdftotext
   ripgrep
-  rtx
+  mise
   starship
   stow
   tar
