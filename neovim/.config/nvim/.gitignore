@@ -3,7 +3,7 @@ spell/*.add
 spell/*.add.spl
 
 # Where files for custom settings/extensions are stored.
-lua/custom/plugins/**/*.lua
+lua/custom/plugins
 lua/custom/settings.lua
 lua/custom/servers.lua
 
