@@ -1,6 +1,5 @@
 local M = {
   "chrishrb/gx.nvim",
-  keys = { "gx" },
   dependencies = { "nvim-lua/plenary.nvim" },
 }
 
