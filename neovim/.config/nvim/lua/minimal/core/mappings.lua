@@ -482,4 +482,45 @@ utils.base.mappings.bulk_register({
   },
 }, { prefix = "Better Editing :: ", options = { silent = true, noremap = true } })
 
+utils.base.mappings.bulk_register({
+  {
+    mode = { "x" },
+    lhs = "al",
+    rhs = ":<c-u>silent! normal! 0v$<cr>",
+    description = "Around the whole line.",
+  },
+  {
+    mode = { "o" },
+    lhs = "al",
+    rhs = ":normal val<cr>",
+    description = "Around the whole line.",
+  },
+
+  {
+    mode = { "x" },
+    lhs = "il",
+    rhs = ":<c-u>silent! normal! ^vg_<cr>",
+    description = "Inside the whole line.",
+  },
+  {
+    mode = { "o" },
+    lhs = "il",
+    rhs = ":normal vil<cr>",
+    description = "Inside the whole line.",
+  },
+
+  {
+    mode = { "x" },
+    lhs = "ae",
+    rhs = [[:<c-u>silent! normal! m'gg0VG$<cr>]],
+    description = "Around the whole file.",
+  },
+  {
+    mode = { "o" },
+    lhs = "ae",
+    rhs = ":normal Vae<cr>",
+    description = "Around the whole file.",
+  },
+}, { prefix = "Custom Text Objects: ", options = { silent = true, noremap = true } })
+
 return M
