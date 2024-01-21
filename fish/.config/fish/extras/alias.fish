@@ -11,6 +11,7 @@ if type -q tmux
   alias ta "tmux attach-session"
   alias tn "tmux new-session -s (basename (pwd)) -d"
   alias tk "tmux kill-session"
+  alias tK "tmux kill-server"
 end
 
 if type -q neofetch
