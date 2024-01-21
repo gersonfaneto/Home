@@ -37,7 +37,8 @@ function M.config()
     auto_install = true,
     sync_install = false,
     indent = {
-      enable = true,
+      enable = false,
+      disable = {},
     },
     autotag = {
       enable = true,
@@ -67,8 +68,8 @@ function M.config()
           ["ic"] = { query = "@class.inner", desc = "Inner part of a class." },
           ["ai"] = { query = "@conditional.outer", desc = "Around an if statement." },
           ["ii"] = { query = "@conditional.inner", desc = "Inner part of an if statement." },
-          ["al"] = { query = "@loop.outer", desc = "Around a loop." },
-          ["il"] = { query = "@loop.inner", desc = "Inner part of a loop." },
+          ["ab"] = { query = "@loop.outer", desc = "Around a loop." },
+          ["ib"] = { query = "@loop.inner", desc = "Inner part of a loop." },
           -- ["ap"] = { query = "@parameter.outer", desc = "Around parameter." },
           -- ["ip"] = { query = "@parameter.inner", desc = "Inside a parameter." },
         },
