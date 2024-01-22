@@ -35,10 +35,10 @@ packages=(
   kitty
   lf
   mediainfo
+  mise
   neofetch
   python-pdftotext
   ripgrep
-  mise
   starship
   stow
   tar
@@ -50,6 +50,7 @@ packages=(
   xh
   zip
   zoxide
+  ghcup-hs-bin
 )
 
 # Show a progress bar to the user.
