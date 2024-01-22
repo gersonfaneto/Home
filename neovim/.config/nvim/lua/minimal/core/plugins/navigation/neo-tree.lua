@@ -66,6 +66,10 @@ function M.config()
           "thumbs.db",
         },
       },
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true,
+      },
     },
     event_handlers = {},
   })
@@ -83,19 +87,19 @@ M.handlers = {
       {
         mode = { "n" },
         lhs = "<C-e><C-f>",
-        rhs = ":Neotree toggle float filesystem<CR>",
+        rhs = ":Neotree reveal float filesystem<CR>",
         description = "Files",
       },
       {
         mode = { "n" },
         lhs = "<C-e><C-b>",
-        rhs = ":Neotree toggle float buffers<CR>",
+        rhs = ":Neotree reveal float buffers<CR>",
         description = "Buffers",
       },
       {
         mode = { "n" },
         lhs = "<C-e><C-g>",
-        rhs = ":Neotree toggle float git_status<CR>",
+        rhs = ":Neotree reveal float git_status<CR>",
         description = "Git",
       },
     }, { prefix = "NeoTree :: ", options = { silent = true, noremap = true } })
