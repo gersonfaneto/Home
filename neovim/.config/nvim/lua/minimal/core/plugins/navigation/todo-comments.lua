@@ -50,7 +50,7 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ft",
-    rhs = ":TodoTelescope<CR>",
+    rhs = ":TodoTrouble<CR>",
     description = "TODOs in current project.",
   },
 }, { options = { noremap = true, silent = true }, prefix = "TODOs :: " })

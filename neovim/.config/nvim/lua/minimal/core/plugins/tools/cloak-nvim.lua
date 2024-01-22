@@ -30,20 +30,20 @@ M.helpers = {
       {
         mode = { "n" },
         lhs = "<C-c><C-e>",
-        rhs = ":CloakEnable<CR>",
+        rhs = function()
+          vim.cmd("CloakEnable")
+          vim.notify("Enabled.", vim.log.levels.WARN, { title = "Cloak ::" })
+        end,
         description = "Enable.",
       },
       {
         mode = { "n" },
         lhs = "<C-c><C-d>",
-        rhs = ":CloakDisable<CR>",
+        rhs = function()
+          vim.cmd("CloakDisable")
+          vim.notify("Disabled.", vim.log.levels.WARN, { title = "Cloak ::" })
+        end,
         description = "Disable.",
-      },
-      {
-        mode = { "n" },
-        lhs = "<C-c><C-t>",
-        rhs = ":CloakToggle<CR>",
-        description = "Toggle.",
       },
     }, { options = { silent = true, noremap = true }, prefix = "Cloak :: " })
   end,
