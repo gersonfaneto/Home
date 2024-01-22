@@ -39,10 +39,20 @@ function M.config()
       null_ls.builtins.formatting.clang_format.with({ filetypes = { "c", "cpp" } }),
 
       -- Java
-      null_ls.builtins.formatting.google_java_format.with({ filetypes = { "java" } }),
+      null_ls.builtins.formatting.google_java_format.with({
+        filetypes = { "java" },
+        args = {
+          "--aosp",
+          "--skip-sorting-imports",
+          "--skip-removing-unused-imports",
+        },
+      }),
 
       -- OCaml
       null_ls.builtins.formatting.ocamlformat,
+
+      -- Git
+      null_ls.builtins.code_actions.gitsigns,
     },
     on_attach = function(client, bufnr)
       utils.plugins.lsp.formatting.on_attach(client, bufnr)
