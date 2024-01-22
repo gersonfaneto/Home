@@ -50,7 +50,7 @@ function M.config()
           },
           {
             mode = { "n" },
-            lhs = "<leader>rf",
+            lhs = "<leader>rq",
             rhs = ht.repl.quit,
             description = "Quit Repl.",
           },
