@@ -78,6 +78,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "lspinfo",
     "fugitive",
     "checkhealth",
+    "DressingSelect",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

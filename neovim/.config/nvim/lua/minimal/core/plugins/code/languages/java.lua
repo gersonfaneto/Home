@@ -39,7 +39,44 @@ local M = {
         local on_attach = function(_, bufnr)
           utils.plugins.lsp.attach.on_attach(_, bufnr)
 
-          vim.lsp.codelens.refresh()
+          utils.base.mappings.bulk_register({
+            {
+              mode = { "n" },
+              lhs = "<leader>jo",
+              rhs = ":lua require('jdtls').organize_imports()<CR>",
+              description = "Organize Imports.",
+            },
+            {
+              mode = { "n" },
+              lhs = "<leader>jrv",
+              rhs = ":lua require('jdtls').extract_variable()<CR>",
+              description = "Extract Variable.",
+            },
+            {
+              mode = { "x" },
+              lhs = "<leader>jrv",
+              rhs = "<ESC>:lua require('jdtls').extract_variable(true)<CR>",
+              description = "Extract Variable.",
+            },
+            {
+              mode = { "n" },
+              lhs = "<leader>jrc",
+              rhs = ":lua require('jdtls').extract_constant()<CR>",
+              description = "Extract Constant.",
+            },
+            {
+              mode = { "x" },
+              lhs = "<leader>jrc",
+              rhs = "<ESC>:lua require('jdtls').extract_constant(true)<CR>",
+              description = "Extract Constant.",
+            },
+            {
+              mode = { "x" },
+              lhs = "<leader>jrm",
+              rhs = "<ESC>:lua require('jdtls').extract_method(true)<CR>",
+              description = "Extract Method.",
+            },
+          }, { prefix = "Java :: ", options = { silent = true, noremap = true, buffer = bufnr } })
 
           vim.api.nvim_create_autocmd("BufWritePost", {
             pattern = { "*.java" },
@@ -47,6 +84,8 @@ local M = {
               local _, _ = pcall(vim.lsp.codelens.refresh)
             end,
           })
+
+          vim.lsp.codelens.refresh()
         end
 
         local config = {
