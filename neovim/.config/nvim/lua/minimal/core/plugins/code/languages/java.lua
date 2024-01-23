@@ -48,31 +48,31 @@ local M = {
             },
             {
               mode = { "n" },
-              lhs = "<leader>jrv",
+              lhs = "<leader>jv",
               rhs = ":lua require('jdtls').extract_variable()<CR>",
               description = "Extract Variable.",
             },
             {
               mode = { "x" },
-              lhs = "<leader>jrv",
+              lhs = "<leader>jv",
               rhs = "<ESC>:lua require('jdtls').extract_variable(true)<CR>",
               description = "Extract Variable.",
             },
             {
               mode = { "n" },
-              lhs = "<leader>jrc",
+              lhs = "<leader>jc",
               rhs = ":lua require('jdtls').extract_constant()<CR>",
               description = "Extract Constant.",
             },
             {
               mode = { "x" },
-              lhs = "<leader>jrc",
+              lhs = "<leader>jc",
               rhs = "<ESC>:lua require('jdtls').extract_constant(true)<CR>",
               description = "Extract Constant.",
             },
             {
               mode = { "x" },
-              lhs = "<leader>jrm",
+              lhs = "<leader>jm",
               rhs = "<ESC>:lua require('jdtls').extract_method(true)<CR>",
               description = "Extract Method.",
             },
@@ -90,7 +90,7 @@ local M = {
 
         local config = {
           cmd = {
-            home .. ".local/share/rtx/installs/java/latest/bin/java",
+            home .. ".local/share/mise/installs/java/latest/bin/java",
             "-Declipse.application=org.eclipse.jdt.ls.core.id1",
             "-Dosgi.bundles.defaultStartLevel=4",
             "-Declipse.product=org.eclipse.jdt.ls.core.product",

@@ -36,16 +36,13 @@ function M.config()
       null_ls.builtins.formatting.rubocop,
 
       -- C | C++
-      null_ls.builtins.formatting.clang_format.with({ filetypes = { "c", "cpp" } }),
+      null_ls.builtins.formatting.clang_format.with({
+        filetypes = { "c", "cpp" },
+      }),
 
       -- Java
       null_ls.builtins.formatting.google_java_format.with({
         filetypes = { "java" },
-        args = {
-          "--aosp",
-          "--skip-sorting-imports",
-          "--skip-removing-unused-imports",
-        },
       }),
 
       -- OCaml
