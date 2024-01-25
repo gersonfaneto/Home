@@ -31,6 +31,9 @@ bindsym F3 exec --no-startup-id brightnessctl set 10%+
 # Drag floating windows to their wanted position.
 floating_modifier $mod
 
+# Open screenshot tool.
+bindsym $mod+p exec --no-startup-id flameshot gui
+
 # Open the terminal.
 bindsym $mod+Return exec kitty
 
@@ -148,3 +151,5 @@ bar {
   status_command i3status
   tray_output none
 }
+
+for_window [class="kitty"] floating enable
