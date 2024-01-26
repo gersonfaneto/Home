@@ -1,3 +1,18 @@
+alias ex exit
+alias cl clear
+
+alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
+
+alias cp "cp -i"
+alias mv "mv -i"
+alias rm "rm -i"
+
+alias ..  "cd .."
+alias ... "cd ../.."
+alias .3  "cd ../../.."
+alias .4  "cd ../../../.."
+alias .5  "cd ../../../../.."
+
 if type -q eza
   alias ls "eza --icons --color=always --group-directories-first"
   alias la "eza --all --icons --color=always --group-directories-first"
