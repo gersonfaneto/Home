@@ -1,9 +1,17 @@
 local M = {
   "neovim/nvim-lspconfig",
+  cmd = {
+    "LspInfo",
+    "LspStart",
+    "LspStop",
+    "LspRestart",
+  },
+  event = {
+    "BufReadPost",
+  },
   dependencies = {
     "williamboman/mason.nvim",
   },
-  event = { "BufReadPre", "BufNewFile" },
 }
 
 function M.config()

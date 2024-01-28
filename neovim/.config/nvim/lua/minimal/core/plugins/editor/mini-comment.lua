@@ -1,6 +1,9 @@
 local M = {
   "echasnovski/mini.comment",
-  event = { "VeryLazy" },
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
 }
 
 function M.config()

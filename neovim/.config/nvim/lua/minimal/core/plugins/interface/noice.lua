@@ -1,6 +1,8 @@
 local M = {
   "folke/noice.nvim",
-  event = { "VeryLazy" },
+  event = {
+    "UIEnter",
+  },
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
@@ -8,19 +10,6 @@ local M = {
 
 function M.config()
   local noice = require("noice")
-  local lualine = require("lualine")
-
-  lualine.setup({
-    sections = {
-      lualine_c = {
-        {
-          noice.api.statusline.mode.get,
-          cond = noice.api.statusline.mode.has,
-          color = { fg = "#ff9e64" },
-        },
-      },
-    },
-  })
 
   noice.setup({
     lsp = {

@@ -1,6 +1,8 @@
 local M = {
   "stevearc/dressing.nvim",
-  event = { "VeryLazy" },
+  event = {
+    "UIEnter",
+  },
 }
 
 function M.config()

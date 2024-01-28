@@ -7,6 +7,7 @@ function M.config()
   local colors = utils.interface.colors.get_colors()
   local icons = utils.interface.icons.get("diagnostics")
 
+  local noice = require("noice")
   local lualine = require("lualine")
 
   lualine.setup({
@@ -83,7 +84,13 @@ function M.config()
           },
         },
       },
-      lualine_c = {},
+      lualine_c = {
+        {
+          noice.api.statusline.mode.get,
+          cond = noice.api.statusline.mode.has,
+          color = { fg = "#ff9e64" },
+        },
+      },
       lualine_x = {
         "selectioncount",
       },

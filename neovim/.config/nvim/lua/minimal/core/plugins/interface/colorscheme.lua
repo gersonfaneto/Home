@@ -1,6 +1,9 @@
 local M = {
   "sainnhe/gruvbox-material",
-  priority = 1000,
+  event = {
+    "UIEnter",
+  },
+  priority = 100,
 }
 
 function M.config()

@@ -1,7 +1,12 @@
 local M = {
   "williamboman/mason.nvim",
   build = ":MasonUpdate",
-  event = { "VeryLazy" },
+  cmd = {
+    "Mason",
+  },
+  event = {
+    "BufReadPost",
+  },
 }
 
 function M.config()
