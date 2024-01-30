@@ -1,6 +1,11 @@
 alias ex exit
 alias cl clear
 
+alias sr "sudo reboot -h now"
+alias sp "sudo poweroff"
+
+alias sweep "echo yes | history clear > /dev/null"
+
 alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
 alias cp "cp -i"
