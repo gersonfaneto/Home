@@ -31,17 +31,20 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 # Drag floating windows to their wanted position.
 floating_modifier $mod
 
+# Open `dmenu`, the default application launcher.
+bindsym $mod+d exec --no-startup-id dmenu_run
+
 # Open screenshot tool.
 bindsym $mod+p exec --no-startup-id flameshot gui
+
+# Open the browser
+bindsym $mod+b exec firefox
 
 # Open the terminal.
 bindsym $mod+Return exec kitty
 
 # Kill the focused window.
 bindsym $mod+q kill
-
-# Open `dmenu`, the default application launcher.
-bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Change focus between windows.
 bindsym $mod+Left focus left
@@ -132,7 +135,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # System controls.
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
   bindsym r exec --no-startup-id systemctl reboot
@@ -151,5 +153,3 @@ bar {
   status_command i3status
   tray_output none
 }
-
-for_window [class="kitty"] floating enable
