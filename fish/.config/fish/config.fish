@@ -19,3 +19,4 @@ if not test -f "$HOME/.config/fish/extras/colors.fish"
 end
 
 source "$HOME/.config/fish/extras/colors.fish"
+source "$HOME/.config/fish/extras/prompt.fish"
