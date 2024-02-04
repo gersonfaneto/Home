@@ -39,7 +39,6 @@ packages=(
   neofetch
   python-pdftotext
   ripgrep
-  starship
   stow
   tar
   tmux
