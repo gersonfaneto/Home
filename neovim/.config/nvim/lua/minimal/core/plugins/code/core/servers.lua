@@ -8,6 +8,7 @@ local M = {
   },
   event = {
     "BufReadPost",
+    "BufNewFile",
   },
   dependencies = {
     "williamboman/mason.nvim",

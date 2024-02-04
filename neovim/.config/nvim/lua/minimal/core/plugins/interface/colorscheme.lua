@@ -1,8 +1,5 @@
 local M = {
   "sainnhe/gruvbox-material",
-  event = {
-    "UIEnter",
-  },
   priority = 100,
 }
 
