@@ -9,7 +9,7 @@ function M.config()
 
   toggleterm.setup({
     size = 20,
-    open_mapping = [[<leader>tt]],
+    open_mapping = [[<leader>tf]],
     shade_filetypes = {},
     shade_terminals = true,
     shading_factor = 2,
@@ -27,6 +27,33 @@ function M.config()
       },
     },
   })
+
+  utils.base.mappings.bulk_register({
+    {
+      mode = { "n" },
+      lhs = "<leader>tf",
+      rhs = ":ToggleTerm direction=float<CR>",
+      description = "Float.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>tt",
+      rhs = ":ToggleTerm direction=tab<CR>",
+      description = "Tab.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>tv",
+      rhs = ":ToggleTerm direction=vertical<CR>",
+      description = "Vertical.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>th",
+      rhs = ":ToggleTerm direction=horizontal<CR>",
+      description = "Horizontal.",
+    },
+  }, { options = { silent = true, noremap = true }, prefix = "ToggleTerm :: " })
 end
 
 return M
