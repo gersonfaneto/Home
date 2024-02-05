@@ -6,6 +6,7 @@ function fish_prompt
   set -g blue (set_color -o blue)
   set -l green (set_color -o green)
   set -g normal (set_color normal)
+  set -l separator "::"
 
   set -l ahead (_git_ahead)
   set -g whitespace ' '
@@ -21,6 +22,13 @@ function fish_prompt
   set -l cwd $cyan(basename (prompt_pwd))
 
   if [ (_git_branch_name) ]
+
+    set repo_name (basename (command git rev-parse --show-toplevel))
+    set folder_name (basename (prompt_pwd))
+
+    if not test $repo_name = $folder_name
+      set cwd $cyan(basename (command git rev-parse --show-toplevel))$whitespace$separator$normal$whitespace$folder_name
+    end
 
     if test (_git_branch_name) = master
       set -l git_branch (_git_branch_name)
