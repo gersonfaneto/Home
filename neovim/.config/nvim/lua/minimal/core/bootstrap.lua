@@ -85,12 +85,19 @@ local lazy_options = {
 
 lazy.setup(include_directories, lazy_options)
 
-utils.base.mappings.register({
-  mode = { "n" },
-  lhs = "<leader>lh",
-  rhs = ":Lazy<CR>",
-  options = { silent = true, noremap = true },
-  description = "Lazy :: Open.",
-})
+utils.base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>lh",
+    rhs = ":Lazy<CR>",
+    description = "Home.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>lp",
+    rhs = ":Lazy profile<CR>",
+    description = "Profile.",
+  },
+}, { options = { silent = true, noremap = true }, prefix = "Lazy :: " })
 
 return M
