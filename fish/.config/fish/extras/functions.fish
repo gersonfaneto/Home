@@ -35,51 +35,6 @@ function hop --argument path
   end
 end
 
-function ix --argument file
-  if not test $file
-    echo "No file provided!"
-    return
-  else if not test -f $file
-    echo "File does not exist!"
-    return
-  else
-    curl -F "f:1=@$file" ix.io
-  end
-end
-
-function todo
-  command ls | grep TODO.md | read line
-
-  if test $line
-    set todo $line
-  else if test -f ~/Notes/TODO.md
-    set todo ~/Notes/TODO.md
-  else
-    echo "No TODO.md file found!"
-    return
-  end
-
-  if type -q glow
-    glow $todo
-  else if type -q bat
-    bat $todo
-  else
-    cat $todo
-  end
-end
-
-function etodo
-  command ls | grep TODO.md | read line
-
-  if test $line
-    $EDITOR $line
-  else if test -f ~/Notes/TODO.md
-    $EDITOR ~/Notes/TODO.md
-  else
-    echo "No TODO.md file found!"
-  end
-end
-
 function background
   switch $BACKGROUND
     case Dark
