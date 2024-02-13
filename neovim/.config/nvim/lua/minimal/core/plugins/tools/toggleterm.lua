@@ -1,6 +1,6 @@
 local M = {
   "akinsho/toggleterm.nvim",
-  keys = { "<leader>tt" },
+  cmd = { "ToggleTerm" },
   version = "*",
 }
 
@@ -8,8 +8,14 @@ function M.config()
   local toggleterm = require("toggleterm")
 
   toggleterm.setup({
-    size = 20,
-    open_mapping = [[<leader>tf]],
+    size = function(term)
+      if term.direction == "horizontal" then
+        return 15
+      elseif term.direction == "vertical" then
+        return vim.o.columns * 0.4
+      end
+      return 20
+    end,
     shade_filetypes = {},
     shade_terminals = true,
     shading_factor = 2,
@@ -27,17 +33,19 @@ function M.config()
       },
     },
   })
+end
 
+function M.init()
   utils.base.mappings.bulk_register({
     {
       mode = { "n" },
-      lhs = "<leader>tf",
+      lhs = "<leader>tt",
       rhs = ":ToggleTerm direction=float<CR>",
       description = "Float.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>tt",
+      lhs = "<leader>tw",
       rhs = ":ToggleTerm direction=tab<CR>",
       description = "Tab.",
     },
@@ -54,6 +62,50 @@ function M.config()
       description = "Horizontal.",
     },
   }, { options = { silent = true, noremap = true }, prefix = "ToggleTerm :: " })
+
+  vim.api.nvim_create_autocmd({ "TermOpen" }, {
+    pattern = "term://*",
+    callback = function()
+      utils.base.mappings.bulk_register({
+        {
+          mode = { "t" },
+          lhs = "<ESC>",
+          rhs = [[<C-\><C-n>]],
+          description = "Exit.",
+        },
+        {
+          mode = { "t" },
+          lhs = "<C-h>",
+          rhs = [[<Cmd>wincmd h<CR>]],
+          description = "Left.",
+        },
+        {
+          mode = { "t" },
+          lhs = "<C-j>",
+          rhs = [[<Cmd>wincmd j<CR>]],
+          description = "Down.",
+        },
+        {
+          mode = { "t" },
+          lhs = "<C-k>",
+          rhs = [[<Cmd>wincmd k<CR>]],
+          description = "Up.",
+        },
+        {
+          mode = { "t" },
+          lhs = "<C-l>",
+          rhs = [[<Cmd>wincmd l<CR>]],
+          description = "Right.",
+        },
+        {
+          mode = { "t" },
+          lhs = "<C-w>",
+          rhs = [[<C-\><C-n><C-w>]],
+          description = "Alternate.",
+        },
+      }, { options = { buffer = 0, silent = true, noremap = true }, prefix = "ToggleTerm :: " })
+    end,
+  })
 end
 
 return M
