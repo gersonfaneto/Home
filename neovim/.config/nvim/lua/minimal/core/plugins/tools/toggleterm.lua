@@ -97,12 +97,6 @@ function M.init()
           rhs = [[<Cmd>wincmd l<CR>]],
           description = "Right.",
         },
-        {
-          mode = { "t" },
-          lhs = "<C-w>",
-          rhs = [[<C-\><C-n><C-w>]],
-          description = "Alternate.",
-        },
       }, { options = { buffer = 0, silent = true, noremap = true }, prefix = "ToggleTerm :: " })
     end,
   })
