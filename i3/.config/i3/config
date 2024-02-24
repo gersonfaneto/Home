@@ -7,7 +7,7 @@ set $ctrl control
 set $shift Mod5
 
 # Font for window titles.
-font pango:JetBrains Mono 10
+font pango:Iosevka Term 10
 
 # Set the background using `feh`.
 exec --no-startup-id feh --bg-fill "$HOME/Pictures/Wallpapers/Digital Art/36.png"
