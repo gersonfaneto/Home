@@ -185,7 +185,7 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
 
 	echo -e "$NOTE - Generating extra configurations for kitty..."
 
-	"$HOME"/.config/kitty/scripts/generate-fonts.sh
+	. "$HOME/.config/kitty/scripts/generate-fonts.sh"
 
 	if yay -Q bat &>>/dev/null; then
 		echo -e "$NOTE - Updating 'bat' themes..."
