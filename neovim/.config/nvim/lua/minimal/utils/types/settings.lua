@@ -27,6 +27,9 @@ M.color_column = "100"
 ---Set to `true` to automatically save files while editing.
 ---@type boolean
 M.auto_save = false
+---Set to `true` to enable auto pairing for some characters, provided by `echasnovski/mini.pairs`.
+---@type boolean
+M.auto_pairs = false
 ---Set to `true` to restore the last position of the cursor on the buffer.
 ---@type boolean
 M.auto_restore_cursor_position = false
