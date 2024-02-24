@@ -229,10 +229,33 @@ utils.base.mappings.bulk_register({
     lhs = "<leader>/",
     rhs = function()
       require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        winblend = 10,
         previewer = false,
       }))
     end,
     description = "Fuzzily search in current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>\\",
+    rhs = function()
+      require("telescope.builtin").live_grep(require("telescope.themes").get_dropdown({
+        winblend = 10,
+        grep_open_files = true,
+      }))
+    end,
+    description = "Fuzzily search in current buffer.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>fc",
+    rhs = function()
+      require("telescope.builtin").find_files({
+        prompt_title = "NeoVIM Configuration",
+        cwd = vim.fn.stdpath("config"),
+      })
+    end,
+    description = "Search through NeoVIM configuration files.",
   },
   {
     mode = { "n" },
