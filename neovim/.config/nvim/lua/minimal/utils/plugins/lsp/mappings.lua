@@ -29,7 +29,7 @@ function M.register(bufnr)
       description = "Show help information.",
     },
     {
-      mode = { "n" },
+      mode = { "n", "i" },
       lhs = "<C-k>",
       rhs = vim.lsp.buf.signature_help,
       description = "Signature Documentation",
