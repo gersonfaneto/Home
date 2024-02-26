@@ -15,19 +15,12 @@ function M.config()
       -- Python
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.isort,
-      null_ls.builtins.diagnostics.ruff,
-      null_ls.builtins.diagnostics.mypy,
 
       -- Lua
       null_ls.builtins.formatting.stylua,
 
       -- JavaScript | TypeScript | Markdown ...
       null_ls.builtins.formatting.prettier,
-      null_ls.builtins.diagnostics.eslint_d.with({
-        condition = function(utils)
-          return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
-        end,
-      }),
 
       -- PHP
       null_ls.builtins.formatting.pint,
