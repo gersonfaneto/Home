@@ -14,11 +14,11 @@ function M.toggle()
   end
 
   if types.settings.format_on_save == false then
-    notify.warn("Can't toggle format on save, option disabled under `Settings`.", { title = "Format" })
+    notify.warn("Can't toggle format on save, option disabled under `Settings`.", { title = "Minimal" })
   elseif M.format_on_save then
-    notify.info("Enabled format on save.", { title = "Format" })
+    notify.info("Enabled format on save.", { title = "Minimal" })
   else
-    notify.warn("Disabled format on save.", { title = "Format" })
+    notify.warn("Disabled format on save.", { title = "Minimal" })
   end
 end
 
@@ -30,7 +30,7 @@ function M.format(opts)
   local bufnr = vim.api.nvim_get_current_buf()
   local filetype = vim.bo[bufnr].filetype
   local have_support = package.loaded["null-ls"]
-      and (#require("null-ls.sources").get_available(filetype, "NULL_LS_FORMATTING") > 0)
+    and (#require("null-ls.sources").get_available(filetype, "NULL_LS_FORMATTING") > 0)
 
   vim.lsp.buf.format(vim.tbl_deep_extend("force", {
     bufnr = bufnr,
@@ -45,9 +45,9 @@ end
 
 function M.on_attach(client, bufnr)
   if
-      client.config
-      and client.config.capabilities
-      and client.config.capabilities.documentFormattingProvider == false
+    client.config
+    and client.config.capabilities
+    and client.config.capabilities.documentFormattingProvider == false
   then
     return
   end

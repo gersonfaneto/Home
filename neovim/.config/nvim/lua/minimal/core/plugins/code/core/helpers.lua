@@ -72,6 +72,6 @@ utils.base.mappings.bulk_register({
     end,
     description = "Format current buffer.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "NoneLS :: " })
+}, { options = { silent = true, noremap = true }, prefix = "Helpers :: " })
 
 return M
