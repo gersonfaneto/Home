@@ -30,6 +30,12 @@ function M.register(bufnr)
     },
     {
       mode = { "n" },
+      lhs = "<C-k>",
+      rhs = vim.lsp.buf.signature_help,
+      description = "Signature Documentation",
+    },
+    {
+      mode = { "n" },
       lhs = "gr",
       rhs = vim.lsp.buf.references,
       description = "Browse references.",
