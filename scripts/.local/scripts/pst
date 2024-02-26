@@ -2,4 +2,8 @@
 
 FILE=${1:-/dev/stdin}
 
-curl --data-binary @${FILE} https://paste.rs
+RESULT=$(curl --data-binary @${FILE} https://paste.rs --silent)
+
+echo $RESULT
+
+echo -n $RESULT | xclip -sel clip
