@@ -46,5 +46,8 @@ M.format_on_save = false
 ---Set to `false` to disable A.I. enhanced coding features, provided by `zbirenbaum/copilot.lua`.
 ---@type boolean
 M.enhanced_coding = true
+---Set to `false` to disable auto-completion features, provided by `hrsh7th/nvim-cmp`.
+---@type boolean
+M.auto_completion = true
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.settings")

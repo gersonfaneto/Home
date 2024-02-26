@@ -32,6 +32,7 @@ function M.config()
   }
 
   require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
+
   cmp.setup({
     snippet = {
       expand = function(args)
@@ -147,6 +148,40 @@ function M.config()
       end,
     },
   })
+
+  local notify = require("lazy.core.util")
+
+  local function toggle_autocompletion()
+    local is_active = cmp.get_config().completion.autocomplete
+
+    if (not utils.types.settings.auto_completion) or (is_active and #is_active > 0) then
+      cmp.setup({ completion = { autocomplete = false } })
+    else
+      cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
+    end
+
+    if not utils.types.settings.auto_completion then
+      notify.warn("Can't toggle auto-completion, option disabled under `Settings`.", { title = "Minimal" })
+    else
+      if is_active and #is_active > 0 then
+        notify.warn("Completion disabled.", { title = "Minimal" })
+      else
+        notify.info("Completion enabled.", { title = "Minimal" })
+      end
+    end
+  end
+
+  utils.base.mappings.register({
+    mode = { "n" },
+    lhs = "<leader>lc",
+    rhs = toggle_autocompletion,
+    options = { noremap = true, silent = true },
+    description = "Editor :: Toggle auto completion.",
+  })
+
+  if not utils.types.settings.auto_completion then
+    cmp.setup({ completion = { autocomplete = false } })
+  end
 end
 
 return M
