@@ -191,9 +191,9 @@ utils.base.mappings.bulk_register({
     lhs = "<leader>fn",
     rhs = function()
       require("telescope.builtin").find_files({
+        cwd = "$HOME/Notes",
         no_ignore = true,
         prompt_title = " Notes ",
-        cwd = "$HOME/Notes",
       })
     end,
     description = "Browse through the Notes.",
@@ -251,8 +251,9 @@ utils.base.mappings.bulk_register({
     lhs = "<leader>fc",
     rhs = function()
       require("telescope.builtin").find_files({
-        prompt_title = "NeoVIM Configuration",
         cwd = vim.fn.stdpath("config"),
+        no_ignore = true,
+        prompt_title = "NeoVIM Configuration",
       })
     end,
     description = "Search through NeoVIM configuration files.",

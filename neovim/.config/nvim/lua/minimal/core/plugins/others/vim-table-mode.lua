@@ -11,13 +11,26 @@ end
 
 M.helpers = {
   register_mappings = function()
-    utils.base.mappings.register({
-      mode = { "n" },
-      lhs = "<leader>tm",
-      rhs = ":TableModeToggle<CR>",
-      options = { silent = true, noremap = true },
-      description = "Table Mode :: Toggle",
-    })
+    utils.base.mappings.bulk_register({
+      {
+        mode = { "n" },
+        lhs = "<leader>tm",
+        rhs = ":TableModeToggle<CR>",
+        description = "Toggle.",
+      },
+      {
+        mode = { "n" },
+        lhs = "<leader>tr",
+        rhs = ":TableModeRealign<CR>",
+        description = "Realign.",
+      },
+      {
+        mode = { "n" },
+        lhs = "<leader>ts",
+        rhs = ":TableSort<CR>",
+        description = "Sort.",
+      },
+    }, { options = { silent = true, noremap = true }, prefix = "Table Mode :: " })
   end,
 }
 
