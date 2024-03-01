@@ -8,6 +8,8 @@ function fish_user_key_bindings
   bind \eb btm
   bind \en nvim
 
+  bind \ez izathura
+
   bind \ek tmux_kill
   bind \ea tmux_attach
   bind \es tmux_sessionizer
