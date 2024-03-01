@@ -248,15 +248,15 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>fc",
+    lhs = "<leader>fm",
     rhs = function()
       require("telescope.builtin").find_files({
         cwd = vim.fn.stdpath("config"),
         no_ignore = true,
-        prompt_title = "NeoVIM Configuration",
+        prompt_title = "Minimal Files",
       })
     end,
-    description = "Search through NeoVIM configuration files.",
+    description = "Search through Minimal configuration files.",
   },
   {
     mode = { "n" },

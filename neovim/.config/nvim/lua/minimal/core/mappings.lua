@@ -253,6 +253,18 @@ utils.base.mappings.bulk_register({
     rhs = "1z=",
     description = "Accept first suggestion for spelling correction.",
   },
+  {
+    mode = { "n" },
+    lhs = "<leader>ea",
+    rhs = ":!chmod +x %<CR>",
+    description = "Add execution permission to current file.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>er",
+    rhs = ":!chmod -x %<CR>",
+    description = "Remove execution permission to current file.",
+  },
 }, { prefix = "Basic Operations :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
