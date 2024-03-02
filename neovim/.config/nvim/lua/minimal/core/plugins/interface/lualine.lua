@@ -55,24 +55,24 @@ function M.config()
           },
           show_modified_status = false,
         },
-        {
-          "filetype",
-          icon_only = true,
-          separator = "",
-          padding = {
-            left = 1,
-            right = 0,
-          },
-        },
-        {
-          "filename",
-          path = 1,
-          symbols = {
-            modified = "  ",
-            readonly = "",
-            unnamed = "",
-          },
-        },
+        -- {
+        --   "filetype",
+        --   icon_only = true,
+        --   separator = "",
+        --   padding = {
+        --     left = 1,
+        --     right = 0,
+        --   },
+        -- },
+        -- {
+        --   "filename",
+        --   path = 1,
+        --   symbols = {
+        --     modified = "  ",
+        --     readonly = "",
+        --     unnamed = "",
+        --   },
+        -- },
         {
           "diagnostics",
           sources = { "nvim_lsp" },
