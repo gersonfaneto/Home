@@ -18,6 +18,9 @@ function M.config()
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
+      progress = {
+        enabled = false,
+      },
       signature = {
         auto_open = {
           enabled = false,
