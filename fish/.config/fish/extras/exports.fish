@@ -4,6 +4,12 @@ if test -d "$HOME/.local/bin/"
   end
 end
 
+if test -d "$HOME/.local/share/nvim/mason/bin/"
+  if not contains $HOME/.local/share/nvim/mason/bin/ $PATH
+    export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
+  end
+end
+
 if test -d "$HOME/.local/scripts/"
   if not contains $HOME/.local/scripts/ $PATH
     export PATH="$PATH:$HOME/.local/scripts/"
