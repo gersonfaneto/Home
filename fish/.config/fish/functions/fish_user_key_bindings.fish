@@ -13,7 +13,7 @@ function fish_user_key_bindings
   bind \ea tmux_attach
   bind \es tmux_sessionizer
   
-  bind \cf font-selector
+  bind \cf fzf_fonts
 
   bind \cb background
 
