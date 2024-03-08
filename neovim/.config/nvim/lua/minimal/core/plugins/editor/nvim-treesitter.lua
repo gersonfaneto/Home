@@ -64,14 +64,16 @@ function M.config()
         keymaps = {
           ["af"] = { query = "@function.outer", desc = "Around a function." },
           ["if"] = { query = "@function.inner", desc = "Inner part of a function." },
+          ["am"] = { query = "@call.outer", desc = "Around a call." },
+          ["im"] = { query = "@call.inner", desc = "Inner part of a call." },
           ["ac"] = { query = "@class.outer", desc = "Around a class." },
           ["ic"] = { query = "@class.inner", desc = "Inner part of a class." },
           ["ai"] = { query = "@conditional.outer", desc = "Around an if statement." },
           ["ii"] = { query = "@conditional.inner", desc = "Inner part of an if statement." },
           ["ab"] = { query = "@loop.outer", desc = "Around a loop." },
           ["ib"] = { query = "@loop.inner", desc = "Inner part of a loop." },
-          -- ["ap"] = { query = "@parameter.outer", desc = "Around parameter." },
-          -- ["ip"] = { query = "@parameter.inner", desc = "Inside a parameter." },
+          ["aa"] = { query = "@parameter.outer", desc = "Around parameter." },
+          ["ia"] = { query = "@parameter.inner", desc = "Inside a parameter." },
         },
         selection_modes = {
           ["@parameter.outer"] = "v",
@@ -89,21 +91,21 @@ function M.config()
         goto_previous_start = {
           ["[f"] = { query = "@function.outer", desc = "Previous function." },
           ["[c"] = { query = "@class.outer", desc = "Previous class." },
-          -- ["[p"] = { query = "@parameter.inner", desc = "Previous parameter." },
+          ["[a"] = { query = "@parameter.inner", desc = "Previous parameter." },
         },
         goto_next_start = {
           ["]f"] = { query = "@function.outer", desc = "Next function." },
           ["]c"] = { query = "@class.outer", desc = "Next class." },
-          -- ["]p"] = { query = "@parameter.inner", desc = "Next parameter." },
+          ["]a"] = { query = "@parameter.inner", desc = "Next parameter." },
         },
       },
       swap = {
         enable = true,
         swap_next = {
-          ["]a"] = "@parameter.inner",
+          ["<C-p><C-n>"] = "@parameter.inner",
         },
         swap_previous = {
-          ["[a"] = "@parameter.inner",
+          ["<C-p><C-p>"] = "@parameter.inner",
         },
       },
     },

@@ -362,7 +362,7 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>rw",
-    rhs = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    rhs = ":%s/\\(<C-r><C-w>\\)/<C-r><C-w>/gI<Left><Left><Left>",
     options = { silent = false },
     description = "Replace the word under the cursor in the current buffer.",
   },
