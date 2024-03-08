@@ -1,22 +1,24 @@
 function fish_user_key_bindings
-  bind \ef fzf_file
-  bind \er fzf_history
-  bind \ej fzf_directory
-  bind \ez fzf_zathura
+  fish_vi_key_bindings
+
+  bind --mode insert \ef fzf_file
+  bind --mode insert \er fzf_history
+  bind --mode insert \ej fzf_directory
+  bind --mode insert \ez fzf_zathura
   
-  bind \el "lf && commandline -f repaint"
-  bind \eL "lfcd && commandline -f repaint"
-  bind \eb btm
-  bind \en nvim
+  bind --mode insert \el "lf && commandline -f repaint"
+  bind --mode insert \eL "lfcd && commandline -f repaint"
+  bind --mode insert \eb btm
+  bind --mode insert \en nvim
 
-  bind \ek tmux_kill
-  bind \ea tmux_attach
-  bind \es tmux_sessionizer
+  bind --mode insert \ek tmux_kill
+  bind --mode insert \ea tmux_attach
+  bind --mode insert \es tmux_sessionizer
   
-  bind \cf fzf_fonts
+  bind --mode insert \cf fzf_fonts
 
-  bind \cb background
+  bind --mode insert \cb background
 
-  bind ! history_previous_command
-  bind '$' history_previous_command_arguments
+  bind --mode insert ! history_previous_command
+  bind --mode insert '$' history_previous_command_arguments
 end
