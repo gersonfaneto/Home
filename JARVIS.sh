@@ -28,6 +28,7 @@ packages=(
   fd
   fish
   fzf
+  ghcup-hs-bin
   git
   github-cli
   glow
@@ -39,6 +40,7 @@ packages=(
   neofetch
   python-pdftotext
   ripgrep
+  starship
   stow
   tar
   tmux
@@ -49,7 +51,6 @@ packages=(
   xh
   zip
   zoxide
-  ghcup-hs-bin
 )
 
 # Show a progress bar to the user.

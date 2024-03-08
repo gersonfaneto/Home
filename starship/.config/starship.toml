@@ -1,0 +1,29 @@
+# [line_break]
+# disabled = true
+
+[directory]
+read_only = " "
+truncation_length = 4
+truncation_symbol = ""
+truncate_to_repo = true
+
+[jobs]
+symbol = " "
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[rust]
+symbol = " "
+
+[c]
+symbol = " "
+
+[python]
+symbol = " "
+
+[lua]
+symbol = "󰢱 "
+
+[java]
+symbol = " "
