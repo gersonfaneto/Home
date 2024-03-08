@@ -49,22 +49,17 @@ function background
   source "$HOME/.config/fish/extras/colors.fish"
 
   ln -fs "$HOME/.config/tmux/colors/$COLORS.conf" "$HOME/.config/tmux/extras/colors.conf"
-  tmux source "$HOME/.config/tmux/extras/colors.conf"
+  tmux source "$HOME/.config/tmux/extras/colors.conf" 2> /dev/null
 
-  set sessions (tmux list-sessions -F '#S')
+  ps -e | grep -q tmux
 
-  for session in $sessions
-    set windows (tmux list-windows -t $session -F '#I')
-    for window in $windows
-      set panes (tmux list-panes -t $session:$window -F '#P')
-      for pane in $panes
-        tmux send-keys -t $session:$window.$pane "source $HOME/.config/fish/extras/colors.fish && clear" ENTER
-      end
-    end
+  if test $status -eq 0
+    tmux list-panes -a -F '##{session_name}:##{window_index}.##{pane_index}' | \
+      xargs -I PANE tmux send-keys -t PANE '%1' Enter ^/dev/null 2> /dev/null
   end
 
   ln -fs "$HOME/.config/kitty/colors/$COLORS.conf" "$HOME/.config/kitty/extras/colors.conf"
   killall -SIGUSR1 kitty
 
-  commandline -f repaint
+  # clear && commandline -f repaint
 end
