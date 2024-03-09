@@ -13,6 +13,9 @@ style = "bold red"
 number_threshold = 1
 format = "[$symbol]($style)"
 
+[battery]
+disabled = true
+
 [rust]
 symbol = " "
 

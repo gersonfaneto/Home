@@ -120,7 +120,7 @@ local M = {
                 runtimes = {
                   {
                     name = "JavaSE-11",
-                    path = home .. ".local/share/rtx/installs/java/11/",
+                    path = home .. ".local/share/mise/installs/java/11/",
                   },
                 },
               },
