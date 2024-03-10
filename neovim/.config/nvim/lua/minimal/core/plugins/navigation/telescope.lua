@@ -157,6 +157,16 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
+    lhs = "<leader>fH",
+    rhs = function()
+      require("telescope.builtin").man_pages({
+        sections = { "1", "2", "3" },
+      })
+    end,
+    description = "Browse through the manual pages.",
+  },
+  {
+    mode = { "n" },
     lhs = "<leader>ff",
     rhs = function()
       require("telescope.builtin").find_files({
