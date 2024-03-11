@@ -11,7 +11,7 @@ if type -q opam
 end
 
 if type -q starship
-  set SPACEFISH_PROMPT_ADD_NEWLINE false
+  set STARSHIP_CONFIG $HOME/.config/starship/config.toml
 
   starship init fish | source
 end
