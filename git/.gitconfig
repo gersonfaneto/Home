@@ -2,7 +2,7 @@
 
 [init]
   defaultBranch = main
-	templatedir = ~/.template
+  templatedir = ~/.template
 
 [push]
   default = simple
@@ -15,12 +15,12 @@
   email = gersonfaneto.dev@gmail.com
 
 [credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
 
 [core]
   editor = nvim
@@ -59,41 +59,37 @@
   rc = rebase --continue
   ra = rebase --abort
   rt = rebase --edit-todo
-  
+
   wl = worktree list
   wa = worktree add
   wr = worktree remove
 
-  sb = "!git br --all | sed 's/^*//g' | awk '{print $1}' | rg -v remotes | fzf | xargs git checkout"
   cm = "!git checkout main"
   cd = "!git go dev"
   cb = "!git go build"
   cs = "!git go staging"
-  
+
   ca = "!git add --all && git commit"
   ce = commit --amend
-  
+  cj = "!git add --all && git commit --amend"
+
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
-  
-  cc = "!git log --oneline | fzf | awk '{print $1}' | xargs git checkout"
-  sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-status --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'"
-  
-  ba = branch --sort=-committerdate --format='%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
 
-  hist = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-  hhist = "!git log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' | head"
+  cc = "!git log --oneline | fzf | awk '{print $1}' | xargs git checkout"
+  sf = "!git log --oneline | fzf | awk '{print $1}' | xargs git show --name-status --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'"
+
+  ba = branch --sort=-committerdate --format='%(HEAD) %(color:yellow bold)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:relative)) [%(authorname)]'
 
   l = log --date=format:'%b %d, %Y' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
-  lg = log --graph --name-status --date=format:'%b %d, %Y | %H:%M' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
-  llog = log --graph --name-status --date=relative --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)' 
+  ll = log --graph --name-status --date=format:'%b %d, %Y | %H:%M' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
+  lg = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
 
-  last = log --graph --abbrev-commit --date=relative --decorate --since=midnight --color=always --pretty='%C(green)%h%C(yellow)%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-  recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+  last = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
-  in = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
-  out = "!git fetch --quiet && git log --pretty=format:'%C(green)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' @{u}.."
-  
+  in = "!git fetch --quiet && git log --pretty=format:'%C(yellow bold)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
+  out = "!git fetch --quiet && git log --pretty=format:'%C(yellow bold)%h %C(white)- %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' @{u}.."
+
   unstage = "!git status --short | awk '{print $2}' | fzf | xargs git restore --staged"
   undo = "!git status --short | awk '{print $2}' | fzf | xargs git restore"
   rollback = reset --soft HEAD~1
@@ -101,13 +97,13 @@
   rank = "!git log | grep Author | sort | uniq -c | sort -n -r"
 
   go = "!f() {\
-      if git rev-parse --verify $1 >/dev/null 2>&1;\
-      then\
-          git checkout $1;\
-      else\
-          git checkout -b $1;\
-      fi;\
-  }; f"
+    if git rev-parse --verify $1 >/dev/null 2>&1;\
+    then\
+    git checkout $1;\
+    else\
+    git checkout -b $1;\
+    fi;\
+    }; f"
 
   publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   unpublish = "!git push origin :$(git rev-parse --abbrev-ref HEAD)"
