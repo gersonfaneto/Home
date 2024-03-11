@@ -54,12 +54,10 @@ function background
   ps -e | grep -q tmux
 
   if test $status -eq 0
-    tmux list-panes -a -F '##{session_name}:##{window_index}.##{pane_index}' | \
-      xargs -I PANE tmux send-keys -t PANE '%1' Enter ^/dev/null 2> /dev/null
+    tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}' |\
+      xargs -I PANE tmux send-keys -t PANE 'source $HOME/.config/fish/config.fish && clear' Enter 2> /dev/null
   end
 
   ln -fs "$HOME/.config/kitty/colors/$COLORS.conf" "$HOME/.config/kitty/extras/colors.conf"
   killall -SIGUSR1 kitty
-
-  # clear && commandline -f repaint
 end
