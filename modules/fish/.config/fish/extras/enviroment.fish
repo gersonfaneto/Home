@@ -11,7 +11,5 @@ if type -q opam
 end
 
 if type -q starship
-  set STARSHIP_CONFIG $HOME/.config/starship/config.toml
-
   starship init fish | source
 end

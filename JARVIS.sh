@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WARN: Gerson Ferreira - 03.11.2024: Currently broken... 
+
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"
