@@ -16,7 +16,13 @@ function M.init()
       mode = { "n" },
       lhs = "<C-g><C-g>",
       rhs = ":Git<CR>",
-      description = "Open Fugitive.",
+      description = "Open Fugitive - Split.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<C-g><C-t>",
+      rhs = ":tab Git<CR>",
+      description = "Open Fugitive - Tab.",
     },
     {
       mode = { "n", "x" },
