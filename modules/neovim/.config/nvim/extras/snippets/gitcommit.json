@@ -1,22 +1,15 @@
 {
-  "First Commit!": {
-    "prefix": "init",
-    "body": [
-      "Ready... Set... Go!"
-    ],
-    "description": "Base for a new project."
-  },
   "Updated README": {
     "prefix": "readme",
     "body": [
-      "docs: Updated `README`."
+      "docs: Update `README`."
     ],
     "description": "Update to the project `README`."
   },
   "Updated TODO": {
     "prefix": "todo",
     "body": [
-      "docs: Updated `TODO`."
+      "docs: Update `TODO`."
     ],
     "description": "Update to the project `TODO`."
   },
