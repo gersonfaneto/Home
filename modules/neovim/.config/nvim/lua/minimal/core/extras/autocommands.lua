@@ -1,20 +1,20 @@
 local M = {}
 
-vim.api.nvim_create_autocmd("InsertEnter", {
-  command = "set norelativenumber",
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  command = "set relativenumber",
-})
+---Create a new `augroup` under the **minimal** prefix.
+---@param description string @ Brief description for `augroup`.
+local function create_minimal_augroup(description)
+  return vim.api.nvim_create_augroup("minimal_" .. description, { clear = true })
+end
 
 vim.api.nvim_create_autocmd("TextYankPost", {
+  group = create_minimal_augroup("highlight_yank"),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
+  group = create_minimal_augroup("improve_colorscheme"),
   callback = function()
     vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
     vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  command = "set spell",
+  group = create_minimal_augroup("activate_spell_check"),
   pattern = {
     "*.md",
     "*.txt",
@@ -32,9 +32,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
     "*.tex",
     "COMMIT_EDITMSG",
   },
+  command = "set spell",
 })
 
 vim.api.nvim_create_autocmd("BufNewFile", {
+  group = create_minimal_augroup("create_missing_directories"),
   callback = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = 0,
@@ -52,6 +54,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
+  group = create_minimal_augroup("improve_trouble"),
   pattern = { "qf" },
   callback = function()
     if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
@@ -69,7 +72,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
+  group = create_minimal_augroup("smart_close"),
   pattern = {
     "qf",
     "oil",
@@ -93,29 +96,61 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("TermClose", {
+  group = create_minimal_augroup("auto_delete_terminal_buffers"),
+  pattern = "term://*",
+  callback = function()
+    vim.api.nvim_input('<CR>')
+  end,
+})
+
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
-  group = vim.api.nvim_create_augroup("custom_terminal", { clear = true }),
+  group = create_minimal_augroup("improve_terminal_nagivation"),
+  pattern = "term://*",
   callback = function()
     vim.opt_local.list = false
     vim.opt_local.cursorline = false
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
 
-    utils.base.mappings.register({
-      mode = { "t" },
-      lhs = "<ESC>",
-      rhs = "<c-\\><c-n>",
-      options = { silent = true, noremap = true },
-      description = "Terminal :: Exit insert mode.",
-    })
-
-    vim.cmd("startinsert")
+    utils.base.mappings.bulk_register({
+      {
+        mode = { "t" },
+        lhs = "<ESC>",
+        rhs = [[<C-\><C-n>]],
+        description = "Exit.",
+      },
+      {
+        mode = { "t" },
+        lhs = "<C-h>",
+        rhs = [[<Cmd>wincmd h<CR>]],
+        description = "Move Left.",
+      },
+      {
+        mode = { "t" },
+        lhs = "<C-j>",
+        rhs = [[<Cmd>wincmd j<CR>]],
+        description = "Move Down.",
+      },
+      {
+        mode = { "t" },
+        lhs = "<C-k>",
+        rhs = [[<Cmd>wincmd k<CR>]],
+        description = "Move Up.",
+      },
+      {
+        mode = { "t" },
+        lhs = "<C-l>",
+        rhs = [[<Cmd>wincmd l<CR>]],
+        description = "Move Right.",
+      },
+    }, { options = { buffer = 0, silent = true, noremap = true }, prefix = "Terminal :: " })
   end,
 })
 
 if utils.types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
+    group = create_minimal_augroup("restore_cursor_position"),
     callback = function()
       local mark = vim.api.nvim_buf_get_mark(0, '"')
       local lcount = vim.api.nvim_buf_line_count(0)
@@ -128,6 +163,7 @@ end
 
 if utils.types.settings.auto_remove_new_lines_comment then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    group = create_minimal_augroup("remove_new_lines_comments"),
     pattern = { "*" },
     callback = function()
       vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
@@ -136,11 +172,11 @@ if utils.types.settings.auto_remove_new_lines_comment then
 end
 
 if utils.types.settings.show_cursor_line then
-  local cursor_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
+  local cursor_group = create_minimal_augroup("cursor_line")
 
   vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
-    pattern = "*",
     group = cursor_group,
+    pattern = "*",
     callback = function()
       local exclude = { "starter" }
 
@@ -153,8 +189,8 @@ if utils.types.settings.show_cursor_line then
   })
 
   vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
-    pattern = "*",
     group = cursor_group,
+    pattern = "*",
     callback = function()
       local exclude = { "starter" }
 
@@ -169,6 +205,7 @@ end
 
 if utils.types.settings.auto_save then
   vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    group = create_minimal_augroup("autosave"),
     pattern = { "*" },
     callback = function()
       local excluded = {

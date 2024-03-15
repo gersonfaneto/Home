@@ -496,6 +496,27 @@ utils.base.mappings.bulk_register({
 
 utils.base.mappings.bulk_register({
   {
+    mode = { "n" },
+    lhs = "<leader>th",
+    rhs = ":split +term | resize 15<CR>",
+    description = "Horizontal.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>tv",
+    rhs = ":vsplit +term <CR>",
+    description = "Vertical.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>tt",
+    rhs = ":tabnew +term<CR>",
+    description = "Window.",
+  },
+}, { options = { silent = true, noremap = true }, prefix = "Terminal :: " })
+
+utils.base.mappings.bulk_register({
+  {
     mode = { "x" },
     lhs = "al",
     rhs = ":<c-u>silent! normal! 0v$<cr>",
