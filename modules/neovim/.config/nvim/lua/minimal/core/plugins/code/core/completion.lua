@@ -12,6 +12,7 @@ local M = {
       "L3MON4D3/LuaSnip",
       dependencies = {
         "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
       },
     },
   },
@@ -24,6 +25,7 @@ function M.config()
 
   local lspkind = require("lspkind")
   local luasnip = require("luasnip")
+  local snippets = require("luasnip.loaders.from_vscode")
 
   local icons = {
     ui = utils.interface.icons.get("ui"),
@@ -31,7 +33,8 @@ function M.config()
     misc = utils.interface.icons.get("misc"),
   }
 
-  require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
+  snippets.lazy_load()
+  snippets.lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
 
   cmp.setup({
     snippet = {
