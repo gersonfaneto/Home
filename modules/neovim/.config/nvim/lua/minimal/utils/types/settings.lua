@@ -50,4 +50,8 @@ M.enhanced_coding = true
 ---@type boolean
 M.auto_completion = true
 
+---Set to `false` to enable the arrow keys.
+---@type boolean
+M.full_immersion = true
+
 return require("minimal.utils.base.settings").extend_settings(M, "custom.settings")

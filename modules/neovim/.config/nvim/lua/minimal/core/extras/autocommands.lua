@@ -100,7 +100,7 @@ vim.api.nvim_create_autocmd("TermClose", {
   group = create_minimal_augroup("auto_delete_terminal_buffers"),
   pattern = "term://*",
   callback = function()
-    vim.api.nvim_input('<CR>')
+    vim.api.nvim_input("<CR>")
   end,
 })
 
@@ -227,6 +227,40 @@ if utils.types.settings.auto_save then
       end
     end,
     nested = true,
+  })
+end
+
+if utils.types.settings.full_immersion then
+  vim.api.nvim_create_autocmd("VimEnter", {
+    group = create_minimal_augroup("full_immersion"),
+    callback = function()
+      utils.base.mappings.bulk_register({
+        {
+          mode = { "n", "i", "x" },
+          lhs = "<Up>",
+          rhs = "Nop",
+          description = "Disable Up Arrow.",
+        },
+        {
+          mode = { "n", "i", "x" },
+          lhs = "<Down>",
+          rhs = "Nop",
+          description = "Disable Down Arrow.",
+        },
+        {
+          mode = { "n", "i", "x" },
+          lhs = "<Left>",
+          rhs = "Nop",
+          description = "Disable Left Arrow.",
+        },
+        {
+          mode = { "n", "i", "x" },
+          lhs = "<Right>",
+          rhs = "Nop",
+          description = "Disable Right Arrow.",
+        },
+      }, { options = { silent = true, noremap = true }, prefix = "Full Immersion :: " })
+    end,
   })
 end
 
