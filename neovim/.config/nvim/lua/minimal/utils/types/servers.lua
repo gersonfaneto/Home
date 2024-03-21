@@ -10,6 +10,8 @@ M.parsers = {
   "c",
   "cpp",
   "make",
+  "cmake",
+  "doxygen",
   "css",
   "html",
   "javascript",
