@@ -106,6 +106,7 @@
     fi;\
     }; f"
 
+  edit = "!gh repo edit"
   open = "!gh repo view --web --branch $(git rev-parse --abbrev-ref HEAD) 2>/dev/null"
 
   publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
