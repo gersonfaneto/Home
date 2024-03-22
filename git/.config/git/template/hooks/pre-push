@@ -8,6 +8,10 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 PROTECTED_BRANCHES="^(main)"
 
 if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]; then
+  echo "Listing changes to be pushed to \"$BRANCH\":"
+  git diff --stat @{u}..HEAD
+  echo
+
   read -p "Are you sure you want to push to \"$BRANCH\"? [y/N]: " -n 1 -r < /dev/tty
   echo
 
