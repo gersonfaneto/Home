@@ -1,3 +1,14 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
 # [line_break]
 # disabled = true
 
@@ -16,17 +27,17 @@ format = "[$symbol]($style)"
 [battery]
 disabled = true
 
-[rust]
-symbol = " "
-
-[c]
-symbol = " "
-
-[python]
-symbol = " "
-
-[lua]
-symbol = "󰢱 "
-
-[java]
-symbol = " "
+# [rust]
+# symbol = " "
+#
+# [c]
+# symbol = " "
+#
+# [python]
+# symbol = " "
+#
+# [lua]
+# symbol = "󰢱 "
+#
+# [java]
+# symbol = " "
