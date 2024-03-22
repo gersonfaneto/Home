@@ -1,5 +1,4 @@
+extras/*
+
 completions/*
 fish_variables
-
-extras/colors.fish
-extras/extras.fish
