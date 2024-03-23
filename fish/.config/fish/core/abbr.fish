@@ -11,7 +11,7 @@ abbr --add --position anywhere f "false"
 abbr --add --position anywhere t "true"
 
 abbr --add --position anywhere cl "clear"
-abbr --add --position anywhere cl "exit"
+abbr --add --position anywhere ex "exit"
 abbr --add --position anywhere ds "disown"
 
 abbr --add --position anywhere sr "sudo reboot -h now"
