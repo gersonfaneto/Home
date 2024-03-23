@@ -3,6 +3,7 @@ set fish_greeting ""
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
+source "$HOME/.config/fish/core/abbr.fish"
 source "$HOME/.config/fish/core/alias.fish"
 source "$HOME/.config/fish/core/exports.fish"
 source "$HOME/.config/fish/core/functions.fish"

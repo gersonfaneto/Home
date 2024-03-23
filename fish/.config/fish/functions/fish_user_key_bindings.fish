@@ -18,7 +18,4 @@ function fish_user_key_bindings
   bind --mode insert \cf fzf_fonts
 
   bind --mode insert \cb "background && commandline -f repaint"
-
-  bind --mode insert ! history_previous_command
-  bind --mode insert '$' history_previous_command_arguments
 end

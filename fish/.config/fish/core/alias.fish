@@ -1,22 +1,10 @@
-alias ex exit
-alias cl clear
-
-alias sr "sudo reboot -h now"
-alias sp "sudo poweroff"
+alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
 alias sweep "echo yes | history clear > /dev/null && clear"
-
-alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
 alias cp "cp -i"
 alias mv "mv -i"
 alias rm "rm -i"
-
-alias ..  "cd .."
-alias ... "cd ../.."
-alias .3  "cd ../../.."
-alias .4  "cd ../../../.."
-alias .5  "cd ../../../../.."
 
 if type -q eza
   alias ls "eza --icons --color=always --group-directories-first"
@@ -39,26 +27,26 @@ if type -q neofetch
 end
 
 if type -q git
-  alias g git
+  alias g "git"
 end
 
 if type -q vim
-  alias v vim
+  alias v "vim"
 end
 
 if type -q nvim
-  alias nv nvim
+  alias nv "nvim"
 end
 
 if type -q trash
-  alias rm trash
-  alias rml trash-list
-  alias rmr trash-restore
+  alias rm "trash"
+  alias rml "trash-list"
+  alias rmr "trash-restore"
   alias rme "echo y | command trash-empty"
 end
 
 if type -q bat
-  alias cat bat
+  alias cat "bat"
 end
 
 if type -q kitty
