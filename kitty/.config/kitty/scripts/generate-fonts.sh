@@ -3,7 +3,7 @@
 FONTS_DIRECTORY="$HOME/.local/share/fonts/YADR/"
 KITTY_DIRECTORY="$HOME/.config/kitty"
 
-DEFAULT_FONT="Iosevka Term"
+DEFAULT_FONT="JetBrains Mono"
 FONTS_FILE="$KITTY_DIRECTORY/extras/fonts.conf"
 
 AVAILABLE_FONTS=$(find "${FONTS_DIRECTORY}" -mindepth 1 -type d | xargs -I {} basename {})
