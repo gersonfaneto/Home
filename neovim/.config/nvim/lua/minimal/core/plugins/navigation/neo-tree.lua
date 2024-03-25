@@ -86,19 +86,19 @@ M.handlers = {
     utils.base.mappings.bulk_register({
       {
         mode = { "n" },
-        lhs = "<C-e><C-f>",
+        lhs = "<leader>nf",
         rhs = ":Neotree reveal float filesystem<CR>",
         description = "Files",
       },
       {
         mode = { "n" },
-        lhs = "<C-e><C-b>",
+        lhs = "<leader>nb",
         rhs = ":Neotree reveal float buffers<CR>",
         description = "Buffers",
       },
       {
         mode = { "n" },
-        lhs = "<C-e><C-g>",
+        lhs = "<leader>ng",
         rhs = ":Neotree reveal float git_status<CR>",
         description = "Git",
       },

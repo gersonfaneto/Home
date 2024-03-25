@@ -222,12 +222,6 @@ utils.base.mappings.bulk_register({
     description = "Close all buffers and exit.",
   },
   {
-    mode = { "n" },
-    lhs = "T",
-    rhs = ":term<CR>",
-    description = "Open terminal.",
-  },
-  {
     mode = { "n", "x" },
     lhs = ";",
     rhs = ":",

@@ -25,6 +25,21 @@ function M.init()
       end,
     })
   end
+
+  utils.base.mappings.bulk_register({
+    {
+      mode = { "n" },
+      lhs = "<leader>oo",
+      rhs = ":Oil<CR>",
+      description = "Open parent directory.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>of",
+      rhs = ":Oil --float<CR>",
+      description = "Open parent directory - Float.",
+    },
+  }, { options = { silent = true, noremap = true }, prefix = "Oil :: " })
 end
 
 function M.config()
@@ -47,14 +62,5 @@ function M.config()
     },
   })
 end
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "-",
-    rhs = ":Oil --float<CR>",
-    description = "Open parent directory - Float.",
-  },
-}, { options = { silent = true, noremap = true }, prefix = "Oil :: " })
 
 return M

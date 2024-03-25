@@ -1,29 +1,24 @@
 local M = {
-  ["gx.nvim"] = {
-    "chrishrb/gx.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = { "Browse" },
-    opts = {},
+  "chrishrb/gx.nvim",
+  cmd = { "Browse" },
+  opts = {
+    handler_options = {
+      search_engine = "duckduckgo",
+    },
   },
-  helpers = {},
+  dependencies = { "nvim-lua/plenary.nvim" },
 }
 
-M["gx.nvim"].init = function()
+function M.init()
   vim.g.netrw_nogx = 1
 
-  M.helpers.register_mappings()
+  utils.base.mappings.register({
+    mode = { "n", "x" },
+    lhs = "gb",
+    rhs = ":Browse<CR>",
+    options = { silent = true, noremap = true },
+    description = "GX :: Browse.",
+  })
 end
 
-M.helpers = {
-  register_mappings = function()
-    utils.base.mappings.register({
-      mode = { "n", "x" },
-      lhs = "gx",
-      rhs = ":Browse<CR>",
-      options = { silent = true, noremap = true },
-      description = "GX :: Browse.",
-    })
-  end,
-}
-
-return M["gx.nvim"]
+return M
