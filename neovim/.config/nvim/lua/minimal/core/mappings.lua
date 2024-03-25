@@ -38,6 +38,12 @@ utils.base.mappings.bulk_register({
     rhs = ":set wrap!<CR>",
     description = "Toggle wrap.",
   },
+  {
+    mode = { "n" },
+    lhs = "<C-t><C-n>",
+    rhs = ":set number! | set relativenumber!<CR>",
+    description = "Toggle numbers.",
+  },
 }, { prefix = "Quick Toggles :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({

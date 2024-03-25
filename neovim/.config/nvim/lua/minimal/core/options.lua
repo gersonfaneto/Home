@@ -36,8 +36,8 @@ M.opt = {
   foldenable = true,
 
   -- Appearance.
-  number = true,
-  relativenumber = true,
+  number = utils.types.settings.show_line_numbers,
+  relativenumber = utils.types.settings.show_line_numbers,
   termguicolors = true,
   colorcolumn = utils.types.settings.show_color_column and utils.types.settings.color_column or "",
   signcolumn = "yes",

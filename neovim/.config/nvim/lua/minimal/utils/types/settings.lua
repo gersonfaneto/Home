@@ -14,6 +14,9 @@ M.material_foreground = "material"
 ---@type boolean
 M.transparent_background = false
 
+---Set to `false` to disable the `number` and `relativenumbers` options.
+---@type boolean
+M.show_line_numbers = true
 ---Set to `false` to disable the horizontal line at the current cursor position.
 ---@type boolean
 M.show_cursor_line = true
