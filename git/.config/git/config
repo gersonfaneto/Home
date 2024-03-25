@@ -64,6 +64,8 @@
   wa = worktree add
   wr = worktree remove
 
+  cl = "!git clean -fixd"
+
   cm = "!git checkout main"
   cd = "!git go dev"
   cb = "!git go build"
