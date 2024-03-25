@@ -7,17 +7,10 @@ abbr --add --position anywhere ".5"  "../../../../.."
 abbr --add --position anywhere and "&&"
 abbr --add --position anywhere or "||"
 
-abbr --add --position anywhere f "false"
-abbr --add --position anywhere t "true"
-
-abbr --add --position anywhere cl "clear"
-abbr --add --position anywhere ex "exit"
-abbr --add --position anywhere ds "disown"
-
-abbr --add --position anywhere sr "sudo reboot -h now"
-abbr --add --position anywhere sp "sudo poweroff"
-
 abbr --add --position anywhere E "| xargs nvim -"
+abbr --add --position anywhere G "| grep"
+
+abbr --add --position command sshv "nvim oil-ssh://"
 
 function last_history_item
   echo $history[1]

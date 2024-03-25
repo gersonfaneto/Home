@@ -2,10 +2,6 @@ alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
 alias sweep "echo yes | history clear > /dev/null && clear"
 
-alias cp "cp -i"
-alias mv "mv -i"
-alias rm "rm -i"
-
 if type -q eza
   alias ls "eza --icons --color=always --group-directories-first"
   alias la "eza --all --icons --color=always --group-directories-first"
@@ -30,12 +26,10 @@ if type -q git
   alias g "git"
 end
 
-if type -q vim
-  alias v "vim"
-end
-
 if type -q nvim
-  alias nv "nvim"
+  alias v "nvim"
+  alias vi "nvim"
+  alias vim "nvim"
 end
 
 if type -q trash
