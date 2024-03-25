@@ -86,7 +86,7 @@
   l = log --date=format:'%b %d, %Y' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
   ll = log --graph --name-status --date=format:'%b %d, %Y | %H:%M' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n%C(blue)%aN <%ae> | %cd%n'
   lg = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
-  lr = log --since midnight --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
+  lr = log --since midnight --graph --abbrev-commit --date=relative --decorate --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
 
   recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
