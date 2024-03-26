@@ -36,12 +36,14 @@ cmd zi ${{
 }}
 
 cmd mkdir %{{
+  IFS=''
   printf "Directory Name: "
   read ans
   mkdir $ans
 }}
 
 cmd mkfile %{{
+  IFS=''
   printf "File Name: "
   read ans
   touch $ans
