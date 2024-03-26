@@ -1,3 +1,6 @@
+abbr --add --position command ex exit
+abbr --add --position command cl clear
+
 abbr --add --position anywhere ".."  ".."
 abbr --add --position anywhere "..." "../.."
 abbr --add --position anywhere ".3"  "../../.."
@@ -22,3 +25,8 @@ end
 
 abbr --add "!!" --position anywhere --function last_history_item
 abbr --add "!\$" --position anywhere --function last_command_argument
+
+abbr --add --position anywhere p1 "ping 1.1.1.1"
+abbr --add --position anywhere p8 "ping 8.8.8.8"
+abbr --add --position anywhere p9 "ping 9.9.9.9"
+abbr --add --position anywhere p192 "ping 192.168.1.1"
