@@ -157,7 +157,7 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>fH",
+    lhs = "<leader>fm",
     rhs = function()
       require("telescope.builtin").man_pages({
         sections = { "1", "2", "3" },
@@ -190,11 +190,13 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>fr",
+    lhs = "<leader>fo",
     rhs = function()
-      require("telescope.builtin").oldfiles()
+      require("telescope.builtin").oldfiles({
+        prompt_title = "Old Files",
+      })
     end,
-    description = "Find recent opened files.",
+    description = "Find previously files.",
   },
   {
     mode = { "n" },
@@ -258,15 +260,33 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>fm",
+    lhs = "<leader>fd",
     rhs = function()
+      local repo = "$HOME/Developer/Projects/Personal/YADR"
+
       require("telescope.builtin").find_files({
-        cwd = vim.fn.stdpath("config"),
+        cwd = vim.fn.expand(repo),
+        hidden = true,
         no_ignore = true,
-        prompt_title = "Minimal Files",
+        prompt_title = "Configuration Files",
+        find_command = {
+          "rg",
+          "--files",
+          "--hidden",
+          "--glob=!.git/*",
+          "--no-ignore",
+        },
       })
     end,
-    description = "Search through Minimal configuration files.",
+    description = "Search through configuration files.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>fr",
+    rhs = function()
+      require("telescope.builtin").registers()
+    end,
+    description = "Search through the registers.",
   },
   {
     mode = { "n" },
