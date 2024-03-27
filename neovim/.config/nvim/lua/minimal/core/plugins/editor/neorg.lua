@@ -2,8 +2,11 @@ local M = {
   "nvim-neorg/neorg",
   ft = { "norg" },
   cmd = { "Neorg" },
-  build = ":Neorg sync-parsers",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  -- build = ":Neorg sync-parsers",
+  dependencies = {
+    "luarocks.nvim",
+    "nvim-lua/plenary.nvim",
+  },
 }
 
 function M.config()
