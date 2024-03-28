@@ -40,11 +40,13 @@ packages=(
   mediainfo
   mise
   neofetch
+  pandoc-bin
   python-pdftotext
   ripgrep
   starship
   stow
   tar
+  texlive
   tmux
   trash-cli
   unzip
