@@ -26,8 +26,10 @@ cmd open ${{
    esac
 }}
 
-cmd set-bg ${{
+cmd set-bg %{{
+  cp "$f" ~/.config/i3/backgrounds/wall.jpg
   feh --bg-fill "$f"
+  betterlockscreen -u "$f" --fx
 }}
 
 cmd zi ${{
