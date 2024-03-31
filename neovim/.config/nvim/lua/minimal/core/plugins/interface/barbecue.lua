@@ -11,7 +11,7 @@ local M = {
   },
   opts = {
     theme = "auto",
-    show_dirname = true,
+    show_dirname = false,
     show_modified = true,
   },
 }
