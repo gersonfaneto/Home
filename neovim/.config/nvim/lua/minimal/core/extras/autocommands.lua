@@ -123,26 +123,32 @@ vim.api.nvim_create_autocmd("TermOpen", {
       {
         mode = { "t" },
         lhs = "<C-h>",
-        rhs = [[<Cmd>wincmd h<CR>]],
+        rhs = [[<CMD>wincmd h<CR>]],
         description = "Move Left.",
       },
       {
         mode = { "t" },
         lhs = "<C-j>",
-        rhs = [[<Cmd>wincmd j<CR>]],
+        rhs = [[<CMD>wincmd j<CR>]],
         description = "Move Down.",
       },
       {
         mode = { "t" },
         lhs = "<C-k>",
-        rhs = [[<Cmd>wincmd k<CR>]],
+        rhs = [[<CMD>wincmd k<CR>]],
         description = "Move Up.",
       },
       {
         mode = { "t" },
         lhs = "<C-l>",
-        rhs = [[<Cmd>wincmd l<CR>]],
+        rhs = [[<CMD>wincmd l<CR>]],
         description = "Move Right.",
+      },
+      {
+        mode = { "t" },
+        lhs = "<C-x>",
+        rhs = [[clear<CR>]],
+        description = "Clear the terminal.",
       },
     }, { options = { buffer = 0, silent = true, noremap = true }, prefix = "Terminal :: " })
   end,
