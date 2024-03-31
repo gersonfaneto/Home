@@ -28,8 +28,6 @@ end
 
 if type -q nvim
   alias v "nvim"
-  alias vi "nvim"
-  alias vim "nvim"
 end
 
 if type -q trash

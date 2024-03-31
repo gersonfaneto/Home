@@ -7,6 +7,13 @@ abbr --add --position anywhere ".3"  "../../.."
 abbr --add --position anywhere ".4"  "../../../.."
 abbr --add --position anywhere ".5"  "../../../../.."
 
+abbr --add --position anywhere 'grl' 'gh repo list'
+abbr --add --position anywhere 'grc' 'gh repo clone'
+
+abbr --add --position anywhere 'pd' 'pandoc'
+abbr --add --position anywhere --set-cursor 'pdmp' 'pandoc %.md --output File.pdf'
+abbr --add --position anywhere --set-cursor 'pdmh' 'pandoc %.md --output File.html --standalone'
+
 abbr --add --position anywhere "and" "&&"
 abbr --add --position anywhere "or" "||"
 
@@ -35,6 +42,15 @@ abbr --add --position anywhere "p1"  "ping 1.1.1.1"
 abbr --add --position anywhere "p8"  "ping 8.8.8.8"
 abbr --add --position anywhere "p9"  "ping 9.9.9.9"
 abbr --add --position anywhere "p10" "ping 10.0.0.1"
+
+abbr --add --position command "scl"    "systemctl"
+abbr --add --position command "sclss"  "systemctl status"
+abbr --add --position command "scle"   "systemctl enable"
+abbr --add --position command "sclen"  "systemctl enable --now"
+abbr --add --position command "scld"   "systemctl disable"
+abbr --add --position command "sclt"   "systemctl stop"
+abbr --add --position command "scls"   "systemctl start"
+abbr --add --position command "sclr"   "systemctl restart"
 
 abbr --add --position anywhere dk "docker"
 abbr --add --position anywhere dkp "docker ps"
