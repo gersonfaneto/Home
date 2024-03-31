@@ -8,8 +8,11 @@ function fish_user_key_bindings
   
   bind --mode insert \el "lf && commandline -f repaint"
   bind --mode insert \eL "lfcd && commandline -f repaint"
-  bind --mode insert \eb btm
-  bind --mode insert \en nvim
+
+  bind --mode insert \en "nvim"
+  bind --mode insert \eN "nvim ."
+
+  bind --mode insert \eb "btm"
 
   bind --mode insert \ek tmux_kill
   bind --mode insert \ea tmux_attach
