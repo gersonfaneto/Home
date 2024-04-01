@@ -57,6 +57,7 @@ M.base_languages = {
   rust_analyzer = "rust-analyzer", -- Rust
   solargraph = "solargraph", -- Ruby
   texlab = "texlab", -- LaTeX
+  marksman = "marksman", -- Markdown
   tsserver = "typescript-language-server", -- TypeScript / JavaScript
   yamlls = "yaml-language-server", -- YAML
 }
