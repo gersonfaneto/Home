@@ -15,12 +15,11 @@ font pango:Berkeley Mono Trial 10
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
 
 # Set the background using `feh`.
-# exec --no-startup-id feh --bg-fill "$HOME/.config/i3/backgrounds/wall.jpg"
-exec --no-startup-id feh --bg-fill "$HOME/.config/i3/backgrounds/solid.jpg"
+exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh auto" 
 
 # ...
-bindsym $mod+Shift+s exec --no-startup-id "$HOME/.config/i3/scripts/solid.sh"
-bindsym $mod+Shift+w exec --no-startup-id "$HOME/.config/i3/scripts/wall.sh"
+bindsym $mod+Shift+s exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh solid"
+bindsym $mod+Shift+w exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh wall"
 
 # Use `pactl` to control system volume and microphone.
 set $refresh_i3status killall -SIGUSR1 i3status
