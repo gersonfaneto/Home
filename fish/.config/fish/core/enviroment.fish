@@ -13,3 +13,9 @@ end
 if type -q starship
   starship init fish | source
 end
+
+if type -q atuin
+  export ATUIN_NOBIND="true"
+
+  atuin init fish | source
+end

@@ -1,7 +1,5 @@
 alias sc "source $HOME/.config/fish/config.fish && echo 'Reloaded!'"
 
-alias sweep "echo yes | history clear > /dev/null && clear"
-
 if type -q eza
   alias ls "eza --icons --color=always --group-directories-first"
   alias la "eza --all --icons --color=always --group-directories-first"

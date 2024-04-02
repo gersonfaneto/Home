@@ -2,9 +2,10 @@ function fish_user_key_bindings
   fish_vi_key_bindings
 
   bind --mode insert \ef fzf_file
-  bind --mode insert \er fzf_history
   bind --mode insert \ej fzf_directory
   bind --mode insert \ez fzf_zathura
+
+  bind --mode insert \er _atuin_search
   
   bind --mode insert \el "lf && commandline -f repaint"
   bind --mode insert \eL "lfcd && commandline -f repaint"
