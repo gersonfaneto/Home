@@ -31,7 +31,10 @@ abbr --add --position anywhere '!#' --function history_replace
 abbr --add --position anywhere --set-cursor "sshv" "nvim oil-ssh://%"
 
 abbr --add --position anywhere "grl" "gh repo list"
+abbr --add --position anywhere "gre" "gh repo edit"
 abbr --add --position anywhere "grc" "gh repo clone"
+abbr --add --position anywhere "grv" "gh repo view --web"
+abbr --add --position anywhere --set-cursor "grcs" "gh repo clone % -- --depth 1"
 
 abbr --add --position anywhere "pd" "pandoc"
 abbr --add --position anywhere --set-cursor "pdmp" "pandoc %.md --output File.pdf"
