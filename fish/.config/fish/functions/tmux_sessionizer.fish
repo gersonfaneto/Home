@@ -1,8 +1,14 @@
 function tmux_sessionizer
-  set -l base_targets "$HOME/Developer/Projects"
+  set -l all_directories "$HOME/Notes" "$HOME/Developer"
 
-  set -l all_directories "$HOME/Notes" "$HOME/Developer" "$HOME/Developer/Projects" "$HOME/Developer/Playground"
-  set -l all_directories $all_directories (find $base_targets -mindepth 1 -maxdepth 2 -type d)
+  set -l deep_targets "$HOME/Developer/Projects"
+  set -l base_targets "$HOME/Developer/Playground"
+
+  set -l all_directories $all_directories "$HOME/Developer/Playground"
+  set -l all_directories $all_directories (find $base_targets -mindepth 1 -maxdepth 1 -type d)
+  
+  set -l all_directories $all_directories "$HOME/Developer/Projects"
+  set -l all_directories $all_directories (find $deep_targets -mindepth 1 -maxdepth 2 -type d)
 
   set selected (echo $all_directories | tr ' ' '\n' | fzf )
 
