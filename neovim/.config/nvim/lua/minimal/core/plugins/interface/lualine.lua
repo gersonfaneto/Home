@@ -3,6 +3,20 @@ local M = {
   event = { "UIEnter" },
 }
 
+local function progress()
+  local total_lines = vim.fn.line("$")
+
+  if total_lines <= 1 then
+    return ""
+  end
+
+  local current_line = vim.fn.line(".")
+
+  local line_ratio = math.ceil(((current_line / total_lines) * 100) % 101)
+
+  return line_ratio .. "%%"
+end
+
 function M.config()
   local colors = utils.interface.colors.get_colors()
   local icons = utils.interface.icons.get("diagnostics")
@@ -95,7 +109,7 @@ function M.config()
         "selectioncount",
       },
       lualine_y = {
-        "progress",
+        progress,
         "location",
       },
       lualine_z = {
