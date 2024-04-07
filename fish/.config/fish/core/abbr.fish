@@ -1,7 +1,9 @@
-abbr --add --position anywhere "fp" "fish --private"
+abbr --add --position command "sweep" "echo yes | history clear && atuin search --delete-it-all"
 
-abbr --add --position anywhere "cl" "clear"
-abbr --add --position anywhere "ex" "exit"
+abbr --add --position command "fp" "fish --private"
+
+abbr --add --position command "cl" "clear"
+abbr --add --position command "ex" "exit"
 
 abbr --add --position anywhere "and" "&&"
 abbr --add --position anywhere "or" "||"
@@ -28,14 +30,21 @@ end
 abbr --add --position anywhere "!!" --function history_replace
 abbr --add --position anywhere '!#' --function history_replace
 
-abbr --add --position anywhere --set-cursor "sshv" "nvim oil-ssh://%"
+abbr --add --position anywhere "Y" "| xclip -r -selection clipboard"
 
-abbr --add --position anywhere "grl" "gh repo list"
-abbr --add --position anywhere "gre" "gh repo edit"
-abbr --add --position anywhere "grc" "gh repo clone"
-abbr --add --position anywhere "grv" "gh repo view --web"
-abbr --add --position anywhere --set-cursor "grcs" "gh repo clone % -- --depth 1"
+abbr --add --position command "p1" "ping 1.1.1.1"
+abbr --add --position command "p8" "ping 8.8.8.8"
+abbr --add --position command "p9" "ping 9.9.9.9"
+abbr --add --position command "pl" "ping 10.0.0.1"
 
-abbr --add --position anywhere "pd" "pandoc"
-abbr --add --position anywhere --set-cursor "pdmp" "pandoc %.md --output File.pdf"
-abbr --add --position anywhere --set-cursor "pdmh" "pandoc %.md --output File.html --standalone"
+abbr --add --position command --set-cursor "sshv" "nvim oil-ssh://%"
+
+abbr --add --position command "grl" "gh repo list"
+abbr --add --position command "gre" "gh repo edit"
+abbr --add --position command "grc" "gh repo clone"
+abbr --add --position command "grv" "gh repo view --web"
+abbr --add --position command --set-cursor "grcs" "gh repo clone % -- --depth 1"
+
+abbr --add --position command "pd" "pandoc"
+abbr --add --position command --set-cursor "pdmp" "pandoc %.md --output File.pdf"
+abbr --add --position command --set-cursor "pdmh" "pandoc %.md --output File.html --standalone"
