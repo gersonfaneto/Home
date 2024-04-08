@@ -34,7 +34,6 @@ function M.config()
   }
 
   snippets.lazy_load()
-  snippets.lazy_load({ paths = { "~/.config/nvim/extras/snippets" } })
 
   cmp.setup({
     snippet = {

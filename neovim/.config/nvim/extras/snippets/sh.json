@@ -1,9 +1,0 @@
-{
-  "#!": {
-    "prefix": "#!",
-    "description": "Bang!",
-    "body": [
-      "#!/usr/bin/env $0"
-    ]
-  }
-}
