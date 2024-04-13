@@ -1,6 +1,6 @@
 local M = {
   "folke/todo-comments.nvim",
-  cmd = { "TodoTelescope", "TodoTrouble" },
+  cmd = { "TodoTelescope", "TodoQuickFix" },
   event = { "BufReadPost", "BufNewFile" },
   dependencies = { "nvim-lua/plenary.nvim" },
 }
@@ -50,9 +50,15 @@ utils.base.mappings.bulk_register({
   {
     mode = { "n" },
     lhs = "<leader>ft",
-    rhs = ":TodoTrouble<CR>",
-    description = "TODOs in current project.",
+    rhs = ":TodoTelescope<CR>",
+    description = "Search with Telescope.",
   },
-}, { options = { noremap = true, silent = true }, prefix = "TODOs :: " })
+  {
+    mode = { "n" },
+    lhs = "<leader>qt",
+    rhs = ":TodoQuickFix<CR>",
+    description = "Send to QuickFix list.",
+  },
+}, { prefix = "TODOs :: ", options = { noremap = true, silent = true } })
 
 return M
