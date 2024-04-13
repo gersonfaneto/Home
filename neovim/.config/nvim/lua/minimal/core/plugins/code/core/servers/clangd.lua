@@ -1,3 +1,5 @@
+local M = {}
+
 local root_files = {
   ".git",
   ".clangd",
@@ -7,7 +9,7 @@ local root_files = {
   "compile_flags.txt",
 }
 
-return {
+M = {
   single_file_support = true,
   cmd = {
     "clangd",
@@ -31,3 +33,13 @@ return {
     offsetEncoding = "utf-8",
   },
 }
+
+utils.base.mappings.register({
+  mode = { "n" },
+  lhs = "<leader>ls",
+  rhs = ":ClangdSwitchSourceHeader<CR>",
+  options = { silent = true, noremap = true },
+  description = "C :: Switch between header and souce files.",
+})
+
+return M

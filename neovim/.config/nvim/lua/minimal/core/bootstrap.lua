@@ -88,15 +88,15 @@ lazy.setup(include_directories, lazy_options)
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>lh",
+    lhs = "<leader>ph",
     rhs = ":Lazy<CR>",
-    description = "Home.",
+    description = "List all plugins.",
   },
   {
     mode = { "n" },
-    lhs = "<leader>lp",
+    lhs = "<leader>pp",
     rhs = ":Lazy profile<CR>",
-    description = "Profile.",
+    description = "Show profile.",
   },
 }, { options = { silent = true, noremap = true }, prefix = "Lazy :: " })
 

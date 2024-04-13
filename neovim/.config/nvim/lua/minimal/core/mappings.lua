@@ -513,7 +513,40 @@ utils.base.mappings.bulk_register({
     rhs = ":tabnew +term<CR>",
     description = "Window.",
   },
-}, { options = { silent = true, noremap = true }, prefix = "Terminal :: " })
+}, { prefix = "Terminal :: ", options = { silent = true, noremap = true } })
+
+utils.base.mappings.bulk_register({
+  {
+    mode = { "n" },
+    lhs = "<leader>qo",
+    rhs = ":copen<CR>",
+    description = "Open list.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>qq",
+    rhs = ":cclose<CR>",
+    description = "Close list.",
+  },
+  {
+    mode = { "n" },
+    lhs = "<leader>ql",
+    rhs = ":clist<CR>",
+    description = "Show list.",
+  },
+  {
+    mode = { "n" },
+    lhs = "]q",
+    rhs = ":cnext<CR>",
+    description = "Go to next item.",
+  },
+  {
+    mode = { "n" },
+    lhs = "[q",
+    rhs = ":cprevious<CR>",
+    description = "Go to previous item.",
+  }
+}, { prefix = "QuickFix :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {

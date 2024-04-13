@@ -83,9 +83,9 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<leader>ph",
+    lhs = "<leader>vh",
     rhs = ":lua require('gitsigns').preview_hunk()<CR>",
-    description = "Preview current hunk.",
+    description = "View current hunk.",
   },
   {
     mode = { "n" },

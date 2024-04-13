@@ -17,7 +17,7 @@ end
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>ut",
+    lhs = "U",
     rhs = ":UndotreeToggle<CR>",
     description = "Toggle.",
   },

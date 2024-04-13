@@ -14,19 +14,19 @@ function M.init()
   utils.base.mappings.bulk_register({
     {
       mode = { "n" },
-      lhs = "<C-g><C-g>",
+      lhs = "<leader>gg",
       rhs = ":Git<CR>",
       description = "Open Fugitive - Split.",
     },
     {
       mode = { "n" },
-      lhs = "<C-g><C-t>",
+      lhs = "<leader>gt",
       rhs = ":tab Git<CR>",
       description = "Open Fugitive - Tab.",
     },
     {
       mode = { "n", "x" },
-      lhs = "<C-g><C-b>",
+      lhs = "<leader>gb",
       rhs = ":GBrowse<CR>",
       description = "Open File/Selection in Browser.",
     },
