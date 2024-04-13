@@ -156,7 +156,7 @@ bindsym $mod+r mode "resize"
 
 # System controls.
 mode "(S)uspend, (E)xit, (L)ock, (R)eboot, (P)oweroff" {
-  bindsym s exec --no-startup-id systemctl suspend; mode "default"
+  bindsym s exec --no-startup-id systemctl suspend && betterlockscreen -l; mode "default"
   bindsym e exec --no-startup-id pkill -KILL -u $USER
   # bindsym l exec --no-startup-id i3lock --no-unlock-indicator --color '#555555'; mode "default"
   bindsym l exec --no-startup-id betterlockscreen --lock; mode "default"
