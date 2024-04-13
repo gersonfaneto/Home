@@ -23,8 +23,6 @@ vim.api.nvim_create_user_command("BufferDelete", function()
   local force = not vim.bo.buflisted or vim.bo.buftype == "nofile"
 
   vim.cmd(force and "bd!" or ("bp | bd! %s"):format(vim.api.nvim_get_current_buf()))
-
-  vim.api.nvim_exec_autocmds("User", { pattern = "BufferDeletePost" })
 end, { desc = "Delete the current Buffer while maintaining the window layout." })
 
 -- Notes.

@@ -27,8 +27,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = {
     "*.md",
     "*.txt",
-    "*.org",
-    "*.norg",
     "*.tex",
     "COMMIT_EDITMSG",
   },

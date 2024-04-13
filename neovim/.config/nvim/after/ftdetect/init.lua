@@ -12,10 +12,6 @@ vim.filetype.add({
     ["LICENSE"] = "license",
   },
   pattern = {
-    ["*.log"] = "log",
-    ["*_LOG"] = "log",
-    [".*%.conf"] = "conf",
-    [".*%.theme"] = "conf",
     ["^.env%..*"] = "bash",
   },
 })

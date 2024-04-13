@@ -46,15 +46,8 @@ M.virtual_text = false
 ---Set to `false` to disable formatting files when saved, provided by `nvimtools/none-ls.nvim`.
 ---@type boolean
 M.format_on_save = false
----Set to `false` to disable A.I. enhanced coding features, provided by `zbirenbaum/copilot.lua`.
----@type boolean
-M.enhanced_coding = true
 ---Set to `false` to disable auto-completion features, provided by `hrsh7th/nvim-cmp`.
 ---@type boolean
 M.auto_completion = true
-
----Set to `false` to enable the arrow keys.
----@type boolean
-M.full_immersion = true
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.settings")
