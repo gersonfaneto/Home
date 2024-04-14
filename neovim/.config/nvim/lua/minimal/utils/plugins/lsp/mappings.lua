@@ -50,13 +50,25 @@ function M.register(bufnr)
       mode = { "n" },
       lhs = "gd",
       rhs = vim.lsp.buf.definition,
-      description = "Jump to definition.",
+      description = "Go to definition.",
+    },
+    {
+      mode = { "n" },
+      lhs = "gD",
+      rhs = vim.lsp.buf.declaration,
+      description = "Go to declaration.",
     },
     {
       mode = { "n" },
       lhs = "vd",
       rhs = ":vsplit | lua vim.lsp.buf.definition()<CR>",
-      description = "Split and jump to definition.",
+      description = "Split and go to definition.",
+    },
+    {
+      mode = { "n" },
+      lhs = "vD",
+      rhs = ":vsplit | lua vim.lsp.buf.declaration()<CR>",
+      description = "Split and go to declaration.",
     },
     {
       mode = { "n" },
@@ -68,7 +80,7 @@ function M.register(bufnr)
       mode = { "n" },
       lhs = "dl",
       rhs = vim.diagnostic.setqflist,
-      description = "View diagnostics in quickfix list.",
+      description = "View diagnostics in QuickFix list.",
     },
     {
       mode = { "n" },
