@@ -23,14 +23,6 @@ if type -q trash
   alias rme "echo y | command trash-empty"
 end
 
-if type -q tmux
-  alias tl "tmux list-sessions"
-  alias ta "tmux attach-session"
-  alias tn "tmux new-session -s (basename (pwd)) -d"
-  alias tk "tmux kill-session"
-  alias tK "tmux kill-server"
-end
-
 if type -q eza
   alias ls "eza --icons --color=always --group-directories-first"
   alias la "eza --all --icons --color=always --group-directories-first"
