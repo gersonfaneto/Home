@@ -9,7 +9,7 @@ set $ctrl control
 set $shift Mod5
 
 # Font for window titles.
-font pango:Berkeley Mono Trial 10
+font pango:Iosevka Term 10
 
 # Set keyboard layout.
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
