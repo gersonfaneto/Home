@@ -182,6 +182,8 @@ function M.init()
 end
 
 function M.config()
+  local icons = utils.interface.icons.get("ui", true)
+
   local telescope = require("telescope")
 
   local actions = require("telescope.actions")
@@ -189,7 +191,8 @@ function M.config()
   telescope.setup({
     defaults = {
       previewer = false,
-      prompt_prefix = "   ",
+      prompt_prefix = " " .. icons.Telescope .. " ",
+      selection_caret = icons.BoldArrowRight .. " ",
       file_ignore_patterns = { "node_modules", "package-lock.json" },
       initial_mode = "insert",
       select_strategy = "reset",

@@ -35,7 +35,7 @@ if test -d "$HOME/.cargo/bin/"
 end
 
 if test -d "/usr/local/lib/"
-  if not contains /usr/local/lib $LD_LIBRARY_PATH
+  if not contains /usr/local/lib/ $LD_LIBRARY_PATH
     export LD_LIBRARY_PATH="/usr/local/lib/:$LD_LIBRARY_PATH"
   end
 end

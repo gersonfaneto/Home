@@ -19,7 +19,5 @@ function fish_user_key_bindings
   bind --mode insert \ea tmux_attach
   bind --mode insert \es tmux_sessionizer
   
-  bind --mode insert \cf fzf_fonts
-
   bind --mode insert \cb "background && commandline -f repaint"
 end
