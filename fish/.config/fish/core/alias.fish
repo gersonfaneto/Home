@@ -12,10 +12,6 @@ if type -q bat
   alias cat "bat"
 end
 
-if type -q neofetch
-  alias nf "neofetch"
-end
-
 if type -q trash
   alias rm "trash"
   alias rml "trash-list"

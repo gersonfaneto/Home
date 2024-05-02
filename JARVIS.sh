@@ -40,7 +40,6 @@ packages=(
   lf
   mediainfo
   mise
-  neofetch
   pandoc-bin
   python-pdftotext
   ripgrep
