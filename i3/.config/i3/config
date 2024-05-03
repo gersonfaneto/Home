@@ -191,4 +191,7 @@ client.unfocused        #222222 #111111 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
 
 for_window [class="^.*firefox.*" instance="^.*Alert.*"] floating enable
+
 for_window [class="^.*Qalculate-gtk.*" instance="^.*qalculate-gtk.*"] floating enable
+
+no_focus [class="^.*firefox.*" instance="^.*Alert.*"]
