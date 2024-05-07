@@ -4,11 +4,10 @@ set -gx TERM xterm-256color
 set -gx PAGER bat
 set -gx EDITOR nvim
 
-source "$HOME/.config/fish/core/abbr.fish"
-source "$HOME/.config/fish/core/alias.fish"
 source "$HOME/.config/fish/core/exports.fish"
-source "$HOME/.config/fish/core/functions.fish"
 source "$HOME/.config/fish/core/enviroment.fish"
+source "$HOME/.config/fish/core/functions.fish"
+source "$HOME/.config/fish/core/shortcuts.fish"
 
 # NOTE: This file is not tracked by git, should be used for local/temporary settings.
 if test -f "$HOME/.config/fish/extras/extras.fish"
