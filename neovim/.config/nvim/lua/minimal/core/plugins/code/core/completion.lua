@@ -34,6 +34,7 @@ function M.config()
   }
 
   snippets.lazy_load()
+  snippets.lazy_load({ paths = { os.getenv("HOME") .. "/.config/nvim/extras/snippets" } })
 
   cmp.setup({
     snippet = {
@@ -61,6 +62,7 @@ function M.config()
       { name = "path" },
       { name = "emoji" },
       { name = "buffer" },
+      { name = "crates" },
     },
     mapping = cmp_mapping.preset.insert({
       ["<C-e>"] = cmp_mapping.abort(),
