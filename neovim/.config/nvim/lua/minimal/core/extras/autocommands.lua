@@ -76,64 +76,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("TermClose", {
-  group = create_minimal_augroup("auto_delete_terminal_buffers"),
-  pattern = "term://*",
-  callback = function()
-    vim.api.nvim_input("<CR>")
-  end,
-})
-
-vim.api.nvim_create_autocmd("TermOpen", {
-  group = create_minimal_augroup("improve_terminal_nagivation"),
-  pattern = "term://*",
-  callback = function()
-    vim.opt_local.list = false
-    vim.opt_local.cursorline = false
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-
-    utils.base.mappings.bulk_register({
-      {
-        mode = { "t" },
-        lhs = "<ESC>",
-        rhs = [[<C-\><C-n>]],
-        description = "Exit.",
-      },
-      {
-        mode = { "t" },
-        lhs = "<C-h>",
-        rhs = [[<CMD>wincmd h<CR>]],
-        description = "Move Left.",
-      },
-      {
-        mode = { "t" },
-        lhs = "<C-j>",
-        rhs = [[<CMD>wincmd j<CR>]],
-        description = "Move Down.",
-      },
-      {
-        mode = { "t" },
-        lhs = "<C-k>",
-        rhs = [[<CMD>wincmd k<CR>]],
-        description = "Move Up.",
-      },
-      {
-        mode = { "t" },
-        lhs = "<C-l>",
-        rhs = [[<CMD>wincmd l<CR>]],
-        description = "Move Right.",
-      },
-      {
-        mode = { "t" },
-        lhs = "<C-x>",
-        rhs = [[clear<CR>]],
-        description = "Clear the terminal.",
-      },
-    }, { options = { buffer = 0, silent = true, noremap = true }, prefix = "Terminal :: " })
-  end,
-})
-
 if utils.types.settings.auto_restore_cursor_position then
   vim.api.nvim_create_autocmd("BufReadPost", {
     group = create_minimal_augroup("restore_cursor_position"),
