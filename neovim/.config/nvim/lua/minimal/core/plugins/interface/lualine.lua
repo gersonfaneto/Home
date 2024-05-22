@@ -3,25 +3,10 @@ local M = {
   event = { "UIEnter" },
 }
 
-local function progress()
-  local total_lines = vim.fn.line("$")
-
-  if total_lines <= 1 then
-    return ""
-  end
-
-  local current_line = vim.fn.line(".")
-
-  local line_ratio = math.ceil(((current_line / total_lines) * 100) % 101)
-
-  return line_ratio .. "%%"
-end
-
 function M.config()
   local colors = utils.interface.colors.get_colors()
   local icons = utils.interface.icons.get("diagnostics")
 
-  local noice = require("noice")
   local lualine = require("lualine")
 
   lualine.setup({
@@ -39,7 +24,6 @@ function M.config()
         visual = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
         command = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
         replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
-
         inactive = {
           a = { bg = colors.bg, fg = colors.fg },
           b = { bg = colors.bg, fg = colors.fg },
@@ -64,29 +48,11 @@ function M.config()
         {
           "tabs",
           tabs_color = {
-            active = { bg = colors.bg, fg = "#FFA000" },
+            active = { bg = colors.bg, fg = colors.accent },
             inactive = { bg = colors.bg, fg = colors.fg },
           },
           show_modified_status = false,
         },
-        -- {
-        --   "filetype",
-        --   icon_only = true,
-        --   separator = "",
-        --   padding = {
-        --     left = 1,
-        --     right = 0,
-        --   },
-        -- },
-        -- {
-        --   "filename",
-        --   path = 1,
-        --   symbols = {
-        --     modified = "  ",
-        --     readonly = "",
-        --     unnamed = "",
-        --   },
-        -- },
         {
           "diagnostics",
           sources = { "nvim_lsp" },
@@ -100,16 +66,34 @@ function M.config()
       },
       lualine_c = {
         {
-          noice.api.statusline.mode.get,
-          cond = noice.api.statusline.mode.has,
-          color = { fg = "#ff9e64" },
+          "macros",
+          fmt = function()
+            local register = vim.fn.reg_recording()
+            if register == "" then
+              return ""
+            else
+              return "recording @" .. register
+            end
+          end,
+          color = { bg = colors.bg, fg = colors.accent },
         },
       },
       lualine_x = {
         "selectioncount",
       },
       lualine_y = {
-        progress,
+        {
+          "progress",
+          fmt = function()
+            local total_lines = vim.fn.line("$")
+            if total_lines <= 1 then
+              return ""
+            end
+            local current_line = vim.fn.line(".")
+            local line_ratio = math.ceil(((current_line / total_lines) * 100) % 101)
+            return line_ratio .. "%%"
+          end,
+        },
         "location",
       },
       lualine_z = {
