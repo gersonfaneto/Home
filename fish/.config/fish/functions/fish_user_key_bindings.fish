@@ -5,15 +5,11 @@ function fish_user_key_bindings
   bind --mode insert \ej fzf_directory
   bind --mode insert \ez fzf_zathura
 
-  bind --mode insert \er _atuin_search
+  bind --mode insert \ec _atuin_search
   
-  bind --mode insert \el "lf && commandline -f repaint"
-  bind --mode insert \eL "lfcd && commandline -f repaint"
-
-  bind --mode insert \en "nvim"
-  bind --mode insert \eN "nvim ."
-
   bind --mode insert \eb "btm"
+  bind --mode insert \en "nvim"
+  bind --mode insert \er "ranger && commandline -f repaint"
 
   bind --mode insert \ek tmux_kill
   bind --mode insert \ea tmux_attach

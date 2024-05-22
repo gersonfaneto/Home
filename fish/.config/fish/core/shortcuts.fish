@@ -42,7 +42,7 @@ abbr --add --position command "pl" "ping 10.0.0.1"
 abbr --add --position command --set-cursor='@' now "date '+%H:%M:%S'@"
 abbr --add --position command --set-cursor='@' today "date +'%d.%m.%Y'@"
 
-abbr --add --position command --set-cursor "sshv" "nvim oil-ssh://%"
+abbr --add --position command --set-cursor "sshv" "nvim oil-ssh://%/"
 
 abbr --add --position command "grl" "gh repo list"
 abbr --add --position command "gre" "gh repo edit"
@@ -52,8 +52,9 @@ abbr --add --position command --set-cursor='@' "grcs" "gh repo clone @ -- --dept
 
 abbr --add --position command "tx" "tmux"
 abbr --add --position command "txl" "tmux list-sessions"
+abbr --add --position command "txs" "tmux switch-client -t"
 abbr --add --position command "txa" "tmux attach-session"
-abbr --add --position command "txn" "tmux new-session -s (basename (pwd)) -d"
+abbr --add --position command "txn" "tmux new-session -d -s (basename (pwd))"
 abbr --add --position command "txk" "tmux kill-session"
 abbr --add --position command "txK" "tmux kill-server"
 
@@ -62,6 +63,11 @@ abbr --add --position command --set-cursor='@' "pdmp" "pandoc @.md --output File
 abbr --add --position command --set-cursor='@' "pdmh" "pandoc @.md --output File.html --standalone"
 
 # Aliases #
+
+if type -q z
+  alias "cd" "z"
+  alias "ci" "zi"
+end
 
 if type -q git
   alias "g" "git"
