@@ -1,0 +1,36 @@
+import = [
+  "~/.config/alacritty/colors/color.toml"
+]
+
+live_config_reload = true
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[shell]
+program = "/usr/bin/fish"
+args = ["--login", "--interactive"]
+
+[window]
+padding.x = 5
+padding.y = 5
+decorations = "none"
+
+[font]
+size = 14
+
+[font.normal]
+family = "IosevkaTerm Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "IosevkaTerm Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "IosevkaTerm Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "IosevkaTerm Nerd Font"
+style = "BoldItalic"

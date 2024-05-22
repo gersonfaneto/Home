@@ -1,0 +1,28 @@
+# Colors (Gruvbox Material Hard Dark)
+
+# Default colors
+[colors.primary]
+background = "#121212"
+foreground = "#D4BE98"
+
+# Normal colors
+[colors.normal]
+black   = "#32302F"
+red     = "#EA6962"
+green   = "#A9B665"
+yellow  = "#D8A657"
+blue    = "#7DAEA3"
+magenta = "#D3869B"
+cyan    = "#89B482"
+white   = "#D4BE98"
+
+# Bright colors (same as normal colors)
+[colors.bright]
+black   = "#32302F"
+red     = "#EA6962"
+green   = "#A9B665"
+yellow  = "#D8A657"
+blue    = "#7DAEA3"
+magenta = "#D3869B"
+cyan    = "#89B482"
+white   = "#D4BE98"
