@@ -1,13 +1,17 @@
-local M = {}
+-- NOTE: These are based on `sainnhe/gruvbox-material` with some tweaks.
 
-M["Gruvbox-Material"] = {
-  light = {
-    fg = "#928374",
-    bg = "#FBF1C7",
-  },
-  dark = {
-    fg = "#7C7D83",
-    bg = "#121212",
+local M = {
+  colors = {
+    light = {
+      fg = "#928374",
+      bg = "#FBF1C7",
+      accent = "#E1A345",
+    },
+    dark = {
+      fg = "#7C7D83",
+      bg = "#121212",
+      accent = "#E1A345",
+    },
   },
 }
 
@@ -25,14 +29,13 @@ function M.get_background()
   return background
 end
 
----Returns a table with the `fg` and `bg` colors, based on the colorscheme
----and background.
+---Returns a table with the `fg`, `bg` and `accent` colors, based on
+---the current background.
 ---@return table<string, string>
 function M.get_colors()
-  local colors = os.getenv("COLORSCHEME")
   local background = M.get_background()
 
-  return vim.tbl_get(M[colors], background)
+  return vim.tbl_get(M.colors, background)
 end
 
 return M

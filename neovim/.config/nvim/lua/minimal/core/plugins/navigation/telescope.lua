@@ -166,7 +166,7 @@ function M.init()
     },
     {
       mode = { "n" },
-      lhs = "<leader>sm",
+      lhs = "<leader>fs",
       rhs = function()
         require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
           previewer = false,

@@ -6,7 +6,7 @@ local mappings = require("minimal.utils.plugins.lsp.mappings")
 
 local M = {}
 
-function M.on_attach(_, bufnr)
+function M.on_attach(client, bufnr)
   local icons = interface.icons.get("diagnostics")
 
   local signs = {
@@ -42,7 +42,15 @@ function M.on_attach(_, bufnr)
     },
   })
 
-  mappings.register(bufnr)
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+  })
+
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = "rounded",
+  })
+
+  mappings.register(client, bufnr)
 end
 
 return M

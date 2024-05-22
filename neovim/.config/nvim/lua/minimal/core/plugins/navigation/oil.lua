@@ -11,8 +11,7 @@ function M.init()
   if vim.fn.argc() == 1 then
     local arg = vim.fn.argv(0)
     local stat = vim.loop.fs_stat(arg)
-    if vim.startswith(arg, "oil-ssh://") or
-        stat and stat.type == "directory" then
+    if vim.startswith(arg, "oil-ssh://") or stat and stat.type == "directory" then
       require("lazy").load({ plugins = { "oil.nvim" } })
     end
   end
@@ -31,13 +30,13 @@ function M.init()
   utils.base.mappings.bulk_register({
     {
       mode = { "n" },
-      lhs = "<leader>oo",
+      lhs = "-",
       rhs = ":Oil<CR>",
       description = "Open parent directory.",
     },
     {
       mode = { "n" },
-      lhs = "<leader>of",
+      lhs = "<leader>-",
       rhs = ":Oil --float<CR>",
       description = "Open parent directory - Float.",
     },
@@ -48,8 +47,14 @@ function M.config()
   local oil = require("oil")
 
   oil.setup({
-    default_file_explorer = true,
     skip_confirm_for_simple_edits = true,
+    default_file_explorer = true,
+    columns = {
+      "icon",
+    },
+    view_options = {
+      show_hidden = true,
+    },
     float = {
       max_height = 20,
       max_width = 60,
