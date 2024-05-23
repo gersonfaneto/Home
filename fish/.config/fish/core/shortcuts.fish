@@ -37,7 +37,8 @@ abbr --add --position anywhere "Y" "| xclip -r -selection clipboard"
 abbr --add --position command "p1" "ping 1.1.1.1"
 abbr --add --position command "p8" "ping 8.8.8.8"
 abbr --add --position command "p9" "ping 9.9.9.9"
-abbr --add --position command "pl" "ping 10.0.0.1"
+# abbr --add --position command "pl" "ping 10.0.0.1"
+abbr --add --position command "pl" "ping 192.168.0.1"
 
 abbr --add --position command --set-cursor='@' now "date '+%H:%M:%S'@"
 abbr --add --position command --set-cursor='@' today "date +'%d.%m.%Y'@"
@@ -93,5 +94,5 @@ if type -q eza
   alias "la" "eza --all --icons --color=always --oneline --group-directories-first"
   alias "ll" "eza --icons --color=always --long --header --group-directories-first"
   alias "lla" "eza --all --long --icons --color=always --header --group-directories-first"
-  alias "tree" "eza --all --tree --icons --color=always --group-directories-first"
+  alias "t" "eza --all --tree --icons --color=always --group-directories-first"
 end
