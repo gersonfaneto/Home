@@ -23,20 +23,27 @@ FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLU
 
 # List of needed packages to be installed.
 packages=(
+  alacritty
+  ascii
   atuin
   bat
+  bear
   bottom
   difftastic
   eza
+  fastfetch
   fd
+  figlet
   fish
   fzf
   ghcup-hs-bin
   github-cli
   glow
+  httpie
   jq
   mise
   pandoc-bin
+  ranger
   ripgrep
   starship
   stow
