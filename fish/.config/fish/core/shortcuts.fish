@@ -34,12 +34,6 @@ abbr --add --position anywhere '!#' --function history_replace
 
 abbr --add --position anywhere "Y" "| xclip -r -selection clipboard"
 
-abbr --add --position command "p1" "ping 1.1.1.1"
-abbr --add --position command "p8" "ping 8.8.8.8"
-abbr --add --position command "p9" "ping 9.9.9.9"
-# abbr --add --position command "pl" "ping 10.0.0.1"
-abbr --add --position command "pl" "ping 192.168.0.1"
-
 abbr --add --position command --set-cursor='@' now "date '+%H:%M:%S'@"
 abbr --add --position command --set-cursor='@' today "date +'%d.%m.%Y'@"
 
