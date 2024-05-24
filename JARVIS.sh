@@ -32,28 +32,20 @@ packages=(
   fish
   fzf
   ghcup-hs-bin
-  git
   github-cli
   glow
   jq
-  kitty
-  lf
-  mediainfo
   mise
   pandoc-bin
-  python-pdftotext
   ripgrep
   starship
   stow
-  tar
   texlive
   tmux
   trash-cli
   unzip
   usql
-  vimv
   xh
-  zip
   zoxide
 )
 
