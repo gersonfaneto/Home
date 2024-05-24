@@ -9,7 +9,7 @@ set $ctrl control
 set $shift Shift
 
 # Font for window titles.
-font pango:Iosevka Nerd Font 10
+font pango:Monaspace Neon 10
 
 # Set keyboard layout.
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
@@ -53,7 +53,6 @@ bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+b exec firefox
 
 # Open the terminal.
-# bindsym $mod+Return exec kitty
 bindsym $mod+Return exec alacritty
 
 # Kill the focused window.

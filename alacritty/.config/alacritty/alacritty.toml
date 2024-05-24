@@ -19,18 +19,22 @@ decorations = "none"
 [font]
 size = 14
 
+# [font.normal]
+# family = "Monaspace Neon"
+# style = "Regular"
+
+# [font.normal]
+# family = "Monaspace Argon"
+# style = "Regular"
+
 [font.normal]
-family = "IosevkaTerm Nerd Font"
+family = "Monaspace Radon"
 style = "Regular"
 
-[font.bold]
-family = "IosevkaTerm Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "IosevkaTerm Nerd Font"
-style = "Italic"
-
-[font.bold_italic]
-family = "IosevkaTerm Nerd Font"
-style = "BoldItalic"
+# [font.normal]
+# family = "Monaspace Krypton"
+# style = "Regular"
+ 
+# [font.normal]
+# family = "Monaspace Xenon"
+# style = "Regular"
