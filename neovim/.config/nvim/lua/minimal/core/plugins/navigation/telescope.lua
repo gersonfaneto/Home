@@ -139,7 +139,7 @@ function M.init()
       mode = { "n" },
       lhs = "<leader>fd",
       rhs = function()
-        local repo = "$HOME/Developer/Projects/Personal/YADR"
+        local repo = "$HOME/Developer/Projects/Personal/Archie"
         require("telescope.builtin").find_files({
           cwd = vim.fn.expand(repo),
           hidden = true,
@@ -166,7 +166,7 @@ function M.init()
     },
     {
       mode = { "n" },
-      lhs = "<leader>fs",
+      lhs = "<leader>sm",
       rhs = function()
         require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
           previewer = false,
