@@ -12,13 +12,30 @@ program = "/usr/bin/fish"
 args = ["--login", "--interactive"]
 
 [window]
-padding.x = 5
-padding.y = 5
 decorations = "none"
 
+[window.padding]
+x = 5
+y = 5
+
+[mouse]
+hide_when_typing = true
+
 [font]
-size = 14
+size = 12
 
 [font.normal]
 family = "IosevkaTerm Nerd Font"
 style = "Regular"
+
+[font.bold]
+family = "IosevkaTerm Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "IosevkaTerm Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "IosevkaTerm Nerd Font"
+style = "BoldItalic"

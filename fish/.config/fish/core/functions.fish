@@ -22,4 +22,6 @@ function background
   end
 
   cp -f "$HOME/.config/alacritty/colors/$COLORS.toml" "$HOME/.config/alacritty/colors/color.toml"
+
+  commandline -f repaint
 end

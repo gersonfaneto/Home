@@ -29,7 +29,7 @@ bindsym $ctrl+$alt+M exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ tog
 bindsym $ctrl+$alt+V exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use `boomer` as a magnifying glass.
-bindsym $mod+m exec --no-startup-id boomer
+bindsym $mod+$shift+z exec --no-startup-id boomer
 
 # Use `playerctl` to control media.
 bindsym $ctrl+$alt+Left exec --no-startup-id playerctl previous
@@ -49,8 +49,12 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # Open screenshot tool.
 bindsym $mod+p exec --no-startup-id flameshot gui
 
+# Open note taking app.
+bindsym $mod+o exec obsidian
+
 # Open the browser
 bindsym $mod+b exec firefox
+bindsym $mod+$shift+b exec firefox --private-window
 
 # Open the terminal.
 bindsym $mod+Return exec alacritty
