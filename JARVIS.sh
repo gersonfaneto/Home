@@ -28,6 +28,7 @@ packages=(
   atuin
   bat
   bear
+  bob
   bottom
   difftastic
   eza

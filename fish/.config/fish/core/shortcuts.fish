@@ -68,10 +68,6 @@ if type -q git
   alias "g" "git"
 end
 
-if type -q nvim
-  alias "v" "nvim"
-end
-
 if type -q bat
   alias "cat" "bat"
 end

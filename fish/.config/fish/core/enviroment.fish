@@ -23,3 +23,16 @@ if test -d "/opt/asdf-vm/bin"
     source /opt/asdf-vm/asdf.fish
   end
 end
+
+if type -q bob
+  if test -d "$HOME/.local/share/bob/nvim-bin"
+    if not contains /home/gerson/.local/share/bob/nvim-bin $PATH
+      export PATH="$PATH:/home/gerson/.local/share/bob/nvim-bin"
+    end
+  end
+  if type -q nvim
+    alias "v" "nvim"
+    export MANROFFOPT='-c'
+    export MANPAGER="nvim +Man!"
+  end
+end
