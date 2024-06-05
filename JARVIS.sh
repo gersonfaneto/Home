@@ -41,7 +41,7 @@ packages=(
   glow
   httpie
   jq
-  mise
+  asdf-vm
   pandoc-bin
   ranger
   ripgrep

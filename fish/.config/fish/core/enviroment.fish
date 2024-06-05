@@ -2,10 +2,6 @@ if type -q zoxide
   zoxide init fish | source
 end
 
-if type -q mise
-  mise activate fish | source
-end
-
 if type -q opam
   eval $(opam env)
 end
@@ -16,6 +12,14 @@ end
 
 if type -q atuin
   export ATUIN_NOBIND="true"
-
   atuin init fish | source
+end
+
+if test -d "/opt/asdf-vm/bin"
+  if not contains /opt/asdf-vm/bin $PATH
+    export PATH="$PATH:/opt/asdf-vm/bin"
+  end
+  if type -q asdf
+    source /opt/asdf-vm/asdf.fish
+  end
 end
