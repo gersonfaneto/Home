@@ -20,3 +20,8 @@ if not test -f "$HOME/.config/fish/extras/colors.fish"
 end
 
 source "$HOME/.config/fish/extras/colors.fish"
+
+if status is-interactive
+  and not set -q TMUX
+  tmux new-session -d -s "Home" 2>/dev/null
+end

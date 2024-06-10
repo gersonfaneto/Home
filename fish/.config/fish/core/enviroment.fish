@@ -15,13 +15,8 @@ if type -q atuin
   atuin init fish | source
 end
 
-if test -d "/opt/asdf-vm/bin"
-  if not contains /opt/asdf-vm/bin $PATH
-    export PATH="$PATH:/opt/asdf-vm/bin"
-  end
-  if type -q asdf
-    source /opt/asdf-vm/asdf.fish
-  end
+if type -q mise
+  mise activate fish | source
 end
 
 if type -q bob
@@ -31,7 +26,7 @@ if type -q bob
     end
   end
   if type -q nvim
-    alias "v" "nvim"
+    alias "vim" "nvim"
     export MANROFFOPT='-c'
     export MANPAGER="nvim +Man!"
   end
