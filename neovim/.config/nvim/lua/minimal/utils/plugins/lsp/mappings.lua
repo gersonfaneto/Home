@@ -2,13 +2,14 @@ local base = require("minimal.utils.base")
 
 local M = {}
 
-function M.register(bufnr)
+function M.register(client, bufnr)
   base.mappings.bulk_register({
     {
       mode = { "n", "v" },
       lhs = "<leader>la",
       rhs = function()
         vim.lsp.buf.code_action({
+          ---@diagnostic disable-next-line: missing-fields
           context = {
             only = { "quickfix", "refactor", "source" },
           },
@@ -95,6 +96,35 @@ function M.register(bufnr)
       description = "Jump to next diagnostic.",
     },
   }, { options = { noremap = true, silent = true, buffer = bufnr }, prefix = "LSP :: " })
+
+  if vim.lsp.inlay_hint then
+    base.mappings.register({
+      mode = { "n" },
+      lhs = "<leader>th",
+      rhs = function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+      end,
+      description = "LSP :: Toggle inlay hints.",
+      options = { silent = true, noremap = true, buffer = bufnr },
+    })
+    if client.supports_method("textDocument/inlayHint") then
+      local inlay_hints_augroup = vim.api.nvim_create_augroup("minimal_inlay_hints", { clear = true })
+      vim.api.nvim_create_autocmd("InsertEnter", {
+        group = inlay_hints_augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.inlay_hint.enable(false)
+        end,
+      })
+      vim.api.nvim_create_autocmd("InsertLeave", {
+        group = inlay_hints_augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.inlay_hint.enable(true)
+        end,
+      })
+    end
+  end
 end
 
 return M
