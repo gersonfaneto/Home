@@ -13,7 +13,7 @@ application/pdf=org.pwmt.zathura.desktop
 
 #### Could be useful...
 
-- [Mohu][@wookayin/dotfiles]
+- [Mohu][@ayamir/nvimdots]
 - [Nick Nisi][@nicknisi/dotfiles]
 - [Jongwook Choi][@wookayin/dotfiles]
 
