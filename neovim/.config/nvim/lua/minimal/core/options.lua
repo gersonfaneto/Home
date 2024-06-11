@@ -48,7 +48,13 @@ M.opt = {
   showmode = false,
   showtabline = 0,
   numberwidth = 4,
-  fillchars = "eob: ,fold: ,foldopen: ,foldsep: ,foldclose:",
+  fillchars = {
+    eob = " ",
+    fold = " ",
+    foldopen = " ",
+    foldsep = " ",
+    foldclose = "",
+  },
   list = true,
   listchars = {
     tab = "⇥ ",
@@ -58,7 +64,11 @@ M.opt = {
     eol = "↴",
     space = "⋅",
   },
-  completeopt = { "menu", "menuone", "noselect" },
+  completeopt = {
+    "menu",
+    "menuone",
+    "noselect",
+  },
   laststatus = 3,
 
   -- Tabs / Indentation.
@@ -70,6 +80,7 @@ M.opt = {
   wrap = false,
 
   -- Search.
+  inccommand = "split",
   incsearch = true,
   ignorecase = true,
   smartcase = true,
@@ -82,7 +93,7 @@ M.opt = {
 
 -- Random...
 vim.opt.mouse:append("a")
-vim.opt.iskeyword:append("-")
+-- vim.opt.iskeyword:append("-")
 vim.opt.shortmess:append("sI")
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.diffopt:append("vertical")

@@ -16,9 +16,9 @@ end
 
 vim.opt.rtp:prepend(lazy_path)
 
-local ok, lazy = pcall(require, "lazy")
+local found_lazy, lazy = pcall(require, "lazy")
 
-if not ok then
+if not found_lazy then
   vim.notify("Failed to download lazy.nvim ...", vim.log.levels.ERROR, { title = "Lazy" })
   return
 end
@@ -36,8 +36,16 @@ local include_directories = {
 
 local customs = vim.fn.stdpath("config") .. "/lua/custom/plugins/"
 
-if utils.base.files.is_directory(customs) then
-  include_directories[#include_directories + 1] = { import = "custom.plugins" }
+local handler = io.popen("ls " .. customs .. "| wc -l")
+
+if handler ~= nil then
+  local result = handler:read("*a") --[[@as string]]
+
+  handler:close()
+
+  if utils.base.files.is_directory(customs) and tonumber(result) > 0 then
+    include_directories[#include_directories + 1] = { import = "custom.plugins" }
+  end
 end
 
 local lazy_options = {
@@ -84,20 +92,5 @@ local lazy_options = {
 }
 
 lazy.setup(include_directories, lazy_options)
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>ph",
-    rhs = ":Lazy<CR>",
-    description = "List all plugins.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>pp",
-    rhs = ":Lazy profile<CR>",
-    description = "Show profile.",
-  },
-}, { options = { silent = true, noremap = true }, prefix = "Lazy :: " })
 
 return M

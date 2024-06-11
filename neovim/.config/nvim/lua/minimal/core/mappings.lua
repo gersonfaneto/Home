@@ -242,12 +242,6 @@ utils.base.mappings.bulk_register({
     description = "Open command window.",
   },
   {
-    mode = { "i" },
-    lhs = "<C-s><C-a>",
-    rhs = "<C-g>u<ESC>[s1z=`]a<C-g>u",
-    description = "Accept first suggestion for spelling correction.",
-  },
-  {
     mode = { "n" },
     lhs = "<leader>sa",
     rhs = "1z=",
@@ -553,7 +547,6 @@ utils.base.mappings.bulk_register({
     rhs = ":normal vil<cr>",
     description = "Inside the whole line.",
   },
-
   {
     mode = { "x" },
     lhs = "ae",
