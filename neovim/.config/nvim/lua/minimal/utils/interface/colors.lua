@@ -5,12 +5,12 @@ local M = {
     light = {
       fg = "#928374",
       bg = "#FBF1C7",
-      accent = "#E1A345",
+      accent = "#FF9E64",
     },
     dark = {
       fg = "#7C7D83",
       bg = "#121212",
-      accent = "#E1A345",
+      accent = "#FF9E64",
     },
   },
 }
