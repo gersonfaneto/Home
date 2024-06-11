@@ -1,4 +1,6 @@
-### NOTES
+### Notes
+
+#### How to...?
 
 - Set `zathura` as default PDF Viewer.
 
@@ -9,16 +11,12 @@
 application/pdf=org.pwmt.zathura.desktop
 ```
 
-- Use `asdf` to manage tools.
+#### Could be useful...
 
-```toml
-# Saved :: $HOME/.tool-versions
+- [Mohu][@wookayin/dotfiles]
+- [Nick Nisi][@nicknisi/dotfiles]
+- [Jongwook Choi][@wookayin/dotfiles]
 
-nodejs 20.0.0
-golang 1.22.0
-opam 2.1.6
-ruby 3.3.0
-rust 1.78.0
-php 8.3.7
-bun 1.1.10
-```
+[@nicknisi/dotfiles]: https://github.com/nicknisi/dotfiles
+[@ayamir/nvimdots]: https://github.com/ayamir/nvimdots
+[@wookayin/dotfiles]: https://github.com/wookayin/dotfiles
