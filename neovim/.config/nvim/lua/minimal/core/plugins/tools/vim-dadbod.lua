@@ -28,14 +28,25 @@ function M.init()
 
   vim.g.db_ui_execute_on_save = 0
   vim.g.db_ui_auto_execute_table_helpers = 0
+
+  utils.base.mappings.bulk_register({
+    {
+      mode = { "n" },
+      lhs = "<leader>db",
+      rhs = ":DBUIToggle<CR>",
+      description = "Open Database Explorer",
+    },
+  }, { options = { silent = true, noremap = true }, prefix = "DB :: " })
 end
 
 function M.config(_, opts)
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-      "sql",
+  local completion = require("cmp")
+
+  completion.setup.filetype({ "sql" }, {
+    sources = {
+      { name = "vim-dadbod-completion" },
+      { name = "buffer" },
     },
-    command = [[setlocal omnifunc=vim_dadbod_completion#omni]],
   })
 
   vim.api.nvim_create_autocmd("FileType", {
@@ -57,14 +68,5 @@ function M.config(_, opts)
     end,
   })
 end
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>db",
-    rhs = ":DBUIToggle<CR>",
-    description = "Open Database Explorer",
-  },
-}, { options = { silent = true, noremap = true }, prefix = "DB :: " })
 
 return M

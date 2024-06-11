@@ -7,6 +7,7 @@ function M.config()
   local colors = utils.interface.colors.get_colors()
   local icons = utils.interface.icons.get("diagnostics")
 
+  local has_noice, noice = pcall(require, "noice")
   local lualine = require("lualine")
 
   lualine.setup({
@@ -24,6 +25,7 @@ function M.config()
         visual = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
         command = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
         replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.fg, bg = colors.bg } },
+
         inactive = {
           a = { bg = colors.bg, fg = colors.fg },
           b = { bg = colors.bg, fg = colors.fg },
@@ -65,25 +67,18 @@ function M.config()
         },
       },
       lualine_c = {
-        {
-          "macros",
-          fmt = function()
-            local register = vim.fn.reg_recording()
-            if register == "" then
-              return ""
-            else
-              return "recording @" .. register
-            end
-          end,
+        has_noice and {
+          noice.api.statusline.mode.get,
+          cond = noice.api.statusline.mode.has,
           color = { bg = colors.bg, fg = colors.accent },
-        },
+        } or {},
       },
       lualine_x = {
         "selectioncount",
       },
       lualine_y = {
         {
-          "progress",
+          "custom-progress",
           fmt = function()
             local total_lines = vim.fn.line("$")
             if total_lines <= 1 then

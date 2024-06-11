@@ -8,6 +8,15 @@ local M = {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "java" },
       callback = function()
+        local found_java = vim.fn.executable("java")
+
+        if not found_java then
+          vim.notify("Java isn't present in $PATH.", vim.log.levels.ERROR)
+          return
+        end
+
+        local java_path = vim.fn.exepath("java")
+
         local jdtls = require("jdtls")
         local jdtls_setup = require("jdtls.setup")
 
@@ -90,7 +99,7 @@ local M = {
 
         local config = {
           cmd = {
-            home .. ".local/share/mise/installs/java/latest/bin/java",
+            java_path,
             "-Declipse.application=org.eclipse.jdt.ls.core.id1",
             "-Dosgi.bundles.defaultStartLevel=4",
             "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -117,12 +126,7 @@ local M = {
           settings = {
             java = {
               configuration = {
-                runtimes = {
-                  {
-                    name = "JavaSE-11",
-                    path = home .. ".local/share/mise/installs/java/11/",
-                  },
-                },
+                runtimes = {},
               },
               maven = {
                 downloadSources = true,

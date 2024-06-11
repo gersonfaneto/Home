@@ -2,14 +2,14 @@ local M = {
   "folke/todo-comments.nvim",
   opts = {},
   cmd = {
-    "TodoTelescope",
+    "TodoLocList",
     "TodoQuickFix",
+    "TodoTelescope",
+    "TodoTrouble",
   },
-  event = {
-    "BufReadPost",
-    "BufNewFile",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
   },
-  dependencies = { "nvim-lua/plenary.nvim" },
 }
 
 function M.init()

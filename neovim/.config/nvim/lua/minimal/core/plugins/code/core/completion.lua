@@ -7,7 +7,6 @@ local M = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
-    "onsails/lspkind.nvim",
     {
       "L3MON4D3/LuaSnip",
       dependencies = {
@@ -23,7 +22,6 @@ function M.config()
   local cmp_types = require("cmp.types.cmp")
   local cmp_mapping = cmp.mapping
 
-  local lspkind = require("lspkind")
   local luasnip = require("luasnip")
   local snippets = require("luasnip.loaders.from_vscode")
 
@@ -31,10 +29,10 @@ function M.config()
     ui = utils.interface.icons.get("ui"),
     git = utils.interface.icons.get("git"),
     misc = utils.interface.icons.get("misc"),
+    kind = utils.interface.icons.get("kind"),
   }
 
   snippets.lazy_load()
-  snippets.lazy_load({ paths = { os.getenv("HOME") .. "/.config/nvim/extras/snippets" } })
 
   cmp.setup({
     snippet = {
@@ -56,13 +54,12 @@ function M.config()
       }),
     },
     sources = {
-      { name = "luasnip" },
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
+      { name = "luasnip" },
+      { name = "buffer" },
       { name = "path" },
       { name = "emoji" },
-      { name = "buffer" },
-      { name = "crates" },
     },
     mapping = cmp_mapping.preset.insert({
       ["<C-e>"] = cmp_mapping.abort(),
@@ -129,7 +126,7 @@ function M.config()
           vim_item.kind = icons.misc.Smiley
           vim_item.kind_hl_group = "CmpItemKindEmoji"
         else
-          vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+          vim_item.kind = string.format("%s %s", icons.kind[vim_item.kind], vim_item.kind)
         end
 
         vim_item.menu = ({
@@ -139,14 +136,6 @@ function M.config()
           emoji = "[Emoji]",
           buffer = "[Buffer]",
         })[entry.source.name]
-
-        ---@diagnostic disable-next-line: assign-type-mismatch
-        vim_item.dup = ({
-          buffer = 1,
-          path = 1,
-          nvim_lsp = 0,
-          luasnip = 1,
-        })[entry.source.name] or 0
 
         return vim_item
       end,

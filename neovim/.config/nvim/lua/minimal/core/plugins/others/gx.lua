@@ -14,7 +14,7 @@ function M.init()
 
   utils.base.mappings.register({
     mode = { "n", "x" },
-    lhs = "gb",
+    lhs = "gx",
     rhs = ":Browse<CR>",
     options = { silent = true, noremap = true },
     description = "GX :: Browse.",

@@ -8,16 +8,38 @@ local M = {
   },
 }
 
+function M.init()
+  utils.base.mappings.bulk_register({
+    {
+      mode = { "n" },
+      lhs = "<leader>ns",
+      rhs = ":Neotree toggle left<CR>",
+      description = "Open (Toggle) to the side.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>nf",
+      rhs = ":Neotree toggle float<CR>",
+      description = "Open (Toggle) as a float.",
+    },
+  }, { prefix = "NeoTree :: ", options = { silent = true, noremap = true } })
+end
+
 function M.config()
+  local icons = {}
+
+  icons.ui = utils.interface.icons.get("ui")
+  icons.git = utils.interface.icons.get("git")
+
   local neo_tree = require("neo-tree")
 
   neo_tree.setup({
     close_if_last_window = true,
     popup_border_style = "rounded",
-    enable_git_status = true,
-    enable_modified_markers = true,
-    enable_diagnostics = true,
     sort_case_insensitive = true,
+    enable_git_status = true,
+    enable_diagnostics = true,
+    enable_modified_markers = true,
     default_component_configs = {
       indent = {
         with_markers = true,
@@ -28,10 +50,10 @@ function M.config()
         highlight = "NeoTreeModified",
       },
       icon = {
-        folder_closed = "",
-        folder_open = "",
-        folder_empty = "",
-        folder_empty_open = "",
+        folder_closed = icons.ui.Folder,
+        folder_open = icons.ui.FolderOpen,
+        folder_empty = icons.ui.EmptyFolder,
+        folder_empty_open = icons.ui.EmptyFolderOpen,
       },
       git_status = {
         symbols = {
@@ -47,6 +69,25 @@ function M.config()
           staged = "",
           conflict = "",
         },
+      },
+      file_size = {
+        enabled = false,
+        required_width = 64,
+      },
+      type = {
+        enabled = false,
+        required_width = 122,
+      },
+      last_modified = {
+        enabled = false,
+        required_width = 88,
+      },
+      created = {
+        enabled = false,
+        required_width = 110,
+      },
+      symlink_target = {
+        enabled = false,
       },
     },
     window = {
@@ -66,52 +107,29 @@ function M.config()
           "thumbs.db",
         },
       },
-      follow_current_file = {
-        enabled = true,
-        leave_dirs_open = true,
+    },
+    source_selector = {
+      winbar = true,
+      sources = {
+        { source = "filesystem", display_name = "   Files " },
+        { source = "buffers", display_name = "   Buffers " },
+        { source = "git_status", display_name = "   Git " },
       },
     },
     event_handlers = {},
   })
 
-  M.handlers.fix_colors()
+  local colors = utils.interface.colors.get_colors()
+
+  vim.cmd("highlight NeoTreeNormal guibg=" .. colors.bg .. " guifg=none")
+  vim.cmd("highlight NeoTreeFloatNormal guifg=none guibg=none")
+  vim.cmd("highlight NeoTreeFloatBorder gui=none guifg=" .. colors.fg .. " guibg=none")
+  vim.cmd("highlight NeoTreeEndOfBuffer guibg=" .. colors.bg)
+  vim.cmd("highlight NeoTreeTabInactive guibg=" .. colors.bg)
+  vim.cmd("highlight NeoTreeTabActive guibg=" .. colors.bg)
+  vim.cmd("highlight NeoTreeTabInactive guibg=" .. colors.bg)
+  vim.cmd("highlight NeoTreeTabSeparatorInactive guibg=" .. colors.bg)
+  vim.cmd("highlight NeoTreeTabSeparatorActive guibg=" .. colors.bg)
 end
-
-function M.init()
-  M.handlers.register_mappings()
-end
-
-M.handlers = {
-  register_mappings = function()
-    utils.base.mappings.bulk_register({
-      {
-        mode = { "n" },
-        lhs = "<leader>nf",
-        rhs = ":Neotree reveal float filesystem<CR>",
-        description = "Files",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>nb",
-        rhs = ":Neotree reveal float buffers<CR>",
-        description = "Buffers",
-      },
-      {
-        mode = { "n" },
-        lhs = "<leader>ng",
-        rhs = ":Neotree reveal float git_status<CR>",
-        description = "Git",
-      },
-    }, { prefix = "NeoTree :: ", options = { silent = true, noremap = true } })
-  end,
-  fix_colors = function()
-    local colors = utils.interface.colors.get_colors()
-
-    vim.cmd("highlight NeoTreeNormal guibg=" .. colors.bg .. " guifg=none")
-    vim.cmd("highlight NeoTreeFloatNormal guifg=none guibg=none")
-    vim.cmd("highlight NeoTreeFloatBorder gui=none guifg=" .. colors.fg .. " guibg=none")
-    vim.cmd("highlight NeoTreeEndOfBuffer guibg=" .. colors.bg)
-  end,
-}
 
 return M
