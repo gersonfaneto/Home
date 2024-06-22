@@ -25,17 +25,17 @@ hide_when_typing = true
 size = 12
 
 [font.normal]
-family = "IosevkaTerm Nerd Font"
+family = "Berkeley Mono"
 style = "Regular"
 
 [font.bold]
-family = "IosevkaTerm Nerd Font"
+family = "Berkeley Mono"
 style = "Bold"
 
 [font.italic]
-family = "IosevkaTerm Nerd Font"
+family = "Berkeley Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "IosevkaTerm Nerd Font"
+family = "Berkeley Mono"
 style = "BoldItalic"
