@@ -15,7 +15,7 @@ function M.config()
       lhs = "<leader>mf",
       rhs = function()
         harpoon:list():add()
-        vim.notify("󰛢 Harpooned!")
+        vim.notify("󰛢 Harpooned!", "info", { title = "Harpoon" })
       end,
       description = "Add current file to Harpoon.",
     },

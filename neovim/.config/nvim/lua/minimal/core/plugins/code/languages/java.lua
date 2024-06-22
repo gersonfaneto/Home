@@ -11,7 +11,7 @@ local M = {
         local found_java = vim.fn.executable("java")
 
         if not found_java then
-          vim.notify("Java isn't present in $PATH.", vim.log.levels.ERROR)
+          vim.notify("Java isn't present in $PATH.", "error",{ title = "JDTLS" })
           return
         end
 

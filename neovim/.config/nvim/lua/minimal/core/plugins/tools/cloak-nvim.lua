@@ -32,7 +32,7 @@ M.helpers = {
         lhs = "<C-c><C-e>",
         rhs = function()
           vim.cmd("CloakEnable")
-          vim.notify("Enabled.", vim.log.levels.WARN, { title = "Cloak ::" })
+          vim.notify("At ease! Your secrets are now protected.", "info", { title = "Cloak" })
         end,
         description = "Enable.",
       },
@@ -41,7 +41,7 @@ M.helpers = {
         lhs = "<C-c><C-d>",
         rhs = function()
           vim.cmd("CloakDisable")
-          vim.notify("Disabled.", vim.log.levels.WARN, { title = "Cloak ::" })
+          vim.notify("Beware! Your secrets are now exposed.", "warn", { title = "Cloak" })
         end,
         description = "Disable.",
       },

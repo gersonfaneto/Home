@@ -8,21 +8,45 @@ local M = {
   },
 }
 
+function M.init()
+  utils.base.mappings.bulk_register({
+    {
+      mode = { "n" },
+      lhs = "<leader>ne",
+      rhs = ":NoiceEnable<CR>",
+      description = "Enable.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>nd",
+      rhs = ":NoiceDisable<CR>",
+      description = "Disable.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>nh",
+      rhs = ":NoiceHistory<CR>",
+      description = "Open notification history.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>nc",
+      rhs = ":NoiceDismiss<CR>",
+      description = "Clear all notifications.",
+    },
+    {
+      mode = { "n" },
+      lhs = "<leader>nl",
+      rhs = ":NoiceLast<CR>",
+      description = "View last notification.",
+    },
+  }, { options = { silent = true, noremap = true }, prefix = "Noice :: " })
+end
+
 function M.config()
   local noice = require("noice")
 
   noice.setup({
-    lsp = {
-      hover = {
-        enabled = false,
-      },
-      progress = {
-        enabled = false,
-      },
-      signature = {
-        enabled = false,
-      },
-    },
     cmdline = {
       view = "cmdline_popup",
       format = {
@@ -50,6 +74,25 @@ function M.config()
           icon = " ",
           lang = "regex",
         },
+      },
+    },
+    commands = {
+      last = {
+        view = "split",
+      },
+      errors = {
+        view = "split",
+      },
+    },
+    lsp = {
+      hover = {
+        enabled = false,
+      },
+      progress = {
+        enabled = false,
+      },
+      signature = {
+        enabled = false,
       },
     },
     presets = {
@@ -84,45 +127,12 @@ function M.config()
             { event = "msg_show", find = "%d+ change" },
             { event = "msg_show", find = "%d+ line" },
             { event = "msg_show", find = "%d+ more line" },
-            { event = "notify", find = "No information available" },
+            { event = "notify",   find = "No information available" },
           },
         },
       },
     },
   })
 end
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<leader>ne",
-    rhs = ":Noice enable<CR>",
-    description = "Enable.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>nd",
-    rhs = ":Noice disable<CR>",
-    description = "Disable.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>nh",
-    rhs = ":Noice telescope<CR>",
-    description = "Open notification history.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>nc",
-    rhs = ":Noice dismiss<CR>",
-    description = "Clear all notifications.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>np",
-    rhs = ":Noice last<CR>",
-    description = "View last notification.",
-  },
-}, { options = { silent = true, noremap = true }, prefix = "Noice :: " })
 
 return M
