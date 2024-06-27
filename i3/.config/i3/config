@@ -5,7 +5,8 @@ workspace_layout tabbed
 # Quick references for the common mappings.
 set $mod Mod4
 set $alt Mod1
-set $ctrl control
+set $ctrl Ctrl
+set $tab Tab
 set $shift Shift
 
 # Font for window titles.
@@ -44,7 +45,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 floating_modifier $mod
 
 # Open `dmenu`, the default application launcher.
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -i -p 'run' -fn 'BerkeleyMono:regular:pixelsize=12'
 
 # Open screenshot tool.
 bindsym $mod+p exec --no-startup-id flameshot gui
@@ -73,6 +74,11 @@ bindsym $mod+$shift+Left move left
 bindsym $mod+$shift+Down move down
 bindsym $mod+$shift+Up move up
 bindsym $mod+$shift+Right move right
+
+# ...
+bindsym $mod+$ctrl+Right workspace next
+bindsym $mod+$ctrl+Left workspace prev
+bindsym $mod+$tab workspace back_and_forth
 
 # Split horizontally and vertically.
 bindsym $mod+h split h
