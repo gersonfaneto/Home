@@ -49,27 +49,6 @@ utils.base.mappings.bulk_register({
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<leader>nn",
-    rhs = ":NewNote<CR>",
-    description = "Create a new note.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bn",
-    rhs = ":BufferCreate<CR>",
-    description = "Create a new buffer/file relative to the current buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<leader>bd",
-    rhs = ":BufferDelete<CR>",
-    description = "Delete the current Buffer while maintaining the window layout.",
-  },
-}, { prefix = "Custom Commands :: ", options = { silent = true, noremap = true } })
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
     lhs = "<C-Down>",
     rhs = "<C-w>j",
     description = "Move to the split bellow.",
