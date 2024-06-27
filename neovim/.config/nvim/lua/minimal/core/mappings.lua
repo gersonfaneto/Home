@@ -3,7 +3,7 @@ local M = {}
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<C-t><C-r>",
+    lhs = "<leader>eor",
     rhs = function()
       ---@diagnostic disable-next-line: undefined-field
       if vim.opt.colorcolumn:get()[1] ~= nil then
@@ -16,35 +16,35 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<C-t><C-l>",
+    lhs = "<leader>eol",
     rhs = ":set cursorline!<CR>",
     description = "Toggle cursor line.",
   },
   {
     mode = { "n" },
-    lhs = "<C-t><C-d>",
+    lhs = "<leader>eod",
     rhs = ":set list!<CR>",
     description = "Toggle list.",
   },
   {
     mode = { "n" },
-    lhs = "<C-t><C-s>",
+    lhs = "<leader>eos",
     rhs = ":set spell!<CR>",
     description = "Toggle spell checking.",
   },
   {
     mode = { "n" },
-    lhs = "<C-t><C-w>",
+    lhs = "<leader>eow",
     rhs = ":set wrap!<CR>",
     description = "Toggle wrap.",
   },
   {
     mode = { "n" },
-    lhs = "<C-t><C-n>",
+    lhs = "<leader>eon",
     rhs = ":set number! | set relativenumber!<CR>",
     description = "Toggle numbers.",
   },
-}, { prefix = "Quick Toggles :: ", options = { silent = true, noremap = true } })
+}, { prefix = "Editor Options :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
@@ -145,13 +145,13 @@ utils.base.mappings.bulk_register({
 utils.base.mappings.bulk_register({
   {
     mode = { "n" },
-    lhs = "<A-Tab>",
+    lhs = "<Tab>",
     rhs = ":tabnext<CR>",
     description = "Switch to next tab.",
   },
   {
     mode = { "n" },
-    lhs = "<A-S-Tab>",
+    lhs = "<S-Tab>",
     rhs = ":tabprevious<CR>",
     description = "Switch to previous tab.",
   },
@@ -186,27 +186,6 @@ utils.base.mappings.bulk_register({
     description = "Shift tab to the left.",
   },
 }, { prefix = "Tabs :: ", options = { silent = true, noremap = true } })
-
-utils.base.mappings.bulk_register({
-  {
-    mode = { "n" },
-    lhs = "<Tab>",
-    rhs = ":bnext<CR>",
-    description = "Switch to next buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<S-Tab>",
-    rhs = ":bprevious<CR>",
-    description = "Switch to previous buffer.",
-  },
-  {
-    mode = { "n" },
-    lhs = "<BS>",
-    rhs = ":b#<CR>",
-    description = "Quickly switch between current and last open buffer.",
-  },
-}, { prefix = "Buffers :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
