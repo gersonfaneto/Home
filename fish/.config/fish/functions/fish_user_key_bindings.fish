@@ -3,10 +3,6 @@ function fish_user_key_bindings
 
   bind --mode insert \ca accept-autosuggestion
 
-  bind --mode insert \eb "btm"
-  bind --mode insert \en "nvim"
-  bind --mode insert \er "ranger && commandline -f repaint"
-
   bind --mode insert \ec _atuin_search
 
   bind --mode insert \ef "ffzf files"

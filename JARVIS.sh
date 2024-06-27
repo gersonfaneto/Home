@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# WARN: Gerson Ferreira - 03.11.2024: Currently broken... 
-
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"
@@ -21,6 +19,7 @@ DIRS=$(ls)
 
 FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLUDE[@]}"))
 
+# TODO: This need to be updated.
 # List of needed packages to be installed.
 packages=(
   alacritty
@@ -44,7 +43,7 @@ packages=(
   jq
   asdf-vm
   pandoc-bin
-  ranger
+  yazi
   ripgrep
   starship
   stow

@@ -1,6 +1,10 @@
 local M = {
   "folke/todo-comments.nvim",
   opts = {},
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   cmd = {
     "TodoLocList",
     "TodoQuickFix",
