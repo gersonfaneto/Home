@@ -64,10 +64,10 @@ if type -q fastfetch
   alias "ff" "fastfetch --config neofetch.jsonc"
 end
 
-if type -q z
-  alias "cd" "z"
-  alias "ci" "zi"
-end
+# if type -q z
+#   alias "cd" "z"
+#   alias "ci" "zi"
+# end
 
 if type -q git
   alias "g" "git"
