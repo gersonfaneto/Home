@@ -7,23 +7,12 @@ local M = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
-    {
-      "L3MON4D3/LuaSnip",
-      dependencies = {
-        "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
-      },
-    },
+    "L3MON4D3/LuaSnip",
   },
 }
 
 function M.config()
-  local cmp = require("cmp")
-  local cmp_types = require("cmp.types.cmp")
-  local cmp_mapping = cmp.mapping
-
-  local luasnip = require("luasnip")
-  local snippets = require("luasnip.loaders.from_vscode")
+  local completion = require("cmp")
 
   local icons = {
     ui = utils.interface.icons.get("ui"),
@@ -32,12 +21,10 @@ function M.config()
     kind = utils.interface.icons.get("kind"),
   }
 
-  snippets.lazy_load()
-
-  cmp.setup({
+  completion.setup({
     snippet = {
       expand = function(args)
-        luasnip.lsp_expand(args.body)
+        vim.snippet.expand(args.body)
       end,
     },
     experimental = {
@@ -46,10 +33,10 @@ function M.config()
       },
     },
     window = {
-      completion = cmp.config.window.bordered({
+      completion = completion.config.window.bordered({
         winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       }),
-      documentation = cmp.config.window.bordered({
+      documentation = completion.config.window.bordered({
         winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       }),
     },
@@ -61,56 +48,34 @@ function M.config()
       { name = "path" },
       { name = "emoji" },
     },
-    mapping = cmp_mapping.preset.insert({
-      ["<C-e>"] = cmp_mapping.abort(),
-      ["<C-c>"] = cmp_mapping.complete(),
-      ["<C-b>"] = cmp_mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp_mapping.scroll_docs(4),
-      ["<Up>"] = cmp_mapping(cmp_mapping.select_prev_item({ behavior = cmp_types.SelectBehavior.Select }), {
-        "i",
-      }),
-      ["<Down>"] = cmp_mapping(cmp_mapping.select_next_item({ behavior = cmp_types.SelectBehavior.Select }), {
-        "i",
-      }),
-      ["<Tab>"] = cmp_mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_locally_jumpable() then
-          luasnip.expand_or_jump()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-      ["<S-Tab>"] = cmp_mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-      ["<CR>"] = cmp_mapping(function(fallback)
-        if cmp.visible() then
-          local confirm_opts = vim.deepcopy({
-            behavior = cmp_types.ConfirmBehavior.Replace,
-            select = false,
-          })
-
-          local is_insert_mode = function()
-            return vim.api.nvim_get_mode().mode:sub(1, 1) == "i"
-          end
-
-          if is_insert_mode() then
-            confirm_opts.behavior = cmp_types.ConfirmBehavior.Insert
-          end
-
-          if cmp.confirm(confirm_opts) then
-            return
-          end
-        end
-        fallback()
-      end),
+    mapping = completion.mapping.preset.insert({
+      ["<C-e>"] = completion.mapping.abort(),
+      ["<C-c>"] = completion.mapping.complete(),
+      ["<C-u>"] = completion.mapping.scroll_docs(-4),
+      ["<C-d>"] = completion.mapping.scroll_docs(4),
+      ["<M-k>"] = completion.mapping(
+        completion.mapping.select_prev_item({
+          behavior = completion.SelectBehavior.Select,
+        }),
+        {
+          "i",
+        }
+      ),
+      ["<M-j>"] = completion.mapping(
+        completion.mapping.select_next_item({
+          behavior = completion.SelectBehavior.Select,
+        }),
+        {
+          "i",
+        }
+      ),
+      ["<C-a>"] = completion.mapping(
+        completion.mapping.confirm({
+          behavior = completion.ConfirmBehavior.Insert,
+          select = true,
+        }),
+        { "i", "c" }
+      ),
     }),
     ---@diagnostic disable-next-line: missing-fields
     formatting = {
@@ -142,39 +107,7 @@ function M.config()
     },
   })
 
-  local notify = require("lazy.core.util")
-
-  local function toggle_autocompletion()
-    local is_active = cmp.get_config().completion.autocomplete
-
-    if (not utils.types.settings.auto_completion) or (is_active and #is_active > 0) then
-      cmp.setup({ completion = { autocomplete = false } })
-    else
-      cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
-    end
-
-    if not utils.types.settings.auto_completion then
-      notify.warn("Can't toggle auto-completion, option disabled under `Settings`.", { title = "Minimal" })
-    else
-      if is_active and #is_active > 0 then
-        notify.warn("Completion disabled.", { title = "Minimal" })
-      else
-        notify.info("Completion enabled.", { title = "Minimal" })
-      end
-    end
-  end
-
-  utils.base.mappings.register({
-    mode = { "n" },
-    lhs = "<leader>lc",
-    rhs = toggle_autocompletion,
-    options = { noremap = true, silent = true },
-    description = "Editor :: Toggle auto completion.",
-  })
-
-  if not utils.types.settings.auto_completion then
-    cmp.setup({ completion = { autocomplete = false } })
-  end
+  utils.plugins.completion.mappings.register(completion)
 end
 
 return M

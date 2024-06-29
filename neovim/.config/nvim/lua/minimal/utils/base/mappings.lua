@@ -1,4 +1,4 @@
----@diagnostic disable: duplicate-doc-field
+---@diagnostic disable: duplicate-doc-field, param-type-mismatch 
 
 ---@class Mapping
 ---@field mode string[] @ The mode(s) to map.
