@@ -17,6 +17,19 @@
 
 </div>
 
+## Usage
+
+> [!WARNING]
+> This is a constant **W.I.P.**...  
+> If you don't know what you're doing, **don't** do it!  
+
+```bash
+git clone https://github.com/gersonfaneto/Archie.git
+cd Archie
+git submodule update --init --recursive # Most likely will spit some errors if you aren't me...
+chmod u+x ./JARVIS.sh && ./JARVIS.sh
+```
+
 ## License
 
 Released under [MIT][license-url] by [gersonfaneto][profile-url].
