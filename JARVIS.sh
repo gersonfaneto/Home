@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# NOTE: This needs a rewrite ASAP!
+
 # Some colors for better progress visualization.
 NOTE="[\e[1;36mNOTE\e[0m]"
 OK="[\e[1;32mOK\e[0m]"
@@ -13,20 +15,13 @@ WAIT="\e[1A\e[K"
 # Path to the installation log.
 LOG="INSTALL.log"
 
-# List of directories to be excluded/used on the configuration linking step.
-EXCLUDE=("JARVIS.sh" "INSTALL.log" "README.md" "LICENSE" "fonts" "others")
-DIRS=$(ls)
-
-FILTERED_DIRS=$(printf "%s\n" "${DIRS[@]}" | grep -vFxf <(printf "%s\n" "${EXCLUDE[@]}"))
-
 # TODO: This need to be updated.
 # List of needed packages to be installed.
 packages=(
+  # texlive
   alacritty
-  ascii
   atuin
   bat
-  bear
   bob
   bottom
   difftastic
@@ -39,38 +34,34 @@ packages=(
   ghcup-hs-bin
   github-cli
   glow
-  httpie
   jq
-  asdf-vm
   pandoc-bin
-  yazi
   ripgrep
   starship
   stow
-  texlive
   tmux
   trash-cli
-  unzip
   usql
   xh
+  yazi
   zoxide
 )
 
 # Show a progress bar to the user.
 display_progress() {
-	while ps | grep $1 &>/dev/null; do
-		echo -n "."
-		sleep 2
-	done
+  while ps | grep $1 &>/dev/null; do
+    echo -n "."
+    sleep 2
+  done
 
-	echo -en "Done!\n"
+  echo -en "Done!\n"
 
-	sleep 2
+  sleep 2
 }
 
 ask_for_sudo() {
   # Ask for the administrator password upfront.
-  sudo -v &> /dev/null
+  sudo -v &>/dev/null
 
   # Update existing `sudo` time stamp
   # until this script has finished.
@@ -81,28 +72,27 @@ ask_for_sudo() {
     sudo -n true
     sleep 60
     kill -0 "$$" || exit
-  done &> /dev/null &
-
+  done &>/dev/null &
 }
 
 # Tests if a package is already installed and if not found it will attempt to install it.
 install_package() {
-	if yay -Q "$1" &>>/dev/null; then
-		echo -e "$OK - $1 is already installed."
-	else
-		echo -en "$NOTE - Now installing $1 ."
+  if yay -Q "$1" &>>/dev/null; then
+    echo -e "$OK - $1 is already installed."
+  else
+    echo -en "$NOTE - Now installing $1 ."
 
-		yay -S --noconfirm "$1" &>>"$LOG" &
+    yay -S --noconfirm --needed "$1" &>>"$LOG" &
 
-		display_progress $!
+    display_progress $!
 
-		if yay -Q "$1" &>>/dev/null; then
-			echo -e "$WAIT$OK - $1 was installed."
-		else
-			echo -e "$WAIT$ERROR - $1 install has failed, please check the log at $LOG."
-			exit
-		fi
-	fi
+    if yay -Q "$1" &>>/dev/null; then
+      echo -e "$WAIT$OK - $1 was installed."
+    else
+      echo -e "$WAIT$ERROR - $1 install has failed, please check the log at $LOG."
+      exit
+    fi
+  fi
 }
 
 clear
@@ -120,91 +110,80 @@ read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install 
 ask_for_sudo
 
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
-	echo -e "$NOTE - Setup starting..."
+  echo -e "$NOTE - Setup starting..."
 else
-	echo -e "$NOTE - This script will now exit, no changes were made to your system."
-	exit
+  echo -e "$NOTE - This script will now exit, no changes were made to your system."
+  exit
 fi
 
 # Check for package manager (YAY).
 if [ ! -f /sbin/yay ]; then
-	echo -en "$NOTE - Configuring yay..."
+  echo -en "$NOTE - Configuring yay..."
 
-	git clone https://aur.archlinux.org/yay.git &>>"$LOG"
+  git clone https://aur.archlinux.org/yay.git &>>"$LOG"
 
-	cd yay || exit
+  cd yay || exit
 
-	makepkg -si --noconfirm &>>../"$LOG" &
+  makepkg -si --noconfirm &>>../"$LOG" &
 
-	display_progress $!
+  display_progress $!
 
-	if [ -f /sbin/yay ]; then
-		echo -e "$WAIT$OK - yay configured with success."
-		cd ..
+  if [ -f /sbin/yay ]; then
+    echo -e "$WAIT$OK - yay configured with success."
+    cd ..
 
-		echo -en "$NOTE - Updating yay database."
+    echo -en "$NOTE - Updating yay database."
 
-		yay -Suy --noconfirm &>>"$LOG" &
+    yay -Suy --noconfirm &>>"$LOG" &
 
-		display_progress $!
+    display_progress $!
 
-		echo -e "$WAIT$OK - yay database updated with success."
-	else
-		echo -e "$WAIT$ERROR - yay installation failed, please check the log at $LOG!"
-		exit
-	fi
+    echo -e "$WAIT$OK - yay database updated with success."
+  else
+    echo -e "$WAIT$ERROR - yay installation failed, please check the log at $LOG!"
+    exit
+  fi
 fi
 
 # Install all of the packages declared in the list above.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the packages? [Y/n] ' REPLY
 
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
-	echo -e "$NOTE - Beggining installation, this may take a while..."
+  echo -e "$NOTE - Beggining installation, this may take a while..."
 
-	for PACKAGE in "${packages[@]}"; do
-		install_package "$PACKAGE"
-	done
+  for PACKAGE in "${packages[@]}"; do
+    install_package "$PACKAGE"
+  done
 fi
 
 # Link configuration files.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to link the configuration files? [Y/n] ' REPLY
 
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
-	echo -e "$NOTE - Linking configuration files..."
+  echo -e "$NOTE - Linking configuration files and fonts..."
 
-	# Setup each package configuration folder.
-	for DIR in $FILTERED_DIRS; do
-		stow --dotfiles --target="$HOME" "$DIR" &>>/dev/null
-	done
+  stow .
 
-	echo -e "$NOTE - Copying fonts..."
+  echo -e "$NOTE - Refreshing font cache..."
 
-	mkdir -p "$HOME"/.local/share/fonts/ >>/dev/null
+  fc-cache -f
 
-	stow --dotfiles --target="$HOME" fonts &>>/dev/null
-
-	echo -e "$NOTE - Refreshing font cache..."
-
-	fc-cache -f
-
-	echo -e "$NOTE - Generating extra configurations for kitty..."
-
-	if yay -Q bat &>>/dev/null; then
-		echo -e "$NOTE - Updating 'bat' themes..."
-		bat cache --build &>>/dev/null
-	fi
+  if yay -Q bat &>>/dev/null; then
+    echo -e "$NOTE - Updating 'bat' themes..."
+    bat cache --build &>>/dev/null
+  fi
 fi
 
 # Change the default shell to fish.
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to change the default shell to fish? [Y/n] ' REPLY
 
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
-	if [ "$SHELL" != "/usr/bin/fish" ]; then
-		echo -e "$M_NOTE - Changing default shell to fish..."
-		chsh -s "$(which fish)"
-	else
-		echo -e "$NOTE - Fish is already the default shell!"
-	fi
+  if [ "$SHELL" != "/usr/bin/fish" ]; then
+    echo -e "$M_NOTE - Changing default shell to fish..."
+    chsh -s "$(which fish)"
+  else
+    echo -e "$NOTE - Fish is already the default shell!"
+  fi
 fi
 
 clear
