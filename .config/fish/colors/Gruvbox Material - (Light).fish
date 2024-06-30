@@ -2,6 +2,10 @@ if type -q bat
   export BAT_THEME="Gruvbox Material - (Light)"
 end
 
+if type -q btm
+  alias "btm" "btm --color default-light"
+end
+
 if type -q fzf
   export FZF_DEFAULT_OPTS="--layout=reverse --height=50% --border=rounded \
   --prompt='Search: ' --info=inline --multi --tabstop=2 --color=dark \
