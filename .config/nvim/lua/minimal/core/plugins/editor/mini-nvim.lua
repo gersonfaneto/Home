@@ -3,7 +3,18 @@ local M = {
 }
 
 function M.config()
-  require("mini.ai").setup()
+  require("mini.ai").setup({
+    mappings = {
+      -- around_next = 'an',
+      -- inside_next = 'in',
+      -- around_last = 'al',
+      -- inside_last = 'il',
+      around_next = '',
+      inside_next = '',
+      around_last = '',
+      inside_last = '',
+    },
+  })
 
   require("mini.align").setup()
 

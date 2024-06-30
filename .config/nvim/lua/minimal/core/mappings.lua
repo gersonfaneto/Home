@@ -476,46 +476,58 @@ utils.base.mappings.bulk_register({
     lhs = "[q",
     rhs = ":cprevious<CR>",
     description = "Go to previous item.",
-  }
+  },
 }, { prefix = "QuickFix :: ", options = { silent = true, noremap = true } })
 
 utils.base.mappings.bulk_register({
   {
     mode = { "x" },
     lhs = "al",
-    rhs = ":<c-u>silent! normal! 0v$<cr>",
+    rhs = ":<C-u>silent! normal! 0v$<CR>",
     description = "Around the whole line.",
   },
   {
     mode = { "o" },
     lhs = "al",
-    rhs = ":normal val<cr>",
+    rhs = ":normal val<CR>",
     description = "Around the whole line.",
   },
 
   {
     mode = { "x" },
     lhs = "il",
-    rhs = ":<c-u>silent! normal! ^vg_<cr>",
+    rhs = ":<C-u>silent! normal! ^vg_<CR>",
     description = "Inside the whole line.",
   },
   {
     mode = { "o" },
     lhs = "il",
-    rhs = ":normal vil<cr>",
+    rhs = ":normal vil<CR>",
     description = "Inside the whole line.",
   },
   {
     mode = { "x" },
-    lhs = "ae",
-    rhs = [[:<c-u>silent! normal! m'gg0VG$<cr>]],
+    lhs = "af",
+    rhs = ":<C-u>silent! keepjumps normal! ggVG<CR>",
     description = "Around the whole file.",
   },
   {
     mode = { "o" },
-    lhs = "ae",
-    rhs = ":normal Vae<cr>",
+    lhs = "af",
+    rhs = "<Cmd>silent! normal m`Vaf<CR><Cmd>silent! normal! ``<CR>",
     description = "Around the whole file.",
+  },
+  {
+    mode = { "x" },
+    lhs = "if",
+    rhs = ":<C-u>silent! keepjumps normal! ggVG<CR>",
+    description = "Inside the whole file.",
+  },
+  {
+    mode = { "o" },
+    lhs = "if",
+    rhs = "<Cmd>silent! normal m`Vif<CR><Cmd>silent! normal! ``<CR>",
+    description = "Inside the whole file.",
   },
 }, { prefix = "Custom Text Objects: ", options = { silent = true, noremap = true } })
 

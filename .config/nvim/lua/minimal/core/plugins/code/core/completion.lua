@@ -53,7 +53,7 @@ function M.config()
       ["<C-c>"] = completion.mapping.complete(),
       ["<C-u>"] = completion.mapping.scroll_docs(-4),
       ["<C-d>"] = completion.mapping.scroll_docs(4),
-      ["<M-k>"] = completion.mapping(
+      ["<C-p>"] = completion.mapping(
         completion.mapping.select_prev_item({
           behavior = completion.SelectBehavior.Select,
         }),
@@ -61,7 +61,7 @@ function M.config()
           "i",
         }
       ),
-      ["<M-j>"] = completion.mapping(
+      ["<C-n>"] = completion.mapping(
         completion.mapping.select_next_item({
           behavior = completion.SelectBehavior.Select,
         }),
