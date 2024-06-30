@@ -64,3 +64,10 @@ desc = "Jump to char"
 on = ["F"]
 run = "plugin smart-filter"
 desc = "Smart filter"
+
+[[manager.prepend_keymap]]
+on = ["b", "g"]
+run = '''
+	shell 'cp "$0" ~/.config/i3/backgrounds/wall.jpg && feh --bg-fill "$0" && betterlockscreen -u "$0" --fx' --confirm
+'''
+desc = "Set current image as the background."
