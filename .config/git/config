@@ -110,9 +110,16 @@
 
   bs = "!f() {\
     DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'); \
-    COUNT_AHEAD=$(git log --oneline $(git rev-parse --abbrev-ref HEAD) ^$DEFAULT_BRANCH | wc -l | xargs); \
-    COUNT_BEHIND=$(git log --oneline $DEFAULT_BRANCH ^$(git rev-parse --abbrev-ref HEAD) | wc -l | xargs); \
+    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD); \
+    if [ \"$CURRENT_BRANCH\" = \"$DEFAULT_BRANCH\" ]; then \
+    COUNT_AHEAD=0; \
+    COUNT_BEHIND=0; \
+    echo \"The current branch is the default branch ($DEFAULT_BRANCH).\"; \
+    else \
+    COUNT_AHEAD=$(git log --oneline $CURRENT_BRANCH ^$DEFAULT_BRANCH | wc -l | xargs); \
+    COUNT_BEHIND=$(git log --oneline $DEFAULT_BRANCH ^$CURRENT_BRANCH | wc -l | xargs); \
     echo \"The current branch is $COUNT_AHEAD commits ahead and $COUNT_BEHIND commits behind $DEFAULT_BRANCH.\"; \
+    fi \
     }; f"
 
   publish = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
