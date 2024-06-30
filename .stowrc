@@ -1,5 +1,6 @@
 --verbose=1
 --target=$HOME
+
 --ignore=.stowrc
 --ignore=JARVIS.sh
---ignore=NOTES.md
+--ignore=INSTALL.log
