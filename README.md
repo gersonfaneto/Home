@@ -1,10 +1,10 @@
 <!-- prettier-ignore -->
 ```markdown
-                            _             _     _      
-                           / \   _ __ ___| |__ (_) ___      "I use Arch, btw!"
-                          / _ \ | '__/ __| '_ \| |/ _ \
-                         / ___ \| | | (__| | | | |  __/     by @gersonfaneto
-                        /_/   \_\_|  \___|_| |_|_|\___|
+                        _             _     _      
+                       / \   _ __ ___| |__ (_) ___      `$HOME` to all sorts of things!
+                      / _ \ | '__/ __| '_ \| |/ _ \
+                     / ___ \| | | (__| | | | |  __/     by @gersonfaneto
+                    /_/   \_\_|  \___|_| |_|_|\___|
 ```
 
 <div align="center">
