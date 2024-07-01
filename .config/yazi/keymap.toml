@@ -71,3 +71,10 @@ run = '''
 	shell 'cp "$0" ~/.config/i3/backgrounds/wall.jpg && feh --bg-fill "$0" && betterlockscreen -u "$0" --fx' --confirm
 '''
 desc = "Set current image as the background."
+
+[[manager.prepend_keymap]]
+on = ["c", "z"]
+run = """
+  shell '$HOME/.config/yazi/scripts/zip.sh "$@"' --block --confirm
+"""
+desc = "Compress selected files into a single ZIP."
