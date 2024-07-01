@@ -1,7 +1,7 @@
 local M = {}
 
----@type Servers
-M.servers = require("minimal.utils.types.servers")
+---@type Packages
+M.packages = require("minimal.utils.types.packages")
 ---@type Settings
 M.settings = require("minimal.utils.types.settings")
 

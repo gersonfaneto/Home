@@ -15,9 +15,7 @@ function M.config()
   local formatters = require("conform")
 
   formatters.setup({
-    formatters_by_ft = {
-      lua = { "stylua" },
-    },
+    formatters_by_ft = utils.types.packages.formatters,
     format_on_save = function(_)
       if not vim.g.format_on_save then
         return
@@ -46,7 +44,7 @@ function M.config()
       description = "Disable format on save.",
     },
     {
-      mode = { "n", "v" },
+      mode = { "n", "x" },
       lhs = "<leader>lff",
       rhs = formatters.format,
       description = "Format current buffer.",

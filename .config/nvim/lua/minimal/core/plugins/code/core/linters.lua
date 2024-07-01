@@ -12,12 +12,20 @@ local M = {
 function M.config()
   local linters = require("lint")
 
-  linters.linters_by_ft = {}
+  linters.linters_by_ft = utils.types.packages.linters
 
   vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     callback = function()
       linters.try_lint()
     end,
+  })
+
+  utils.base.mappings.register({
+    mode = { "n" },
+    lhs = "<leader>lll",
+    rhs = linters.try_lint,
+    options = { silent = true, noremap = true },
+    description = "Linters :: Run linters for current file.",
   })
 end
 

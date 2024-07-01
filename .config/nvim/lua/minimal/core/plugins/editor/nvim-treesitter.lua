@@ -55,7 +55,7 @@ function M.config()
   local configs = require("nvim-treesitter.configs")
 
   configs.setup({
-    ensure_installed = utils.types.servers.parsers,
+    ensure_installed = utils.types.packages.parsers,
     auto_install = true,
     sync_install = false,
     indent = {

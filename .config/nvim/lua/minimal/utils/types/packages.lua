@@ -1,4 +1,4 @@
----@class Servers
+---@class Packages
 local M = {}
 
 ---List of parsers that will be installed by `TreeSitter`.
@@ -6,31 +6,18 @@ local M = {}
 ---[Supported Languages](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 ---@type string[]
 M.parsers = {
-  "bash",
   "c",
   "cpp",
-  "make",
-  "cmake",
-  "doxygen",
-  "css",
-  "html",
-  "javascript",
-  "typescript",
-  "php",
-  "ruby",
-  "go",
-  "rust",
-  "java",
-  "dart",
   "lua",
-  "ocaml",
-  "python",
-  "sql",
-  "yaml",
-  "toml",
-  "json",
+  "bash",
+  "java",
+  "vim",
+  "vimdoc",
   "markdown",
   "markdown_inline",
+  "yaml",
+  "json",
+  "toml",
 }
 
 ---Table of language servers that can be installed through `Mason` and will be configured by the
@@ -42,23 +29,13 @@ M.parsers = {
 ---[Mason Registry](https://mason-registry.dev/registry/list)
 ---@type table<string, string>
 M.base_languages = {
-  bashls = "bash-language-server", -- Bash
-  clangd = "clangd", -- C/C++
-  cssls = "css-lsp", -- CSS
-  emmet_ls = "emmet-ls", -- HTML
-  gopls = "gopls", -- Go
-  html = "html-lsp", -- HTML
-  jdtls = "jdtls", -- Java
-  jsonls = "json-lsp", -- JSON
   lua_ls = "lua-language-server", -- Lua
-  ocamllsp = "ocaml-lsp", -- OCaml
-  phpactor = "phpactor", -- PHP
-  pyright = "pyright", -- Python
-  rust_analyzer = "rust-analyzer", -- Rust
-  solargraph = "solargraph", -- Ruby
-  texlab = "texlab", -- LaTeX
   marksman = "marksman", -- Markdown
-  tsserver = "typescript-language-server", -- TypeScript / JavaScript
+  clangd = "clangd", -- C/C++
+  jdtls = "jdtls",
+  bashls = "bash-language-server", -- Bash
+  taplo = "taplo", -- TOML
+  jsonls = "json-lsp", -- JSON
   yamlls = "yaml-language-server", -- YAML
 }
 
@@ -67,38 +44,28 @@ M.base_languages = {
 ---
 ---[Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 ---@type string[]
-M.extra_languages = {
-  "dartls", -- Dart
-}
+M.extra_languages = {}
 
 ---List of linters that can be installed through `Mason` and configured by `NoneLS`.
 ---
 ---**NOTE**: These **need** to be configured manually in the `NoneLS` configuration file.
 ---
 ---[Supported Linters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
----@type string[]
-M.linters = {
-  "ruff",
-  "mypy",
-  "eslint_d", -- JavaScript | TypeScript
-}
+---@type table<string, string[]>
+M.linters = {}
 
 ---List of formatters that can be installed through `Mason` and configured by `NoneLS`.
 ---
 ---**NOTE**: These **need** to be configured manually in the `NoneLS` configuration file.
 ---
 ---[Support Formatters](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md)
----@type string[]
+---@type table<string, string[]>
 M.formatters = {
-  "pint", -- PHP
-  "rubocop", -- Ruby
-  "black", -- Python
-  "clang-format", -- C/C++
-  "google-java-format", -- Java
-  "isort", -- Python
-  "ocamlformat", -- OCaml
-  "prettier", -- JavaScript | TypeScript | Markdown ...
-  "stylua", -- Lua
+  c = { "clang-format" },
+  cpp = { "clang-format" },
+  lua = { "stylua" },
+  java = { "google-java-format" },
+  markdown = { "prettier" },
 }
 
 return require("minimal.utils.base.settings").extend_settings(M, "custom.servers")

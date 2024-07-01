@@ -40,8 +40,8 @@ function M.config()
 
   ---@diagnostic disable-next-line: deprecated
   local servers = vim.tbl_flatten({
-    vim.tbl_keys(utils.types.servers.base_languages),
-    utils.types.servers.extra_languages,
+    vim.tbl_keys(utils.types.packages.base_languages),
+    utils.types.packages.extra_languages,
   })
 
   for _, server in pairs(servers) do
