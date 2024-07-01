@@ -68,4 +68,4 @@ M.formatters = {
   markdown = { "prettier" },
 }
 
-return require("minimal.utils.base.settings").extend_settings(M, "custom.servers")
+return require("minimal.utils.base.settings").extend_settings(M, "custom.packages")

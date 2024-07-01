@@ -307,7 +307,7 @@ utils.base.mappings.bulk_register({
   },
   {
     mode = { "n" },
-    lhs = "<ESC>",
+    lhs = "<leader><ESC>",
     rhs = ":noh<CR>",
     description = "Clear search highlight.",
   },

@@ -45,9 +45,11 @@ function M.config()
     },
     {
       mode = { "n", "x" },
-      lhs = "<leader>lff",
-      rhs = formatters.format,
-      description = "Format current buffer.",
+      lhs = "<leader>lfr",
+      rhs = function()
+        formatters.format()
+      end,
+      description = "Run formatters for on buffer.",
     },
   }, { options = { silent = true, noremap = true }, prefix = "Formatters :: " })
 end
