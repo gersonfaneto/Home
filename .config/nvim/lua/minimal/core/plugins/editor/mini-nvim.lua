@@ -3,6 +3,10 @@ local M = {
 }
 
 function M.config()
+  if utils.types.settings.auto_pairs then
+    require('mini.pairs').setup()
+  end
+
   require("mini.ai").setup({
     mappings = {
       -- around_next = 'an',

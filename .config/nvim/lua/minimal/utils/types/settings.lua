@@ -30,7 +30,7 @@ M.color_column = { "80", "120" }
 ---Set to `true` to automatically save files while editing.
 ---@type boolean
 M.auto_save = false
----Set to `false` to disable auto pairing for some characters, provided by `echasnovski/mini.pairs`.
+---Set to `false` to disable auto pairing for some characters, provided by `echasnovski/mini.nvim`.
 ---@type boolean
 M.auto_pairs = true
 ---Set to `true` to restore the last position of the cursor on the buffer.
@@ -43,7 +43,7 @@ M.auto_remove_new_lines_comment = false
 ---Set to `true` to enable `virtual_text`, for displaying diagnostics inline.
 ---@type boolean
 M.virtual_text = false
----Set to `false` to disable formatting files when saved, provided by `nvimtools/none-ls.nvim`.
+---Set to `false` to disable formatting files when saved, provided by `stevearc/conform.nvim`.
 ---@type boolean
 M.format_on_save = false
 ---Set to `false` to disable auto-completion features, provided by `hrsh7th/nvim-cmp`.

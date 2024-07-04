@@ -24,9 +24,9 @@ function M.config()
   })
 
   local packages = vim.tbl_flatten({
-    vim.tbl_values(utils.types.packages.linters),
-    vim.tbl_values(utils.types.packages.formatters),
-    vim.tbl_values(utils.types.packages.base_languages),
+    vim.tbl_values(utils.types.packages.servers),
+    vim.tbl_values(utils.types.packages.extensions.linters),
+    vim.tbl_values(utils.types.packages.extensions.formatters),
   })
 
   local registry = require("mason-registry")

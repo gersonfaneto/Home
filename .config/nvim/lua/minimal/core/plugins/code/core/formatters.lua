@@ -15,7 +15,7 @@ function M.config()
   local formatters = require("conform")
 
   formatters.setup({
-    formatters_by_ft = utils.types.packages.formatters,
+    formatters_by_ft = utils.types.packages.extensions.formatters,
     format_on_save = function(_)
       if not vim.g.format_on_save then
         return
@@ -47,7 +47,9 @@ function M.config()
       mode = { "n", "x" },
       lhs = "<leader>lfr",
       rhs = function()
-        formatters.format()
+        formatters.format({
+          lsp_format = "fallback",
+        })
       end,
       description = "Run formatters for on buffer.",
     },

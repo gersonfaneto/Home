@@ -40,8 +40,8 @@ function M.config()
 
   ---@diagnostic disable-next-line: deprecated
   local servers = vim.tbl_flatten({
-    vim.tbl_keys(utils.types.packages.base_languages),
-    utils.types.packages.extra_languages,
+    vim.tbl_keys(utils.types.packages.servers),
+    utils.types.packages.external_servers,
   })
 
   for _, server in pairs(servers) do
@@ -72,7 +72,7 @@ function M.config()
     }
 
     for _, override in pairs(extensions) do
-      local found, settings  = pcall(require, override .. server)
+      local found, settings = pcall(require, override .. server)
 
       if found then
         utils.base.tables.merge(opts, settings)
