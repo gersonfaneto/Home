@@ -70,11 +70,11 @@ function M.config()
   --   },
   -- }, { options = { silent = true }, prefix = "Snippets :: " })
 
-  vim.keymap.set({ "i", "s" }, "<c-k>", function()
+  vim.keymap.set({ "i", "s" }, "<A-n>", function()
     return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)
   end, { silent = true })
 
-  vim.keymap.set({ "i", "s" }, "<c-j>", function()
+  vim.keymap.set({ "i", "s" }, "<A-p>", function()
     return vim.snippet.active({ direction = -1 }) and vim.snippet.jump(-1)
   end, { silent = true })
 end
