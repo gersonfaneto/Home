@@ -139,7 +139,7 @@ function M.init()
       mode = { "n" },
       lhs = "<leader>fd",
       rhs = function()
-        local repo = "$HOME/Developer/Projects/Personal/Archie"
+        local repo = "$HOME/Developer/Projects/Personal/YADR"
         require("telescope.builtin").find_files({
           cwd = vim.fn.expand(repo),
           hidden = true,
