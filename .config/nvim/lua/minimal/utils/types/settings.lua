@@ -46,6 +46,9 @@ M.virtual_text = false
 ---Set to `false` to disable formatting files when saved, provided by `stevearc/conform.nvim`.
 ---@type boolean
 M.format_on_save = false
+---Set to `false` to disable `vim.lsp.inlay_hint`s.
+---@type boolean
+M.inlay_hints = true
 ---Set to `false` to disable auto-completion features, provided by `hrsh7th/nvim-cmp`.
 ---@type boolean
 M.auto_completion = true

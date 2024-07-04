@@ -1,6 +1,9 @@
 local base = require("minimal.utils.base")
+local types = require("minimal.utils.types")
 
 local M = {}
+
+vim.g.has_inlay_hints = vim.g.has_inlay_hints or types.settings.inlay_hints
 
 function M.register(client, bufnr)
   base.mappings.bulk_register({
@@ -102,7 +105,8 @@ function M.register(client, bufnr)
       mode = { "n" },
       lhs = "<leader>th",
       rhs = function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+        vim.g.has_inlay_hints = not vim.g.has_inlay_hints
+        vim.lsp.inlay_hint.enable(vim.g.has_inlay_hints, { bufnr = 0 })
       end,
       description = "LSP :: Toggle inlay hints.",
       options = { silent = true, noremap = true, buffer = bufnr },
@@ -113,16 +117,17 @@ function M.register(client, bufnr)
         group = inlay_hints_augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.inlay_hint.enable(false)
+          vim.lsp.inlay_hint.enable(not vim.g.has_inlay_hints and false)
         end,
       })
       vim.api.nvim_create_autocmd("InsertLeave", {
         group = inlay_hints_augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.inlay_hint.enable(true)
+          vim.lsp.inlay_hint.enable(vim.g.has_inlay_hints and true)
         end,
       })
+      vim.lsp.inlay_hint.enable(vim.g.has_inlay_hints)
     end
   end
 end
