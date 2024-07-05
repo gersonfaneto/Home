@@ -35,10 +35,15 @@ M.external_servers = {}
 M.extensions = {
   linters = {},
   formatters = {
+    c = { "clang-format" },
+    cpp = { "clang-format" },
+    java = { "google-java-format" },
+    lua = { "stylua" },
     sh = { "shfmt" },
+    markdown = { "prettier" },
   },
 }
 
 -- TODO: This isn't working properly anymore.
 -- return require("minimal.utils.base.settings").extend_settings(M, "custom.packages")
-return vim.tbl_deep_extend('keep', M, require("custom.packages"))
+return vim.tbl_deep_extend("keep", M, require("custom.packages"))
