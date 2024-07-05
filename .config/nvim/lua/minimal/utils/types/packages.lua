@@ -40,7 +40,7 @@ M.extensions = {
     java = { "google-java-format" },
     lua = { "stylua" },
     sh = { "shfmt" },
-    markdown = { "prettier" },
+    markdown = { "prettierd" },
   },
 }
 
