@@ -1,7 +1,15 @@
+<div style="display: block; text-align: center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/banner-dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="./.github/assets/banner-light.png">
+        <img alt="Simple banner made with Excalidraw." src="./.github/assets/banner-dark.png">
+    </picture>
+</div>
+
 ## Usage
 
 > [!WARNING]
-> If you don't know what you're doing, **DON'T** do it!  
+> If you don't know what you're doing, **DON'T** do it!
 
 ```bash
 git clone https://github.com/gersonfaneto/YADR.git
