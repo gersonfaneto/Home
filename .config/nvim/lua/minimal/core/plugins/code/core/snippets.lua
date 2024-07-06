@@ -2,7 +2,6 @@ local M = {
   "L3MON4D3/LuaSnip",
   event = { "InsertEnter" },
   dependencies = {
-    "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
   },
 }
@@ -13,7 +12,6 @@ function M.config()
   local loaders = require("luasnip.loaders.from_vscode")
 
   loaders.lazy_load()
-
 
   vim.snippet.expand = snippets.lsp_expand
 
@@ -54,7 +52,7 @@ function M.config()
   -- utils.base.mappings.bulk_register({
   --   {
   --     mode = { "i", "s" },
-  --     lhs = "<C-k>",
+  --     lhs = "<A-k>",
   --     rhs = function()
   --       return vim.snippet.active({ direction = 1 }) and vim.snippet.jump()
   --     end,
@@ -62,13 +60,17 @@ function M.config()
   --   },
   --   {
   --     mode = { "i", "s" },
-  --     lhs = "<C-j>",
+  --     lhs = "<A-j>",
   --     rhs = function()
   --       return vim.snippet.active({ direction = -1 }) and vim.snippet.jump(-1)
   --     end,
   --     description = "Select previous item.",
   --   },
-  -- }, { options = { silent = true }, prefix = "Snippets :: " })
+  -- }, { options = { silent = true, noremap = true }, prefix = "Snippets :: " })
+
+  for _, file in ipairs(vim.api.nvim_get_runtime_file("custom/snippets/*.lua", true)) do
+    loadfile(file)()
+  end
 
   vim.keymap.set({ "i", "s" }, "<A-n>", function()
     return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)

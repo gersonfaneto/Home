@@ -27,7 +27,7 @@ function M.config()
   utils.base.mappings.bulk_register({
     {
       mode = { "n" },
-      lhs = "<leader>lfe",
+      lhs = "<localleader>fe",
       rhs = function()
         vim.g.format_on_save = true
         vim.notify("Files will now be formatted upon save.", "info", { title = "Minimal" })
@@ -36,7 +36,7 @@ function M.config()
     },
     {
       mode = { "n" },
-      lhs = "<leader>lfd",
+      lhs = "<localleader>fd",
       rhs = function()
         vim.g.format_on_save = false
         vim.notify("Files will no longer be formatted upon save.", "warn", { title = "Minimal" })
@@ -45,7 +45,7 @@ function M.config()
     },
     {
       mode = { "n", "x" },
-      lhs = "<leader>lfr",
+      lhs = "<localleader>fr",
       rhs = function()
         formatters.format({
           lsp_format = "fallback",

@@ -3,7 +3,7 @@ local M = {}
 M.g = {
   -- Leader.
   mapleader = " ",
-  maplocalleader = " ",
+  maplocalleader = ",",
 }
 
 M.opt = {
