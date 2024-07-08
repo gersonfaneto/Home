@@ -83,6 +83,10 @@ bindsym $mod+$ctrl+Right workspace next
 bindsym $mod+$ctrl+Left workspace prev
 bindsym $mod+$tab workspace back_and_forth
 
+# ...
+bindsym $mod+$shift+m floating enable, resize set 1536 864, move position center
+bindsym $mod+$shift+f floating disable, resize set 1920 1080, move position 0 0 
+
 # Split horizontally and vertically.
 bindsym $mod+h split h
 bindsym $mod+v split v
@@ -155,10 +159,15 @@ bindsym $mod+$shift+r restart
 
 # Resize windows.
 mode "resize" {
-  bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym h resize shrink width 25 px or 25 ppt
+    bindsym j resize grow height 25 px or 25 ppt
+    bindsym k resize shrink height 25 px or 25 ppt
+    bindsym l resize grow width 25 px or 25 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -203,13 +212,5 @@ client.unfocused        #222222 #111111 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
 
 for_window [class="^.*firefox.*" instance="^.*Alert.*"] floating enable
-
-for_window [class="^.*Nemo.*" instance="^.*nemo.*"] floating enable, resize set 1000 600, move position center
-
-for_window [class="^.*Pavucontrol.*" instance="^.*pavucontrol.*"] floating enable, resize set 1000 600, move position center
-
-for_window [class="^.*Blueman-manager.*" instance="^.*blueman-manager.*"] floating enable, resize set 1000 600, move position center
-
-for_window [class="^.*Qalculate-gtk.*" instance="^.*qalculate-gtk.*"] floating enable, resize set 1000 600, move position center
 
 no_focus [class="^.*firefox.*" instance="^.*Alert.*"]
