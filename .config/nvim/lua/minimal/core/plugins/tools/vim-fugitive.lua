@@ -21,7 +21,7 @@ function M.init()
     {
       mode = { "n" },
       lhs = "<leader>gt",
-      rhs = ":tab Git<CR>",
+      rhs = ":tab Git | tabmove -1<CR>",
       description = "Open Fugitive - Tab.",
     },
     {
