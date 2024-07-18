@@ -39,3 +39,23 @@ style = "Italic"
 [font.bold_italic]
 family = "Berkeley Mono"
 style = "BoldItalic"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control|Alt"
+command = { program = "alacritty", args = ["msg", "config", "-r"] }
+
+[[keyboard.bindings]]
+key = "Key1"
+mods = "Control"
+command = { program = "alacritty", args = ["msg", "config", "font.size=16"] }
+
+[[keyboard.bindings]]
+key = "Key2"
+mods = "Control"
+command = { program = "alacritty", args = ["msg", "config", "font.size=20"] }
+
+[[keyboard.bindings]]
+key = "Key3"
+mods = "Control"
+command = { program = "alacritty", args = ["msg", "config", "font.size=24"] }
