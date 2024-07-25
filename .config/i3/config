@@ -10,7 +10,7 @@ set $tab Tab
 set $shift Shift
 
 # Font for window titles.
-font pango:Berkeley Mono 10
+font pango:SF Mono 10
 
 # Set keyboard layout.
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
