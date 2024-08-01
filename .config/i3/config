@@ -10,7 +10,7 @@ set $tab Tab
 set $shift Shift
 
 # Font for window titles.
-font pango:SF Mono 10
+font pango:Iosevka 10
 
 # Set keyboard layout.
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
@@ -45,7 +45,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 floating_modifier $mod
 
 # Open `dmenu`, the default application launcher.
-bindsym $mod+d exec --no-startup-id dmenu_run -i -p 'run' -fn 'BerkeleyMono:regular:pixelsize=12'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -p 'run' -fn 'Iosevka:regular:pixelsize=12'
 
 # Open screenshot tool.
 bindsym $mod+p exec --no-startup-id flameshot gui
