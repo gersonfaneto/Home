@@ -62,7 +62,6 @@ bindsym $mod+$shift+b exec firefox --private-window
 
 # Open the terminal.
 bindsym $mod+Return exec alacritty
-bindsym $mod+$shift+Return exec kitty
 
 # Kill the focused window.
 bindsym $mod+q kill

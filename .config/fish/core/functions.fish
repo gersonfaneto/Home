@@ -21,9 +21,6 @@ function background
       xargs -I PANE tmux send-keys -t PANE 'source $HOME/.config/fish/config.fish && clear' Enter 2> /dev/null
   end
 
-  ln -fs "$HOME/.config/kitty/colors/$COLORS.conf" "$HOME/.config/kitty/extras/colors.conf"
-  killall -SIGUSR1 kitty
-
   cp -f "$HOME/.config/alacritty/colors/$COLORS.toml" "$HOME/.config/alacritty/colors/color.toml"
 
   commandline -f repaint
