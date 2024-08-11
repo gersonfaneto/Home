@@ -3,7 +3,7 @@ if type -q bat
 end
 
 if type -q btm
-  alias "btm" "btm --color default-light"
+  alias "btm" "btm --theme default-light"
 end
 
 if type -q fzf
