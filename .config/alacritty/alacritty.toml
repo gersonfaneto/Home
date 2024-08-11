@@ -29,7 +29,7 @@ x = 0
 y = 0
 
 [font.normal]
-family = "Iosevka Term"
+family = "Dank Mono"
 style = "Regular"
 
 # [font.bold]
