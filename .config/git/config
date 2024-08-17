@@ -88,7 +88,7 @@
   lg = log --graph --abbrev-commit --date=relative --decorate --boundary --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
   lr = log --since midnight --graph --abbrev-commit --date=relative --decorate --color=always --pretty='%C(yellow bold)%h%Creset%d %C(blue)%ar %C(white)%s %C(blue)(%an)'
 
-  recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+  last = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
   in = "!git fetch --quiet && git log --pretty=format:'%C(yellow bold)%h %Creset - %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' ..@{u}"
   out = "!git fetch --quiet && git log --pretty=format:'%C(yellow bold)%h %Creset - %C(blue)%an %C(white)- %C(cyan)%d%Creset %s %C(blue)- %ar%Creset' @{u}.."
