@@ -5,13 +5,13 @@
 [[manager.prepend_keymap]]
 on = ["<C-n>"]
 run = '''
-	shell 'dragon-drop -x -i -A -T "$@"' --confirm
+shell 'dragon-drop -x -i -A -T "$@"' --confirm
 '''
 
 [[manager.prepend_keymap]]
 on = ["y"]
 run = ["yank", '''
-	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
+shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
 ''']
 
 [[manager.prepend_keymap]]
@@ -25,12 +25,26 @@ run = "close"
 desc = "Cancel input"
 
 [[manager.prepend_keymap]]
+on = ["b", "g"]
+run = '''
+shell 'cp "$0" ~/.config/i3/backgrounds/wall.jpg && feh --bg-fill "$0" && betterlockscreen -u "$0" --fx' --confirm
+'''
+desc = "Set current image as the background."
+
+[[manager.prepend_keymap]]
+on = ["c", "z"]
+run = """
+shell '$HOME/.config/yazi/scripts/zip.sh "$@"' --block --confirm
+"""
+desc = "Compress selected files into a single ZIP."
+
+[[manager.prepend_keymap]]
 on = ["k"]
-run = "plugin --sync wrap-arrow --args=-1"
+run = "plugin --sync arrow --args=-1"
 
 [[manager.prepend_keymap]]
 on = ["j"]
-run = "plugin --sync wrap-arrow --args=1"
+run = "plugin --sync arrow --args=1"
 
 [[manager.prepend_keymap]]
 on = ["K"]
@@ -59,22 +73,3 @@ desc = "Maximize or restore preview"
 on = ["f"]
 run = "plugin jump-to-char"
 desc = "Jump to char"
-
-[[manager.prepend_keymap]]
-on = ["F"]
-run = "plugin smart-filter"
-desc = "Smart filter"
-
-[[manager.prepend_keymap]]
-on = ["b", "g"]
-run = '''
-	shell 'cp "$0" ~/.config/i3/backgrounds/wall.jpg && feh --bg-fill "$0" && betterlockscreen -u "$0" --fx' --confirm
-'''
-desc = "Set current image as the background."
-
-[[manager.prepend_keymap]]
-on = ["c", "z"]
-run = """
-  shell '$HOME/.config/yazi/scripts/zip.sh "$@"' --block --confirm
-"""
-desc = "Compress selected files into a single ZIP."

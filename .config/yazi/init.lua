@@ -1,7 +1,2 @@
-require("full-border"):setup({
-  type = ui.Border.ROUNDED,
-})
-
-function Status:render()
-  return {}
-end
+require('no-status'):setup()
+require('full-border'):setup()
