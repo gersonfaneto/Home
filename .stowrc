@@ -2,6 +2,4 @@
 --target=$HOME
 
 --ignore=.stowrc
---ignore=.github
---ignore=JARVIS.sh
---ignore=INSTALL.log
+--ignore=packages.txt

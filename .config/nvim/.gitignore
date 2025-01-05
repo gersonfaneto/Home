@@ -1,9 +1,0 @@
-# Where files from spell checking are stored.
-spell/*.add
-spell/*.add.spl
-
-# Where files for custom settings/plugins are stored.
-lua/custom
-
-# Used by the plugin manager to keep track of installed plugins.
-lazy-lock.json

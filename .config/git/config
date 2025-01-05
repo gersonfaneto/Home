@@ -24,13 +24,10 @@
 
 [core]
   editor = nvim
-  pager = bat
+  pager = less
   autocrlf = input
   ignorecase = false
   excludesfile = ~/.gitignore
-
-[diff]
-  external = difft
 
 [color]
   status = auto
@@ -41,18 +38,18 @@
   ui = auto
 
 [alias]
-  i = init
+  it = !git init && git commit -m "Ready... Set... Go!" --allow-empty
   ci = commit
   br = branch
   co = checkout
   st = status
-  ss = status --short --branch
+  ss = status --short --branch --untracked-files
 
   f = fetch --all
 
-  a = "!git status --short  | awk '{$1=\"\"; print substr($0,2)}' | fzf | xargs --no-run-if-empty git add"
+  a = "!git status --short --untracked-files | awk '!/^[MADR] / {print substr($0, 4)}' | fzf --preview 'cat {}'| xargs --no-run-if-empty git add"
 
-  df = "!git status --short | awk '{$1=\"\"; print substr($0,2)}' | fzf | xargs --no-run-if-empty git diff"
+  df = "!git status --short | awk '/^ M / {print substr($0, 4)}' | fzf --preview 'git diff {}' | xargs --no-run-if-empty git diff"
   dc = "!git log --oneline | fzf |  awk '{print $1}' | xargs --no-run-if-empty -I {} git diff {}^ {}"
 
   ri = rebase --interactive

@@ -9,33 +9,42 @@ set $ctrl Ctrl
 set $tab Tab
 set $shift Shift
 
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Font families and sizes used along the system.
+
+set $font_family_general SF Mono
+set $font_size_general 8
+
+set $font_family_dmenu SF Mono
+set $font_size_dmenu 10
+
 # Font for window titles.
-font pango:SF Mono 10
+font pango:$font_family_general $font_size_general
 
 # Set keyboard layout.
 exec --no-startup-id setxkbmap -layout br -variant thinkpad
 
-# Set the background using `feh`.
-exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh auto" 
-
-# ...
-bindsym $mod+$shift+s exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh solid"
-bindsym $mod+$shift+w exec --no-startup-id "$HOME/.config/i3/scripts/set-bg.sh wall"
+# Set the background using `feh` and `betterlockscreen`.
+exec --no-startup-id "$HOME/.config/i3/bin/background" 
 
 # Use `pactl` to control system volume and microphone.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $ctrl+$alt+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym $ctrl+$alt+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym $ctrl+$alt+M exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym $ctrl+$alt+V exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $ctrl+$alt+k exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $ctrl+$alt+j exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $ctrl+$alt+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $ctrl+$alt+v exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use `boomer` as a magnifying glass.
-bindsym $mod+$shift+z exec --no-startup-id boomer
+bindsym $mod+$ctrl+z exec --no-startup-id boomer
 
 # Use `playerctl` to control media.
-bindsym $ctrl+$alt+Left exec --no-startup-id playerctl previous
-bindsym $ctrl+$alt+Right exec --no-startup-id playerctl next
-bindsym $ctrl+$alt+P exec --no-startup-id playerctl play-pause
+bindsym $ctrl+$alt+$left exec --no-startup-id playerctl previous
+bindsym $ctrl+$alt+$right exec --no-startup-id playerctl next
+bindsym $ctrl+$alt+p exec --no-startup-id playerctl play-pause
 
 # Use `brightnessctl` to control screen brightness.
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
@@ -45,16 +54,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 floating_modifier $mod
 
 # Open `dmenu`, the default application launcher.
-bindsym $mod+d exec --no-startup-id dmenu_run -i -p 'run' -fn 'SF Mono:regular:pixelsize=12'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -p 'run' -fn '$font_family_dmenu:regular:pixelsize=$font_size_dmenu'
 
 # Open screenshot tool.
-bindsym $mod+p exec --no-startup-id flameshot gui
+bindsym $mod+$ctrl+p exec --no-startup-id flameshot gui
 
 # Open color picker tool.
 bindsym --release $mod+$shift+p exec --no-startup-id xcolor --selection clipboard
-
-# Open note taking app.
-bindsym $mod+i exec inkdrop
 
 # Open the browser
 bindsym $mod+b exec firefox
@@ -67,20 +73,20 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Change focus between windows.
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Move currently focused window.
-bindsym $mod+$shift+Left move left
-bindsym $mod+$shift+Down move down
-bindsym $mod+$shift+Up move up
-bindsym $mod+$shift+Right move right
+bindsym $mod+$shift+$left move left
+bindsym $mod+$shift+$down move down
+bindsym $mod+$shift+$up move up
+bindsym $mod+$shift+$right move right
 
 # ...
-bindsym $mod+$ctrl+Right workspace next
-bindsym $mod+$ctrl+Left workspace prev
+bindsym $mod+$ctrl+$left workspace prev
+bindsym $mod+$ctrl+$right workspace next
 bindsym $mod+$tab workspace back_and_forth
 
 # ...
@@ -88,14 +94,14 @@ bindsym $mod+$shift+m floating enable, resize set 1536 864, move position center
 bindsym $mod+$shift+f floating disable, resize set 1920 1080, move position 0 0 
 
 # Split horizontally and vertically.
-bindsym $mod+h split h
+bindsym $mod+s split h
 bindsym $mod+v split v
 
 # Make the currently focused window fullscreen.
 bindsym $mod+f fullscreen toggle
 
 # Change layout.
-bindsym $mod+s layout stacking
+bindsym $mod+p layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -159,15 +165,15 @@ bindsym $mod+$shift+r restart
 
 # Resize windows.
 mode "resize" {
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
 
-    bindsym h resize shrink width 25 px or 25 ppt
-    bindsym j resize grow height 25 px or 25 ppt
-    bindsym k resize shrink height 25 px or 25 ppt
-    bindsym l resize grow width 25 px or 25 ppt
+    bindsym $shift+$left resize shrink width 25 px or 25 ppt
+    bindsym $shift+$down resize grow height 25 px or 25 ppt
+    bindsym $shift+$up resize shrink height 25 px or 25 ppt
+    bindsym $shift+$right resize grow width 25 px or 25 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -191,17 +197,17 @@ mode "(S)uspend, (E)xit, (L)ock, (R)eboot, (P)oweroff" {
 bindsym $mod+BackSpace mode "(S)uspend, (E)xit, (L)ock, (R)eboot, (P)oweroff"
 
 bar {
-  status_command i3status
+  status_command i3status | ~/.config/i3/bin/now-playing
   tray_output none
   colors {
     background #000000
-    statusline #ffffff
+    statusline #FFFFFF
     separator #333333
-    focused_workspace  #222222 #333333 #ffffff
-    active_workspace   #555555 #666666 #ffffff
+    focused_workspace  #222222 #333333 #FFFFFF
+    active_workspace   #555555 #666666 #FFFFFF
     inactive_workspace #111111 #000000 #888888
-    urgent_workspace   #ff0000 #880000 #ffffff
-    binding_mode       #ff0000 #880000 #ffffff
+    urgent_workspace   #FF0000 #880000 #FFFFFF
+    binding_mode       #FF0000 #880000 #FFFFFF
   }
 }
 

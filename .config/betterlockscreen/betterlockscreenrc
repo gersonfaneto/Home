@@ -15,7 +15,7 @@ quiet=false
 # default theme
 loginbox=00000066
 loginshadow=00000000
-locktext="JOB 38:11"
+locktext=""
 font="SF Mono"
 ringcolor=ffffffff
 insidecolor=00000000
