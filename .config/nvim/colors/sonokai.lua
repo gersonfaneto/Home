@@ -335,7 +335,7 @@ local hlgroups = {
   shQuote = { link = 'String' },
   shTestOpr = { link = 'Operator' },
   shVarAssign = { fg = c_red },
-  shVariable = { fg = c_blue, italic = true },
+  shVariable = { link = 'Constant' },
 
   -- HTML
   htmlArg = { fg = c_blue },
