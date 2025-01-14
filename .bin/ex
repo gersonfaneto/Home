@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: ft=sh ts=4 sw=4 sts=4 et :
+
 # Extract files from archive, wisely
 
 # Check if a file/directory does not exist
@@ -14,31 +14,31 @@ checkne() {
 print_help() {
     local scriptname=$(basename "$0")
     cat <<EOF
-$scriptname - archive extractor
-Usage: $scriptname <file>
+    $scriptname - archive extractor
+    Usage: $scriptname <file>
 
-Supported formats:
-  *.tar.Z    - compressed tar archive
-  *.Z        - compressed file
-  *.tar.bz2  - bzip2 tar archive
-  *.tbz2     - bzip2 tar archive
-  *.bz2      - bzip2 file
-  *.tar.gz   - gzip tar archive
-  *.tgz      - gzip tar archive
-  *.gz       - gzip file
-  *.tar.xz   - xz tar archive
-  *.txz      - xz tar archive
-  *.xz       - xz file
-  *.tar.lzma - lzma tar archive
-  *.lzma     - lzma file
-  *.tar.zst  - zstd tar archive
-  *.tzst     - zstd tar archive
-  *.zst      - zstd file
-  *.tar.lz4  - lz4 tar archive
-  *.lz4      - lz4 file
-  *.rar      - rar archive
-  *.tar      - tar archive
-  *.zip      - zip archive
+    Supported formats:
+    *.tar.Z    - compressed tar archive
+    *.Z        - compressed file
+    *.tar.bz2  - bzip2 tar archive
+    *.tbz2     - bzip2 tar archive
+    *.bz2      - bzip2 file
+    *.tar.gz   - gzip tar archive
+    *.tgz      - gzip tar archive
+    *.gz       - gzip file
+    *.tar.xz   - xz tar archive
+    *.txz      - xz tar archive
+    *.xz       - xz file
+    *.tar.lzma - lzma tar archive
+    *.lzma     - lzma file
+    *.tar.zst  - zstd tar archive
+    *.tzst     - zstd tar archive
+    *.zst      - zstd file
+    *.tar.lz4  - lz4 tar archive
+    *.lz4      - lz4 file
+    *.rar      - rar archive
+    *.tar      - tar archive
+    *.zip      - zip archive
 EOF
 }
 

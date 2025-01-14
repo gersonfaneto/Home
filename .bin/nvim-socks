@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# vim: ft=sh ts=4 sw=4 sts=4 et :
 
 RUNTIME_DIR="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-/run/user/$(id -u)}}}"
 APPNAME="${NVIM_APPNAME:-nvim}"
