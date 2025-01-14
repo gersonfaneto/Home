@@ -426,7 +426,7 @@ oil.setup({
     ['='] = 'actions.select',
     ['+'] = 'actions.select',
     ['<CR>'] = 'actions.select',
-    ['<C-h>'] = 'actions.toggle_hidden',
+    -- ['<C-h>'] = 'actions.toggle_hidden',
     ['gh'] = 'actions.toggle_hidden',
     ['gs'] = 'actions.change_sort',
     ['gx'] = 'actions.open_external',
