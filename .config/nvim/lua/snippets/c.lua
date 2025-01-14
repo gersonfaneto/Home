@@ -303,9 +303,9 @@ M.snippets = {
           local ext = vim.fn.fnamemodify(bufname, ':e')
           if ext == 'h' or ext == 'hpp' then
             local str = vim.fn
-              .fnamemodify(bufname, ':t')
-              :gsub('[^0-9a-zA-z_]+', '_')
-              :upper()
+                .fnamemodify(bufname, ':t')
+                :gsub('[^0-9a-zA-z_]+', '_')
+                :upper()
             return sn(nil, i(1, str))
           end
           return sn(nil, i(1))
@@ -738,6 +738,60 @@ M.snippets = {
         },
       },
     }
+  ),
+  us.sn(
+    {
+      trig = 'bph',
+      desc = 'beecrowd problem header',
+    },
+    un.fmtd(
+      [[
+      /*
+       * '{title}'
+       * {category} | Level {level}
+       *
+       * Author :: Gerson Ferreira <gersonfaneto.dev@gmail.com>
+       *
+       * Solved  @ {solved_at}
+       * Updated @ {updated_at}
+       *
+       * Details @ https://judge.beecrowd.com/en/problems/view/{id}
+       */
+      ]],
+      {
+        title = i(1),
+        category = c(2, {
+          i(nil, 'Beginner'),
+          i(nil, 'AD-HOC'),
+          i(nil, 'Strings'),
+          i(nil, 'Data Structures & Libraries'),
+          i(nil, 'Mathematics'),
+          i(nil, 'Paradigms'),
+          i(nil, 'Graph'),
+          i(nil, 'Computational Geometry'),
+          i(nil, 'SQL'),
+        }),
+        level = c(3, {
+          i(nil, '1'),
+          i(nil, '2'),
+          i(nil, '3'),
+          i(nil, '4'),
+          i(nil, '5'),
+          i(nil, '6'),
+          i(nil, '7'),
+          i(nil, '8'),
+          i(nil, '9'),
+          i(nil, '10'),
+        }),
+        solved_at = i(4),
+        updated_at = i(5),
+        id = d(6, function()
+          local bufname = vim.api.nvim_buf_get_name(0)
+          local str = vim.fn.fnamemodify(bufname, ':t:r')
+          return sn(nil, t(str))
+        end),
+      }
+    )
   ),
 }
 
