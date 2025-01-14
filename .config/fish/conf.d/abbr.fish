@@ -56,6 +56,8 @@ __command_abbr nv          'nvim'
 __command_abbr sudoe       'sudo -E'
 __command_abbr tree        'tree -N'
 __command_abbr x           'trash'
+__command_abbr la          'ls -A'
+__command_abbr lla         'll -A'
 
 function __command_abbr_v_fn --description 'Abbreviation function for `v`'
     if command -q nvim
