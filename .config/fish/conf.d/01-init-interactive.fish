@@ -143,3 +143,5 @@ hash --add "$HOME/.local/bin"
 type -q zoxide; and zoxide init fish | source
 
 type -q nvim; and set -gx EDITOR nvim && set -gx MANPAGER 'nvim +Man!' && set -gx NVIM_NF true
+
+set -gx SNIPPETS "$HOME/.snippets"
